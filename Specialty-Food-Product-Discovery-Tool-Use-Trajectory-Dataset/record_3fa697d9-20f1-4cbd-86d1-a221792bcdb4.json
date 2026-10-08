@@ -1,0 +1,107 @@
+{
+  "tool_calls": [
+    {
+      "call_index": 0,
+      "tool_name": "catalog.list_categories",
+      "arguments": {
+        "parent_category": "flour"
+      }
+    },
+    {
+      "call_index": 1,
+      "tool_name": "catalog.search_products",
+      "arguments": {
+        "query": "chickpea flour",
+        "origin": "Italy",
+        "category": "legume flour",
+        "exclude_ingredients": [
+          "salt"
+        ]
+      }
+    },
+    {
+      "call_index": 2,
+      "tool_name": "catalog.get_product",
+      "arguments": {
+        "product_id": "IT-FL-208"
+      }
+    }
+  ],
+  "user_query": "Do you carry Italian chickpea flour for vegan baking? I need it finely milled and without added salt.",
+  "tool_results": [
+    {
+      "call_index": 0,
+      "status": "success",
+      "result": {
+        "categories": [
+          {
+            "name": "legume flour",
+            "subcategories": [
+              "chickpea flour",
+              "lentil flour"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "call_index": 1,
+      "status": "success",
+      "result": {
+        "matches": [
+          {
+            "product_id": "IT-FL-208",
+            "name": "Italian Chickpea Flour",
+            "origin": "Italy",
+            "category": "chickpea flour",
+            "ingredients": [
+              "chickpeas"
+            ],
+            "dietary_attributes": [
+              "vegan",
+              "no added salt"
+            ],
+            "milling": "fine"
+          }
+        ]
+      }
+    },
+    {
+      "call_index": 2,
+      "status": "success",
+      "result": {
+        "product_id": "IT-FL-208",
+        "name": "Italian Chickpea Flour",
+        "origin": "Italy",
+        "ingredients": [
+          "chickpeas"
+        ],
+        "dietary_attributes": [
+          "vegan",
+          "no added salt"
+        ],
+        "milling": "fine",
+        "pack_size": "500 g"
+      }
+    }
+  ],
+  "final_response": "The catalog lists Italian Chickpea Flour (500 g), made with chickpeas and finely milled. It is marked vegan and has no added salt.",
+  "raw_trace_json": "{\"user_query\":\"Do you carry Italian chickpea flour for vegan baking? I need it finely milled and without added salt.\",\"tool_calls\":[{\"call_index\":0,\"tool_name\":\"catalog.list_categories\",\"arguments\":{\"parent_category\":\"flour\"}},{\"call_index\":1,\"tool_name\":\"catalog.search_products\",\"arguments\":{\"query\":\"chickpea flour\",\"origin\":\"Italy\",\"category\":\"legume flour\",\"exclude_ingredients\":[\"salt\"]}},{\"call_index\":2,\"tool_name\":\"catalog.get_product\",\"arguments\":{\"product_id\":\"IT-FL-208\"}}],\"tool_results\":[{\"call_index\":0,\"status\":\"success\",\"result\":{\"categories\":[{\"name\":\"legume flour\",\"subcategories\":[\"chickpea flour\",\"lentil flour\"]}]}},{\"call_index\":1,\"status\":\"success\",\"result\":{\"matches\":[{\"product_id\":\"IT-FL-208\",\"name\":\"Italian Chickpea Flour\",\"origin\":\"Italy\",\"category\":\"chickpea flour\",\"ingredients\":[\"chickpeas\"],\"dietary_attributes\":[\"vegan\",\"no added salt\"],\"milling\":\"fine\"}]}},{\"call_index\":2,\"status\":\"success\",\"result\":{\"product_id\":\"IT-FL-208\",\"name\":\"Italian Chickpea Flour\",\"origin\":\"Italy\",\"ingredients\":[\"chickpeas\"],\"dietary_attributes\":[\"vegan\",\"no added salt\"],\"milling\":\"fine\",\"pack_size\":\"500 g\"}}],\"final_response\":\"The catalog lists Italian Chickpea Flour (500 g), made with chickpeas and finely milled. It is marked vegan and has no added salt.\"}",
+  "search_constraints": {
+    "origin_regions": [
+      "Italy"
+    ],
+    "ingredient_terms": [
+      "chickpeas",
+      "salt"
+    ],
+    "product_categories": [
+      "chickpea flour",
+      "legume flour"
+    ],
+    "dietary_preferences": [
+      "vegan",
+      "no added salt"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "tool_calls": [
+    {
+      "call_index": 0,
+      "tool_name": "catalog.search_products",
+      "arguments": {
+        "query": "gochujang",
+        "origin": "South Korea",
+        "category": "fermented chili paste",
+        "exclude_ingredients": [
+          "wheat",
+          "fish sauce"
+        ],
+        "dietary_preference": "vegan"
+      }
+    },
+    {
+      "call_index": 1,
+      "tool_name": "catalog.get_product",
+      "arguments": {
+        "product_id": "KR-GC-073"
+      }
+    }
+  ],
+  "user_query": "I'm looking for Korean gochujang made without wheat or fish sauce, preferably a vegan option.",
+  "tool_results": [
+    {
+      "call_index": 0,
+      "status": "success",
+      "result": {
+        "matches": [
+          {
+            "product_id": "KR-GC-073",
+            "name": "Stone-Milled Mild Gochujang",
+            "origin": "South Korea",
+            "category": "gochujang",
+            "ingredients": [
+              "red chili",
+              "fermented soybeans",
+              "rice syrup",
+              "salt"
+            ],
+            "dietary_attributes": [
+              "vegan",
+              "wheat-free"
+            ],
+            "allergen_information": [
+              "soy"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "call_index": 1,
+      "status": "success",
+      "result": {
+        "product_id": "KR-GC-073",
+        "name": "Stone-Milled Mild Gochujang",
+        "origin": "South Korea",
+        "ingredients": [
+          "red chili",
+          "fermented soybeans",
+          "rice syrup",
+          "salt"
+        ],
+        "dietary_attributes": [
+          "vegan",
+          "wheat-free"
+        ],
+        "allergen_information": [
+          "soy"
+        ],
+        "pack_size": "250 g"
+      }
+    }
+  ],
+  "final_response": "The catalog lists Stone-Milled Mild Gochujang (250 g) from South Korea. Its listed ingredients are red chili, fermented soybeans, rice syrup, and salt; it is marked vegan and wheat-free. Soy is listed as an allergen.",
+  "raw_trace_json": "{\"user_query\":\"I'm looking for Korean gochujang made without wheat or fish sauce, preferably a vegan option.\",\"tool_calls\":[{\"call_index\":0,\"tool_name\":\"catalog.search_products\",\"arguments\":{\"query\":\"gochujang\",\"origin\":\"South Korea\",\"category\":\"fermented chili paste\",\"exclude_ingredients\":[\"wheat\",\"fish sauce\"],\"dietary_preference\":\"vegan\"}},{\"call_index\":1,\"tool_name\":\"catalog.get_product\",\"arguments\":{\"product_id\":\"KR-GC-073\"}}],\"tool_results\":[{\"call_index\":0,\"status\":\"success\",\"result\":{\"matches\":[{\"product_id\":\"KR-GC-073\",\"name\":\"Stone-Milled Mild Gochujang\",\"origin\":\"South Korea\",\"category\":\"gochujang\",\"ingredients\":[\"red chili\",\"fermented soybeans\",\"rice syrup\",\"salt\"],\"dietary_attributes\":[\"vegan\",\"wheat-free\"],\"allergen_information\":[\"soy\"]}]}},{\"call_index\":1,\"status\":\"success\",\"result\":{\"product_id\":\"KR-GC-073\",\"name\":\"Stone-Milled Mild Gochujang\",\"origin\":\"South Korea\",\"ingredients\":[\"red chili\",\"fermented soybeans\",\"rice syrup\",\"salt\"],\"dietary_attributes\":[\"vegan\",\"wheat-free\"],\"allergen_information\":[\"soy\"],\"pack_size\":\"250 g\"}}],\"final_response\":\"The catalog lists Stone-Milled Mild Gochujang (250 g) from South Korea. Its listed ingredients are red chili, fermented soybeans, rice syrup, and salt; it is marked vegan and wheat-free. Soy is listed as an allergen.\"}",
+  "search_constraints": {
+    "origin_regions": [
+      "South Korea"
+    ],
+    "ingredient_terms": [
+      "wheat",
+      "fish sauce"
+    ],
+    "product_categories": [
+      "gochujang",
+      "fermented chili paste"
+    ],
+    "dietary_preferences": [
+      "vegan",
+      "wheat-free",
+      "fish-free"
+    ]
+  }
+}
