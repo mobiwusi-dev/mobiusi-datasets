@@ -1,0 +1,46 @@
+{
+  "task_category": "保修资格查询",
+  "raw_trace": {
+    "transcript": [
+      {
+        "role": "user",
+        "content": "I purchased a Tablet T11-L on 2023-08-09 under order OR-731940. Can you check whether it is still under warranty? I do not have the serial number with me."
+      },
+      {
+        "role": "assistant",
+        "content": "I need the device serial number to look up its service eligibility. Please provide it when available."
+      }
+    ]
+  },
+  "appointment": {
+    "status": "Not requested"
+  },
+  "device_info": {
+    "device_type": "Tablet",
+    "model": "Tablet T11-L",
+    "order_number": "OR-731940",
+    "purchase_date": "2023-08-09"
+  },
+  "final_status": "The warranty lookup is pending; the user must provide the device serial number before eligibility can be checked.",
+  "repair_options": [],
+  "service_locations": [],
+  "conversation_steps": [
+    {
+      "step_index": 0,
+      "actor": "用户",
+      "content": "I purchased a Tablet T11-L on 2023-08-09 under order OR-731940. Can you check whether it is still under warranty? I do not have the serial number with me."
+    },
+    {
+      "step_index": 1,
+      "actor": "助手",
+      "content": "I need the device serial number to look up its service eligibility. Please provide it when available."
+    }
+  ],
+  "missing_information": [
+    "Device serial number"
+  ],
+  "service_eligibility": {
+    "status": "Not checked",
+    "coverage_summary": "Eligibility could not be verified because the device serial number was not provided."
+  }
+}
