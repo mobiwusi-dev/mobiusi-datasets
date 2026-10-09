@@ -1,0 +1,23 @@
+{
+  "material": {
+    "material_name": "Reinforced concrete",
+    "grade": "Concrete: C40; reinforcing steel: HRB400"
+  },
+  "connection": {
+    "connection_type": "Grouted sleeve connection",
+    "specification": "Use grouted sleeves at the vertical joint to connect the panel to the adjacent wall."
+  },
+  "dimensions": {
+    "length": 4200,
+    "height": 3000,
+    "thickness": 200,
+    "unit": "mm"
+  },
+  "source_prompt": "Create a structured specification for precast shear wall panel WP-04-12. The panel is 4,200 mm long, 3,000 mm high, and 200 mm thick. It is reinforced concrete with C40 concrete and HRB400 reinforcing steel. Connect it to the adjacent wall using grouted sleeves at the vertical joint. The source does not specify panel width, reinforcement layout, concrete cover, or the applicable material standard.",
+  "component_category": "Precast shear wall panel",
+  "information_status": {
+    "provided_information": "Category, identifier, length, height, thickness, concrete grade, reinforcing steel grade, and vertical-joint connection type and location.",
+    "missing_information": "Panel width, reinforcement layout, concrete cover, and applicable material standard."
+  },
+  "component_identifier": "WP-04-12"
+}

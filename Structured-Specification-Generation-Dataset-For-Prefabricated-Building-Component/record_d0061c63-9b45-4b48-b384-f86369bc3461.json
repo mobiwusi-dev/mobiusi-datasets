@@ -1,0 +1,23 @@
+{
+  "material": {
+    "material_name": "Reinforced concrete",
+    "grade": "Concrete: C40"
+  },
+  "connection": {
+    "connection_type": "Grouted mechanical coupler connection",
+    "specification": "Four couplers along the inner edge connect the slab to the perimeter beam. Keep temporary props in place until the grout reaches the specified strength."
+  },
+  "dimensions": {
+    "length": 3600,
+    "width": 1500,
+    "thickness": 180,
+    "unit": "mm"
+  },
+  "source_prompt": "Generate a structured specification for precast balcony slab BS-08. The slab is 3,600 mm long, 1,500 mm wide, and 180 mm thick. It is reinforced concrete with C40 concrete. Four grouted mechanical couplers are located along the inner edge for connection to the perimeter beam. Keep temporary props in place until the grout reaches the specified strength. The source does not provide the reinforcing-steel grade, grout strength, design loading, or material standard.",
+  "component_category": "Precast balcony slab",
+  "information_status": {
+    "provided_information": "Category, identifier, length, width, thickness, concrete grade, number and location of couplers, connection to the perimeter beam, and temporary-propping instruction.",
+    "missing_information": "Reinforcing-steel grade, specified grout strength, design loading, and applicable material standard."
+  },
+  "component_identifier": "BS-08"
+}

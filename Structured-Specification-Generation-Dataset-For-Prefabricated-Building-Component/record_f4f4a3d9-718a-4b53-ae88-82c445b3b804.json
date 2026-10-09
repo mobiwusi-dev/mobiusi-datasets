@@ -1,0 +1,23 @@
+{
+  "material": {
+    "material_name": "Concrete",
+    "grade": "C50"
+  },
+  "connection": {
+    "connection_type": "Bolted connection",
+    "specification": "At each end, two embedded steel end plates are bolted to the column brackets with M20 bolts."
+  },
+  "dimensions": {
+    "length": 6000,
+    "width": 300,
+    "height": 500,
+    "unit": "mm"
+  },
+  "source_prompt": "Prepare a structured record for precast beam B-17. Its length is 6,000 mm, width is 300 mm, and height is 500 mm. The beam is made of C50 concrete. At each end, two embedded steel end plates are bolted to the column brackets with M20 bolts. The source does not state the reinforcing-steel grade, the end-plate dimensions, the bolt grade, or the applicable material standard.",
+  "component_category": "Precast beam",
+  "information_status": {
+    "provided_information": "Category, identifier, length, width, height, concrete grade, and end connection arrangement using two embedded steel end plates and M20 bolts at each end.",
+    "missing_information": "Reinforcing-steel grade, end-plate dimensions, bolt grade, and applicable material standard."
+  },
+  "component_identifier": "B-17"
+}
