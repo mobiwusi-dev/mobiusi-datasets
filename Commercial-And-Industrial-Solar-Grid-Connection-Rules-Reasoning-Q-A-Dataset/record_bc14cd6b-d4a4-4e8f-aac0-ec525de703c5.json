@@ -1,0 +1,18 @@
+{
+  "reasoning": "At 180 kW, the project falls in the capacity band that requires a 0.4 kV connection. Its 0.72 self-consumption ratio exceeds the 0.65 minimum, and its 175 kW inverter rating does not exceed the 180 kW installed capacity. However, the actual connection voltage and operating mode are not provided, so two required conditions cannot be checked.",
+  "rule_text": "For this review, the project-specific screening rule is: a commercial PV project with installed capacity of 200 kW or less must connect at 0.4 kV; a project above 200 kW and no more than 500 kW must connect at 10 kV. The project must operate in self-consumption mode with export limited, have a forecast self-consumption ratio of at least 65%, and have an aggregate inverter AC rating no greater than its installed capacity. All conditions must be met.",
+  "answer_text": "There is not enough information to determine compliance. The capacity, self-consumption ratio, and inverter rating meet the stated conditions, but the proposed connection voltage and operating mode are needed to complete the review.",
+  "user_question": "Can compliance be determined from the information provided? If not, what information is needed?",
+  "compliance_status": "信息不足，无法判断",
+  "project_parameters": {
+    "project_type": "Commercial rooftop PV",
+    "installed_capacity_kw": 180,
+    "inverter_capacity_kw": 175,
+    "self_consumption_ratio": 0.72
+  },
+  "condition_conflicts": [],
+  "missing_information": [
+    "The proposed connection voltage, to verify that it is 0.4 kV for this capacity band.",
+    "The proposed grid connection mode, to verify that it is self-consumption with export limited."
+  ]
+}

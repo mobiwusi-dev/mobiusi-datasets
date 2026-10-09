@@ -1,0 +1,20 @@
+{
+  "reasoning": "The 320 kW capacity falls within the rule's greater-than-250-kW to 500-kW band, and the proposed 10 kV connection matches that band. The 300 kW inverter rating does not exceed the installed capacity. However, full export conflicts with the required self-consumption mode with export limited, and the 0.45 self-consumption ratio is below the required 0.60. These known conflicts mean the proposal does not satisfy the rule.",
+  "rule_text": "For this review, the project-specific screening rule is: a commercial PV project with installed capacity greater than 250 kW and no more than 500 kW must connect at 10 kV. It must operate in self-consumption mode with export limited, have a forecast self-consumption ratio of at least 60%, and have an aggregate inverter AC rating no greater than its installed capacity. All conditions must be met.",
+  "answer_text": "The proposal does not satisfy the screening rule. Its connection voltage and inverter rating meet the stated conditions, but the full-export mode and 0.45 self-consumption ratio do not.",
+  "user_question": "Which stated conditions, if any, prevent this proposal from satisfying the screening rule?",
+  "compliance_status": "不符合规则",
+  "project_parameters": {
+    "project_type": "Commercial rooftop PV",
+    "installed_capacity_kw": 320,
+    "connection_voltage_kv": 10,
+    "grid_connection_mode": "Full export",
+    "inverter_capacity_kw": 300,
+    "self_consumption_ratio": 0.45
+  },
+  "condition_conflicts": [
+    "The proposed full-export mode conflicts with the requirement to operate in self-consumption mode with export limited.",
+    "The stated self-consumption ratio of 0.45 is below the required minimum of 0.60."
+  ],
+  "missing_information": []
+}

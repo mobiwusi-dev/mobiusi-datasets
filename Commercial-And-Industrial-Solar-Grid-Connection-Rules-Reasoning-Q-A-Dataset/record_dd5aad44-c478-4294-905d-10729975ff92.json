@@ -1,0 +1,17 @@
+{
+  "reasoning": "The installed capacity is 240 kW, within the 300 kW limit for a 0.4 kV connection. The stated voltage is 0.4 kV, the operating mode is self-consumption with export limited, and the self-consumption ratio of 0.82 exceeds the 0.70 minimum. The 220 kW inverter rating is below the 240 kW installed capacity. Each stated condition is met.",
+  "rule_text": "For this review, the project-specific screening rule is: a commercial rooftop PV project with installed DC capacity of 300 kW or less may connect at 0.4 kV. It must operate in self-consumption mode with export limited, have a forecast self-consumption ratio of at least 70%, and have an aggregate inverter AC rating no greater than its installed DC capacity. All conditions must be met.",
+  "answer_text": "The proposal satisfies the stated screening rule: its capacity, connection voltage, operating mode, self-consumption ratio, and inverter rating all meet the specified conditions.",
+  "user_question": "Does the proposed interconnection arrangement satisfy the stated screening rule?",
+  "compliance_status": "符合规则",
+  "project_parameters": {
+    "project_type": "Commercial rooftop PV",
+    "installed_capacity_kw": 240,
+    "connection_voltage_kv": 0.4,
+    "grid_connection_mode": "Self-consumption with export limited",
+    "inverter_capacity_kw": 220,
+    "self_consumption_ratio": 0.82
+  },
+  "condition_conflicts": [],
+  "missing_information": []
+}
