@@ -1,0 +1,9 @@
+{
+  "target_language": "English",
+  "instruction_text": "Translate the Chinese development-control clause into English. Retain all numerical limits, the requirement for a landscaped setback, and the stated prohibitions on its use.",
+  "clause_type": "Development restrictions and site design controls",
+  "source_text": "在轻工业分区内，任何新建或扩建建筑的地块覆盖率不得超过地块面积的55%，建筑高度不得超过18米。沿公共道路的地块边界应设置不少于6米宽的绿化退界，且不得用于停车或装卸。",
+  "target_text": "Within the light industrial zone, the site coverage of any new or extended building must not exceed 55% of the site area, and building height must not exceed 18 metres. A landscaped setback at least 6 metres wide must be provided along the site boundary adjoining a public road; it must not be used for parking or loading and unloading.",
+  "source_language": "Chinese (Simplified)",
+  "aligned_terminology": "轻工业分区 — light industrial zone; 地块覆盖率 — site coverage; 绿化退界 — landscaped setback; 装卸 — loading and unloading"
+}

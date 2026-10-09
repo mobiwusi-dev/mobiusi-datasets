@@ -1,0 +1,9 @@
+{
+  "clause_type": "Zoning and permitted uses",
+  "source_text": "在滨水混合用途分区内，住宅用途及零售用途均为准许用途；零售营业面积不得超过首层总建筑面积的40%。餐饮用途须经规划许可后方可设置。",
+  "target_text": "Within the waterfront mixed-use zone, residential and retail uses are permitted uses. The floor area occupied by retail uses must not exceed 40% of the total ground-floor area. Food and beverage uses may be established only with planning permission.",
+  "source_language": "Chinese (Simplified)",
+  "target_language": "English",
+  "instruction_text": "Translate the Chinese planning-control clause into English. Preserve its mandatory and permissive wording, the 40% limit, and the distinction between permitted uses and uses requiring planning permission.",
+  "aligned_terminology": "滨水混合用途分区 — waterfront mixed-use zone; 准许用途 — permitted use; 规划许可 — planning permission"
+}

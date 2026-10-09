@@ -1,0 +1,9 @@
+{
+  "clause_type": "Conservation zoning and development controls",
+  "source_text": "生态保育分区内，仅准许与自然保育、环境监测及低影响步道相关的用途。任何新建构筑物须经规划许可，并应与河岸线保持不少于30米的退距。不得清除原生植被，但为排除紧迫安全风险而实施的工程除外。",
+  "target_text": "Within the ecological conservation zone, only uses related to nature conservation, environmental monitoring, and low-impact trails are permitted. Any new structure requires planning permission and must be set back at least 30 metres from the riverbank. Native vegetation must not be cleared, except for works undertaken to address an imminent safety risk.",
+  "source_language": "Chinese (Simplified)",
+  "target_language": "English",
+  "instruction_text": "Translate the Chinese planning-control clause into English. Preserve the restricted list of permitted uses, the planning-permission requirement, the minimum riverbank setback, and the narrowly stated exception to the vegetation-clearing prohibition.",
+  "aligned_terminology": "生态保育分区 — ecological conservation zone; 低影响步道 — low-impact trail; 退距 — setback; 原生植被 — native vegetation"
+}
