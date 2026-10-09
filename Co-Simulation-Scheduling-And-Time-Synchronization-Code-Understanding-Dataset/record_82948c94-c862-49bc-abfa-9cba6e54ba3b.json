@@ -1,0 +1,15 @@
+{
+  "source_code": "class GrantScheduler:\n    def __init__(self, master, components):\n        self.master = master\n        self.components = components\n\n    def run(self, stop_time: float, quantum: float) -> float:\n        if quantum <= 0:\n            raise ValueError('quantum must be positive')\n\n        now = 0.0\n        while now < stop_time:\n            requested = min(now + quantum, stop_time)\n            granted = self.master.request_time(requested)\n            if not now < granted <= requested:\n                raise RuntimeError('invalid time grant')\n\n            elapsed = granted - now\n            for component in self.components:\n                component.do_step(granted, elapsed)\n            now = granted\n\n        return now",
+  "execution_order": [
+    "Validate that quantum is positive; otherwise raise ValueError.",
+    "Set the local simulation time to 0.0 and check whether it is below stop_time.",
+    "Compute requested as min(now + quantum, stop_time), then ask master.request_time(requested) for a grant.",
+    "Validate that now < granted <= requested; raise RuntimeError if this condition is false.",
+    "Compute elapsed as granted - now and call do_step(granted, elapsed) on each component in sequence.",
+    "Update now to granted; repeat the request cycle until now reaches stop_time, then return now."
+  ],
+  "analysis_question": "Describe how the master controls time advancement, what grant values are accepted, and how the components are scheduled after a grant.",
+  "understanding_answer": "The scheduler starts at time 0.0 and requests a time no later than stop_time, at most quantum beyond now. It accepts a grant only if it is strictly later than now and no later than the requested time; otherwise it raises RuntimeError before calling any component for that iteration. For a valid grant, it computes the elapsed interval and calls do_step(granted, elapsed) on each component in sequence. It updates now only after all those calls return. The loop ends when now reaches stop_time, and the method returns now.",
+  "control_flow_explanation": "run first rejects a nonpositive quantum. Inside the loop, it computes requested and calls master.request_time(requested). The grant-validation branch raises RuntimeError if the grant is outside the open interval after now through requested, so no component step is issued for an invalid grant. For a valid grant, the scheduler calculates elapsed, iterates through components calling do_step, then assigns granted to now. The loop repeats or exits based on the updated now value.",
+  "timing_and_synchronization_explanation": "The quantum limits the requested advance, while stop_time caps the request at the end of the run. Actual progress is determined by the master's granted time, which must be later than the current time and cannot exceed the request. Each component receives the same granted endpoint and elapsed interval. The code waits for the sequential do_step calls to return before updating now and making another request; it does not include a separate wait or barrier call."
+}

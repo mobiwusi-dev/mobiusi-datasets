@@ -1,0 +1,15 @@
+{
+  "source_code": "class EventScheduler:\n    def __init__(self, components):\n        self.components = components\n\n    def run(self, stop_time: float) -> float:\n        now = 0.0\n        while now < stop_time:\n            next_times = [component.next_event_time(now)\n                          for component in self.components]\n            target = min([stop_time, *next_times])\n            if target <= now:\n                raise RuntimeError('components must report a future event')\n\n            for component in self.components:\n                component.advance_to(target)\n            for component in self.components:\n                component.process_events_at(target)\n            now = target\n\n        return now",
+  "execution_order": [
+    "Initialize now to 0.0 and continue while it is less than stop_time.",
+    "Call next_event_time(now) on each component and collect the reported times.",
+    "Choose the minimum of stop_time and the reported event times; raise RuntimeError if the result is not later than now.",
+    "Call advance_to(target) on every component in sequence.",
+    "After all advance_to calls return, call process_events_at(target) on every component in sequence.",
+    "Set now to target and repeat; return now after reaching stop_time."
+  ],
+  "analysis_question": "Explain how the scheduler selects each synchronization boundary and why it has separate advance and event-processing loops.",
+  "understanding_answer": "At each iteration, the scheduler asks every component for its next event time relative to now, then selects the earliest of those times and stop_time. If that target is not later than now, it raises RuntimeError. Otherwise, it advances every component to the selected target before calling process_events_at(target) on any component. It then updates now and repeats until stop_time is reached. Thus event processing at a boundary begins only after all component advance_to calls for that boundary have returned.",
+  "control_flow_explanation": "The while loop runs while now is below stop_time. A list comprehension gathers next_event_time(now) from each component, and min selects the earliest reported time or stop_time, whichever is earlier. The guard rejects a target at or before now. For a valid target, the first component loop advances all components; only when it completes does the second loop process events at that target. The scheduler then assigns target to now, returning to the loop condition.",
+  "timing_and_synchronization_explanation": "The scheduler advances from one selected boundary to the next rather than using a fixed step. Each boundary is the earliest component-reported event time, capped at stop_time. All components are advanced to the same target before any component processes events there, making the advance phase precede the event-processing phase at each boundary. The code requires the selected target to be strictly later than now but does not otherwise specify how components calculate their event times."
+}
