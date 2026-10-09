@@ -1,0 +1,15 @@
+{
+  "question": "How much PV power is used onsite and exported, and is curtailment needed?",
+  "conclusion": "The facility uses 260 kW of PV onsite, exports 130 kW, and does not curtail PV output.",
+  "export_relation": "The 130 kW surplus is exported. This is below the 180 kW export limit, so the limit does not reduce export.",
+  "reasoning_steps": [
+    "PV output of 390 kW exceeds the 260 kW site load by 130 kW.",
+    "The 260 kW load is served by PV first.",
+    "The remaining 130 kW is below the 180 kW export limit, so the full surplus can be exported.",
+    "Since the export limit does not constrain the surplus, no PV curtailment is needed."
+  ],
+  "source_scenario": "During a steady operating interval, a facility has a 260 kW site load and 390 kW of available PV output. Its grid connection permits up to 180 kW of export. There is no battery storage, and the controller serves onsite load from PV before exporting any surplus. No other power sink is available.",
+  "self_use_relation": "The facility uses 260 kW of PV output onsite, matching its 260 kW load.",
+  "decisive_conditions": "Site load is 260 kW, available PV output is 390 kW, the export limit is 180 kW, and PV serves onsite load before export; no battery or other sink is available.",
+  "curtailment_relation": "No curtailment is required because the surplus is within the permitted export capacity and there are no other stated constraints."
+}

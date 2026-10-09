@@ -1,0 +1,15 @@
+{
+  "question": "What PV output, export, and curtailment are required to comply with the export limit while serving the site load?",
+  "conclusion": "To serve the 180 kW load and respect the export cap, the controller limits PV output to 280 kW, exports 100 kW, and curtails 240 kW.",
+  "export_relation": "Export is held at the 100 kW grid limit. The potential surplus before curtailment is 340 kW, so the export limit is binding.",
+  "reasoning_steps": [
+    "Available PV output exceeds the 180 kW site load by 340 kW.",
+    "The site consumes 180 kW of PV power first, leaving 340 kW of potential surplus.",
+    "Only 100 kW of that surplus may be exported, so the controller must reduce PV output by the remaining 240 kW.",
+    "After curtailment, PV output is 280 kW: 180 kW serves the site and 100 kW is exported."
+  ],
+  "source_scenario": "At a facility with no battery storage or other controllable power sink, the site load is 180 kW while available PV output is 520 kW. The grid export limit is 100 kW. The export-limiting controller maintains grid export at or below that limit by reducing PV output when necessary, while prioritizing onsite load. Conditions are steady during the interval.",
+  "self_use_relation": "The facility uses 180 kW of PV output onsite, equal to its site load.",
+  "decisive_conditions": "Site load is 180 kW, available PV output is 520 kW, the export limit is 100 kW, and the controller prioritizes onsite load and reduces PV output when export would exceed the limit; no battery or other sink is available.",
+  "curtailment_relation": "The controller curtails 240 kW of available PV output because the 340 kW potential surplus exceeds the 100 kW export limit and no other power sink is available."
+}

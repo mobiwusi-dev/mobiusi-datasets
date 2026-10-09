@@ -1,0 +1,15 @@
+{
+  "question": "Is any PV power exported or curtailed, and does the facility still need to import power?",
+  "conclusion": "The facility consumes all PV output onsite, imports 110 kW from the grid, and neither exports nor curtails PV power.",
+  "export_relation": "There is no PV export. The 100 kW export limit is not binding because there is no surplus after onsite consumption.",
+  "reasoning_steps": [
+    "Compare available PV output of 310 kW with site load of 420 kW.",
+    "Because PV output is below load, all available PV power can be consumed onsite.",
+    "The remaining 110 kW of load must be supplied by the grid.",
+    "No PV surplus remains to export, so the export limit does not bind and curtailment is not triggered."
+  ],
+  "source_scenario": "At a facility operating without battery storage, the site load is 420 kW and available PV output is 310 kW. The grid export limit is 100 kW. PV serves the site load first, and there are no other controllable loads or power sinks. Conditions are steady during the interval.",
+  "self_use_relation": "All 310 kW of PV output is used onsite because the 420 kW load exceeds PV output.",
+  "decisive_conditions": "Site load is 420 kW, available PV output is 310 kW, the export limit is 100 kW, and PV serves onsite load first with no battery or other controllable sink.",
+  "curtailment_relation": "No curtailment is required; available PV output is below the site load."
+}
