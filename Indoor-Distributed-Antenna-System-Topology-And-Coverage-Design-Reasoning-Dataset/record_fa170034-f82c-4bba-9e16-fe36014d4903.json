@@ -1,0 +1,87 @@
+{
+  "design_question": "A three-story office has six coverage zones: east and west wings on each floor. The target is at least -95 dBm RSRP and 5 dB SINR in occupied areas. A dual-band source provides 20 dBm per band at the headend for 700 MHz and 1800 MHz. The design is limited to passive distribution equipment, with no powered equipment outside the communications room. The planning worksheet estimates 13–17 dB of passive loss from the headend to the antenna input on the six proposed branches, including splitters, feeders, and connectors. The accepted maximum is 18 dB. What topology should be used, and what do these constraints imply for feasibility?",
+  "topology_summary": "Use a passive, star-fed DAS: carry both bands from the communications room over a vertical riser, split the signal on each floor, and feed separate east- and west-wing antenna branches. The stated branch-loss estimates remain within the 18 dB limit, leaving at least 3 dBm per band at the antenna inputs under the supplied 20 dBm headend level. This supports proceeding to coverage validation, but does not by itself establish that the RSRP and SINR targets will be met throughout the office.",
+  "design_conclusion": "The passive star topology is feasible against the supplied branch-loss and equipment constraints: all estimated paths are at or below 18 dB, and no remote power is required. It is a candidate design rather than a guaranteed coverage result. Confirm antenna placement, actual installed losses, RSRP, and SINR on all six wings before acceptance.",
+  "constraint_analysis": [
+    {
+      "constraint": "The source provides 20 dBm per band, and the maximum accepted passive loss is 18 dB.",
+      "impact": "The maximum permitted loss leaves a minimum of 2 dBm at an antenna input; the estimated 13–17 dB branch losses leave 3–7 dBm.",
+      "resolution": "The stated branches meet the supplied loss limit. The margin is smallest on the 17 dB branches, so those runs should be verified during commissioning; adding unbudgeted splitters or feeder length could consume the margin."
+    },
+    {
+      "constraint": "Only passive equipment may be installed outside the communications room.",
+      "impact": "Remote amplifiers or powered distribution nodes cannot be used to compensate for a long or lossy branch.",
+      "resolution": "Keep the distribution passive and use the planned riser, floor splitters, and wing branches. This makes the loss limit especially important: any branch exceeding it requires a revised passive layout or a change to the equipment constraint."
+    },
+    {
+      "constraint": "Coverage targets are at least -95 dBm RSRP and 5 dB SINR in occupied areas.",
+      "impact": "Antenna-input power alone does not establish indoor field strength or interference performance; propagation, antenna placement, and the source environment also affect the result.",
+      "resolution": "Retain the distributed antenna layout as the candidate topology, then verify the targets with a site-specific coverage assessment and walk test. If a zone fails, adjust antenna placement or branch design without exceeding the loss limit."
+    }
+  ],
+  "topology_components": [
+    {
+      "component_name": "Dual-band signal source",
+      "component_type": "RF source",
+      "served_zones": [],
+      "connection_path": "Feeds the headend distribution port for 700 MHz and 1800 MHz; the output is carried to the vertical riser.",
+      "design_rationale": "The stated source provides 20 dBm per band, which is the starting level for the supplied passive-loss budget."
+    },
+    {
+      "component_name": "Headend distribution panel and vertical riser",
+      "component_type": "Passive distribution panel and feeder",
+      "served_zones": [
+        "Floor 1 east wing",
+        "Floor 1 west wing",
+        "Floor 2 east wing",
+        "Floor 2 west wing",
+        "Floor 3 east wing",
+        "Floor 3 west wing"
+      ],
+      "connection_path": "Connects the source to the riser feeder and carries both bands to floor-level splitters.",
+      "design_rationale": "A shared riser avoids separate source equipment on each floor; its losses are included in the provided branch estimates."
+    },
+    {
+      "component_name": "Floor-level two-way splitters, one per floor",
+      "component_type": "Power splitters",
+      "served_zones": [
+        "Floor 1 east wing",
+        "Floor 1 west wing",
+        "Floor 2 east wing",
+        "Floor 2 west wing",
+        "Floor 3 east wing",
+        "Floor 3 west wing"
+      ],
+      "connection_path": "Each splitter takes its input from the vertical riser and provides separate outputs to the east- and west-wing branches on that floor.",
+      "design_rationale": "The floor-by-floor split matches the six-zone layout and keeps the branches distinct for balancing and troubleshooting."
+    },
+    {
+      "component_name": "Wing feeder branches",
+      "component_type": "Coaxial feeders and directional taps",
+      "served_zones": [
+        "Floor 1 east wing",
+        "Floor 1 west wing",
+        "Floor 2 east wing",
+        "Floor 2 west wing",
+        "Floor 3 east wing",
+        "Floor 3 west wing"
+      ],
+      "connection_path": "Each branch runs from a floor splitter along its wing and connects to three ceiling antennas through feeder sections and directional taps.",
+      "design_rationale": "Separate east- and west-wing runs follow the coverage zones; the branch loss estimates account for the associated passive components."
+    },
+    {
+      "component_name": "Ceiling antenna groups",
+      "component_type": "Indoor antennas",
+      "served_zones": [
+        "Floor 1 east wing",
+        "Floor 1 west wing",
+        "Floor 2 east wing",
+        "Floor 2 west wing",
+        "Floor 3 east wing",
+        "Floor 3 west wing"
+      ],
+      "connection_path": "Three antennas per wing connect at the planned tap points on that wing's feeder branch.",
+      "design_rationale": "Distributed antenna locations provide coverage across each wing rather than relying on a single central radiator."
+    }
+  ]
+}

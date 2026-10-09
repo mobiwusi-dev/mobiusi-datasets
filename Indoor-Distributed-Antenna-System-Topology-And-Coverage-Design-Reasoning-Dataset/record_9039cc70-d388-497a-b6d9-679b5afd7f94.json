@@ -1,0 +1,80 @@
+{
+  "design_question": "A two-level underground parking facility has four zones: the north and south areas on B1, and the north and south areas on B2. The target is at least -95 dBm RSRP in 95% of occupied parking areas. A passive source in the riser room provides 17 dBm per band at 850 MHz and 1900 MHz. The planning criterion requires at least 3 dBm at each antenna input, so the maximum permitted passive path loss is 14 dB. The supplied path estimates, including splitters, feeders, and connectors, are 9 dB for B1 north, 11 dB for B1 south, 16 dB for B2 north, and 19 dB for B2 south. Active equipment and additional power are prohibited in the garage, and the source cannot exceed 17 dBm per band. What topology can be laid out, and do the stated constraints permit all four zones to meet the design criterion?",
+  "topology_summary": "A passive star from the riser room can distribute the two bands to separate branches for the four parking zones, with antenna groups placed in each zone. However, the supplied path estimates show that the B2 north and B2 south branches exceed the 14 dB maximum loss by 2 dB and 5 dB, respectively. The passive layout can meet the stated antenna-input criterion for the two B1 branches, but it cannot meet it in all four zones without changing a constraint or reducing the B2 path losses.",
+  "design_conclusion": "The proposed passive star is only partially feasible. The B1 branches meet the 14 dB loss limit, but the B2 north and south branches exceed it, leaving antenna-input levels below the required 3 dBm. As specified, the design cannot satisfy the criterion in all four zones. A compliant conclusion requires reducing B2 path losses to 14 dB or less, or formally changing the no-active-equipment, power, or input-level constraints; coverage must then be verified on site.",
+  "constraint_analysis": [
+    {
+      "constraint": "The source is limited to 17 dBm per band, and each antenna input must receive at least 3 dBm.",
+      "impact": "The maximum allowable loss is 14 dB. B1 north and south meet this criterion, while both B2 paths fall short at their antenna inputs.",
+      "resolution": "Keep the source at its permitted level and treat the supplied path-loss estimates as binding. Increasing source power is not a compliant remedy; the B2 paths need lower loss or a formally revised design constraint."
+    },
+    {
+      "constraint": "The estimated path losses are 9 dB, 11 dB, 16 dB, and 19 dB for B1 north, B1 south, B2 north, and B2 south.",
+      "impact": "The B1 paths leave 8 dBm and 6 dBm at the antenna inputs. The B2 paths leave 1 dBm and -2 dBm, below the 3 dBm minimum by 2 dB and 5 dB.",
+      "resolution": "Retain the B1 branches as planned. For B2, first investigate whether shorter feeder routes or fewer passive losses can bring each path to 14 dB or less. If not, the passive-only and no-additional-power constraints conflict with the required antenna-input level."
+    },
+    {
+      "constraint": "Active equipment and additional power are prohibited in the garage.",
+      "impact": "Remote units or amplifiers cannot be placed near B2 to overcome its excess feeder loss under the current rules.",
+      "resolution": "Consider only passive rerouting or other passive loss reductions within the permitted installation rules. If these cannot reduce B2 losses sufficiently, obtain approval to change an equipment or power constraint before claiming a compliant all-zone design."
+    },
+    {
+      "constraint": "The target is -95 dBm RSRP in 95% of occupied parking areas.",
+      "impact": "Meeting the antenna-input power criterion is necessary for the stated planning approach but does not alone prove the area-level RSRP target, and the B2 input shortfall makes the current design noncompliant even before coverage validation.",
+      "resolution": "Resolve the B2 path-budget failure first, then validate RSRP across all four zones by site survey. Do not treat the passive topology alone as evidence that the 95% coverage target has been achieved."
+    }
+  ],
+  "topology_components": [
+    {
+      "component_name": "Dual-band passive source",
+      "component_type": "RF source",
+      "served_zones": [],
+      "connection_path": "Feeds both bands from the riser room into the passive distribution network.",
+      "design_rationale": "The source is fixed at 17 dBm per band and cannot be increased under the stated equipment constraint."
+    },
+    {
+      "component_name": "Riser-room distribution panel",
+      "component_type": "Passive distribution panel",
+      "served_zones": [
+        "B1 north",
+        "B1 south",
+        "B2 north",
+        "B2 south"
+      ],
+      "connection_path": "Connects the source to four zone-specific feeder branches routed from the riser room to B1 and B2.",
+      "design_rationale": "A star arrangement makes each zone's path identifiable and allows its loss to be compared directly with the 14 dB criterion."
+    },
+    {
+      "component_name": "B1 feeder branches",
+      "component_type": "Coaxial feeders and passive splitters",
+      "served_zones": [
+        "B1 north",
+        "B1 south"
+      ],
+      "connection_path": "Two separate branches run from the distribution panel to the B1 north and south antenna groups.",
+      "design_rationale": "The stated 9 dB and 11 dB path losses are below the 14 dB limit, leaving 8 dBm and 6 dBm, respectively, at the antenna inputs under the supplied source level."
+    },
+    {
+      "component_name": "B2 feeder branches",
+      "component_type": "Coaxial feeders and passive splitters",
+      "served_zones": [
+        "B2 north",
+        "B2 south"
+      ],
+      "connection_path": "Two separate branches run from the distribution panel to the B2 north and south antenna groups.",
+      "design_rationale": "The branches preserve zone separation, but their stated 16 dB and 19 dB path losses exceed the permitted loss and therefore do not meet the antenna-input criterion as currently routed."
+    },
+    {
+      "component_name": "Parking-zone antenna groups",
+      "component_type": "Indoor antennas",
+      "served_zones": [
+        "B1 north",
+        "B1 south",
+        "B2 north",
+        "B2 south"
+      ],
+      "connection_path": "Each group connects to its corresponding zone feeder branch and distributes the signal within that parking area.",
+      "design_rationale": "Separate antenna groups align with the four defined coverage zones. Their placement can be optimized, but it cannot compensate for an antenna-input level below the stated criterion."
+    }
+  ]
+}

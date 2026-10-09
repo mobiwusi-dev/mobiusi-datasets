@@ -1,0 +1,93 @@
+{
+  "design_question": "A 120 m by 80 m warehouse has four coverage zones: the loading dock, north rack aisles, south rack aisles, and packing and office area. The target is at least -95 dBm RSRP and 5 dB SINR in occupied work areas. A digital DAS headend can connect to four remote units and supports the required 700 MHz, 1800 MHz, and 3500 MHz bands. The proposed fiber routes from the headend to four mounting points are each under 300 m; the specified system supports up to 1 km per link. AC power is available at those four points, but not along the rack aisles. Each remote unit can feed a local antenna group, and the planned coax runs from each unit to its antennas are no longer than 45 m with estimated loss no greater than 6 dB. How should the zones be served, and how do the route and equipment constraints affect the choice?",
+  "topology_summary": "Use a fiber-fed active DAS with one remote unit at each of the four zone mounting points. Carry the supported bands over fiber from the headend, then use short local coax branches from each remote unit to antennas positioned for its zone. The four remote-unit limit, available power points, fiber distances, and local coax-loss estimates align with this arrangement. Coverage performance remains subject to site validation, particularly in the rack aisles and at the loading dock.",
+  "design_conclusion": "The proposed fiber-fed topology is feasible with the stated hardware and installation constraints: four remotes serve four zones, all fiber routes are within the link limit, and local coax runs meet the stated limits. The -95 dBm RSRP and 5 dB SINR targets still require site-specific validation. The design has no spare remote-unit capacity, so any additional zone or active-node requirement would trigger a topology review.",
+  "constraint_analysis": [
+    {
+      "constraint": "The system supports four remote units and there are four defined coverage zones.",
+      "impact": "There is no spare remote-unit capacity for adding another independent zone without changing the equipment arrangement.",
+      "resolution": "Assign one remote unit to each zone. If later survey results require a separate additional coverage area, reassess the remote capacity and fiber plan rather than silently sharing a unit beyond its design assumptions."
+    },
+    {
+      "constraint": "Each fiber route is under 300 m, while the system link limit is 1 km.",
+      "impact": "The stated routes are within the specified fiber-distance limit, so the link distance does not require moving the headend or substituting a long RF feeder.",
+      "resolution": "Use the four fiber routes as planned and verify the installed route lengths and optical link budgets. The fiber-distance margin enables remote placement near the served zones."
+    },
+    {
+      "constraint": "AC power is available only at the four remote mounting points, not along the rack aisles.",
+      "impact": "Powered equipment can be installed at the designated points, but additional active nodes along the aisles cannot be assumed.",
+      "resolution": "Place one remote at each powered point and distribute passively over local coax to the antenna groups. Any need for another active node would require a new power and placement plan."
+    },
+    {
+      "constraint": "Local coax runs are limited to 45 m and estimated to have no more than 6 dB loss.",
+      "impact": "Longer or more lossy runs could reduce the available antenna input level, especially across the warehouse's broad zones.",
+      "resolution": "Keep each remote close enough to its antenna group to meet the stated run and loss limits. The rack-aisle layout and the 3500 MHz band make local route verification important; adjust antenna placement or the remote location if the estimate is exceeded."
+    },
+    {
+      "constraint": "The coverage targets are -95 dBm RSRP and 5 dB SINR in occupied areas.",
+      "impact": "Compliance cannot be concluded from fiber and coax limits alone; propagation, antenna orientation, and interference conditions determine the area-level results.",
+      "resolution": "Commission the four-zone layout with measurements in occupied areas, including representative rack aisles and the dock. Use the results to tune antenna placement and balance, while keeping within the remote, power, and feeder constraints."
+    }
+  ],
+  "topology_components": [
+    {
+      "component_name": "Digital DAS headend",
+      "component_type": "DAS headend and signal interface",
+      "served_zones": [],
+      "connection_path": "Receives the stated source signals and sends the supported bands over four separate fiber links to the zone remote units.",
+      "design_rationale": "The headend supports the required bands and four remotes, matching the number of defined coverage zones."
+    },
+    {
+      "component_name": "Fiber link to loading dock",
+      "component_type": "Optical feeder",
+      "served_zones": [
+        "Loading dock"
+      ],
+      "connection_path": "Runs from the headend to the loading-dock remote unit; the stated route is under 300 m.",
+      "design_rationale": "The route is within the system's 1 km link limit and avoids a long RF coax run back to the headend."
+    },
+    {
+      "component_name": "Fiber links to rack-aisle remotes",
+      "component_type": "Optical feeders",
+      "served_zones": [
+        "North rack aisles",
+        "South rack aisles"
+      ],
+      "connection_path": "Two separate links run from the headend to powered mounting points serving the north and south rack areas.",
+      "design_rationale": "Separate remote locations allow the antenna groups to be placed near their respective aisle zones while preserving fiber distribution from the headend."
+    },
+    {
+      "component_name": "Fiber link to packing and office remote",
+      "component_type": "Optical feeder",
+      "served_zones": [
+        "Packing and office area"
+      ],
+      "connection_path": "Runs from the headend to the remote unit at the powered packing-and-office mounting point.",
+      "design_rationale": "The stated route length is within the supported limit and uses one of the four available remote-unit connections."
+    },
+    {
+      "component_name": "Zone remote units",
+      "component_type": "Active DAS remote units",
+      "served_zones": [
+        "Loading dock",
+        "North rack aisles",
+        "South rack aisles",
+        "Packing and office area"
+      ],
+      "connection_path": "One unit is installed at each zone mounting point, connected upstream by its fiber link and downstream to local coax antenna branches.",
+      "design_rationale": "The four units use the full available remote capacity and place RF distribution close to the areas being covered. Each mounting point has the required AC power."
+    },
+    {
+      "component_name": "Local antenna groups",
+      "component_type": "Indoor antennas and coax feeders",
+      "served_zones": [
+        "Loading dock",
+        "North rack aisles",
+        "South rack aisles",
+        "Packing and office area"
+      ],
+      "connection_path": "Each group connects to its zone remote unit over coax runs no longer than 45 m, with estimated loss no greater than 6 dB.",
+      "design_rationale": "Short local RF runs limit feeder loss. Antenna placement can be tailored to the open dock, aisle geometry, and occupied packing and office space."
+    }
+  ]
+}
