@@ -1,0 +1,11 @@
+{
+  "causal_explanation": "The levee acts as a physical barrier to incoming surge. Its benefit depends on water levels staying within its design capacity and on the structure being maintained; it does not prevent flooding from every source.",
+  "baseline_scenario": "A low-lying coastal district is protected by a maintained levee with no known openings. During a high-tide storm surge, water levels remain below the levee crest, and the event conditions are otherwise unchanged.",
+  "answer": "Under the stated conditions, the district faces greater inundation risk without the levee because surge water has an unobstructed path inland. With the levee intact and not overtopped, direct surge flooding is less likely. Residual risk remains from overtopping, structural failure, rainfall, and drainage limitations.",
+  "question": "How would inundation risk differ if the levee were absent, and what risk would remain with the levee in place?",
+  "risk_change": "Removing the levee increases the likelihood of direct coastal inundation. The protection lowers, but does not eliminate, the baseline risk.",
+  "residual_risk": "Even with the levee, flooding remains possible if water overtops or breaches it, or if rainfall and drainage problems cause water to accumulate behind it.",
+  "counterfactual_scenario": "The same district experiences the same high-tide storm surge, but the levee is absent.",
+  "baseline_inundation_risk": "In the baseline, the levee reduces the likelihood of direct surge flooding across the protected district while water remains below its crest and the structure remains intact.",
+  "counterfactual_inundation_risk": "Without the levee, surge water can enter the low-lying district directly, making inundation more likely and potentially affecting a wider area."
+}

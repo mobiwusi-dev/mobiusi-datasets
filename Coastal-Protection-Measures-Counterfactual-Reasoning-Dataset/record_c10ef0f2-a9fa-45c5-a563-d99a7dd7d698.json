@@ -1,0 +1,11 @@
+{
+  "question": "How would the loss of marsh width and dune continuity affect inundation risk, and what risk remains with the natural features intact?",
+  "answer": "The degraded shoreline is more exposed to overwash and inland flooding because it provides less space to attenuate waves and a less continuous barrier to surge. An intact marsh and dune reduce these pathways, but residual risk remains during severe events and where erosion, overtopping, or breaching occurs.",
+  "risk_change": "Reducing the marsh and breaking up the dune increases inundation risk by weakening natural wave attenuation and removing parts of the shoreline barrier.",
+  "residual_risk": "Even with the marsh and dune intact, sufficiently high water, wave run-up, erosion, or breaching can carry water inland. Their protective effect can also vary with condition and storm intensity.",
+  "baseline_scenario": "A settled coastal reach is fronted by a broad vegetated marsh and a continuous low dune ridge. During a storm, the marsh and dune remain in place, and the surge and tide conditions are held constant.",
+  "causal_explanation": "Vegetated marsh can dissipate wave energy, while a dune ridge can impede overland flow. Narrowing the marsh and lowering or fragmenting the dune reduces these functions; neither feature guarantees protection under all storm conditions.",
+  "counterfactual_scenario": "Under the same storm and tide conditions, the marsh has been substantially narrowed and the dune ridge lowered and fragmented, leaving less natural shoreline protection.",
+  "baseline_inundation_risk": "The intact marsh and dune can reduce wave energy and slow or limit some overland flow, lowering the likelihood or extent of inland inundation compared with a less protective shoreline.",
+  "counterfactual_inundation_risk": "With less marsh and a lower, fragmented dune, waves and surge have less natural attenuation and more direct pathways inland, increasing the potential for overwash and flooding."
+}

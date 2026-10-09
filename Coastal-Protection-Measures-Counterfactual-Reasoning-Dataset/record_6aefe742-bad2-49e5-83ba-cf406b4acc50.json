@@ -1,0 +1,11 @@
+{
+  "answer": "Compared with normal operation, a gate stuck open gives high-tide seawater a direct route into the drainage channel and raises inundation risk for connected low-lying areas. A functioning gate reduces that backflow, but residual risk remains from extreme water levels, leakage or failure, and rainfall that cannot drain while the gate is closed.",
+  "question": "How does the stuck-open gate change inundation risk compared with normal operation, and what risk remains when the gate works as intended?",
+  "risk_change": "The stuck-open condition increases tidal backflow risk. Normal gate operation reduces this pathway but leaves other flood pathways and operational limitations.",
+  "residual_risk": "A functioning gate cannot eliminate flooding from unusually high water levels, leakage or mechanical failure. While closed, it may also limit outflow from rainfall until the tide falls.",
+  "baseline_scenario": "A coastal neighborhood has a tidal gate at the mouth of its drainage channel. The gate closes during high tide to limit seawater entering the channel and opens as the tide falls; the surrounding drainage system and storm conditions are unchanged.",
+  "causal_explanation": "The gate reduces coastal inflow by closing against the high tide and permits drainage when conditions allow it to open. Its effectiveness depends on reliable operation and suitable timing; it does not independently manage rainfall or all sources of high water.",
+  "counterfactual_scenario": "During the same high tide and storm, the tidal gate is stuck open, allowing seawater to move freely into the drainage channel.",
+  "baseline_inundation_risk": "With the gate operating normally, high-tide seawater is kept out of the drainage channel, reducing the risk of tidal backflow into connected low-lying areas.",
+  "counterfactual_inundation_risk": "With the gate stuck open, seawater can travel inland through the channel during high tide, increasing the chance of flooding in connected low-lying areas."
+}
