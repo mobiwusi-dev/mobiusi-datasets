@@ -1,0 +1,16 @@
+{
+  "location": "East side of the maintenance building roof, near the open edge.",
+  "hazard_source": "An unprotected roof edge and hand tools left close to the edge, creating fall and dropped-object hazards.",
+  "work_activity": "Applying sealant during roof membrane repairs.",
+  "exposed_objects": [
+    "The two workers applying sealant on the roof",
+    "The ground crew working below"
+  ],
+  "control_measures": [
+    "Work was stopped.",
+    "A ground-level exclusion zone was set up.",
+    "A temporary guardrail was required before work resumed.",
+    "Tool lanyards were required before work resumed."
+  ],
+  "observation_text": "During roof membrane repairs on the east side of the maintenance building, two workers were applying sealant near an open roof edge without a guardrail. Hand tools were left close to the edge, and a ground crew was working directly below. The supervisor stopped the work, set up a ground-level exclusion zone, and required a temporary guardrail and tool lanyards before work resumed."
+}

@@ -1,0 +1,15 @@
+{
+  "location": "The loading bay, at the mobile scaffold beside the pedestrian corridor.",
+  "hazard_source": "An unlocked scaffold caster and a missing toe board, creating a risk of scaffold movement and falling objects.",
+  "work_activity": "Replacing a wall-mounted light from a mobile scaffold.",
+  "exposed_objects": [
+    "The technician on the scaffold",
+    "Pedestrians passing beside the scaffold"
+  ],
+  "control_measures": [
+    "The area was closed to foot traffic.",
+    "The scaffold casters were locked.",
+    "The missing toe board was installed before the task continued."
+  ],
+  "observation_text": "A technician was replacing a wall-mounted light from a mobile scaffold in the loading bay. One caster was not locked, and a toe board was missing on the platform facing the pedestrian corridor. Pedestrians were passing beside the scaffold. The area was closed to foot traffic, the scaffold casters were locked, and the missing toe board was installed before the task continued."
+}

@@ -1,0 +1,16 @@
+{
+  "location": "The rooftop of the west production wing, at the extension ladder access point.",
+  "hazard_source": "An unsecured extension ladder with its feet resting on loose packaging, creating a risk of ladder movement and a fall.",
+  "work_activity": "Routing a communication cable across the rooftop using an extension ladder for access.",
+  "exposed_objects": [
+    "The crew routing the cable",
+    "The worker holding the ladder"
+  ],
+  "control_measures": [
+    "The crew was instructed to stop climbing.",
+    "The loose packaging was cleared.",
+    "The ladder was secured at the top.",
+    "A worker held the ladder until the access route was made stable."
+  ],
+  "observation_text": "A crew was routing a communication cable across the rooftop of the west production wing using an extension ladder for access. The ladder was not secured at the top, and its feet were resting on loose packaging. The crew was instructed to stop climbing; the packaging was cleared, the ladder was secured at the top, and a worker held it until the access route was made stable."
+}
