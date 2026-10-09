@@ -1,0 +1,24 @@
+{
+  "tool_call": {
+    "tool_name": "update_clearance_status",
+    "arguments": {
+      "tracking_number": "AXC-90517364",
+      "new_status": "Ready for broker review",
+      "reason": "Consignee tax identification details received, as reported in the request."
+    }
+  },
+  "input_context": {
+    "user_request": "The consignee has provided the requested tax identification details. Update the clearance case so it can proceed to broker review.",
+    "shipment_context": {
+      "tracking_number": "AXC-90517364",
+      "destination_country": "Canada",
+      "declared_items": "Printed product catalogs; 12 copies; total declared value USD 36.00.",
+      "clearance_status": "Customs hold — consignee tax identification details required."
+    },
+    "available_tools": [
+      "validate_customs_documents — check required customs documents for a shipment",
+      "get_customs_declaration — retrieve the filed customs declaration",
+      "update_clearance_status — update a shipment's clearance workflow status"
+    ]
+  }
+}

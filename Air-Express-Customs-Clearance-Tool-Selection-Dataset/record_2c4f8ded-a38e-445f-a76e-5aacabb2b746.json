@@ -1,0 +1,23 @@
+{
+  "tool_call": {
+    "tool_name": "get_customs_declaration",
+    "arguments": {
+      "tracking_number": "AXC-73160428",
+      "destination_country": "Japan"
+    }
+  },
+  "input_context": {
+    "user_request": "Retrieve the declaration currently filed for this shipment so I can review its declared product lines and values.",
+    "shipment_context": {
+      "tracking_number": "AXC-73160428",
+      "destination_country": "Japan",
+      "declared_items": "Replacement ceramic pump cartridges; 6 units; unit value USD 42.00; total declared value USD 252.00.",
+      "clearance_status": "Declaration accepted; awaiting customs assessment."
+    },
+    "available_tools": [
+      "validate_customs_documents — check required customs documents for a shipment",
+      "get_customs_declaration — retrieve the filed customs declaration",
+      "update_clearance_status — update a shipment's clearance workflow status"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_call": {
+    "tool_name": "validate_customs_documents",
+    "arguments": {
+      "tracking_number": "AXC-48271936",
+      "destination_country": "Germany",
+      "document_types": [
+        "commercial_invoice",
+        "air_waybill"
+      ],
+      "validation_scope": "Check document availability and completeness for customs review"
+    }
+  },
+  "input_context": {
+    "user_request": "Check whether the customs documents for this shipment are available and complete for review. Flag any missing required document types.",
+    "shipment_context": {
+      "tracking_number": "AXC-48271936",
+      "destination_country": "Germany",
+      "declared_items": "Stainless-steel insulated bottles; 24 units; unit value USD 18.50; total declared value USD 444.00.",
+      "clearance_status": "Documents submitted; customs review pending."
+    },
+    "available_tools": [
+      "validate_customs_documents — check required customs documents for a shipment",
+      "get_customs_declaration — retrieve the filed customs declaration",
+      "update_clearance_status — update a shipment's clearance workflow status"
+    ]
+  }
+}
