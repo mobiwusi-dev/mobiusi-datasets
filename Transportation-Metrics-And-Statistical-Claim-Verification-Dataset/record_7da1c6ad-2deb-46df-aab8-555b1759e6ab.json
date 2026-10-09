@@ -1,0 +1,14 @@
+{
+  "unit": "minutes",
+  "claim_text": "Average peak-period trip duration for Alderwick residents was 22 minutes in 2022.",
+  "metric_name": "Average peak-period trip duration",
+  "source_text": "2022 Mobility Monitoring Report — Alderwick. The summary states that average peak-period trip duration was 22 minutes. Table 6, using the same measure—the mean door-to-door duration for trips beginning between 7:00 and 9:00 a.m., all modes combined—reports 26.7 minutes for Alderwick residents. The report notes that both figures cover the same survey wave.",
+  "evidence_quote": "Table 6, using the same measure—the mean door-to-door duration for trips beginning between 7:00 and 9:00 a.m., all modes combined—reports 26.7 minutes for Alderwick residents.",
+  "transport_mode": "All modes",
+  "statistic_value": 22,
+  "geographic_scope": "Alderwick",
+  "reference_period": "2022",
+  "metric_definition": "Mean door-to-door duration for trips beginning between 7:00 and 9:00 a.m., all modes combined.",
+  "verification_label": "矛盾",
+  "verification_rationale": "The table reports 26.7 minutes for the same measure, population, and survey wave, which conflicts with the claim's value of 22 minutes."
+}

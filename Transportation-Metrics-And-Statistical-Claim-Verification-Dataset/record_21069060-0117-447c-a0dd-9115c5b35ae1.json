@@ -1,0 +1,14 @@
+{
+  "unit": "million vehicle-kilometers",
+  "claim_text": "Annual vehicle-kilometers traveled on the South Quay corridor totaled 1.8 million.",
+  "metric_name": "Vehicle-kilometers traveled",
+  "source_text": "Northmere Transport Strategy, corridor appendix. The text lists 1.8 million vehicle-kilometers for the South Quay corridor. The period cell beside the figure is blank, and the methodology note says the table does not identify whether values are daily, annual, or cumulative. Vehicle-kilometers are defined as the sum of distances traveled by motor vehicles within the corridor.",
+  "evidence_quote": "The text lists 1.8 million vehicle-kilometers for the South Quay corridor. The period cell beside the figure is blank, and the methodology note says the table does not identify whether values are daily, annual, or cumulative.",
+  "transport_mode": "Motor vehicles",
+  "statistic_value": 1.8,
+  "geographic_scope": "South Quay corridor",
+  "reference_period": "Not specified in the source; annual in the claim",
+  "metric_definition": "Sum of distances traveled by motor vehicles within the corridor; the source does not specify the aggregation period.",
+  "verification_label": "证据不足",
+  "verification_rationale": "The source gives the figure and corridor but does not identify its time basis, so it cannot establish that the amount is annual."
+}

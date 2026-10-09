@@ -1,0 +1,14 @@
+{
+  "unit": "%",
+  "claim_text": "In 2023, public transport accounted for 28.4% of all average-weekday person trips made by Merefield District residents.",
+  "metric_name": "Public transport mode share",
+  "source_text": "2023 Household Travel Survey — Merefield District. On an average weekday, public transport accounted for 28.4% of all person trips made by district residents. The denominator includes trips by all listed modes, and each trip is counted once by its primary mode.",
+  "evidence_quote": "On an average weekday, public transport accounted for 28.4% of all person trips made by district residents.",
+  "transport_mode": "Public transport",
+  "statistic_value": 28.4,
+  "geographic_scope": "Merefield District",
+  "reference_period": "2023 (average weekday)",
+  "metric_definition": "Share of all average-weekday person trips made by district residents, with each trip counted once by its primary mode.",
+  "verification_label": "支持",
+  "verification_rationale": "The source states the same percentage, time basis, population, and transport mode as the claim."
+}
