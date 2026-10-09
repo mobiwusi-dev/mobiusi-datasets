@@ -1,0 +1,43 @@
+{
+  "raw_trace": "{\"messages\":[{\"role\":\"user\",\"content\":\"Please cancel my tablet order T-93106.\"},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"lookup_order\",\"arguments\":{\"order_reference\":\"T-93106\"}}},{\"role\":\"tool\",\"name\":\"lookup_order\",\"content\":{\"order_reference\":\"T-93106\",\"product_category\":\"tablet\",\"order_status\":\"Processing\",\"cancellation_eligible\":true}},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"cancel_order\",\"arguments\":{\"order_reference\":\"T-93106\"}}},{\"role\":\"tool\",\"name\":\"cancel_order\",\"content\":{\"success\":true,\"order_status\":\"Cancelled\",\"message\":\"Cancellation confirmed.\"}},{\"role\":\"assistant\",\"content\":\"Your tablet order T-93106 has been cancelled.\"}]}",
+  "tool_calls": [
+    {
+      "sequence": 0,
+      "tool_name": "lookup_order",
+      "tool_input": {
+        "order_reference": "T-93106"
+      },
+      "tool_result": {
+        "order_reference": "T-93106",
+        "product_category": "tablet",
+        "order_status": "Processing",
+        "cancellation_eligible": true
+      },
+      "next_decision": "The order is still processing and is eligible for cancellation, so proceed with the requested cancellation."
+    },
+    {
+      "sequence": 1,
+      "tool_name": "cancel_order",
+      "tool_input": {
+        "order_reference": "T-93106"
+      },
+      "tool_result": {
+        "success": true,
+        "order_status": "Cancelled",
+        "message": "Cancellation confirmed."
+      },
+      "next_decision": "The cancellation succeeded; confirm the updated order status to the user."
+    }
+  ],
+  "stop_reason": null,
+  "final_status": "completed",
+  "request_type": "order_change_request",
+  "user_request": "Please cancel my tablet order T-93106.",
+  "order_context": {
+    "order_reference": "T-93106",
+    "product_category": "tablet",
+    "order_status": "Cancelled"
+  },
+  "assistant_response": "Your tablet order T-93106 has been cancelled.",
+  "trajectory_summary": "The assistant confirmed that the tablet order was processing and eligible for cancellation, submitted the cancellation, and reported the confirmed cancelled status."
+}

@@ -1,0 +1,42 @@
+{
+  "raw_trace": "{\"messages\":[{\"role\":\"user\",\"content\":\"Could you check the delivery progress for order R-48271? It is the laptop I ordered.\"},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"lookup_order\",\"arguments\":{\"order_reference\":\"R-48271\"}}},{\"role\":\"tool\",\"name\":\"lookup_order\",\"content\":{\"order_reference\":\"R-48271\",\"product_category\":\"computer\",\"order_status\":\"Dispatched\"}},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"get_shipment_status\",\"arguments\":{\"order_reference\":\"R-48271\"}}},{\"role\":\"tool\",\"name\":\"get_shipment_status\",\"content\":{\"shipment_status\":\"In transit\",\"latest_event\":\"Arrived at regional sorting center\",\"estimated_delivery_window\":\"Thursday\"}},{\"role\":\"assistant\",\"content\":\"Your laptop order R-48271 is in transit. The latest tracking update shows that it has arrived at a regional sorting center, with delivery estimated for Thursday.\"}]}",
+  "tool_calls": [
+    {
+      "sequence": 0,
+      "tool_name": "lookup_order",
+      "tool_input": {
+        "order_reference": "R-48271"
+      },
+      "tool_result": {
+        "order_reference": "R-48271",
+        "product_category": "computer",
+        "order_status": "Dispatched"
+      },
+      "next_decision": "The order is dispatched, so retrieve its latest shipment tracking information before responding."
+    },
+    {
+      "sequence": 1,
+      "tool_name": "get_shipment_status",
+      "tool_input": {
+        "order_reference": "R-48271"
+      },
+      "tool_result": {
+        "shipment_status": "In transit",
+        "latest_event": "Arrived at regional sorting center",
+        "estimated_delivery_window": "Thursday"
+      },
+      "next_decision": "Report the current shipment status, latest event, and estimated delivery window; no further tool call is needed."
+    }
+  ],
+  "stop_reason": null,
+  "final_status": "completed",
+  "request_type": "order_status_query",
+  "user_request": "Could you check the delivery progress for order R-48271? It is the laptop I ordered.",
+  "order_context": {
+    "order_reference": "R-48271",
+    "product_category": "computer",
+    "order_status": "In transit"
+  },
+  "assistant_response": "Your laptop order R-48271 is in transit. The latest tracking update shows that it has arrived at a regional sorting center, with delivery estimated for Thursday.",
+  "trajectory_summary": "The assistant looked up the computer order, then retrieved its shipment details and relayed the in-transit status and estimated delivery window."
+}

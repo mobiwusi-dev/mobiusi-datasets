@@ -1,0 +1,43 @@
+{
+  "raw_trace": "{\"messages\":[{\"role\":\"user\",\"content\":\"Please change the delivery address for tablet order P-60834 to 18 Cedar Walk, Unit 4, Northbridge.\"},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"lookup_order\",\"arguments\":{\"order_reference\":\"P-60834\"}}},{\"role\":\"tool\",\"name\":\"lookup_order\",\"content\":{\"order_reference\":\"P-60834\",\"product_category\":\"tablet\",\"order_status\":\"Shipped\"}},{\"role\":\"assistant\",\"tool_call\":{\"name\":\"check_change_eligibility\",\"arguments\":{\"order_reference\":\"P-60834\",\"change_type\":\"delivery_address\",\"requested_address\":\"18 Cedar Walk, Unit 4, Northbridge\"}}},{\"role\":\"tool\",\"name\":\"check_change_eligibility\",\"content\":{\"eligible\":false,\"reason\":\"Address changes are unavailable after carrier handoff.\"}},{\"role\":\"assistant\",\"content\":\"I could not change the delivery address for order P-60834. The tablet has already shipped, and address changes are unavailable after carrier handoff. No change was made.\"}]}",
+  "tool_calls": [
+    {
+      "sequence": 0,
+      "tool_name": "lookup_order",
+      "tool_input": {
+        "order_reference": "P-60834"
+      },
+      "tool_result": {
+        "order_reference": "P-60834",
+        "product_category": "tablet",
+        "order_status": "Shipped"
+      },
+      "next_decision": "Confirm the order and its fulfillment status before evaluating whether the requested address change is allowed."
+    },
+    {
+      "sequence": 1,
+      "tool_name": "check_change_eligibility",
+      "tool_input": {
+        "order_reference": "P-60834",
+        "change_type": "delivery_address",
+        "requested_address": "18 Cedar Walk, Unit 4, Northbridge"
+      },
+      "tool_result": {
+        "eligible": false,
+        "reason": "Address changes are unavailable after carrier handoff."
+      },
+      "next_decision": "Do not attempt the address update; explain that the order has shipped and the requested change is unavailable."
+    }
+  ],
+  "stop_reason": "The order has been handed to the carrier, and the change-eligibility result disallows delivery-address updates.",
+  "final_status": "blocked",
+  "request_type": "order_change_request",
+  "user_request": "Please change the delivery address for tablet order P-60834 to 18 Cedar Walk, Unit 4, Northbridge.",
+  "order_context": {
+    "order_reference": "P-60834",
+    "product_category": "tablet",
+    "order_status": "Shipped"
+  },
+  "assistant_response": "I could not change the delivery address for order P-60834. The tablet has already shipped, and address changes are unavailable after carrier handoff. No change was made.",
+  "trajectory_summary": "The assistant confirmed that the tablet order had shipped, checked address-change eligibility, and stopped without attempting a prohibited update."
+}
