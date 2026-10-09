@@ -1,0 +1,103 @@
+{
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "tool_name": "find_reefer_vehicles",
+      "arguments": {
+        "order_id": "CT-77106",
+        "pickup_location": "Pinewater Freezer Cooperative, North Vale",
+        "required_temp_min_c": -22,
+        "required_temp_max_c": -18,
+        "load_weight_kg": 7200
+      },
+      "result": {
+        "candidates": [
+          {
+            "vehicle_id": "FR-508",
+            "payload_capacity_kg": 9000,
+            "reefer_range_c": [
+              -25,
+              -15
+            ],
+            "available_from": "2026-05-19 08:00 local"
+          }
+        ],
+        "selected_vehicle_id": "FR-508"
+      },
+      "success": true
+    },
+    {
+      "sequence": 2,
+      "tool_name": "check_driver_availability",
+      "arguments": {
+        "pickup_location": "Pinewater Freezer Cooperative, North Vale",
+        "start_time": "2026-05-19 09:00 local",
+        "estimated_duration_minutes": 370
+      },
+      "result": {
+        "available_drivers": [
+          {
+            "driver_id": "DR-126",
+            "shift_start": "2026-05-19 08:00 local",
+            "shift_end": "2026-05-19 17:00 local",
+            "qualified_for_refrigerated_loads": true
+          }
+        ],
+        "selected_driver_id": "DR-126"
+      },
+      "success": true
+    },
+    {
+      "sequence": 3,
+      "tool_name": "plan_route",
+      "arguments": {
+        "origin": "Pinewater Freezer Cooperative, North Vale",
+        "destination": "Eastfield Frozen Goods Distribution Center",
+        "departure_time": "2026-05-19 09:00 local"
+      },
+      "result": {
+        "route_summary": "Take the North Vale Connector south, then the Eastfield Bypass to the frozen-goods receiving gate; approximately 362 km.",
+        "estimated_duration_minutes": 370,
+        "estimated_arrival_time": "2026-05-19 15:10 local"
+      },
+      "success": true
+    },
+    {
+      "sequence": 4,
+      "tool_name": "reserve_dispatch",
+      "arguments": {
+        "order_id": "CT-77106",
+        "vehicle_id": "FR-508",
+        "driver_id": "DR-126",
+        "departure_time": "2026-05-19 09:00 local",
+        "temperature_setpoint_c": -20
+      },
+      "result": {
+        "reservation_status": "confirmed",
+        "vehicle_id": "FR-508",
+        "driver_id": "DR-126"
+      },
+      "success": true
+    }
+  ],
+  "dispatch_plan": {
+    "vehicle_id": "FR-508",
+    "driver_id": "DR-126",
+    "route_summary": "Take the North Vale Connector south, then the Eastfield Bypass to the frozen-goods receiving gate; approximately 362 km.",
+    "planned_departure_time": "2026-05-19 09:00 local",
+    "estimated_arrival_time": "2026-05-19 15:10 local",
+    "temperature_setpoint_c": -20,
+    "feasible": true
+  },
+  "raw_tool_trace": "{\"request\":{\"order_id\":\"CT-77106\",\"cargo_description\":\"Frozen raspberries\",\"cargo_temp_min_c\":-22,\"cargo_temp_max_c\":-18,\"pickup_location\":\"Pinewater Freezer Cooperative, North Vale\",\"delivery_location\":\"Eastfield Frozen Goods Distribution Center\",\"delivery_deadline\":\"2026-05-19 18:30 local\",\"load_weight_kg\":7200},\"tool_calls\":[{\"sequence\":1,\"tool_name\":\"find_reefer_vehicles\",\"arguments\":{\"order_id\":\"CT-77106\",\"pickup_location\":\"Pinewater Freezer Cooperative, North Vale\",\"required_temp_min_c\":-22,\"required_temp_max_c\":-18,\"load_weight_kg\":7200},\"result\":{\"candidates\":[{\"vehicle_id\":\"FR-508\",\"payload_capacity_kg\":9000,\"reefer_range_c\":[-25,-15],\"available_from\":\"2026-05-19 08:00 local\"}],\"selected_vehicle_id\":\"FR-508\"},\"success\":true},{\"sequence\":2,\"tool_name\":\"check_driver_availability\",\"arguments\":{\"pickup_location\":\"Pinewater Freezer Cooperative, North Vale\",\"start_time\":\"2026-05-19 09:00 local\",\"estimated_duration_minutes\":370},\"result\":{\"available_drivers\":[{\"driver_id\":\"DR-126\",\"shift_start\":\"2026-05-19 08:00 local\",\"shift_end\":\"2026-05-19 17:00 local\",\"qualified_for_refrigerated_loads\":true}],\"selected_driver_id\":\"DR-126\"},\"success\":true},{\"sequence\":3,\"tool_name\":\"plan_route\",\"arguments\":{\"origin\":\"Pinewater Freezer Cooperative, North Vale\",\"destination\":\"Eastfield Frozen Goods Distribution Center\",\"departure_time\":\"2026-05-19 09:00 local\"},\"result\":{\"route_summary\":\"Take the North Vale Connector south, then the Eastfield Bypass to the frozen-goods receiving gate; approximately 362 km.\",\"estimated_duration_minutes\":370,\"estimated_arrival_time\":\"2026-05-19 15:10 local\"},\"success\":true},{\"sequence\":4,\"tool_name\":\"reserve_dispatch\",\"arguments\":{\"order_id\":\"CT-77106\",\"vehicle_id\":\"FR-508\",\"driver_id\":\"DR-126\",\"departure_time\":\"2026-05-19 09:00 local\",\"temperature_setpoint_c\":-20},\"result\":{\"reservation_status\":\"confirmed\",\"vehicle_id\":\"FR-508\",\"driver_id\":\"DR-126\"},\"success\":true}],\"final\":\"Dispatch confirmed for CT-77106. FR-508 can carry the 7,200 kg load and maintain the -20 C setpoint. DR-126 is available for the trip, with an estimated arrival at 15:10, before the 18:30 deadline.\"}",
+  "dispatch_result": "Dispatch confirmed. The vehicle has sufficient payload capacity and can maintain the -20 C setpoint within the cargo's -22 to -18 C range. The driver is available, and the route estimate meets the delivery deadline.",
+  "order_requirements": {
+    "order_id": "CT-77106",
+    "cargo_description": "Frozen raspberries",
+    "cargo_temp_min_c": -22,
+    "cargo_temp_max_c": -18,
+    "pickup_location": "Pinewater Freezer Cooperative, North Vale",
+    "delivery_location": "Eastfield Frozen Goods Distribution Center",
+    "delivery_deadline": "2026-05-19 18:30 local"
+  }
+}

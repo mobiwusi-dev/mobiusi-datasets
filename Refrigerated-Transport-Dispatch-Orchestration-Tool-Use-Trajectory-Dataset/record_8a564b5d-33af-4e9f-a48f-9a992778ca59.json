@@ -1,0 +1,103 @@
+{
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "tool_name": "find_reefer_vehicles",
+      "arguments": {
+        "order_id": "CT-90542",
+        "pickup_location": "Willowbend Leafy Greens Packing House",
+        "required_temp_min_c": 3,
+        "required_temp_max_c": 7,
+        "load_weight_kg": 5600
+      },
+      "result": {
+        "candidates": [
+          {
+            "vehicle_id": "RF-332",
+            "payload_capacity_kg": 8000,
+            "reefer_range_c": [
+              2,
+              8
+            ],
+            "available_from": "2026-05-20 03:30 local"
+          }
+        ],
+        "selected_vehicle_id": "RF-332"
+      },
+      "success": true
+    },
+    {
+      "sequence": 2,
+      "tool_name": "check_driver_availability",
+      "arguments": {
+        "pickup_location": "Willowbend Leafy Greens Packing House",
+        "start_time": "2026-05-20 04:10 local",
+        "estimated_duration_minutes": 145
+      },
+      "result": {
+        "available_drivers": [
+          {
+            "driver_id": "DR-204",
+            "shift_start": "2026-05-20 03:30 local",
+            "shift_end": "2026-05-20 12:00 local",
+            "qualified_for_refrigerated_loads": true
+          }
+        ],
+        "selected_driver_id": "DR-204"
+      },
+      "success": true
+    },
+    {
+      "sequence": 3,
+      "tool_name": "plan_route",
+      "arguments": {
+        "origin": "Willowbend Leafy Greens Packing House",
+        "destination": "Market Row Cross-Dock, Larkspur District",
+        "departure_time": "2026-05-20 04:10 local"
+      },
+      "result": {
+        "route_summary": "Follow Farm Access Road east to the Larkspur Ring Road, then use the Market Row freight entrance; approximately 176 km.",
+        "estimated_duration_minutes": 145,
+        "estimated_arrival_time": "2026-05-20 06:35 local"
+      },
+      "success": true
+    },
+    {
+      "sequence": 4,
+      "tool_name": "reserve_dispatch",
+      "arguments": {
+        "order_id": "CT-90542",
+        "vehicle_id": "RF-332",
+        "driver_id": "DR-204",
+        "departure_time": "2026-05-20 04:10 local",
+        "temperature_setpoint_c": 5
+      },
+      "result": {
+        "reservation_status": "confirmed",
+        "vehicle_id": "RF-332",
+        "driver_id": "DR-204"
+      },
+      "success": true
+    }
+  ],
+  "dispatch_plan": {
+    "vehicle_id": "RF-332",
+    "driver_id": "DR-204",
+    "route_summary": "Follow Farm Access Road east to the Larkspur Ring Road, then use the Market Row freight entrance; approximately 176 km.",
+    "planned_departure_time": "2026-05-20 04:10 local",
+    "estimated_arrival_time": "2026-05-20 06:35 local",
+    "temperature_setpoint_c": 5,
+    "feasible": true
+  },
+  "raw_tool_trace": "{\"request\":{\"order_id\":\"CT-90542\",\"cargo_description\":\"Washed baby spinach and mixed leafy greens\",\"cargo_temp_min_c\":3,\"cargo_temp_max_c\":7,\"pickup_location\":\"Willowbend Leafy Greens Packing House\",\"delivery_location\":\"Market Row Cross-Dock, Larkspur District\",\"delivery_deadline\":\"2026-05-20 06:00-07:30 local\",\"load_weight_kg\":5600},\"tool_calls\":[{\"sequence\":1,\"tool_name\":\"find_reefer_vehicles\",\"arguments\":{\"order_id\":\"CT-90542\",\"pickup_location\":\"Willowbend Leafy Greens Packing House\",\"required_temp_min_c\":3,\"required_temp_max_c\":7,\"load_weight_kg\":5600},\"result\":{\"candidates\":[{\"vehicle_id\":\"RF-332\",\"payload_capacity_kg\":8000,\"reefer_range_c\":[2,8],\"available_from\":\"2026-05-20 03:30 local\"}],\"selected_vehicle_id\":\"RF-332\"},\"success\":true},{\"sequence\":2,\"tool_name\":\"check_driver_availability\",\"arguments\":{\"pickup_location\":\"Willowbend Leafy Greens Packing House\",\"start_time\":\"2026-05-20 04:10 local\",\"estimated_duration_minutes\":145},\"result\":{\"available_drivers\":[{\"driver_id\":\"DR-204\",\"shift_start\":\"2026-05-20 03:30 local\",\"shift_end\":\"2026-05-20 12:00 local\",\"qualified_for_refrigerated_loads\":true}],\"selected_driver_id\":\"DR-204\"},\"success\":true},{\"sequence\":3,\"tool_name\":\"plan_route\",\"arguments\":{\"origin\":\"Willowbend Leafy Greens Packing House\",\"destination\":\"Market Row Cross-Dock, Larkspur District\",\"departure_time\":\"2026-05-20 04:10 local\"},\"result\":{\"route_summary\":\"Follow Farm Access Road east to the Larkspur Ring Road, then use the Market Row freight entrance; approximately 176 km.\",\"estimated_duration_minutes\":145,\"estimated_arrival_time\":\"2026-05-20 06:35 local\"},\"success\":true},{\"sequence\":4,\"tool_name\":\"reserve_dispatch\",\"arguments\":{\"order_id\":\"CT-90542\",\"vehicle_id\":\"RF-332\",\"driver_id\":\"DR-204\",\"departure_time\":\"2026-05-20 04:10 local\",\"temperature_setpoint_c\":5},\"result\":{\"reservation_status\":\"confirmed\",\"vehicle_id\":\"RF-332\",\"driver_id\":\"DR-204\"},\"success\":true}],\"final\":\"Dispatch confirmed for CT-90542. RF-332 and DR-204 are assigned to depart at 04:10. Set the reefer to 5 C; the 06:35 arrival estimate falls within the 06:00-07:30 delivery window.\"}",
+  "dispatch_result": "Dispatch confirmed. The selected vehicle has adequate capacity and a reefer range that includes the 5 C setpoint. The assigned driver is available, and the estimated arrival falls within the delivery window.",
+  "order_requirements": {
+    "order_id": "CT-90542",
+    "cargo_description": "Washed baby spinach and mixed leafy greens",
+    "cargo_temp_min_c": 3,
+    "cargo_temp_max_c": 7,
+    "pickup_location": "Willowbend Leafy Greens Packing House",
+    "delivery_location": "Market Row Cross-Dock, Larkspur District",
+    "delivery_deadline": "2026-05-20 06:00-07:30 local"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "tool_name": "find_reefer_vehicles",
+      "arguments": {
+        "order_id": "CT-64018",
+        "pickup_location": "Pier 6 Chilled Cargo Depot, Port Alder",
+        "required_temp_min_c": 0,
+        "required_temp_max_c": 2,
+        "load_weight_kg": 2400
+      },
+      "result": {
+        "candidates": [
+          {
+            "vehicle_id": "RF-214",
+            "payload_capacity_kg": 12000,
+            "reefer_range_c": [
+              -2,
+              6
+            ],
+            "available_from": "2026-05-18 07:30 local"
+          }
+        ],
+        "selected_vehicle_id": "RF-214"
+      },
+      "success": true
+    },
+    {
+      "sequence": 2,
+      "tool_name": "check_driver_availability",
+      "arguments": {
+        "pickup_location": "Pier 6 Chilled Cargo Depot, Port Alder",
+        "start_time": "2026-05-18 08:15 local",
+        "estimated_duration_minutes": 200
+      },
+      "result": {
+        "available_drivers": [
+          {
+            "driver_id": "DR-083",
+            "shift_start": "2026-05-18 06:00 local",
+            "shift_end": "2026-05-18 16:00 local",
+            "qualified_for_refrigerated_loads": true
+          }
+        ],
+        "selected_driver_id": "DR-083"
+      },
+      "success": true
+    },
+    {
+      "sequence": 3,
+      "tool_name": "plan_route",
+      "arguments": {
+        "origin": "Pier 6 Chilled Cargo Depot, Port Alder",
+        "destination": "Cedar Ridge Grocery Distribution Center, Bellhaven",
+        "departure_time": "2026-05-18 08:15 local"
+      },
+      "result": {
+        "route_summary": "Coastal Freightway eastbound, then Route 8 north to Bellhaven; approximately 214 km.",
+        "estimated_duration_minutes": 200,
+        "estimated_arrival_time": "2026-05-18 11:35 local"
+      },
+      "success": true
+    },
+    {
+      "sequence": 4,
+      "tool_name": "reserve_dispatch",
+      "arguments": {
+        "order_id": "CT-64018",
+        "vehicle_id": "RF-214",
+        "driver_id": "DR-083",
+        "departure_time": "2026-05-18 08:15 local",
+        "temperature_setpoint_c": 1
+      },
+      "result": {
+        "reservation_status": "confirmed",
+        "vehicle_id": "RF-214",
+        "driver_id": "DR-083"
+      },
+      "success": true
+    }
+  ],
+  "dispatch_plan": {
+    "vehicle_id": "RF-214",
+    "driver_id": "DR-083",
+    "route_summary": "Coastal Freightway eastbound, then Route 8 north to Bellhaven; approximately 214 km.",
+    "planned_departure_time": "2026-05-18 08:15 local",
+    "estimated_arrival_time": "2026-05-18 11:35 local",
+    "temperature_setpoint_c": 1,
+    "feasible": true
+  },
+  "raw_tool_trace": "{\"request\":{\"order_id\":\"CT-64018\",\"cargo_description\":\"Fresh Atlantic salmon fillets\",\"cargo_temp_min_c\":0,\"cargo_temp_max_c\":2,\"pickup_location\":\"Pier 6 Chilled Cargo Depot, Port Alder\",\"delivery_location\":\"Cedar Ridge Grocery Distribution Center, Bellhaven\",\"delivery_deadline\":\"2026-05-18 14:00 local\",\"load_weight_kg\":2400},\"tool_calls\":[{\"sequence\":1,\"tool_name\":\"find_reefer_vehicles\",\"arguments\":{\"order_id\":\"CT-64018\",\"pickup_location\":\"Pier 6 Chilled Cargo Depot, Port Alder\",\"required_temp_min_c\":0,\"required_temp_max_c\":2,\"load_weight_kg\":2400},\"result\":{\"candidates\":[{\"vehicle_id\":\"RF-214\",\"payload_capacity_kg\":12000,\"reefer_range_c\":[-2,6],\"available_from\":\"2026-05-18 07:30 local\"}],\"selected_vehicle_id\":\"RF-214\"},\"success\":true},{\"sequence\":2,\"tool_name\":\"check_driver_availability\",\"arguments\":{\"pickup_location\":\"Pier 6 Chilled Cargo Depot, Port Alder\",\"start_time\":\"2026-05-18 08:15 local\",\"estimated_duration_minutes\":200},\"result\":{\"available_drivers\":[{\"driver_id\":\"DR-083\",\"shift_start\":\"2026-05-18 06:00 local\",\"shift_end\":\"2026-05-18 16:00 local\",\"qualified_for_refrigerated_loads\":true}],\"selected_driver_id\":\"DR-083\"},\"success\":true},{\"sequence\":3,\"tool_name\":\"plan_route\",\"arguments\":{\"origin\":\"Pier 6 Chilled Cargo Depot, Port Alder\",\"destination\":\"Cedar Ridge Grocery Distribution Center, Bellhaven\",\"departure_time\":\"2026-05-18 08:15 local\"},\"result\":{\"route_summary\":\"Coastal Freightway eastbound, then Route 8 north to Bellhaven; approximately 214 km.\",\"estimated_duration_minutes\":200,\"estimated_arrival_time\":\"2026-05-18 11:35 local\"},\"success\":true},{\"sequence\":4,\"tool_name\":\"reserve_dispatch\",\"arguments\":{\"order_id\":\"CT-64018\",\"vehicle_id\":\"RF-214\",\"driver_id\":\"DR-083\",\"departure_time\":\"2026-05-18 08:15 local\",\"temperature_setpoint_c\":1},\"result\":{\"reservation_status\":\"confirmed\",\"vehicle_id\":\"RF-214\",\"driver_id\":\"DR-083\"},\"success\":true}],\"final\":\"Dispatch confirmed for CT-64018. RF-214 and DR-083 are assigned to depart at 08:15 and are estimated to arrive at 11:35, ahead of the 14:00 deadline. Set the reefer to 1 C, within the cargo range of 0 to 2 C.\"}",
+  "dispatch_result": "Dispatch confirmed. The selected vehicle and driver are available, the reefer can maintain the 1 C setpoint required for the salmon, and the estimated arrival is 2 hours 25 minutes before the delivery deadline.",
+  "order_requirements": {
+    "order_id": "CT-64018",
+    "cargo_description": "Fresh Atlantic salmon fillets",
+    "cargo_temp_min_c": 0,
+    "cargo_temp_max_c": 2,
+    "pickup_location": "Pier 6 Chilled Cargo Depot, Port Alder",
+    "delivery_location": "Cedar Ridge Grocery Distribution Center, Bellhaven",
+    "delivery_deadline": "2026-05-18 14:00 local"
+  }
+}
