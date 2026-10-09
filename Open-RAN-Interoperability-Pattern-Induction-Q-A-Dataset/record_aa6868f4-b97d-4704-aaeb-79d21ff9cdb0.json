@@ -1,0 +1,40 @@
+{
+  "question": "Across these cases, what recurring compatibility condition is associated with successful operation? Cite the case evidence and state the limits of the conclusion.",
+  "case_inputs": [
+    {
+      "configuration": "O-CU Cedarwave-CU 5.4 and O-DU Lattice-DU 3.2 are connected to O-RU Pine-RU 2.7 over Open Fronthaul. The DU expects timing profile P1, and the RU is configured to use P1.",
+      "interoperability_result": "The RU reports stable synchronization, and the cell reaches the operational state."
+    },
+    {
+      "configuration": "O-CU Meridian-CU 6.1 and O-DU Lattice-DU 3.2 are connected to O-RU Vale-RU 2.3 over Open Fronthaul. The DU expects timing profile P2, while the RU is configured to use P1.",
+      "interoperability_result": "Synchronization does not stabilize, and the cell remains unavailable."
+    },
+    {
+      "configuration": "The O-CU, O-DU, and O-RU versions and Open Fronthaul connection from case 2 are retained. The RU timing profile is changed from P1 to P2 to match the DU expectation.",
+      "interoperability_result": "Synchronization stabilizes, and the cell reaches the operational state."
+    }
+  ],
+  "final_answer": "The cases indicate that matching the O-DU's expected timing profile to the O-RU's configured profile is associated with stable synchronization in the configurations examined. Case 1 operates with P1 matched to P1. Case 2 does not stabilize with P2 expected and P1 configured, while case 3 stabilizes after the RU is changed to P2 with the other listed settings retained. This conclusion is limited to these component combinations and configurations; it does not show that profile matching is sufficient for interoperability in all deployments.",
+  "recurring_pattern": "In the listed configurations, stable operation is associated with the O-RU timing profile matching the O-DU's expected profile. The mismatch in case 2 coincides with unstable synchronization; changing the RU profile to match in case 3 coincides with recovery.",
+  "supporting_evidence": [
+    {
+      "case_numbers": [
+        1
+      ],
+      "observation": "The O-DU expects P1 and the O-RU uses P1; synchronization is stable and the cell becomes operational."
+    },
+    {
+      "case_numbers": [
+        2
+      ],
+      "observation": "The O-DU expects P2 while the O-RU uses P1; synchronization does not stabilize and the cell remains unavailable."
+    },
+    {
+      "case_numbers": [
+        3
+      ],
+      "observation": "With the case 2 component versions and connection retained, changing the RU profile to P2 is followed by stable synchronization and an operational cell."
+    }
+  ],
+  "applicability_boundary": "This pattern is supported only for the timing-profile configurations and component combinations described in these cases. The cases do not establish that profile alignment alone guarantees operation in other deployments, nor do they identify the cause of any failure involving different timing settings or software versions."
+}

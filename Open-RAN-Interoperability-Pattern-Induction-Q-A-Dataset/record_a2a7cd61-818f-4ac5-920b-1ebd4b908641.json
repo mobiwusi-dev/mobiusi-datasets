@@ -1,0 +1,40 @@
+{
+  "question": "What recurring condition for compression-profile negotiation is supported by these cases? Identify the supporting observations and the limits of the inference.",
+  "case_inputs": [
+    {
+      "configuration": "O-CU Fern-CU 7.0 and O-DU Grove-DU 5.3 connect to O-RU Harbor-RU 3.1 over Open Fronthaul. The DU requests compression profile CP-A, which the RU advertises as supported.",
+      "interoperability_result": "Profile negotiation completes, and the RU enters the operational state."
+    },
+    {
+      "configuration": "O-CU Juniper-CU 2.4 and O-DU Grove-DU 5.3 connect to O-RU Kestrel-RU 1.8 over Open Fronthaul. The DU requests CP-B, while the RU advertises CP-A only.",
+      "interoperability_result": "Profile negotiation is rejected, and the RU does not enter the operational state."
+    },
+    {
+      "configuration": "The O-CU, O-DU, and O-RU versions and connection from case 2 are retained. The DU request is changed from CP-B to CP-A, which is advertised by the RU.",
+      "interoperability_result": "Profile negotiation completes, and the RU enters the operational state."
+    }
+  ],
+  "final_answer": "The cases support a profile-compatibility condition: the DU's requested compression profile must be one the RU advertises for negotiation to complete in the configurations described. Case 1 completes with CP-A requested and advertised. Case 2 is rejected when CP-B is requested but only CP-A is advertised; case 3 completes after the request is changed to CP-A with the components retained. The evidence is limited to these profiles and configurations and does not establish that profile agreement alone guarantees end-to-end service operation.",
+  "recurring_pattern": "In the listed configurations, negotiation completes when the DU-requested compression profile is among the profiles advertised by the RU. The one recorded mismatch is rejected, and changing the request to the advertised CP-A is followed by successful negotiation.",
+  "supporting_evidence": [
+    {
+      "case_numbers": [
+        1
+      ],
+      "observation": "The DU requests CP-A, the RU advertises CP-A, and negotiation completes with the RU operational."
+    },
+    {
+      "case_numbers": [
+        2
+      ],
+      "observation": "The DU requests CP-B while the RU advertises only CP-A; negotiation is rejected and the RU does not become operational."
+    },
+    {
+      "case_numbers": [
+        3
+      ],
+      "observation": "With the case 2 components retained, changing the DU request to the RU-advertised CP-A is followed by completed negotiation and an operational RU."
+    }
+  ],
+  "applicability_boundary": "This inference covers only the stated profile requests, advertisements, and component combinations. The cases do not establish behavior for other compression profiles, software versions, or negotiation settings, and they do not show that matching profiles alone guarantees end-to-end service operation."
+}

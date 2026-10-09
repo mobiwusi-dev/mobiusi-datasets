@@ -1,0 +1,40 @@
+{
+  "question": "What recurring relationship between the Open Fronthaul path limit and the DU packet size appears in these cases? Support the inference with case numbers and explain its scope.",
+  "case_inputs": [
+    {
+      "configuration": "O-CU Alder-CU 2.6 and O-DU Bracken-DU 4.0 connect to O-RU Cinder-RU 1.9 over Open Fronthaul through a switch path configured for a 1500-byte maximum frame. The DU emits packets up to 3000 bytes.",
+      "interoperability_result": "The RU receives smaller packets, but larger packets are dropped on the path and radio processing does not become stable."
+    },
+    {
+      "configuration": "O-CU Drift-CU 3.1 and O-DU Bracken-DU 4.0 connect to O-RU Elm-RU 2.2 over Open Fronthaul. The path maximum frame size is configured to 9000 bytes, and the DU emits packets up to 3000 bytes.",
+      "interoperability_result": "The RU receives the configured packet sizes, and radio processing remains stable during the recorded interval."
+    },
+    {
+      "configuration": "The O-CU, O-DU, and O-RU from case 1 are retained. The switch path maximum frame size is raised from 1500 to 9000 bytes; the DU packet-size setting is unchanged.",
+      "interoperability_result": "The previously dropped larger packets reach the RU, and radio processing becomes stable during the recorded interval."
+    }
+  ],
+  "final_answer": "The cases show a consistent association between the configured path maximum and the DU's packet sizes. In case 1, the path is limited to 1500 bytes while packets reach 3000 bytes, and larger packets are dropped. Case 2 records stable processing when the path limit is 9000 bytes for packets up to 3000 bytes. In case 3, raising the case 1 path limit to 9000 bytes is followed by delivery of the larger packets and stable processing. This supports a compatibility condition for the stated configurations, not a universal frame-size rule or a claim that path capacity is the only determinant of interoperability.",
+  "recurring_pattern": "In the listed configurations, packets larger than the path's configured maximum are associated with packet drops and unstable radio processing, while a path limit above the configured packet sizes is associated with successful delivery and stable processing.",
+  "supporting_evidence": [
+    {
+      "case_numbers": [
+        1
+      ],
+      "observation": "The DU emits packets up to 3000 bytes over a path limited to 1500 bytes; larger packets are dropped and radio processing does not become stable."
+    },
+    {
+      "case_numbers": [
+        2
+      ],
+      "observation": "The path is configured for 9000-byte frames while the DU emits packets up to 3000 bytes; the RU receives those sizes and processing remains stable during the recorded interval."
+    },
+    {
+      "case_numbers": [
+        3
+      ],
+      "observation": "With the case 1 components and DU packet-size setting retained, raising the path limit to 9000 bytes is followed by delivery of the larger packets and stable radio processing."
+    }
+  ],
+  "applicability_boundary": "The pattern applies to the stated packet sizes and path limits in these Open Fronthaul configurations. These cases do not establish a universal frame-size requirement or prove that path capacity is the only factor affecting processing stability; they provide no result for other packetization, switch, or component configurations."
+}
