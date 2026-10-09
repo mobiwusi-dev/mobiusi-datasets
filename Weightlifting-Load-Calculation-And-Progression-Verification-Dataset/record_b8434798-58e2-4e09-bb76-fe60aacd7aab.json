@@ -1,0 +1,47 @@
+{
+  "answer_text": "1. 82.5 kg x 0.75 = 63.75 kg. 2. Rounded to the nearest kilogram, that is 64 kg. 3. Load 10 kg + 5 kg + 5 kg + 2 kg on each side; with the 20 kg bar, the total is 64 kg.",
+  "prompt_text": "For the snatch, calculate 75% of an 82.5 kg reference maximum and round to the nearest whole kilogram. Use a 20 kg bar and report the plate loading for the result.",
+  "lift_variant": "Snatch",
+  "overall_valid": false,
+  "plate_loading": {
+    "bar_weight_kg": 20,
+    "plates_per_side_kg": [
+      10,
+      5,
+      5,
+      2
+    ]
+  },
+  "target_load_kg": 62,
+  "reasoning_steps": [
+    {
+      "step_index": 0,
+      "step_text": "The answer states 82.5 x 0.75 = 63.75 kg; the product is actually 61.875 kg.",
+      "calculated_value_kg": 63.75,
+      "arithmetic_correct": false,
+      "constraint_satisfied": false,
+      "error_type": "算术错误"
+    },
+    {
+      "step_index": 1,
+      "step_text": "Rounding the stated intermediate value of 63.75 kg to the nearest whole kilogram gives 64 kg, but the correct 61.875 kg target rounds to 62 kg.",
+      "calculated_value_kg": 64,
+      "arithmetic_correct": true,
+      "constraint_satisfied": false,
+      "error_type": "百分比错误"
+    },
+    {
+      "step_index": 2,
+      "step_text": "The listed plates total 22 kg per side, so the bar totals 20 + 2 x 22 = 64 kg, not the correct rounded target of 62 kg.",
+      "calculated_value_kg": 64,
+      "arithmetic_correct": true,
+      "constraint_satisfied": false,
+      "error_type": "百分比错误"
+    }
+  ],
+  "reference_max_kg": 82.5,
+  "target_percentage": 75,
+  "prompt_answer_text": "Prompt: For the snatch, calculate 75% of an 82.5 kg reference maximum and round to the nearest whole kilogram. Use a 20 kg bar. Show the plate loading for the result.\nAnswer: 1. 82.5 kg x 0.75 = 63.75 kg. 2. Rounded to the nearest kilogram, that is 64 kg. 3. Load 10 kg + 5 kg + 5 kg + 2 kg on each side; with the 20 kg bar, the total is 64 kg.",
+  "validation_summary": "The multiplication is incorrect: 75% of 82.5 kg is 61.875 kg, which rounds to 62 kg. The stated 64 kg plate setup matches the incorrect intermediate result, not the target.",
+  "rounding_increment_kg": 1
+}

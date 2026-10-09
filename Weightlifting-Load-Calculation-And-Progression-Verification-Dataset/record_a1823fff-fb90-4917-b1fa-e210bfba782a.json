@@ -1,0 +1,48 @@
+{
+  "target_percentage": 80,
+  "answer_text": "1. 125 kg x 0.80 = 100 kg. 2. Each side must carry (100 - 20) / 2 = 40 kg. 3. Load 20 kg + 10 kg + 5 kg + 2.5 kg + 2.5 kg on each side; this gives 100 kg total.",
+  "prompt_text": "For the clean and jerk, calculate 80% of a 125 kg reference maximum. Use a 20 kg bar and load the target with plates in 2.5 kg increments. Report the per-side plate loading.",
+  "lift_variant": "Clean and jerk",
+  "overall_valid": true,
+  "plate_loading": {
+    "bar_weight_kg": 20,
+    "plates_per_side_kg": [
+      20,
+      10,
+      5,
+      2.5,
+      2.5
+    ]
+  },
+  "target_load_kg": 100,
+  "reasoning_steps": [
+    {
+      "step_index": 0,
+      "step_text": "Calculate 80% of the 125 kg reference maximum: 125 x 0.80 = 100 kg.",
+      "calculated_value_kg": 100,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    },
+    {
+      "step_index": 1,
+      "step_text": "Calculate the required load per side: (100 - 20) / 2 = 40 kg.",
+      "calculated_value_kg": 40,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    },
+    {
+      "step_index": 2,
+      "step_text": "The listed plates total 40 kg per side, so the bar total is 20 + 2 x 40 = 100 kg; the plate weights respect the 2.5 kg increment.",
+      "calculated_value_kg": 100,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    }
+  ],
+  "reference_max_kg": 125,
+  "prompt_answer_text": "Prompt: For the clean and jerk, calculate 80% of a 125 kg reference maximum. Load the result on a 20 kg bar using plates in 2.5 kg increments. Show the calculation and the plates on each side.\nAnswer: 1. 125 kg x 0.80 = 100 kg. 2. Each side must carry (100 - 20) / 2 = 40 kg. 3. Load 20 kg + 10 kg + 5 kg + 2.5 kg + 2.5 kg on each side; this gives 100 kg total.",
+  "validation_summary": "The percentage calculation, per-side loading, and total bar weight are correct. All listed plate weights respect the 2.5 kg increment.",
+  "rounding_increment_kg": 2.5
+}

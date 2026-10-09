@@ -1,0 +1,69 @@
+{
+  "answer_text": "1. 100 kg x 0.70 = 70 kg. 2. The five set loads are 50, 55, 62, 65, and 70 kg. 3. For the final 70 kg set, load 20 kg + 5 kg on each side of the 20 kg bar.",
+  "prompt_text": "For the clean pull, calculate 70% of a 100 kg reference maximum. Plan five sets starting at 50 kg, increasing by exactly 5 kg from one set to the next, with the final set at the calculated target. Use a 20 kg bar and report the final plate loading.",
+  "lift_variant": "Clean pull",
+  "overall_valid": false,
+  "plate_loading": {
+    "bar_weight_kg": 20,
+    "plates_per_side_kg": [
+      20,
+      5
+    ]
+  },
+  "target_load_kg": 70,
+  "reasoning_steps": [
+    {
+      "step_index": 0,
+      "step_text": "Calculate 70% of the 100 kg reference maximum: 100 x 0.70 = 70 kg.",
+      "calculated_value_kg": 70,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    },
+    {
+      "step_index": 1,
+      "step_text": "The first transition is 50 + 5 = 55 kg, which follows the prescribed increment.",
+      "calculated_value_kg": 55,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    },
+    {
+      "step_index": 2,
+      "step_text": "The listed transition from 55 kg to 62 kg is an increase of 7 kg, not the prescribed 5 kg.",
+      "calculated_value_kg": 62,
+      "arithmetic_correct": true,
+      "constraint_satisfied": false,
+      "error_type": "递进约束错误"
+    },
+    {
+      "step_index": 3,
+      "step_text": "The listed transition from 62 kg to 65 kg is an increase of 3 kg, not the prescribed 5 kg.",
+      "calculated_value_kg": 65,
+      "arithmetic_correct": true,
+      "constraint_satisfied": false,
+      "error_type": "递进约束错误"
+    },
+    {
+      "step_index": 4,
+      "step_text": "The final transition from 65 kg to 70 kg is an increase of 5 kg and reaches the target.",
+      "calculated_value_kg": 70,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    },
+    {
+      "step_index": 5,
+      "step_text": "The final plates total 25 kg per side, so 20 + 2 x 25 = 70 kg.",
+      "calculated_value_kg": 70,
+      "arithmetic_correct": true,
+      "constraint_satisfied": true,
+      "error_type": "无"
+    }
+  ],
+  "reference_max_kg": 100,
+  "target_percentage": 70,
+  "prompt_answer_text": "Prompt: For the clean pull, calculate 70% of a 100 kg reference maximum. Plan five sets starting at 50 kg, increasing by exactly 5 kg from one set to the next, with the final set at the calculated target. Use a 20 kg bar and show the final plate loading.\nAnswer: 1. 100 kg x 0.70 = 70 kg. 2. The five set loads are 50, 55, 62, 65, and 70 kg. 3. For the final 70 kg set, load 20 kg + 5 kg on each side of the 20 kg bar.",
+  "validation_summary": "The target calculation and final plate loading are correct, but the set sequence violates the required 5 kg progression: the 55-to-62 kg and 62-to-65 kg transitions are incorrect.",
+  "rounding_increment_kg": 5
+}
