@@ -1,0 +1,17 @@
+{
+  "claim_text": "Customers repay their purchase in four equal installments: the first is due at checkout, followed by three installments due every 14 days.",
+  "claim_category": "还款安排",
+  "evidence_quotes": [
+    "The purchase amount is divided into four equal installments.",
+    "The first installment is due on the purchase date. The remaining three installments are due 14, 28, and 42 days after the purchase date."
+  ],
+  "source_material": {
+    "source_provider": "Cedarline Pay",
+    "page_title": "Cedarline Pay Installment Agreement",
+    "terms_text": "Cedarline Pay Ltd. issues this Installment Agreement for purchases made using Cedarline Pay. The purchase amount is divided into four equal installments. The first installment is due on the purchase date. The remaining three installments are due 14, 28, and 42 days after the purchase date."
+  },
+  "support_verdict": "支持",
+  "authority_assessment": "The page title identifies the document as Cedarline Pay's installment agreement, and the terms state that Cedarline Pay Ltd. issues it. The supplied material therefore presents the agreement as the provider's own terms.",
+  "verification_rationale": "The terms specify four equal installments, with the first due on the purchase date and the remaining three due at 14-day intervals. This matches the claim.",
+  "is_authoritative_source": true
+}

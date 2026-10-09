@@ -1,0 +1,17 @@
+{
+  "claim_text": "Cedarline Pay charges no interest or fees at any point, including when a customer misses a payment.",
+  "claim_category": "费用",
+  "evidence_quotes": [
+    "No interest or account-opening fee is charged for an installment purchase.",
+    "If a scheduled payment remains unpaid after its due date, a late fee of $6 may be charged for that missed payment, subject to applicable limits."
+  ],
+  "source_material": {
+    "source_provider": "Cedarline Pay",
+    "page_title": "Cedarline Pay Payment Terms",
+    "terms_text": "These Payment Terms are issued by Cedarline Pay Ltd. No interest or account-opening fee is charged for an installment purchase. If a scheduled payment remains unpaid after its due date, a late fee of $6 may be charged for that missed payment, subject to applicable limits."
+  },
+  "support_verdict": "部分支持",
+  "authority_assessment": "The page title names Cedarline Pay, and the terms identify Cedarline Pay Ltd. as their issuer. The supplied material presents this page as the provider's own payment terms.",
+  "verification_rationale": "The source supports the claim that no interest or account-opening fee is charged, but it states that a late fee may apply to missed payments. The claim's broader assertion that there are no fees at any point is therefore only partially supported.",
+  "is_authoritative_source": true
+}

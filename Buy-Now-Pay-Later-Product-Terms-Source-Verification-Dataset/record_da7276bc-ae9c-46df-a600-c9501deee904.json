@@ -1,0 +1,17 @@
+{
+  "authority_assessment": "The page identifies Retailer Comparison Desk as its preparer and explicitly says it was not issued by Harborstone Checkout. It is an independent guide, not an authoritative source from the named provider.",
+  "claim_text": "Customers aged 16 or older can use Harborstone Checkout with parental consent, without any additional eligibility review.",
+  "claim_category": "用户资格",
+  "evidence_quotes": [
+    "This guide was prepared by Retailer Comparison Desk and is not issued by Harborstone Checkout.",
+    "Applicants must be at least 18 years old and must pass account approval and identity verification before using the service."
+  ],
+  "source_material": {
+    "source_provider": "Harborstone Checkout",
+    "page_title": "Harborstone Checkout: Installment Payment Guide — Retailer Comparison Desk",
+    "terms_text": "This guide was prepared by Retailer Comparison Desk and is not issued by Harborstone Checkout. It describes Harborstone Checkout as a payment option available through participating retailers. Applicants must be at least 18 years old and must pass account approval and identity verification before using the service."
+  },
+  "support_verdict": "反驳",
+  "verification_rationale": "The stated minimum age is 18, and the source requires account approval and identity verification. This contradicts the claim that customers aged 16 or older can qualify with parental consent and without additional review.",
+  "is_authoritative_source": false
+}
