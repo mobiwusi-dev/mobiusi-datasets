@@ -1,0 +1,50 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "search_services",
+      "arguments_json": "{\"query\":\"cat nail trim\",\"species\":\"cat\",\"branch\":\"Riverside\"}",
+      "result_summary": "Found service svc_cat_08, Feline nail trim, 20 minutes.",
+      "selection_reason": "Identify the matching cat grooming service at the requested branch."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "lookup_pet_profile",
+      "arguments_json": "{\"pet_name\":\"Juniper\"}",
+      "result_summary": "Found pet_391: Juniper, cat, Domestic Shorthair.",
+      "selection_reason": "Resolve Juniper's registered pet record before checking or submitting an appointment."
+    },
+    {
+      "call_order": 2,
+      "tool_name": "check_availability",
+      "arguments_json": "{\"service_id\":\"svc_cat_08\",\"pet_id\":\"pet_391\",\"date\":\"2027-05-07\",\"start_after\":\"15:00\",\"branch\":\"Riverside\"}",
+      "result_summary": "The first available slot after 3:00 p.m. is 4:30 p.m.",
+      "selection_reason": "Find an afternoon slot on the requested date, respecting the user's stated acceptable time."
+    },
+    {
+      "call_order": 3,
+      "tool_name": "create_booking",
+      "arguments_json": "{\"service_id\":\"svc_cat_08\",\"pet_id\":\"pet_391\",\"start_at\":\"2027-05-07T16:30:00\",\"branch\":\"Riverside\"}",
+      "result_summary": "Booking BK-85206 confirmed for May 7, 2027 at 4:30 p.m.",
+      "selection_reason": "Book the 4:30 p.m. slot after availability confirms it meets the user's fallback preference."
+    }
+  ],
+  "pet_profile": {
+    "pet_name": "Juniper",
+    "species": "cat",
+    "breed": "Domestic Shorthair"
+  },
+  "source_trace": "{\"user_request\":\"I'd like a nail trim for my cat Juniper at the Riverside clinic on Friday, May 7, 2027, after 3:00 p.m. If my preferred time is unavailable, 4:30 p.m. works.\",\"tool_events\":[{\"tool_name\":\"search_services\",\"arguments\":{\"query\":\"cat nail trim\",\"species\":\"cat\",\"branch\":\"Riverside\"},\"result_summary\":\"Found service svc_cat_08, Feline nail trim, 20 minutes.\"},{\"tool_name\":\"lookup_pet_profile\",\"arguments\":{\"pet_name\":\"Juniper\"},\"result_summary\":\"Found pet_391: Juniper, cat, Domestic Shorthair.\"},{\"tool_name\":\"check_availability\",\"arguments\":{\"service_id\":\"svc_cat_08\",\"pet_id\":\"pet_391\",\"date\":\"2027-05-07\",\"start_after\":\"15:00\",\"branch\":\"Riverside\"},\"result_summary\":\"The first available slot after 3:00 p.m. is 4:30 p.m.\"},{\"tool_name\":\"create_booking\",\"arguments\":{\"service_id\":\"svc_cat_08\",\"pet_id\":\"pet_391\",\"start_at\":\"2027-05-07T16:30:00\",\"branch\":\"Riverside\"},\"result_summary\":\"Booking BK-85206 confirmed for May 7, 2027 at 4:30 p.m.\"}],\"assistant_response\":\"Juniper is booked for a nail trim at Riverside on May 7, 2027 at 4:30 p.m.\"}",
+  "user_request": "I'd like a nail trim for my cat Juniper at the Riverside clinic on Friday, May 7, 2027, after 3:00 p.m. If my preferred time is unavailable, 4:30 p.m. works.",
+  "booking_result": {
+    "booking_status": "confirmed",
+    "confirmed_time": "May 7, 2027 at 4:30 p.m.",
+    "confirmation_message": "Booking BK-85206 is confirmed for Juniper's feline nail trim at Riverside."
+  },
+  "service_request": {
+    "service_name": "Feline nail trim",
+    "service_category": "Grooming",
+    "preferred_time": "Friday, May 7, 2027, after 3:00 p.m.; 4:30 p.m. is acceptable."
+  },
+  "trajectory_summary": "The assistant searched for a feline nail-trim service, retrieved Juniper's profile, checked afternoon availability, and booked the available 4:30 p.m. slot accepted by the user."
+}

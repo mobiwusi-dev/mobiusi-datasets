@@ -1,0 +1,50 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "search_services",
+      "arguments_json": "{\"query\":\"deshedding bath\",\"species\":\"dog\",\"branch\":\"Northside\"}",
+      "result_summary": "Found service svc_groom_14, Deshedding bath, 90 minutes.",
+      "selection_reason": "Search for the requested grooming service at the user's specified branch before checking appointment times."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "lookup_pet_profile",
+      "arguments_json": "{\"pet_name\":\"Milo\"}",
+      "result_summary": "Found pet_204: Milo, dog, Golden Retriever.",
+      "selection_reason": "Retrieve Milo's registered profile so availability and booking can be checked for the correct pet."
+    },
+    {
+      "call_order": 2,
+      "tool_name": "check_availability",
+      "arguments_json": "{\"service_id\":\"svc_groom_14\",\"pet_id\":\"pet_204\",\"date\":\"2027-04-17\",\"start_after\":\"09:00\",\"start_before\":\"11:00\",\"branch\":\"Northside\"}",
+      "result_summary": "A 9:30 a.m. appointment is available.",
+      "selection_reason": "Check slots on the requested date and within the user's preferred morning window."
+    },
+    {
+      "call_order": 3,
+      "tool_name": "create_booking",
+      "arguments_json": "{\"service_id\":\"svc_groom_14\",\"pet_id\":\"pet_204\",\"start_at\":\"2027-04-17T09:30:00\",\"branch\":\"Northside\"}",
+      "result_summary": "Booking BK-74018 confirmed for April 17, 2027 at 9:30 a.m.",
+      "selection_reason": "Submit the booking after confirming that a matching slot is available."
+    }
+  ],
+  "pet_profile": {
+    "pet_name": "Milo",
+    "species": "dog",
+    "breed": "Golden Retriever"
+  },
+  "source_trace": "{\"user_request\":\"Please book a deshedding bath for my dog Milo at the Northside salon on Saturday, April 17, 2027, preferably between 9:00 and 11:00 a.m.\",\"tool_events\":[{\"tool_name\":\"search_services\",\"arguments\":{\"query\":\"deshedding bath\",\"species\":\"dog\",\"branch\":\"Northside\"},\"result_summary\":\"Found service svc_groom_14, Deshedding bath, 90 minutes.\"},{\"tool_name\":\"lookup_pet_profile\",\"arguments\":{\"pet_name\":\"Milo\"},\"result_summary\":\"Found pet_204: Milo, dog, Golden Retriever.\"},{\"tool_name\":\"check_availability\",\"arguments\":{\"service_id\":\"svc_groom_14\",\"pet_id\":\"pet_204\",\"date\":\"2027-04-17\",\"start_after\":\"09:00\",\"start_before\":\"11:00\",\"branch\":\"Northside\"},\"result_summary\":\"A 9:30 a.m. appointment is available.\"},{\"tool_name\":\"create_booking\",\"arguments\":{\"service_id\":\"svc_groom_14\",\"pet_id\":\"pet_204\",\"start_at\":\"2027-04-17T09:30:00\",\"branch\":\"Northside\"},\"result_summary\":\"Booking BK-74018 confirmed for April 17, 2027 at 9:30 a.m.\"}],\"assistant_response\":\"Milo is booked for a deshedding bath at Northside on April 17, 2027 at 9:30 a.m.\"}",
+  "user_request": "Please book a deshedding bath for my dog Milo at the Northside salon on Saturday, April 17, 2027, preferably between 9:00 and 11:00 a.m.",
+  "booking_result": {
+    "booking_status": "confirmed",
+    "confirmed_time": "April 17, 2027 at 9:30 a.m.",
+    "confirmation_message": "Booking BK-74018 is confirmed for Milo's deshedding bath at the Northside salon."
+  },
+  "service_request": {
+    "service_name": "Deshedding bath",
+    "service_category": "Grooming",
+    "preferred_time": "Saturday, April 17, 2027, preferably between 9:00 and 11:00 a.m."
+  },
+  "trajectory_summary": "The assistant searched for the requested grooming service, retrieved Milo's profile, checked availability within the preferred morning window, and booked the available 9:30 a.m. slot."
+}

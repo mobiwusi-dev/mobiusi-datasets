@@ -1,0 +1,57 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "search_services",
+      "arguments_json": "{\"query\":\"routine dental assessment\",\"species\":\"dog\",\"branch\":\"Eastgate\"}",
+      "result_summary": "Found service svc_vet_21, Canine dental assessment.",
+      "selection_reason": "Find the veterinary service matching the requested dental assessment at Eastgate."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "lookup_pet_profile",
+      "arguments_json": "{\"pet_name\":\"Rowan\"}",
+      "result_summary": "Found pet_517: Rowan, dog, Border Collie mix.",
+      "selection_reason": "Retrieve Rowan's registered profile to associate the appointment with the correct pet."
+    },
+    {
+      "call_order": 2,
+      "tool_name": "get_service_details",
+      "arguments_json": "{\"service_id\":\"svc_vet_21\"}",
+      "result_summary": "Canine dental assessment is a 30-minute veterinary appointment at Eastgate.",
+      "selection_reason": "Confirm the selected veterinary service details before searching for a suitable appointment slot."
+    },
+    {
+      "call_order": 3,
+      "tool_name": "check_availability",
+      "arguments_json": "{\"service_id\":\"svc_vet_21\",\"pet_id\":\"pet_517\",\"date\":\"2027-06-15\",\"start_after\":\"13:00\",\"branch\":\"Eastgate\"}",
+      "result_summary": "A 2:00 p.m. appointment is available.",
+      "selection_reason": "Check for an appointment on the requested date after 1:00 p.m."
+    },
+    {
+      "call_order": 4,
+      "tool_name": "create_booking",
+      "arguments_json": "{\"service_id\":\"svc_vet_21\",\"pet_id\":\"pet_517\",\"start_at\":\"2027-06-15T14:00:00\",\"branch\":\"Eastgate\"}",
+      "result_summary": "Booking BK-96314 confirmed for June 15, 2027 at 2:00 p.m.",
+      "selection_reason": "Submit the appointment after confirming the veterinary service and available time."
+    }
+  ],
+  "pet_profile": {
+    "pet_name": "Rowan",
+    "species": "dog",
+    "breed": "Border Collie mix"
+  },
+  "source_trace": "{\"user_request\":\"Please arrange a routine dental assessment for my dog Rowan at the Eastgate clinic on Tuesday, June 15, 2027. Any time after 1:00 p.m. is fine.\",\"tool_events\":[{\"tool_name\":\"search_services\",\"arguments\":{\"query\":\"routine dental assessment\",\"species\":\"dog\",\"branch\":\"Eastgate\"},\"result_summary\":\"Found service svc_vet_21, Canine dental assessment.\"},{\"tool_name\":\"lookup_pet_profile\",\"arguments\":{\"pet_name\":\"Rowan\"},\"result_summary\":\"Found pet_517: Rowan, dog, Border Collie mix.\"},{\"tool_name\":\"get_service_details\",\"arguments\":{\"service_id\":\"svc_vet_21\"},\"result_summary\":\"Canine dental assessment is a 30-minute veterinary appointment at Eastgate.\"},{\"tool_name\":\"check_availability\",\"arguments\":{\"service_id\":\"svc_vet_21\",\"pet_id\":\"pet_517\",\"date\":\"2027-06-15\",\"start_after\":\"13:00\",\"branch\":\"Eastgate\"},\"result_summary\":\"A 2:00 p.m. appointment is available.\"},{\"tool_name\":\"create_booking\",\"arguments\":{\"service_id\":\"svc_vet_21\",\"pet_id\":\"pet_517\",\"start_at\":\"2027-06-15T14:00:00\",\"branch\":\"Eastgate\"},\"result_summary\":\"Booking BK-96314 confirmed for June 15, 2027 at 2:00 p.m.\"}],\"assistant_response\":\"Rowan is booked for a canine dental assessment at Eastgate on June 15, 2027 at 2:00 p.m.\"}",
+  "user_request": "Please arrange a routine dental assessment for my dog Rowan at the Eastgate clinic on Tuesday, June 15, 2027. Any time after 1:00 p.m. is fine.",
+  "booking_result": {
+    "booking_status": "confirmed",
+    "confirmed_time": "June 15, 2027 at 2:00 p.m.",
+    "confirmation_message": "Booking BK-96314 is confirmed for Rowan's canine dental assessment at Eastgate."
+  },
+  "service_request": {
+    "service_name": "Canine dental assessment",
+    "service_category": "Veterinary",
+    "preferred_time": "Tuesday, June 15, 2027, any time after 1:00 p.m."
+  },
+  "trajectory_summary": "The assistant searched for the veterinary service, retrieved Rowan's profile, verified the service details, checked afternoon availability, and booked the available 2:00 p.m. appointment."
+}
