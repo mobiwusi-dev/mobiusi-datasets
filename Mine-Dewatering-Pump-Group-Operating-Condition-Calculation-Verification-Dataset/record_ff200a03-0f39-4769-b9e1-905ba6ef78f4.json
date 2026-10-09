@@ -1,0 +1,73 @@
+{
+  "validation_results": {
+    "total_head_relative_error_percent": 2.196,
+    "operating_flow_relative_error_percent": 2,
+    "operating_head_relative_error_percent": 0.539,
+    "hydraulic_power_relative_error_percent": 2.63,
+    "shaft_power_relative_error_percent": 1.619,
+    "total_head_passed": false,
+    "operating_flow_passed": true,
+    "operating_head_passed": true,
+    "hydraulic_power_passed": false,
+    "shaft_power_passed": true,
+    "overall_passed": false
+  },
+  "drainage_conditions": {
+    "required_flow_m3_h": 300,
+    "sump_water_level_elevation_m": 90,
+    "discharge_outlet_elevation_m": 212,
+    "required_terminal_pressure_head_m": 3,
+    "water_density_kg_m3": 998,
+    "gravity_acceleration_m_s2": 9.81
+  },
+  "pipeline_parameters": {
+    "suction_pipe_length_m": 25,
+    "suction_pipe_inner_diameter_mm": 250,
+    "suction_darcy_friction_factor": 0.02,
+    "suction_minor_loss_coefficient": 2,
+    "discharge_pipe_length_m": 400,
+    "discharge_pipe_inner_diameter_mm": 250,
+    "discharge_darcy_friction_factor": 0.02,
+    "discharge_minor_loss_coefficient": 9
+  },
+  "pump_performance_data": {
+    "series_pump_count": 1,
+    "parallel_pump_count": 2,
+    "pump_curve_points": [
+      {
+        "flow_m3_h": 120,
+        "head_m": 140,
+        "efficiency_percent": 74
+      },
+      {
+        "flow_m3_h": 150,
+        "head_m": 131.61,
+        "efficiency_percent": 78.5
+      },
+      {
+        "flow_m3_h": 180,
+        "head_m": 121.8,
+        "efficiency_percent": 77
+      }
+    ]
+  },
+  "calculated_total_head_m": 131.61,
+  "calculated_static_head_m": 125,
+  "calculated_pipeline_loss_m": 6.61,
+  "candidate_operating_results": {
+    "candidate_total_head_m": 134.5,
+    "candidate_operating_flow_m3_h": 306,
+    "candidate_operating_head_m": 130.9,
+    "candidate_hydraulic_power_kw": 110.2,
+    "candidate_group_shaft_power_kw": 139
+  },
+  "reference_calculation_basis": {
+    "calculation_method": "Calculate static head as outlet elevation minus sump level plus terminal pressure head. Compute suction and discharge losses with the Darcy–Weisbach equation, including the specified minor-loss coefficients. Determine the operating point by intersecting the system curve with the pump curve, using linear interpolation between points; for series pumps, add head, and for parallel pumps, divide total flow among pumps. Use the single-pump efficiency at the operating point, P_h = rho*g*Q*H/3.6e6 (with Q in m3/h), and group shaft power = P_h/(efficiency/100).",
+    "allowable_relative_error_percent": 2
+  },
+  "calculated_pump_group_head_m": 131.61,
+  "calculated_efficiency_percent": 78.5,
+  "calculated_hydraulic_power_kw": 107.376,
+  "calculated_operating_flow_m3_h": 300,
+  "calculated_group_shaft_power_kw": 136.785
+}
