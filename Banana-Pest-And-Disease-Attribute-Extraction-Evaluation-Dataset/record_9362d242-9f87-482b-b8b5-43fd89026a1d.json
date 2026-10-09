@@ -1,0 +1,14 @@
+{
+  "symptoms": [
+    "Aphid colonies are present on young leaves and around leaf bases.",
+    "Infested leaves may curl.",
+    "Sticky honeydew is visible on nearby plant surfaces."
+  ],
+  "source_text": "Banana aphid colonies are present on young leaves and around the leaf bases. Infested leaves may curl, and sticky honeydew is visible on nearby plant surfaces. Colony numbers have increased during the recent warm, dry period, although the infestation remains concentrated in several rows.",
+  "affected_parts": [
+    "young leaves",
+    "leaf bases"
+  ],
+  "health_issue_name": "Banana aphid infestation",
+  "occurrence_status": "Colony numbers have increased during the recent warm, dry period, with the infestation concentrated in several rows."
+}

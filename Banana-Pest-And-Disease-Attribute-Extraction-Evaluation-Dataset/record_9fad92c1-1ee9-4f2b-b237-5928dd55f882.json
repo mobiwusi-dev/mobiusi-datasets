@@ -1,0 +1,14 @@
+{
+  "symptoms": [
+    "Lower leaves turn yellow and wilt.",
+    "Brown discoloration is visible in the vascular tissue of the pseudostem."
+  ],
+  "source_text": "Fusarium wilt has been identified in a section of the banana block. The lower leaves turn yellow and wilt, while brown discoloration is visible in the vascular tissue of the pseudostem when it is cut open. Affected plants are occurring in scattered groups, and the number of symptomatic plants has increased over recent inspections.",
+  "affected_parts": [
+    "lower leaves",
+    "pseudostem",
+    "vascular tissue"
+  ],
+  "health_issue_name": "Fusarium wilt",
+  "occurrence_status": "Present in scattered groups, with the number of symptomatic plants increasing over recent inspections."
+}
