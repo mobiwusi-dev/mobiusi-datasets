@@ -1,0 +1,12 @@
+{
+  "code_context": "import numpy as np\nimport ufl\nfrom mpi4py import MPI\nfrom dolfinx import fem, mesh as dmesh\nfrom dolfinx.fem.petsc import LinearProblem\nfrom petsc4py import PETSc\n\nmesh = dmesh.create_rectangle(\n    MPI.COMM_WORLD,\n    [np.array([0.0, 0.0]), np.array([0.5, 0.1])],\n    [100, 20],\n    cell_type=dmesh.CellType.triangle,\n)\nV = fem.functionspace(mesh, ('Lagrange', 1))\nc_trial = ufl.TrialFunction(V)\nq = ufl.TestFunction(V)\ndt = 0.005\nn_steps = 40\nvelocity = fem.Constant(mesh, np.array([0.08, 0.0], dtype=PETSc.ScalarType))",
+  "task_instruction": "Complete the transient advection–diffusion model for a dissolved species. Specify transport and reaction properties, initialize the concentration, prescribe the inlet concentration, and solve each time step.",
+  "completion_target": "diffusivity = fem.Constant(mesh, PETSc.ScalarType(2.0e-4))\nreaction_rate = fem.Constant(mesh, PETSc.ScalarType(0.015))\nsource = fem.Constant(mesh, PETSc.ScalarType(0.0))\nc_n = fem.Function(V)\nc_n.interpolate(lambda x: np.zeros(x.shape[1], dtype=PETSc.ScalarType))\nc_h = fem.Function(V)\n\ninlet_dofs = fem.locate_dofs_geometrical(V, lambda x: np.isclose(x[0], 0.0))\nbc_inlet = fem.dirichletbc(PETSc.ScalarType(1.0), inlet_dofs, V)\ndx = ufl.Measure('dx', domain=mesh)\na = (\n    c_trial / dt * q\n    + ufl.dot(velocity, ufl.grad(c_trial)) * q\n    + diffusivity * ufl.dot(ufl.grad(c_trial), ufl.grad(q))\n    + reaction_rate * c_trial * q\n) * dx\nL = (c_n / dt * q + source * q) * dx\nproblem = LinearProblem(\n    a, L, bcs=[bc_inlet],\n    petsc_options={'ksp_type': 'preonly', 'pc_type': 'lu'},\n)\nfor _ in range(n_steps):\n    c_h.x.array[:] = problem.solve().x.array\n    c_h.x.scatter_forward()\n    c_n.x.array[:] = c_h.x.array\n    c_n.x.scatter_forward()",
+  "simulation_software": "FEniCSx (DOLFINx)",
+  "physics_setting_categories": [
+    "物理场选择",
+    "材料属性",
+    "初始条件",
+    "边界条件"
+  ]
+}

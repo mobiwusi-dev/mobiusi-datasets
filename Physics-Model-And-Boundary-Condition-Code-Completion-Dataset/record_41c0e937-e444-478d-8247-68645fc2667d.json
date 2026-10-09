@@ -1,0 +1,12 @@
+{
+  "code_context": "import numpy as np\nimport ufl\nfrom mpi4py import MPI\nfrom dolfinx import fem, mesh as dmesh\nfrom dolfinx.fem.petsc import LinearProblem\nfrom petsc4py import PETSc\n\nmesh = dmesh.create_rectangle(\n    MPI.COMM_WORLD,\n    [np.array([0.0, 0.0]), np.array([0.12, 0.02])],\n    [48, 8],\n    cell_type=dmesh.CellType.triangle,\n)\nV = fem.functionspace(mesh, ('Lagrange', 1))\nu_trial = ufl.TrialFunction(V)\nv = ufl.TestFunction(V)\nu_h = fem.Function(V)\ndt = 0.01\nn_steps = 20",
+  "task_instruction": "Complete the transient heat-conduction setup for the plate. Define its thermal properties, initialize the temperature field, impose temperatures at both ends, and advance the solution in time.",
+  "completion_target": "rho = fem.Constant(mesh, PETSc.ScalarType(7800.0))\nheat_capacity = fem.Constant(mesh, PETSc.ScalarType(460.0))\nconductivity = fem.Constant(mesh, PETSc.ScalarType(16.0))\nheat_source = fem.Constant(mesh, PETSc.ScalarType(0.0))\nu_n = fem.Function(V)\nu_n.interpolate(lambda x: np.full(x.shape[1], 293.15, dtype=PETSc.ScalarType))\n\nleft_dofs = fem.locate_dofs_geometrical(V, lambda x: np.isclose(x[0], 0.0))\nright_dofs = fem.locate_dofs_geometrical(V, lambda x: np.isclose(x[0], 0.12))\nbc_left = fem.dirichletbc(PETSc.ScalarType(350.0), left_dofs, V)\nbc_right = fem.dirichletbc(PETSc.ScalarType(293.15), right_dofs, V)\n\ndx = ufl.Measure('dx', domain=mesh)\na = (rho * heat_capacity / dt * u_trial * v + conductivity * ufl.dot(ufl.grad(u_trial), ufl.grad(v))) * dx\nL = (rho * heat_capacity / dt * u_n * v + heat_source * v) * dx\nproblem = LinearProblem(\n    a, L, bcs=[bc_left, bc_right],\n    petsc_options={'ksp_type': 'preonly', 'pc_type': 'lu'},\n)\nfor _ in range(n_steps):\n    u_h.x.array[:] = problem.solve().x.array\n    u_h.x.scatter_forward()\n    u_n.x.array[:] = u_h.x.array\n    u_n.x.scatter_forward()",
+  "simulation_software": "FEniCSx (DOLFINx)",
+  "physics_setting_categories": [
+    "物理场选择",
+    "材料属性",
+    "初始条件",
+    "边界条件"
+  ]
+}
