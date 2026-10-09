@@ -1,0 +1,9 @@
+{
+  "expert_answer": "The column dimensions, carrier-gas control, splitless injection mode, 250 °C inlet setting, and 1 µL injection are supported by the stated instrument configuration. However, the method requires an oven temperature of 320 °C, while the oven maximum is 300 °C. The column rating of 330 °C does not overcome the instrument's lower oven limit, so the method cannot be run as written.",
+  "recommendations": "Use a GC with an oven rated for at least 320 °C, or revise the temperature program to remain at or below 300 °C and verify that the revised conditions provide acceptable separation. Confirm compatibility of the complete column and instrument configuration before operation.",
+  "method_conditions": "Capillary GC method using a 30 m × 0.25 mm ID, 0.25 µm film column. Use helium at a constant flow of 1.2 mL/min, splitless injection at 250 °C, and an oven program ending at 320 °C with an 8-minute final hold. The column's stated maximum temperature is 330 °C.",
+  "sample_requirements": "The sample is a volatile organic mixture prepared in a GC-compatible solvent. Inject 1 µL using splitless mode; the sample preparation specifies no requirement for a heated transfer line.",
+  "compatibility_status": "Incompatible as written",
+  "compatibility_question": "Can the stated GC method, including its final oven temperature, be run on this instrument with the installed configuration?",
+  "instrument_constraints": "The GC supports helium constant-flow control, splitless injection, and inlet temperatures up to 300 °C. The oven's maximum operating temperature is 300 °C. The installed capillary-column fittings accept columns with a 0.25 mm internal diameter."
+}

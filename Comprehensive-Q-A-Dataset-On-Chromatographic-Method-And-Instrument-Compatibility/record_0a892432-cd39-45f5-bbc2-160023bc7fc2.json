@@ -1,0 +1,9 @@
+{
+  "expert_answer": "The required flow rate of 0.35 mL/min is within the pump range, and the stated pressure range of 300–520 bar is below both the column rating of 600 bar and the instrument limit of 800 bar. The 45 °C column temperature is within the oven range, gradient elution is supported, and the 2 µL injection is within the autosampler range. The sample preparation also matches the stated initial mobile-phase conditions. Based on the supplied specifications, no incompatibility is identified.",
+  "recommendations": "No adjustment is required. Confirm that the assembled system remains below the column pressure rating during the run.",
+  "method_conditions": "Reversed-phase UHPLC method using a 2.1 × 100 mm, 1.7 µm column. The flow rate is 0.35 mL/min, the column temperature is 45 °C, and the mobile phase runs from aqueous buffer at pH 3.0 to acetonitrile in a gradient. System pressure is expected to remain between 300 and 520 bar. The column pressure rating is 600 bar.",
+  "sample_requirements": "The sample is soluble in the initial mobile phase. Prepare it in that solvent, filter through a 0.2 µm membrane, and inject 2 µL.",
+  "compatibility_status": "Fully compatible",
+  "compatibility_question": "Can this method and sample be run on the stated instrument without changing the method or instrument configuration?",
+  "instrument_constraints": "The instrument supports gradient elution and has a pump flow range of 0.01–2.00 mL/min with a maximum pressure of 800 bar. Its column oven operates from 5 to 80 °C, and the autosampler supports injection volumes from 0.1 to 20 µL."
+}

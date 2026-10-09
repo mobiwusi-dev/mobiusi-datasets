@@ -1,0 +1,9 @@
+{
+  "expert_answer": "The specified 1.20 mL/min flow exceeds the pump's maximum of 1.00 mL/min, so the instrument cannot deliver the method flow rate. The stated 320 bar method pressure is below the instrument and column limits, while the 35 °C temperature and 10 µL injection are within their respective ranges. Those matching parameters do not resolve the flow-rate limitation.",
+  "recommendations": "Use a pump rated for at least 1.20 mL/min, or develop and validate a revised method at or below 1.00 mL/min. If the flow is changed, reassess pressure and confirm chromatographic performance; the supplied information does not establish the pressure or separation at a revised flow rate.",
+  "method_conditions": "Isocratic HPLC method on a 250 × 4.6 mm, 5 µm column. The specified flow rate is 1.20 mL/min, the column temperature is 35 °C, and the mobile phase is a water–methanol mixture. The method specification gives an expected system pressure of 320 bar at the specified flow rate; the column pressure rating is 400 bar.",
+  "sample_requirements": "The sample is dissolved in the mobile phase, filtered through a 0.45 µm membrane, and injected at 10 µL. No special temperature control is required for the sample.",
+  "compatibility_status": "Incompatible as written",
+  "compatibility_question": "Can the method be run as written on this instrument, considering its flow and pressure limits?",
+  "instrument_constraints": "The instrument supports isocratic operation and has a pump flow range of 0.05–1.00 mL/min with a maximum pressure of 400 bar. The column oven operates from 10 to 70 °C, and the autosampler accepts injection volumes from 1 to 100 µL."
+}
