@@ -1,0 +1,29 @@
+{
+  "question_text": "A soluble vaccine antigen is nonglycosylated but must form disulfide bonds in its final folded state. The requested production scale is an 80 L pilot run, and animal-derived process components are prohibited. The screening data for this decision state that both the yeast and insect-cell platforms can produce the required disulfide-folded antigen at 80 L without animal-derived components. The available E. coli process does not produce the required disulfide-folded form, while the mammalian-cell process at this scale uses an animal-derived supplement. Which candidates satisfy all constraints?",
+  "decision_status": "存在多个可行平台",
+  "answer_rationale": "The yeast and insect-cell platforms are both explicitly stated to meet the product, scale, and process requirements. The E. coli and mammalian-cell options each conflict with a stated requirement, so more than one platform remains feasible.",
+  "missing_information": [],
+  "platform_assessments": [
+    {
+      "platform_name": "Yeast platform",
+      "assessment_status": "满足约束",
+      "reason": "The stated screening data confirm the required disulfide-folded product at 80 L without animal-derived components."
+    },
+    {
+      "platform_name": "Insect-cell platform",
+      "assessment_status": "满足约束",
+      "reason": "The stated screening data confirm the required disulfide-folded product at 80 L without animal-derived components."
+    },
+    {
+      "platform_name": "E. coli platform",
+      "assessment_status": "不满足约束",
+      "reason": "The available process is stated not to produce the required disulfide-folded form."
+    },
+    {
+      "platform_name": "Mammalian-cell platform",
+      "assessment_status": "不满足约束",
+      "reason": "Its process at the requested scale uses an animal-derived supplement, which is prohibited."
+    }
+  ],
+  "insufficient_information": false
+}

@@ -1,0 +1,33 @@
+{
+  "question_text": "A vaccine antigen is a trimeric membrane protein that must retain its native conformation. The proposed process must avoid animal-derived materials and support a 2,000 L production run. Mammalian-cell, insect-cell, yeast, and bacterial platforms are under consideration, but no platform-specific information is provided about native-conformation retention, membrane-protein handling, performance at 2,000 L, or compatibility with the animal-component restriction. Can a platform be selected from the information given?",
+  "decision_status": "信息不足，无法判断",
+  "answer_rationale": "The antigen requirements and process constraints are specified, but no candidate-specific evidence is supplied to establish whether any platform meets them. A selection cannot be made without that information.",
+  "missing_information": [
+    "Whether each candidate platform can retain the required native conformation of the trimeric membrane antigen.",
+    "Whether each candidate platform can support the required 2,000 L production scale for this antigen.",
+    "Whether each candidate platform can meet the animal-derived-material restriction under the proposed process."
+  ],
+  "platform_assessments": [
+    {
+      "platform_name": "Mammalian-cell platform",
+      "assessment_status": "无法判断",
+      "reason": "No information is given about whether this platform can retain the antigen's native conformation, meet the 2,000 L scale, or comply with the animal-component restriction."
+    },
+    {
+      "platform_name": "Insect-cell platform",
+      "assessment_status": "无法判断",
+      "reason": "The question provides no evidence about native-conformation retention, scale feasibility, or process compatibility for this platform."
+    },
+    {
+      "platform_name": "Yeast platform",
+      "assessment_status": "无法判断",
+      "reason": "The question provides no evidence about native-conformation retention, scale feasibility, or process compatibility for this platform."
+    },
+    {
+      "platform_name": "Bacterial platform",
+      "assessment_status": "无法判断",
+      "reason": "The question provides no evidence about native-conformation retention, scale feasibility, or process compatibility for this platform."
+    }
+  ],
+  "insufficient_information": true
+}

@@ -1,0 +1,29 @@
+{
+  "question_text": "A vaccine candidate is a soluble antigen ectodomain with two N-linked glycosylation sites and disulfide bonds. The required product must have the specified mammalian-type glycan profile and native disulfide folding. The process must be serum-free, exclude animal-derived materials, and support a 200 L production run. For this screening, the mammalian-cell platform supports the required folding and glycan profile at 200 L under the stated process conditions; the yeast platform supports disulfide folding but does not produce the required glycan profile; the E. coli platform does not perform N-linked glycosylation; and the plant platform's glycan profile does not meet the stated requirement. Which platform satisfies all constraints?",
+  "decision_status": "推荐单一平台",
+  "answer_rationale": "Only the mammalian-cell platform is stated to meet the required folding, glycan, scale, and process constraints. Each other candidate fails at least the specified glycan requirement.",
+  "missing_information": [],
+  "platform_assessments": [
+    {
+      "platform_name": "Mammalian-cell platform",
+      "assessment_status": "满足约束",
+      "reason": "The question states that this platform supports the required disulfide folding and mammalian-type glycan profile at 200 L under serum-free, animal-component-free conditions."
+    },
+    {
+      "platform_name": "Yeast platform",
+      "assessment_status": "不满足约束",
+      "reason": "Although it supports disulfide folding, the stated glycan profile does not meet the required mammalian-type profile."
+    },
+    {
+      "platform_name": "E. coli platform",
+      "assessment_status": "不满足约束",
+      "reason": "The question states that this platform does not perform the N-linked glycosylation required for the antigen."
+    },
+    {
+      "platform_name": "Plant platform",
+      "assessment_status": "不满足约束",
+      "reason": "Its stated glycan profile fails the specified product requirement."
+    }
+  ],
+  "insufficient_information": false
+}
