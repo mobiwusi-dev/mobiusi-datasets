@@ -1,0 +1,34 @@
+{
+  "is_overdue": false,
+  "event_sequence": [
+    {
+      "event_type": "Departure",
+      "timestamp": "2025-08-03T21:15:00Z",
+      "location": "Cedar Valley cold-chain depot"
+    },
+    {
+      "event_type": "Arrived at transfer hub",
+      "timestamp": "2025-08-04T02:10:00Z",
+      "location": "North Ridge transfer hub"
+    },
+    {
+      "event_type": "Departed transfer hub",
+      "timestamp": "2025-08-04T02:35:00Z",
+      "location": "North Ridge transfer hub"
+    },
+    {
+      "event_type": "Route checkpoint scan",
+      "timestamp": "2025-08-04T05:45:00Z",
+      "location": "Eastbound corridor checkpoint"
+    }
+  ],
+  "delivery_status": "in_transit",
+  "evaluation_time": "2025-08-04T06:05:00Z",
+  "delivery_constraint": {
+    "constraint_type": "deadline",
+    "deadline_at": "2025-08-04T06:30:00Z"
+  },
+  "remaining_time_minutes": 25,
+  "calculation_explanation": "No delivery event is recorded, so the duration is the elapsed time from departure at 21:15 to the latest checkpoint at 05:45: 510 minutes. The evaluation time is 25 minutes before the 06:30 deadline, so the shipment is not yet overdue.",
+  "transport_duration_minutes": 510
+}

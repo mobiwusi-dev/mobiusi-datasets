@@ -1,0 +1,29 @@
+{
+  "transport_duration_minutes": 330,
+  "is_overdue": false,
+  "event_sequence": [
+    {
+      "event_type": "Departure",
+      "timestamp": "2025-04-18T08:10:00Z",
+      "location": "Westfield distribution depot"
+    },
+    {
+      "event_type": "Arrival at receiving facility",
+      "timestamp": "2025-04-18T13:25:00Z",
+      "location": "Lakeside receiving facility"
+    },
+    {
+      "event_type": "Delivered",
+      "timestamp": "2025-04-18T13:40:00Z",
+      "location": "Lakeside receiving facility"
+    }
+  ],
+  "delivery_status": "delivered",
+  "evaluation_time": "2025-04-18T14:00:00Z",
+  "delivery_constraint": {
+    "constraint_type": "deadline",
+    "deadline_at": "2025-04-18T14:30:00Z"
+  },
+  "remaining_time_minutes": 30,
+  "calculation_explanation": "The truck departed at 08:10 and was delivered at 13:40, for a transport duration of 330 minutes. The 14:30 deadline is 30 minutes after the evaluation time, and delivery occurred before the deadline."
+}
