@@ -1,0 +1,8 @@
+{
+  "claim_text": "If a Content Security Policy omits script-src, default-src can act as the fallback directive for external script fetches.",
+  "source_url": null,
+  "evidence_text": "The default-src directive serves as a fallback for fetch directives that are not explicitly set. If script-src is not specified, default-src supplies the policy for script resource requests.",
+  "security_mechanism": "Content Security Policy (CSP); default-src fallback",
+  "verification_label": "支持",
+  "verification_rationale": "The evidence explicitly identifies default-src as the fallback for unspecified fetch directives and names script resource requests when script-src is absent. This supports the claim about external script fetches."
+}

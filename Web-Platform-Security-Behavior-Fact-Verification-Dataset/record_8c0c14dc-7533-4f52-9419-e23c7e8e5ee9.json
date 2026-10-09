@@ -1,0 +1,8 @@
+{
+  "security_mechanism": "Cross-Origin Resource Sharing (CORS); credentialed requests",
+  "verification_label": "反驳",
+  "claim_text": "A server can authorize credentialed cross-origin requests from any origin by returning Access-Control-Allow-Origin: * together with Access-Control-Allow-Credentials: true.",
+  "source_url": null,
+  "evidence_text": "When a response to a credentialed request has Access-Control-Allow-Credentials set to true, the Access-Control-Allow-Origin value must identify the requesting origin; the wildcard value is not permitted for this response.",
+  "verification_rationale": "The evidence says that a credentialed response must specify the requesting origin and cannot use the wildcard value. It therefore contradicts the claim that the wildcard can authorize credentialed requests from any origin."
+}

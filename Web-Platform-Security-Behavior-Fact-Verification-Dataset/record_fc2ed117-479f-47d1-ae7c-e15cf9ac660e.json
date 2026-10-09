@@ -1,0 +1,8 @@
+{
+  "verification_rationale": "The evidence states that a SameSite=None cookie must include Secure and that user agents reject it otherwise. This contradicts the claim that such a cookie can be set without Secure and accepted for cross-site use.",
+  "claim_text": "A cookie configured with SameSite=None can be set without the Secure attribute and still be accepted for cross-site use.",
+  "source_url": null,
+  "evidence_text": "Cookies that specify SameSite=None must also specify Secure. User agents reject cookies with SameSite=None that do not include Secure.",
+  "security_mechanism": "Cookies; SameSite; Secure",
+  "verification_label": "反驳"
+}
