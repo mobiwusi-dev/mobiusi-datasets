@@ -1,0 +1,32 @@
+{
+  "evidence_summary": "Store lookup resolved all three branches. Inventory listed 9 cups at Eastbank, none at Larkspur, and 4 cups plus a zero-available lot at Westfield. Batch results marked MC-0712-A and MC-0712-B saleable and MC-0712-C sale stopped.",
+  "final_answer": "Fresh-cut mango cups are available at Eastbank Grocer (9 cups) and Westfield Market (4 cups). Larkspur Foods has no inventory listed. At Westfield, batch MC-0712-C is marked sale stopped and has zero available; the other listed batches are saleable.",
+  "user_request": "Which of Eastbank Grocer, Larkspur Foods, and Westfield Market currently have 250 g fresh-cut mango cups available, and what are the batch statuses?",
+  "inventory_records": [
+    {
+      "product_name": "Fresh-cut mango cups, 250 g",
+      "store_name": "Eastbank Grocer",
+      "available_quantity": 9,
+      "quantity_unit": "cups",
+      "batch_code": "MC-0712-A",
+      "batch_status": "Saleable"
+    },
+    {
+      "product_name": "Fresh-cut mango cups, 250 g",
+      "store_name": "Westfield Market",
+      "available_quantity": 4,
+      "quantity_unit": "cups",
+      "batch_code": "MC-0712-B",
+      "batch_status": "Saleable"
+    },
+    {
+      "product_name": "Fresh-cut mango cups, 250 g",
+      "store_name": "Westfield Market",
+      "available_quantity": 0,
+      "quantity_unit": "cups",
+      "batch_code": "MC-0712-C",
+      "batch_status": "Sale stopped"
+    }
+  ],
+  "tool_interaction_trace": "{\"calls\":[{\"tool\":\"store_lookup\",\"arguments\":{\"store_names\":[\"Eastbank Grocer\",\"Larkspur Foods\",\"Westfield Market\"]},\"result\":[{\"store_name\":\"Eastbank Grocer\",\"store_id\":\"EBG-03\"},{\"store_name\":\"Larkspur Foods\",\"store_id\":\"LSF-09\"},{\"store_name\":\"Westfield Market\",\"store_id\":\"WFM-05\"}]},{\"tool\":\"inventory_lookup\",\"arguments\":{\"product_name\":\"Fresh-cut mango cups\",\"package_size\":\"250 g\",\"store_ids\":[\"EBG-03\",\"LSF-09\",\"WFM-05\"],\"group_by\":\"batch\"},\"result\":[{\"product_name\":\"Fresh-cut mango cups, 250 g\",\"store_id\":\"EBG-03\",\"batch_code\":\"MC-0712-A\",\"available_quantity\":9,\"quantity_unit\":\"cups\"},{\"product_name\":\"Fresh-cut mango cups, 250 g\",\"store_id\":\"LSF-09\",\"available_quantity\":0,\"quantity_unit\":\"cups\",\"note\":\"No batch inventory found\"},{\"product_name\":\"Fresh-cut mango cups, 250 g\",\"store_id\":\"WFM-05\",\"batch_code\":\"MC-0712-B\",\"available_quantity\":4,\"quantity_unit\":\"cups\"},{\"product_name\":\"Fresh-cut mango cups, 250 g\",\"store_id\":\"WFM-05\",\"batch_code\":\"MC-0712-C\",\"available_quantity\":0,\"quantity_unit\":\"cups\"}]},{\"tool\":\"batch_status_lookup\",\"arguments\":{\"batch_codes\":[\"MC-0712-A\",\"MC-0712-B\",\"MC-0712-C\"]},\"result\":[{\"batch_code\":\"MC-0712-A\",\"batch_status\":\"Saleable\"},{\"batch_code\":\"MC-0712-B\",\"batch_status\":\"Saleable\"},{\"batch_code\":\"MC-0712-C\",\"batch_status\":\"Sale stopped\"}]}]}"
+}
