@@ -1,0 +1,7 @@
+{
+  "question": "A crew proposes placing 4.0 kN uniformly across one platform lift. Would that comply with the stated limits, and would the same total load comply if concentrated at a single point?",
+  "source_document": "Frame Set M-24 design note: Each platform bay measures 2.0 m by 1.2 m. The maximum uniformly distributed load is 2.0 kN/m², and the total load on one platform lift must not exceed 4.8 kN. A concentrated load at any single point must not exceed 1.0 kN. These limits apply to one platform lift; a fully loaded lift must not be paired with stored materials on the lift immediately above.",
+  "reference_answer": "The uniformly distributed 4.0 kN load complies with the stated limits: it is below the 4.8 kN total limit and, over the 2.4 m² bay, corresponds to about 1.67 kN/m², below the 2.0 kN/m² limit. Concentrating 4.0 kN at one point would not comply because the single-point limit is 1.0 kN.",
+  "supporting_evidence": "The document sets a maximum uniformly distributed load of 2.0 kN/m², a total load limit of 4.8 kN per platform lift, and a maximum concentrated load of 1.0 kN at any single point. It gives the bay dimensions as 2.0 m by 1.2 m.",
+  "constraint_relationship_summary": "The uniformly distributed-load limit and the total-load limit both apply to the platform lift, so both must be respected. The separate 1.0 kN single-point limit rules out concentrating the proposed load at one location. The note also restricts storage on the lift immediately above when a lift is fully loaded."
+}
