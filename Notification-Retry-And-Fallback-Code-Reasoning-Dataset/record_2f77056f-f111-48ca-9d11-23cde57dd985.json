@@ -1,0 +1,58 @@
+{
+  "source_code": "type DeliveryStatus = 'sending' | 'sent' | 'failed';\ntype SendResult = { ok: true } | { ok: false; retryable: boolean; error: string };\n\ninterface Provider {\n  send(recipient: string, body: string): Promise<SendResult>;\n}\ninterface NotificationStore {\n  getStatus(key: string): Promise<DeliveryStatus | undefined>;\n  setStatus(key: string, status: DeliveryStatus): Promise<void>;\n}\nconst delay = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));\n\nclass DeliveryService {\n  constructor(private primary: Provider, private backup: Provider, private store: NotificationStore) {}\n\n  async deliver(key: string, recipient: string, body: string): Promise<DeliveryStatus> {\n    const current = await this.store.getStatus(key);\n    if (current === 'sent' || current === 'sending') return current;\n\n    await this.store.setStatus(key, 'sending');\n    for (let attempt = 1; attempt <= 3; attempt++) {\n      const result = await this.primary.send(recipient, body);\n      if (result.ok) {\n        await this.store.setStatus(key, 'sent');\n        return 'sent';\n      }\n      if (!result.retryable) break;\n      if (attempt < 3) await delay(500 * 2 ** (attempt - 1));\n    }\n\n    const fallback = await this.backup.send(recipient, body);\n    const finalStatus: DeliveryStatus = fallback.ok ? 'sent' : 'failed';\n    await this.store.setStatus(key, finalStatus);\n    return finalStatus;\n  }\n}",
+  "state_transitions": [
+    {
+      "from_state": "absent or failed",
+      "to_state": "sending",
+      "condition": "The stored status is neither sent nor sending, and delivery begins."
+    },
+    {
+      "from_state": "sending",
+      "to_state": "sent",
+      "condition": "The primary provider succeeds, or the backup provider succeeds."
+    },
+    {
+      "from_state": "sending",
+      "to_state": "failed",
+      "condition": "The primary attempts do not succeed and the backup attempt fails."
+    }
+  ],
+  "idempotency_analysis": "The store status check suppresses a repeated call when the key is already sent or sending. However, the read and subsequent setStatus are separate operations, so concurrent callers can both pass the check; atomic claiming or a unique-key constraint is not shown. A crash after marking sending can leave the key in that status, which future calls return without recovery. No provider-side idempotency key is passed.",
+  "control_flow_analysis": {
+    "main_flow": "DeliveryService first reads the stored status and returns immediately for a notification already marked sent or sending. Otherwise it marks the notification sending, tries the primary provider up to three times, and records sent on success. A non-retryable failure or exhausted retry budget leads to one attempt through the backup provider; its result determines the final stored status.",
+    "branch_conditions": [
+      "If the stored status is sent or sending, no provider is called.",
+      "A successful primary result records sent and ends delivery.",
+      "A non-retryable primary failure exits the retry loop immediately.",
+      "A retryable primary failure is retried while fewer than three attempts have been made; delays before the second and third attempts are 500 ms and 1,000 ms.",
+      "After the primary loop exits, the backup is called once; its success records sent and its failure records failed."
+    ]
+  },
+  "component_dependencies": [
+    {
+      "component_name": "DeliveryService",
+      "responsibility": "Coordinates status checks, primary-channel retries, backup-channel delivery, and final status updates.",
+      "dependencies": [
+        "Provider",
+        "NotificationStore",
+        "delay"
+      ]
+    },
+    {
+      "component_name": "Provider",
+      "responsibility": "Sends a notification and returns a success result or a failure with a retryability flag.",
+      "dependencies": []
+    },
+    {
+      "component_name": "NotificationStore",
+      "responsibility": "Reads and writes the notification delivery status.",
+      "dependencies": []
+    }
+  ],
+  "delivery_behavior_impact": "The three-attempt primary loop can improve delivery when failures are transient, at the cost of added latency from its two backoff delays. A permanent primary failure avoids unnecessary primary retries but still incurs one backup attempt. Because the status check and write are not atomic and no provider idempotency key is used, concurrent calls or a crash around provider acceptance can still produce duplicate delivery. Uncaught provider exceptions can exit before a final status is recorded.",
+  "retry_and_fallback_analysis": {
+    "retry_trigger": "Only a primary-provider result with ok false and retryable true triggers another primary attempt. A non-retryable result skips remaining primary attempts and proceeds to the backup. Thrown exceptions are not caught in this code.",
+    "retry_policy": "The primary is called at most three times. Delays are 500 ms and 1,000 ms before attempts two and three, respectively. There is no delay between the final primary attempt and the backup. The backup is attempted once, with no retry policy shown.",
+    "fallback_behavior": "The backup provider is called after a non-retryable primary failure or after all three primary attempts fail. The code has one configured backup and does not show channel selection beyond that. Backup success records sent; backup failure records failed."
+  }
+}

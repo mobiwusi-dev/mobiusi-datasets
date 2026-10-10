@@ -1,0 +1,59 @@
+{
+  "source_code": "type SendResult = { ok: true } | { ok: false; retryable: boolean };\ntype ClaimResult = 'acquired' | 'delivered' | 'busy';\ntype StoredStatus = 'delivered' | 'failed';\n\ninterface Provider {\n  send(recipient: string, body: string): Promise<SendResult>;\n}\ninterface IdempotencyStore {\n  // claim atomically reserves a key unless it is already delivered or in flight.\n  claim(key: string): Promise<ClaimResult>;\n  mark(key: string, status: StoredStatus): Promise<void>;\n}\ninterface Notice { key: string; recipient: string; body: string; route: string[]; }\nconst sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));\n\nclass RoutedSender {\n  constructor(private providers: Record<string, Provider>, private idempotency: IdempotencyStore) {}\n\n  async send(notice: Notice): Promise<string> {\n    const claim = await this.idempotency.claim(notice.key);\n    if (claim !== 'acquired') return claim === 'delivered' ? 'delivered' : 'in_flight';\n\n    for (const channel of notice.route) {\n      const provider = this.providers[channel];\n      if (!provider) continue;\n      for (let attempt = 1; attempt <= 2; attempt++) {\n        const result = await provider.send(notice.recipient, notice.body);\n        if (result.ok) {\n          await this.idempotency.mark(notice.key, 'delivered');\n          return 'delivered';\n        }\n        if (!result.retryable) break;\n        if (attempt < 2) await sleep(250);\n      }\n    }\n\n    await this.idempotency.mark(notice.key, 'failed');\n    return 'failed';\n  }\n}",
+  "state_transitions": [
+    {
+      "from_state": "unclaimed",
+      "to_state": "in_flight",
+      "condition": "The store returns acquired from the atomic claim operation."
+    },
+    {
+      "from_state": "in_flight",
+      "to_state": "delivered",
+      "condition": "Any provider on the ordered route succeeds and the sender records delivered."
+    },
+    {
+      "from_state": "in_flight",
+      "to_state": "failed",
+      "condition": "All route entries are unavailable or their attempts fail, and the sender records failed."
+    }
+  ],
+  "idempotency_analysis": "The sender relies on IdempotencyStore.claim to atomically distinguish acquired, delivered, and busy keys before any provider call. This prevents concurrent sends only if the store fulfills the documented atomic-claim contract. The key is not passed to providers, so provider-side deduplication is not shown. Exceptions after a claim are uncaught, and no claim release or recovery path appears in this code.",
+  "control_flow_analysis": {
+    "main_flow": "RoutedSender first atomically claims the notice key. It returns without sending if the key is already delivered or in flight. For an acquired key, it walks the requested route in order, skips channels without a configured provider, and makes up to two attempts per available provider. A successful send marks the key delivered and stops; exhausting the route marks it failed.",
+    "branch_conditions": [
+      "A delivered claim returns delivered, while a busy claim returns in_flight; neither invokes a provider.",
+      "A route entry with no configured provider is skipped.",
+      "A successful provider result marks the notice delivered and ends processing.",
+      "A non-retryable failure moves directly to the next route entry.",
+      "A retryable failure gets one retry after a 250 ms delay; after the second failed attempt, processing advances to the next route entry.",
+      "If no route entry succeeds, the store is marked failed."
+    ]
+  },
+  "component_dependencies": [
+    {
+      "component_name": "RoutedSender",
+      "responsibility": "Claims the idempotency key and coordinates ordered channel attempts and status updates.",
+      "dependencies": [
+        "Provider",
+        "IdempotencyStore",
+        "sleep"
+      ]
+    },
+    {
+      "component_name": "Provider",
+      "responsibility": "Sends a notice over a configured channel and reports success or whether a failure is retryable.",
+      "dependencies": []
+    },
+    {
+      "component_name": "IdempotencyStore",
+      "responsibility": "Atomically claims a notice key and records delivered or failed status.",
+      "dependencies": []
+    }
+  ],
+  "delivery_behavior_impact": "Ordered routing makes channel preference explicit and allows later channels to recover from an unavailable or failing earlier channel. Limiting each channel to two attempts bounds per-channel delay, while the 250 ms retry can help with transient failures. A longer route can increase total latency. Atomic claiming reduces concurrent duplicate sends, but provider acceptance followed by a process failure before mark can still lead to a later redelivery if the store permits recovery; provider-side deduplication is not shown.",
+  "retry_and_fallback_analysis": {
+    "retry_trigger": "A provider result with ok false and retryable true triggers a retry on the same channel. Non-retryable failures advance immediately to the next route entry. Thrown exceptions are not caught.",
+    "retry_policy": "Each configured provider receives at most two attempts. The only retry delay is 250 ms between those attempts. No further retry is made on that provider after the second failure; no persistent retry scheduling is shown.",
+    "fallback_behavior": "The route array determines channel order. After a channel fails or is unconfigured, the sender proceeds to the next entry. It stops at the first successful provider. If all entries are unavailable or fail, it marks the notice failed. The code does not define a default route or select channels outside the supplied array."
+  }
+}
