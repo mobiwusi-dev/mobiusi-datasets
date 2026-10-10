@@ -1,0 +1,13 @@
+{
+  "question": "How does this code confirm discharge overcurrent, and which flags or outputs change when the condition is confirmed?",
+  "demonstration_answer": {
+    "fault_type": "Discharge overcurrent",
+    "trigger_conditions": "pack_current_ma must be strictly greater than 18000 mA for four consecutive calls. Any reading at or below 18000 mA resets discharge_oc_samples to zero.",
+    "detection_path": "bms_fast_protection_task calls bms_check_discharge_overcurrent, which compares pack_current_ma with DISCHARGE_OC_LIMIT_MA, updates the sample counter, and checks whether the confirmation count has been reached. The snippet does not show current-sensor acquisition.",
+    "state_updates": "Once discharge_oc_samples reaches four, discharge_oc_fault is set to true and fault_event_pending is set to true. The snippet contains no branch that clears either flag.",
+    "protection_response": "The confirmed fault sets discharge_fet_cmd to false. No charge-path command or additional response is shown in this code.",
+    "code_evidence": "DISCHARGE_OC_LIMIT_MA is defined as 18000 and DISCHARGE_OC_CONFIRM_SAMPLES as 4. In bms_check_discharge_overcurrent, the comparison uses >, the non-qualifying branch resets the counter, and the confirmed branch sets discharge_oc_fault, discharge_fet_cmd, and fault_event_pending.",
+    "reasoning": "The strict greater-than comparison means a reading exactly equal to the limit does not count as an overcurrent sample. Four consecutive qualifying calls are required because any non-qualifying call resets the counter. At confirmation, the code records the fault, removes the discharge-FET command, and marks a fault event as pending; no recovery or flag-clearing logic is present in the snippet."
+  },
+  "firmware_source_code": "#include <stdbool.h>\n#include <stdint.h>\n\n#define DISCHARGE_OC_LIMIT_MA 18000\n#define DISCHARGE_OC_CONFIRM_SAMPLES 4u\n\ntypedef struct {\n    int32_t pack_current_ma;\n    uint8_t discharge_oc_samples;\n    bool discharge_oc_fault;\n    bool discharge_fet_cmd;\n    bool fault_event_pending;\n} Bms;\n\nstatic void bms_check_discharge_overcurrent(Bms *b)\n{\n    if (b->pack_current_ma > DISCHARGE_OC_LIMIT_MA) {\n        if (b->discharge_oc_samples < DISCHARGE_OC_CONFIRM_SAMPLES) {\n            ++b->discharge_oc_samples;\n        }\n    } else {\n        b->discharge_oc_samples = 0u;\n    }\n\n    if (b->discharge_oc_samples >= DISCHARGE_OC_CONFIRM_SAMPLES) {\n        b->discharge_oc_fault = true;\n        b->discharge_fet_cmd = false;\n        b->fault_event_pending = true;\n    }\n}\n\nvoid bms_fast_protection_task(Bms *b)\n{\n    bms_check_discharge_overcurrent(b);\n}\n"
+}
