@@ -1,0 +1,75 @@
+{
+  "answer": "The worker retries only when result.retryable is true and the task has fewer than two recorded attempts. It increments attempts, sets retry_wait, and schedules the same task ID using Date.now() plus attempts multiplied by 5000. Otherwise it stores the gateway message ID and maps accepted to sent or failed. A later receipt is correlated using both taskId and messageId; only a receipt matching the task's stored gatewayId can update the task to delivered or undelivered and publish sms.status.",
+  "call_path": [
+    "SmsRequestHandler.submit",
+    "SmsScheduler.schedule",
+    "SmsWorker.handle",
+    "SmsGateway.send",
+    "SmsScheduler.schedule (retry branch)",
+    "GatewayReceiptController.receive",
+    "SmsReceiptHandler.handle",
+    "SmsRepo.setStatus",
+    "EventBus.publish"
+  ],
+  "data_flow": [
+    {
+      "data_name": "phone and text",
+      "origin": "The request passed to SmsRequestHandler.submit.",
+      "transformations": [
+        "The handler checks both fields for presence.",
+        "It stores them on a new task.",
+        "SmsWorker.handle reads them and passes them to SmsGateway.send."
+      ],
+      "destination": "SmsGateway.send."
+    },
+    {
+      "data_name": "taskId and attempts",
+      "origin": "The ID and initial attempts value returned by SmsRepo.create.",
+      "transformations": [
+        "The task ID is placed in the scheduled job and used by the worker to load the task.",
+        "For a retryable result with attempts below two, the worker increments attempts, sets retry_wait, and schedules the same task ID with a later run time."
+      ],
+      "destination": "SmsWorker.handle on the initial or rescheduled job."
+    },
+    {
+      "data_name": "gateway message ID and delivery status",
+      "origin": "The gateway send result supplies messageId; a later receipt supplies taskId, messageId, and delivered.",
+      "transformations": [
+        "The worker stores the send result message ID when it reaches the non-retry branch.",
+        "The receipt handler checks the stored ID against the receipt ID.",
+        "A matching receipt maps delivered to delivered and false to undelivered, then publishes sms.status."
+      ],
+      "destination": "SmsRepo status storage and EventBus.publish; a nonmatching receipt is ignored."
+    }
+  ],
+  "source_code": "class SmsRequestHandler {\n  constructor(private repo: SmsRepo, private scheduler: SmsScheduler) {}\n\n  async submit(input: { phone: string; text: string; sendAt?: number }) {\n    if (!input.phone || !input.text) throw new Error('phone and text are required');\n    const task = await this.repo.create({\n      phone: input.phone,\n      text: input.text,\n      status: 'pending',\n      attempts: 0\n    });\n    await this.scheduler.schedule({ taskId: task.id }, input.sendAt);\n    return { taskId: task.id };\n  }\n}\n\nclass SmsWorker {\n  constructor(\n    private repo: SmsRepo,\n    private scheduler: SmsScheduler,\n    private gateway: SmsGateway\n  ) {}\n\n  async handle(job: { taskId: string }) {\n    const task = await this.repo.get(job.taskId);\n    await this.repo.setStatus(task.id, 'sending');\n    const result = await this.gateway.send(task.phone, task.text);\n\n    if (result.retryable && task.attempts < 2) {\n      const attempts = task.attempts + 1;\n      await this.repo.setAttempts(task.id, attempts);\n      await this.repo.setStatus(task.id, 'retry_wait');\n      await this.scheduler.schedule({ taskId: task.id }, Date.now() + attempts * 5000);\n      return;\n    }\n\n    await this.repo.setGatewayId(task.id, result.messageId);\n    await this.repo.setStatus(task.id, result.accepted ? 'sent' : 'failed');\n  }\n}\n\nclass GatewayReceiptController {\n  constructor(private receipts: SmsReceiptHandler) {}\n\n  async receive(receipt: { taskId: string; messageId: string; delivered: boolean }) {\n    await this.receipts.handle(receipt);\n    return { accepted: true };\n  }\n}\n\nclass SmsReceiptHandler {\n  constructor(private repo: SmsRepo, private events: EventBus) {}\n\n  async handle(receipt: { taskId: string; messageId: string; delivered: boolean }) {\n    const task = await this.repo.get(receipt.taskId);\n    if (!task || task.gatewayId !== receipt.messageId) return;\n    const status = receipt.delivered ? 'delivered' : 'undelivered';\n    await this.repo.setStatus(task.id, status);\n    await this.events.publish({ type: 'sms.status', taskId: task.id, status });\n  }\n}",
+  "flow_summary": "The request handler validates and stores the phone number and text as a pending task, then schedules it at the requested time. The worker marks the task sending and calls the gateway. A retryable result is rescheduled while the attempt limit allows; otherwise, the gateway message ID and immediate sent or failed status are stored. A receipt controller passes later gateway receipts to a handler that matches task and message IDs before updating the final delivery status and publishing an event.",
+  "user_question": "How does the SMS worker handle retryable send results, and how is a later delivery receipt matched to the task before its status is updated?",
+  "pipeline_stages": [
+    {
+      "stage_name": "Request validation and task scheduling",
+      "code_location": "SmsRequestHandler.submit",
+      "responsibility": "Validates that phone and text are present, creates a pending task with zero attempts, and schedules its task ID.",
+      "input_data": "Request phone, text, and optional sendAt value.",
+      "output_data": "A stored task ID and a scheduled job containing that ID.",
+      "next_handoff": "SmsScheduler.schedule receives the task ID and optional requested time."
+    },
+    {
+      "stage_name": "Gateway submission and retry decision",
+      "code_location": "SmsWorker.handle",
+      "responsibility": "Loads the task, marks it sending, sends its phone and text to the gateway, and either schedules a retry or records the gateway ID and immediate outcome.",
+      "input_data": "A scheduled job with taskId; the stored task supplies phone, text, and attempts.",
+      "output_data": "For a retryable result below the attempt limit, an incremented attempt count, retry_wait status, and a rescheduled job; otherwise, a gateway message ID and sent or failed status.",
+      "next_handoff": "A retry returns to SmsWorker.handle through the scheduler; a gateway receipt can later enter through GatewayReceiptController.receive."
+    },
+    {
+      "stage_name": "Delivery receipt processing",
+      "code_location": "GatewayReceiptController.receive and SmsReceiptHandler.handle",
+      "responsibility": "Passes the incoming receipt to the handler, which verifies that its message ID matches the task's stored gateway ID before mapping delivered to delivered or undelivered.",
+      "input_data": "A receipt containing taskId, messageId, and delivered.",
+      "output_data": "An updated task status and an sms.status event with taskId and status, if the task and gateway ID match.",
+      "next_handoff": "Publishes the status event after updating the repository; unmatched receipts return without updating or publishing."
+    }
+  ],
+  "status_callback": "GatewayReceiptController.receive is the receipt entry point. SmsReceiptHandler.handle loads the task and returns without changes if it is missing or its stored gatewayId differs from the receipt messageId. For a match, it updates the status from the delivered flag and publishes an sms.status event."
+}

@@ -1,0 +1,84 @@
+{
+  "answer": "PushWorker.handle first checks pushEnabled. If it is false, it records suppressed and queues a callback without querying devices. If enabled, it loads active tokens; an empty list produces no_devices and a callback. Otherwise, the worker submits those tokens with the notice title, body, and noticeId. It sets sent when acceptedIds is nonempty and failed otherwise, then passes both acceptedIds and rejectedIds to finish. Because all these outcomes go through finish, each gets a status update and callback job; the callback worker forwards the outcome and device ID lists to the sink.",
+  "call_path": [
+    "PushRequestController.submit",
+    "PushQueue.add",
+    "PushWorker.handle",
+    "PreferenceStore.get",
+    "DeviceStore.activeTokens",
+    "PushGateway.sendMulticast",
+    "PushWorker.finish",
+    "CallbackQueue.add",
+    "PushCallbackWorker.handle",
+    "PushCallbackSink.deliver"
+  ],
+  "data_flow": [
+    {
+      "data_name": "userId, title, and body",
+      "origin": "The request passed to PushRequestController.submit.",
+      "transformations": [
+        "The controller stores the request fields on a queued notice.",
+        "The worker reads userId for preference and device lookups.",
+        "For an enabled user with tokens, it builds the gateway payload from title, body, and noticeId."
+      ],
+      "destination": "PreferenceStore.get, DeviceStore.activeTokens, and PushGateway.sendMulticast, depending on the branch."
+    },
+    {
+      "data_name": "active device tokens",
+      "origin": "DeviceStore.activeTokens called with the notice userId.",
+      "transformations": [
+        "The worker checks whether the returned list is empty.",
+        "A nonempty list is passed to sendMulticast; an empty list produces the no_devices outcome."
+      ],
+      "destination": "PushGateway.sendMulticast when nonempty; otherwise the status and callback path through PushWorker.finish."
+    },
+    {
+      "data_name": "terminal status and device result IDs",
+      "origin": "The worker derives suppressed or no_devices from the preference and token branches, or derives sent or failed from the gateway acceptedIds; rejectedIds are also returned by the gateway.",
+      "transformations": [
+        "finish updates the notice status.",
+        "finish queues the status and acceptedIds and rejectedIds, defaulting both lists to empty for early outcomes.",
+        "PushCallbackWorker maps those lists to acceptedDeviceIds and rejectedDeviceIds."
+      ],
+      "destination": "PushRepo.setStatus, CallbackQueue, and PushCallbackSink.deliver."
+    }
+  ],
+  "source_code": "class PushRequestController {\n  constructor(private repo: PushRepo, private queue: PushQueue) {}\n\n  async submit(input: { userId: string; title: string; body: string }) {\n    const notice = await this.repo.insert({\n      userId: input.userId,\n      title: input.title,\n      body: input.body,\n      status: 'queued'\n    });\n    await this.queue.add({ noticeId: notice.id });\n    return { noticeId: notice.id };\n  }\n}\n\nclass PushWorker {\n  constructor(\n    private repo: PushRepo,\n    private preferences: PreferenceStore,\n    private devices: DeviceStore,\n    private gateway: PushGateway,\n    private callbacks: CallbackQueue\n  ) {}\n\n  async handle(job: { noticeId: string }) {\n    const notice = await this.repo.get(job.noticeId);\n    const preferences = await this.preferences.get(notice.userId);\n    if (!preferences.pushEnabled) {\n      await this.finish(notice.id, 'suppressed');\n      return;\n    }\n\n    const tokens = await this.devices.activeTokens(notice.userId);\n    if (tokens.length === 0) {\n      await this.finish(notice.id, 'no_devices');\n      return;\n    }\n\n    const result = await this.gateway.sendMulticast(tokens, {\n      title: notice.title,\n      body: notice.body,\n      data: { noticeId: notice.id }\n    });\n    const status = result.acceptedIds.length > 0 ? 'sent' : 'failed';\n    await this.finish(notice.id, status, result.acceptedIds, result.rejectedIds);\n  }\n\n  private async finish(\n    noticeId: string,\n    status: string,\n    acceptedIds: string[] = [],\n    rejectedIds: string[] = []\n  ) {\n    await this.repo.setStatus(noticeId, status);\n    await this.callbacks.add({ noticeId, status, acceptedIds, rejectedIds });\n  }\n}\n\nclass PushCallbackWorker {\n  constructor(private sink: PushCallbackSink) {}\n\n  async handle(job: { noticeId: string; status: string; acceptedIds: string[]; rejectedIds: string[] }) {\n    await this.sink.deliver({\n      noticeId: job.noticeId,\n      status: job.status,\n      acceptedDeviceIds: job.acceptedIds,\n      rejectedDeviceIds: job.rejectedIds\n    });\n  }\n}",
+  "flow_summary": "The controller stores a push notice and queues its ID. The worker loads the notice, checks the user's push preference, and either finishes it as suppressed or loads active device tokens. With no tokens it finishes as no_devices; otherwise it sends the title, body, and notice ID to the gateway and derives sent or failed from whether any device IDs were accepted. Every finish path updates the repository and queues a callback job, which a callback worker forwards to its sink.",
+  "user_question": "How do user preferences and active device tokens affect push delivery, and what information is included in the callback for each terminal outcome?",
+  "pipeline_stages": [
+    {
+      "stage_name": "Notice creation and queueing",
+      "code_location": "PushRequestController.submit",
+      "responsibility": "Persists the user ID, title, body, and queued status, then schedules processing by notice ID.",
+      "input_data": "Request userId, title, and body.",
+      "output_data": "A stored notice and a queue job containing its ID.",
+      "next_handoff": "PushQueue.add makes the notice ID available to PushWorker.handle."
+    },
+    {
+      "stage_name": "Preference and device routing",
+      "code_location": "PushWorker.handle",
+      "responsibility": "Loads the notice, checks whether push is enabled for its user, and obtains that user's active device tokens when enabled.",
+      "input_data": "A job noticeId and the stored notice's userId; PreferenceStore and DeviceStore provide preference and active tokens.",
+      "output_data": "A suppressed terminal outcome when push is disabled, a no_devices outcome when no tokens exist, or tokens for gateway submission.",
+      "next_handoff": "The two early outcomes call finish; otherwise, the worker passes tokens and notice content to PushGateway.sendMulticast."
+    },
+    {
+      "stage_name": "Multicast send and outcome recording",
+      "code_location": "PushWorker.handle and PushWorker.finish",
+      "responsibility": "Sends title, body, and noticeId to the gateway, derives sent or failed from acceptedIds, and records the status with accepted and rejected device IDs.",
+      "input_data": "Active device tokens and a payload built from the stored notice.",
+      "output_data": "A sent or failed status and the gateway's acceptedIds and rejectedIds; all terminal paths also produce a callback job.",
+      "next_handoff": "finish updates PushRepo and adds noticeId, status, acceptedIds, and rejectedIds to CallbackQueue."
+    },
+    {
+      "stage_name": "Callback delivery",
+      "code_location": "PushCallbackWorker.handle",
+      "responsibility": "Forwards the queued terminal status and device ID lists to the callback sink, renaming the lists in the sink payload.",
+      "input_data": "A callback job with noticeId, status, acceptedIds, and rejectedIds.",
+      "output_data": "A sink delivery with noticeId, status, acceptedDeviceIds, and rejectedDeviceIds.",
+      "next_handoff": "Calls PushCallbackSink.deliver; no further handoff is shown in this code."
+    }
+  ],
+  "status_callback": "Every terminal branch calls PushWorker.finish. That method stores the status and queues a callback job. PushCallbackWorker.handle forwards the notice ID, status, accepted device IDs, and rejected device IDs to PushCallbackSink.deliver. For preference-disabled and no-device branches, the ID lists use the empty-array defaults."
+}

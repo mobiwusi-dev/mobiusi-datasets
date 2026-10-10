@@ -1,0 +1,75 @@
+{
+  "answer": "NoticeController.submit stores recipient, templateId, and variables, then queues only the resulting notice ID. EmailDeliveryWorker.handle uses that ID to reload the stored data, renders the template, and sends the recipient the rendered subject and text. It maps the gateway acceptance result to sent or failed and publishes the resulting status with the gateway message ID. That event is what triggers StatusCallbackHandler.handle, which forwards the status details to the callback sink.",
+  "call_path": [
+    "NoticeController.submit",
+    "DeliveryQueue.add",
+    "EmailDeliveryWorker.handle",
+    "TemplateRenderer.render",
+    "EmailGateway.send",
+    "NoticeRepo.setStatus",
+    "EventBus.publish",
+    "StatusCallbackHandler.handle",
+    "CallbackSink.notify"
+  ],
+  "data_flow": [
+    {
+      "data_name": "recipient, templateId, and variables",
+      "origin": "The EmailNotice passed to NoticeController.submit.",
+      "transformations": [
+        "The controller checks recipient and templateId for presence.",
+        "The input fields are persisted in a notice record.",
+        "The worker passes templateId and variables to TemplateRenderer.render and uses the stored recipient for the gateway send."
+      ],
+      "destination": "TemplateRenderer.render consumes templateId and variables; EmailGateway.send consumes the recipient and rendered subject and text."
+    },
+    {
+      "data_name": "noticeId",
+      "origin": "The ID returned by NoticeRepo.insert.",
+      "transformations": [
+        "The controller places it in a DeliveryQueue job.",
+        "EmailDeliveryWorker.handle uses it to load the notice.",
+        "The worker includes it in the published status event."
+      ],
+      "destination": "NoticeRepo.get, the event bus, and StatusCallbackHandler.handle."
+    },
+    {
+      "data_name": "status and providerMessageId",
+      "origin": "The email gateway result supplies accepted and messageId; the worker derives status from accepted.",
+      "transformations": [
+        "The worker maps accepted to sent and not accepted to failed.",
+        "It stores the status and publishes both status and messageId in a notice.status event."
+      ],
+      "destination": "NoticeRepo.setStatus and the callback sink notification forwarded by StatusCallbackHandler."
+    }
+  ],
+  "source_code": "interface EmailNotice { recipient: string; templateId: string; variables: Record<string, string>; }\n\nclass NoticeController {\n  constructor(private repo: NoticeRepo, private queue: DeliveryQueue) {}\n\n  async submit(input: EmailNotice) {\n    if (!input.recipient || !input.templateId) throw new Error('recipient and templateId are required');\n    const notice = await this.repo.insert({\n      recipient: input.recipient,\n      templateId: input.templateId,\n      variables: input.variables,\n      status: 'queued'\n    });\n    await this.queue.add({ noticeId: notice.id });\n    return { noticeId: notice.id };\n  }\n}\n\nclass EmailDeliveryWorker {\n  constructor(\n    private repo: NoticeRepo,\n    private renderer: TemplateRenderer,\n    private mailer: EmailGateway,\n    private events: EventBus\n  ) {}\n\n  async handle(job: { noticeId: string }) {\n    const notice = await this.repo.get(job.noticeId);\n    const content = await this.renderer.render(notice.templateId, notice.variables);\n    await this.repo.setStatus(notice.id, 'sending');\n    const result = await this.mailer.send({\n      to: notice.recipient,\n      subject: content.subject,\n      text: content.text\n    });\n    const status = result.accepted ? 'sent' : 'failed';\n    await this.repo.setStatus(notice.id, status);\n    await this.events.publish({\n      type: 'notice.status',\n      noticeId: notice.id,\n      status,\n      providerMessageId: result.messageId\n    });\n  }\n}\n\nclass StatusCallbackHandler {\n  constructor(private sink: CallbackSink) {}\n\n  async handle(event: { type: string; noticeId: string; status: string; providerMessageId: string }) {\n    if (event.type !== 'notice.status') return;\n    await this.sink.notify({\n      noticeId: event.noticeId,\n      status: event.status,\n      providerMessageId: event.providerMessageId\n    });\n  }\n}",
+  "flow_summary": "The controller validates the recipient and template ID, stores the notice with its variables and queued status, then adds its ID to the delivery queue. The worker loads that record, renders the template, sends the resulting subject and text, records the outcome, and publishes a status event that the callback handler forwards to its sink.",
+  "user_question": "How do recipient and template data move from request submission to email delivery, and what triggers the status callback?",
+  "pipeline_stages": [
+    {
+      "stage_name": "Request intake and persistence",
+      "code_location": "NoticeController.submit",
+      "responsibility": "Rejects requests missing a recipient or template ID, persists the request fields, and marks the new notice queued.",
+      "input_data": "EmailNotice input: recipient, templateId, and variables.",
+      "output_data": "A stored notice with an ID and queued status.",
+      "next_handoff": "Adds the stored notice ID to DeliveryQueue for worker processing."
+    },
+    {
+      "stage_name": "Template rendering and email send",
+      "code_location": "EmailDeliveryWorker.handle",
+      "responsibility": "Loads the notice, renders its template using the stored variables, marks it sending, and submits the rendered content to the email gateway.",
+      "input_data": "A queue job containing noticeId; the worker then reads recipient, templateId, and variables from NoticeRepo.",
+      "output_data": "An email gateway result containing accepted and messageId, plus a sent or failed notice status.",
+      "next_handoff": "Updates the repository status and publishes a notice.status event with the notice ID, outcome, and provider message ID."
+    },
+    {
+      "stage_name": "Status callback forwarding",
+      "code_location": "StatusCallbackHandler.handle",
+      "responsibility": "Ignores events of other types and forwards notice.status event fields to the callback sink.",
+      "input_data": "An event containing type, noticeId, status, and providerMessageId.",
+      "output_data": "A callback sink notification with the notice ID, status, and provider message ID.",
+      "next_handoff": "Calls CallbackSink.notify; no further handoff is shown in this code."
+    }
+  ],
+  "status_callback": "After the gateway returns, the worker derives sent or failed from result.accepted, updates the notice, and publishes a notice.status event carrying the notice ID, status, and provider message ID. StatusCallbackHandler filters for that event type and forwards those fields to CallbackSink.notify."
+}
