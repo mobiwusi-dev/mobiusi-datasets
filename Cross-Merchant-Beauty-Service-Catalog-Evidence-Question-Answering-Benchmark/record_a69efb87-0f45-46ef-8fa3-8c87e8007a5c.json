@@ -1,0 +1,11 @@
+{
+  "answer": "It includes regrowth application and a rinse; a blow-dry is not included.",
+  "service_name": "Root retouch",
+  "user_question": "What does Marlow Color House include with its Root retouch?",
+  "evidence_quote": "Root retouch: $110; covers regrowth application and a rinse. A blow-dry is not included.",
+  "target_merchant": "Marlow Color House",
+  "catalog_document": "Marlow Color House\n- Root retouch: $110; covers regrowth application and a rinse. A blow-dry is not included.\n- Scalp reset: $38; clarifying cleanse followed by a soothing scalp treatment.\n\nFern & Finch Salon\n- Root retouch: $98; includes regrowth application, rinse, and blow-dry.",
+  "evidence_merchant": "Marlow Color House",
+  "is_merchant_match": true,
+  "is_answer_supported": true
+}

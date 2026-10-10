@@ -1,0 +1,11 @@
+{
+  "evidence_quote": "Botanical gloss: $105; demi-permanent gloss, finishing rinse, and a blow-dry.",
+  "target_merchant": "Northline Hair Atelier",
+  "answer": "Yes. The Botanical gloss includes a blow-dry.",
+  "service_name": "Botanical gloss",
+  "user_question": "At Northline Hair Atelier, does the Botanical gloss include a blow-dry?",
+  "catalog_document": "Northline Hair Atelier\n- Botanical gloss: $85; demi-permanent gloss and a finishing rinse.\n- New-client consultation: complimentary; scheduled before color services.\n\nCedar Lane Studio\n- Botanical gloss: $105; demi-permanent gloss, finishing rinse, and a blow-dry.",
+  "evidence_merchant": "Cedar Lane Studio",
+  "is_merchant_match": false,
+  "is_answer_supported": false
+}

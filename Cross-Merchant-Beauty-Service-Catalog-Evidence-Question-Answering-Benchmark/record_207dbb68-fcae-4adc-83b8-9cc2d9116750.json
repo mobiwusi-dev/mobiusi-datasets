@@ -1,0 +1,11 @@
+{
+  "evidence_quote": "Signature cut: $68; includes a consultation, haircut, and finish.",
+  "target_merchant": "Harbor & Ash Studio",
+  "answer": "Yes. The Signature cut includes a finish and is listed at $68.",
+  "service_name": "Signature cut",
+  "user_question": "At Harbor & Ash Studio, does the Signature cut include a finish, and what is its listed price?",
+  "catalog_document": "Harbor & Ash Studio\n- Signature cut: $68; includes a consultation, haircut, and finish.\n- Gloss refresh: $92; toner application and blow-dry.\n\nJuniper Room Hair\n- Signature cut: $74; includes a consultation and haircut; styling is not included.",
+  "evidence_merchant": "Harbor & Ash Studio",
+  "is_merchant_match": true,
+  "is_answer_supported": true
+}
