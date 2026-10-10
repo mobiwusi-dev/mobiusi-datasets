@@ -1,0 +1,35 @@
+{
+  "ambiguities": [],
+  "request_text": "In the Renewal Reminder workflow, change the reminder trigger from 30 days before renewal to 14 days before, and send the reminder to the account owner instead of the finance contact.",
+  "workflow_goal": "Update the Renewal Reminder workflow to send its reminder 14 days before renewal to the account owner.",
+  "key_parameters": [
+    {
+      "parameter_name": "Reminder lead time",
+      "parameter_value": "14 days before renewal (changed from 30 days)",
+      "parameter_scope": "Renewal reminder trigger"
+    },
+    {
+      "parameter_name": "Recipient",
+      "parameter_value": "Account owner (replacing the finance contact)",
+      "parameter_scope": "Send reminder action"
+    }
+  ],
+  "operation_type": "modify",
+  "workflow_objects": [
+    {
+      "object_type": "workflow",
+      "object_name": "Renewal Reminder",
+      "object_role": "The existing workflow being modified."
+    },
+    {
+      "object_type": "trigger",
+      "object_name": "Renewal reminder timing",
+      "object_role": "Changes the workflow's reminder timing relative to the renewal date."
+    },
+    {
+      "object_type": "action",
+      "object_name": "Send reminder",
+      "object_role": "Sends the reminder to the account owner instead of the finance contact."
+    }
+  ]
+}

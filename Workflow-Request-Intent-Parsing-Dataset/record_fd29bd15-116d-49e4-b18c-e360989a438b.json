@@ -1,0 +1,38 @@
+{
+  "ambiguities": [
+    "Which operations queue does 'the usual operations queue' refer to?",
+    "Who or what should receive the escalation?"
+  ],
+  "request_text": "Set up a workflow for new vendor onboarding: when a request is submitted, notify the usual operations queue, and wait three business days before escalating it if nobody has reviewed it.",
+  "workflow_goal": "Coordinate new vendor onboarding requests by notifying operations and escalating requests that remain unreviewed after three business days.",
+  "key_parameters": [
+    {
+      "parameter_name": "Review waiting period",
+      "parameter_value": "3 business days",
+      "parameter_scope": "Escalation condition"
+    }
+  ],
+  "operation_type": "create",
+  "workflow_objects": [
+    {
+      "object_type": "trigger",
+      "object_name": "Vendor onboarding request submitted",
+      "object_role": "Starts the workflow when a vendor onboarding request is submitted."
+    },
+    {
+      "object_type": "action",
+      "object_name": "Notify operations queue",
+      "object_role": "Notifies the operations queue about the submitted request."
+    },
+    {
+      "object_type": "condition",
+      "object_name": "Request has not been reviewed",
+      "object_role": "Determines whether the request should be escalated after the waiting period."
+    },
+    {
+      "object_type": "action",
+      "object_name": "Escalate request",
+      "object_role": "Escalates the request if it has not been reviewed after the specified delay."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "ambiguities": [],
+  "request_text": "Create a workflow that runs whenever a new support email arrives. If the subject contains 'refund', create a ticket in the Returns queue and assign it to the Billing team.",
+  "workflow_goal": "Route support emails about refunds into the Returns queue and assign the resulting tickets to the Billing team.",
+  "key_parameters": [
+    {
+      "parameter_name": "Subject match",
+      "parameter_value": "Contains 'refund'",
+      "parameter_scope": "Condition"
+    },
+    {
+      "parameter_name": "Ticket queue",
+      "parameter_value": "Returns",
+      "parameter_scope": "Create ticket action"
+    },
+    {
+      "parameter_name": "Assignee team",
+      "parameter_value": "Billing",
+      "parameter_scope": "Ticket assignment action"
+    }
+  ],
+  "operation_type": "create",
+  "workflow_objects": [
+    {
+      "object_type": "trigger",
+      "object_name": "New support email",
+      "object_role": "Starts the workflow when a support email arrives."
+    },
+    {
+      "object_type": "condition",
+      "object_name": "Subject contains 'refund'",
+      "object_role": "Allows the ticket creation and assignment steps to run only when the email subject contains the specified term."
+    },
+    {
+      "object_type": "action",
+      "object_name": "Create ticket",
+      "object_role": "Creates a ticket for a matching support email."
+    },
+    {
+      "object_type": "action",
+      "object_name": "Assign ticket to Billing team",
+      "object_role": "Assigns the created ticket to the requested team."
+    }
+  ]
+}
