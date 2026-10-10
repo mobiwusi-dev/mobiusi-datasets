@@ -1,0 +1,12 @@
+{
+  "evidence": "After the userId check, the database lookup filters only by report ID. The code does not compare the report's tenant with any tenant associated with the caller, so a caller who knows another tenant's report ID can receive that report.",
+  "source_code": "async function downloadReport(req, res) {\n  if (!req.auth?.userId) {\n    return res.status(401).end();\n  }\n\n  const report = await db.report.findUnique({\n    where: { id: req.params.reportId }\n  });\n  if (!report) return res.status(404).end();\n\n  return res.json(report);\n}",
+  "expected_boundary": "An authenticated caller may retrieve a report only if the report belongs to the caller's tenant.",
+  "violation_category": "资源租户归属校验缺失",
+  "boundary_compliance": false,
+  "programming_language": "JavaScript",
+  "tenant_identity_source": "The request context is checked for req.auth.userId, but no tenant identity is read; the report record is retrieved by its ID.",
+  "authorization_mechanism": "The handler checks that a user is authenticated, then retrieves a report by ID without checking its tenant ownership.",
+  "cross_tenant_data_access": true,
+  "observed_authorization_decision": "允许"
+}

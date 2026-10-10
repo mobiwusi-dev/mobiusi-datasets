@@ -1,0 +1,12 @@
+{
+  "evidence": "The handler accepts any string in req.query.tenantId and uses it directly in the database filter. It never checks that this value matches an authenticated tenant identity, so an authenticated caller can request events for another tenant.",
+  "source_code": "async function listEvents(req, res) {\n  if (!req.auth?.userId) {\n    return res.status(401).end();\n  }\n\n  const tenantId = req.query.tenantId;\n  if (typeof tenantId !== \"string\") {\n    return res.status(400).end();\n  }\n\n  const events = await db.event.findMany({\n    where: { tenantId }\n  });\n  return res.json(events);\n}",
+  "expected_boundary": "The tenant filter must be derived from or verified against the authenticated caller's tenant identity; callers must not select another tenant's data by changing a request parameter.",
+  "violation_category": "租户身份校验缺失",
+  "boundary_compliance": false,
+  "programming_language": "JavaScript",
+  "tenant_identity_source": "The tenant ID used for the query comes directly from the caller-controlled req.query.tenantId parameter; the authenticated request context is checked only for userId.",
+  "authorization_mechanism": "The handler requires an authenticated user and filters events using the tenant ID supplied in the query string, without comparing it to the caller's tenant.",
+  "cross_tenant_data_access": true,
+  "observed_authorization_decision": "允许"
+}

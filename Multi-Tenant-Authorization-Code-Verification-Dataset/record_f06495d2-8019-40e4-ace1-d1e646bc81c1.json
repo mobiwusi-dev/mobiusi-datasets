@@ -1,0 +1,12 @@
+{
+  "evidence": "The lookup filters by both req.params.invoiceId and the request-context tenantId. A missing tenant ID is rejected, and no invoice outside that tenant can match this query.",
+  "source_code": "async function getInvoice(req, res) {\n  // req.auth is populated by authentication middleware.\n  const tenantId = req.auth?.tenantId;\n  if (typeof tenantId !== \"string\" || tenantId.length === 0) {\n    return res.status(401).end();\n  }\n\n  const invoice = await db.invoice.findFirst({\n    where: { id: req.params.invoiceId, tenantId }\n  });\n  if (!invoice) return res.status(404).end();\n\n  return res.json(invoice);\n}",
+  "expected_boundary": "A caller may retrieve an invoice only when it belongs to the tenant in the authenticated request context.",
+  "violation_category": "无违规",
+  "boundary_compliance": true,
+  "programming_language": "JavaScript",
+  "tenant_identity_source": "The tenant ID in the authenticated request context, read from req.auth.tenantId.",
+  "authorization_mechanism": "The handler requires a tenant ID and includes it in the database lookup alongside the invoice ID.",
+  "cross_tenant_data_access": false,
+  "observed_authorization_decision": "允许"
+}
