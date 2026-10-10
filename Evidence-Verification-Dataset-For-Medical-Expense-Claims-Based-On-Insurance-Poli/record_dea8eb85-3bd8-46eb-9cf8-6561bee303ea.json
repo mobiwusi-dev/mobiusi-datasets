@@ -1,0 +1,41 @@
+{
+  "decision_rationale": "The schedule identifies revision 2025-02 as the form applicable to the stated coverage period and expressly replaces the 2022 wording. The applicable clause excludes implants, and the claim does not establish the narrow emergency-stabilization exception. The older clause is therefore background only and does not support the requested implant expense.",
+  "support_level": "不支持",
+  "evidence_spans": [
+    {
+      "document_label": "Policy Schedule — Form D-8, revision 2025-02",
+      "clause_reference": "Coverage period and form designation",
+      "quotation": "This form replaces the 2022 wording and all prior forms for this coverage period.",
+      "support_role": "反驳"
+    },
+    {
+      "document_label": "Form D-8, revision 2022-03",
+      "clause_reference": "Section 8.4",
+      "quotation": "Medically necessary dental repair following accidental injury is covered when performed within 90 days of the injury.",
+      "support_role": "仅提供背景"
+    },
+    {
+      "document_label": "Form D-8, revision 2025-02",
+      "clause_reference": "Section 8.4",
+      "quotation": "Dental treatment, including implants, is excluded. The exclusion does not apply to emergency stabilization of a natural tooth performed within 24 hours of the injury.",
+      "support_role": "反驳"
+    }
+  ],
+  "version_alignment": "版本不符",
+  "document_conflicts": [
+    {
+      "conflict_description": "The 2022 wording covers certain dental repairs after accidental injury, while the 2025 wording excludes implants. The schedule identifies the 2025 form as replacing the 2022 wording for this coverage period, so the apparent conflict is resolved by the version designation and the older provision does not support this claim.",
+      "conflicting_evidence": [
+        "Form D-8, revision 2022-03, Section 8.4: Medically necessary dental repair following accidental injury is covered when performed within 90 days of the injury.",
+        "Policy Schedule — Form D-8, revision 2025-02: This form replaces the 2022 wording and all prior forms for this coverage period.",
+        "Form D-8, revision 2025-02, Section 8.4: Dental treatment, including implants, is excluded, except for emergency stabilization of a natural tooth performed within 24 hours of the injury."
+      ]
+    }
+  ],
+  "condition_assessment": "条件不满足或存在矛盾",
+  "source_documents_text": "Policy Schedule — Form D-8, revision 2025-02; coverage period: 1 March 2025 through 28 February 2026. The schedule states: This form replaces the 2022 wording and all prior forms for this coverage period. Form D-8, revision 2022-03, Section 8.4: Medically necessary dental repair following accidental injury is covered when performed within 90 days of the injury. Form D-8, revision 2025-02, Section 8.4: Dental treatment, including implants, is excluded. The exclusion does not apply to emergency stabilization of a natural tooth performed within 24 hours of the injury.",
+  "claim_requirement_text": "Coverage is requested for an implant placed 10 days after an accidental tooth injury. The claim cites Form D-8, revision 2022-03, and describes the implant as medically necessary. It does not state that emergency stabilization of a natural tooth was performed within 24 hours.",
+  "missing_or_unmet_conditions": [
+    "The current-form exception requires emergency stabilization of a natural tooth within 24 hours of the injury; the claim describes an implant placed 10 days after the injury and does not state that this exception applies."
+  ]
+}

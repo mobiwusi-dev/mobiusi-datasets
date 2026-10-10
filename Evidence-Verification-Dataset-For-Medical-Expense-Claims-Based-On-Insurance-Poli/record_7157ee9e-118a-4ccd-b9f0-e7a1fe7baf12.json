@@ -1,0 +1,26 @@
+{
+  "support_level": "部分支持",
+  "evidence_spans": [
+    {
+      "document_label": "Policy Schedule — Form PT-12, revision 2024-06",
+      "clause_reference": "Section 5.6",
+      "quotation": "Up to 10 outpatient physiotherapy visits per injury episode are eligible when prescribed by a treating physician.",
+      "support_role": "支持"
+    },
+    {
+      "document_label": "Policy Schedule — Form PT-12, revision 2024-06",
+      "clause_reference": "Section 5.6.1",
+      "quotation": "Prior written authorization is required before the seventh visit. Visits seven through ten without prior written authorization are not payable.",
+      "support_role": "限制或附条件支持"
+    }
+  ],
+  "version_alignment": "版本匹配",
+  "decision_rationale": "The schedule version matches the stated coverage period. The physician prescription supports eligibility under Section 5.6, but Section 5.6.1 makes authorization a condition for visits seven through ten. The records indicate that this condition was not met, so the terms support the first six visits but not the full eight-visit request.",
+  "document_conflicts": [],
+  "condition_assessment": "条件不满足或存在矛盾",
+  "source_documents_text": "Policy Schedule — Form PT-12, revision 2024-06; coverage period: 1 July 2024 through 30 June 2025. Section 5.6, Physiotherapy benefit: Up to 10 outpatient physiotherapy visits per injury episode are eligible when prescribed by a treating physician. Section 5.6.1: Prior written authorization is required before the seventh visit. Visits seven through ten without prior written authorization are not payable.",
+  "claim_requirement_text": "Reimbursement is requested for eight outpatient physiotherapy visits for one injury episode. The visits were prescribed by a treating physician, and the claim records list all eight as completed. The records also state that no prior written authorization was obtained before the seventh visit.",
+  "missing_or_unmet_conditions": [
+    "Prior written authorization before the seventh visit; the claim records state that no authorization was obtained."
+  ]
+}

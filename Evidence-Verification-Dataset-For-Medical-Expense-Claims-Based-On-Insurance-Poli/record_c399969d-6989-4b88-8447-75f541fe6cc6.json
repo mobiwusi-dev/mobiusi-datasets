@@ -1,0 +1,24 @@
+{
+  "support_level": "充分支持",
+  "evidence_spans": [
+    {
+      "document_label": "Policy Schedule — Form GM-4, revision 2025-01",
+      "clause_reference": "Section 4.2",
+      "quotation": "Medically necessary room and board during a covered inpatient admission is reimbursable at the actual daily charge, subject to a maximum of USD 250 per day.",
+      "support_role": "支持"
+    },
+    {
+      "document_label": "Policy Schedule — Form GM-4, revision 2025-01",
+      "clause_reference": "Section 4.2.1",
+      "quotation": "The covered amount is limited to charges incurred during the coverage period.",
+      "support_role": "限制或附条件支持"
+    }
+  ],
+  "version_alignment": "版本匹配",
+  "decision_rationale": "The schedule identifies Form GM-4 as applicable to the stated coverage period. The claim describes medically necessary inpatient room charges incurred during that period at USD 180 per day, below the USD 250 daily limit. The cited terms therefore support the requested room-and-board charges.",
+  "document_conflicts": [],
+  "condition_assessment": "条件满足",
+  "source_documents_text": "Policy Schedule — Form GM-4, revision 2025-01; coverage period: 1 January 2025 through 31 December 2025. Section 4.2, Inpatient room and board: Medically necessary room and board during a covered inpatient admission is reimbursable at the actual daily charge, subject to a maximum of USD 250 per day. Section 4.2.1: The covered amount is limited to charges incurred during the coverage period.",
+  "claim_requirement_text": "Reimbursement is requested for three inpatient room-and-board charges of USD 180 per day for an admission from 12 April through 15 April 2025. The admission was during the stated coverage period, and the treating physician documented that inpatient care was medically necessary.",
+  "missing_or_unmet_conditions": []
+}
