@@ -1,0 +1,56 @@
+{
+  "source_trace": "{\"events\":[{\"role\":\"user\",\"content\":\"Cancel order ORD-HA-582117, please.\"},{\"tool_call\":{\"name\":\"get_order\",\"arguments\":{\"order_id\":\"ORD-HA-582117\"}}},{\"tool_result\":{\"order_id\":\"ORD-HA-582117\",\"appliance_type\":\"washing machine\",\"order_status\":\"In transit\",\"fulfillment_status\":\"Out for delivery\"}},{\"tool_call\":{\"name\":\"check_order_operation_eligibility\",\"arguments\":{\"order_id\":\"ORD-HA-582117\",\"operation\":\"cancel\"}}},{\"tool_result\":{\"eligible\":false,\"change_eligible\":false,\"requires_confirmation\":false,\"reason\":\"Cancellation is blocked after carrier handoff while the delivery route is active.\",\"constraints\":[\"Cancellation is blocked after carrier handoff while the delivery route is active.\",\"Delivery-time changes are locked once the order is out for delivery.\"]}},{\"role\":\"assistant\",\"content\":\"I could not submit the cancellation because the washing machine is already out for delivery.\"}]}",
+  "order_snapshot": {
+    "order_id": "ORD-HA-582117",
+    "appliance_type": "washing machine",
+    "order_status": "In transit",
+    "fulfillment_status": "Out for delivery",
+    "change_eligibility": false,
+    "cancellation_eligibility": false,
+    "eligibility_constraints": [
+      "Cancellation is blocked after carrier handoff while the delivery route is active.",
+      "Delivery-time changes are locked once the order is out for delivery."
+    ]
+  },
+  "decision_summary": {
+    "requested_operation": "Cancel the order",
+    "eligibility_confirmed": true,
+    "confirmation_required": false,
+    "operation_submitted": false,
+    "final_result": "The cancellation was not submitted because the order is out for delivery.",
+    "rejection_or_limit_reason": "Cancellation is blocked after carrier handoff while the delivery route is active."
+  },
+  "tool_call_sequence": [
+    {
+      "call_index": 0,
+      "tool_name": "get_order",
+      "arguments": {
+        "order_id": "ORD-HA-582117"
+      },
+      "result": {
+        "order_id": "ORD-HA-582117",
+        "appliance_type": "washing machine",
+        "order_status": "In transit",
+        "fulfillment_status": "Out for delivery"
+      }
+    },
+    {
+      "call_index": 1,
+      "tool_name": "check_order_operation_eligibility",
+      "arguments": {
+        "order_id": "ORD-HA-582117",
+        "operation": "cancel"
+      },
+      "result": {
+        "eligible": false,
+        "change_eligible": false,
+        "requires_confirmation": false,
+        "reason": "Cancellation is blocked after carrier handoff while the delivery route is active.",
+        "constraints": [
+          "Cancellation is blocked after carrier handoff while the delivery route is active.",
+          "Delivery-time changes are locked once the order is out for delivery."
+        ]
+      }
+    }
+  ]
+}

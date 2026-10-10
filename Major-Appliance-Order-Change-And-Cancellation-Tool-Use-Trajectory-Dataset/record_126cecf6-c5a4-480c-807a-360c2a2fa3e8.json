@@ -1,0 +1,69 @@
+{
+  "source_trace": "{\"events\":[{\"role\":\"user\",\"content\":\"Please move delivery for order ORD-HA-731904 to Saturday, 9:00 a.m.–1:00 p.m.\"},{\"tool_call\":{\"name\":\"get_order\",\"arguments\":{\"order_id\":\"ORD-HA-731904\"}}},{\"tool_result\":{\"order_id\":\"ORD-HA-731904\",\"appliance_type\":\"refrigerator\",\"order_status\":\"Confirmed\",\"fulfillment_status\":\"Not yet dispatched\"}},{\"tool_call\":{\"name\":\"check_order_operation_eligibility\",\"arguments\":{\"order_id\":\"ORD-HA-731904\",\"operation\":\"change_delivery_window\"}}},{\"tool_result\":{\"eligible\":true,\"cancellation_eligible\":true,\"requires_confirmation\":true,\"constraints\":[\"Delivery-window changes are available only before warehouse release.\",\"One delivery-window change is allowed per order.\"]}},{\"role\":\"assistant\",\"content\":\"The order is eligible for a delivery-window change. Please confirm that you want Saturday, 9:00 a.m.–1:00 p.m.\"},{\"role\":\"user\",\"content\":\"Yes, please make that change.\"},{\"tool_call\":{\"name\":\"update_order_delivery_window\",\"arguments\":{\"order_id\":\"ORD-HA-731904\",\"delivery_window\":\"Saturday, 09:00-13:00\"}}},{\"tool_result\":{\"success\":true,\"order_id\":\"ORD-HA-731904\",\"delivery_window\":\"Saturday, 09:00-13:00\",\"status\":\"updated\"}}]}",
+  "order_snapshot": {
+    "order_id": "ORD-HA-731904",
+    "appliance_type": "refrigerator",
+    "order_status": "Confirmed",
+    "fulfillment_status": "Not yet dispatched",
+    "change_eligibility": true,
+    "cancellation_eligibility": true,
+    "eligibility_constraints": [
+      "Delivery-window changes are available only before warehouse release.",
+      "One delivery-window change is allowed per order."
+    ]
+  },
+  "decision_summary": {
+    "requested_operation": "Change the delivery window to Saturday, 09:00-13:00",
+    "eligibility_confirmed": true,
+    "confirmation_required": true,
+    "operation_submitted": true,
+    "final_result": "The delivery window was updated successfully after the customer confirmed.",
+    "rejection_or_limit_reason": ""
+  },
+  "tool_call_sequence": [
+    {
+      "call_index": 0,
+      "tool_name": "get_order",
+      "arguments": {
+        "order_id": "ORD-HA-731904"
+      },
+      "result": {
+        "order_id": "ORD-HA-731904",
+        "appliance_type": "refrigerator",
+        "order_status": "Confirmed",
+        "fulfillment_status": "Not yet dispatched"
+      }
+    },
+    {
+      "call_index": 1,
+      "tool_name": "check_order_operation_eligibility",
+      "arguments": {
+        "order_id": "ORD-HA-731904",
+        "operation": "change_delivery_window"
+      },
+      "result": {
+        "eligible": true,
+        "cancellation_eligible": true,
+        "requires_confirmation": true,
+        "constraints": [
+          "Delivery-window changes are available only before warehouse release.",
+          "One delivery-window change is allowed per order."
+        ]
+      }
+    },
+    {
+      "call_index": 2,
+      "tool_name": "update_order_delivery_window",
+      "arguments": {
+        "order_id": "ORD-HA-731904",
+        "delivery_window": "Saturday, 09:00-13:00"
+      },
+      "result": {
+        "success": true,
+        "order_id": "ORD-HA-731904",
+        "delivery_window": "Saturday, 09:00-13:00",
+        "status": "updated"
+      }
+    }
+  ]
+}

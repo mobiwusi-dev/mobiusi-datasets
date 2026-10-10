@@ -1,0 +1,55 @@
+{
+  "source_trace": "{\"events\":[{\"role\":\"user\",\"content\":\"I want to cancel order ORD-HA-946203.\"},{\"tool_call\":{\"name\":\"get_order\",\"arguments\":{\"order_id\":\"ORD-HA-946203\"}}},{\"tool_result\":{\"order_id\":\"ORD-HA-946203\",\"appliance_type\":\"air conditioner\",\"order_status\":\"Packed\",\"fulfillment_status\":\"Awaiting carrier pickup\"}},{\"tool_call\":{\"name\":\"check_order_operation_eligibility\",\"arguments\":{\"order_id\":\"ORD-HA-946203\",\"operation\":\"cancel\"}}},{\"tool_result\":{\"eligible\":true,\"change_eligible\":false,\"requires_confirmation\":true,\"constraints\":[\"Model or delivery-detail changes close once packing begins.\",\"Cancellation remains available before carrier pickup, but explicit customer confirmation is required.\"]}},{\"role\":\"assistant\",\"content\":\"Cancellation is available before carrier pickup. Please confirm that you want to cancel this order.\"}]}",
+  "order_snapshot": {
+    "order_id": "ORD-HA-946203",
+    "appliance_type": "air conditioner",
+    "order_status": "Packed",
+    "fulfillment_status": "Awaiting carrier pickup",
+    "change_eligibility": false,
+    "cancellation_eligibility": true,
+    "eligibility_constraints": [
+      "Model or delivery-detail changes close once packing begins.",
+      "Cancellation remains available before carrier pickup, but explicit customer confirmation is required."
+    ]
+  },
+  "decision_summary": {
+    "requested_operation": "Cancel the order",
+    "eligibility_confirmed": true,
+    "confirmation_required": true,
+    "operation_submitted": false,
+    "final_result": "Cancellation is pending customer confirmation; no cancellation request has been submitted.",
+    "rejection_or_limit_reason": "Explicit customer confirmation is required before cancellation can be submitted."
+  },
+  "tool_call_sequence": [
+    {
+      "call_index": 0,
+      "tool_name": "get_order",
+      "arguments": {
+        "order_id": "ORD-HA-946203"
+      },
+      "result": {
+        "order_id": "ORD-HA-946203",
+        "appliance_type": "air conditioner",
+        "order_status": "Packed",
+        "fulfillment_status": "Awaiting carrier pickup"
+      }
+    },
+    {
+      "call_index": 1,
+      "tool_name": "check_order_operation_eligibility",
+      "arguments": {
+        "order_id": "ORD-HA-946203",
+        "operation": "cancel"
+      },
+      "result": {
+        "eligible": true,
+        "change_eligible": false,
+        "requires_confirmation": true,
+        "constraints": [
+          "Model or delivery-detail changes close once packing begins.",
+          "Cancellation remains available before carrier pickup, but explicit customer confirmation is required."
+        ]
+      }
+    }
+  ]
+}
