@@ -1,0 +1,54 @@
+{
+  "product_category": "Air fryer",
+  "product_currency": "USD",
+  "product_depth_cm": 36,
+  "is_relevant": true,
+  "product_brand": "Emberwell",
+  "product_price": 149.99,
+  "product_title": "Emberwell 5.2 L Digital Air Fryer",
+  "consumer_query": "I'm looking for an air fryer with at least 4.5 L capacity for weeknight dinners, with roast and reheat programs, under $160. It must fit within 34 cm wide, 38 cm deep, and 36 cm high.",
+  "relevance_label": 1,
+  "normalized_query": "Air fryer for weeknight dinners; capacity at least 4.5 L; roast and reheat programs; maximum price USD 160; maximum dimensions 34 cm W x 38 cm D x 36 cm H.",
+  "product_features": [
+    "Roast program",
+    "Reheat program",
+    "Air fry and bake programs",
+    "60-minute timer with automatic shutoff"
+  ],
+  "product_width_cm": 32,
+  "query_max_budget": 160,
+  "matching_evidence": [
+    "A countertop air fryer for everyday family meals",
+    "Capacity: 5.2 L",
+    "Price: $149.99",
+    "Dimensions (W x D x H): 32 x 36 x 34 cm",
+    "Roast program",
+    "Reheat program"
+  ],
+  "product_height_cm": 34,
+  "product_page_html": "<html><body><h1>Emberwell 5.2 L Digital Air Fryer</h1><p>Brand: Emberwell</p><p>Price: $149.99</p><p>Capacity: 5.2 L</p><p>Dimensions (W x D x H): 32 x 36 x 34 cm</p><p>Description: A countertop air fryer for everyday family meals, with digital controls and a removable cooking basket.</p><ul><li>Roast program</li><li>Reheat program</li><li>Air fry and bake programs</li><li>60-minute timer with automatic shutoff</li></ul></body></html>",
+  "product_page_text": "Emberwell 5.2 L Digital Air Fryer. Brand: Emberwell. Price: $149.99. Capacity: 5.2 L. Dimensions (W x D x H): 32 x 36 x 34 cm. Description: A countertop air fryer for everyday family meals, with digital controls and a removable cooking basket. Features: Roast program; Reheat program; Air fry and bake programs; 60-minute timer with automatic shutoff.",
+  "query_intended_use": "Prepare weeknight dinners using an air fryer.",
+  "query_max_depth_cm": 38,
+  "query_max_width_cm": 34,
+  "product_description": "A countertop air fryer for everyday family meals, with digital controls and a removable cooking basket.",
+  "query_max_height_cm": 36,
+  "query_budget_currency": "USD",
+  "product_capacity_liters": 5.2,
+  "query_required_functions": [
+    "roast program",
+    "reheat program"
+  ],
+  "matched_query_constraints": [
+    "Air fryer for preparing weeknight dinners",
+    "Capacity of at least 4.5 L; product capacity is 5.2 L",
+    "Roast program",
+    "Reheat program",
+    "Price under USD 160; listed price is USD 149.99",
+    "Width no greater than 34 cm; product width is 32 cm",
+    "Depth no greater than 38 cm; product depth is 36 cm",
+    "Height no greater than 36 cm; product height is 34 cm"
+  ],
+  "unmatched_query_constraints": [],
+  "query_required_capacity_liters": 4.5
+}

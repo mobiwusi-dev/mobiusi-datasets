@@ -1,0 +1,53 @@
+{
+  "is_relevant": true,
+  "product_brand": "Morrow Finch",
+  "product_price": 84.5,
+  "product_title": "Morrow Finch 1.7 L Temperature-Control Kettle",
+  "consumer_query": "I need an electric kettle of at least 1.5 L for precise tea brewing, with adjustable temperature presets and a keep-warm function, for no more than $95. Maximum size: 23 cm wide, 21 cm deep, and 27 cm high.",
+  "relevance_label": 1,
+  "normalized_query": "Electric kettle for precise tea brewing; capacity at least 1.5 L; adjustable temperature presets and keep-warm function; maximum price USD 95; maximum dimensions 23 cm W x 21 cm D x 27 cm H.",
+  "product_category": "Electric kettle",
+  "product_currency": "USD",
+  "product_depth_cm": 19,
+  "product_features": [
+    "Adjustable temperature presets from 40 to 100 degrees C",
+    "Keep-warm function holds the selected temperature for 30 minutes",
+    "Automatic shutoff when water reaches the selected temperature"
+  ],
+  "product_width_cm": 22,
+  "query_max_budget": 95,
+  "matching_evidence": [
+    "An electric kettle for tea and pour-over brewing",
+    "Capacity: 1.7 L",
+    "Price: $84.50",
+    "Dimensions (W x D x H): 22 x 19 x 25 cm",
+    "Adjustable temperature presets from 40 to 100 degrees C",
+    "Keep-warm function holds the selected temperature for 30 minutes"
+  ],
+  "product_height_cm": 25,
+  "product_page_html": "<html><body><h1>Morrow Finch 1.7 L Temperature-Control Kettle</h1><p>Brand: Morrow Finch</p><p>Price: $84.50</p><p>Capacity: 1.7 L</p><p>Dimensions (W x D x H): 22 x 19 x 25 cm</p><p>Description: An electric kettle for tea and pour-over brewing, with a stainless-steel interior and a clear water-level window.</p><ul><li>Adjustable temperature presets from 40 to 100 degrees C</li><li>Keep-warm function holds the selected temperature for 30 minutes</li><li>Automatic shutoff when water reaches the selected temperature</li></ul></body></html>",
+  "product_page_text": "Morrow Finch 1.7 L Temperature-Control Kettle. Brand: Morrow Finch. Price: $84.50. Capacity: 1.7 L. Dimensions (W x D x H): 22 x 19 x 25 cm. Description: An electric kettle for tea and pour-over brewing, with a stainless-steel interior and a clear water-level window. Features: Adjustable temperature presets from 40 to 100 degrees C; Keep-warm function holds the selected temperature for 30 minutes; Automatic shutoff when water reaches the selected temperature.",
+  "query_intended_use": "Brew tea with precise water-temperature control.",
+  "query_max_depth_cm": 21,
+  "query_max_width_cm": 23,
+  "product_description": "An electric kettle for tea and pour-over brewing, with a stainless-steel interior and a clear water-level window.",
+  "query_max_height_cm": 27,
+  "query_budget_currency": "USD",
+  "product_capacity_liters": 1.7,
+  "query_required_functions": [
+    "adjustable temperature presets",
+    "keep-warm function"
+  ],
+  "matched_query_constraints": [
+    "Electric kettle for tea brewing",
+    "Capacity of at least 1.5 L; product capacity is 1.7 L",
+    "Adjustable temperature presets",
+    "Keep-warm function",
+    "Price no more than USD 95; listed price is USD 84.50",
+    "Width no greater than 23 cm; product width is 22 cm",
+    "Depth no greater than 21 cm; product depth is 19 cm",
+    "Height no greater than 27 cm; product height is 25 cm"
+  ],
+  "unmatched_query_constraints": [],
+  "query_required_capacity_liters": 1.5
+}

@@ -1,0 +1,53 @@
+{
+  "is_relevant": false,
+  "product_brand": "Alderwick",
+  "product_price": 89,
+  "product_title": "Alderwick 3.2 L Cool-Mist Humidifier",
+  "consumer_query": "I'm looking for a bedroom humidifier with at least 5 L capacity, warm mist, and automatic humidity control. My budget is under $80, and it must be no larger than 25 cm wide, 24 cm deep, or 35 cm high.",
+  "relevance_label": 0,
+  "normalized_query": "Bedroom humidifier; capacity at least 5 L; warm-mist operation and automatic humidity control; maximum price USD 80; maximum dimensions 25 cm W x 24 cm D x 35 cm H.",
+  "product_category": "Humidifier",
+  "product_currency": "USD",
+  "product_depth_cm": 20,
+  "product_features": [
+    "Cool-mist operation",
+    "Two mist output settings",
+    "Automatic shutoff when the tank is empty"
+  ],
+  "product_width_cm": 23,
+  "query_max_budget": 80,
+  "matching_evidence": [
+    "A cool-mist humidifier designed for bedroom use",
+    "Capacity: 3.2 L",
+    "Price: $89.00",
+    "Dimensions (W x D x H): 23 x 20 x 31 cm",
+    "Cool-mist operation"
+  ],
+  "product_height_cm": 31,
+  "product_page_html": "<html><body><h1>Alderwick 3.2 L Cool-Mist Humidifier</h1><p>Brand: Alderwick</p><p>Price: $89.00</p><p>Capacity: 3.2 L</p><p>Dimensions (W x D x H): 23 x 20 x 31 cm</p><p>Description: A cool-mist humidifier designed for bedroom use, with a removable tank and a low-water indicator.</p><ul><li>Cool-mist operation</li><li>Two mist output settings</li><li>Automatic shutoff when the tank is empty</li></ul></body></html>",
+  "product_page_text": "Alderwick 3.2 L Cool-Mist Humidifier. Brand: Alderwick. Price: $89.00. Capacity: 3.2 L. Dimensions (W x D x H): 23 x 20 x 31 cm. Description: A cool-mist humidifier designed for bedroom use, with a removable tank and a low-water indicator. Features: Cool-mist operation; Two mist output settings; Automatic shutoff when the tank is empty.",
+  "query_intended_use": "Humidify a bedroom.",
+  "query_max_depth_cm": 24,
+  "query_max_width_cm": 25,
+  "product_description": "A cool-mist humidifier designed for bedroom use, with a removable tank and a low-water indicator.",
+  "query_max_height_cm": 35,
+  "query_budget_currency": "USD",
+  "product_capacity_liters": 3.2,
+  "query_required_functions": [
+    "warm-mist operation",
+    "automatic humidity control"
+  ],
+  "matched_query_constraints": [
+    "Humidifier for bedroom use",
+    "Width no greater than 25 cm; product width is 23 cm",
+    "Depth no greater than 24 cm; product depth is 20 cm",
+    "Height no greater than 35 cm; product height is 31 cm"
+  ],
+  "unmatched_query_constraints": [
+    "Capacity of at least 5 L; product capacity is 3.2 L",
+    "Warm-mist operation; the page specifies cool-mist operation",
+    "Automatic humidity control; no such feature is listed",
+    "Price under USD 80; listed price is USD 89.00"
+  ],
+  "query_required_capacity_liters": 5
+}
