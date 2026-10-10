@@ -1,0 +1,16 @@
+{
+  "room_type": "Garden Courtyard Family Suite",
+  "max_occupancy": 5,
+  "in_room_amenities": [
+    "Private terrace",
+    "Dining table",
+    "Full-size refrigerator",
+    "Microwave",
+    "Washer-dryer"
+  ],
+  "view": "Landscaped garden courtyard view",
+  "area_sqm": 86,
+  "bed_type": "Two queen beds and one sofa bed",
+  "source_description": "Garden Courtyard Family Suite — Spanning 86 square metres, this suite sleeps up to five guests with two queen beds in the bedroom and a sofa bed in the separate living room. The private terrace faces the hotel’s landscaped garden courtyard. The suite includes a dining table, a full-size refrigerator, a microwave, and a washer-dryer.",
+  "accessibility_features": []
+}

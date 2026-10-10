@@ -1,0 +1,17 @@
+{
+  "view": "City skyline view",
+  "area_sqm": 38,
+  "bed_type": "Two twin beds",
+  "room_type": "Skyline Twin Deluxe Room",
+  "max_occupancy": 2,
+  "in_room_amenities": [
+    "Marble bathroom",
+    "Walk-in rain shower",
+    "Writing desk",
+    "In-room safe",
+    "Smart television",
+    "Tea and coffee station"
+  ],
+  "source_description": "Skyline Twin Deluxe Room — This 38-square-metre room is designed for up to two guests and offers two twin beds with views across the city skyline. A marble bathroom is fitted with a walk-in rain shower. The room also features a writing desk, an in-room safe, a smart television, and a tea and coffee station.",
+  "accessibility_features": []
+}

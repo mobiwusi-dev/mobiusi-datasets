@@ -1,0 +1,19 @@
+{
+  "source_description": "Harbor View Accessible Suite — This 52-square-metre suite accommodates up to two guests and features one king bed with a roll-in shower, grab bars beside the toilet, and lowered light switches. Floor-to-ceiling windows overlook the harbor. In-room amenities include a soaking tub, espresso machine, minibar, and complimentary Wi-Fi.",
+  "accessibility_features": [
+    "Roll-in shower",
+    "Grab bars beside the toilet",
+    "Lowered light switches"
+  ],
+  "view": "Harbor view",
+  "area_sqm": 52,
+  "bed_type": "One king bed",
+  "room_type": "Harbor View Accessible Suite",
+  "max_occupancy": 2,
+  "in_room_amenities": [
+    "Soaking tub",
+    "Espresso machine",
+    "Minibar",
+    "Complimentary Wi-Fi"
+  ]
+}
