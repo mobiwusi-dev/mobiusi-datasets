@@ -1,0 +1,15 @@
+{
+  "evidence": "For this input, the buffer has 7 octets and the declared payload length is 4, so len(data) < length is false. The subsequent slice returns only three payload octets instead of rejecting the IE.",
+  "test_case": {
+    "protocol_name": "PFCP (N4)",
+    "message_type": "Recovery Time Stamp IE",
+    "encoded_message_hex": "00600004010203",
+    "test_condition": "The IE header declares a four-octet value, but only three value octets follow the header.",
+    "expected_behavior": "Reject the IE because the available value is shorter than the declared length; do not return a partial value."
+  },
+  "source_code": "def parse_ie(data):\n    ie_type = int.from_bytes(data[0:2], 'big')\n    length = int.from_bytes(data[2:4], 'big')\n    if len(data) < length:\n        raise ValueError('truncated IE')\n    return ie_type, data[4:4 + length]\n",
+  "bug_root_cause": "The truncation check compares the total buffer length with the payload length, without accounting for the four-octet IE header. As a result, a short payload can pass the check.",
+  "defect_category": "长度处理错误",
+  "validation_result": "失败",
+  "affected_information_element": "Recovery Time Stamp IE value"
+}

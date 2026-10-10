@@ -1,0 +1,15 @@
+{
+  "evidence": "With input 0060, the length slice data[2:4] is empty and int.from_bytes returns zero. The code then returns an IE with an empty value instead of rejecting the incomplete header.",
+  "test_case": {
+    "protocol_name": "PFCP (N4)",
+    "message_type": "Generic PFCP IE header",
+    "encoded_message_hex": "0060",
+    "test_condition": "The input ends after the two-octet IE type and contains neither octet of the required length field.",
+    "expected_behavior": "Reject the input as a truncated IE header before interpreting a length or returning an IE value."
+  },
+  "source_code": "def parse_ie(data):\n    if len(data) < 2:\n        raise ValueError('missing IE type')\n    ie_type = int.from_bytes(data[0:2], 'big')\n    length = int.from_bytes(data[2:4], 'big')\n    value = data[4:4 + length]\n    if len(value) != length:\n        raise ValueError('truncated IE value')\n    return ie_type, value\n",
+  "bug_root_cause": "The initial boundary check verifies only that the two-octet IE type is present. It does not require the complete four-octet IE header before reading the length field.",
+  "defect_category": "边界条件处理错误",
+  "validation_result": "失败",
+  "affected_information_element": "PFCP IE length field"
+}

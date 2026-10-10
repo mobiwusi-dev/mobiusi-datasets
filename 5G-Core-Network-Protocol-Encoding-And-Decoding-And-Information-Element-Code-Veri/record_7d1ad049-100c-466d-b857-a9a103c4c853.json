@@ -1,0 +1,15 @@
+{
+  "defect_category": "可选字段处理错误",
+  "validation_result": "失败",
+  "affected_information_element": "F-SEID IPv4 and IPv6 address fields",
+  "evidence": "The input flags octet is 0x02. The condition flags & 0x03 therefore reads the first four IPv6 octets as IPv4, leaving only twelve octets for the subsequent IPv6 conversion, which requires sixteen.",
+  "test_case": {
+    "protocol_name": "PFCP (N4)",
+    "message_type": "F-SEID IE",
+    "encoded_message_hex": "0039001902010203040506070820010db8000000000000000000000001",
+    "test_condition": "The F-SEID flags indicate IPv6 is present and IPv4 is absent; the value contains a SEID followed by a 16-octet IPv6 address.",
+    "expected_behavior": "Parse the SEID and IPv6 address 2001:db8::1, leave the IPv4 address absent, and consume the entire IE value."
+  },
+  "source_code": "import ipaddress\n\ndef parse_fseid(data):\n    if len(data) < 4:\n        raise ValueError('truncated IE header')\n    ie_type = int.from_bytes(data[0:2], 'big')\n    if ie_type != 57:\n        raise ValueError('unexpected IE type')\n    length = int.from_bytes(data[2:4], 'big')\n    value = data[4:4 + length]\n    if len(value) != length or len(value) < 9:\n        raise ValueError('truncated F-SEID')\n    flags = value[0]\n    seid = int.from_bytes(value[1:9], 'big')\n    offset = 9\n    ipv4 = None\n    ipv6 = None\n    if flags & 0x03:\n        ipv4 = ipaddress.IPv4Address(value[offset:offset + 4])\n        offset += 4\n    if flags & 0x02:\n        ipv6 = ipaddress.IPv6Address(value[offset:offset + 16])\n        offset += 16\n    if offset != len(value):\n        raise ValueError('unexpected F-SEID length')\n    return seid, ipv4, ipv6\n",
+  "bug_root_cause": "The IPv4 presence check uses mask 0x03, which is set when either the IPv4 or IPv6 flag is present. It should test only the IPv4 flag, so an IPv6-only value is incorrectly consumed as if it included IPv4."
+}
