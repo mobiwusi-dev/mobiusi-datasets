@@ -1,0 +1,15 @@
+{
+  "answer": "USD 9,000. At USD 12,000 per 24-hour day, 18 hours is three-quarters of a day, so the amount is USD 12,000 × 18/24 = USD 9,000.",
+  "evidence": [
+    {
+      "source_quote": "Demurrage shall be payable at USD 12,000 per day, pro rata for any part of a day.",
+      "source_location": "Clause 12 — Demurrage and Despatch"
+    },
+    {
+      "source_quote": "A day for these calculations means 24 hours.",
+      "source_location": "Clause 12 — Demurrage and Despatch"
+    }
+  ],
+  "question": "What demurrage is payable for 18 hours on demurrage?",
+  "source_document": "Clause 12 — Demurrage and Despatch: Demurrage shall be payable at USD 12,000 per day, pro rata for any part of a day. Despatch shall be payable at one-half of the demurrage rate for each day saved, pro rata. A day for these calculations means 24 hours."
+}

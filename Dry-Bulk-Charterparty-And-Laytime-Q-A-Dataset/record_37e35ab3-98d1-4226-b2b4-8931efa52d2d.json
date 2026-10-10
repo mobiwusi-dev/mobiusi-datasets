@@ -1,0 +1,11 @@
+{
+  "answer": "Laytime commences at 13:00 on the day the notice is tendered.",
+  "evidence": [
+    {
+      "source_quote": "If notice is tendered before 12:00 on a working day, laytime shall commence at 13:00 on that day.",
+      "source_location": "Clause 6 — Commencement of Laytime"
+    }
+  ],
+  "question": "At what time does laytime commence if a valid notice of readiness is tendered at 10:30 on a working day?",
+  "source_document": "Clause 6 — Commencement of Laytime: A valid notice of readiness may be tendered upon the vessel's arrival at the load or discharge port, whether in berth or not, provided the vessel is ready in all respects to commence cargo operations. If notice is tendered before 12:00 on a working day, laytime shall commence at 13:00 on that day. If notice is tendered at or after 12:00, or on a non-working day, laytime shall commence at 08:00 on the next working day."
+}

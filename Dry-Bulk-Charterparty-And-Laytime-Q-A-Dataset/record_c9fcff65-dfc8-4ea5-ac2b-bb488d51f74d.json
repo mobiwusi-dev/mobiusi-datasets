@@ -1,0 +1,15 @@
+{
+  "answer": "No. The time actually lost because rain prevents safe cargo operations is excluded from laytime for the duration of the weather-related stoppage. The clause does not exclude time used for other activities unless another provision does so.",
+  "evidence": [
+    {
+      "source_quote": "Time actually lost because rain prevents safe loading or discharge shall not count as laytime, provided the cargo operation is stopped for that reason.",
+      "source_location": "Clause 9 — Weather Interruptions"
+    },
+    {
+      "source_quote": "The excluded period is limited to the duration of the weather-related stoppage; time used for other activities during that period remains countable unless another provision of this contract excludes it.",
+      "source_location": "Clause 9 — Weather Interruptions"
+    }
+  ],
+  "question": "Does time lost while rain stops cargo operations count as laytime under this clause?",
+  "source_document": "Clause 9 — Weather Interruptions: Time actually lost because rain prevents safe loading or discharge shall not count as laytime, provided the cargo operation is stopped for that reason. The excluded period is limited to the duration of the weather-related stoppage; time used for other activities during that period remains countable unless another provision of this contract excludes it."
+}
