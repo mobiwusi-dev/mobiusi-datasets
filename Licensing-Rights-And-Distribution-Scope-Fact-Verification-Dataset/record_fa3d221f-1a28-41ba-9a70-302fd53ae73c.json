@@ -1,0 +1,70 @@
+{
+  "evidence": [
+    {
+      "quotation": "Supplier grants Reseller a non-exclusive right to market and sell the LumaMark portable thermal label printers in Germany and France to commercial print shops and warehouse operators.",
+      "clause_reference": "Section 2.1",
+      "evidence_effect": "Directly contradicts the claimed exclusivity, broader territory, and consumer customer scope."
+    },
+    {
+      "quotation": "Sales to consumers and sales through online marketplaces are not authorized.",
+      "clause_reference": "Section 2.2",
+      "evidence_effect": "Directly contradicts the claimed customer scope and online-marketplace channel."
+    },
+    {
+      "quotation": "Reseller shall not grant sublicenses or appoint sub-resellers. Supplier may appoint other resellers in the territory.",
+      "clause_reference": "Section 2.3",
+      "evidence_effect": "Contradicts the claimed sublicensing permission and independently confirms that the grant is not exclusive."
+    }
+  ],
+  "claim_text": "The Reseller has an exclusive right to distribute LumaMark portable thermal label printers throughout the European Economic Area to consumers through online marketplaces and may sublicense the distribution rights.",
+  "claim_scope": {
+    "licensed_products": "LumaMark portable thermal label printers",
+    "territory": "European Economic Area",
+    "sales_channels": [
+      "Online marketplaces"
+    ],
+    "customer_scope": "Consumers",
+    "exclusivity_claimed": "Exclusive",
+    "sublicensing_claimed": "Permitted"
+  },
+  "restrictions": [
+    {
+      "restriction_type": "Territory",
+      "restriction_description": "The grant covers Germany and France only.",
+      "applicable_scope": "LumaMark portable thermal label printers",
+      "clause_reference": "Section 2.1"
+    },
+    {
+      "restriction_type": "Customer scope and sales channels",
+      "restriction_description": "Sales are limited to commercial print shops and warehouse operators through the specified business-to-business channels; consumer and online-marketplace sales are not authorized.",
+      "applicable_scope": "Sales in Germany and France",
+      "clause_reference": "Sections 2.1 and 2.2"
+    },
+    {
+      "restriction_type": "Exclusivity",
+      "restriction_description": "The right is non-exclusive, and Supplier may appoint other resellers in the territory.",
+      "applicable_scope": "LumaMark portable thermal label printers in Germany and France",
+      "clause_reference": "Sections 2.1 and 2.3"
+    },
+    {
+      "restriction_type": "Sublicensing",
+      "restriction_description": "The Reseller may not grant sublicenses or appoint sub-resellers.",
+      "applicable_scope": "The distribution rights granted under Section 2.1",
+      "clause_reference": "Section 2.3"
+    }
+  ],
+  "contract_text": "Sales License Agreement\n2.1 Supplier grants Reseller a non-exclusive right to market and sell the LumaMark portable thermal label printers in Germany and France to commercial print shops and warehouse operators.\n2.2 Authorized sales channels are Reseller's direct business-to-business sales and office-equipment resellers approved in writing by Supplier. Sales to consumers and sales through online marketplaces are not authorized.\n2.3 Reseller shall not grant sublicenses or appoint sub-resellers. Supplier may appoint other resellers in the territory.",
+  "contractual_scope": {
+    "licensed_products": "LumaMark portable thermal label printers",
+    "territory": "Germany and France",
+    "sales_channels": [
+      "Direct business-to-business sales",
+      "Office-equipment resellers approved in writing by Supplier"
+    ],
+    "customer_scope": "Commercial print shops and warehouse operators; consumers are not authorized customers",
+    "exclusivity_status": "非独占",
+    "sublicensing_status": "禁止"
+  },
+  "verification_result": "不支持",
+  "verification_rationale": "The contract grants only a non-exclusive right in Germany and France for sales to commercial print shops and warehouse operators through specified business-to-business channels. It excludes consumers and online marketplaces and prohibits sublicensing. Each material element of the claim conflicts with the stated terms."
+}

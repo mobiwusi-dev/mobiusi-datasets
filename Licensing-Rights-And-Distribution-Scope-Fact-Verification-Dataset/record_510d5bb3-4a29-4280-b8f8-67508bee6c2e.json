@@ -1,0 +1,62 @@
+{
+  "claim_scope": {
+    "licensed_products": "Solenne solar monitoring gateways",
+    "territory": "Japan",
+    "sales_channels": [
+      "Direct sales",
+      "Resellers"
+    ],
+    "customer_scope": "Utility operators",
+    "exclusivity_claimed": "Exclusive",
+    "sublicensing_claimed": "Permitted"
+  },
+  "evidence": [
+    {
+      "quotation": "Licensor grants Distributor the distribution rights for the products, territory, permitted channels, and customer class specified in Schedule A.",
+      "clause_reference": "Section 1.1",
+      "evidence_effect": "Shows that the claimed product, territory, channels, and customer class depend on Schedule A, which is not provided."
+    },
+    {
+      "quotation": "The exclusivity status and any right to sublicense are also as specified in Schedule A.",
+      "clause_reference": "Section 1.1",
+      "evidence_effect": "Shows that the claimed exclusivity and sublicensing permission cannot be verified without Schedule A."
+    },
+    {
+      "quotation": "The copy provided for review contains Sections 1 through 3; Schedule A is not attached.",
+      "clause_reference": "Section 1.3",
+      "evidence_effect": "Identifies the missing document needed to determine the claimed scope and rights."
+    }
+  ],
+  "claim_text": "The Distributor holds an exclusive license to distribute Solenne solar monitoring gateways in Japan to utility operators through direct sales and resellers, and may sublicense those rights.",
+  "restrictions": [
+    {
+      "restriction_type": "Scope of grant",
+      "restriction_description": "The products, territory, channels, and customer class are defined in Schedule A, which is not included in the provided text.",
+      "applicable_scope": "All distribution rights under the agreement",
+      "clause_reference": "Sections 1.1 and 1.3"
+    },
+    {
+      "restriction_type": "Exclusivity and sublicensing",
+      "restriction_description": "The agreement makes exclusivity and any sublicensing right dependent on Schedule A; their terms cannot be determined from the provided text.",
+      "applicable_scope": "All distribution rights under the agreement",
+      "clause_reference": "Sections 1.1 and 1.3"
+    },
+    {
+      "restriction_type": "Additional rights",
+      "restriction_description": "No rights beyond those expressly listed in Schedule A are granted.",
+      "applicable_scope": "All distribution rights under the agreement",
+      "clause_reference": "Section 1.2"
+    }
+  ],
+  "contract_text": "Distribution License Agreement\n1.1 Licensor grants Distributor the distribution rights for the products, territory, permitted channels, and customer class specified in Schedule A. The exclusivity status and any right to sublicense are also as specified in Schedule A.\n1.2 No rights beyond those expressly listed in Schedule A are granted.\n1.3 The copy provided for review contains Sections 1 through 3; Schedule A is not attached.",
+  "contractual_scope": {
+    "licensed_products": "Not determinable from the provided text; Schedule A is referenced but not attached.",
+    "territory": "Not determinable from the provided text; Schedule A is referenced but not attached.",
+    "sales_channels": [],
+    "customer_scope": "Not determinable from the provided text; Schedule A is referenced but not attached.",
+    "exclusivity_status": "未说明",
+    "sublicensing_status": "未说明"
+  },
+  "verification_result": "证据不足",
+  "verification_rationale": "The provided text expressly assigns the product, territory, channels, customer class, exclusivity, and sublicensing terms to Schedule A, but that schedule is not attached. The claim cannot be confirmed or disproved from the available contract text."
+}

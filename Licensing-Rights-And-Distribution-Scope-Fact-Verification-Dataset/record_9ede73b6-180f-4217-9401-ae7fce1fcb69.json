@@ -1,0 +1,70 @@
+{
+  "evidence": [
+    {
+      "quotation": "Licensor grants Distributor an exclusive right to market and sell AquaMesh replacement filtration cartridges in Ontario, Canada, solely to municipal water utilities.",
+      "clause_reference": "Section 1.1",
+      "evidence_effect": "Supports exclusivity for the specified product, Ontario territory, and municipal-utility customers, but contradicts the claim of exclusivity throughout Canada for all customers."
+    },
+    {
+      "quotation": "Sales are limited to direct account sales and trade distributors approved in writing by Licensor. Retail-store sales and all e-commerce sales are prohibited.",
+      "clause_reference": "Section 1.2",
+      "evidence_effect": "Contradicts the claimed website and retail-store channels."
+    },
+    {
+      "quotation": "Distributor may appoint subdistributors only with Licensor's prior written consent.",
+      "clause_reference": "Section 1.3",
+      "evidence_effect": "Contradicts the claim that sublicensing is unrestricted."
+    },
+    {
+      "quotation": "Licensor retains the right to appoint other distributors and to sell the products outside the territory and customer scope stated in Section 1.1.",
+      "clause_reference": "Section 1.4",
+      "evidence_effect": "Confirms that the exclusivity does not extend beyond the limited scope in Section 1.1."
+    }
+  ],
+  "claim_text": "The Distributor has exclusive rights throughout Canada to sell AquaMesh replacement filtration cartridges through its website and retail stores to all customers, and may freely sublicense those rights.",
+  "claim_scope": {
+    "licensed_products": "AquaMesh replacement filtration cartridges",
+    "territory": "Canada",
+    "sales_channels": [
+      "Website sales",
+      "Retail-store sales"
+    ],
+    "customer_scope": "All customers",
+    "exclusivity_claimed": "Exclusive",
+    "sublicensing_claimed": "Unrestricted sublicensing"
+  },
+  "restrictions": [
+    {
+      "restriction_type": "Territory and customer scope",
+      "restriction_description": "The exclusive grant is limited to Ontario and municipal water utilities; Licensor retains rights outside that scope.",
+      "applicable_scope": "AquaMesh replacement filtration cartridges",
+      "clause_reference": "Sections 1.1 and 1.4"
+    },
+    {
+      "restriction_type": "Sales channels",
+      "restriction_description": "Retail-store sales and all e-commerce sales are prohibited; trade distributors require written approval.",
+      "applicable_scope": "Sales of AquaMesh replacement filtration cartridges in the licensed territory",
+      "clause_reference": "Section 1.2"
+    },
+    {
+      "restriction_type": "Sublicensing",
+      "restriction_description": "Subdistributors may be appointed only with Licensor's prior written consent and remain subject to the stated limits.",
+      "applicable_scope": "The rights granted under Section 1.1",
+      "clause_reference": "Section 1.3"
+    }
+  ],
+  "contract_text": "Distribution License Agreement\n1.1 Licensor grants Distributor an exclusive right to market and sell AquaMesh replacement filtration cartridges in Ontario, Canada, solely to municipal water utilities.\n1.2 Sales are limited to direct account sales and trade distributors approved in writing by Licensor. Retail-store sales and all e-commerce sales are prohibited.\n1.3 Distributor may appoint subdistributors only with Licensor's prior written consent. Any approved appointment remains subject to the product, territory, and customer limits in Section 1.1.\n1.4 Licensor retains the right to appoint other distributors and to sell the products outside the territory and customer scope stated in Section 1.1.",
+  "contractual_scope": {
+    "licensed_products": "AquaMesh replacement filtration cartridges",
+    "territory": "Ontario, Canada",
+    "sales_channels": [
+      "Direct account sales",
+      "Trade distributors approved in writing by Licensor"
+    ],
+    "customer_scope": "Municipal water utilities only",
+    "exclusivity_status": "有限独占",
+    "sublicensing_status": "有条件允许"
+  },
+  "verification_result": "部分支持",
+  "verification_rationale": "The agreement grants an exclusive right for the named cartridges, but only in Ontario and only for municipal water utilities. It prohibits e-commerce and retail-store sales, and subdistributors require prior written consent. The claim therefore overstates the territory, customer scope, permitted channels, and sublicensing rights."
+}
