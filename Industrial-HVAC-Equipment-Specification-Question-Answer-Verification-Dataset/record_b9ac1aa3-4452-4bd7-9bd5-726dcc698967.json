@@ -1,0 +1,43 @@
+{
+  "question": "What are the width, depth, and height of the VentraRack-31M?",
+  "is_correct": false,
+  "reference_data": {
+    "reference_answer": "The unit is 1800 mm wide, 800 mm deep, and 1960 mm high.",
+    "equipment_model": "VentraRack-31M",
+    "specifications": {
+      "cooling_capacity": {
+        "value": 31.5,
+        "unit": "kW"
+      },
+      "airflow": {
+        "value": 5600,
+        "unit": "m³/h"
+      },
+      "electrical_parameters": {
+        "voltage": 230,
+        "voltage_unit": "V",
+        "phase": 1,
+        "frequency": 50,
+        "frequency_unit": "Hz",
+        "power": 5.2,
+        "power_unit": "kW"
+      },
+      "dimensions": {
+        "width": 1800,
+        "depth": 800,
+        "height": 1960,
+        "unit": "mm"
+      }
+    },
+    "numeric_tolerance": {
+      "absolute_tolerance": 5,
+      "absolute_tolerance_unit": "mm",
+      "relative_tolerance": 0.01
+    },
+    "evidence": "The specification record for VentraRack-31M lists overall dimensions of 1800 mm width, 800 mm depth, and 1960 mm height. The stated tolerances apply to each dimension."
+  },
+  "candidate_answer": "The unit is 1800 mm wide, 820 mm deep, and 1960 mm high.",
+  "evaluation_basis": "The candidate correctly reports the width and height, but the stated depth is 820 mm rather than 800 mm. The 20 mm difference exceeds both the 5 mm absolute tolerance and the 1% relative tolerance.",
+  "evaluation_status": "部分正确",
+  "discrepancy_summary": "Depth: candidate says 820 mm; reference is 800 mm, a difference of 20 mm."
+}

@@ -1,0 +1,43 @@
+{
+  "discrepancy_summary": "",
+  "question": "According to the specification record for AeroVault-42C, what is its rated cooling capacity?",
+  "is_correct": true,
+  "reference_data": {
+    "reference_answer": "The rated cooling capacity is 42.0 kW.",
+    "equipment_model": "AeroVault-42C",
+    "specifications": {
+      "cooling_capacity": {
+        "value": 42.0,
+        "unit": "kW"
+      },
+      "airflow": {
+        "value": 7800,
+        "unit": "m³/h"
+      },
+      "electrical_parameters": {
+        "voltage": 400,
+        "voltage_unit": "V",
+        "phase": 3,
+        "frequency": 50,
+        "frequency_unit": "Hz",
+        "power": 8.6,
+        "power_unit": "kW"
+      },
+      "dimensions": {
+        "width": 1450,
+        "depth": 900,
+        "height": 2050,
+        "unit": "mm"
+      }
+    },
+    "numeric_tolerance": {
+      "absolute_tolerance": 0.5,
+      "absolute_tolerance_unit": "kW",
+      "relative_tolerance": 0.02
+    },
+    "evidence": "The specification record for AeroVault-42C lists a rated cooling capacity of 42.0 kW. The stated absolute and relative tolerances apply to the capacity comparison."
+  },
+  "candidate_answer": "The rated cooling capacity is 42.1 kW.",
+  "evaluation_basis": "The candidate gives 42.1 kW, which differs from the reference value by 0.1 kW and falls within the 0.5 kW absolute tolerance.",
+  "evaluation_status": "正确"
+}

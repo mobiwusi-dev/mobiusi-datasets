@@ -1,0 +1,43 @@
+{
+  "question": "What electrical supply and rated input power are specified for the ChillCore-68R?",
+  "is_correct": false,
+  "reference_data": {
+    "reference_answer": "The specified supply is 400 V, three-phase, 50 Hz, and the rated input power is 8.4 kW.",
+    "equipment_model": "ChillCore-68R",
+    "specifications": {
+      "cooling_capacity": {
+        "value": 68.0,
+        "unit": "kW"
+      },
+      "airflow": {
+        "value": 11200,
+        "unit": "m³/h"
+      },
+      "electrical_parameters": {
+        "voltage": 400,
+        "voltage_unit": "V",
+        "phase": 3,
+        "frequency": 50,
+        "frequency_unit": "Hz",
+        "power": 8.4,
+        "power_unit": "kW"
+      },
+      "dimensions": {
+        "width": 1720,
+        "depth": 980,
+        "height": 2180,
+        "unit": "mm"
+      }
+    },
+    "numeric_tolerance": {
+      "absolute_tolerance": 0.2,
+      "absolute_tolerance_unit": "kW",
+      "relative_tolerance": 0.02
+    },
+    "evidence": "The specification record for ChillCore-68R lists 400 V, three-phase, 50 Hz power and a rated input power of 8.4 kW. The listed supply configuration is an exact categorical match; the stated tolerances apply to the power comparison."
+  },
+  "candidate_answer": "It uses a 400 V, single-phase, 50 Hz supply and has a rated input power of 7.8 kW.",
+  "evaluation_basis": "The candidate reports single-phase power instead of the specified three-phase supply and gives 7.8 kW rather than 8.4 kW. The 0.6 kW power difference exceeds the stated tolerance.",
+  "evaluation_status": "错误",
+  "discrepancy_summary": "Phase count: candidate says 1; reference is 3. Rated input power: candidate says 7.8 kW; reference is 8.4 kW, a difference of 0.6 kW."
+}
