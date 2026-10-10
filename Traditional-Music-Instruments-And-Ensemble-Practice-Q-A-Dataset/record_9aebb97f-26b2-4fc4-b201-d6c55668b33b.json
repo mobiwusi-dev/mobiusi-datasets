@@ -1,0 +1,26 @@
+{
+  "answer": "The ensemble opens with 'Lanterns at the Bridge.' The sheng sustains supporting tones, the dizi carries the melody, and the small frame drum signals the transition to the following dance.",
+  "evidence": [
+    {
+      "source_identifier": "Lantern Procession Notes TN-041",
+      "passage_quote": "At the annual lantern procession, the ensemble opens with a melody locally called 'Lanterns at the Bridge.' A sheng sustains the supporting tones while a dizi carries the tune; a small frame drum signals the shift from the opening to the following dance. The passage names no other repertory.",
+      "source_locator": "Section 4, paragraph 2"
+    }
+  ],
+  "question": "Which melody opens the lantern procession, and what roles do the sheng, dizi, and frame drum play?",
+  "knowledge_focus": "曲调或曲目",
+  "source_material": {
+    "source_identifier": "Lantern Procession Notes TN-041",
+    "source_passage": "At the annual lantern procession, the ensemble opens with a melody locally called 'Lanterns at the Bridge.' A sheng sustains the supporting tones while a dizi carries the tune; a small frame drum signals the shift from the opening to the following dance. The passage names no other repertory.",
+    "source_locator": "Section 4, paragraph 2"
+  },
+  "instrument_names": [
+    "sheng",
+    "dizi",
+    "small frame drum"
+  ],
+  "tune_or_repertoire": "The opening melody is locally called 'Lanterns at the Bridge'; no other repertory is named.",
+  "performance_function": "The sheng sustains supporting tones, the dizi carries the melody, and the small frame drum signals the transition from the opening to the dance.",
+  "performance_occasion": "The annual lantern procession, followed by a dance.",
+  "ensemble_configuration": "Sheng, dizi, and small frame drum."
+}

@@ -1,0 +1,26 @@
+{
+  "answer": "The procession uses two suona players, a barrel drummer, and a cymbal player. The suona players alternate melodic phrases, the drum marks the walking pulse, and the cymbals accent phrase endings.",
+  "evidence": [
+    {
+      "source_identifier": "Processional Music Notes TN-027",
+      "passage_quote": "For the village wedding procession, two suona players carry the melody in alternating phrases. A barrel drum marks the walking pulse, while small cymbals accent the ends of each phrase. The four players move with the procession; the notes do not name a particular tune.",
+      "source_locator": "Chapter 1, paragraph 6"
+    }
+  ],
+  "question": "What is the instrumental configuration for the wedding procession, and how do the players coordinate their parts?",
+  "knowledge_focus": "合奏配置",
+  "source_material": {
+    "source_identifier": "Processional Music Notes TN-027",
+    "source_passage": "For the village wedding procession, two suona players carry the melody in alternating phrases. A barrel drum marks the walking pulse, while small cymbals accent the ends of each phrase. The four players move with the procession; the notes do not name a particular tune.",
+    "source_locator": "Chapter 1, paragraph 6"
+  },
+  "instrument_names": [
+    "suona",
+    "barrel drum",
+    "small cymbals"
+  ],
+  "tune_or_repertoire": "No particular tune is named.",
+  "performance_function": "The two suona players alternate phrases; the barrel drum marks the walking pulse, and the cymbals accent the ends of phrases.",
+  "performance_occasion": "A village wedding procession.",
+  "ensemble_configuration": "Two suona players, one barrel drum, and small cymbals; the four players move with the procession."
+}

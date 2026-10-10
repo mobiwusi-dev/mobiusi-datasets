@@ -1,0 +1,26 @@
+{
+  "answer": "The yangqin keeps a steady rhythm between sung lines, the erhu reinforces the singer's melody, and the pipa marks transitions between narrative sections. Together, they accompany a single storyteller.",
+  "evidence": [
+    {
+      "source_identifier": "Performance Notes TN-014",
+      "passage_quote": "During evening storytelling sessions, the yangqin maintains a steady rhythmic pattern between sung lines, the erhu follows and reinforces the singer's melody, and the pipa marks transitions between narrative sections. The three instruments accompany one storyteller; no fixed named tune is specified.",
+      "source_locator": "Section 2, paragraph 3"
+    }
+  ],
+  "question": "In the narrative ensemble described in the passage, how do the yangqin, erhu, and pipa support the storyteller?",
+  "knowledge_focus": "乐器演奏功能",
+  "source_material": {
+    "source_identifier": "Performance Notes TN-014",
+    "source_passage": "During evening storytelling sessions, the yangqin maintains a steady rhythmic pattern between sung lines, the erhu follows and reinforces the singer's melody, and the pipa marks transitions between narrative sections. The three instruments accompany one storyteller; no fixed named tune is specified.",
+    "source_locator": "Section 2, paragraph 3"
+  },
+  "instrument_names": [
+    "yangqin",
+    "erhu",
+    "pipa"
+  ],
+  "tune_or_repertoire": "No fixed named tune is specified.",
+  "performance_function": "The yangqin maintains the rhythm, the erhu reinforces the vocal melody, and the pipa signals transitions between narrative sections.",
+  "performance_occasion": "Evening storytelling sessions.",
+  "ensemble_configuration": "Yangqin, erhu, and pipa accompany one storyteller."
+}
