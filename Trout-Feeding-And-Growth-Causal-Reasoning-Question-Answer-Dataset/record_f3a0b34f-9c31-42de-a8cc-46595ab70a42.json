@@ -1,0 +1,13 @@
+{
+  "source_material": "Eight tanks of trout averaging about 100 g per fish were randomly assigned to two diets, with four tanks per diet, for 28 days. Diet A and Diet B were offered three times daily under the same ration-adjustment protocol. Mean water temperature was 12.2°C for Diet A tanks and 12.1°C for Diet B tanks; stocking density, water exchange, and initial mean weights were similar. No uneaten feed was recorded. Cumulative feed delivered averaged 28.0 g per fish on Diet A and 30.8 g on Diet B. Mean weight gain was 28 g per fish on Diet A and 35 g on Diet B. Feed conversion ratio, calculated as feed delivered divided by biomass gain, was 1.00 for Diet A and 0.88 for Diet B. No mortality was recorded. Question: Do these results support an effect of diet type on growth or feed conversion, and how strong is the evidence?",
+  "outcome_analysis": "Mean gain was 35 g per fish on Diet B and 28 g on Diet A. Feed conversion ratio was 0.88 for Diet B versus 1.00 for Diet A, indicating a more favorable recorded conversion for the Diet B group over the 28-day period.",
+  "causal_conclusion": "The results support a possible beneficial effect of Diet B under the recorded conditions: fish receiving it gained more weight and had a lower feed conversion ratio. Random assignment and similar recorded conditions strengthen the comparison, but the result does not establish that the diet difference alone explains the outcomes with certainty.",
+  "causal_uncertainty": "The findings are consistent with a benefit from Diet B but are limited to one 28-day comparison. Differences in actual intake and unreported tank-to-tank variation could affect the results. Repeated trials with tank-level measurements would help determine whether the effect is reproducible.",
+  "confounding_factors": [
+    "Small differences in water temperature between groups",
+    "Tank-level differences in conditions despite similar recorded husbandry",
+    "Differences in cumulative feed delivered under the shared ration-adjustment protocol"
+  ],
+  "evidence_explanation": "Random assignment, similar initial weights and husbandry conditions, and the same feeding protocol support a comparison of the diets. Both weight gain and feed conversion favored Diet B. The groups nevertheless received different cumulative amounts of feed, and the record gives no tank-level results, so it cannot show whether the group-level difference was consistent across tanks or how feed intake contributed to the outcome.",
+  "intervention_analysis": "The intervention was diet type, with Diet A compared with Diet B. Feeding frequency and the ration-adjustment protocol were the same for both groups, although cumulative feed delivered differed."
+}

@@ -1,0 +1,13 @@
+{
+  "source_material": "Eight tanks of juvenile trout with similar initial mean weights were randomly assigned to two feeding schedules, with four tanks per group. For 21 days, both groups received the same feed and the same average total allocation of 30 g per fish, divided into either two or four meals per day. Stocking density, water exchange, and dissolved oxygen were similar; water temperature averaged 12.5°C in both groups. Mean weight gain was 29.4 g per fish in the two-meal group and 31.25 g in the four-meal group. Feed conversion ratio (feed delivered divided by biomass gain) was 1.02 and 0.96, respectively. No mortality was recorded. Question: Does the feeding-frequency change appear to have affected growth or feed conversion, and what limits the conclusion?",
+  "outcome_analysis": "Over 21 days, mean gain was 31.25 g per fish with four meals versus 29.4 g with two meals. Feed conversion ratio was also lower with four meals (0.96 versus 1.02), indicating less feed delivered per unit of biomass gain under the recorded conditions.",
+  "causal_conclusion": "The four-meal schedule was associated with greater weight gain and a lower feed conversion ratio. Because the groups were randomly assigned and the recorded conditions were similar, the results support a possible beneficial effect of distributing the same daily feed across more meals, though they do not establish that frequency alone caused the difference with certainty.",
+  "causal_uncertainty": "The results are consistent with a benefit from more frequent feeding, but unreported tank-level variation could contribute to the group averages. A longer replicated comparison with tank-level results would help establish whether the difference is reproducible.",
+  "confounding_factors": [
+    "Small differences in water temperature or dissolved oxygen among tanks despite similar recorded conditions",
+    "Tank-level differences in water flow or fish distribution",
+    "Short observation period and the specific juvenile growth stage"
+  ],
+  "evidence_explanation": "Random allocation, similar initial weights and husbandry conditions, and the same average feed allocation make the frequency comparison informative. Both measured outcomes favored four meals. However, the record does not provide tank-by-tank variation or uncertainty estimates, so it is not possible to assess how consistent the differences were across replicate tanks.",
+  "intervention_analysis": "The assessed change was feeding frequency: four meals per day instead of two, with the same feed and average total allocation per fish."
+}
