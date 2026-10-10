@@ -1,0 +1,48 @@
+{
+  "answer": "The Juniper Boardroom measures 96 square meters and seats up to 24 in boardroom setup or 42 in classroom setup. Its listed equipment includes a 75-inch presentation display, an integrated speakerphone, and a conference camera, which provide the stated room equipment for a hybrid meeting. A technical attendant is available during booked meetings, and refreshment service can be arranged.",
+  "raw_query": "What are the Juniper Boardroom's area and seating capacities, and does the room have equipment and support for a hybrid meeting?",
+  "hotel_name": "Meridian Row Hotel",
+  "venue_name": "Juniper Boardroom",
+  "venue_type": "Boardroom",
+  "evidence_items": [
+    {
+      "claim": "The Juniper Boardroom has 96 square meters of meeting space.",
+      "evidence_quote": "The Juniper Boardroom provides 96 square meters of meeting space.",
+      "source_locator": "Juniper Boardroom section"
+    },
+    {
+      "claim": "The boardroom setup seats up to 24 people, and the classroom setup seats up to 42.",
+      "evidence_quote": "It seats up to 24 people in boardroom setup or 42 in classroom setup.",
+      "source_locator": "Juniper Boardroom section"
+    },
+    {
+      "claim": "The room has a presentation display, an integrated speakerphone, and a conference camera.",
+      "evidence_quote": "The room is equipped with a 75-inch presentation display, an integrated speakerphone, and a conference camera.",
+      "source_locator": "Juniper Boardroom section"
+    },
+    {
+      "claim": "A technical attendant is available during booked meetings, and refreshment service can be arranged.",
+      "evidence_quote": "A technical attendant is available during booked meetings, and refreshment service can be arranged.",
+      "source_locator": "Juniper Boardroom section"
+    }
+  ],
+  "source_page_url": null,
+  "raw_webpage_html": "<html><body><h1>Meridian Row Hotel</h1><section><h2>Juniper Boardroom</h2><p>The Juniper Boardroom provides 96 square meters of meeting space. It seats up to 24 people in boardroom setup or 42 in classroom setup.</p><p>The room is equipped with a 75-inch presentation display, an integrated speakerphone, and a conference camera. A technical attendant is available during booked meetings, and refreshment service can be arranged.</p></section></body></html>",
+  "venue_specifications": {
+    "area_square_meters": 96,
+    "layout_options": [
+      "Boardroom",
+      "Classroom"
+    ],
+    "capacity_people": 42,
+    "audio_visual_equipment": [
+      "75-inch presentation display",
+      "Integrated speakerphone",
+      "Conference camera"
+    ],
+    "supporting_services": [
+      "Technical attendant during booked meetings",
+      "Refreshment service"
+    ]
+  }
+}

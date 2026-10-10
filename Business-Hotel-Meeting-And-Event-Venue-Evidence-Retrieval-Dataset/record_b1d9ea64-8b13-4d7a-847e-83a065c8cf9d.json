@@ -1,0 +1,51 @@
+{
+  "hotel_name": "Northgate Exchange Hotel",
+  "venue_name": "Foundry Ballroom",
+  "venue_type": "Ballroom",
+  "raw_query": "For a reception, how many guests can the Foundry Ballroom accommodate? Please also list its audiovisual equipment and event services.",
+  "answer": "The Foundry Ballroom can accommodate up to 600 guests in a reception layout and spans 540 square meters. Its audiovisual equipment includes two laser projectors, dual projection screens, a digital sound console, and wireless handheld microphones. Event services include room setup and breakdown, plated meal service, and an on-site audiovisual technician.",
+  "evidence_items": [
+    {
+      "claim": "The Foundry Ballroom spans 540 square meters.",
+      "evidence_quote": "The Foundry Ballroom spans 540 square meters",
+      "source_locator": "Foundry Ballroom section"
+    },
+    {
+      "claim": "The reception layout accommodates up to 600 guests.",
+      "evidence_quote": "receptions for up to 600 guests.",
+      "source_locator": "Foundry Ballroom section"
+    },
+    {
+      "claim": "The ballroom has two laser projectors, dual projection screens, a digital sound console, and wireless handheld microphones.",
+      "evidence_quote": "In-room audiovisual equipment includes two laser projectors, dual projection screens, a digital sound console, and wireless handheld microphones.",
+      "source_locator": "Foundry Ballroom section"
+    },
+    {
+      "claim": "Event services include room setup and breakdown, plated meal service, and an on-site audiovisual technician.",
+      "evidence_quote": "The events team offers room setup and breakdown, plated meal service, and an on-site audiovisual technician.",
+      "source_locator": "Foundry Ballroom section"
+    }
+  ],
+  "source_page_url": null,
+  "raw_webpage_html": "<html><body><h1>Northgate Exchange Hotel</h1><section><h2>Foundry Ballroom</h2><p>The Foundry Ballroom spans 540 square meters and can be arranged for banquets for up to 320 guests, theater seating for up to 500 guests, or receptions for up to 600 guests.</p><p>In-room audiovisual equipment includes two laser projectors, dual projection screens, a digital sound console, and wireless handheld microphones. The events team offers room setup and breakdown, plated meal service, and an on-site audiovisual technician.</p></section></body></html>",
+  "venue_specifications": {
+    "area_square_meters": 540,
+    "layout_options": [
+      "Banquet",
+      "Theater",
+      "Reception"
+    ],
+    "capacity_people": 600,
+    "audio_visual_equipment": [
+      "Two laser projectors",
+      "Dual projection screens",
+      "Digital sound console",
+      "Wireless handheld microphones"
+    ],
+    "supporting_services": [
+      "Room setup and breakdown",
+      "Plated meal service",
+      "On-site audiovisual technician"
+    ]
+  }
+}

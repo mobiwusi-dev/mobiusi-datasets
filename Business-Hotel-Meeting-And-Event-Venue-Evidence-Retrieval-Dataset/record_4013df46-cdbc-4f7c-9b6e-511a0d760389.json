@@ -1,0 +1,49 @@
+{
+  "answer": "Harbor Conference Hall has 312 square meters of space. Its largest listed capacity is 240 guests in a theater layout. The audiovisual equipment includes a ceiling-mounted projector, a motorized projection screen, and a wireless microphone system. Available event services are an on-site meeting coordinator and coffee-break catering.",
+  "raw_query": "How large is Harbor Conference Hall, what is its maximum listed capacity, and what audiovisual equipment and event services are available?",
+  "hotel_name": "Alder Quay Business Hotel",
+  "venue_name": "Harbor Conference Hall",
+  "venue_type": "Conference hall",
+  "evidence_items": [
+    {
+      "claim": "Harbor Conference Hall measures 312 square meters.",
+      "evidence_quote": "Harbor Conference Hall offers 312 square meters of meeting space.",
+      "source_locator": "Harbor Conference Hall section"
+    },
+    {
+      "claim": "The theater layout accommodates up to 240 guests, the largest listed capacity.",
+      "evidence_quote": "Available layouts are theater for up to 240 guests, classroom for up to 144 guests, and U-shaped for up to 54 guests.",
+      "source_locator": "Harbor Conference Hall section"
+    },
+    {
+      "claim": "The hall includes a ceiling-mounted projector, a motorized projection screen, and a wireless microphone system.",
+      "evidence_quote": "Built-in audiovisual equipment includes a ceiling-mounted projector, a motorized projection screen, and a wireless microphone system.",
+      "source_locator": "Harbor Conference Hall section"
+    },
+    {
+      "claim": "An on-site meeting coordinator and coffee-break catering are available.",
+      "evidence_quote": "Event services include an on-site meeting coordinator and coffee-break catering.",
+      "source_locator": "Harbor Conference Hall section"
+    }
+  ],
+  "source_page_url": null,
+  "raw_webpage_html": "<html><body><h1>Alder Quay Business Hotel</h1><section><h2>Harbor Conference Hall</h2><p>Harbor Conference Hall offers 312 square meters of meeting space. Available layouts are theater for up to 240 guests, classroom for up to 144 guests, and U-shaped for up to 54 guests.</p><p>Built-in audiovisual equipment includes a ceiling-mounted projector, a motorized projection screen, and a wireless microphone system. Event services include an on-site meeting coordinator and coffee-break catering.</p></section></body></html>",
+  "venue_specifications": {
+    "area_square_meters": 312,
+    "layout_options": [
+      "Theater",
+      "Classroom",
+      "U-shaped"
+    ],
+    "capacity_people": 240,
+    "audio_visual_equipment": [
+      "Ceiling-mounted projector",
+      "Motorized projection screen",
+      "Wireless microphone system"
+    ],
+    "supporting_services": [
+      "On-site meeting coordinator",
+      "Coffee-break catering"
+    ]
+  }
+}
