@@ -1,0 +1,21 @@
+{
+  "verdict": "驳斥",
+  "claim_text": "Every approved applicant at Maple Court automatically receives a non-repayable $1,000 cash grant.",
+  "claim_domain": "补助或支持",
+  "housing_type": "Studio and one-bedroom rental apartments",
+  "evidence_excerpt": "Maple Court provides limited move-in assistance as a no-interest loan for eligible tenants, capped at $800 and limited to documented moving expenses. Assistance is subject to available program funds and requires repayment under a written schedule.",
+  "source_page_text": "Maple Court provides limited move-in assistance as a no-interest loan for eligible tenants, capped at $800 and limited to documented moving expenses. Assistance is subject to available program funds and requires repayment under a written schedule. The building contains studio and one-bedroom rental apartments. Applicants must meet posted income limits and sign a lease for a unit at Maple Court.",
+  "eligibility_conditions": [
+    "Applicants must meet the posted income limits."
+  ],
+  "verification_rationale": "The source describes conditional move-in assistance as a repayable loan capped at $800, not an automatic, non-repayable $1,000 cash grant. These stated terms directly contradict the claim.",
+  "applicability_requirements": [
+    "Applicants must sign a lease for a unit at Maple Court.",
+    "Move-in assistance is limited to documented moving expenses and depends on available program funds."
+  ],
+  "assistance_or_support_rules": [
+    "Move-in assistance is a no-interest loan capped at $800.",
+    "Assistance is limited to documented moving expenses and is subject to available program funds.",
+    "Recipients must repay the loan under a written schedule."
+  ]
+}

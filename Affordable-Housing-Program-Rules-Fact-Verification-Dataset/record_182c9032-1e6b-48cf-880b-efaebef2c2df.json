@@ -1,0 +1,18 @@
+{
+  "housing_type": "Income-restricted townhomes with two- or three-bedroom units",
+  "evidence_excerpt": "Applicants must provide household income documentation and meet the applicable income limit for the selected unit. Information about other rental assistance programs is not provided here.",
+  "claim_domain": "资格条件",
+  "verdict": "证据不足",
+  "claim_text": "Applicants who currently receive a housing choice voucher are eligible to lease a Willow Bend townhome.",
+  "source_page_text": "Willow Bend offers income-restricted townhomes with two or three bedrooms. Applicants must provide household income documentation and meet the applicable income limit for the selected unit. Leases are for a minimum of 12 months. Information about other rental assistance programs is not provided here.",
+  "eligibility_conditions": [
+    "Applicants must provide household income documentation.",
+    "Applicants must meet the applicable income limit for the selected unit."
+  ],
+  "verification_rationale": "The source specifies income-related criteria and a minimum lease term but does not state whether current housing choice voucher recipients are eligible. It expressly provides no information about other rental assistance programs, so the claim cannot be confirmed or refuted from this text.",
+  "applicability_requirements": [
+    "Applicants must provide household income documentation and meet the applicable income limit for the selected unit.",
+    "Leases have a minimum term of 12 months."
+  ],
+  "assistance_or_support_rules": []
+}

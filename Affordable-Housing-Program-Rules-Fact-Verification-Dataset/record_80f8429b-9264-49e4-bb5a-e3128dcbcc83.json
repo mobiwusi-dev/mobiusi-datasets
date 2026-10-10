@@ -1,0 +1,20 @@
+{
+  "verification_rationale": "The source explicitly sets the income ceiling at 60% of AMI and limits eligible household sizes to one through four people, matching the claim. The source describes the homes as rental apartments and does not qualify the stated criteria further.",
+  "applicability_requirements": [
+    "Applicants must occupy the unit as their primary residence."
+  ],
+  "source_page_text": "Cedar Row Apartments offers income-restricted rental homes. To qualify, household gross annual income must not exceed 60% of area median income (AMI), adjusted for household size. Eligible household sizes are one to four people. Applicants must occupy the unit as their primary residence. The property includes one-, two-, and three-bedroom apartments. Rent is set according to the applicable income tier; no separate cash grant is offered.",
+  "eligibility_conditions": [
+    "Household gross annual income must not exceed 60% of area median income, adjusted for household size.",
+    "Household size must be one to four people."
+  ],
+  "verdict": "支持",
+  "claim_text": "Households of up to four people with gross annual income at or below 60% of area median income may qualify for a rental home at Cedar Row Apartments.",
+  "claim_domain": "资格条件",
+  "housing_type": "Income-restricted rental apartments with one-, two-, and three-bedroom units",
+  "evidence_excerpt": "To qualify, household gross annual income must not exceed 60% of area median income (AMI), adjusted for household size. Eligible household sizes are one to four people.",
+  "assistance_or_support_rules": [
+    "Rent is set according to the applicable income tier.",
+    "No separate cash grant is offered."
+  ]
+}
