@@ -1,0 +1,111 @@
+{
+  "input_prompt": "Validate the program for June 3–4, 2027. Events listed as predecessors must finish before their successors begin, and no events may overlap. For consecutive events in the same room, the gap must be at least the earlier event's teardown time plus the later event's setup time. Events in different rooms have no shared-room transition requirement. Each room is available early enough for its listed setup.",
+  "overall_result": "pass",
+  "constraint_checks": [
+    {
+      "step_index": 0,
+      "constraint_type": "time_conflict",
+      "related_events": [
+        "Opening plenary",
+        "Track briefing",
+        "Facilitator workshop",
+        "Closing forum"
+      ],
+      "status": "pass",
+      "expected_condition": "No events may overlap on the program timeline.",
+      "observed_evidence": "On June 3, the events run 09:00–09:45, 10:15–10:45, and 11:15–12:00; the Closing forum is on June 4.",
+      "explanation": "The listed time intervals do not overlap."
+    },
+    {
+      "step_index": 1,
+      "constraint_type": "dependency_order",
+      "related_events": [
+        "Opening plenary",
+        "Track briefing",
+        "Facilitator workshop",
+        "Closing forum"
+      ],
+      "status": "pass",
+      "expected_condition": "Each predecessor must finish before its dependent event begins.",
+      "observed_evidence": "Opening plenary ends at 09:45 before Track briefing at 10:15; Track briefing ends at 10:45 before Facilitator workshop at 11:15; Facilitator workshop ends June 3 before Closing forum on June 4.",
+      "explanation": "Every predecessor relationship is satisfied by the scheduled order."
+    },
+    {
+      "step_index": 2,
+      "constraint_type": "transition_buffer",
+      "related_events": [
+        "Track briefing",
+        "Facilitator workshop"
+      ],
+      "status": "pass",
+      "expected_condition": "The same-room gap must be at least the earlier event's teardown plus the later event's setup: 10 + 15 = 25 minutes.",
+      "observed_evidence": "Both events use Cedar Room. Track briefing ends at 10:45 and Facilitator workshop starts at 11:15, leaving 30 minutes.",
+      "explanation": "The available 30-minute gap exceeds the 25-minute requirement."
+    },
+    {
+      "step_index": 3,
+      "constraint_type": "step_consistency",
+      "related_events": [
+        "Opening plenary",
+        "Track briefing",
+        "Facilitator workshop",
+        "Closing forum"
+      ],
+      "status": "pass",
+      "expected_condition": "The checks must agree with the schedule and with one another.",
+      "observed_evidence": "The intervals do not overlap, the predecessor order is valid, and the only consecutive same-room transition has sufficient time.",
+      "explanation": "The findings are supported by the schedule and are mutually consistent."
+    }
+  ],
+  "normalized_events": [
+    {
+      "event_name": "Opening plenary",
+      "event_date": "2027-06-03",
+      "venue": "Main Hall",
+      "start_time": "09:00",
+      "end_time": "09:45",
+      "predecessor_events": [],
+      "setup_minutes": 30,
+      "teardown_minutes": 10
+    },
+    {
+      "event_name": "Track briefing",
+      "event_date": "2027-06-03",
+      "venue": "Cedar Room",
+      "start_time": "10:15",
+      "end_time": "10:45",
+      "predecessor_events": [
+        "Opening plenary"
+      ],
+      "setup_minutes": 15,
+      "teardown_minutes": 10
+    },
+    {
+      "event_name": "Facilitator workshop",
+      "event_date": "2027-06-03",
+      "venue": "Cedar Room",
+      "start_time": "11:15",
+      "end_time": "12:00",
+      "predecessor_events": [
+        "Track briefing"
+      ],
+      "setup_minutes": 15,
+      "teardown_minutes": 20
+    },
+    {
+      "event_name": "Closing forum",
+      "event_date": "2027-06-04",
+      "venue": "Main Hall",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "predecessor_events": [
+        "Facilitator workshop"
+      ],
+      "setup_minutes": 30,
+      "teardown_minutes": 15
+    }
+  ],
+  "violation_summary": "No time conflicts, dependency-order violations, or insufficient same-room transition buffers were found.",
+  "candidate_schedule": "June 3\n09:00–09:45 | Opening plenary | Main Hall | setup 30 min, teardown 10 min\n10:15–10:45 | Track briefing | Cedar Room | setup 15 min, teardown 10 min | predecessor: Opening plenary\n11:15–12:00 | Facilitator workshop | Cedar Room | setup 15 min, teardown 20 min | predecessor: Track briefing\n\nJune 4\n15:00–16:00 | Closing forum | Main Hall | setup 30 min, teardown 15 min | predecessor: Facilitator workshop",
+  "step_consistency_result": "consistent"
+}

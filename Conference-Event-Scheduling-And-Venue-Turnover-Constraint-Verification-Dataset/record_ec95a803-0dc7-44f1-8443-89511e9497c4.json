@@ -1,0 +1,121 @@
+{
+  "input_prompt": "Validate the two-day program for May 12–13, 2027. Events listed as predecessors must finish before their successors begin. Events may not overlap. For consecutive events in the same room, the gap between the earlier event's end and the later event's start must be at least the earlier event's teardown time plus the later event's setup time. Room access is available early enough for the listed setup durations.",
+  "overall_result": "fail",
+  "constraint_checks": [
+    {
+      "step_index": 0,
+      "constraint_type": "time_conflict",
+      "related_events": [
+        "Operations briefing",
+        "Delegate workshop"
+      ],
+      "status": "pass",
+      "expected_condition": "Events must not overlap in time.",
+      "observed_evidence": "Operations briefing ends at 10:00; Delegate workshop begins at 10:30.",
+      "explanation": "There is a 30-minute gap, so these events do not overlap."
+    },
+    {
+      "step_index": 1,
+      "constraint_type": "dependency_order",
+      "related_events": [
+        "Operations briefing",
+        "Delegate workshop",
+        "Planning session",
+        "Closing review"
+      ],
+      "status": "pass",
+      "expected_condition": "Each predecessor must finish before its dependent event begins.",
+      "observed_evidence": "Operations briefing ends before Delegate workshop; Delegate workshop ends May 12 before Planning session on May 13; Planning session ends before Closing review.",
+      "explanation": "All listed predecessor relationships are in chronological order, with each predecessor complete before its successor starts."
+    },
+    {
+      "step_index": 2,
+      "constraint_type": "transition_buffer",
+      "related_events": [
+        "Operations briefing",
+        "Delegate workshop"
+      ],
+      "status": "fail",
+      "expected_condition": "The same-room gap must be at least the earlier event's teardown plus the later event's setup: 20 + 15 = 35 minutes.",
+      "observed_evidence": "Both events use Harbor Room. The gap is 10:00–10:30, or 30 minutes.",
+      "explanation": "The available gap is 5 minutes shorter than the required 35-minute teardown and setup buffer."
+    },
+    {
+      "step_index": 3,
+      "constraint_type": "transition_buffer",
+      "related_events": [
+        "Planning session",
+        "Closing review"
+      ],
+      "status": "pass",
+      "expected_condition": "The same-room gap must be at least the earlier event's teardown plus the later event's setup: 15 + 10 = 25 minutes.",
+      "observed_evidence": "Both events use Forum Room. The gap is 10:00–10:30, or 30 minutes.",
+      "explanation": "The 30-minute gap exceeds the required 25-minute buffer."
+    },
+    {
+      "step_index": 4,
+      "constraint_type": "step_consistency",
+      "related_events": [
+        "Operations briefing",
+        "Delegate workshop",
+        "Planning session",
+        "Closing review"
+      ],
+      "status": "pass",
+      "expected_condition": "Each check's verdict must agree with its evidence and with the other checks.",
+      "observed_evidence": "The time and dependency checks pass; the Harbor Room buffer check fails; the Forum Room buffer check passes.",
+      "explanation": "The findings and supporting evidence agree, including the identified shortfall for the Harbor Room transition."
+    }
+  ],
+  "normalized_events": [
+    {
+      "event_name": "Operations briefing",
+      "event_date": "2027-05-12",
+      "venue": "Harbor Room",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "predecessor_events": [],
+      "setup_minutes": 20,
+      "teardown_minutes": 20
+    },
+    {
+      "event_name": "Delegate workshop",
+      "event_date": "2027-05-12",
+      "venue": "Harbor Room",
+      "start_time": "10:30",
+      "end_time": "11:30",
+      "predecessor_events": [
+        "Operations briefing"
+      ],
+      "setup_minutes": 15,
+      "teardown_minutes": 10
+    },
+    {
+      "event_name": "Planning session",
+      "event_date": "2027-05-13",
+      "venue": "Forum Room",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "predecessor_events": [
+        "Delegate workshop"
+      ],
+      "setup_minutes": 20,
+      "teardown_minutes": 15
+    },
+    {
+      "event_name": "Closing review",
+      "event_date": "2027-05-13",
+      "venue": "Forum Room",
+      "start_time": "10:30",
+      "end_time": "11:30",
+      "predecessor_events": [
+        "Planning session"
+      ],
+      "setup_minutes": 10,
+      "teardown_minutes": 10
+    }
+  ],
+  "violation_summary": "The Harbor Room transition from Operations briefing to Delegate workshop has only 30 minutes against a 35-minute requirement. No event overlap or dependency-order violation was found; the Forum Room transition passes.",
+  "candidate_schedule": "May 12\n09:00–10:00 | Operations briefing | Harbor Room | setup 20 min, teardown 20 min\n10:30–11:30 | Delegate workshop | Harbor Room | setup 15 min, teardown 10 min | predecessor: Operations briefing\n\nMay 13\n09:00–10:00 | Planning session | Forum Room | setup 20 min, teardown 15 min | predecessor: Delegate workshop\n10:30–11:30 | Closing review | Forum Room | setup 10 min, teardown 10 min | predecessor: Planning session",
+  "step_consistency_result": "consistent"
+}
