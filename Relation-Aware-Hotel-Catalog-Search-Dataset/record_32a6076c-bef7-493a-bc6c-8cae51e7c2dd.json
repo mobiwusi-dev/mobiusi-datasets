@@ -1,0 +1,97 @@
+{
+  "user_query": "I need a non-smoking family suite in Vancouver for five, with on-site parking and a nightly rate below CAD 300.",
+  "match_label": "no_match",
+  "catalog_entry": {
+    "hotel": {
+      "hotel_name": "Tideglass Harbor Lodge",
+      "property_type": "Lodge",
+      "star_rating": 3.5,
+      "brand_name": "Tideglass Lodging"
+    },
+    "room_types": [
+      {
+        "room_type_name": "Harbor Family Suite",
+        "bed_type": "One queen bed and one single bed",
+        "capacity": 3,
+        "price_per_night": 345,
+        "currency": "CAD",
+        "refundable": false
+      }
+    ],
+    "amenities": [
+      "Breakfast lounge",
+      "Guest laundry room",
+      "Complimentary Wi-Fi"
+    ],
+    "location": {
+      "address": "72 Breakwater Lane",
+      "city": "Halifax",
+      "region": "Nova Scotia",
+      "country": "Canada",
+      "latitude": 44.6488,
+      "longitude": -63.5752
+    },
+    "policies": [
+      {
+        "policy_type": "Smoking",
+        "policy_text": "All guest rooms are non-smoking; smoking is permitted only in the outdoor courtyard."
+      },
+      {
+        "policy_type": "Parking",
+        "policy_text": "On-site parking is not available."
+      }
+    ]
+  },
+  "relevance_score": 0.08,
+  "matched_relations": [
+    {
+      "entity_type": "room_type",
+      "relation_type": "has_room_type",
+      "query_value": "family suite",
+      "catalog_path": "room_types[0].room_type_name",
+      "catalog_value": "Harbor Family Suite",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "policy",
+      "relation_type": "is_non_smoking",
+      "query_value": "non-smoking",
+      "catalog_path": "policies[0].policy_text",
+      "catalog_value": "All guest rooms are non-smoking; smoking is permitted only in the outdoor courtyard.",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "location",
+      "relation_type": "located_in",
+      "query_value": "Vancouver",
+      "catalog_path": "location.city",
+      "catalog_value": "Halifax",
+      "match_status": "conflicting"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "accommodates",
+      "query_value": "for five",
+      "catalog_path": "room_types[0].capacity",
+      "catalog_value": "3",
+      "match_status": "conflicting"
+    },
+    {
+      "entity_type": "policy",
+      "relation_type": "provides_on_site_parking",
+      "query_value": "on-site parking",
+      "catalog_path": "policies[1].policy_text",
+      "catalog_value": "On-site parking is not available.",
+      "match_status": "conflicting"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "within_price_limit",
+      "query_value": "below CAD 300 per night",
+      "catalog_path": "room_types[0].price_per_night",
+      "catalog_value": "345 CAD per night",
+      "match_status": "conflicting"
+    }
+  ],
+  "decision_rationale": "Although the family suite and non-smoking requirement are supported, the property is in Halifax rather than Vancouver, cannot accommodate five, has no on-site parking, and exceeds the stated nightly budget."
+}

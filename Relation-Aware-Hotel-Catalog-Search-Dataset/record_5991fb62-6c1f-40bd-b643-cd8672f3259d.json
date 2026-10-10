@@ -1,0 +1,105 @@
+{
+  "match_label": "partial_match",
+  "user_query": "Find a pet-friendly seaside resort in Cascais with a refundable twin room for three under EUR 220 per night.",
+  "catalog_entry": {
+    "hotel": {
+      "hotel_name": "Maré Alta Coastal Resort",
+      "property_type": "Seaside resort",
+      "star_rating": 4,
+      "brand_name": "Maré Alta Retreats"
+    },
+    "room_types": [
+      {
+        "room_type_name": "Twin Room with Balcony",
+        "bed_type": "Two single beds",
+        "capacity": 2,
+        "price_per_night": 198,
+        "currency": "EUR",
+        "refundable": true
+      }
+    ],
+    "amenities": [
+      "Direct beach access",
+      "Outdoor swimming pool",
+      "Complimentary Wi-Fi"
+    ],
+    "location": {
+      "address": "8 Rua da Falésia",
+      "city": "Cascais",
+      "region": "Lisbon District",
+      "country": "Portugal",
+      "latitude": 38.6969,
+      "longitude": -9.4215
+    },
+    "policies": [
+      {
+        "policy_type": "Pets",
+        "policy_text": "Pets are not permitted anywhere on the property."
+      },
+      {
+        "policy_type": "Cancellation",
+        "policy_text": "The room rate is refundable until 48 hours before check-in."
+      }
+    ]
+  },
+  "relevance_score": 0.61,
+  "matched_relations": [
+    {
+      "entity_type": "hotel",
+      "relation_type": "property_type_matches",
+      "query_value": "seaside resort",
+      "catalog_path": "hotel.property_type",
+      "catalog_value": "Seaside resort",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "location",
+      "relation_type": "located_in",
+      "query_value": "Cascais",
+      "catalog_path": "location.city",
+      "catalog_value": "Cascais",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "has_bed_type",
+      "query_value": "twin room",
+      "catalog_path": "room_types[0].bed_type",
+      "catalog_value": "Two single beds",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "accommodates",
+      "query_value": "for three",
+      "catalog_path": "room_types[0].capacity",
+      "catalog_value": "2",
+      "match_status": "conflicting"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "within_price_limit",
+      "query_value": "under EUR 220 per night",
+      "catalog_path": "room_types[0].price_per_night",
+      "catalog_value": "198 EUR per night",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "offers_refundable_rate",
+      "query_value": "refundable",
+      "catalog_path": "room_types[0].refundable",
+      "catalog_value": "true",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "policy",
+      "relation_type": "allows_pets",
+      "query_value": "pet-friendly",
+      "catalog_path": "policies[0].policy_text",
+      "catalog_value": "Pets are not permitted anywhere on the property.",
+      "match_status": "conflicting"
+    }
+  ],
+  "decision_rationale": "The resort, Cascais location, rate, and refundability fit the request, but the room accommodates only two guests and the property does not allow pets."
+}

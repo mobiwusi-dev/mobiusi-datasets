@@ -1,0 +1,97 @@
+{
+  "decision_rationale": "The location, requested king bed, occupancy, refundable rate, Wi-Fi, and included breakfast are all supported by the catalog entry.",
+  "user_query": "I need a refundable king room for two in Kyoto, with complimentary Wi-Fi and breakfast included.",
+  "match_label": "match",
+  "catalog_entry": {
+    "hotel": {
+      "hotel_name": "Mizunoki Garden Hotel",
+      "property_type": "Boutique hotel",
+      "star_rating": 4.5,
+      "brand_name": "Mizunoki Stays"
+    },
+    "room_types": [
+      {
+        "room_type_name": "Deluxe King Room",
+        "bed_type": "One king bed",
+        "capacity": 2,
+        "price_per_night": 18600,
+        "currency": "JPY",
+        "refundable": true
+      }
+    ],
+    "amenities": [
+      "Complimentary Wi-Fi",
+      "Breakfast included daily",
+      "Luggage storage"
+    ],
+    "location": {
+      "address": "41 Hanamikoji Lane, Higashiyama-ku",
+      "city": "Kyoto",
+      "region": "Kyoto Prefecture",
+      "country": "Japan",
+      "latitude": 35.0036,
+      "longitude": 135.7785
+    },
+    "policies": [
+      {
+        "policy_type": "Check-in",
+        "policy_text": "Check-in is available from 15:00 to 22:00."
+      },
+      {
+        "policy_type": "Cancellation",
+        "policy_text": "The listed room rate is refundable until 18:00 local time two days before arrival."
+      }
+    ]
+  },
+  "relevance_score": 0.98,
+  "matched_relations": [
+    {
+      "entity_type": "location",
+      "relation_type": "located_in",
+      "query_value": "Kyoto",
+      "catalog_path": "location.city",
+      "catalog_value": "Kyoto",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "has_bed_type",
+      "query_value": "king room",
+      "catalog_path": "room_types[0].bed_type",
+      "catalog_value": "One king bed",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "accommodates",
+      "query_value": "for two",
+      "catalog_path": "room_types[0].capacity",
+      "catalog_value": "2",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "room_type",
+      "relation_type": "offers_refundable_rate",
+      "query_value": "refundable",
+      "catalog_path": "room_types[0].refundable",
+      "catalog_value": "true",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "amenity",
+      "relation_type": "provides",
+      "query_value": "complimentary Wi-Fi",
+      "catalog_path": "amenities",
+      "catalog_value": "Complimentary Wi-Fi",
+      "match_status": "matched"
+    },
+    {
+      "entity_type": "amenity",
+      "relation_type": "provides",
+      "query_value": "breakfast included",
+      "catalog_path": "amenities",
+      "catalog_value": "Breakfast included daily",
+      "match_status": "matched"
+    }
+  ]
+}
