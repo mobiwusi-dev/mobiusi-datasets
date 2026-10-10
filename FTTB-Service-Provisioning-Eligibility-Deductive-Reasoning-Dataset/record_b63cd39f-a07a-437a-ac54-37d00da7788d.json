@@ -1,0 +1,6 @@
+{
+  "decision": "不可开通",
+  "input_case": "Building North Quay Annex is not covered by the FTTB service. An access cabinet is present, and its port register shows 6 free ports out of 24. Rule: a request can be opened if and only if the building is covered, the access equipment is active, and at least one port is free. Can service be opened at this building?",
+  "reasoning_basis": "The rule requires the building to be covered. The stated coverage status is not covered, so that required condition fails even though free ports are reported. The request cannot be opened under the rule.",
+  "missing_information": "无"
+}

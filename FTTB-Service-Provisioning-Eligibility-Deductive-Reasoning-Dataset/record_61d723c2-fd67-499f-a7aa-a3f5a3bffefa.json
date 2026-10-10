@@ -1,0 +1,6 @@
+{
+  "decision": "可开通",
+  "input_case": "Building Cedar Court is marked as covered by the FTTB service. Its building access equipment is active, and the service path to the requested unit is available. The distribution unit has 48 ports, of which 47 are occupied and 1 is free. Rule: a request can be opened if and only if the building is covered, the access equipment is active, the service path is available, and at least one port is free. Can service be opened for the requested unit?",
+  "reasoning_basis": "All conditions in the stated rule are met: the building is covered, the access equipment is active, the service path is available, and one port is free. The request can therefore be opened.",
+  "missing_information": "无"
+}

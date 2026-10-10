@@ -1,0 +1,6 @@
+{
+  "decision": "信息不足，无法确定",
+  "input_case": "Building Willow Terrace is marked as covered by the FTTB service. Its access equipment is active, and the service path to the requested unit is available. The port register does not state the total number of ports or how many are free. Rule: a request can be opened if and only if the building is covered, the access equipment is active, the service path is available, and at least one port is free. Can service be opened for the requested unit?",
+  "reasoning_basis": "Coverage, active access equipment, and an available service path are confirmed. However, the rule also requires at least one free port, and the case provides no port-availability information. The stated facts therefore do not establish whether all required conditions are met.",
+  "missing_information": "The number of ports currently free on the relevant distribution unit."
+}
