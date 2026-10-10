@@ -1,0 +1,48 @@
+{
+  "is_correct": true,
+  "source_code": "from collections import OrderedDict\nfrom threading import RLock\nfrom time import monotonic\n\nclass LRUCache:\n    def __init__(self, capacity):\n        if capacity < 1:\n            raise ValueError('capacity must be positive')\n        self.capacity = capacity\n        self.entries = OrderedDict()\n        self.lock = RLock()\n\n    def _purge_expired(self, now):\n        expired = [\n            key for key, (_, deadline) in self.entries.items()\n            if deadline <= now\n        ]\n        for key in expired:\n            del self.entries[key]\n\n    def get(self, key):\n        with self.lock:\n            now = monotonic()\n            item = self.entries.get(key)\n            if item is None:\n                return None\n            value, deadline = item\n            if deadline <= now:\n                del self.entries[key]\n                return None\n            self.entries.move_to_end(key)\n            return value\n\n    def put(self, key, value, ttl_seconds):\n        if ttl_seconds < 0:\n            raise ValueError('ttl_seconds must be non-negative')\n        with self.lock:\n            now = monotonic()\n            self._purge_expired(now)\n            if key in self.entries:\n                del self.entries[key]\n            while len(self.entries) >= self.capacity:\n                self.entries.popitem(last=False)\n            self.entries[key] = (value, now + ttl_seconds)",
+  "defect_root_cause": "No obvious defect was found in the local TTL, expiration-boundary, capacity-eviction, or entry-lifecycle behavior shown. The implementation does not provide distributed replication or cross-node coordination.",
+  "eviction_analysis": {
+    "eviction_strategy": "LRU; successful reads and writes place an entry at the most-recently-used end.",
+    "eviction_trigger": "Before inserting, expired entries are purged and least-recently-used entries are removed until there is room.",
+    "expired_entry_precedence": "Expired entries are purged before capacity eviction, so they take precedence over live entries as removal candidates.",
+    "strategy_consistent": true
+  },
+  "boundary_case_results": [
+    {
+      "case_description": "An entry is written with a zero-second TTL and then read.",
+      "expected_behavior": "The entry is expired immediately and the read returns a miss.",
+      "actual_behavior": "The read compares the deadline with the current monotonic time using <=, deletes the entry, and returns a miss.",
+      "passed": true
+    },
+    {
+      "case_description": "At capacity, an expired entry is not the least-recently-used entry when a new key is written.",
+      "expected_behavior": "Purge the expired entry before evicting any live LRU entry.",
+      "actual_behavior": "The write purges all entries with deadlines at or before the captured time before checking whether capacity eviction is needed.",
+      "passed": true
+    },
+    {
+      "case_description": "A read and write for the same cache instance overlap across threads.",
+      "expected_behavior": "The operations should observe a serialized state transition without corrupting recency or entry contents.",
+      "actual_behavior": "Both operations hold the instance RLock while accessing the ordered mapping, so their state changes are serialized.",
+      "passed": true
+    }
+  ],
+  "ttl_expiration_analysis": {
+    "ttl_value_or_source": "Each write supplies its own ttl_seconds value; negative TTLs are rejected, while zero is allowed.",
+    "ttl_unit": "Seconds",
+    "expiration_basis": "An absolute per-entry deadline computed from the write-time monotonic clock. Reads do not extend the deadline.",
+    "boundary_operator": "deadline <= now; an entry is expired at the exact deadline.",
+    "handles_clock_skew": true
+  },
+  "entry_lifecycle_analysis": {
+    "lifecycle_summary": "A write validates its TTL, purges expired entries, replaces any existing value for the key, evicts LRU entries if necessary, and stores a new deadline. A successful read refreshes recency; an expired requested entry is deleted and returned as a miss.",
+    "expiration_cleanup_behavior": "Lazy cleanup on reads for the requested key, plus a full expired-entry sweep before each write. No background cleanup is used.",
+    "stale_entry_return_possible": false
+  },
+  "distributed_cache_risk_analysis": {
+    "risk_summary": "The lock protects only this process-local instance. Independent nodes can hold different values or eviction orders, and monotonic deadlines are not portable across processes, so this implementation alone does not ensure distributed consistency.",
+    "affected_scenario": "Multiple application nodes maintain separate instances for the same logical keys, or an entry and its monotonic deadline are transferred to another process.",
+    "severity": "Medium"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "is_correct": false,
+  "source_code": "from collections import OrderedDict\nimport time\n\nclass TimedLRU:\n    def __init__(self, capacity, ttl_seconds=5):\n        self.capacity = capacity\n        self.ttl_seconds = ttl_seconds\n        self.entries = OrderedDict()\n\n    def put(self, key, value):\n        if key in self.entries:\n            del self.entries[key]\n        self.entries[key] = (value, time.time() + self.ttl_seconds)\n        self.entries.move_to_end(key)\n        while len(self.entries) > self.capacity:\n            self.entries.popitem(last=False)\n\n    def get(self, key):\n        item = self.entries.get(key)\n        if item is None:\n            return None\n        value, expires_at = item\n        if time.time() >= expires_at:\n            del self.entries[key]\n            return None\n        self.entries.move_to_end(key)\n        return value",
+  "defect_root_cause": "Capacity enforcement applies LRU eviction without first purging expired entries, allowing expired data to occupy capacity and live data to be discarded. Wall-clock deadlines are also vulnerable to clock adjustments, and operations are not synchronized for concurrent callers.",
+  "eviction_analysis": {
+    "eviction_strategy": "LRU; successful reads and writes move the key to the most-recently-used end.",
+    "eviction_trigger": "After a write, while the entry count exceeds capacity, the least-recently-used entry is removed.",
+    "expired_entry_precedence": "Expired entries are not swept before capacity eviction. An expired entry is removed only when read or selected as the LRU victim, so a live LRU entry can be evicted while another expired entry remains.",
+    "strategy_consistent": true
+  },
+  "boundary_case_results": [
+    {
+      "case_description": "A read occurs exactly at the stored expiration timestamp.",
+      "expected_behavior": "The entry is treated as expired and a miss is returned.",
+      "actual_behavior": "The >= check removes the entry and returns a miss.",
+      "passed": true
+    },
+    {
+      "case_description": "The cache is at capacity; a non-LRU entry has expired, and the LRU entry is still live when another key is inserted.",
+      "expected_behavior": "Remove the expired entry before evicting any live entry.",
+      "actual_behavior": "The capacity loop removes the LRU entry without checking expiration, leaving the expired entry in the cache.",
+      "passed": false
+    },
+    {
+      "case_description": "The system wall clock moves backward after an entry is written.",
+      "expected_behavior": "Elapsed TTL should not be extended by a wall-clock adjustment.",
+      "actual_behavior": "The deadline comparison uses time.time(), so a backward adjustment can delay expiration.",
+      "passed": false
+    }
+  ],
+  "ttl_expiration_analysis": {
+    "ttl_value_or_source": "The constructor defaults to a fixed 5-second TTL for each write.",
+    "ttl_unit": "Seconds",
+    "expiration_basis": "Absolute expiration timestamp computed from the write time using time.time(). Reads do not extend the deadline.",
+    "boundary_operator": "time.time() >= expires_at; an entry is expired at the deadline itself.",
+    "handles_clock_skew": false
+  },
+  "entry_lifecycle_analysis": {
+    "lifecycle_summary": "A write stores a value and an absolute deadline, replacing any prior value for the key. A successful read updates LRU order. Reads delete an expired requested entry; capacity pressure removes the LRU entry, whether or not it has expired.",
+    "expiration_cleanup_behavior": "Lazy cleanup on reads, with no background sweep. Capacity eviction does not proactively identify expired entries.",
+    "stale_entry_return_possible": false
+  },
+  "distributed_cache_risk_analysis": {
+    "risk_summary": "Wall-clock differences or adjustments can cause nodes to disagree about expiration. The implementation has no synchronization or cross-node coordination, so replicated copies can also diverge in contents and eviction order.",
+    "affected_scenario": "Two nodes store the same key at different local times, or a local clock moves backward while reads and writes continue; concurrent operations on one instance can also interleave without protection.",
+    "severity": "Medium"
+  }
+}

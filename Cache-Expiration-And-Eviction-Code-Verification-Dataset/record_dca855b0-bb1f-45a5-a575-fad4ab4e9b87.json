@@ -1,0 +1,48 @@
+{
+  "is_correct": false,
+  "source_code": "import time\n\nclass LFUCache:\n    def __init__(self, capacity, ttl_seconds=30):\n        self.capacity = capacity\n        self.ttl_seconds = ttl_seconds\n        self.items = {}\n        self.sequence = 0\n\n    def put(self, key, value):\n        self.sequence += 1\n        now = time.monotonic()\n        self.items[key] = {\n            'value': value,\n            'expires_at': now + self.ttl_seconds,\n            'frequency': 1,\n            'inserted_at': self.sequence,\n        }\n        if len(self.items) > self.capacity:\n            now = time.monotonic()\n            expired = [k for k, item in self.items.items() if item['expires_at'] < now]\n            for expired_key in expired:\n                del self.items[expired_key]\n            if len(self.items) > self.capacity:\n                victim = min(\n                    self.items,\n                    key=lambda k: (self.items[k]['frequency'], self.items[k]['inserted_at']),\n                )\n                del self.items[victim]\n\n    def get(self, key):\n        item = self.items.get(key)\n        if item is None:\n            return None\n        if time.monotonic() > item['expires_at']:\n            del self.items[key]\n            return None\n        item['frequency'] += 1\n        return item['value']",
+  "defect_root_cause": "The expiration comparison uses > instead of >=, so an entry remains readable at its exact deadline and may be returned stale. Shared dictionary and frequency state are also accessed without synchronization, making concurrent behavior unsafe.",
+  "eviction_analysis": {
+    "eviction_strategy": "LFU, with the oldest insertion used to break ties in frequency.",
+    "eviction_trigger": "A write that makes the item count exceed capacity first scans for expired entries, then evicts one lowest-frequency entry if still over capacity.",
+    "expired_entry_precedence": "Entries whose deadline is strictly earlier than the current monotonic time are removed before LFU selection. An entry exactly at its deadline is incorrectly retained as live.",
+    "strategy_consistent": true
+  },
+  "boundary_case_results": [
+    {
+      "case_description": "A read occurs exactly at an entry's expiration deadline.",
+      "expected_behavior": "The entry is expired at the deadline and the read returns a miss.",
+      "actual_behavior": "The strict > comparison considers equality valid, increments the frequency, and returns the value.",
+      "passed": false
+    },
+    {
+      "case_description": "A write exceeds capacity while an existing entry is strictly past its deadline.",
+      "expected_behavior": "Remove expired entries before choosing a live LFU victim.",
+      "actual_behavior": "The insertion-time scan removes entries with deadlines earlier than now before applying the frequency and insertion-order tie break.",
+      "passed": true
+    },
+    {
+      "case_description": "Two threads concurrently read the same entry while writes update the dictionary and frequency counts.",
+      "expected_behavior": "Cache operations should be serialized or otherwise protect shared state from races.",
+      "actual_behavior": "The implementation uses no lock; frequency updates and dictionary mutations can interleave without a defined atomic boundary.",
+      "passed": false
+    }
+  ],
+  "ttl_expiration_analysis": {
+    "ttl_value_or_source": "The constructor configures a default fixed TTL of 30 seconds for each write.",
+    "ttl_unit": "Seconds",
+    "expiration_basis": "A per-entry absolute deadline based on time.monotonic() at insertion; reads do not refresh it.",
+    "boundary_operator": "time.monotonic() > expires_at; equality is treated as still valid, so expiration is delayed past the deadline.",
+    "handles_clock_skew": true
+  },
+  "entry_lifecycle_analysis": {
+    "lifecycle_summary": "A write stores a value, a monotonic deadline, a frequency initialized to one, and an insertion sequence. A successful read increments frequency. Expired entries are deleted on reads or during a capacity-triggered scan; remaining over-capacity entries are subject to LFU eviction.",
+    "expiration_cleanup_behavior": "Lazy cleanup on a read of the requested key and a full scan only when an insertion exceeds capacity. There is no background cleanup.",
+    "stale_entry_return_possible": true
+  },
+  "distributed_cache_risk_analysis": {
+    "risk_summary": "Monotonic time avoids wall-clock jumps within one process, but monotonic deadlines are process-local and cannot be assumed comparable across nodes. Independent cache instances can also accumulate different hit counts and eviction choices.",
+    "affected_scenario": "A cache entry or its deadline is copied between nodes, or two nodes independently serve the same key while applying local LFU counters and local monotonic clocks.",
+    "severity": "Medium"
+  }
+}
