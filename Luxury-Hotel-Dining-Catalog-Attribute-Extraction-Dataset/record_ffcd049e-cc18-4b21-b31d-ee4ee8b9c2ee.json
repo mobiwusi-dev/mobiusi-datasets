@@ -1,0 +1,21 @@
+{
+  "cuisines": [
+    "Contemporary French",
+    "Mediterranean"
+  ],
+  "venue_name": "Atelier du Jardin",
+  "venue_type": "Restaurant",
+  "service_formats": [
+    "Dine-in"
+  ],
+  "service_periods": [
+    "Breakfast",
+    "Lunch",
+    "Dinner"
+  ],
+  "source_description": "Atelier du Jardin is the hotel's all-day dining restaurant, serving breakfast, lunch, and dinner in an elegant indoor setting. Its menu features contemporary French and Mediterranean dishes, with vegetarian and gluten-free options available upon request.",
+  "dietary_restrictions": [
+    "Vegetarian options",
+    "Gluten-free options"
+  ]
+}
