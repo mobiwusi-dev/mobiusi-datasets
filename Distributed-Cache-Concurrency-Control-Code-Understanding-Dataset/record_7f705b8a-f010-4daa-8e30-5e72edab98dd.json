@@ -1,0 +1,20 @@
+{
+  "answer": "The lock serializes the cache lookup and the decision to create or join a per-key flight. The leader runs loader outside the lock, so unrelated keys—and other code using the cache—are not blocked by the loader itself. Callers that find an existing flight wait on its event. On success, the leader stores the value and places it on the flight before signaling; waiters then return that value. On failure, the leader records the exception, removes the flight, and signals waiters, which raise the recorded exception. A later call after the failed flight has been removed can start a new load.",
+  "question": "For concurrent calls to get_or_load with the same key, which work is serialized, and what do waiting callers observe if the loader raises an exception?",
+  "race_paths": [
+    "If several callers miss the same key concurrently, the first caller to insert a flight becomes leader; the others observe that flight and wait rather than invoking loader themselves.",
+    "After a failed flight is removed, a new caller can create a new flight while callers from the failed flight are still waking and handling its exception. The new caller retries the load; the old waiters still refer to the completed flight object."
+  ],
+  "source_code": "import threading\n\n\nclass _Flight:\n    def __init__(self):\n        self.event = threading.Event()\n        self.value = None\n        self.error = None\n\n\nclass Cache:\n    def __init__(self):\n        self._values = {}\n        self._flights = {}\n        self._lock = threading.Lock()\n\n    def get_or_load(self, key, loader):\n        with self._lock:\n            if key in self._values:\n                return self._values[key]\n            flight = self._flights.get(key)\n            leader = flight is None\n            if leader:\n                flight = _Flight()\n                self._flights[key] = flight\n\n        if not leader:\n            flight.event.wait()\n            if flight.error is not None:\n                raise flight.error\n            return flight.value\n\n        try:\n            value = loader()\n        except Exception as exc:\n            with self._lock:\n                flight.error = exc\n                self._flights.pop(key, None)\n                flight.event.set()\n            raise\n\n        with self._lock:\n            self._values[key] = value\n            flight.value = value\n            self._flights.pop(key, None)\n            flight.event.set()\n        return value",
+  "shared_state": [
+    "_values maps keys to cached values; reads and writes in this method occur under _lock.",
+    "_flights maps keys to shared _Flight objects; the map is accessed under _lock, while each flight's value, error, and event communicate the outcome to its waiters."
+  ],
+  "execution_result": "For a successful load, the value is cached and returned by the leader and callers waiting on that flight. If loading raises an Exception, the leader re-raises it and waiters raise the recorded exception; the failed flight is removed, so a subsequent call may try loading again.",
+  "concurrency_mechanism": "A mutex protects the cache and per-key in-flight map, while an event lets callers for the same missing key share the leader's result or exception. This coalesces concurrent loads for a key while the flight remains registered.",
+  "synchronization_boundaries": [
+    "The with self._lock blocks protect checking and updating _values and looking up, inserting, or removing entries in _flights.",
+    "flight.event.wait() blocks followers until the leader has stored either the result or the exception and signaled completion.",
+    "loader() runs outside the mutex; its execution is not serialized by this cache lock."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "answer": "Both calls can run loader because each releases _lock before invoking it. When they attempt publication, compare_and_set checks the current version and replaces the entry only if it still equals the version each call read. The first successful call increments the version; the other then sees a mismatch and returns False, so both results cannot be published from that same starting version. The loader computation itself may nevertheless be duplicated, and the code does not serialize any side effects performed by loader.",
+  "question": "If two refresh calls read the same entry version before either loader finishes, can both publish their results? What work may still be duplicated?",
+  "race_paths": [
+    "Two refresh calls can snapshot the same version and run their loaders concurrently. The first successful compare_and_set advances the version; the other call is rejected and returns False.",
+    "Because the loader runs outside the lock, its computation can be based on a value that another refresh has since replaced. The version check prevents that stale computation from overwriting the newer entry, but it does not prevent duplicated loader work or side effects."
+  ],
+  "source_code": "import threading\n\n\nclass VersionedCache:\n    def __init__(self):\n        self._entries = {}\n        self._lock = threading.Lock()\n\n    def compare_and_set(self, key, expected_version, new_value):\n        with self._lock:\n            current = self._entries.get(key)\n            if current is None or current[1] != expected_version:\n                return False\n            self._entries[key] = (new_value, expected_version + 1)\n            return True\n\n    def refresh(self, key, loader):\n        with self._lock:\n            current = self._entries.get(key)\n            if current is None:\n                return False\n            value, version = current\n\n        new_value = loader(value)\n        return self.compare_and_set(key, version, new_value)",
+  "shared_state": [
+    "_entries maps each key to a (value, version) pair; its reads and writes in these methods are protected by _lock.",
+    "The entry version is shared coordination state: compare_and_set reads it and increments it when a replacement succeeds."
+  ],
+  "execution_result": "refresh returns False if the key is absent when it takes its snapshot, or if its computed result loses the version check. It returns True when its result is stored and the entry version is incremented by one.",
+  "concurrency_mechanism": "A mutex makes the version check and entry replacement one critical section. refresh uses an optimistic pattern: it reads a value and version under the lock, computes outside the lock, then conditionally publishes only if the version is unchanged.",
+  "synchronization_boundaries": [
+    "The first with self._lock block in refresh protects reading the entry and its version.",
+    "The with self._lock block in compare_and_set protects the version comparison and replacement as one indivisible operation relative to other accesses using this instance's lock.",
+    "loader(value) runs outside the lock, so concurrent refresh computations may overlap."
+  ]
+}

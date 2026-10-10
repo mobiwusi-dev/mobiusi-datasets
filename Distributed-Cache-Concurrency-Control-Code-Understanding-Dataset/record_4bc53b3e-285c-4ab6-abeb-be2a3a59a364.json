@@ -1,0 +1,20 @@
+{
+  "question": "What happens if invalidate runs after load_and_publish captures the key's epoch but before its loader finishes? Can two loads from the same epoch both publish?",
+  "answer": "invalidate increments the key's epoch and removes its cached value while holding the same lock used by publication. When the earlier load finishes, it compares the current epoch with its captured epoch under the lock. If invalidation has occurred, the epochs differ, so load_and_publish returns False without storing that value. If two loads capture the same epoch and no invalidation occurs, each can pass the epoch check and publish; the one that acquires the lock later overwrites the earlier value. The method returns whether publication succeeded, not the loaded value.",
+  "race_paths": [
+    "A load can capture an epoch, then an invalidation can increment that epoch and remove the entry before the load finishes. The later publication check rejects the old load, preventing it from restoring a value from before the invalidation.",
+    "Two loads can capture the same epoch and finish in either order. Since neither changes the epoch, both may publish; the later publication overwrites the earlier one."
+  ],
+  "source_code": "import threading\n\n\nclass CacheWithInvalidationEpochs:\n    def __init__(self):\n        self._values = {}\n        self._epochs = {}\n        self._lock = threading.Lock()\n\n    def invalidate(self, key):\n        with self._lock:\n            self._epochs[key] = self._epochs.get(key, 0) + 1\n            self._values.pop(key, None)\n\n    def load_and_publish(self, key, loader):\n        with self._lock:\n            epoch = self._epochs.get(key, 0)\n\n        value = loader()\n\n        with self._lock:\n            if self._epochs.get(key, 0) != epoch:\n                return False\n            self._values[key] = value\n            return True",
+  "shared_state": [
+    "_epochs maps keys to generation counters; invalidate increments a counter, and load_and_publish reads it before and after loading.",
+    "_values maps keys to cached values; invalidate removes entries and load_and_publish may insert them, with those operations protected by _lock."
+  ],
+  "execution_result": "If the key's epoch is unchanged when publication is attempted, the value is stored and load_and_publish returns True. If the epoch changed, the value is not stored and the method returns False; the caller can use that result to decide whether to retry or discard the loaded value.",
+  "concurrency_mechanism": "A per-key epoch acts as a generation token. A loader snapshots the token before doing work outside the lock, then checks it before publishing. Invalidation advances the token, preventing a load from an earlier generation from repopulating the cache.",
+  "synchronization_boundaries": [
+    "The lock in invalidate protects incrementing the key's epoch and removing its cached value as one operation.",
+    "The first lock block in load_and_publish protects the epoch snapshot.",
+    "The final lock block in load_and_publish protects comparing the current epoch with the snapshot and, when they match, storing the value."
+  ]
+}
