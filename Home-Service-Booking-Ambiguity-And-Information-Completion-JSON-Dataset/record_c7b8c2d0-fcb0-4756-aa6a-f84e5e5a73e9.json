@@ -1,0 +1,14 @@
+{
+  "conflicts": [],
+  "can_proceed": true,
+  "raw_request": "Please book a standard home cleaning for 2027-05-18, from 9 a.m. to noon. It's a one-bedroom apartment; please clean the kitchen, bathroom, and living room.",
+  "missing_fields": [],
+  "extracted_details": {
+    "service_type": "Standard home cleaning",
+    "requested_time": "2027-05-18, 9 a.m. to noon",
+    "service_scope": "Kitchen, bathroom, and living room",
+    "home_information": "One-bedroom apartment"
+  },
+  "processing_status": "ready_to_process",
+  "clarification_questions": []
+}

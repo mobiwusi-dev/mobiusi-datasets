@@ -1,0 +1,20 @@
+{
+  "clarification_questions": [
+    "Which date do you mean by Friday?",
+    "What arrival time would you prefer?"
+  ],
+  "conflicts": [],
+  "can_proceed": false,
+  "raw_request": "Could someone come Friday afternoon to deep-clean the kitchen and bathrooms? It's a two-bedroom apartment.",
+  "missing_fields": [
+    "Exact date",
+    "Arrival time"
+  ],
+  "extracted_details": {
+    "service_type": "Deep cleaning",
+    "requested_time": "Friday afternoon; exact date and arrival time not specified",
+    "service_scope": "Kitchen and bathrooms",
+    "home_information": "Two-bedroom apartment"
+  },
+  "processing_status": "needs_clarification"
+}
