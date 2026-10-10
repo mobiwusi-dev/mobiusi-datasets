@@ -1,0 +1,9 @@
+{
+  "query_text": "The lever on my toaster will not stay down, so the bread does not start toasting. What should I check?",
+  "relevance_label": 1,
+  "document": {
+    "title": "Toaster Lever Will Not Stay Down: Safe Checks",
+    "content": "Unplug the toaster and let it cool before checking it. Empty the crumb tray and remove loose crumbs from the accessible interior by turning the toaster gently over a sink or bin; do not insert metal utensils into the slots. Place the toaster on a level surface and check that the carriage moves freely when operated without bread. If the lever still will not latch, or the toaster shows signs of damage, stop using it and arrange service.",
+    "source_type": "FAQ"
+  }
+}
