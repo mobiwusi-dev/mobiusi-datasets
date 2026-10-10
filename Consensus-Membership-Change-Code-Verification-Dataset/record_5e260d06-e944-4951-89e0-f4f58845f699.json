@@ -1,0 +1,16 @@
+{
+  "change_context": "A new node d has joined as a learner and is not yet eligible to vote. The active voter set is {a, b, c}. If only a and b acknowledge a decision, they form a voter majority; an acknowledgement from d must not affect the quorum calculation.",
+  "change_operation": "成员加入",
+  "faulty_code_source": "def has_quorum(acks, voters, learners):\n    members = voters | learners\n    required = len(members) // 2 + 1\n    return len(set(acks) & members) >= required\n",
+  "quorum_constraints": [
+    "Compute the majority threshold from voting members only.",
+    "Count acknowledgements only from the active voter set.",
+    "A learner must not increase the quorum threshold or substitute for a voter.",
+    "Update the voter set only when the membership protocol commits the learner's promotion."
+  ],
+  "validation_outcome": "未执行",
+  "root_cause_analysis": "The faulty function merges learners into the voting set before computing both the threshold and the acknowledgements. This incorrectly raises the threshold from two to three and also allows a learner's acknowledgement to count toward that threshold.",
+  "validation_code_source": "import unittest\n\ndef has_quorum_fixed(acks, voters):\n    required = len(voters) // 2 + 1\n    return len(set(acks) & voters) >= required\n\nclass LearnerPromotionTests(unittest.TestCase):\n    def test_learner_does_not_increase_voting_threshold(self):\n        voters = {'a', 'b', 'c'}\n        learners = {'d'}\n        acknowledgements = {'a', 'b'}\n        self.assertFalse(has_quorum(acknowledgements, voters, learners))\n        self.assertTrue(has_quorum_fixed(acknowledgements, voters))\n\n    def test_learner_acknowledgement_cannot_replace_a_voter(self):\n        voters = {'a', 'b', 'c'}\n        learners = {'d'}\n        acknowledgements = {'a', 'b', 'd'}\n        self.assertTrue(has_quorum(acknowledgements, voters, learners))\n        self.assertFalse(has_quorum_fixed(acknowledgements, voters))\n",
+  "repair_consistency_assessment": "Static review shows that the candidate function derives both the threshold and acknowledgement count solely from voters, so learner acknowledgements cannot change the result. The regression tests have not been run, and no runtime verification is claimed.",
+  "configuration_transition_summary": "Adding a learner does not change the active voter configuration. The voter set remains {a, b, c} until an explicit promotion transition; only then may the new node participate in quorum calculations under the applicable configuration rules."
+}

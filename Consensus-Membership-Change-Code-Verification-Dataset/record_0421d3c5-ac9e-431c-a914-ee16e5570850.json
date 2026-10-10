@@ -1,0 +1,16 @@
+{
+  "change_operation": "成员移除",
+  "faulty_code_source": "def can_commit_removal(acks, old_voters, new_voters):\n    required = len(new_voters) // 2 + 1\n    return len(set(acks) & new_voters) >= required\n",
+  "change_context": "A five-voter configuration {a, b, c, d, e} is being reduced to {a, b, c}. The removal decision receives acknowledgements from only {a, b}; this is a majority of the proposed configuration but not of the currently active five-voter configuration.",
+  "quorum_constraints": [
+    "For a five-voter old configuration, at least three old voters must acknowledge the transition.",
+    "For a three-voter new configuration, at least two new voters must acknowledge the transition.",
+    "During joint transition, require both majorities rather than substituting the new quorum for the old quorum.",
+    "Do not treat a proposed configuration as active before the transition is authorized."
+  ],
+  "validation_outcome": "未执行",
+  "root_cause_analysis": "The faulty function uses only the proposed configuration's quorum to authorize the removal. Because the proposed set is smaller, two acknowledgements suffice even though the old configuration requires three. The new configuration is therefore allowed to authorize its own activation without the old configuration's required support.",
+  "validation_code_source": "import unittest\n\ndef can_commit_removal_fixed(acks, old_voters, new_voters):\n    acknowledgements = set(acks)\n    old_majority = len(old_voters) // 2 + 1\n    new_majority = len(new_voters) // 2 + 1\n    return (len(acknowledgements & old_voters) >= old_majority\n            and len(acknowledgements & new_voters) >= new_majority)\n\nclass RemovalQuorumTests(unittest.TestCase):\n    def test_new_configuration_cannot_authorize_its_own_activation(self):\n        old_voters = {'a', 'b', 'c', 'd', 'e'}\n        new_voters = {'a', 'b', 'c'}\n        acknowledgements = {'a', 'b'}\n        self.assertTrue(can_commit_removal(acknowledgements, old_voters, new_voters))\n        self.assertFalse(can_commit_removal_fixed(acknowledgements, old_voters, new_voters))\n\n    def test_both_configurations_can_authorize_transition(self):\n        old_voters = {'a', 'b', 'c', 'd', 'e'}\n        new_voters = {'a', 'b', 'c'}\n        acknowledgements = {'a', 'b', 'c'}\n        self.assertTrue(can_commit_removal_fixed(acknowledgements, old_voters, new_voters))\n",
+  "repair_consistency_assessment": "Static review indicates that the candidate predicate preserves the old quorum requirement while also requiring the new quorum. The tests encode the premature-activation regression and a successful joint-quorum case, but they have not been executed.",
+  "configuration_transition_summary": "The old configuration must remain part of the authorization rule while the change is in transition. The candidate predicate requires majorities of both old and new sets before the transition can be committed; only afterward can the new set govern subsequent decisions."
+}

@@ -1,0 +1,16 @@
+{
+  "configuration_transition_summary": "The old and new voter sets remain jointly authoritative during the transition. A decision must satisfy both sets' quorum rules before the system can finalize the new configuration; the union must not be treated as a single voter set.",
+  "change_context": "During a joint-consensus transition, the old voter set is {a, b, c} and the new voter set is {c, d, e, f, g}. Acknowledgements from {a, b, d} reach the larger of the two majority thresholds when counted across the union, but do not form a majority in the new configuration.",
+  "change_operation": "联合共识",
+  "faulty_code_source": "def has_joint_quorum(acks, old_voters, new_voters):\n    required = max(len(old_voters) // 2 + 1, len(new_voters) // 2 + 1)\n    return len(set(acks) & (old_voters | new_voters)) >= required\n",
+  "quorum_constraints": [
+    "Count acknowledgements from each configuration independently.",
+    "Require at least floor(|old_voters| / 2) + 1 acknowledgements from the old configuration.",
+    "Require at least floor(|new_voters| / 2) + 1 acknowledgements from the new configuration.",
+    "Do not finalize a transition based solely on a majority of the union of the voter sets."
+  ],
+  "validation_outcome": "未执行",
+  "root_cause_analysis": "The faulty predicate counts distinct acknowledgements across the union of both configurations and compares that total with only the larger majority threshold. Joint consensus requires a separate majority from each configuration; a large union count can conceal a shortage in one side.",
+  "validation_code_source": "import unittest\n\ndef has_joint_quorum_fixed(acks, old_voters, new_voters):\n    acknowledgements = set(acks)\n    old_majority = len(old_voters) // 2 + 1\n    new_majority = len(new_voters) // 2 + 1\n    return (len(acknowledgements & old_voters) >= old_majority\n            and len(acknowledgements & new_voters) >= new_majority)\n\nclass JointQuorumTests(unittest.TestCase):\n    def test_majority_of_union_is_not_enough(self):\n        old_voters = {'a', 'b', 'c'}\n        new_voters = {'c', 'd', 'e', 'f', 'g'}\n        acknowledgements = {'a', 'b', 'd'}\n        self.assertTrue(has_joint_quorum(acknowledgements, old_voters, new_voters))\n        self.assertFalse(has_joint_quorum_fixed(acknowledgements, old_voters, new_voters))\n\n    def test_both_configurations_have_majorities(self):\n        old_voters = {'a', 'b', 'c'}\n        new_voters = {'c', 'd', 'e', 'f', 'g'}\n        acknowledgements = {'a', 'b', 'c', 'd', 'e'}\n        self.assertTrue(has_joint_quorum_fixed(acknowledgements, old_voters, new_voters))\n",
+  "repair_consistency_assessment": "Static review of the candidate predicate shows that it independently enforces both majorities, including when the sets overlap. The included regression tests have not been run, so runtime behavior is not claimed as verified."
+}
