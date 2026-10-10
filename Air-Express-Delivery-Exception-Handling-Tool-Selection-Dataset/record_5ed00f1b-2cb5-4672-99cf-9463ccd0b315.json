@@ -1,0 +1,35 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "query_shipment_events",
+      "tool_arguments": {
+        "shipment_id": "AX-91825047"
+      },
+      "tool_result": {
+        "latest_event": "Delivery attempted",
+        "exception": "Building access unavailable",
+        "event_date": "2025-04-17",
+        "current_status": "Awaiting redelivery arrangement"
+      },
+      "selection_reason": "The record reports an unsuccessful attempt due to building access, and the event history is checked before acting on the recipient's redelivery request."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "schedule_redelivery",
+      "tool_arguments": {
+        "shipment_id": "AX-91825047",
+        "requested_date": "2025-04-18"
+      },
+      "tool_result": {
+        "request_status": "accepted",
+        "scheduled_date": "2025-04-18",
+        "delivery_instruction": "Use the recipient's requested redelivery date"
+      },
+      "selection_reason": "The event query confirms the shipment is awaiting a new attempt, and the requested date is listed as an available redelivery option."
+    }
+  ],
+  "source_record": "{\"shipment_id\":\"AX-91825047\",\"status\":\"Delivery attempted\",\"exception\":\"The delivery driver could not enter the secured building.\",\"delivery_notes\":\"Recipient requested redelivery on 2025-04-18.\",\"available_tools\":[\"query_shipment_events\",\"schedule_redelivery\",\"create_delivery_follow_up\"],\"redelivery_options\":[\"2025-04-18\"]}",
+  "final_disposition": "Redelivery is scheduled for 2025-04-18, using the recipient's requested date.",
+  "assistant_response": "The delivery attempt was unsuccessful because the driver could not access the secured building. Redelivery has been arranged for 2025-04-18 as requested."
+}

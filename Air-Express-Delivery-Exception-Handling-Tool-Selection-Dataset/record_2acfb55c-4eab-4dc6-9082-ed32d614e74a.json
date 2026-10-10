@@ -1,0 +1,47 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "verify_delivery_address",
+      "tool_arguments": {
+        "shipment_id": "AX-70418362",
+        "address": {
+          "street": "184 Harbor Lane",
+          "city": "Northport",
+          "postal_code": "48216",
+          "unit_number": null
+        }
+      },
+      "tool_result": {
+        "address_status": "incomplete",
+        "missing_fields": [
+          "unit_number"
+        ],
+        "reroute_eligible": false
+      },
+      "selection_reason": "The delivery exception identifies a missing unit number, so the address must be checked before any reroute is considered."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "create_recipient_contact_task",
+      "tool_arguments": {
+        "shipment_id": "AX-70418362",
+        "requested_information": [
+          "unit_number"
+        ],
+        "reason": "Delivery address is incomplete"
+      },
+      "tool_result": {
+        "task_status": "created",
+        "requested_information": [
+          "unit_number"
+        ],
+        "shipment_action": "hold_pending_address_confirmation"
+      },
+      "selection_reason": "Address verification confirmed that the unit number is missing; a recipient contact task is needed to obtain it before delivery can be arranged."
+    }
+  ],
+  "source_record": "{\"shipment_id\":\"AX-70418362\",\"status\":\"Delivery attempted\",\"exception\":\"Delivery address is incomplete; the building requires a unit number.\",\"address\":{\"street\":\"184 Harbor Lane\",\"city\":\"Northport\",\"postal_code\":\"48216\",\"unit_number\":null},\"available_tools\":[\"verify_delivery_address\",\"create_recipient_contact_task\",\"request_delivery_reroute\"],\"handling_constraints\":[\"Do not reroute until the delivery address is complete.\"]}",
+  "final_disposition": "Hold the shipment pending confirmation of the unit number. Reassess delivery or rerouting after the address is complete.",
+  "assistant_response": "Delivery could not be completed because the address is missing a unit number. We have requested the missing information and will arrange the next delivery step once it is confirmed."
+}

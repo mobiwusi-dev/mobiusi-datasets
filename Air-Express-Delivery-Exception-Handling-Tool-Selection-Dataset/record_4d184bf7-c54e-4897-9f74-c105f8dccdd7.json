@@ -1,0 +1,40 @@
+{
+  "tool_calls": [
+    {
+      "call_order": 0,
+      "tool_name": "query_shipment_events",
+      "tool_arguments": {
+        "shipment_id": "AX-56309128"
+      },
+      "tool_result": {
+        "latest_event": "Connection missed",
+        "location": "East Ridge transfer facility",
+        "date": "2025-04-21",
+        "current_status": "Held for next available movement",
+        "estimated_delivery": null
+      },
+      "selection_reason": "The shipment is reported as held after a missed connection, so the event history is checked to confirm its latest status and whether an updated estimate exists."
+    },
+    {
+      "call_order": 1,
+      "tool_name": "create_transport_delay_follow_up",
+      "tool_arguments": {
+        "shipment_id": "AX-56309128",
+        "reason": "Missed air connection",
+        "requested_action": "Confirm next available movement and provide an updated delivery estimate"
+      },
+      "tool_result": {
+        "follow_up_status": "created",
+        "case_type": "transport_delay",
+        "pending_items": [
+          "next movement confirmation",
+          "updated delivery estimate"
+        ]
+      },
+      "selection_reason": "The confirmed event history shows the shipment is still held and has no estimated delivery date, so a transport-delay follow-up is appropriate."
+    }
+  ],
+  "source_record": "{\"shipment_id\":\"AX-56309128\",\"status\":\"Held at transfer facility\",\"exception\":\"The shipment missed its planned air connection.\",\"last_scan\":{\"location\":\"East Ridge transfer facility\",\"date\":\"2025-04-21\",\"event\":\"Connection missed; shipment retained for next available movement\"},\"available_tools\":[\"query_shipment_events\",\"create_transport_delay_follow_up\"],\"known_eta\":null}",
+  "final_disposition": "Open a transport-delay follow-up to confirm the next available movement and obtain an updated delivery estimate.",
+  "assistant_response": "The shipment is being held at the transfer facility after missing its planned air connection, and an updated delivery estimate is not yet available. A follow-up has been opened to confirm its next movement and obtain a revised estimate."
+}
