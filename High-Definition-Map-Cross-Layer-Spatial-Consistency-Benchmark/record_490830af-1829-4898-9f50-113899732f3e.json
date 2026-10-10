@@ -1,0 +1,64 @@
+{
+  "gis_layer_data": {
+    "coordinate_reference": "Local projected metric grid; coordinates are in meters",
+    "measurement_method": {
+      "alignment_error_m": "Minimum perpendicular separation between the queried parallel line features"
+    },
+    "layers": {
+      "lane_boundaries": {
+        "features": [
+          {
+            "feature_id": "LB-17",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  100,
+                  200
+                ],
+                [
+                  120,
+                  200
+                ],
+                [
+                  140,
+                  200
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "lane_centerlines": {
+        "features": [
+          {
+            "feature_id": "CL-17",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  100,
+                  201.6
+                ],
+                [
+                  120,
+                  201.6
+                ],
+                [
+                  140,
+                  201.6
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relation_query": "Are lane boundary LB-17 and lane centerline CL-17 parallel?",
+  "relation_exists": true,
+  "alignment_error_m": 1.6,
+  "containment_status": "不适用",
+  "reference_relation": "平行",
+  "reference_explanation": "Both features are straight, co-directional line strings. Their perpendicular separation is 1.60 m at each corresponding segment, so the queried parallel relationship holds."
+}

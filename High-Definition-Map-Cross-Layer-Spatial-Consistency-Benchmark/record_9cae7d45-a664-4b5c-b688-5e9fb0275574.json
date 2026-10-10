@@ -1,0 +1,74 @@
+{
+  "gis_layer_data": {
+    "coordinate_reference": "Local projected metric grid; coordinates are in meters",
+    "measurement_method": {
+      "alignment_error_m": "Lateral offset of the lane centerline from the longitudinal center axis of the road-surface polygon"
+    },
+    "layers": {
+      "road_surfaces": {
+        "features": [
+          {
+            "feature_id": "RS-08",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    400,
+                    0
+                  ],
+                  [
+                    420,
+                    0
+                  ],
+                  [
+                    420,
+                    8
+                  ],
+                  [
+                    400,
+                    8
+                  ],
+                  [
+                    400,
+                    0
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "lane_centerlines": {
+        "features": [
+          {
+            "feature_id": "CL-08",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  401,
+                  4
+                ],
+                [
+                  410,
+                  4
+                ],
+                [
+                  419,
+                  4
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relation_query": "Does road surface RS-08 contain lane centerline CL-08?",
+  "relation_exists": true,
+  "alignment_error_m": 0,
+  "containment_status": "包含",
+  "reference_relation": "包含",
+  "reference_explanation": "The lane centerline lies entirely within the road-surface polygon. It follows the polygon's longitudinal center axis at y = 4 m, giving a lateral alignment offset of 0.00 m."
+}

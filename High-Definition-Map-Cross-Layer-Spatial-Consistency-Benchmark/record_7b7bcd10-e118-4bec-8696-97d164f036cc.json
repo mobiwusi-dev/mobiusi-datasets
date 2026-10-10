@@ -1,0 +1,65 @@
+{
+  "gis_layer_data": {
+    "coordinate_reference": "Local projected metric grid; coordinates are in meters",
+    "adjacency_tolerance_m": 0.2,
+    "measurement_method": {
+      "alignment_error_m": "Minimum gap between the queried road-edge and curb line features"
+    },
+    "layers": {
+      "road_edges": {
+        "features": [
+          {
+            "feature_id": "RE-42",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  300,
+                  50
+                ],
+                [
+                  320,
+                  50
+                ],
+                [
+                  340,
+                  50
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "curb_lines": {
+        "features": [
+          {
+            "feature_id": "CU-42",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  300,
+                  50.12
+                ],
+                [
+                  320,
+                  50.12
+                ],
+                [
+                  340,
+                  50.12
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relation_query": "Is curb line CU-42 adjacent to road edge RE-42 under the supplied adjacency tolerance?",
+  "relation_exists": true,
+  "alignment_error_m": 0.12,
+  "containment_status": "不适用",
+  "reference_relation": "邻接",
+  "reference_explanation": "The two line features run alongside one another, with a uniform minimum gap of 0.12 m. This is within the supplied 0.20 m adjacency tolerance, so the queried adjacency relationship holds."
+}
