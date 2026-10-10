@@ -1,0 +1,35 @@
+{
+  "brief": {
+    "product_or_service": "Small-group beginner pottery workshops at a neighborhood ceramics studio",
+    "campaign_goal": "Drive bookings for weekend workshop sessions",
+    "target_audience": "Adults looking for a welcoming, hands-on weekend activity, including people with no pottery experience",
+    "key_message": "Beginner-friendly, two-hour wheel-throwing sessions include tools and materials",
+    "brand_tone": "Creative, welcoming, and relaxed",
+    "required_disclosures": [
+      "Participants must be at least 16 years old. Advance booking is required."
+    ]
+  },
+  "creative": {
+    "headline": "Try the pottery wheel this weekend",
+    "primary_text": "Curious about making pottery? Join a relaxed, beginner-friendly wheel-throwing session and get hands-on with clay, tools, and materials. No prior experience is needed. Participants must be at least 16 years old; advance booking is required.",
+    "description": "Two-hour small-group workshops for first-time potters.",
+    "call_to_action": {
+      "label": "Reserve a seat"
+    },
+    "platform_info": [
+      {
+        "platform": "Instagram",
+        "placement": "Reels and Stories"
+      },
+      {
+        "platform": "Facebook",
+        "placement": "Events and Feed"
+      }
+    ],
+    "hashtags": [
+      "#PotteryWorkshop",
+      "#BeginnerPottery",
+      "#CreativeWeekend"
+    ]
+  }
+}

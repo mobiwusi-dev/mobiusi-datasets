@@ -1,0 +1,35 @@
+{
+  "brief": {
+    "product_or_service": "A weeknight meal-planning app for busy households",
+    "campaign_goal": "Encourage new users to start a free trial",
+    "target_audience": "Busy adults and families who want practical dinner ideas with less daily planning",
+    "key_message": "Build a flexible weekly meal plan from quick recipes, with options to adapt meals to household preferences",
+    "brand_tone": "Warm, practical, and reassuring",
+    "required_disclosures": [
+      "The free trial is available to new accounts. A paid subscription begins after the trial unless canceled."
+    ]
+  },
+  "creative": {
+    "headline": "Make weeknight dinners feel easier",
+    "primary_text": "A little planning can make the end of the day feel lighter. Find quick dinner ideas, shape a weekly meal plan around your household, and spend less time wondering what’s for dinner. Start your free trial and plan your next week.",
+    "description": "Flexible meal planning and quick recipe ideas in one place.",
+    "call_to_action": {
+      "label": "Start free trial"
+    },
+    "platform_info": [
+      {
+        "platform": "Instagram",
+        "placement": "Stories and Feed"
+      },
+      {
+        "platform": "Facebook",
+        "placement": "Feed"
+      }
+    ],
+    "hashtags": [
+      "#WeeknightCooking",
+      "#MealPlanning",
+      "#DinnerMadeEasier"
+    ]
+  }
+}

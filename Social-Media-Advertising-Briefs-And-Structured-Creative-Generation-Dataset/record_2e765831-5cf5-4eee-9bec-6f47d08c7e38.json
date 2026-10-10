@@ -1,0 +1,33 @@
+{
+  "brief": {
+    "product_or_service": "A mobile language-practice app with beginner lessons and short guided speaking sessions",
+    "campaign_goal": "Increase app downloads among adult beginners",
+    "target_audience": "Adults who are new to a language and want to build a consistent practice habit around work and other commitments",
+    "key_message": "Short, guided speaking sessions make it easier to fit language practice into a daily routine",
+    "brand_tone": "Encouraging, clear, and down-to-earth",
+    "required_disclosures": []
+  },
+  "creative": {
+    "headline": "A few minutes can start a new habit",
+    "primary_text": "New language, busy schedule? Make room for a short practice session whenever it suits you. Beginner lessons and guided speaking activities help you keep showing up, one day at a time. Download the app and begin at your own pace.",
+    "description": "Short guided sessions designed for everyday practice.",
+    "call_to_action": {
+      "label": "Download the app"
+    },
+    "platform_info": [
+      {
+        "platform": "TikTok",
+        "placement": "In-Feed Video"
+      },
+      {
+        "platform": "Instagram",
+        "placement": "Reels"
+      }
+    ],
+    "hashtags": [
+      "#LanguageLearning",
+      "#DailyPractice",
+      "#LearnAtYourPace"
+    ]
+  }
+}
