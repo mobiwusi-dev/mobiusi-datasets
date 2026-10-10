@@ -1,0 +1,6 @@
+{
+  "answer": "The shift supervisor releases the route after reviewing the completed route-clearance checklist and confirming that the required clearance is complete.",
+  "question": "Who releases the storage route for the next cargo, and what must be completed first?",
+  "evidence_passages": "The assigned operator records the clearance status for each checklist item. The route may be released for the next cargo only after the shift supervisor has reviewed the completed checklist and confirmed that the required clearance is complete.",
+  "source_webpage_text": "Stockpile Changeover Instructions\n\nA stockpile changeover is required when the next cargo is not compatible with the material currently on the storage route. Before the changeover, the shift supervisor identifies the affected hoppers, transfer points, and conveyor sections and assigns an operator to verify each item on the route-clearance checklist.\n\nStop the feed and isolate the affected route in accordance with the site's isolation procedure. Remove accessible residual material from the identified transfer points and conveyor sections. The assigned operator records the clearance status for each checklist item. The route may be released for the next cargo only after the shift supervisor has reviewed the completed checklist and confirmed that the required clearance is complete."
+}

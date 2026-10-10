@@ -1,0 +1,6 @@
+{
+  "answer": "The deficiency must be corrected, and the hold must be reinspected. It can be included in the loading sequence only after it meets the readiness conditions.",
+  "question": "What must happen before a hold that fails the readiness inspection can be included in the loading sequence?",
+  "evidence_passages": "Any hold that does not meet the recorded readiness conditions is excluded from the loading sequence until the deficiency has been corrected and the hold has been reinspected.",
+  "source_webpage_text": "Berth Operations Guide: Cargo Hold Readiness\n\nBefore loading begins, the vessel's designated representative must present the hold-readiness checklist to the terminal supervisor. The checklist must identify each hold and record whether it is clean, dry, free of loose scale and previous-cargo residues, and ready to receive the nominated cargo.\n\nThe terminal supervisor and vessel representative inspect the holds together. Any hold that does not meet the recorded readiness conditions is excluded from the loading sequence until the deficiency has been corrected and the hold has been reinspected. The supervisor records the inspection outcome and the holds cleared for loading in the shift log."
+}
