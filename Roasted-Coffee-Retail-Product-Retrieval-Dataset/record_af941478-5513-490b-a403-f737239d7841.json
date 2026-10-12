@@ -1,0 +1,21 @@
+{
+  "user_query": "Can you recommend a medium-roast espresso blend with chocolate notes? Whole beans are fine, but I was hoping for a bag around 500 g.",
+  "product_entry": {
+    "product_name": "Harbor Ember Espresso Blend",
+    "brand": "Cinderpath Coffee",
+    "origin": "Brazil and Colombia",
+    "blend": "Brazilian and Colombian coffees",
+    "roast_level": "Medium",
+    "bean_form": "Whole bean",
+    "package_size": "340 g",
+    "product_description": "A balanced espresso blend with cocoa, toasted hazelnut, and brown sugar notes. Developed for espresso and moka pot, with enough sweetness to work well in milk-based drinks."
+  },
+  "relevance_score": 2,
+  "matched_attributes": [
+    "blend",
+    "roast_level",
+    "bean_form",
+    "product_description"
+  ],
+  "matching_rationale": "The medium roast, espresso-oriented blend, whole-bean format, and cocoa notes fit the main preferences. The 340 g package is notably smaller than the requested size of around 500 g, so the match is relevant but not exact."
+}

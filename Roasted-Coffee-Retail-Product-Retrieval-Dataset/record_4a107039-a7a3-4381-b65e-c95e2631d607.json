@@ -1,0 +1,16 @@
+{
+  "user_query": "I need a light-roast Kenyan coffee in whole-bean form, preferably in a 1 kg bag.",
+  "product_entry": {
+    "product_name": "Canyon Hearth Decaf Dark Roast",
+    "brand": "Juniper Row Roasters",
+    "origin": "Brazil, Cerrado Mineiro",
+    "blend": "Single-origin decaffeinated coffee",
+    "roast_level": "Dark",
+    "bean_form": "Ground coffee",
+    "package_size": "200 g",
+    "product_description": "A full-bodied decaffeinated coffee with bittersweet cocoa and roasted walnut notes. Ground for convenient drip brewing."
+  },
+  "relevance_score": 0,
+  "matched_attributes": [],
+  "matching_rationale": "The product conflicts with every specified preference: it is a dark roast from Brazil rather than a light roast from Kenya, is ground rather than whole bean, and comes in a 200 g package rather than a 1 kg bag."
+}

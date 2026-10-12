@@ -1,0 +1,21 @@
+{
+  "user_query": "I’m looking for a light-roast Ethiopian whole bean with floral and citrus notes for pour-over.",
+  "product_entry": {
+    "product_name": "Kejana Highlands Light Roast",
+    "brand": "Northline Roastery",
+    "origin": "Ethiopia, Sidama",
+    "blend": "",
+    "roast_level": "Light",
+    "bean_form": "Whole bean",
+    "package_size": "250 g",
+    "product_description": "Washed Sidama coffee with jasmine, bergamot, and ripe peach notes. Its bright acidity and delicate body suit pour-over and other filter brewing methods."
+  },
+  "relevance_score": 3,
+  "matched_attributes": [
+    "origin",
+    "roast_level",
+    "bean_form",
+    "product_description"
+  ],
+  "matching_rationale": "The entry matches the requested Ethiopian origin, light roast, and whole-bean format. Its jasmine and bergamot notes and filter-brewing recommendation also align with the query."
+}
