@@ -1,0 +1,43 @@
+{
+  "case_record": {
+    "glucose_mg_dl": 310,
+    "venous_ph": 7.24,
+    "bicarbonate_mmol_l": 15,
+    "beta_hydroxybutyrate_mmol_l": 4.1,
+    "urine_ketones": "Not obtained",
+    "diagnostic_criteria": "DKA is present when glucose is >200 mg/dL, venous pH is <7.30 or bicarbonate is <18 mmol/L, and urine ketones are moderate or large. For this stated rule, beta-hydroxybutyrate is recorded for context but is not used to determine the ketone criterion.",
+    "severity_criteria": "Grade severity using venous pH only: mild 7.20-7.29, moderate 7.10-7.19, and severe <7.10.",
+    "recorded_dka_status": true,
+    "recorded_severity": "mild"
+  },
+  "criterion_checks": [
+    {
+      "criterion_name": "Glucose threshold",
+      "status": "supported",
+      "observed_evidence": "Glucose is 310 mg/dL; the stated threshold is >200 mg/dL.",
+      "rationale": "The recorded glucose exceeds the stated threshold."
+    },
+    {
+      "criterion_name": "Acidosis criterion",
+      "status": "supported",
+      "observed_evidence": "Venous pH is 7.24 and bicarbonate is 15 mmol/L; the stated limits are pH <7.30 or bicarbonate <18 mmol/L.",
+      "rationale": "Both recorded acid-base measurements meet the stated acidosis criterion."
+    },
+    {
+      "criterion_name": "Urine ketone criterion",
+      "status": "indeterminate",
+      "observed_evidence": "Urine ketones were not obtained. Beta-hydroxybutyrate is 4.1 mmol/L, but the stated rule excludes it from the ketone determination.",
+      "rationale": "The required urine ketone result is unavailable, so the stated ketone condition cannot be evaluated."
+    },
+    {
+      "criterion_name": "Recorded severity band",
+      "status": "supported",
+      "observed_evidence": "Venous pH is 7.24; the stated mild band is 7.20-7.29.",
+      "rationale": "The pH falls within the recorded mild severity band."
+    }
+  ],
+  "overall_consistency": "indeterminate",
+  "assessment_rationale": "The recorded mild severity matches the stated pH band. The DKA status cannot be confirmed or contradicted under the stated diagnostic rule because the required urine ketone result is unavailable.",
+  "severity_consistency": "supported",
+  "diagnostic_consistency": "insufficient_evidence"
+}

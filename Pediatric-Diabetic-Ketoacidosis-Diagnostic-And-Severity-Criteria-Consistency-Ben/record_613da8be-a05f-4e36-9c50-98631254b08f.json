@@ -1,0 +1,43 @@
+{
+  "case_record": {
+    "glucose_mg_dl": 368,
+    "venous_ph": 7.16,
+    "bicarbonate_mmol_l": 11,
+    "beta_hydroxybutyrate_mmol_l": 5.2,
+    "urine_ketones": "Large",
+    "diagnostic_criteria": "DKA is present when glucose is >200 mg/dL, venous pH is <7.30 or bicarbonate is <18 mmol/L, and beta-hydroxybutyrate is >=3.0 mmol/L or urine ketones are moderate or large.",
+    "severity_criteria": "Grade severity using venous pH only: mild 7.20-7.29, moderate 7.10-7.19, and severe <7.10.",
+    "recorded_dka_status": true,
+    "recorded_severity": "moderate"
+  },
+  "criterion_checks": [
+    {
+      "criterion_name": "Glucose threshold",
+      "status": "supported",
+      "observed_evidence": "Glucose is 368 mg/dL; the stated threshold is >200 mg/dL.",
+      "rationale": "The recorded glucose exceeds the stated threshold."
+    },
+    {
+      "criterion_name": "Acidosis criterion",
+      "status": "supported",
+      "observed_evidence": "Venous pH is 7.16 and bicarbonate is 11 mmol/L; the stated limits are pH <7.30 or bicarbonate <18 mmol/L.",
+      "rationale": "Both recorded acid-base measurements meet the stated acidosis criterion."
+    },
+    {
+      "criterion_name": "Ketosis criterion",
+      "status": "supported",
+      "observed_evidence": "Beta-hydroxybutyrate is 5.2 mmol/L and urine ketones are large; the stated alternatives are beta-hydroxybutyrate >=3.0 mmol/L or moderate/large urine ketones.",
+      "rationale": "The recorded values meet both stated alternatives for ketosis."
+    },
+    {
+      "criterion_name": "Recorded severity band",
+      "status": "supported",
+      "observed_evidence": "Venous pH is 7.16; the stated moderate band is 7.10-7.19.",
+      "rationale": "The pH falls within the recorded moderate severity band."
+    }
+  ],
+  "overall_consistency": "consistent",
+  "assessment_rationale": "The recorded DKA diagnosis meets all stated diagnostic conditions, and the recorded moderate severity matches the stated pH band.",
+  "severity_consistency": "supported",
+  "diagnostic_consistency": "supported"
+}

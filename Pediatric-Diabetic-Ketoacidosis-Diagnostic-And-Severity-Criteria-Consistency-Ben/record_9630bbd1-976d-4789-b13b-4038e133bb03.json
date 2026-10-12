@@ -1,0 +1,49 @@
+{
+  "case_record": {
+    "glucose_mg_dl": 245,
+    "venous_ph": 7.28,
+    "bicarbonate_mmol_l": 17.5,
+    "beta_hydroxybutyrate_mmol_l": 3.4,
+    "urine_ketones": "Moderate",
+    "diagnostic_criteria": "DKA is present when glucose is >200 mg/dL, venous pH is <7.30 or bicarbonate is <18 mmol/L, and beta-hydroxybutyrate is >=3.0 mmol/L or urine ketones are moderate or large.",
+    "severity_criteria": "Grade severity using venous pH only: mild 7.20-7.29, moderate 7.10-7.19, and severe <7.10.",
+    "recorded_dka_status": false,
+    "recorded_severity": "not_specified"
+  },
+  "criterion_checks": [
+    {
+      "criterion_name": "Glucose threshold",
+      "status": "supported",
+      "observed_evidence": "Glucose is 245 mg/dL; the stated threshold is >200 mg/dL.",
+      "rationale": "The recorded glucose exceeds the stated threshold."
+    },
+    {
+      "criterion_name": "Acidosis criterion",
+      "status": "supported",
+      "observed_evidence": "Venous pH is 7.28 and bicarbonate is 17.5 mmol/L; the stated limits are pH <7.30 or bicarbonate <18 mmol/L.",
+      "rationale": "Both recorded acid-base measurements meet the stated acidosis criterion."
+    },
+    {
+      "criterion_name": "Ketosis criterion",
+      "status": "supported",
+      "observed_evidence": "Beta-hydroxybutyrate is 3.4 mmol/L and urine ketones are moderate; both meet the stated alternative thresholds.",
+      "rationale": "The recorded evidence meets the stated ketosis condition."
+    },
+    {
+      "criterion_name": "Recorded DKA status",
+      "status": "contradicted",
+      "observed_evidence": "The case records DKA status as false, although the glucose, acidosis, and ketosis conditions are met.",
+      "rationale": "The recorded negative status conflicts with the stated diagnostic criteria and measurements."
+    },
+    {
+      "criterion_name": "Recorded severity supplied",
+      "status": "indeterminate",
+      "observed_evidence": "Recorded severity is not_specified; venous pH is 7.28, within the stated mild band.",
+      "rationale": "The measurements indicate a severity band, but no severity category is recorded to compare against it."
+    }
+  ],
+  "overall_consistency": "inconsistent",
+  "assessment_rationale": "The recorded DKA-negative status conflicts with measurements that meet the stated diagnostic criteria. Severity consistency cannot be determined because no severity category was recorded.",
+  "severity_consistency": "insufficient_evidence",
+  "diagnostic_consistency": "contradictory"
+}
