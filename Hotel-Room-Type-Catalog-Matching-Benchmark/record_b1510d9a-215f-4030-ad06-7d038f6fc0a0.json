@@ -1,0 +1,26 @@
+{
+  "match_reason": "The bed, occupancy, and view match, but the records describe materially different suite layouts and sizes: an open-plan junior suite versus a larger suite with a separate bedroom and living room.",
+  "catalog_a_room": {
+    "catalog_name": "Partner Catalog A",
+    "hotel_name": "Juniper Reach Hotel",
+    "room_type_name": "Junior Suite, Garden View, King",
+    "bed_configuration": "1 king bed",
+    "max_occupancy": 3,
+    "room_configuration": "Open-plan junior suite, 42 m²; sleeping and sitting areas share one room",
+    "view": "Garden view"
+  },
+  "catalog_b_room": {
+    "catalog_name": "Partner Catalog B",
+    "hotel_name": "Juniper Reach Hotel",
+    "room_type_name": "One-Bedroom Suite, Garden View",
+    "bed_configuration": "1 king bed",
+    "max_occupancy": 3,
+    "room_configuration": "Separate bedroom and living room, 58 m²",
+    "view": "Garden view"
+  },
+  "key_differences": [
+    "Room layout: open-plan sleeping and sitting areas versus a separate bedroom and living room",
+    "Room area: 42 m² versus 58 m²"
+  ],
+  "is_same_room_type": false
+}

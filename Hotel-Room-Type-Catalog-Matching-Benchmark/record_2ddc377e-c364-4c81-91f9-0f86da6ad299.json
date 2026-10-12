@@ -1,0 +1,23 @@
+{
+  "match_reason": "The names use different word order, but both records describe a 34 m² single-room deluxe unit with one king bed, a two-person maximum occupancy, and a harbor view.",
+  "catalog_a_room": {
+    "catalog_name": "Partner Catalog A",
+    "hotel_name": "Alder Quay Hotel",
+    "room_type_name": "Deluxe King, Harbor View",
+    "bed_configuration": "1 king bed",
+    "max_occupancy": 2,
+    "room_configuration": "One room, 34 m²",
+    "view": "Harbor view"
+  },
+  "catalog_b_room": {
+    "catalog_name": "Partner Catalog B",
+    "hotel_name": "Alder Quay Hotel",
+    "room_type_name": "Harbor-View Deluxe Room with One King Bed",
+    "bed_configuration": "1 king bed",
+    "max_occupancy": 2,
+    "room_configuration": "Single-room layout, 34 m²",
+    "view": "Harbor view"
+  },
+  "key_differences": [],
+  "is_same_room_type": true
+}

@@ -1,0 +1,25 @@
+{
+  "catalog_b_room": {
+    "catalog_name": "Partner Catalog B",
+    "hotel_name": "Marlow Fen Hotel",
+    "room_type_name": "Courtyard Double Room",
+    "bed_configuration": "1 queen bed",
+    "max_occupancy": 2,
+    "room_configuration": "One room, 26 m²",
+    "view": "Courtyard view"
+  },
+  "key_differences": [
+    "Bed configuration: two twin beds versus one queen bed"
+  ],
+  "is_same_room_type": false,
+  "match_reason": "Although the occupancy, layout, area, and view agree, the bed configurations identify different room products: one has two twin beds and the other has one queen bed.",
+  "catalog_a_room": {
+    "catalog_name": "Partner Catalog A",
+    "hotel_name": "Marlow Fen Hotel",
+    "room_type_name": "Courtyard Twin Room",
+    "bed_configuration": "2 twin beds",
+    "max_occupancy": 2,
+    "room_configuration": "One room, 26 m²",
+    "view": "Courtyard view"
+  }
+}
