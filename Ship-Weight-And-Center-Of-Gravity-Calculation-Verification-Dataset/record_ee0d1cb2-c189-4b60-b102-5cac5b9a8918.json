@@ -1,0 +1,79 @@
+{
+  "weight_items": [
+    {
+      "item_name": "Hull structure",
+      "item_category": "Hull structure",
+      "weight_tonnes": 4000,
+      "lcg_m": 40,
+      "tcg_m": 0,
+      "vcg_m": 5
+    },
+    {
+      "item_name": "Main propulsion machinery",
+      "item_category": "Propulsion machinery",
+      "weight_tonnes": 600,
+      "lcg_m": 30,
+      "tcg_m": 0,
+      "vcg_m": 10
+    },
+    {
+      "item_name": "Cargo handling equipment",
+      "item_category": "Equipment",
+      "weight_tonnes": 200,
+      "lcg_m": 50,
+      "tcg_m": 1,
+      "vcg_m": 12
+    },
+    {
+      "item_name": "Accommodation outfit",
+      "item_category": "Other",
+      "weight_tonnes": 200,
+      "lcg_m": 50,
+      "tcg_m": -1,
+      "vcg_m": 8
+    }
+  ],
+  "vessel_context": {
+    "vessel_name": "Northbay 84 General Cargo Design",
+    "design_stage": "Basic design weight estimate",
+    "coordinate_reference": "Longitudinal origin at the aft perpendicular, positive forward; transverse origin on the centerline, positive to port; vertical origin at baseline, positive upward."
+  },
+  "reference_results": {
+    "total_weight_tonnes": 5000,
+    "total_l_moment_tonne_m": 198000,
+    "total_t_moment_tonne_m": 0,
+    "total_v_moment_tonne_m": 30000,
+    "lcg_m": 39.6,
+    "tcg_m": 0,
+    "vcg_m": 6,
+    "tolerances": {
+      "weight_tonnes": 0.01,
+      "moment_tonne_m": 0.05,
+      "center_of_gravity_m": 0.001
+    },
+    "correctness_label": true
+  },
+  "calculated_results": {
+    "total_weight_tonnes": 5000,
+    "total_l_moment_tonne_m": 198000,
+    "total_t_moment_tonne_m": 0,
+    "total_v_moment_tonne_m": 30000,
+    "lcg_m": 39.6,
+    "tcg_m": 0,
+    "vcg_m": 6
+  },
+  "validation_results": {
+    "absolute_errors": {
+      "total_weight_tonnes": 0,
+      "total_l_moment_tonne_m": 0,
+      "total_t_moment_tonne_m": 0,
+      "total_v_moment_tonne_m": 0,
+      "lcg_m": 0,
+      "tcg_m": 0,
+      "vcg_m": 0
+    },
+    "within_tolerance": true,
+    "correctness_label_match": true,
+    "is_valid": true
+  }
+}

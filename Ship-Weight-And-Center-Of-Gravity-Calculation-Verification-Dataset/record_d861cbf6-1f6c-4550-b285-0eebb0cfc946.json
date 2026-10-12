@@ -1,0 +1,87 @@
+{
+  "weight_items": [
+    {
+      "item_name": "Primary hull structure",
+      "item_category": "Hull structure",
+      "weight_tonnes": 3200,
+      "lcg_m": 35,
+      "tcg_m": 0,
+      "vcg_m": 4
+    },
+    {
+      "item_name": "Main engine and gearbox",
+      "item_category": "Propulsion machinery",
+      "weight_tonnes": 450,
+      "lcg_m": 20,
+      "tcg_m": 0,
+      "vcg_m": 8
+    },
+    {
+      "item_name": "Auxiliary generator sets",
+      "item_category": "Machinery",
+      "weight_tonnes": 180,
+      "lcg_m": 30,
+      "tcg_m": -1.5,
+      "vcg_m": 7
+    },
+    {
+      "item_name": "Deck cargo cranes",
+      "item_category": "Equipment",
+      "weight_tonnes": 270,
+      "lcg_m": 55,
+      "tcg_m": 1,
+      "vcg_m": 14
+    },
+    {
+      "item_name": "Accommodation block and outfit",
+      "item_category": "Other",
+      "weight_tonnes": 300,
+      "lcg_m": 45,
+      "tcg_m": 0.2,
+      "vcg_m": 11
+    }
+  ],
+  "vessel_context": {
+    "vessel_name": "Meridian 76 Multipurpose Carrier Design",
+    "design_stage": "Contract design weight estimate",
+    "coordinate_reference": "Longitudinal origin at the aft perpendicular, positive forward; transverse origin on the centerline, positive starboard; vertical origin at baseline, positive upward."
+  },
+  "reference_results": {
+    "total_weight_tonnes": 4400,
+    "total_l_moment_tonne_m": 154750,
+    "total_t_moment_tonne_m": 60,
+    "total_v_moment_tonne_m": 24740,
+    "lcg_m": 35.1704545455,
+    "tcg_m": 0.0136363636,
+    "vcg_m": 5.6227272727,
+    "tolerances": {
+      "weight_tonnes": 0.01,
+      "moment_tonne_m": 0.05,
+      "center_of_gravity_m": 0.001
+    },
+    "correctness_label": false
+  },
+  "calculated_results": {
+    "total_weight_tonnes": 4400,
+    "total_l_moment_tonne_m": 154750,
+    "total_t_moment_tonne_m": 60,
+    "total_v_moment_tonne_m": 24740,
+    "lcg_m": 35.1704545455,
+    "tcg_m": 0.0136363636,
+    "vcg_m": 5.6227272727
+  },
+  "validation_results": {
+    "absolute_errors": {
+      "total_weight_tonnes": 0,
+      "total_l_moment_tonne_m": 0,
+      "total_t_moment_tonne_m": 0,
+      "total_v_moment_tonne_m": 0,
+      "lcg_m": 0,
+      "tcg_m": 0,
+      "vcg_m": 0
+    },
+    "within_tolerance": true,
+    "correctness_label_match": false,
+    "is_valid": false
+  }
+}

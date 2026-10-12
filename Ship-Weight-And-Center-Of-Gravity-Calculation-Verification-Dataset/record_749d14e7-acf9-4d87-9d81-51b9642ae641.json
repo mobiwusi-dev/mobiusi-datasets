@@ -1,0 +1,87 @@
+{
+  "calculated_results": {
+    "total_weight_tonnes": 7000,
+    "total_l_moment_tonne_m": 341050,
+    "total_t_moment_tonne_m": 275,
+    "total_v_moment_tonne_m": 39950,
+    "lcg_m": 48.7214285714,
+    "tcg_m": 0.0392857143,
+    "vcg_m": 5.7071428571
+  },
+  "weight_items": [
+    {
+      "item_name": "Hull and deck structure",
+      "item_category": "Hull structure",
+      "weight_tonnes": 5000,
+      "lcg_m": 50,
+      "tcg_m": 0,
+      "vcg_m": 4
+    },
+    {
+      "item_name": "Propulsion and transmission",
+      "item_category": "Propulsion machinery",
+      "weight_tonnes": 900,
+      "lcg_m": 32,
+      "tcg_m": 0,
+      "vcg_m": 9
+    },
+    {
+      "item_name": "Fuel treatment and service systems",
+      "item_category": "Machinery",
+      "weight_tonnes": 350,
+      "lcg_m": 45,
+      "tcg_m": -0.5,
+      "vcg_m": 6
+    },
+    {
+      "item_name": "Deck handling machinery",
+      "item_category": "Equipment",
+      "weight_tonnes": 250,
+      "lcg_m": 70,
+      "tcg_m": 1.2,
+      "vcg_m": 15
+    },
+    {
+      "item_name": "Accommodation and hotel services",
+      "item_category": "Other",
+      "weight_tonnes": 500,
+      "lcg_m": 58,
+      "tcg_m": 0.3,
+      "vcg_m": 12
+    }
+  ],
+  "vessel_context": {
+    "vessel_name": "Seaward 92 Offshore Support Design",
+    "design_stage": "Detailed design weight control",
+    "coordinate_reference": "Longitudinal origin at the aft perpendicular, positive forward; transverse origin on the centerline, positive starboard; vertical origin at baseline, positive upward."
+  },
+  "reference_results": {
+    "total_weight_tonnes": 7000,
+    "total_l_moment_tonne_m": 341150,
+    "total_t_moment_tonne_m": 275,
+    "total_v_moment_tonne_m": 39950,
+    "lcg_m": 48.7357142857,
+    "tcg_m": 0.0392857143,
+    "vcg_m": 5.7071428571,
+    "tolerances": {
+      "weight_tonnes": 0.01,
+      "moment_tonne_m": 1,
+      "center_of_gravity_m": 0.001
+    },
+    "correctness_label": false
+  },
+  "validation_results": {
+    "absolute_errors": {
+      "total_weight_tonnes": 0,
+      "total_l_moment_tonne_m": 100,
+      "total_t_moment_tonne_m": 0,
+      "total_v_moment_tonne_m": 0,
+      "lcg_m": 0.0142857143,
+      "tcg_m": 0,
+      "vcg_m": 0
+    },
+    "within_tolerance": false,
+    "correctness_label_match": true,
+    "is_valid": false
+  }
+}
