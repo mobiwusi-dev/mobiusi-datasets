@@ -1,0 +1,20 @@
+{
+  "verdict": "矛盾",
+  "rationale": "The claim and catalog use the same unit and serving size, but the catalog lists 7.5 g of protein rather than 9 g per 250 mL serving.",
+  "claim_text": "This oat drink provides 9 g of protein per 250 mL serving.",
+  "claim_unit": "g per 250 mL serving",
+  "amount_match": false,
+  "catalog_unit": "g per 250 mL serving",
+  "claim_amount": 9,
+  "unit_relation": "相同",
+  "catalog_amount": 7.5,
+  "claim_nutrient": "Protein",
+  "product_catalog_record": {
+    "product_name": "Unsweetened oat drink",
+    "package_size": "1 L carton",
+    "serving_size": "250 mL",
+    "nutrition_per_serving": {
+      "protein": "7.5 g"
+    }
+  }
+}

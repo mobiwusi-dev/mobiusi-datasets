@@ -1,0 +1,19 @@
+{
+  "claim_nutrient": "Dietary fiber",
+  "verdict": "支持",
+  "rationale": "The catalog lists 12,000 mg of dietary fiber per 40 g bar. This converts to 12 g for the same serving, matching the claim.",
+  "claim_text": "Each 40 g bar provides 12 g of dietary fiber.",
+  "claim_unit": "g per 40 g bar (1 serving)",
+  "amount_match": true,
+  "catalog_unit": "mg per 40 g bar (1 serving)",
+  "claim_amount": 12,
+  "unit_relation": "可换算",
+  "catalog_amount": 12000,
+  "product_catalog_record": {
+    "product_name": "Oat and seed snack bar",
+    "serving_size": "1 bar (40 g)",
+    "nutrition_per_serving": {
+      "dietary_fiber": "12000 mg"
+    }
+  }
+}

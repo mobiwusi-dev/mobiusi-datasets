@@ -1,0 +1,21 @@
+{
+  "unit_relation": "目录缺失",
+  "catalog_unit": null,
+  "claim_amount": 4,
+  "verdict": "证据不足",
+  "rationale": "The catalog provides nutrition values for a 45 g serving but does not list dietary fiber. It therefore provides no fiber amount to compare with the claimed 4 g.",
+  "claim_text": "Each 45 g serving contains 4 g of dietary fiber.",
+  "claim_unit": "g per 45 g serving",
+  "amount_match": null,
+  "catalog_amount": null,
+  "claim_nutrient": "Dietary fiber",
+  "product_catalog_record": {
+    "product_name": "Cranberry almond granola",
+    "serving_size": "45 g",
+    "nutrition_per_serving": {
+      "energy": "210 kcal",
+      "protein": "6 g",
+      "sodium": "120 mg"
+    }
+  }
+}
