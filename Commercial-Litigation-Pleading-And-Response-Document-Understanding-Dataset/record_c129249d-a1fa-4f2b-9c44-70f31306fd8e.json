@@ -1,0 +1,126 @@
+{
+  "facts": [
+    {
+      "date_or_period": "March 12, 2024",
+      "content": "The parties entered into an agreement for services; Rillstone admits the agreement.",
+      "asserted_by": "Larkspur Process Controls LLC and Rillstone Packaging Systems, Inc."
+    },
+    {
+      "date_or_period": "During the work under the agreement",
+      "content": "Rillstone supplied three production molds for use in the work; the agreement identifies the molds as Rillstone's property.",
+      "asserted_by": "Rillstone Packaging Systems, Inc."
+    },
+    {
+      "date_or_period": "September 30, 2024",
+      "content": "The parties ended the work under the agreement.",
+      "asserted_by": "Rillstone Packaging Systems, Inc."
+    },
+    {
+      "date_or_period": "October 8, 2024",
+      "content": "Rillstone alleges that it made a written demand for return of the three molds and that Larkspur retained them.",
+      "asserted_by": "Rillstone Packaging Systems, Inc."
+    },
+    {
+      "date_or_period": "After the work ended",
+      "content": "Larkspur contends that it may retain the molds until the invoice dispute is resolved; Rillstone denies that the agreement permits retention.",
+      "asserted_by": "Larkspur Process Controls LLC and Rillstone Packaging Systems, Inc."
+    }
+  ],
+  "parties": [
+    {
+      "name": "Larkspur Process Controls LLC",
+      "role": "Plaintiff and counterclaim defendant",
+      "entity_type": "Limited liability company"
+    },
+    {
+      "name": "Rillstone Packaging Systems, Inc.",
+      "role": "Defendant and counterclaim plaintiff",
+      "entity_type": "Corporation"
+    }
+  ],
+  "document_type": "Answer and counterclaim",
+  "disputed_issues": [
+    {
+      "issue": "Whether the invoices for services are presently payable in full.",
+      "related_parties": [
+        "Larkspur Process Controls LLC",
+        "Rillstone Packaging Systems, Inc."
+      ]
+    },
+    {
+      "issue": "Whether Larkspur may retain the three production molds while the invoice dispute remains unresolved.",
+      "related_parties": [
+        "Larkspur Process Controls LLC",
+        "Rillstone Packaging Systems, Inc."
+      ]
+    },
+    {
+      "issue": "Whether Rillstone is entitled to return of the molds or their alleged $38,000 replacement value and $12,500 in storage and handling losses.",
+      "related_parties": [
+        "Larkspur Process Controls LLC",
+        "Rillstone Packaging Systems, Inc."
+      ]
+    }
+  ],
+  "relief_requests": [
+    {
+      "requesting_party": "Larkspur Process Controls LLC",
+      "request_type": "Payment of invoices",
+      "content": "Larkspur seeks payment of the alleged unpaid balance for services under the March 12, 2024 agreement."
+    },
+    {
+      "requesting_party": "Rillstone Packaging Systems, Inc.",
+      "request_type": "Return of property or replacement value",
+      "content": "Order return of the three production molds or, if they cannot be returned, award their alleged replacement value of $38,000."
+    },
+    {
+      "requesting_party": "Rillstone Packaging Systems, Inc.",
+      "request_type": "Storage and handling losses",
+      "content": "Award $12,500 in storage and handling losses attributed to the retention of the molds."
+    }
+  ],
+  "party_assertions": [
+    {
+      "party_name": "Larkspur Process Controls LLC",
+      "position": "Payment claim",
+      "content": "Larkspur alleges that Rillstone failed to pay invoices for services performed under the March 12, 2024 agreement."
+    },
+    {
+      "party_name": "Rillstone Packaging Systems, Inc.",
+      "position": "Defense to payment claim",
+      "content": "Rillstone admits the agreement and performance of the stated services but denies that the invoices are presently payable in full."
+    },
+    {
+      "party_name": "Rillstone Packaging Systems, Inc.",
+      "position": "Counterclaim for return of property and losses",
+      "content": "Rillstone alleges that Larkspur retained three Rillstone-owned production molds after the work ended and seeks their return or their alleged $38,000 replacement value, plus $12,500 in storage and handling losses."
+    }
+  ],
+  "admissions_denials": [
+    {
+      "responding_party": "Rillstone Packaging Systems, Inc.",
+      "target_content": "The March 12, 2024 agreement and Larkspur's performance of the stated services.",
+      "stance": "Admission",
+      "content": "Rillstone admits that it entered into the agreement and that Larkspur performed the stated services."
+    },
+    {
+      "responding_party": "Rillstone Packaging Systems, Inc.",
+      "target_content": "Larkspur's allegation that the invoices are presently payable in full.",
+      "stance": "Denial",
+      "content": "Rillstone denies that the invoices are presently payable in full."
+    },
+    {
+      "responding_party": "Larkspur Process Controls LLC",
+      "target_content": "Rillstone's request for return of the three molds while the invoice dispute is unresolved.",
+      "stance": "Denial",
+      "content": "Larkspur contends that it may retain the molds until the invoice dispute is resolved."
+    },
+    {
+      "responding_party": "Rillstone Packaging Systems, Inc.",
+      "target_content": "Larkspur's contention that it may retain the molds until the invoice dispute is resolved.",
+      "stance": "Denial",
+      "content": "Rillstone denies that the agreement permits Larkspur to retain the molds pending resolution of the invoice dispute."
+    }
+  ],
+  "source_document_text": "ANSWER AND COUNTERCLAIM\nPlaintiff and counterclaim defendant Larkspur Process Controls LLC alleges that defendant and counterclaim plaintiff Rillstone Packaging Systems, Inc. failed to pay invoices for services under a March 12, 2024 agreement and seeks payment of the alleged balance. Rillstone admits that it entered into the agreement and that Larkspur performed the stated services, but denies that the invoices are presently payable in full. Rillstone alleges that it supplied three production molds for use in the work and that the agreement identifies the molds as Rillstone's property. The parties ended the work on September 30, 2024. Rillstone alleges that Larkspur retained the three molds after the work ended, despite Rillstone's written demand for their return on October 8, 2024. Larkspur contends that it may retain the molds until the invoice dispute is resolved. Rillstone denies that the agreement permits that retention. In its counterclaim, Rillstone requests return of the three molds or, if they cannot be returned, their alleged replacement value of $38,000, and seeks $12,500 in storage and handling losses attributed to the retention."
+}

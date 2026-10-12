@@ -1,0 +1,98 @@
+{
+  "facts": [
+    {
+      "date_or_period": "May 2, 2024",
+      "content": "Avenholt delivered 300 shelving units to Pine Quay under the written agreement.",
+      "asserted_by": "Avenholt Display Works LLC; admitted by Pine Quay Merchandising, Inc."
+    },
+    {
+      "date_or_period": "By the time of the answer",
+      "content": "Pine Quay had paid $80,000 and had not paid the remaining $46,000 claimed by Avenholt.",
+      "asserted_by": "Avenholt Display Works LLC; admitted by Pine Quay Merchandising, Inc."
+    },
+    {
+      "date_or_period": "May 15, 2024",
+      "content": "Pine Quay alleges that it notified Avenholt by email that 70 units were warped.",
+      "asserted_by": "Pine Quay Merchandising, Inc."
+    },
+    {
+      "date_or_period": "May 20, 2024",
+      "content": "Pine Quay alleges that Avenholt inspected the units and disputed the requested credit.",
+      "asserted_by": "Pine Quay Merchandising, Inc."
+    }
+  ],
+  "parties": [
+    {
+      "name": "Avenholt Display Works LLC",
+      "role": "Plaintiff",
+      "entity_type": "Limited liability company"
+    },
+    {
+      "name": "Pine Quay Merchandising, Inc.",
+      "role": "Defendant",
+      "entity_type": "Corporation"
+    }
+  ],
+  "document_type": "Answer",
+  "disputed_issues": [
+    {
+      "issue": "Whether the alleged defects in 70 shelving units entitle Pine Quay to a $29,400 credit against the unpaid balance.",
+      "related_parties": [
+        "Avenholt Display Works LLC",
+        "Pine Quay Merchandising, Inc."
+      ]
+    },
+    {
+      "issue": "Whether Avenholt may recover the full $46,000 balance or whether any amount due is limited to $16,600.",
+      "related_parties": [
+        "Avenholt Display Works LLC",
+        "Pine Quay Merchandising, Inc."
+      ]
+    }
+  ],
+  "relief_requests": [
+    {
+      "requesting_party": "Pine Quay Merchandising, Inc.",
+      "request_type": "Denial of disputed portion of payment claim",
+      "content": "Deny Avenholt's claim to the extent it seeks more than the amount remaining after the requested $29,400 credit."
+    },
+    {
+      "requesting_party": "Pine Quay Merchandising, Inc.",
+      "request_type": "Limit judgment on complaint",
+      "content": "Limit any judgment on the complaint to $16,600."
+    }
+  ],
+  "party_assertions": [
+    {
+      "party_name": "Avenholt Display Works LLC",
+      "position": "Payment claim",
+      "content": "Avenholt alleges that $46,000 remains unpaid for 300 shelving units delivered under the parties' written agreement."
+    },
+    {
+      "party_name": "Pine Quay Merchandising, Inc.",
+      "position": "Defective goods and credit defense",
+      "content": "Pine Quay alleges that 70 delivered units were warped and claims a $29,400 credit, leaving no more than $16,600 payable."
+    }
+  ],
+  "admissions_denials": [
+    {
+      "responding_party": "Pine Quay Merchandising, Inc.",
+      "target_content": "The parties entered into a written agreement and Avenholt delivered 300 shelving units on May 2, 2024.",
+      "stance": "Admission",
+      "content": "Pine Quay admits that the parties entered into the agreement and that the units were delivered on May 2, 2024."
+    },
+    {
+      "responding_party": "Pine Quay Merchandising, Inc.",
+      "target_content": "Avenholt's claim for the unpaid balance of $46,000.",
+      "stance": "Partial admission",
+      "content": "Pine Quay admits that it has not paid the $46,000 balance but denies that the full amount is due, asserting a $29,400 credit for 70 allegedly warped units."
+    },
+    {
+      "responding_party": "Pine Quay Merchandising, Inc.",
+      "target_content": "The condition of the delivered shelving units and the requested credit.",
+      "stance": "Denial in part",
+      "content": "Pine Quay alleges that 70 units were warped, that it gave notice on May 15, and that Avenholt disputed the credit after inspecting the units on May 20."
+    }
+  ],
+  "source_document_text": "ANSWER TO COMPLAINT\nPlaintiff Avenholt Display Works LLC alleges that it sold and delivered 300 shelving units to defendant Pine Quay Merchandising, Inc. under a written agreement for $126,000, and seeks the unpaid balance of $46,000. Defendant Pine Quay Merchandising, Inc. admits that the parties entered into the agreement, that the units were delivered on May 2, 2024, and that it paid $80,000. Defendant admits that it has not paid the remaining $46,000, but denies that the full amount is due. Pine Quay alleges that 70 units were warped when delivered and that it notified Avenholt by email on May 15, 2024. Pine Quay further alleges that Avenholt inspected the units on May 20, 2024, but disputed the requested credit. Pine Quay claims a credit of $29,400 for the 70 units and states that, after that credit, no more than $16,600 remains payable. Pine Quay requests that the claim for the disputed amount be denied and that any judgment on the complaint be limited to $16,600."
+}

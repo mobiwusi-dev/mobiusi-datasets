@@ -1,0 +1,79 @@
+{
+  "facts": [
+    {
+      "date_or_period": "January 8, 2024",
+      "content": "The parties entered into a written supply agreement requiring Morrow Vale to supply custom cabinet fittings and Tern Harbor to pay invoices within 30 days of delivery.",
+      "asserted_by": "Morrow Vale Components LLC"
+    },
+    {
+      "date_or_period": "March 4 and March 18, 2024",
+      "content": "Morrow Vale delivered the ordered goods, and Tern Harbor accepted both deliveries without objection.",
+      "asserted_by": "Morrow Vale Components LLC"
+    },
+    {
+      "date_or_period": "After the March 2024 deliveries",
+      "content": "Morrow Vale issued invoices totaling $84,600; Tern Harbor paid $20,000 on April 10, 2024, leaving $64,600 unpaid.",
+      "asserted_by": "Morrow Vale Components LLC"
+    },
+    {
+      "date_or_period": "May 2, 2024",
+      "content": "Morrow Vale sent a written demand for the remaining balance, which Tern Harbor has not paid.",
+      "asserted_by": "Morrow Vale Components LLC"
+    }
+  ],
+  "parties": [
+    {
+      "name": "Morrow Vale Components LLC",
+      "role": "Plaintiff",
+      "entity_type": "Limited liability company"
+    },
+    {
+      "name": "Tern Harbor Kitchens, Inc.",
+      "role": "Defendant",
+      "entity_type": "Corporation"
+    }
+  ],
+  "document_type": "Complaint",
+  "disputed_issues": [
+    {
+      "issue": "Whether Tern Harbor owes the alleged $64,600 unpaid balance for the accepted deliveries and contractual interest on overdue amounts.",
+      "related_parties": [
+        "Morrow Vale Components LLC",
+        "Tern Harbor Kitchens, Inc."
+      ]
+    },
+    {
+      "issue": "Whether Morrow Vale is entitled to reasonable attorneys' fees and collection costs under the agreement.",
+      "related_parties": [
+        "Morrow Vale Components LLC",
+        "Tern Harbor Kitchens, Inc."
+      ]
+    }
+  ],
+  "relief_requests": [
+    {
+      "requesting_party": "Morrow Vale Components LLC",
+      "request_type": "Payment of principal",
+      "content": "Enter judgment for the alleged unpaid principal balance of $64,600."
+    },
+    {
+      "requesting_party": "Morrow Vale Components LLC",
+      "request_type": "Contractual interest",
+      "content": "Award interest on overdue balances at 1% per month from the applicable due dates, as provided in the agreement."
+    },
+    {
+      "requesting_party": "Morrow Vale Components LLC",
+      "request_type": "Attorneys' fees and costs",
+      "content": "Award reasonable attorneys' fees and collection costs incurred to collect amounts due under the agreement."
+    }
+  ],
+  "party_assertions": [
+    {
+      "party_name": "Morrow Vale Components LLC",
+      "position": "Breach of contract",
+      "content": "Tern Harbor Kitchens, Inc. failed to pay the remaining $64,600 due for accepted deliveries under the written supply agreement."
+    }
+  ],
+  "admissions_denials": [],
+  "source_document_text": "COMPLAINT FOR BREACH OF WRITTEN SUPPLY AGREEMENT\nPlaintiff Morrow Vale Components LLC alleges that it entered into a written supply agreement with defendant Tern Harbor Kitchens, Inc. on January 8, 2024. Under the agreement, Morrow Vale was to supply custom cabinet fittings, and Tern Harbor was to pay the invoiced price within 30 days of delivery. Morrow Vale delivered the ordered goods on March 4 and March 18, 2024, and Tern Harbor accepted both deliveries without objection. Morrow Vale issued invoices totaling $84,600. Tern Harbor paid $20,000 on April 10, 2024, which Morrow Vale applied to the account, leaving $64,600 unpaid. Morrow Vale sent a written demand for the remaining balance on May 2, 2024, but Tern Harbor has not paid it. The agreement provides for interest on overdue balances at 1% per month and reasonable attorneys' fees and costs incurred to collect amounts due. Morrow Vale requests judgment for the $64,600 principal balance, contractual interest from the applicable due dates, and reasonable attorneys' fees and costs."
+}
