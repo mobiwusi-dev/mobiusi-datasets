@@ -1,0 +1,18 @@
+{
+  "findings": [
+    {
+      "issue_type": "物理约束冲突",
+      "conflict_location": "state.pressure_Pa, state.volume_m3, state.amount_mol, and state.temperature_K",
+      "configured_values": "P*V = 2000 J, while n*R*T is approximately 1247 J for n = 0.5 mol, T = 300 K, and the universal gas constant R = 8.314 J/(mol K).",
+      "violated_constraint": "An ideal-gas equilibrium state must satisfy P*V = n*R*T.",
+      "scientific_basis": "The ideal-gas equation of state relates absolute pressure, volume, amount of substance, and absolute temperature. The configured values differ substantially from the equality required by this model.",
+      "simulation_effect": "An equilibrium-state solver may report a nonzero constraint residual or fail to find a state consistent with all four inputs; downstream thermodynamic calculations would inherit the inconsistency.",
+      "suggested_correction": "Choose which state variables are prescribed and recompute at least one of the others from P*V = n*R*T. For example, retaining the configured volume, amount, and temperature gives a pressure of approximately 124717 Pa."
+    }
+  ],
+  "is_consistent": false,
+  "diagnosis_summary": "The configured pressure, volume, amount of substance, and temperature do not satisfy the ideal-gas equation of state.",
+  "overall_recommendation": "Designate independent state variables explicitly, derive dependent variables from the equation of state, and check units and residual tolerances before proceeding.",
+  "simulation_config_json": "{\"model\":\"ideal_gas_equilibrium\",\"gas\":{\"equation_of_state\":\"ideal_gas\",\"specific_gas_constant_J_kgK\":null},\"state\":{\"pressure_Pa\":200000,\"volume_m3\":0.01,\"amount_mol\":0.5,\"temperature_K\":300},\"solver\":{\"mode\":\"equilibrium_state_check\"}}",
+  "overall_simulation_impact": "The thermodynamic state is internally inconsistent, preventing a valid ideal-gas equilibrium from being established with all configured values fixed."
+}

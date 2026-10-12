@@ -1,0 +1,18 @@
+{
+  "findings": [
+    {
+      "issue_type": "条件不兼容",
+      "conflict_location": "continuity.uniform_mass_source_kg_m3_s and boundary_conditions",
+      "configured_values": "The continuity model enforces divergence-free flow, the uniform mass source is 0.2 kg/m^3/s, and all four cavity walls are impermeable.",
+      "violated_constraint": "For constant-density divergence-free flow, the net mass source within a closed domain must be zero when all boundary-normal velocities are zero.",
+      "scientific_basis": "Integrating the continuity equation over the cavity equates the net boundary mass flux to the integrated volumetric mass source. Impermeable walls make the boundary flux zero, which cannot balance a positive source.",
+      "simulation_effect": "The pressure-correction solver cannot satisfy the continuity equation and all specified boundary conditions simultaneously; iterations may fail to converge or yield a nonphysical residual flow.",
+      "suggested_correction": "Set the source to zero for a sealed incompressible cavity, or revise the model and boundary conditions to represent a compatible mass balance, such as an appropriate compressible formulation with balanced inflow and outflow."
+    }
+  ],
+  "is_consistent": false,
+  "diagnosis_summary": "The positive uniform mass source is incompatible with a steady, constant-density divergence-free flow in a sealed cavity with impermeable walls.",
+  "overall_recommendation": "Check the integrated mass balance before solving and ensure the continuity formulation, source terms, and boundary fluxes are mutually compatible.",
+  "simulation_config_json": "{\"model\":\"incompressible_flow\",\"fluid\":{\"density_kg_m3\":1000,\"viscosity_Pa_s\":0.001},\"domain\":{\"geometry\":\"sealed_rectangular_cavity\",\"dimensions_m\":[0.2,0.1]},\"boundary_conditions\":{\"top\":{\"type\":\"no_slip_impermeable\"},\"bottom\":{\"type\":\"no_slip_impermeable\"},\"left\":{\"type\":\"no_slip_impermeable\"},\"right\":{\"type\":\"no_slip_impermeable\"}},\"continuity\":{\"form\":\"divergence_free\",\"uniform_mass_source_kg_m3_s\":0.2},\"solver\":{\"type\":\"pressure_correction\",\"run_mode\":\"steady\"}}",
+  "overall_simulation_impact": "The steady flow problem is overconstrained by incompatible mass-balance requirements, so its computed velocity and pressure fields would not represent a valid solution."
+}
