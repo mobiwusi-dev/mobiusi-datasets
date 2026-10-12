@@ -1,0 +1,59 @@
+{
+  "overall_status": "inconsistent",
+  "care_plan_record": {
+    "patient_context": {
+      "age_years": 6,
+      "weight_kg": 20.4
+    },
+    "orders": [
+      {
+        "order_number": 1,
+        "domain": "diet",
+        "instruction": "NPO: no food or fluids by mouth.",
+        "schedule": "From 06:00 until completion of the scheduled procedure.",
+        "conditions": "Applies during the pre-procedure interval."
+      },
+      {
+        "order_number": 2,
+        "domain": "diet",
+        "instruction": "Give 120 mL of oral rehydration solution by mouth.",
+        "schedule": "08:00 once.",
+        "conditions": "One-time oral fluid order."
+      },
+      {
+        "order_number": 3,
+        "domain": "diagnostic_test",
+        "instruction": "Diagnostic imaging with sedation.",
+        "schedule": "09:30.",
+        "conditions": "Scheduled during the active pre-procedure interval."
+      }
+    ],
+    "applicable_rules": [
+      {
+        "rule_number": 1,
+        "description": "Pre-procedure fasting constraint",
+        "applies_to_domains": [
+          "diet",
+          "diagnostic_test"
+        ],
+        "constraint": "While the NPO interval is active, no food or fluid may be given by mouth before the procedure is completed unless the order is explicitly amended by the responsible clinician."
+      }
+    ]
+  },
+  "consistency_findings": [
+    {
+      "finding_number": 1,
+      "issue_type": "conflicting",
+      "severity": "moderate",
+      "affected_order_numbers": [
+        1,
+        2
+      ],
+      "applicable_rule_numbers": [
+        1
+      ],
+      "rationale": "Order 1 prohibits oral intake during the interval that includes 08:00, while order 2 directs oral fluid at 08:00. Both cannot be followed as written under rule 1.",
+      "suggested_resolution": "Ask the responsible clinician to clarify whether the NPO interval or the oral-fluid order should be amended, then update the schedule accordingly."
+    }
+  ]
+}

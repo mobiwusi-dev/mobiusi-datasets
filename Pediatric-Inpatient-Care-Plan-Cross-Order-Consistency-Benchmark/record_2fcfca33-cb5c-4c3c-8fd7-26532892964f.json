@@ -1,0 +1,58 @@
+{
+  "overall_status": "inconsistent",
+  "care_plan_record": {
+    "patient_context": {
+      "age_years": 9,
+      "weight_kg": 28.1
+    },
+    "orders": [
+      {
+        "order_number": 1,
+        "domain": "monitoring",
+        "instruction": "Check capillary blood glucose.",
+        "schedule": "At 06:00 and 12:00 daily.",
+        "conditions": "Use the active inpatient monitoring schedule."
+      },
+      {
+        "order_number": 2,
+        "domain": "monitoring",
+        "instruction": "Check capillary blood glucose.",
+        "schedule": "At 06:00 and 12:00 daily.",
+        "conditions": "Use the active inpatient monitoring schedule."
+      },
+      {
+        "order_number": 3,
+        "domain": "monitoring",
+        "instruction": "Record temperature, pulse, respirations, and blood pressure.",
+        "schedule": "Every 4 hours.",
+        "conditions": "Continue unless separately revised."
+      }
+    ],
+    "applicable_rules": [
+      {
+        "rule_number": 1,
+        "description": "Duplicate monitoring entries should be reconciled",
+        "applies_to_domains": [
+          "monitoring"
+        ],
+        "constraint": "The same measurement at the same scheduled times should appear only once in the active schedule; duplicate entries should be merged or one should be discontinued."
+      }
+    ]
+  },
+  "consistency_findings": [
+    {
+      "finding_number": 1,
+      "issue_type": "duplicate",
+      "severity": "low",
+      "affected_order_numbers": [
+        1,
+        2
+      ],
+      "applicable_rule_numbers": [
+        1
+      ],
+      "rationale": "Orders 1 and 2 specify the same measurement at the same times with the same conditions, creating duplicate entries under rule 1.",
+      "suggested_resolution": "Confirm that the entries represent the same intended monitoring plan, then retain one order and remove or merge the duplicate."
+    }
+  ]
+}

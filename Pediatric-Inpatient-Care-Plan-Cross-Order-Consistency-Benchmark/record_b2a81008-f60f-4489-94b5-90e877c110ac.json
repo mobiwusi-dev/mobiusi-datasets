@@ -1,0 +1,58 @@
+{
+  "care_plan_record": {
+    "patient_context": {
+      "age_years": 4,
+      "weight_kg": 16.8
+    },
+    "orders": [
+      {
+        "order_number": 1,
+        "domain": "activity",
+        "instruction": "Strict bed rest; no out-of-bed activity.",
+        "schedule": "08:00–12:00 today.",
+        "conditions": "Maintain throughout the stated interval."
+      },
+      {
+        "order_number": 2,
+        "domain": "activity",
+        "instruction": "Supervised hallway ambulation with physical therapy.",
+        "schedule": "10:00 today.",
+        "conditions": "Requires the patient to get out of bed during the session."
+      },
+      {
+        "order_number": 3,
+        "domain": "monitoring",
+        "instruction": "Record temperature, pulse, and respirations.",
+        "schedule": "Every 4 hours.",
+        "conditions": "Continue throughout the day."
+      }
+    ],
+    "applicable_rules": [
+      {
+        "rule_number": 1,
+        "description": "Activity orders must be feasible within the same time interval",
+        "applies_to_domains": [
+          "activity"
+        ],
+        "constraint": "A strict bed-rest order prohibiting out-of-bed activity cannot be active at the same time as an order requiring out-of-bed ambulation."
+      }
+    ]
+  },
+  "overall_status": "inconsistent",
+  "consistency_findings": [
+    {
+      "finding_number": 1,
+      "issue_type": "mutually_infeasible",
+      "severity": "moderate",
+      "affected_order_numbers": [
+        1,
+        2
+      ],
+      "applicable_rule_numbers": [
+        1
+      ],
+      "rationale": "Order 1 requires strict bed rest through 12:00, while order 2 requires hallway ambulation at 10:00. The ambulation falls within the bed-rest interval, so both instructions cannot be carried out as written.",
+      "suggested_resolution": "Ask the responsible clinician to clarify the intended activity level and revise either the bed-rest interval or the ambulation schedule."
+    }
+  ]
+}
