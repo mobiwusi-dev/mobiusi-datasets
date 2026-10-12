@@ -1,0 +1,45 @@
+{
+  "is_eligible": true,
+  "triage_matches": true,
+  "intake_decision": "accept",
+  "referral_record": {
+    "patient_age": 46,
+    "requested_specialty": "Endocrinology",
+    "referral_reason": "Assessment of a thyroid nodule identified on examination.",
+    "symptoms": [
+      "Painless neck lump noted for six weeks.",
+      "No difficulty swallowing or breathing reported."
+    ],
+    "relevant_diagnoses": [
+      "Thyroid nodule, under evaluation"
+    ],
+    "prior_workup": [
+      "TSH result reported within the laboratory reference interval.",
+      "Thyroid ultrasound reports a 1.4 cm right-lobe nodule and no suspicious cervical lymph nodes."
+    ],
+    "urgency": "Routine"
+  },
+  "rule_violations": [],
+  "acceptance_policy": {
+    "specialty": "Endocrinology",
+    "required_information": [
+      "Patient age",
+      "Referral reason and symptom history",
+      "TSH result",
+      "Thyroid ultrasound report"
+    ],
+    "eligibility_criteria": [
+      "Adult patients with a documented thyroid nodule requiring specialist assessment are eligible."
+    ],
+    "exclusion_criteria": [
+      "Known thyroid malignancy already managed by an oncology service is not accepted through this nodule intake pathway."
+    ],
+    "triage_requirements": [
+      "Routine referrals are appropriate when there is no airway compromise or rapidly enlarging neck mass.",
+      "Airway compromise or rapid enlargement requires an urgent pathway rather than routine scheduling."
+    ]
+  },
+  "validation_status": "compliant",
+  "validation_summary": "The referral documents an adult patient with a thyroid nodule, the required thyroid workup, and no reported airway symptoms. It meets the stated eligibility and routine-triage criteria, so it is accepted for intake.",
+  "missing_requirements": []
+}

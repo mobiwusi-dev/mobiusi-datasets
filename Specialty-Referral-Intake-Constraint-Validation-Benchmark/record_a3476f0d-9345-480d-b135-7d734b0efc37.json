@@ -1,0 +1,55 @@
+{
+  "triage_matches": false,
+  "intake_decision": "redirect",
+  "is_eligible": false,
+  "referral_record": {
+    "patient_age": 62,
+    "requested_specialty": "Gastroenterology",
+    "referral_reason": "Evaluation of upper gastrointestinal bleeding symptoms.",
+    "symptoms": [
+      "Active vomiting of blood.",
+      "Fainting episode reported today."
+    ],
+    "relevant_diagnoses": [
+      "Upper gastrointestinal bleeding, under evaluation"
+    ],
+    "prior_workup": [
+      "Current recorded blood pressure is 84/52 mmHg and pulse is 124 beats per minute."
+    ],
+    "urgency": "Routine"
+  },
+  "rule_violations": [
+    {
+      "rule": "Active hematemesis accompanied by syncope or hemodynamic instability is excluded from routine outpatient intake.",
+      "explanation": "The referral documents active bleeding with a fainting episode and recorded vital signs that the policy identifies as incompatible with routine outpatient intake.",
+      "evidence": "The referral reports active vomiting of blood, a fainting episode today, blood pressure of 84/52 mmHg, and pulse of 124 beats per minute."
+    },
+    {
+      "rule": "Active hematemesis with syncope or hemodynamic instability must be routed to immediate emergency assessment.",
+      "explanation": "The stated routine urgency does not match the policy-required emergency pathway for the documented presentation.",
+      "evidence": "The referral urgency is recorded as Routine despite active hematemesis, syncope, and the listed vital signs."
+    }
+  ],
+  "acceptance_policy": {
+    "specialty": "Gastroenterology",
+    "required_information": [
+      "Patient age",
+      "Referral reason",
+      "Description of bleeding symptoms",
+      "Current vital signs",
+      "Stated urgency"
+    ],
+    "eligibility_criteria": [
+      "Adults with upper gastrointestinal symptoms requiring specialist assessment may be considered for this outpatient service."
+    ],
+    "exclusion_criteria": [
+      "Active hematemesis accompanied by syncope or hemodynamic instability is excluded from routine outpatient intake."
+    ],
+    "triage_requirements": [
+      "Active hematemesis with syncope or hemodynamic instability must be routed to immediate emergency assessment rather than routine outpatient scheduling."
+    ]
+  },
+  "validation_status": "triage_mismatch",
+  "validation_summary": "The referral contains the required intake information, but its documented symptoms and vital signs trigger the policy's exclusion and emergency-triage rule. It is not eligible for routine outpatient intake and should be redirected to the specified emergency pathway.",
+  "missing_requirements": []
+}

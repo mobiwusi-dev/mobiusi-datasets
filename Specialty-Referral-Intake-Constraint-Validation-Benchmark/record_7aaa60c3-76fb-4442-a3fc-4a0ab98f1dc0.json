@@ -1,0 +1,58 @@
+{
+  "is_eligible": true,
+  "triage_matches": true,
+  "intake_decision": "request_more_information",
+  "referral_record": {
+    "patient_age": 34,
+    "requested_specialty": "Neurology",
+    "referral_reason": "Evaluation of recurrent headaches occurring several times a week for five months.",
+    "symptoms": [
+      "Gradual-onset episodic headaches, occurring about twice weekly for five months.",
+      "No sudden onset, focal weakness, sensory loss, or loss of consciousness reported."
+    ],
+    "relevant_diagnoses": [
+      "Recurrent headache"
+    ],
+    "prior_workup": [
+      "No prior preventive treatment or response is documented."
+    ],
+    "urgency": "Routine"
+  },
+  "rule_violations": [
+    {
+      "rule": "A neurologic examination must be documented for intake review.",
+      "explanation": "The referral does not include examination findings, so this required information cannot be verified.",
+      "evidence": "No neurologic examination is listed in the referral record or prior workup."
+    },
+    {
+      "rule": "Prior headache treatments and response must be documented.",
+      "explanation": "The referral does not provide a treatment history or response, leaving a required intake item incomplete.",
+      "evidence": "The prior workup states that no prior preventive treatment or response is documented."
+    }
+  ],
+  "acceptance_policy": {
+    "specialty": "Neurology",
+    "required_information": [
+      "Patient age",
+      "Headache frequency and duration",
+      "Neurologic examination findings",
+      "Prior headache treatments and response"
+    ],
+    "eligibility_criteria": [
+      "Adults with recurrent headaches lasting more than three months and no reported focal neurologic symptoms are eligible for routine assessment."
+    ],
+    "exclusion_criteria": [
+      "Referrals for a condition already under active specialty management are not accepted for a new initial-assessment slot."
+    ],
+    "triage_requirements": [
+      "Routine outpatient triage is appropriate for gradual, recurrent headaches without reported sudden onset, new focal deficit, or loss of consciousness.",
+      "Those acute warning features require an urgent assessment pathway."
+    ]
+  },
+  "validation_status": "insufficient_information",
+  "validation_summary": "The reported duration and absence of acute warning features meet the stated eligibility and routine-triage criteria. Intake review is incomplete because the neurologic examination and treatment history are missing; request those details before disposition.",
+  "missing_requirements": [
+    "Neurologic examination findings",
+    "Prior headache treatments and response"
+  ]
+}
