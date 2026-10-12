@@ -1,0 +1,117 @@
+{
+  "missing_items": [
+    "Reconciliation of the caregiver's conflicting reports about when the difficulties began and how long they have persisted."
+  ],
+  "contradictions": [
+    "The intake form places onset at age 8 and describes about 30 months of difficulty, while the separate interview says the behaviors first appeared about four months ago and that no similar difficulties occurred before this school year."
+  ],
+  "duration_months": 30,
+  "onset_age_years": 8,
+  "criterion_checks": [
+    {
+      "criterion_id": "symptom_count",
+      "requirement": "At least six distinct inattentive symptoms are supported.",
+      "status": "met",
+      "rationale": "Six distinct inattentive symptoms are described in the school and home accounts."
+    },
+    {
+      "criterion_id": "duration",
+      "requirement": "Relevant symptoms have persisted for at least six months.",
+      "status": "contradictory",
+      "rationale": "The intake form reports about 30 months, whereas the interview reports about four months."
+    },
+    {
+      "criterion_id": "onset",
+      "requirement": "Relevant symptoms began before age 12.",
+      "status": "contradictory",
+      "rationale": "The intake form places onset at age 8, while the interview states that no similar difficulties occurred before this school year."
+    },
+    {
+      "criterion_id": "multiple_settings",
+      "requirement": "Symptoms are reported in at least two settings.",
+      "status": "met",
+      "rationale": "Both accounts describe concerns at home and school, although they conflict about when the concerns began."
+    },
+    {
+      "criterion_id": "impairment",
+      "requirement": "Symptoms are associated with functional impairment.",
+      "status": "met",
+      "rationale": "The source describes incomplete school assignments and homework taking much longer than expected."
+    }
+  ],
+  "symptom_evidence": [
+    {
+      "symptom": "Misses details or makes careless errors",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student misses details in assignments.",
+      "settings": [
+        "school"
+      ]
+    },
+    {
+      "symptom": "Difficulty sustaining attention",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student loses focus during lessons.",
+      "settings": [
+        "school"
+      ]
+    },
+    {
+      "symptom": "Does not seem to listen when spoken to directly",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student seems not to hear directions.",
+      "settings": [
+        "school"
+      ]
+    },
+    {
+      "symptom": "Does not follow through or finish tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student leaves work unfinished; the caregiver describes frequent reminders to finish homework.",
+      "settings": [
+        "school",
+        "home"
+      ]
+    },
+    {
+      "symptom": "Difficulty organizing tasks and materials",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports difficulty organizing materials.",
+      "settings": [
+        "school"
+      ]
+    },
+    {
+      "symptom": "Loses or misplaces items needed for tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student often misplaces books; the caregiver reports repeated loss of belongings.",
+      "settings": [
+        "school",
+        "home"
+      ]
+    }
+  ],
+  "reported_settings": [
+    "school",
+    "home"
+  ],
+  "overall_assessment": "contradictory_evidence",
+  "onset_before_age_12": true,
+  "assessment_rationale": "Six inattentive symptoms, reports across home and school, and functional effects are documented. However, the caregiver gives incompatible accounts of symptom onset and duration, preventing a reliable determination of those constraints until the timeline is reconciled. This assessment does not assert a diagnosis.",
+  "source_case_material": "An 11-year-old student is referred for attention difficulties. The caregiver intake form states that the student has had trouble staying focused for about 30 months, beginning at age 8, and describes the difficulties at home and school. The teacher reports that the student misses details in assignments, loses focus during lessons, seems not to hear directions, leaves work unfinished, has difficulty organizing materials, and often misplaces books. At home, the caregiver reports repeated loss of belongings and a need for frequent reminders to finish homework. The student’s teacher notes incomplete assignments, and the caregiver says homework takes much longer than expected. In a separate interview conducted for the same referral, the caregiver states that the behaviors first appeared about four months ago, that there had been no similar difficulties before this school year, and that the recent concerns occur at both home and school.",
+  "functional_impairment": {
+    "present": true,
+    "affected_areas": [
+      "schoolwork completion",
+      "homework efficiency"
+    ],
+    "evidence": "The teacher reports incomplete assignments, and the caregiver says homework takes much longer than expected."
+  },
+  "target_constraint_specification": "Assess only these prespecified constraints: for a child under 17, at least six distinct inattentive symptoms are supported; relevant symptoms have persisted for at least six months; onset is supported before age 12; symptoms are reported in at least two settings; and symptoms are associated with functional impairment. Do not make a diagnosis beyond these constraints."
+}

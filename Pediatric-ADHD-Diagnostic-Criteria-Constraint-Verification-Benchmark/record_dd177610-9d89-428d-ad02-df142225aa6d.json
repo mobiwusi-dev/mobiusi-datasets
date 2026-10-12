@@ -1,0 +1,111 @@
+{
+  "missing_items": [],
+  "contradictions": [],
+  "duration_months": 9,
+  "onset_age_years": 12.5,
+  "criterion_checks": [
+    {
+      "criterion_id": "symptom_count",
+      "requirement": "At least six distinct inattentive symptoms are supported.",
+      "status": "met",
+      "rationale": "The teacher describes six distinct inattentive symptoms in science class."
+    },
+    {
+      "criterion_id": "duration",
+      "requirement": "Relevant symptoms have persisted for at least six months.",
+      "status": "met",
+      "rationale": "The reported classroom difficulties have lasted about nine months."
+    },
+    {
+      "criterion_id": "onset",
+      "requirement": "Relevant symptoms began before age 12.",
+      "status": "not_met",
+      "rationale": "The reported onset is around age 12 years and 6 months, with no earlier pattern reported."
+    },
+    {
+      "criterion_id": "multiple_settings",
+      "requirement": "Symptoms are reported in at least two settings.",
+      "status": "not_met",
+      "rationale": "Symptoms are reported in science class; the caregiver reports no similar concerns at home."
+    },
+    {
+      "criterion_id": "impairment",
+      "requirement": "Symptoms are associated with functional impairment.",
+      "status": "met",
+      "rationale": "The source reports a declining science grade and frequently incomplete assignments."
+    }
+  ],
+  "symptom_evidence": [
+    {
+      "symptom": "Misses details or makes careless errors",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The science teacher reports that the student overlooks details in lab instructions.",
+      "settings": [
+        "science class"
+      ]
+    },
+    {
+      "symptom": "Difficulty sustaining attention",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports loss of focus during independent work.",
+      "settings": [
+        "science class"
+      ]
+    },
+    {
+      "symptom": "Does not seem to listen when spoken to directly",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student appears not to hear questions.",
+      "settings": [
+        "science class"
+      ]
+    },
+    {
+      "symptom": "Does not follow through or finish tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student leaves written tasks unfinished.",
+      "settings": [
+        "science class"
+      ]
+    },
+    {
+      "symptom": "Difficulty organizing tasks and materials",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports difficulty keeping class materials organized.",
+      "settings": [
+        "science class"
+      ]
+    },
+    {
+      "symptom": "Loses or misplaces items needed for tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student often misplaces handouts.",
+      "settings": [
+        "science class"
+      ]
+    }
+  ],
+  "reported_settings": [
+    "science class",
+    "home (caregiver reports no similar concerns)"
+  ],
+  "overall_assessment": "constraints_not_satisfied",
+  "onset_before_age_12": false,
+  "assessment_rationale": "The source supports six inattentive symptoms, a duration of about nine months, and academic impairment. However, the reported onset is after age 12 and concerns are limited to science class, so two specified constraints are not met. This assessment does not assert a diagnosis.",
+  "source_case_material": "A 13-year-old student has had difficulty staying focused in science class for about nine months. The science teacher reports that the student overlooks details in lab instructions, loses focus during independent work, appears not to hear questions, leaves written tasks unfinished, struggles to keep class materials organized, and often misplaces handouts. The student’s science grade has declined, and assignments are frequently incomplete. The caregiver reports no similar concerns during homework or other activities at home. The family and school agree that these classroom difficulties first became noticeable around age 12 years and 6 months; they report no earlier pattern.",
+  "functional_impairment": {
+    "present": true,
+    "affected_areas": [
+      "academic performance",
+      "assignment completion"
+    ],
+    "evidence": "The science grade has declined, and assignments are frequently incomplete."
+  },
+  "target_constraint_specification": "Assess only these prespecified constraints: for a child under 17, at least six distinct inattentive symptoms are supported; relevant symptoms have persisted for at least six months; onset is supported before age 12; symptoms are reported in at least two settings; and symptoms are associated with functional impairment. Do not make a diagnosis beyond these constraints."
+}

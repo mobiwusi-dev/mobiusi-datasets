@@ -1,0 +1,113 @@
+{
+  "overall_assessment": "constraints_satisfied",
+  "onset_before_age_12": true,
+  "missing_items": [],
+  "contradictions": [],
+  "duration_months": 24,
+  "onset_age_years": 8,
+  "criterion_checks": [
+    {
+      "criterion_id": "symptom_count",
+      "requirement": "At least six distinct inattentive symptoms are supported.",
+      "status": "met",
+      "rationale": "Six distinct inattentive symptoms are described in the source material."
+    },
+    {
+      "criterion_id": "duration",
+      "requirement": "Relevant symptoms have persisted for at least six months.",
+      "status": "met",
+      "rationale": "The source reports persistent difficulties for about 24 months."
+    },
+    {
+      "criterion_id": "onset",
+      "requirement": "Relevant symptoms began before age 12.",
+      "status": "met",
+      "rationale": "The teacher places onset in second grade, when the student was 8."
+    },
+    {
+      "criterion_id": "multiple_settings",
+      "requirement": "Symptoms are reported in at least two settings.",
+      "status": "met",
+      "rationale": "Difficulties are reported at school and during homework and morning routines at home."
+    },
+    {
+      "criterion_id": "impairment",
+      "requirement": "Symptoms are associated with functional impairment.",
+      "status": "met",
+      "rationale": "The source reports declining grades and substantially prolonged homework requiring repeated redirection."
+    }
+  ],
+  "symptom_evidence": [
+    {
+      "symptom": "Misses details or makes careless errors",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student often misses details on written work.",
+      "settings": [
+        "classroom"
+      ]
+    },
+    {
+      "symptom": "Difficulty sustaining attention",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports loss of focus during independent assignments.",
+      "settings": [
+        "classroom"
+      ]
+    },
+    {
+      "symptom": "Does not seem to listen when spoken to directly",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student seems not to hear direct instructions.",
+      "settings": [
+        "classroom"
+      ]
+    },
+    {
+      "symptom": "Does not follow through or finish tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student leaves tasks unfinished.",
+      "settings": [
+        "classroom"
+      ]
+    },
+    {
+      "symptom": "Difficulty organizing tasks and materials",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports trouble organizing materials; the caregiver describes difficulties during morning routines.",
+      "settings": [
+        "classroom",
+        "home"
+      ]
+    },
+    {
+      "symptom": "Loses or misplaces items needed for tasks",
+      "domain": "inattention",
+      "status": "supported",
+      "supporting_evidence": "The teacher reports that the student frequently misplaces worksheets and pencils.",
+      "settings": [
+        "classroom"
+      ]
+    }
+  ],
+  "reported_settings": [
+    "classroom",
+    "home"
+  ],
+  "assessment_rationale": "The source supports six distinct inattentive symptoms, approximately 24 months of difficulty, onset at age 8, reports from school and home, and functional effects on academic work and routines. All specified constraints are supported; this assessment does not assert a diagnosis.",
+  "source_case_material": "A 10-year-old student has had persistent difficulties for about 24 months. The classroom teacher reports that the student often misses details on written work, loses focus during independent assignments, seems not to hear direct instructions, leaves tasks unfinished, has trouble organizing materials, and frequently misplaces worksheets and pencils. The caregiver reports the same patterns during homework and morning routines. The teacher notes that the difficulties began in the second grade, when the student was 8. The student’s grades have fallen despite added time for assignments, and homework routinely takes much longer than expected because the caregiver must repeatedly redirect the student.",
+  "functional_impairment": {
+    "present": true,
+    "affected_areas": [
+      "academic performance",
+      "homework completion",
+      "daily routines"
+    ],
+    "evidence": "Grades have fallen despite added assignment time, and homework takes much longer because the caregiver must repeatedly redirect the student."
+  },
+  "target_constraint_specification": "Assess only these prespecified constraints: for a child under 17, at least six distinct inattentive symptoms are supported; relevant symptoms have persisted for at least six months; onset is supported before age 12; symptoms are reported in at least two settings; and symptoms are associated with functional impairment. Do not make a diagnosis beyond these constraints."
+}
