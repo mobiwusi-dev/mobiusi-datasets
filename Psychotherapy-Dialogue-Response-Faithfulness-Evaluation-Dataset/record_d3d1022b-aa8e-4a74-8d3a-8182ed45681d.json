@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "claim_text": "The tight feeling starts on Monday mornings.",
+      "groundedness_label": "contradicted",
+      "evidence_quotes": [
+        "The tight feeling usually starts on Sunday evenings, around dinner."
+      ],
+      "annotation_rationale": "The client places the onset on Sunday evenings, not Monday mornings."
+    },
+    {
+      "claim_text": "The client checks work email after dinner, replays messages in bed, and sleeps badly those nights.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "I check my work email after dinner, and I keep replaying messages in bed. I sleep badly those nights."
+      ],
+      "annotation_rationale": "The client directly reports all three details."
+    },
+    {
+      "claim_text": "The client has already tried turning off work notifications.",
+      "groundedness_label": "contradicted",
+      "evidence_quotes": [
+        "No, I haven't tried turning them off."
+      ],
+      "annotation_rationale": "The client explicitly says they have not tried turning off notifications."
+    },
+    {
+      "claim_text": "The worry is driven by fear of being fired.",
+      "groundedness_label": "beyond_evidence",
+      "evidence_quotes": [],
+      "annotation_rationale": "The client describes work-email checking and sleep disruption but does not state a fear of being fired or identify this as the cause."
+    }
+  ],
+  "model_response": "You described the tight feeling as starting on Monday mornings. You check work email after dinner and replay messages in bed, and you sleep badly those nights. You have already tried turning off work notifications. It sounds as though the worry is driven by fear of being fired.",
+  "conversation_transcript": "Client: The tight feeling usually starts on Sunday evenings, around dinner. Therapist: What do you notice then? Client: I check my work email after dinner, and I keep replaying messages in bed. I sleep badly those nights. Therapist: Have you tried changing your notifications? Client: No, I haven't tried turning them off. I did put my phone across the room once, but I still got up to check it."
+}

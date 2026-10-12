@@ -1,0 +1,47 @@
+{
+  "claims": [
+    {
+      "claim_text": "At the grocery store last week, the client had a racing heart and shaky hands and left before finishing their shopping.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "At the grocery store last week, my heart started racing and my hands felt shaky. I left before I finished shopping."
+      ],
+      "annotation_rationale": "The client directly reports the symptoms, setting, timing, and leaving before finishing the shopping."
+    },
+    {
+      "claim_text": "Similar episodes have happened repeatedly in several other public places.",
+      "groundedness_label": "contradicted",
+      "evidence_quotes": [
+        "Had this happened elsewhere?",
+        "Not that I can remember."
+      ],
+      "annotation_rationale": "When asked whether this had happened elsewhere, the client says they cannot remember another occurrence; the transcript does not support repeated episodes in other places."
+    },
+    {
+      "claim_text": "Coffee caused the episode.",
+      "groundedness_label": "beyond_evidence",
+      "evidence_quotes": [
+        "I had coffee that afternoon, but I don't know whether it mattered."
+      ],
+      "annotation_rationale": "The client mentions coffee but explicitly does not know whether it mattered, so causation is not established."
+    },
+    {
+      "claim_text": "The client's cousin accompanied them when they returned the next day, and they stayed for about ten minutes.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "I went back yesterday with my cousin. I stayed about ten minutes, then we left together."
+      ],
+      "annotation_rationale": "The client directly reports returning with their cousin and staying about ten minutes."
+    },
+    {
+      "claim_text": "The client has not discussed the episode with a doctor.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "I haven't talked to a doctor about it."
+      ],
+      "annotation_rationale": "The client explicitly says they have not talked to a doctor about the episode."
+    }
+  ],
+  "model_response": "At the grocery store last week, you had a racing heart and shaky hands and left before finishing your shopping. You said similar episodes have happened repeatedly in several other public places. Coffee caused the episode. Your cousin went with you when you returned yesterday, and you stayed for about ten minutes. You have not discussed the episode with a doctor.",
+  "conversation_transcript": "Client: At the grocery store last week, my heart started racing and my hands felt shaky. I left before I finished shopping. Therapist: Had this happened elsewhere? Client: Not that I can remember. I had coffee that afternoon, but I don't know whether it mattered. Therapist: What have you done since? Client: I went back yesterday with my cousin. I stayed about ten minutes, then we left together. I haven't talked to a doctor about it."
+}

@@ -1,0 +1,39 @@
+{
+  "model_response": "You said your sister moved to another city in March and that Saturday lunches used to be a regular routine. You have video-called twice this month, enjoyed it, and do not want every call to feel obligatory. You said work has become unbearable and that you accepted a new job. Your hesitation about scheduling calls reflects resentment toward your sister.",
+  "claims": [
+    {
+      "claim_text": "The client's sister moved to another city in March, and Saturday lunches used to be a regular routine.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "My older sister moved to another city in March.",
+        "We used to have lunch every Saturday, and I miss that routine."
+      ],
+      "annotation_rationale": "The client directly reports the move and the former Saturday lunch routine."
+    },
+    {
+      "claim_text": "The client video-called their sister twice this month, found it nice, and does not want every call to feel obligatory.",
+      "groundedness_label": "supported",
+      "evidence_quotes": [
+        "We video-called twice this month. It was nice, but I don't want to make every call into an obligation."
+      ],
+      "annotation_rationale": "The client reports the frequency, describes the calls positively, and states a preference against making every call an obligation."
+    },
+    {
+      "claim_text": "Work has become unbearable, and the client accepted a new job.",
+      "groundedness_label": "contradicted",
+      "evidence_quotes": [
+        "Work is fine, and I haven't decided whether to look for a new job."
+      ],
+      "annotation_rationale": "The client says work is fine and has not decided whether to look for another job, contradicting both parts of the claim."
+    },
+    {
+      "claim_text": "The client's hesitation about scheduling calls reflects resentment toward their sister.",
+      "groundedness_label": "beyond_evidence",
+      "evidence_quotes": [
+        "I don't want to make every call into an obligation."
+      ],
+      "annotation_rationale": "The client expresses a preference about keeping calls from feeling obligatory but does not describe resentment toward their sister."
+    }
+  ],
+  "conversation_transcript": "Client: My older sister moved to another city in March. We used to have lunch every Saturday, and I miss that routine. Therapist: Have you talked about how to stay connected? Client: We video-called twice this month. It was nice, but I don't want to make every call into an obligation. Therapist: What are you noticing about your mood? Client: I feel lonelier in the evenings. Work is fine, and I haven't decided whether to look for a new job."
+}
