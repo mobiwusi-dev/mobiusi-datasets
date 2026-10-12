@@ -1,0 +1,37 @@
+{
+  "answer": "Claim 1 requires a flow controller with a rotor-driven valve, a pressure sensor positioned downstream of the valve, and a controller configured to adjust the valve in response to pressure measurements. The portfolio entry records the application as Granted, effective 2023-09-12.",
+  "evidence": [
+    {
+      "source_document_reference": "Rotor-Linked Flow Controller Claims and Status Extract",
+      "quotation": "Claim 1. A flow controller comprising a rotor-driven valve, a pressure sensor positioned downstream of the valve, and a controller configured to adjust the valve in response to pressure measurements.",
+      "fact_category": "Claims",
+      "location_reference": "Claim 1"
+    },
+    {
+      "source_document_reference": "Rotor-Linked Flow Controller Claims and Status Extract",
+      "quotation": "The portfolio status entry for the application titled 'Rotor-Linked Flow Controller' is Granted, effective 2023-09-12.",
+      "fact_category": "Legal status"
+    }
+  ],
+  "question": "What does claim 1 require, and what legal status and effective date are recorded for the Rotor-Linked Flow Controller application?",
+  "scope_note": null,
+  "portfolio_facts": {
+    "claims_summary": [
+      "Claim 1: a flow controller with a rotor-driven valve, a downstream pressure sensor, and a controller that adjusts the valve in response to pressure measurements."
+    ],
+    "legal_status_records": [
+      {
+        "patent_reference": "Application titled 'Rotor-Linked Flow Controller'",
+        "legal_status": "Granted",
+        "effective_date": "2023-09-12"
+      }
+    ]
+  },
+  "source_documents": [
+    {
+      "document_title": "Rotor-Linked Flow Controller Claims and Status Extract",
+      "document_kind": "Patent claims and portfolio status extract",
+      "document_text": "Claim 1. A flow controller comprising a rotor-driven valve, a pressure sensor positioned downstream of the valve, and a controller configured to adjust the valve in response to pressure measurements. The portfolio status entry for the application titled 'Rotor-Linked Flow Controller' is Granted, effective 2023-09-12. The record states that the granted claim set contains claims 1-8."
+    }
+  ]
+}

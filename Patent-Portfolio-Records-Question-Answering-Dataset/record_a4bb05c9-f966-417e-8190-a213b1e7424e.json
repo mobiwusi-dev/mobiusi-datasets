@@ -1,0 +1,58 @@
+{
+  "answer": "The family register lists a French national application titled 'Ceramic Membrane Cleaning Assembly' and a Japanese national application titled 'Ceramic Membrane Cleaning Assembly, Japan'. The French application is recorded as Pending examination. The Japanese application is recorded as Granted, effective 2024-01-19. The listed filing territories are France and Japan.",
+  "evidence": [
+    {
+      "source_document_reference": "Ceramic Membrane Cleaning Assembly Family Register",
+      "quotation": "Family members: a French national application titled 'Ceramic Membrane Cleaning Assembly' and a Japanese national application titled 'Ceramic Membrane Cleaning Assembly, Japan'.",
+      "fact_category": "Patent family"
+    },
+    {
+      "source_document_reference": "Ceramic Membrane Cleaning Assembly Family Register",
+      "quotation": "Status entries dated 2024-02-02: the French application is Pending examination; the Japanese application is Granted, effective 2024-01-19.",
+      "fact_category": "Legal status"
+    },
+    {
+      "source_document_reference": "Ceramic Membrane Cleaning Assembly Family Register",
+      "quotation": "Filing territories listed: France and Japan.",
+      "fact_category": "Territorial coverage"
+    }
+  ],
+  "question": "Which applications are listed in the Ceramic Membrane Cleaning Assembly family, and what status is recorded for each?",
+  "scope_note": "This extract records filing territories and status entries only; it contains no priority record.",
+  "portfolio_facts": {
+    "patent_families": [
+      {
+        "family_name": "Ceramic Membrane Cleaning Assembly",
+        "members": [
+          "French national application titled 'Ceramic Membrane Cleaning Assembly'",
+          "Japanese national application titled 'Ceramic Membrane Cleaning Assembly, Japan'"
+        ]
+      }
+    ],
+    "legal_status_records": [
+      {
+        "patent_reference": "French national application titled 'Ceramic Membrane Cleaning Assembly'",
+        "legal_status": "Pending examination",
+        "recorded_event": "Status entry dated 2024-02-02"
+      },
+      {
+        "patent_reference": "Japanese national application titled 'Ceramic Membrane Cleaning Assembly, Japan'",
+        "legal_status": "Granted",
+        "effective_date": "2024-01-19",
+        "recorded_event": "Status entry dated 2024-02-02"
+      }
+    ],
+    "territorial_coverage": [
+      "France",
+      "Japan"
+    ]
+  },
+  "source_documents": [
+    {
+      "document_title": "Ceramic Membrane Cleaning Assembly Family Register",
+      "document_kind": "Portfolio register",
+      "document_date": "2024-02-02",
+      "document_text": "Family register for the Ceramic Membrane Cleaning Assembly. Family members: a French national application titled 'Ceramic Membrane Cleaning Assembly' and a Japanese national application titled 'Ceramic Membrane Cleaning Assembly, Japan'. Filing territories listed: France and Japan. Status entries dated 2024-02-02: the French application is Pending examination; the Japanese application is Granted, effective 2024-01-19. No priority record appears in this extract."
+    }
+  ]
+}

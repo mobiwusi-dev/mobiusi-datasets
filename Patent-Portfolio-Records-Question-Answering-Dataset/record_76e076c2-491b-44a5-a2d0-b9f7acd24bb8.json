@@ -1,0 +1,51 @@
+{
+  "question": "Which records are listed as members of the Thermal Buffer Assembly family, and what earliest priority and filing territories does the register record?",
+  "answer": "The register lists the original German filing titled 'Thermal Buffer Assembly' and the European regional filing titled 'Thermal Buffer Assembly, regional phase' as family members. It records an earliest priority in Germany dated 2021-04-16 and filing territories of Germany, the European Patent Convention region, and Canada.",
+  "evidence": [
+    {
+      "source_document_reference": "Thermal Buffer Assembly Family Register",
+      "quotation": "Family members recorded: the original German filing titled 'Thermal Buffer Assembly' and a European regional filing titled 'Thermal Buffer Assembly, regional phase'.",
+      "fact_category": "Patent family"
+    },
+    {
+      "source_document_reference": "Thermal Buffer Assembly Family Register",
+      "quotation": "Earliest priority: Germany, 2021-04-16.",
+      "fact_category": "Priority"
+    },
+    {
+      "source_document_reference": "Thermal Buffer Assembly Family Register",
+      "quotation": "Recorded filing territories in this register: Germany, the European Patent Convention region, and Canada.",
+      "fact_category": "Territorial coverage"
+    }
+  ],
+  "scope_note": null,
+  "portfolio_facts": {
+    "patent_families": [
+      {
+        "family_name": "Thermal Buffer Assembly family",
+        "members": [
+          "Original German filing titled 'Thermal Buffer Assembly'",
+          "European regional filing titled 'Thermal Buffer Assembly, regional phase'"
+        ]
+      }
+    ],
+    "priority_records": [
+      {
+        "priority_date": "2021-04-16",
+        "priority_territory": "Germany"
+      }
+    ],
+    "territorial_coverage": [
+      "Germany",
+      "European Patent Convention region",
+      "Canada"
+    ]
+  },
+  "source_documents": [
+    {
+      "document_title": "Thermal Buffer Assembly Family Register",
+      "document_kind": "Portfolio register",
+      "document_text": "Portfolio register for the Thermal Buffer Assembly family. Family members recorded: the original German filing titled 'Thermal Buffer Assembly' and a European regional filing titled 'Thermal Buffer Assembly, regional phase'. Earliest priority: Germany, 2021-04-16. Recorded filing territories in this register: Germany, the European Patent Convention region, and Canada."
+    }
+  ]
+}
