@@ -1,0 +1,92 @@
+{
+  "case_record": {
+    "patient_age_years": 8,
+    "fever": {
+      "maximum_temperature_c": 39.1,
+      "measurement_site": "oral",
+      "onset_datetime": "2025-01-14T02:10:00Z",
+      "duration_hours": 3.2
+    },
+    "blood_counts": {
+      "absolute_neutrophil_count_10e9_l": 0.18,
+      "white_blood_cell_count_10e9_l": 0.7,
+      "platelet_count_10e9_l": 42,
+      "hemoglobin_g_l": 81
+    },
+    "risk_assessment": {
+      "recorded_category": "low",
+      "rationale": [
+        "The patient is hemodynamically stable.",
+        "The recorded assessment notes severe neutropenia and expected prolonged neutropenia."
+      ],
+      "hemodynamic_instability": false,
+      "expected_prolonged_neutropenia": true
+    },
+    "comorbidities": [],
+    "allergies": [],
+    "proposed_management": {
+      "care_setting": "inpatient",
+      "antibiotics": [
+        "cefepime"
+      ],
+      "cultures_obtained_before_antibiotics": true,
+      "disposition_plan": "Admit for inpatient monitoring and IV therapy."
+    },
+    "applicable_pathway_rules": [
+      {
+        "rule_id": "R-FN-01",
+        "condition": "Fever of at least 38.0 °C and ANC below 0.5 ×10^9/L, with expected prolonged neutropenia or hemodynamic instability.",
+        "requirement": "Assign high risk and admit for inpatient IV antipseudomonal therapy.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-02",
+        "condition": "A patient meeting the pathway's febrile-neutropenia criteria is receiving antibiotics.",
+        "requirement": "Obtain blood cultures before the first antibiotic dose when doing so does not delay urgent treatment.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-03",
+        "condition": "High-risk febrile neutropenia without a documented beta-lactam allergy.",
+        "requirement": "Use an inpatient IV antipseudomonal agent listed by the pathway, such as cefepime.",
+        "exclusions": [
+          "A documented beta-lactam allergy requiring an alternative regimen."
+        ]
+      }
+    ],
+    "expected_conflicts": [
+      "The recorded low-risk category conflicts with R-FN-01 because fever, ANC below 0.5 ×10^9/L, and expected prolonged neutropenia support high risk."
+    ]
+  },
+  "risk_validation": {
+    "recorded_category": "low",
+    "supported_category": "high",
+    "is_consistent": false,
+    "reasoning": "The fever is 39.1 °C, ANC is 0.18 ×10^9/L, and prolonged neutropenia is expected. R-FN-01 therefore supports high risk despite the recorded low-risk category."
+  },
+  "overall_validation": {
+    "status": "fail",
+    "summary": "Management conforms to the supplied treatment and culture rules, but the recorded low-risk classification conflicts with the high-risk criteria in R-FN-01."
+  },
+  "management_validation": {
+    "admission_required": true,
+    "antibiotic_coverage_adequate": true,
+    "allergy_conflict_present": false,
+    "culture_requirement_met": true,
+    "overall_conforms": true,
+    "findings": [
+      {
+        "code": "RISK_CATEGORY_MISMATCH",
+        "severity": "major",
+        "explanation": "The inpatient setting, cefepime regimen, and culture timing satisfy the supplied management rules. The separate recorded risk category is inconsistent with R-FN-01."
+      }
+    ]
+  },
+  "pathway_conflict_analysis": {
+    "expected_conflicts_detected": [
+      "The recorded low-risk category conflicts with R-FN-01 because fever, ANC below 0.5 ×10^9/L, and expected prolonged neutropenia support high risk."
+    ],
+    "unanticipated_conflicts": [],
+    "expected_conflicts_match": true
+  }
+}

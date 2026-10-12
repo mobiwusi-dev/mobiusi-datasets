@@ -1,0 +1,102 @@
+{
+  "case_record": {
+    "patient_age_years": 13,
+    "fever": {
+      "maximum_temperature_c": 38.3,
+      "measurement_site": "oral",
+      "onset_datetime": "2025-03-22T09:15:00Z",
+      "duration_hours": 1.8
+    },
+    "blood_counts": {
+      "absolute_neutrophil_count_10e9_l": 0.46,
+      "white_blood_cell_count_10e9_l": 1.1,
+      "platelet_count_10e9_l": 105,
+      "hemoglobin_g_l": 103
+    },
+    "risk_assessment": {
+      "recorded_category": "low",
+      "rationale": [
+        "The patient is hemodynamically stable.",
+        "Prolonged neutropenia is not expected.",
+        "No pathway-listed high-risk comorbidity is documented."
+      ],
+      "hemodynamic_instability": false,
+      "expected_prolonged_neutropenia": false
+    },
+    "comorbidities": [],
+    "allergies": [],
+    "proposed_management": {
+      "care_setting": "outpatient",
+      "antibiotics": [
+        "pathway-listed oral antibacterial regimen"
+      ],
+      "cultures_obtained_before_antibiotics": true,
+      "disposition_plan": "Discharge through the ambulatory pathway with a scheduled reassessment within 24 hours and instructions to return promptly for worsening symptoms or recurrent fever."
+    },
+    "applicable_pathway_rules": [
+      {
+        "rule_id": "R-FN-ENTRY",
+        "condition": "A child has a temperature of at least 38.0 °C and ANC below 0.5 ×10^9/L.",
+        "requirement": "Apply the febrile-neutropenia pathway and complete risk assessment.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-LOW",
+        "condition": "The patient is hemodynamically stable, prolonged neutropenia is not expected, and no pathway-listed high-risk comorbidity is documented.",
+        "requirement": "Assign low risk; outpatient care may be used when the ambulatory management requirements are met.",
+        "exclusions": [
+          "Hemodynamic instability",
+          "Expected prolonged neutropenia",
+          "A documented pathway-listed high-risk comorbidity"
+        ]
+      },
+      {
+        "rule_id": "R-FN-OUTPATIENT",
+        "condition": "A patient meets R-FN-LOW criteria and is managed as an outpatient.",
+        "requirement": "Provide a pathway-listed oral antibacterial regimen and document timely reassessment and return instructions.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-CULTURES",
+        "condition": "A patient meeting the pathway's febrile-neutropenia criteria is receiving antibiotics.",
+        "requirement": "Obtain blood cultures before the first antibiotic dose when doing so does not delay urgent treatment.",
+        "exclusions": []
+      }
+    ],
+    "expected_conflicts": []
+  },
+  "risk_validation": {
+    "recorded_category": "low",
+    "supported_category": "low",
+    "is_consistent": true,
+    "reasoning": "The patient meets R-FN-ENTRY criteria and has none of the high-risk features excluded by R-FN-LOW. The recorded low-risk category is supported."
+  },
+  "overall_validation": {
+    "status": "pass",
+    "summary": "The low-risk classification is supported, and the outpatient regimen, documented follow-up, and culture timing satisfy the supplied pathway rules."
+  },
+  "management_validation": {
+    "admission_required": false,
+    "antibiotic_coverage_adequate": true,
+    "allergy_conflict_present": false,
+    "culture_requirement_met": true,
+    "overall_conforms": true,
+    "findings": [
+      {
+        "code": "LOW_RISK_OUTPATIENT_PLAN",
+        "severity": "informational",
+        "explanation": "The documented stability, absence of expected prolonged neutropenia, and absence of listed high-risk comorbidities support outpatient care under R-FN-LOW. The plan includes the outpatient regimen and follow-up elements required by R-FN-OUTPATIENT."
+      },
+      {
+        "code": "CULTURES_BEFORE_ANTIBIOTICS",
+        "severity": "informational",
+        "explanation": "The record states that cultures were obtained before antibiotics, satisfying R-FN-CULTURES."
+      }
+    ]
+  },
+  "pathway_conflict_analysis": {
+    "expected_conflicts_detected": [],
+    "unanticipated_conflicts": [],
+    "expected_conflicts_match": true
+  }
+}

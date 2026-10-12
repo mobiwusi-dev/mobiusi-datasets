@@ -1,0 +1,112 @@
+{
+  "case_record": {
+    "patient_age_years": 6,
+    "fever": {
+      "maximum_temperature_c": 38.7,
+      "measurement_site": "oral",
+      "onset_datetime": "2025-02-03T18:40:00Z",
+      "duration_hours": 2.5
+    },
+    "blood_counts": {
+      "absolute_neutrophil_count_10e9_l": 0.09,
+      "white_blood_cell_count_10e9_l": 0.5,
+      "platelet_count_10e9_l": 31,
+      "hemoglobin_g_l": 76
+    },
+    "risk_assessment": {
+      "recorded_category": "high",
+      "rationale": [
+        "Fever with ANC below 0.5 ×10^9/L.",
+        "Expected prolonged neutropenia following treatment."
+      ],
+      "hemodynamic_instability": false,
+      "expected_prolonged_neutropenia": true
+    },
+    "comorbidities": [
+      "Oral mucositis"
+    ],
+    "allergies": [
+      {
+        "allergen": "piperacillin-tazobactam",
+        "reaction": "Immediate wheezing and hypotension",
+        "severity": "severe",
+        "beta_lactam_related": true
+      }
+    ],
+    "proposed_management": {
+      "care_setting": "inpatient",
+      "antibiotics": [
+        "cefepime"
+      ],
+      "cultures_obtained_before_antibiotics": true,
+      "disposition_plan": "Admit for inpatient monitoring and IV therapy."
+    },
+    "applicable_pathway_rules": [
+      {
+        "rule_id": "R-FN-01",
+        "condition": "Fever of at least 38.0 °C and ANC below 0.5 ×10^9/L, with expected prolonged neutropenia or hemodynamic instability.",
+        "requirement": "Assign high risk and admit for inpatient IV antipseudomonal therapy.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-02",
+        "condition": "A patient meeting the pathway's febrile-neutropenia criteria is receiving antibiotics.",
+        "requirement": "Obtain blood cultures before the first antibiotic dose when doing so does not delay urgent treatment.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-ALLERGY",
+        "condition": "A severe immediate beta-lactam allergy is documented.",
+        "requirement": "Do not administer beta-lactam antibiotics; select an approved non-beta-lactam regimen. A beta-lactam order does not satisfy the pathway's coverage requirement.",
+        "exclusions": []
+      },
+      {
+        "rule_id": "R-FN-COVERAGE",
+        "condition": "High-risk febrile neutropenia requires IV antipseudomonal coverage.",
+        "requirement": "Use an IV regimen permitted by the pathway and compatible with documented allergies.",
+        "exclusions": [
+          "Regimens prohibited by R-FN-ALLERGY."
+        ]
+      }
+    ],
+    "expected_conflicts": [
+      "Cefepime is proposed despite a documented severe immediate beta-lactam allergy; R-FN-ALLERGY prohibits beta-lactam administration."
+    ]
+  },
+  "risk_validation": {
+    "recorded_category": "high",
+    "supported_category": "high",
+    "is_consistent": true,
+    "reasoning": "Fever is 38.7 °C, ANC is 0.09 ×10^9/L, and prolonged neutropenia is expected. These facts meet R-FN-01 high-risk criteria, consistent with the recorded category."
+  },
+  "overall_validation": {
+    "status": "fail",
+    "summary": "The high-risk classification, inpatient setting, and culture timing are supported, but the proposed cefepime conflicts with the severe beta-lactam allergy and fails the supplied coverage requirement."
+  },
+  "management_validation": {
+    "admission_required": true,
+    "antibiotic_coverage_adequate": false,
+    "allergy_conflict_present": true,
+    "culture_requirement_met": true,
+    "overall_conforms": false,
+    "findings": [
+      {
+        "code": "SEVERE_BETA_LACTAM_ALLERGY_CONFLICT",
+        "severity": "critical",
+        "explanation": "The proposed cefepime regimen is a beta-lactam, while the documented severe immediate beta-lactam allergy activates R-FN-ALLERGY, which prohibits its administration."
+      },
+      {
+        "code": "ANTIBIOTIC_COVERAGE_NOT_MET",
+        "severity": "major",
+        "explanation": "R-FN-COVERAGE requires an allergy-compatible IV regimen. The proposed beta-lactam is prohibited by R-FN-ALLERGY and therefore does not meet the supplied coverage requirement."
+      }
+    ]
+  },
+  "pathway_conflict_analysis": {
+    "expected_conflicts_detected": [
+      "Cefepime is proposed despite a documented severe immediate beta-lactam allergy; R-FN-ALLERGY prohibits beta-lactam administration."
+    ],
+    "unanticipated_conflicts": [],
+    "expected_conflicts_match": true
+  }
+}
