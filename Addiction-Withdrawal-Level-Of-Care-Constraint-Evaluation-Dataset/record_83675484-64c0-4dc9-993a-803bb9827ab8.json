@@ -1,0 +1,86 @@
+{
+  "case_input": {
+    "clinical_profile": {
+      "substances": [
+        "Benzodiazepines"
+      ],
+      "age_years": 38,
+      "sex_or_gender": "Nonbinary",
+      "last_use_time": "Approximately 30 hours ago; the case documents interruption of long-term daily use",
+      "medical_comorbidities": [],
+      "psychiatric_comorbidities": []
+    },
+    "withdrawal_presentation": {
+      "symptoms": [
+        "Hand tremor",
+        "Sweating",
+        "Insomnia",
+        "Nausea"
+      ],
+      "severity": "Moderate symptoms with a documented risk history",
+      "vital_signs": {
+        "heart_rate_bpm": 96,
+        "blood_pressure": "138/86 mmHg",
+        "respiratory_rate_per_minute": 17,
+        "oxygen_saturation_percent": 98
+      },
+      "history_of_withdrawal_seizure": true,
+      "history_of_delirium": false
+    },
+    "risk_conditions": [
+      {
+        "risk_type": "Prior benzodiazepine-withdrawal seizure",
+        "present": true,
+        "evidence": "A prior seizure during benzodiazepine withdrawal is documented.",
+        "severity_or_relevance": "High; a severe withdrawal complication is part of the documented history."
+      },
+      {
+        "risk_type": "Interruption of long-term daily benzodiazepine use",
+        "present": true,
+        "evidence": "The case documents long-term daily use followed by cessation approximately 30 hours before assessment.",
+        "severity_or_relevance": "Relevant to withdrawal management in combination with the documented prior withdrawal seizure."
+      }
+    ],
+    "resource_constraints": {
+      "available_care_settings": [
+        "Nonmedical residential program",
+        "Emergency department transfer by EMS"
+      ],
+      "monitoring_capacity": "Residential staff make nonclinical rounds every four hours; continuous clinical observation is unavailable.",
+      "staffing_capacity": "Nonclinical residential staff are present overnight; no nurse or physician is on site overnight.",
+      "medication_availability": "The residential program does not provide clinician-managed benzodiazepine withdrawal medication or a taper service.",
+      "transfer_limitations": "EMS can be called at any time for emergency transfer. A routine transfer requires acceptance by another facility."
+    },
+    "proposed_recommendation": {
+      "recommended_level_of_care": "Continue residential support without medical withdrawal management",
+      "recommended_setting": "Nonmedical residential program",
+      "monitoring_plan": "Nonclinical staff rounds every four hours; no scheduled overnight clinician assessment.",
+      "recommendation_rationale": "The recorded vital signs are not described as acutely unstable, and residential staff can provide routine checks."
+    }
+  },
+  "evaluation_summary": "A nonmedical residential plan conflicts with the documented benzodiazepine-withdrawal risk history and the program's limited clinical monitoring and medication resources.",
+  "reference_annotation": {
+    "recommendation_satisfies_constraints": false,
+    "conflict_points": [
+      "A nonmedical residential setting does not address the documented prior benzodiazepine-withdrawal seizure and current interruption of long-term daily use.",
+      "Four-hour nonclinical rounds and the absence of overnight clinical staff or clinician-managed withdrawal medication do not meet the documented monitoring and medication-management needs."
+    ],
+    "adjudication_rationale": "Although the recorded vital signs are not described as acutely unstable, the case documents a prior withdrawal seizure and recent interruption of long-term daily benzodiazepine use. The proposed nonmedical setting lacks overnight clinical staffing and clinician-managed withdrawal medication, so the recommendation does not satisfy the stated risk and resource constraints."
+  },
+  "constraint_validation": {
+    "meets_constraints": false,
+    "conflict_points": [
+      "A nonmedical residential setting does not address the documented prior benzodiazepine-withdrawal seizure and current interruption of long-term daily use.",
+      "Four-hour nonclinical rounds and the absence of overnight clinical staff or clinician-managed withdrawal medication do not meet the documented monitoring and medication-management needs."
+    ],
+    "conflict_count": 2,
+    "reviewed_dimensions": [
+      "Clinical risk",
+      "Monitoring",
+      "Staffing",
+      "Medication",
+      "Transfer feasibility"
+    ],
+    "validation_summary": "The recommendation relies on nonmedical residential checks despite a documented prior withdrawal seizure; clinical monitoring and withdrawal medication management are not available in that setting."
+  }
+}

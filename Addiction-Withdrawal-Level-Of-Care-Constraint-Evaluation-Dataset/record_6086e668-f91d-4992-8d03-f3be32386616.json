@@ -1,0 +1,85 @@
+{
+  "case_input": {
+    "clinical_profile": {
+      "substances": [
+        "Alcohol"
+      ],
+      "age_years": 46,
+      "sex_or_gender": "Female",
+      "last_use_time": "Approximately 14 hours ago",
+      "medical_comorbidities": [],
+      "psychiatric_comorbidities": []
+    },
+    "withdrawal_presentation": {
+      "symptoms": [
+        "Marked hand tremor",
+        "Diaphoresis",
+        "Nausea",
+        "Agitation"
+      ],
+      "severity": "Severe; autonomic symptoms are present",
+      "vital_signs": {
+        "heart_rate_bpm": 124,
+        "blood_pressure": "168/102 mmHg",
+        "respiratory_rate_per_minute": 20,
+        "oxygen_saturation_percent": 97
+      },
+      "history_of_withdrawal_seizure": true,
+      "history_of_delirium": true
+    },
+    "risk_conditions": [
+      {
+        "risk_type": "History of complicated alcohol withdrawal",
+        "present": true,
+        "evidence": "The record documents a prior withdrawal seizure and prior withdrawal-related delirium.",
+        "severity_or_relevance": "High; both severe complications are documented."
+      },
+      {
+        "risk_type": "Current autonomic symptoms",
+        "present": true,
+        "evidence": "The presentation includes marked tremor and agitation; recorded heart rate is 124 bpm and blood pressure is 168/102 mmHg.",
+        "severity_or_relevance": "High; symptoms and vital signs warrant close clinical observation."
+      }
+    ],
+    "resource_constraints": {
+      "available_care_settings": [
+        "Outpatient withdrawal clinic",
+        "Emergency department transfer by EMS"
+      ],
+      "monitoring_capacity": "The clinic provides daytime checks only; it has no overnight observation capacity.",
+      "staffing_capacity": "A nurse is present from 08:00 to 17:00. No overnight clinical staff are available.",
+      "medication_availability": "Clinician-managed symptom-relief medication is available during clinic hours; no overnight medication administration is available at the clinic.",
+      "transfer_limitations": "EMS transfer can be requested at any time; acceptance at a receiving hospital is not guaranteed immediately."
+    },
+    "proposed_recommendation": {
+      "recommended_level_of_care": "Ambulatory outpatient withdrawal management",
+      "recommended_setting": "Return home with weekday visits to the outpatient clinic",
+      "monitoring_plan": "Clinic checks once daily on weekdays; no overnight observation or scheduled overnight assessment.",
+      "recommendation_rationale": "The plan uses the outpatient clinic as the on-site service and relies on daily follow-up."
+    }
+  },
+  "evaluation_summary": "A proposed home-based outpatient plan is inconsistent with the documented severe alcohol-withdrawal risks and the clinic's limited monitoring capacity.",
+  "reference_annotation": {
+    "recommendation_satisfies_constraints": false,
+    "conflict_points": [
+      "Ambulatory outpatient care does not match the documented severe presentation and history of both withdrawal seizure and delirium.",
+      "Daytime-only clinic checks and the absence of overnight clinical observation do not provide the monitoring capacity described as relevant to this patient's documented risks."
+    ],
+    "adjudication_rationale": "The proposed plan sends the patient home with weekday visits despite severe symptoms, elevated recorded vital signs, and documented prior seizure and delirium. The clinic lacks overnight clinical monitoring, so the recommendation does not satisfy the stated clinical and resource constraints."
+  },
+  "constraint_validation": {
+    "meets_constraints": false,
+    "conflict_points": [
+      "Ambulatory outpatient care does not match the documented severe presentation and history of both withdrawal seizure and delirium.",
+      "Daytime-only clinic checks and the absence of overnight clinical observation do not provide the monitoring capacity described as relevant to this patient's documented risks."
+    ],
+    "conflict_count": 2,
+    "reviewed_dimensions": [
+      "Clinical risk",
+      "Monitoring",
+      "Staffing",
+      "Transfer feasibility"
+    ],
+    "validation_summary": "The outpatient plan conflicts with the documented severe presentation and prior complications, and the clinic cannot provide overnight clinical monitoring."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "case_input": {
+    "clinical_profile": {
+      "substances": [
+        "Opioids"
+      ],
+      "age_years": 29,
+      "sex_or_gender": "Male",
+      "last_use_time": "Approximately 30 hours ago",
+      "medical_comorbidities": [],
+      "psychiatric_comorbidities": []
+    },
+    "withdrawal_presentation": {
+      "symptoms": [
+        "Yawning",
+        "Rhinorrhea",
+        "Muscle aches",
+        "Restlessness"
+      ],
+      "severity": "Moderate; alert and able to participate in assessment",
+      "vital_signs": {
+        "heart_rate_bpm": 84,
+        "blood_pressure": "122/76 mmHg",
+        "respiratory_rate_per_minute": 16,
+        "oxygen_saturation_percent": 98
+      },
+      "history_of_withdrawal_seizure": false,
+      "history_of_delirium": false
+    },
+    "risk_conditions": [
+      {
+        "risk_type": "Acute medical instability",
+        "present": false,
+        "evidence": "No acute medical concern is documented; recorded vital signs are heart rate 84 bpm, blood pressure 122/76 mmHg, respiratory rate 16 per minute, and oxygen saturation 98%.",
+        "severity_or_relevance": "No acute instability is identified in the documented presentation."
+      },
+      {
+        "risk_type": "Concurrent alcohol or sedative use",
+        "present": false,
+        "evidence": "The case documents opioid use and does not report concurrent alcohol or sedative use.",
+        "severity_or_relevance": "No concurrent exposure is documented as a complicating factor."
+      }
+    ],
+    "resource_constraints": {
+      "available_care_settings": [
+        "Outpatient withdrawal clinic",
+        "Emergency department transfer by EMS"
+      ],
+      "monitoring_capacity": "Daily in-person assessment is available, with after-hours telephone triage.",
+      "staffing_capacity": "A licensed clinician is available during clinic hours; nursing staff conduct daily checks.",
+      "medication_availability": "Clinician-supervised medication management for opioid withdrawal is available at the clinic.",
+      "transfer_limitations": "EMS transfer is available for an urgent change in condition; routine clinic appointments are available daily."
+    },
+    "proposed_recommendation": {
+      "recommended_level_of_care": "Ambulatory outpatient withdrawal management",
+      "recommended_setting": "Outpatient withdrawal clinic",
+      "monitoring_plan": "Daily in-person review during the initial withdrawal period, with after-hours telephone triage and EMS transfer for urgent deterioration.",
+      "recommendation_rationale": "The documented presentation is moderate, with stable recorded vital signs and no reported history of withdrawal seizure or delirium; the clinic provides daily assessment and clinician-supervised medication management."
+    }
+  },
+  "evaluation_summary": "A moderate opioid-withdrawal presentation is paired with an outpatient plan supported by the stated clinic resources, with no annotated conflicts.",
+  "reference_annotation": {
+    "recommendation_satisfies_constraints": true,
+    "conflict_points": [],
+    "adjudication_rationale": "The documented symptoms are moderate, the recorded vital signs are stable in the case record, and no prior withdrawal seizure or delirium is reported. The recommended outpatient clinic has daily assessment, clinical staffing, and medication-management resources consistent with the proposed plan."
+  },
+  "constraint_validation": {
+    "meets_constraints": true,
+    "conflict_points": [],
+    "conflict_count": 0,
+    "reviewed_dimensions": [
+      "Clinical risk",
+      "Monitoring",
+      "Staffing",
+      "Medication",
+      "Transfer feasibility"
+    ],
+    "validation_summary": "The outpatient recommendation aligns with the documented presentation and the clinic's daily monitoring, staffing, and medication-management capacity; no constraint conflict is identified."
+  }
+}
