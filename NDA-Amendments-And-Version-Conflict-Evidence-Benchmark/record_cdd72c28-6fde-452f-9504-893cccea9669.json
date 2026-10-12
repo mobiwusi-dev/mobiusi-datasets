@@ -1,0 +1,19 @@
+{
+  "evidence_basis": [
+    "Original Mutual Confidentiality Agreement, Section 7: confidentiality obligations continue for five years after termination.",
+    "First Amendment, signed by both parties and identifying the 12 February 2023 agreement: Section 7 is deleted and replaced with a three-year post-termination period.",
+    "The amendment states that it is effective upon signature by both parties and that all other provisions remain unchanged."
+  ],
+  "reasoning_summary": "The original agreement sets a five-year period, but the later amendment identifies that agreement, expressly replaces Section 7, and is stated to be signed by both parties and effective upon signature. The amendment therefore directly supports the claimed three-year term in the materials provided.",
+  "verification_claim": "Under the operative agreement materials provided, each party's confidentiality obligations continue for three years after termination.",
+  "base_agreement_text": "Mutual Confidentiality Agreement, Section 7, signed by both parties on 12 February 2023: Each party shall protect the other party's Confidential Information for five years after termination of this Agreement. The remaining provisions continue in effect unless amended in a writing signed by both parties.",
+  "current_term_summary": "The provided signed amendment replaces the original five-year period with a three-year confidentiality period after termination. Other agreement provisions remain unchanged according to the amendment.",
+  "identified_conflicts": [
+    "Original Section 7 provides a five-year post-termination period, while the signed First Amendment replaces it with a three-year period; the amendment expressly identifies the agreement and supersedes Section 7."
+  ],
+  "verification_outcome": "已支持",
+  "insufficiency_reasons": [],
+  "amendment_and_version_texts": "First Amendment to Mutual Confidentiality Agreement, dated 18 September 2024 and signed by both parties. It identifies the agreement dated 12 February 2023 and states: Section 7 is deleted in its entirety and replaced with the following: Each party's confidentiality obligations shall continue for three years after termination of this Agreement. All other provisions remain unchanged. The amendment is effective upon signature by both parties.",
+  "version_relationship_status": "明确",
+  "claim_sufficiently_determined": true
+}

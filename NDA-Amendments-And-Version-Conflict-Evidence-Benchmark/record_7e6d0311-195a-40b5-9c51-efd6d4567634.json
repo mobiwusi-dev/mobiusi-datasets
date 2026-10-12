@@ -1,0 +1,19 @@
+{
+  "evidence_basis": [
+    "Confidentiality Agreement, Section 8: the receiving party must keep information confidential for five years after termination.",
+    "Amendment No. 2, signed by both parties and identifying the 6 May 2022 agreement: the phrase five years after termination is replaced with seven years after termination.",
+    "Amendment No. 2 states that it is effective on the date of the last signature and leaves all other Section 8 language unchanged."
+  ],
+  "reasoning_summary": "The base agreement supports a five-year term, but Amendment No. 2 expressly replaces that duration with seven years, identifies the agreement, and is signed by both parties. The documents therefore determine the relevant term and refute the claim.",
+  "verification_claim": "The confidentiality obligations under the operative agreement end five years after termination.",
+  "base_agreement_text": "Confidentiality Agreement, Section 8, signed by both parties on 6 May 2022: The receiving party shall keep Confidential Information confidential during the term and for five years after termination. Upon written request, the receiving party shall return or destroy the information within 30 days, subject to any retention required by applicable law.",
+  "current_term_summary": "The provided signed amendment changes the post-termination confidentiality period from five years to seven years. The claim that the obligations end after five years is inconsistent with the amended text.",
+  "identified_conflicts": [
+    "Original Section 8 specifies five years after termination, while signed Amendment No. 2 replaces that duration with seven years; the amendment identifies the agreement and expressly changes the relevant words."
+  ],
+  "verification_outcome": "已否定",
+  "insufficiency_reasons": [],
+  "amendment_and_version_texts": "Amendment No. 2 to the Confidentiality Agreement, dated 20 January 2025 and signed by both parties. It identifies the agreement dated 6 May 2022 and states: Section 8 is amended by replacing the words five years after termination with seven years after termination. All other language in Section 8 and all other agreement terms remain unchanged. The amendment is effective on the date of the last signature.",
+  "version_relationship_status": "明确",
+  "claim_sufficiently_determined": true
+}

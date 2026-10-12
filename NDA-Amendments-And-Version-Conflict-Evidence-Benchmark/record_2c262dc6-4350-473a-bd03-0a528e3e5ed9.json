@@ -1,0 +1,23 @@
+{
+  "evidence_basis": [
+    "Signed base agreement, Section 9: confidentiality obligations continue for four years after termination; amendments must be written and signed by both parties.",
+    "Draft Revision 2, proposed Section 9: two years after termination; the document is marked draft and has no signatures or effective date.",
+    "Undated clean copy, Section 9: six years after termination; it does not identify the agreement or provide execution or version-history information."
+  ],
+  "reasoning_summary": "The two-year language appears only in a document marked draft, and the base agreement requires amendments to be signed by both parties. The separate six-year copy has no identifying or execution information. Because the materials do not establish that either document amended or replaced the signed base agreement, the claim that the current term is two years is not sufficiently determined.",
+  "verification_claim": "The current confidentiality period is two years after termination.",
+  "base_agreement_text": "Confidentiality Agreement, Section 9, signed by both parties on 3 March 2021: The receiving party's confidentiality obligations continue for four years after termination of this Agreement. Any amendment must be in writing and signed by both parties.",
+  "current_term_summary": "The operative post-termination period cannot be determined from the materials provided. The signed base agreement states four years, while later materials state two and six years without establishing an effective amendment or reliable version sequence.",
+  "identified_conflicts": [
+    "The signed base agreement states four years after termination, Draft Revision 2 proposes two years, and the unidentified clean copy states six years. The materials do not establish that either later text validly replaces the base agreement."
+  ],
+  "verification_outcome": "证据不足",
+  "insufficiency_reasons": [
+    "Draft Revision 2 is explicitly marked as a draft and has no signatures or effective date, while the base agreement requires amendments to be signed by both parties.",
+    "The undated clean copy's relationship to the base agreement and Draft Revision 2 is not established, and the materials do not show whether it was approved or executed.",
+    "The documents contain different post-termination periods, but the available version information does not establish which revision, if any, became operative."
+  ],
+  "amendment_and_version_texts": "A file labeled Draft Revision 2 contains a proposed Section 9 stating that confidentiality obligations continue for two years after termination. The document is marked draft and contains no signatures or effective date. A separate undated clean copy contains a Section 9 stating that obligations continue for six years after termination; it does not identify the underlying agreement, indicate whether it was circulated or executed, or state whether it replaces an earlier version. No signed amendment or version history is included.",
+  "version_relationship_status": "部分明确",
+  "claim_sufficiently_determined": false
+}
