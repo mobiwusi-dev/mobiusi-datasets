@@ -1,0 +1,59 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_value": 6,
+      "age_unit": "year",
+      "weight_kg": 20,
+      "allergies": []
+    },
+    "medication_order": {
+      "drug_name": "cefazolin",
+      "dose_value": 100,
+      "dose_unit": "mg",
+      "route": "intravenous",
+      "frequency": "Every 8 hours, scheduled",
+      "duration_days": 2
+    },
+    "applicable_rules": [
+      {
+        "rule_id": "CFZ-DAILY-01",
+        "description": "For this case, the total scheduled dose must not exceed 30 mg/kg in any 24-hour period.",
+        "constraint_type": "daily_maximum",
+        "limit_value": 30,
+        "threshold_unit": "mg/kg/day",
+        "applicability_conditions": [
+          "Applies to the scheduled intravenous order over a 24-hour period."
+        ]
+      },
+      {
+        "rule_id": "CFZ-RENAL-02",
+        "description": "If severe renal impairment is present, the single dose must not exceed 4 mg/kg under this case's provided constraints.",
+        "constraint_type": "single_dose_maximum",
+        "limit_value": 4,
+        "threshold_unit": "mg/kg/dose",
+        "applicability_conditions": [
+          "Applies only if the patient has severe renal impairment."
+        ]
+      }
+    ]
+  },
+  "violations": [],
+  "overall_status": "insufficient_information",
+  "information_gaps": [
+    "The patient's severe renal impairment status is not provided, so applicability of CFZ-RENAL-02 cannot be determined."
+  ],
+  "constraint_checks": [
+    {
+      "rule_id": "CFZ-DAILY-01",
+      "status": "compliant",
+      "observed_value": 15,
+      "rationale": "Every 8 hours corresponds to 3 scheduled doses per 24 hours: 100 mg × 3 ÷ 20 kg = 15 mg/kg/day, below the 30 mg/kg/day maximum."
+    },
+    {
+      "rule_id": "CFZ-RENAL-02",
+      "status": "not_evaluable",
+      "observed_value": 5,
+      "rationale": "The single dose is 100 mg ÷ 20 kg = 5 mg/kg, which would exceed the 4 mg/kg cap if the rule applies; the provided context does not establish whether severe renal impairment is present."
+    }
+  ]
+}

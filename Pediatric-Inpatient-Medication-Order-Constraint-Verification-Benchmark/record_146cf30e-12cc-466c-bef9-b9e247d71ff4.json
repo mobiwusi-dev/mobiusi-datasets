@@ -1,0 +1,75 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_value": 4,
+      "age_unit": "year",
+      "weight_kg": 12,
+      "relevant_history": [],
+      "allergies": []
+    },
+    "medication_order": {
+      "drug_name": "acetaminophen",
+      "dose_value": 120,
+      "dose_unit": "mg",
+      "route": "oral",
+      "frequency": "Every 6 hours, scheduled",
+      "duration_days": 2
+    },
+    "applicable_rules": [
+      {
+        "rule_id": "APAP-RANGE-01",
+        "description": "For this case, the oral dose must be 10 to 15 mg/kg per administration, inclusive.",
+        "constraint_type": "dose_range",
+        "minimum_value": 10,
+        "maximum_value": 15,
+        "threshold_unit": "mg/kg/dose",
+        "applicability_conditions": [
+          "Applies to the oral acetaminophen order in this case."
+        ]
+      },
+      {
+        "rule_id": "APAP-SINGLE-02",
+        "description": "For this case, a single administration must not exceed 15 mg/kg.",
+        "constraint_type": "single_dose_maximum",
+        "limit_value": 15,
+        "threshold_unit": "mg/kg/dose",
+        "applicability_conditions": [
+          "Applies to each scheduled acetaminophen administration."
+        ]
+      },
+      {
+        "rule_id": "APAP-DAILY-03",
+        "description": "For this case, the total scheduled dose must not exceed 60 mg/kg in any 24-hour period.",
+        "constraint_type": "daily_maximum",
+        "limit_value": 60,
+        "threshold_unit": "mg/kg/day",
+        "applicability_conditions": [
+          "Applies to the scheduled order over a 24-hour period."
+        ]
+      }
+    ]
+  },
+  "violations": [],
+  "overall_status": "compliant",
+  "information_gaps": [],
+  "constraint_checks": [
+    {
+      "rule_id": "APAP-RANGE-01",
+      "status": "compliant",
+      "observed_value": 10,
+      "rationale": "120 mg divided by 12 kg is 10 mg/kg/dose, within the inclusive 10–15 mg/kg/dose range."
+    },
+    {
+      "rule_id": "APAP-SINGLE-02",
+      "status": "compliant",
+      "observed_value": 10,
+      "rationale": "The calculated single dose is 10 mg/kg, below the 15 mg/kg maximum."
+    },
+    {
+      "rule_id": "APAP-DAILY-03",
+      "status": "compliant",
+      "observed_value": 40,
+      "rationale": "Every 6 hours corresponds to 4 scheduled doses per 24 hours: 120 mg × 4 ÷ 12 kg = 40 mg/kg/day, below the 60 mg/kg/day maximum."
+    }
+  ]
+}

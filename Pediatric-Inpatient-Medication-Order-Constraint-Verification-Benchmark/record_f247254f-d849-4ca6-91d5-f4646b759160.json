@@ -1,0 +1,74 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_value": 8,
+      "age_unit": "year",
+      "weight_kg": 18,
+      "relevant_history": [],
+      "allergies": []
+    },
+    "medication_order": {
+      "drug_name": "ibuprofen",
+      "dose_value": 200,
+      "dose_unit": "mg",
+      "route": "oral",
+      "frequency": "Every 6 hours, scheduled",
+      "duration_days": 3
+    },
+    "applicable_rules": [
+      {
+        "rule_id": "IBU-SINGLE-01",
+        "description": "For this case, a single oral dose must not exceed 10 mg/kg.",
+        "constraint_type": "single_dose_maximum",
+        "limit_value": 10,
+        "threshold_unit": "mg/kg/dose",
+        "applicability_conditions": [
+          "Applies to the oral ibuprofen order in this case."
+        ]
+      },
+      {
+        "rule_id": "IBU-DAILY-02",
+        "description": "For this case, the total scheduled dose must not exceed 40 mg/kg in any 24-hour period.",
+        "constraint_type": "daily_maximum",
+        "limit_value": 40,
+        "threshold_unit": "mg/kg/day",
+        "applicability_conditions": [
+          "Applies to the scheduled order over a 24-hour period."
+        ]
+      },
+      {
+        "rule_id": "IBU-ROUTE-03",
+        "description": "This case's order is permitted by the provided rule only when administered orally.",
+        "constraint_type": "route_applicability",
+        "applicability_conditions": [
+          "The ordered route must be oral."
+        ]
+      }
+    ]
+  },
+  "violations": [
+    "The single dose is approximately 11.11 mg/kg, above the provided maximum of 10 mg/kg/dose.",
+    "The scheduled daily total is approximately 44.44 mg/kg/day, above the provided maximum of 40 mg/kg/day."
+  ],
+  "overall_status": "non_compliant",
+  "information_gaps": [],
+  "constraint_checks": [
+    {
+      "rule_id": "IBU-SINGLE-01",
+      "status": "violation",
+      "observed_value": 11.11,
+      "rationale": "200 mg divided by 18 kg is approximately 11.11 mg/kg/dose, exceeding the 10 mg/kg maximum."
+    },
+    {
+      "rule_id": "IBU-DAILY-02",
+      "status": "violation",
+      "observed_value": 44.44,
+      "rationale": "Every 6 hours corresponds to 4 scheduled doses per 24 hours: 200 mg × 4 ÷ 18 kg is approximately 44.44 mg/kg/day, exceeding the 40 mg/kg/day maximum."
+    },
+    {
+      "rule_id": "IBU-ROUTE-03",
+      "status": "compliant",
+      "rationale": "The order specifies the oral route, as required by this rule."
+    }
+  ]
+}
