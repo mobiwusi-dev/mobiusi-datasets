@@ -1,0 +1,78 @@
+{
+  "behavior_summary": "The controller remains in LIGHTS_OFF unless a welcome request with a healthy battery or an applicable ignition condition is present. A welcome request takes priority and enters COURTESY. Manual mode with ignition on selects POSITION; automatic mode selects LOW_BEAM at or below 40 lux. POSITION changes to LOW_BEAM when the automatic dark-light condition becomes true. LOW_BEAM returns to POSITION in manual mode, or to LIGHTS_OFF when ignition is off or automatic mode detects more than 40 lux. COURTESY keeps the low beam on until the battery is not OK or 30,000 ms have elapsed.",
+  "source_code": "typedef enum { LIGHTS_OFF, POSITION, LOW_BEAM, COURTESY } LampState;\ntypedef struct { bool ignition_on; bool auto_mode; unsigned ambient_lux; bool welcome_request; bool battery_ok; unsigned courtesy_elapsed_ms; } Inputs;\ntypedef struct { bool position_lamps; bool low_beam; } Outputs;\nvoid update_state(LampState *state, const Inputs *in) {\n  switch (*state) {\n    case LIGHTS_OFF:\n      if (in->welcome_request && in->battery_ok) *state = COURTESY;\n      else if (in->ignition_on && !in->auto_mode) *state = POSITION;\n      else if (in->ignition_on && in->auto_mode && in->ambient_lux <= 40) *state = LOW_BEAM;\n      break;\n    case POSITION:\n      if (!in->ignition_on) *state = LIGHTS_OFF;\n      else if (in->auto_mode && in->ambient_lux <= 40) *state = LOW_BEAM;\n      break;\n    case LOW_BEAM:\n      if (!in->ignition_on) *state = LIGHTS_OFF;\n      else if (!in->auto_mode) *state = POSITION;\n      else if (in->ambient_lux > 40) *state = LIGHTS_OFF;\n      break;\n    case COURTESY:\n      if (!in->battery_ok || in->courtesy_elapsed_ms >= 30000) *state = LIGHTS_OFF;\n      break;\n  }\n}\nOutputs outputs_for(LampState state) {\n  Outputs out = { false, false };\n  if (state == POSITION) out.position_lamps = true;\n  if (state == LOW_BEAM) { out.position_lamps = true; out.low_beam = true; }\n  if (state == COURTESY) out.low_beam = true;\n  return out;\n}",
+  "state_names": [
+    "LIGHTS_OFF",
+    "POSITION",
+    "LOW_BEAM",
+    "COURTESY"
+  ],
+  "transitions": [
+    {
+      "source_state": "LIGHTS_OFF",
+      "target_state": "COURTESY",
+      "trigger_event": "welcome_request",
+      "condition": "welcome_request is true and battery_ok is true; this branch has priority over the ignition branches."
+    },
+    {
+      "source_state": "LIGHTS_OFF",
+      "target_state": "POSITION",
+      "trigger_event": "ignition_on",
+      "condition": "ignition_on is true and auto_mode is false, provided the welcome-request branch did not match."
+    },
+    {
+      "source_state": "LIGHTS_OFF",
+      "target_state": "LOW_BEAM",
+      "trigger_event": "ignition_on or ambient-light input change",
+      "condition": "ignition_on is true, auto_mode is true, and ambient_lux is at most 40, provided earlier branches did not match."
+    },
+    {
+      "source_state": "POSITION",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "ignition_off",
+      "condition": "ignition_on is false."
+    },
+    {
+      "source_state": "POSITION",
+      "target_state": "LOW_BEAM",
+      "trigger_event": "ambient-light input change",
+      "condition": "ignition_on is true, auto_mode is true, and ambient_lux is at most 40."
+    },
+    {
+      "source_state": "LOW_BEAM",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "ignition_off or ambient-light input change",
+      "condition": "ignition_on is false, or ignition_on is true and auto_mode is true with ambient_lux greater than 40; ignition-off is checked first."
+    },
+    {
+      "source_state": "LOW_BEAM",
+      "target_state": "POSITION",
+      "trigger_event": "auto_mode change",
+      "condition": "ignition_on is true and auto_mode is false, provided the ignition-off branch did not match."
+    },
+    {
+      "source_state": "COURTESY",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "battery status change or courtesy timer expiration",
+      "condition": "battery_ok is false or courtesy_elapsed_ms is at least 30000."
+    }
+  ],
+  "state_outputs": [
+    {
+      "state_name": "LIGHTS_OFF",
+      "output_behavior": "Both position_lamps and low_beam are false."
+    },
+    {
+      "state_name": "POSITION",
+      "output_behavior": "position_lamps is true; low_beam is false."
+    },
+    {
+      "state_name": "LOW_BEAM",
+      "output_behavior": "Both position_lamps and low_beam are true."
+    },
+    {
+      "state_name": "COURTESY",
+      "output_behavior": "low_beam is true; position_lamps is false."
+    }
+  ]
+}

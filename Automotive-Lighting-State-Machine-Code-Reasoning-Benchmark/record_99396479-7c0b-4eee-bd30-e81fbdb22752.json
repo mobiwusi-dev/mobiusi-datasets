@@ -1,0 +1,183 @@
+{
+  "source_code": "typedef enum { IDLE, LEFT_ON, LEFT_OFF, RIGHT_ON, RIGHT_OFF, HAZARD_ON, HAZARD_OFF } SignalState;\ntypedef enum { TURN_NONE, TURN_LEFT, TURN_RIGHT } TurnRequest;\ntypedef struct { bool hazard_enabled; TurnRequest turn_request; bool phase_expired; } Inputs;\ntypedef struct { bool left_indicator; bool right_indicator; } Outputs;\nvoid update_state(SignalState *state, const Inputs *in) {\n  switch (*state) {\n    case IDLE:\n      if (in->hazard_enabled) *state = HAZARD_ON;\n      else if (in->turn_request == TURN_LEFT) *state = LEFT_ON;\n      else if (in->turn_request == TURN_RIGHT) *state = RIGHT_ON;\n      break;\n    case LEFT_ON:\n      if (in->hazard_enabled) *state = HAZARD_ON;\n      else if (in->turn_request != TURN_LEFT) *state = IDLE;\n      else if (in->phase_expired) *state = LEFT_OFF;\n      break;\n    case LEFT_OFF:\n      if (in->hazard_enabled) *state = HAZARD_ON;\n      else if (in->turn_request != TURN_LEFT) *state = IDLE;\n      else if (in->phase_expired) *state = LEFT_ON;\n      break;\n    case RIGHT_ON:\n      if (in->hazard_enabled) *state = HAZARD_ON;\n      else if (in->turn_request != TURN_RIGHT) *state = IDLE;\n      else if (in->phase_expired) *state = RIGHT_OFF;\n      break;\n    case RIGHT_OFF:\n      if (in->hazard_enabled) *state = HAZARD_ON;\n      else if (in->turn_request != TURN_RIGHT) *state = IDLE;\n      else if (in->phase_expired) *state = RIGHT_ON;\n      break;\n    case HAZARD_ON:\n      if (!in->hazard_enabled) {\n        if (in->turn_request == TURN_LEFT) *state = LEFT_ON;\n        else if (in->turn_request == TURN_RIGHT) *state = RIGHT_ON;\n        else *state = IDLE;\n      } else if (in->phase_expired) *state = HAZARD_OFF;\n      break;\n    case HAZARD_OFF:\n      if (!in->hazard_enabled) {\n        if (in->turn_request == TURN_LEFT) *state = LEFT_ON;\n        else if (in->turn_request == TURN_RIGHT) *state = RIGHT_ON;\n        else *state = IDLE;\n      } else if (in->phase_expired) *state = HAZARD_ON;\n      break;\n  }\n}\nOutputs outputs_for(SignalState state) {\n  Outputs out = { false, false };\n  if (state == LEFT_ON) out.left_indicator = true;\n  if (state == RIGHT_ON) out.right_indicator = true;\n  if (state == HAZARD_ON) { out.left_indicator = true; out.right_indicator = true; }\n  return out;\n}",
+  "state_names": [
+    "IDLE",
+    "LEFT_ON",
+    "LEFT_OFF",
+    "RIGHT_ON",
+    "RIGHT_OFF",
+    "HAZARD_ON",
+    "HAZARD_OFF"
+  ],
+  "transitions": [
+    {
+      "source_state": "IDLE",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "hazard_enabled becomes true",
+      "condition": "hazard_enabled is true; this branch takes priority over turn requests."
+    },
+    {
+      "source_state": "IDLE",
+      "target_state": "LEFT_ON",
+      "trigger_event": "turn_request becomes TURN_LEFT",
+      "condition": "hazard_enabled is false and turn_request is TURN_LEFT."
+    },
+    {
+      "source_state": "IDLE",
+      "target_state": "RIGHT_ON",
+      "trigger_event": "turn_request becomes TURN_RIGHT",
+      "condition": "hazard_enabled is false and turn_request is TURN_RIGHT, after the left-turn branch is checked."
+    },
+    {
+      "source_state": "LEFT_ON",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "hazard_enabled becomes true",
+      "condition": "hazard_enabled is true."
+    },
+    {
+      "source_state": "LEFT_ON",
+      "target_state": "IDLE",
+      "trigger_event": "turn request changes",
+      "condition": "hazard_enabled is false and turn_request is not TURN_LEFT."
+    },
+    {
+      "source_state": "LEFT_ON",
+      "target_state": "LEFT_OFF",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled is false, turn_request is TURN_LEFT, and phase_expired is true."
+    },
+    {
+      "source_state": "LEFT_OFF",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "hazard_enabled becomes true",
+      "condition": "hazard_enabled is true."
+    },
+    {
+      "source_state": "LEFT_OFF",
+      "target_state": "IDLE",
+      "trigger_event": "turn request changes",
+      "condition": "hazard_enabled is false and turn_request is not TURN_LEFT."
+    },
+    {
+      "source_state": "LEFT_OFF",
+      "target_state": "LEFT_ON",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled is false, turn_request is TURN_LEFT, and phase_expired is true."
+    },
+    {
+      "source_state": "RIGHT_ON",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "hazard_enabled becomes true",
+      "condition": "hazard_enabled is true."
+    },
+    {
+      "source_state": "RIGHT_ON",
+      "target_state": "IDLE",
+      "trigger_event": "turn request changes",
+      "condition": "hazard_enabled is false and turn_request is not TURN_RIGHT."
+    },
+    {
+      "source_state": "RIGHT_ON",
+      "target_state": "RIGHT_OFF",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled is false, turn_request is TURN_RIGHT, and phase_expired is true."
+    },
+    {
+      "source_state": "RIGHT_OFF",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "hazard_enabled becomes true",
+      "condition": "hazard_enabled is true."
+    },
+    {
+      "source_state": "RIGHT_OFF",
+      "target_state": "IDLE",
+      "trigger_event": "turn request changes",
+      "condition": "hazard_enabled is false and turn_request is not TURN_RIGHT."
+    },
+    {
+      "source_state": "RIGHT_OFF",
+      "target_state": "RIGHT_ON",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled is false, turn_request is TURN_RIGHT, and phase_expired is true."
+    },
+    {
+      "source_state": "HAZARD_ON",
+      "target_state": "LEFT_ON",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_LEFT."
+    },
+    {
+      "source_state": "HAZARD_ON",
+      "target_state": "RIGHT_ON",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_RIGHT, after the left-turn branch is checked."
+    },
+    {
+      "source_state": "HAZARD_ON",
+      "target_state": "IDLE",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_NONE."
+    },
+    {
+      "source_state": "HAZARD_ON",
+      "target_state": "HAZARD_OFF",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled remains true and phase_expired is true."
+    },
+    {
+      "source_state": "HAZARD_OFF",
+      "target_state": "LEFT_ON",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_LEFT."
+    },
+    {
+      "source_state": "HAZARD_OFF",
+      "target_state": "RIGHT_ON",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_RIGHT, after the left-turn branch is checked."
+    },
+    {
+      "source_state": "HAZARD_OFF",
+      "target_state": "IDLE",
+      "trigger_event": "hazard_enabled becomes false",
+      "condition": "hazard_enabled is false and turn_request is TURN_NONE."
+    },
+    {
+      "source_state": "HAZARD_OFF",
+      "target_state": "HAZARD_ON",
+      "trigger_event": "phase timer expires",
+      "condition": "hazard_enabled remains true and phase_expired is true."
+    }
+  ],
+  "state_outputs": [
+    {
+      "state_name": "IDLE",
+      "output_behavior": "Both left_indicator and right_indicator are false."
+    },
+    {
+      "state_name": "LEFT_ON",
+      "output_behavior": "left_indicator is true and right_indicator is false."
+    },
+    {
+      "state_name": "LEFT_OFF",
+      "output_behavior": "Both indicators are false."
+    },
+    {
+      "state_name": "RIGHT_ON",
+      "output_behavior": "left_indicator is false and right_indicator is true."
+    },
+    {
+      "state_name": "RIGHT_OFF",
+      "output_behavior": "Both indicators are false."
+    },
+    {
+      "state_name": "HAZARD_ON",
+      "output_behavior": "Both left_indicator and right_indicator are true."
+    },
+    {
+      "state_name": "HAZARD_OFF",
+      "output_behavior": "Both indicators are false."
+    }
+  ],
+  "behavior_summary": "IDLE selects hazard flashing before either turn signal. Each turn signal alternates between its ON and OFF states when phase_expired is true, while a canceled request returns to IDLE and an enabled hazard request takes priority. In either hazard phase, disabling hazards selects a requested left or right signal, or IDLE when no turn is requested. While hazards remain enabled, timer expiration alternates HAZARD_ON and HAZARD_OFF. Only the ON states drive their corresponding indicator outputs."
+}

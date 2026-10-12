@@ -1,0 +1,90 @@
+{
+  "source_code": "typedef enum { LIGHTS_OFF, LOW_BEAM, HIGH_BEAM, HIGH_BEAM_BLOCKED } BeamState;\ntypedef struct { bool low_beam_request; bool high_beam_request; bool auto_high_beam_enabled; bool oncoming_vehicle_detected; } Inputs;\ntypedef struct { bool low_beam; bool high_beam; } Outputs;\nvoid update_state(BeamState *state, const Inputs *in) {\n  switch (*state) {\n    case LIGHTS_OFF:\n      if (in->low_beam_request) *state = LOW_BEAM;\n      break;\n    case LOW_BEAM:\n      if (!in->low_beam_request) *state = LIGHTS_OFF;\n      else if (in->auto_high_beam_enabled && in->high_beam_request && in->oncoming_vehicle_detected) *state = HIGH_BEAM_BLOCKED;\n      else if (in->auto_high_beam_enabled && in->high_beam_request) *state = HIGH_BEAM;\n      break;\n    case HIGH_BEAM:\n      if (!in->low_beam_request) *state = LIGHTS_OFF;\n      else if (!in->high_beam_request || !in->auto_high_beam_enabled) *state = LOW_BEAM;\n      else if (in->oncoming_vehicle_detected) *state = HIGH_BEAM_BLOCKED;\n      break;\n    case HIGH_BEAM_BLOCKED:\n      if (!in->low_beam_request) *state = LIGHTS_OFF;\n      else if (!in->high_beam_request || !in->auto_high_beam_enabled) *state = LOW_BEAM;\n      else if (!in->oncoming_vehicle_detected) *state = HIGH_BEAM;\n      break;\n  }\n}\nOutputs outputs_for(BeamState state) {\n  Outputs out = { false, false };\n  if (state == LOW_BEAM || state == HIGH_BEAM || state == HIGH_BEAM_BLOCKED) out.low_beam = true;\n  if (state == HIGH_BEAM) out.high_beam = true;\n  return out;\n}",
+  "state_names": [
+    "LIGHTS_OFF",
+    "LOW_BEAM",
+    "HIGH_BEAM",
+    "HIGH_BEAM_BLOCKED"
+  ],
+  "transitions": [
+    {
+      "source_state": "LIGHTS_OFF",
+      "target_state": "LOW_BEAM",
+      "trigger_event": "low_beam_request becomes true",
+      "condition": "low_beam_request is true."
+    },
+    {
+      "source_state": "LOW_BEAM",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "low_beam_request becomes false",
+      "condition": "low_beam_request is false."
+    },
+    {
+      "source_state": "LOW_BEAM",
+      "target_state": "HIGH_BEAM_BLOCKED",
+      "trigger_event": "high-beam request or oncoming-vehicle input changes",
+      "condition": "low_beam_request, auto_high_beam_enabled, high_beam_request, and oncoming_vehicle_detected are all true; the low-beam-off branch is checked first."
+    },
+    {
+      "source_state": "LOW_BEAM",
+      "target_state": "HIGH_BEAM",
+      "trigger_event": "high-beam request or assist-enable input changes",
+      "condition": "low_beam_request, auto_high_beam_enabled, and high_beam_request are true, and the blocked-state condition did not match."
+    },
+    {
+      "source_state": "HIGH_BEAM",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "low_beam_request becomes false",
+      "condition": "low_beam_request is false; this branch has priority over the other high-beam exit conditions."
+    },
+    {
+      "source_state": "HIGH_BEAM",
+      "target_state": "LOW_BEAM",
+      "trigger_event": "high-beam request or assist-enable input changes",
+      "condition": "low_beam_request is true and either high_beam_request or auto_high_beam_enabled is false."
+    },
+    {
+      "source_state": "HIGH_BEAM",
+      "target_state": "HIGH_BEAM_BLOCKED",
+      "trigger_event": "oncoming_vehicle_detected becomes true",
+      "condition": "low_beam_request, high_beam_request, and auto_high_beam_enabled are true, and oncoming_vehicle_detected is true."
+    },
+    {
+      "source_state": "HIGH_BEAM_BLOCKED",
+      "target_state": "LIGHTS_OFF",
+      "trigger_event": "low_beam_request becomes false",
+      "condition": "low_beam_request is false; this branch has priority over the other blocked-state exit conditions."
+    },
+    {
+      "source_state": "HIGH_BEAM_BLOCKED",
+      "target_state": "LOW_BEAM",
+      "trigger_event": "high-beam request or assist-enable input changes",
+      "condition": "low_beam_request is true and either high_beam_request or auto_high_beam_enabled is false."
+    },
+    {
+      "source_state": "HIGH_BEAM_BLOCKED",
+      "target_state": "HIGH_BEAM",
+      "trigger_event": "oncoming_vehicle_detected becomes false",
+      "condition": "low_beam_request, high_beam_request, and auto_high_beam_enabled are true, and oncoming_vehicle_detected is false."
+    }
+  ],
+  "state_outputs": [
+    {
+      "state_name": "LIGHTS_OFF",
+      "output_behavior": "Both low_beam and high_beam are false."
+    },
+    {
+      "state_name": "LOW_BEAM",
+      "output_behavior": "low_beam is true and high_beam is false."
+    },
+    {
+      "state_name": "HIGH_BEAM",
+      "output_behavior": "Both low_beam and high_beam are true."
+    },
+    {
+      "state_name": "HIGH_BEAM_BLOCKED",
+      "output_behavior": "low_beam is true and high_beam is false."
+    }
+  ],
+  "behavior_summary": "A low-beam request moves the controller from LIGHTS_OFF to LOW_BEAM. Automatic high beam is entered only when assist is enabled and a high-beam request is active. If an oncoming vehicle is detected under those conditions, the controller uses HIGH_BEAM_BLOCKED, which keeps the low beam on and the high beam off. Removing the low-beam request turns both outputs off; disabling assist or removing the high-beam request returns an active or blocked high-beam state to LOW_BEAM. When the oncoming-vehicle indication clears, HIGH_BEAM_BLOCKED returns to HIGH_BEAM if the requests and assist enable remain active."
+}
