@@ -1,0 +1,26 @@
+{
+  "currency": "GBP",
+  "bed_types": [
+    "One queen bed",
+    "One sofa bed"
+  ],
+  "room_type": "Corner Studio",
+  "hotel_name": "Meridian Quay Conference Hotel",
+  "price_basis": "Per room per night",
+  "price_amount": 219.5,
+  "max_occupancy": 3,
+  "payment_terms": "The first night's charge is collected at booking; the remaining balance is payable at check-in.",
+  "evidence_quote": "Maximum occupancy: 3 guests. Bed configuration: one queen bed and one sofa bed. Included services: wired and wireless internet, daily parking for one vehicle, and access to the business lounge from 7:00 a.m. to 8:00 p.m. Rate: GBP 219.50 per room per night. Cancellation: free cancellation up to 48 hours before 3:00 p.m. on the arrival date; cancellations after that deadline incur the first night's charge. Payment: the first night's charge is collected at booking; the remaining balance is payable at check-in.",
+  "rate_plan_name": "Corporate Saver",
+  "evidence_locator": "Guest Room Rate Sheet, “Corner Studio | Corporate Saver” section",
+  "included_services": [
+    "Wired and wireless internet",
+    "Daily parking for one vehicle",
+    "Access to the business lounge from 7:00 a.m. to 8:00 p.m."
+  ],
+  "raw_catalog_source": {
+    "source_text": "## Meridian Quay Conference Hotel — Guest Room Rate Sheet\n\n### Corner Studio | Corporate Saver\nMaximum occupancy: 3 guests. Bed configuration: one queen bed and one sofa bed. Included services: wired and wireless internet, daily parking for one vehicle, and access to the business lounge from 7:00 a.m. to 8:00 p.m. Rate: GBP 219.50 per room per night. Cancellation: free cancellation up to 48 hours before 3:00 p.m. on the arrival date; cancellations after that deadline incur the first night's charge. Payment: the first night's charge is collected at booking; the remaining balance is payable at check-in.\n",
+    "source_title": "Meridian Quay Conference Hotel — Guest Room Rate Sheet"
+  },
+  "cancellation_policy": "Free cancellation up to 48 hours before 3:00 p.m. on the arrival date; cancellations after that deadline incur the first night's charge."
+}

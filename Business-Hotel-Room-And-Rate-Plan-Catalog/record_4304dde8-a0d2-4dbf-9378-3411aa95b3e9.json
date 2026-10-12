@@ -1,0 +1,25 @@
+{
+  "rate_plan_name": "Weekday Advance Rate",
+  "evidence_locator": "Room and Rate Directory, “Executive King Room | Weekday Advance Rate” section",
+  "included_services": [
+    "Wi-Fi",
+    "Breakfast for two",
+    "Access to the fitness room"
+  ],
+  "currency": "USD",
+  "bed_types": [
+    "One king bed"
+  ],
+  "room_type": "Executive King Room",
+  "hotel_name": "Harborline Exchange Hotel",
+  "price_basis": "Per room per night",
+  "price_amount": 184.0,
+  "max_occupancy": 2,
+  "payment_terms": "Full prepayment is charged at booking.",
+  "evidence_quote": "Maximum occupancy: 2 guests. Bed configuration: one king bed. Included services: Wi-Fi, breakfast for two, and access to the fitness room. Rate: USD 184.00 per room per night. Cancellation: non-refundable; changes are not permitted after booking. Payment: full prepayment is charged at booking.",
+  "raw_catalog_source": {
+    "source_text": "## Harborline Exchange Hotel — Room and Rate Directory\n\n### Executive King Room | Weekday Advance Rate\nMaximum occupancy: 2 guests. Bed configuration: one king bed. Included services: Wi-Fi, breakfast for two, and access to the fitness room. Rate: USD 184.00 per room per night. Cancellation: non-refundable; changes are not permitted after booking. Payment: full prepayment is charged at booking.\n",
+    "source_title": "Harborline Exchange Hotel — Room and Rate Directory"
+  },
+  "cancellation_policy": "Non-refundable; changes are not permitted after booking."
+}

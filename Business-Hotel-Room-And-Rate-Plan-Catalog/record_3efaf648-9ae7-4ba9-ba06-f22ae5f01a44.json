@@ -1,0 +1,25 @@
+{
+  "currency": "EUR",
+  "bed_types": [
+    "Two single beds"
+  ],
+  "room_type": "Twin Business Room",
+  "hotel_name": "Alderstone Business Hotel",
+  "price_basis": "Per room per night",
+  "price_amount": 162.0,
+  "max_occupancy": 2,
+  "payment_terms": "Pay at the hotel; a card is required to guarantee the reservation.",
+  "evidence_quote": "Maximum occupancy: 2 guests. Bed configuration: two single beds. Included services: Wi-Fi, buffet breakfast for two, and late checkout until 1:00 p.m., subject to availability. Rate: EUR 162.00 per room per night. Cancellation: cancel without charge until 6:00 p.m. on the day before arrival; later cancellations incur one night's charge. Payment: pay at the hotel; a card is required to guarantee the reservation.",
+  "rate_plan_name": "Flexible Bed-and-Breakfast",
+  "evidence_locator": "Accommodation and Rates, “Twin Business Room | Flexible Bed-and-Breakfast” section",
+  "included_services": [
+    "Wi-Fi",
+    "Buffet breakfast for two",
+    "Late checkout until 1:00 p.m., subject to availability"
+  ],
+  "raw_catalog_source": {
+    "source_text": "## Alderstone Business Hotel — Accommodation and Rates\n\n### Twin Business Room | Flexible Bed-and-Breakfast\nMaximum occupancy: 2 guests. Bed configuration: two single beds. Included services: Wi-Fi, buffet breakfast for two, and late checkout until 1:00 p.m., subject to availability. Rate: EUR 162.00 per room per night. Cancellation: cancel without charge until 6:00 p.m. on the day before arrival; later cancellations incur one night's charge. Payment: pay at the hotel; a card is required to guarantee the reservation.\n",
+    "source_title": "Alderstone Business Hotel — Accommodation and Rates"
+  },
+  "cancellation_policy": "Cancel without charge until 6:00 p.m. on the day before arrival; later cancellations incur one night's charge."
+}
