@@ -1,0 +1,57 @@
+{
+  "case_input": {
+    "child_age_months": 9,
+    "child_conditions": [
+      "History of intussusception"
+    ],
+    "prior_doses": [
+      {
+        "vaccine_name": "Rotavirus vaccine",
+        "dose_number": 1,
+        "age_months": 2
+      },
+      {
+        "vaccine_name": "Rotavirus vaccine",
+        "dose_number": 2,
+        "age_months": 4
+      }
+    ],
+    "vaccine_rules": [
+      {
+        "vaccine_name": "Rotavirus vaccine",
+        "minimum_age_months": 2,
+        "maximum_age_months": 8,
+        "dose_intervals_days": [
+          30,
+          30
+        ],
+        "contraindicated_conditions": [
+          "History of intussusception"
+        ]
+      }
+    ],
+    "proposed_schedule": [
+      {
+        "vaccine_name": "Rotavirus vaccine",
+        "dose_number": 3,
+        "planned_age_months": 9
+      }
+    ]
+  },
+  "violations": [
+    {
+      "schedule_item_index": 0,
+      "vaccine_name": "Rotavirus vaccine",
+      "constraint_type": "maximum_age",
+      "details": "Dose 3 is planned at 9 months, above the supplied maximum eligible age of 8 months."
+    },
+    {
+      "schedule_item_index": 0,
+      "vaccine_name": "Rotavirus vaccine",
+      "constraint_type": "contraindication",
+      "details": "The child's reported condition, History of intussusception, matches a contraindication listed for this vaccine."
+    }
+  ],
+  "is_compliant": false,
+  "validation_summary": "The proposed dose exceeds the supplied maximum age and the child's reported history matches a listed contraindication. The interval from dose 2 meets the supplied minimum."
+}

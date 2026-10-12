@@ -1,0 +1,40 @@
+{
+  "case_input": {
+    "child_age_months": 9,
+    "child_conditions": [],
+    "prior_doses": [
+      {
+        "vaccine_name": "Pneumococcal conjugate vaccine",
+        "dose_number": 1,
+        "age_months": 2
+      },
+      {
+        "vaccine_name": "Pneumococcal conjugate vaccine",
+        "dose_number": 2,
+        "age_months": 6
+      }
+    ],
+    "vaccine_rules": [
+      {
+        "vaccine_name": "Pneumococcal conjugate vaccine",
+        "minimum_age_months": 2,
+        "maximum_age_months": 60,
+        "dose_intervals_days": [
+          30,
+          60
+        ],
+        "contraindicated_conditions": []
+      }
+    ],
+    "proposed_schedule": [
+      {
+        "vaccine_name": "Pneumococcal conjugate vaccine",
+        "dose_number": 3,
+        "planned_age_months": 9
+      }
+    ]
+  },
+  "violations": [],
+  "is_compliant": true,
+  "validation_summary": "The proposed dose is within the supplied age range, is more than 60 days after dose 2, and has no listed contraindication. No unstated series-completion requirement was evaluated."
+}
