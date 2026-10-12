@@ -1,0 +1,197 @@
+{
+  "required_elements": [
+    {
+      "element": "Understanding of the obstruction, proposed surgery, and material consequences of the options",
+      "necessity_rationale": "The patient must be able to understand the information relevant to this specific time-sensitive treatment decision.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Surgical discussion, morning",
+        "Risk discussion, morning"
+      ],
+      "element_note": "The patient accurately restated the recommendation and broad consequences of waiting."
+    },
+    {
+      "element": "Appreciation that the obstruction and its risks apply to the patient personally",
+      "necessity_rationale": "A refusal depends in part on recognizing the patient's own condition and the possibility of harm from delaying treatment.",
+      "evidence_status": "conflicting",
+      "supporting_evidence_labels": [
+        "Surgical discussion, morning",
+        "Follow-up question about personal illness"
+      ],
+      "element_note": "The patient initially acknowledged the obstruction but later denied having one and rejected the scan as false; the claimed adequate finding does not address this contradiction."
+    },
+    {
+      "element": "Reasoning about the options in light of their likely consequences and the patient's priorities",
+      "necessity_rationale": "The basis for choosing surgery, nonoperative management, or refusal is needed to evaluate decision-specific reasoning.",
+      "evidence_status": "partial",
+      "supporting_evidence_labels": [
+        "Risk discussion, morning",
+        "Choice at end of interview"
+      ],
+      "element_note": "The record documents a stable refusal but does not show a comparison of options or whether the refusal rests on the disputed belief about the scan."
+    },
+    {
+      "element": "Ability to communicate a choice",
+      "necessity_rationale": "The patient must be able to express a decision about the proposed intervention.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Choice at end of interview"
+      ],
+      "element_note": "The patient communicated a consistent preference to decline surgery."
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "related_element": "Reasoning",
+      "missing_information": "The interview does not document how the patient compared surgery with continued nonoperative care or whether the patient could consider the consequences if the scan were accurate.",
+      "impact": "The basis for the refusal cannot be fully evaluated, limiting support for the claimed adequate reasoning finding."
+    },
+    {
+      "related_element": "Appreciation",
+      "missing_information": "The record does not show whether the patient's belief that the scan was false persisted after further exploration or whether the patient could acknowledge any personal risk from waiting.",
+      "impact": "The assessment cannot resolve the contradiction bearing on appreciation of the condition and consequences."
+    }
+  ],
+  "overall_result": "unsupported",
+  "clinical_context": {
+    "relevant_diagnoses": [
+      "Bowel obstruction under evaluation",
+      "Possible acute confusional state noted by the treating team"
+    ],
+    "cognitive_or_communication_factors": [
+      "Attention was adequate during the interview; the patient's belief about the scan may affect interpretation of personal risk."
+    ],
+    "treatments_or_state_changes": [
+      "Opioid analgesia was administered earlier in the day; no clear change in alertness was observed during this interview."
+    ],
+    "accommodations_provided": [
+      "Quiet room",
+      "Plain-language explanation",
+      "Teach-back after information was presented in short segments"
+    ],
+    "other_relevant_context": "The surgical team described the decision as time-sensitive but not an immediate resuscitation emergency."
+  },
+  "decision_context": {
+    "decision_question": "Whether to proceed with urgent laparotomy for a bowel obstruction or continue nonoperative management.",
+    "options": [
+      "Proceed with laparotomy and treatment of the obstruction",
+      "Continue nonoperative management with decompression and close monitoring",
+      "Decline both options"
+    ],
+    "stakes_and_consequences": [
+      "Surgery may relieve the obstruction but carries anesthesia, infection, and recovery risks.",
+      "Nonoperative management may avoid surgery, but could fail; worsening obstruction may lead to bowel injury or other serious complications.",
+      "Declining both options may leave the obstruction untreated and allow the patient's condition to worsen."
+    ],
+    "urgency": "time_sensitive",
+    "reversibility": "partially_reversible"
+  },
+  "constraint_checks": [
+    {
+      "check_name": "Decision-specific assessment",
+      "result": "satisfied",
+      "rationale": "The assessment addresses the choice between surgery and nonoperative management for the identified obstruction."
+    },
+    {
+      "check_name": "Understanding supported by interview evidence",
+      "result": "satisfied",
+      "rationale": "The patient restated the obstruction, recommendation, and broad consequences in the morning discussion."
+    },
+    {
+      "check_name": "Appreciation of personal condition and consequences",
+      "result": "not_satisfied",
+      "rationale": "The patient later denied having an obstruction and said the scan was false, which conflicts with the claimed adequate appreciation finding."
+    },
+    {
+      "check_name": "Reasoning finding supported by evidence",
+      "result": "not_satisfied",
+      "rationale": "A stable refusal is documented, but the record does not establish how the patient compared options or whether the rationale depends on the disputed belief."
+    },
+    {
+      "check_name": "Consistency between evidence and claimed findings",
+      "result": "not_satisfied",
+      "rationale": "The claimed adequate appreciation finding omits the patient's direct denial of the condition and personal risk."
+    }
+  ],
+  "overall_rationale": "The record supports understanding of the basic information and a clearly communicated refusal, but it contains a material contradiction about whether the patient recognizes having the obstruction and does not adequately document reasoning. The claimed has_capacity conclusion and adequate findings across all domains are therefore not supported by the available decision-specific evidence.",
+  "claimed_assessment": {
+    "determination": "has_capacity",
+    "overall_rationale": "The patient accurately repeated the recommendation and risks and communicated a stable refusal; the assessment therefore considered all decision-making abilities adequate.",
+    "domain_assessments": [
+      {
+        "domain": "understanding",
+        "finding": "adequate",
+        "rationale": "The patient restated the obstruction, the recommended operation, and the broad consequences of waiting.",
+        "evidence_labels": [
+          "Surgical discussion, morning",
+          "Risk discussion, morning"
+        ]
+      },
+      {
+        "domain": "appreciation",
+        "finding": "adequate",
+        "rationale": "The patient was considered to have understood how the risks applied to the decision.",
+        "evidence_labels": [
+          "Risk discussion, morning"
+        ]
+      },
+      {
+        "domain": "reasoning",
+        "finding": "adequate",
+        "rationale": "The patient's refusal was treated as a considered choice, although no comparison of options or personal priorities was documented.",
+        "evidence_labels": [
+          "Choice at end of interview"
+        ]
+      },
+      {
+        "domain": "communicating_a_choice",
+        "finding": "adequate",
+        "rationale": "The patient consistently stated a preference to wait rather than have surgery.",
+        "evidence_labels": [
+          "Choice at end of interview"
+        ]
+      }
+    ]
+  },
+  "evidence_conflicts": [
+    {
+      "conflict_topic": "Appreciation of the obstruction and personal risk",
+      "evidence_labels": [
+        "Surgical discussion, morning",
+        "Follow-up question about personal illness",
+        "Claimed appreciation finding"
+      ],
+      "conflict_description": "The patient initially acknowledged the obstruction and its treatment, then denied having an obstruction and dismissed the scan as false. The claimed adequate appreciation finding relies on the earlier discussion without addressing the later statement."
+    }
+  ],
+  "interview_evidence": [
+    {
+      "source_label": "Surgical discussion, morning",
+      "statement": "The patient stated that imaging showed a bowel blockage and that the surgeon recommended an operation to relieve it.",
+      "capacity_domain": "understanding",
+      "evidence_stance": "supports",
+      "communication_conditions": "Quiet room; patient was alert and able to hear the interviewer."
+    },
+    {
+      "source_label": "Risk discussion, morning",
+      "statement": "The patient restated that the operation could help relieve the blockage and that avoiding surgery could allow the bowel problem to worsen.",
+      "capacity_domain": "understanding",
+      "evidence_stance": "supports",
+      "communication_conditions": "Information was given in short segments, followed by teach-back."
+    },
+    {
+      "source_label": "Follow-up question about personal illness",
+      "statement": "The patient stated that there was no blockage in their body and that the surgeon had put a false scan in the chart; they said nothing bad could happen if they waited.",
+      "capacity_domain": "appreciation",
+      "evidence_stance": "challenges",
+      "communication_conditions": "The scan findings and consequences were reviewed in plain language; the patient remained alert."
+    },
+    {
+      "source_label": "Choice at end of interview",
+      "statement": "The patient consistently declined surgery and said they would rather wait, referring to the belief that the scan was false.",
+      "capacity_domain": "communicating_a_choice",
+      "evidence_stance": "supports",
+      "communication_conditions": "The patient answered without prompting and maintained the same choice during the interview."
+    }
+  ]
+}

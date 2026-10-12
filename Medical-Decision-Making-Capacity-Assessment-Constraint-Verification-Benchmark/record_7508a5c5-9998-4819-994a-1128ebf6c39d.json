@@ -1,0 +1,167 @@
+{
+  "evidence_gaps": [],
+  "overall_result": "supported",
+  "clinical_context": {
+    "relevant_diagnoses": [
+      "Newly diagnosed atrial fibrillation",
+      "Hearing loss"
+    ],
+    "cognitive_or_communication_factors": [
+      "Hearing loss may interfere with conversation when communication support is not used."
+    ],
+    "treatments_or_state_changes": [
+      "No acute cognitive or medical state change was noted during the visit."
+    ],
+    "accommodations_provided": [
+      "Hearing amplifier",
+      "Short, plain-language explanations",
+      "Teach-back and time for questions"
+    ],
+    "other_relevant_context": "The decision was discussed at a routine outpatient visit; the patient was able to participate throughout."
+  },
+  "decision_context": {
+    "decision_question": "Whether to begin oral anticoagulation for newly diagnosed atrial fibrillation or decline anticoagulation for now.",
+    "options": [
+      "Begin the recommended oral anticoagulant and review treatment at follow-up",
+      "Decline anticoagulation for now and revisit the decision with the clinical team",
+      "Ask for additional discussion before deciding"
+    ],
+    "stakes_and_consequences": [
+      "Anticoagulation may reduce the risk of a blood clot and stroke associated with atrial fibrillation.",
+      "Anticoagulation can increase bleeding risk, including bleeding after a fall or injury.",
+      "Declining treatment avoids medication-related bleeding risk but leaves the patient without the proposed reduction in clot-related risk."
+    ],
+    "urgency": "routine",
+    "reversibility": "reversible"
+  },
+  "constraint_checks": [
+    {
+      "check_name": "Decision-specific assessment",
+      "result": "satisfied",
+      "rationale": "The assessment concerns the specific choice of starting or declining anticoagulation for atrial fibrillation."
+    },
+    {
+      "check_name": "Communication accommodation",
+      "result": "satisfied",
+      "rationale": "A hearing amplifier and short explanations were used, and the patient completed teach-back."
+    },
+    {
+      "check_name": "Evidence for understanding, appreciation, reasoning, and choice",
+      "result": "satisfied",
+      "rationale": "Each domain finding is linked to interview evidence addressing that ability for this decision."
+    },
+    {
+      "check_name": "Conclusion grounded in decision-specific abilities rather than diagnosis alone",
+      "result": "satisfied",
+      "rationale": "The conclusion relies on demonstrated understanding, personal appreciation, comparison of tradeoffs, and a communicated choice, not on the diagnosis by itself."
+    }
+  ],
+  "overall_rationale": "The interview provides decision-specific evidence for understanding, personal appreciation, reasoning, and a consistent choice. Communication support was provided, and no material evidence gaps or conflicts are documented; the claimed has_capacity conclusion is supported by the record.",
+  "required_elements": [
+    {
+      "element": "Understanding of atrial fibrillation, the proposed medication, and the material benefits and risks discussed",
+      "necessity_rationale": "The patient needs to understand the relevant treatment information to choose whether to start anticoagulation.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Treatment explanation"
+      ],
+      "element_note": "The patient described the medication's purpose and acknowledged both stroke prevention and bleeding risk."
+    },
+    {
+      "element": "Appreciation that the diagnosis and consequences apply to the patient personally",
+      "necessity_rationale": "The decision requires recognition that the relevant risks and potential benefits are personal, not merely general facts.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Personal relevance discussion"
+      ],
+      "element_note": "The patient explicitly related the diagnosis and both treatment consequences to themself."
+    },
+    {
+      "element": "Reasoning about the options in light of the patient's values and the stated tradeoffs",
+      "necessity_rationale": "The assessment should establish how the patient weighed the material consequences in reaching a choice.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Comparison of benefits and risks"
+      ],
+      "element_note": "The patient compared stroke prevention with bleeding risk and identified which outcome mattered more to them."
+    },
+    {
+      "element": "Ability to communicate a choice",
+      "necessity_rationale": "The patient must be able to express a decision about starting treatment.",
+      "evidence_status": "adequate",
+      "supporting_evidence_labels": [
+        "Decision at end of visit"
+      ],
+      "element_note": "The patient communicated the same choice at the beginning and end of the discussion."
+    }
+  ],
+  "claimed_assessment": {
+    "determination": "has_capacity",
+    "overall_rationale": "The patient understood the purpose and material tradeoffs of anticoagulation, applied the information to their own diagnosis, explained a preference-based comparison, and communicated a consistent choice with hearing support.",
+    "domain_assessments": [
+      {
+        "domain": "understanding",
+        "finding": "adequate",
+        "rationale": "The patient accurately described the purpose of the medication and the broad benefits and risks discussed.",
+        "evidence_labels": [
+          "Treatment explanation"
+        ]
+      },
+      {
+        "domain": "appreciation",
+        "finding": "adequate",
+        "rationale": "The patient acknowledged that both the diagnosis and the potential treatment consequences applied personally.",
+        "evidence_labels": [
+          "Personal relevance discussion"
+        ]
+      },
+      {
+        "domain": "reasoning",
+        "finding": "adequate",
+        "rationale": "The patient compared the stated risks and explained why stroke prevention mattered more to them.",
+        "evidence_labels": [
+          "Comparison of benefits and risks"
+        ]
+      },
+      {
+        "domain": "communicating_a_choice",
+        "finding": "adequate",
+        "rationale": "The patient clearly and consistently chose to begin treatment.",
+        "evidence_labels": [
+          "Decision at end of visit"
+        ]
+      }
+    ]
+  },
+  "evidence_conflicts": [],
+  "interview_evidence": [
+    {
+      "source_label": "Treatment explanation",
+      "statement": "The patient explained that atrial fibrillation can allow a clot to form and that the proposed medication is intended to lower the chance of a stroke.",
+      "capacity_domain": "understanding",
+      "evidence_stance": "supports",
+      "communication_conditions": "A hearing amplifier was used; the clinician presented information in short segments."
+    },
+    {
+      "source_label": "Personal relevance discussion",
+      "statement": "The patient stated that the diagnosis applied to them and that taking the medication could lower their chance of stroke, while also acknowledging that bleeding could happen to them.",
+      "capacity_domain": "appreciation",
+      "evidence_stance": "supports",
+      "communication_conditions": "The patient answered teach-back questions without prompting."
+    },
+    {
+      "source_label": "Comparison of benefits and risks",
+      "statement": "The patient said they preferred to take the medication because avoiding a disabling stroke mattered more to them than the possibility of bleeding, and agreed to discuss precautions at follow-up.",
+      "capacity_domain": "reasoning",
+      "evidence_stance": "supports",
+      "communication_conditions": "The patient was given time to ask questions and compare the stated risks."
+    },
+    {
+      "source_label": "Decision at end of visit",
+      "statement": "The patient clearly chose to begin the recommended medication and said they would contact the clinical team if they reconsidered.",
+      "capacity_domain": "communicating_a_choice",
+      "evidence_stance": "supports",
+      "communication_conditions": "The choice was stated consistently at the beginning and end of the discussion."
+    }
+  ]
+}

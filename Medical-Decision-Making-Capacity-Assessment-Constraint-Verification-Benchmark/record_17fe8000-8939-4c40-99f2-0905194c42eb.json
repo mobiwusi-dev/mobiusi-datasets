@@ -1,0 +1,196 @@
+{
+  "interview_evidence": [
+    {
+      "source_label": "Morning discussion with interpreter",
+      "statement": "The patient stated that the kidneys filter waste and that dialysis uses a machine to remove waste from the blood. The patient preferred to try tablets and repeat testing before starting dialysis.",
+      "capacity_domain": "understanding",
+      "evidence_stance": "supports",
+      "communication_conditions": "A qualified interpreter was present; a simple written diagram was used, and the patient was allowed time to respond."
+    },
+    {
+      "source_label": "Later discussion about personal condition",
+      "statement": "The patient stated that there was no kidney problem and that the abnormal results belonged to someone else; they said dialysis could not affect them.",
+      "capacity_domain": "appreciation",
+      "evidence_stance": "challenges",
+      "communication_conditions": "The same interpreter and written diagram were used; the patient appeared more tired than in the morning."
+    },
+    {
+      "source_label": "Teach-back after explanation",
+      "statement": "The patient again described dialysis as filtering waste but could not say whether the treating team's concerns about kidney function applied to them or what might happen if treatment were delayed.",
+      "capacity_domain": "appreciation",
+      "evidence_stance": "ambiguous",
+      "communication_conditions": "The explanation was repeated in short segments with interpreter support; attention varied during the exchange."
+    },
+    {
+      "source_label": "Choice across discussions",
+      "statement": "In the morning the patient preferred to defer dialysis and repeat testing; later the patient said the team should do whatever a family member preferred and did not state a personal choice.",
+      "capacity_domain": "communicating_a_choice",
+      "evidence_stance": "ambiguous",
+      "communication_conditions": "Interpreter support was used at both discussions; fatigue was noted during the later discussion."
+    }
+  ],
+  "evidence_conflicts": [
+    {
+      "conflict_topic": "Understanding and appreciation of the kidney condition",
+      "evidence_labels": [
+        "Morning discussion with interpreter",
+        "Later discussion about personal condition",
+        "Teach-back after explanation"
+      ],
+      "conflict_description": "The patient described the purpose of dialysis in the morning but later denied having a kidney problem and said the abnormal results belonged to someone else. The later teach-back did not establish whether the patient could connect the treatment information to their own condition."
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "related_element": "Reasoning",
+      "missing_information": "The patient's reasons for preferring tablets and repeat testing, and their comparison of the consequences of starting or delaying dialysis, are not documented.",
+      "impact": "The record cannot establish whether the preference reflects an ability to reason about the available options."
+    },
+    {
+      "related_element": "Timing and fluctuating attention",
+      "missing_information": "No reassessment after potassium-lowering treatment or after the patient's fatigue improved is documented.",
+      "impact": "The record cannot determine whether the observed inconsistency persisted under a more stable clinical state."
+    }
+  ],
+  "overall_result": "indeterminate",
+  "clinical_context": {
+    "relevant_diagnoses": [
+      "Advanced chronic kidney disease",
+      "Elevated potassium being managed by the treating team"
+    ],
+    "cognitive_or_communication_factors": [
+      "Attention varied during the day.",
+      "The patient relies on an interpreter for detailed medical discussions."
+    ],
+    "treatments_or_state_changes": [
+      "Potassium-lowering medical treatment was started after the interviews; no reassessment after treatment response is documented.",
+      "Fatigue was more apparent during the later discussion."
+    ],
+    "accommodations_provided": [
+      "Qualified interpreter",
+      "Simple written diagram",
+      "Short explanations with pauses for teach-back"
+    ],
+    "other_relevant_context": "The treating team recommended beginning dialysis within days if the clinical course did not improve; the record does not describe an immediate resuscitation emergency."
+  },
+  "decision_context": {
+    "decision_question": "Whether to begin hemodialysis during the current admission or defer initiation while continuing medical management and close monitoring.",
+    "options": [
+      "Begin hemodialysis during this admission",
+      "Defer dialysis for now while continuing medical management and close monitoring",
+      "Decline dialysis and other recommended treatment"
+    ],
+    "stakes_and_consequences": [
+      "Hemodialysis is intended to remove waste and excess fluid when kidney function is severely reduced; it requires repeated treatment sessions and vascular access.",
+      "Deferring dialysis may avoid starting treatment immediately, but worsening kidney-related complications could require urgent treatment.",
+      "Declining dialysis may allow complications of severe kidney dysfunction to progress."
+    ],
+    "urgency": "time_sensitive",
+    "reversibility": "partially_reversible"
+  },
+  "constraint_checks": [
+    {
+      "check_name": "Decision-specific assessment",
+      "result": "satisfied",
+      "rationale": "The record identifies the choice about starting or deferring hemodialysis during the current admission."
+    },
+    {
+      "check_name": "Communication accommodation",
+      "result": "satisfied",
+      "rationale": "Interpreter support and a written diagram were used during the documented discussions."
+    },
+    {
+      "check_name": "Reasoning assessed with evidence",
+      "result": "not_satisfied",
+      "rationale": "The claimed assessment marks reasoning as not assessed, and the record contains no comparison of options or exploration of the patient's priorities."
+    },
+    {
+      "check_name": "Definitive conclusion supported across relevant abilities",
+      "result": "indeterminate",
+      "rationale": "Understanding, appreciation, and choice are inconsistent or incomplete, while reasoning is absent; the record does not establish a complete decision-specific assessment."
+    },
+    {
+      "check_name": "Conclusion based on abilities rather than diagnosis alone",
+      "result": "not_satisfied",
+      "rationale": "The overall rationale relies on advanced kidney disease and inconsistent answers without demonstrating how all relevant abilities were assessed."
+    }
+  ],
+  "overall_rationale": "The record contains conflicting evidence about understanding and personal appreciation, only partial evidence of a communicated choice, and no documented assessment of reasoning. Fatigue and a subsequent treatment change also leave the timing of the findings unresolved. The available evidence does not support a definitive lacks_capacity conclusion, but it is insufficient to determine the patient's capacity for this decision.",
+  "required_elements": [
+    {
+      "element": "Understanding of kidney dysfunction, dialysis, and the material consequences of starting or deferring treatment",
+      "necessity_rationale": "The patient needs to understand the basic information relevant to this time-sensitive treatment decision.",
+      "evidence_status": "conflicting",
+      "supporting_evidence_labels": [
+        "Morning discussion with interpreter",
+        "Later discussion about personal condition",
+        "Teach-back after explanation"
+      ],
+      "element_note": "The patient described dialysis in basic terms but later denied having a kidney problem; the record does not resolve the inconsistency."
+    },
+    {
+      "element": "Appreciation that the kidney condition and potential consequences of delay apply personally",
+      "necessity_rationale": "The decision requires assessment of whether the patient can recognize their own condition and the personal implications of each option.",
+      "evidence_status": "conflicting",
+      "supporting_evidence_labels": [
+        "Later discussion about personal condition",
+        "Teach-back after explanation"
+      ],
+      "element_note": "The patient denied that the abnormal results were theirs and could not state whether the team's concerns applied personally."
+    },
+    {
+      "element": "Reasoning about starting dialysis, deferring it, or declining it in light of the likely consequences and personal priorities",
+      "necessity_rationale": "The record must establish how the patient compares the options and what informs the preference.",
+      "evidence_status": "absent",
+      "supporting_evidence_labels": [],
+      "element_note": "No comparison of options or exploration of the patient's reasons and priorities is documented."
+    },
+    {
+      "element": "Ability to communicate a choice",
+      "necessity_rationale": "The patient must be able to express a decision about dialysis, with communication needs accommodated.",
+      "evidence_status": "partial",
+      "supporting_evidence_labels": [
+        "Choice across discussions"
+      ],
+      "element_note": "A preference to defer was expressed in the morning, but a personal choice was not stated in the later discussion."
+    }
+  ],
+  "claimed_assessment": {
+    "determination": "lacks_capacity",
+    "overall_rationale": "The patient has advanced kidney disease and gave inconsistent answers, so the assessment concluded that the patient could not make this decision.",
+    "domain_assessments": [
+      {
+        "domain": "understanding",
+        "finding": "impaired",
+        "rationale": "The later denial of kidney problems was treated as evidence that the patient could not understand the information.",
+        "evidence_labels": [
+          "Morning discussion with interpreter",
+          "Later discussion about personal condition"
+        ]
+      },
+      {
+        "domain": "appreciation",
+        "finding": "impaired",
+        "rationale": "The patient did not consistently acknowledge that the kidney condition and consequences applied personally.",
+        "evidence_labels": [
+          "Later discussion about personal condition",
+          "Teach-back after explanation"
+        ]
+      },
+      {
+        "domain": "reasoning",
+        "finding": "not_assessed",
+        "rationale": "The record does not describe a comparison of the options or the patient's reasons for preferring one option.",
+        "evidence_labels": []
+      },
+      {
+        "domain": "communicating_a_choice",
+        "finding": "uncertain",
+        "rationale": "The patient expressed a preference to defer in the morning but did not state a personal choice later.",
+        "evidence_labels": [
+          "Choice across discussions"
+        ]
+      }
+    ]
+  }
+}
