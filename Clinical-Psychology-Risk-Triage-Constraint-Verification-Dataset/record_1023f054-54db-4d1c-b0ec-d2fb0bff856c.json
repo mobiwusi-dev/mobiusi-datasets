@@ -1,0 +1,50 @@
+{
+  "triage_rules": [
+    {
+      "rule_reference": "CR-1",
+      "trigger_conditions": "Passive thoughts are reported without current intent, a specific plan, or preparatory behavior, and the person can participate in a safety plan.",
+      "required_action": "Arrange a same-day clinician review, complete a collaborative safety plan, and schedule follow-up within 24 hours.",
+      "escalation_level": "Same-day clinical review; no automatic emergency referral under these conditions.",
+      "urgency_window": "Clinician review the same day; follow-up no later than 24 hours.",
+      "exceptions": "If current intent, a specific plan, preparatory behavior, or inability to participate in a safety plan is identified, reassess under a higher-acuity rule."
+    }
+  ],
+  "risk_alignment": true,
+  "required_action": "Complete the same-day clinician review and collaborative safety plan, with follow-up within 24 hours.",
+  "review_rationale": "The documented presentation meets CR-1, and the proposed same-day review, safety plan, and 12-hour follow-up satisfy its explicit requirements. The proposed level of response is consistent with the reported risk and protective information.",
+  "case_risk_profile": {
+    "risk_factors": [
+      {
+        "factor": "Passive thoughts of not wanting to wake up",
+        "evidence": "The person reported these thoughts but denied current intent, a specific plan, or preparatory behavior.",
+        "immediacy": "Current thoughts are reported without stated immediate intent.",
+        "timeframe": "Intermittent over the past two days."
+      }
+    ],
+    "protective_factors": [
+      {
+        "factor": "Willingness to involve a trusted family member",
+        "evidence": "The person agreed to contact their sister, who confirmed she could check in that evening.",
+        "reliability": "The agreement was discussed during the current contact; availability is confirmed for this evening only."
+      }
+    ],
+    "recent_changes": "The person reports a recent increase in work-related stress but no other change in circumstances."
+  },
+  "overall_assessment": "compliant",
+  "constraint_findings": [
+    {
+      "finding_type": "supported_disposition",
+      "rule_reference": "CR-1",
+      "finding_description": "The disposition includes same-day clinician review, a collaborative safety plan, and follow-up within the 24-hour window specified by the rule.",
+      "severity": "not_applicable"
+    }
+  ],
+  "candidate_disposition": {
+    "proposed_action": "Arrange a same-day clinician review and a follow-up call in 12 hours.",
+    "rationale": "The reported thoughts warrant prompt review, while the person denies current intent, a specific plan, and preparatory behavior and is willing to use the agreed supports.",
+    "safety_plan": "The person will contact their sister this evening, use the coping steps discussed during the contact, and seek immediate help if their safety situation changes.",
+    "follow_up_interval_hours": 12,
+    "emergency_referral_proposed": false
+  },
+  "constraint_compliance": true
+}

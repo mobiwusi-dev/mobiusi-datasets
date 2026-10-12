@@ -1,0 +1,50 @@
+{
+  "risk_alignment": true,
+  "required_action": "Before ending the current contact, complete and document the required discussion about reducing access to items used for self-injury, alongside the collaborative coping plan. Keep the clinician reassessment within 24 hours and reassess if the stated emergency exceptions arise.",
+  "review_rationale": "The reported facts meet CR-3, and the proposed 18-hour reassessment is within the specified window. However, the disposition omits a required step before the current contact ends, so it is non-compliant even though its outpatient level of care is consistent with the documented risk information.",
+  "triage_rules": [
+    {
+      "rule_reference": "CR-3",
+      "trigger_conditions": "The person reports a recent increase in nonsuicidal self-injury, denies current suicidal intent and a suicide plan, and does not report an injury requiring urgent medical evaluation.",
+      "required_action": "Before closing the current contact, document a collaborative coping plan and discuss reducing access to items the person has used for self-injury. Arrange clinician reassessment within 24 hours.",
+      "escalation_level": "Prompt outpatient clinical reassessment; emergency referral is not automatic under the stated conditions.",
+      "urgency_window": "Complete the coping plan and discussion before the current contact ends; reassess within 24 hours.",
+      "exceptions": "If suicidal intent emerges or an injury is reported to require urgent medical evaluation, reassess for emergency escalation."
+    }
+  ],
+  "case_risk_profile": {
+    "risk_factors": [
+      {
+        "factor": "Recent increase in nonsuicidal self-injury",
+        "evidence": "The person reported several episodes during the past week, more frequent than in the prior month, and denied current suicidal thoughts, intent, or a suicide plan.",
+        "immediacy": "Recent increase; no current suicidal intent is reported.",
+        "timeframe": "Several episodes in the past week; frequency increased compared with the prior month."
+      }
+    ],
+    "protective_factors": [
+      {
+        "factor": "A sibling is available for short-term support",
+        "evidence": "The sibling joined part of the current contact by phone and agreed to remain available through the evening.",
+        "reliability": "Availability through the evening was confirmed during the contact; availability after that period is not established."
+      }
+    ],
+    "recent_changes": "The person reports increased interpersonal stress during the past week and says the self-injury has become more frequent during that period."
+  },
+  "overall_assessment": "non_compliant",
+  "constraint_findings": [
+    {
+      "finding_type": "omitted_condition",
+      "rule_reference": "CR-3",
+      "finding_description": "CR-3 requires a discussion about reducing access to items used for self-injury before the current contact ends. The proposed disposition reviews coping steps and schedules reassessment, but explicitly omits that discussion.",
+      "severity": "moderate"
+    }
+  ],
+  "candidate_disposition": {
+    "proposed_action": "Schedule clinician reassessment in 18 hours and end the current contact after reviewing coping steps and confirming the sibling's availability.",
+    "rationale": "The person denies current suicidal intent and a suicide plan, and no injury requiring urgent medical evaluation is reported. Prompt outpatient reassessment is planned because self-injury has increased.",
+    "safety_plan": "The person will use the coping steps reviewed during the contact and call the sibling if distress increases. The plan does not include a discussion about reducing access to items used for self-injury.",
+    "follow_up_interval_hours": 18,
+    "emergency_referral_proposed": false
+  },
+  "constraint_compliance": false
+}

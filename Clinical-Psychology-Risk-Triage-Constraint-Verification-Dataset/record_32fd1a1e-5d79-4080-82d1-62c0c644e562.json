@@ -1,0 +1,56 @@
+{
+  "triage_rules": [
+    {
+      "rule_reference": "CR-2",
+      "trigger_conditions": "Current suicidal intent is reported together with a specific plan and access to the identified means.",
+      "required_action": "Initiate an emergency evaluation immediately and maintain continuous in-person supervision until transfer to the evaluating service.",
+      "escalation_level": "Immediate emergency evaluation.",
+      "urgency_window": "Immediately; do not defer to a routine appointment or next-day follow-up.",
+      "exceptions": "No exception is stated for the trigger conditions in this record."
+    }
+  ],
+  "risk_alignment": false,
+  "required_action": "Initiate an emergency evaluation immediately and ensure continuous in-person supervision until transfer to the evaluating service.",
+  "review_rationale": "The reported intent, plan, and access meet CR-2's explicit trigger. The proposed routine follow-up and plan to remain alone violate the rule and do not align with the documented immediacy of risk.",
+  "case_risk_profile": {
+    "risk_factors": [
+      {
+        "factor": "Current suicidal intent with a specific plan and access to the identified means",
+        "evidence": "During the current contact, the person reported intent to act soon, described a specific plan, and confirmed access to the means associated with that plan.",
+        "immediacy": "Immediate; the person reported intent to act soon.",
+        "timeframe": "Reported during the current contact."
+      }
+    ],
+    "protective_factors": [
+      {
+        "factor": "A friend is willing to speak with the person by phone",
+        "evidence": "The person said a friend would answer a call, but the friend is not present and cannot provide in-person supervision.",
+        "reliability": "Based on the person's report; in-person availability has not been confirmed."
+      }
+    ],
+    "recent_changes": "The person reports that the intent and planning have intensified since the previous evening."
+  },
+  "overall_assessment": "non_compliant",
+  "constraint_findings": [
+    {
+      "finding_type": "escalation_violation",
+      "rule_reference": "CR-2",
+      "finding_description": "The rule requires immediate emergency evaluation and continuous in-person supervision. The proposed next-day appointment, remaining alone, and lack of emergency referral do not meet those requirements.",
+      "severity": "critical"
+    },
+    {
+      "finding_type": "risk_inconsistency",
+      "rule_reference": "CR-2",
+      "finding_description": "The rationale treats phone support as sufficient despite the documented current intent, specific plan, and access to the identified means, and despite the source stating that the friend cannot provide in-person supervision.",
+      "severity": "high"
+    }
+  ],
+  "candidate_disposition": {
+    "proposed_action": "Arrange a routine outpatient appointment for the following day; the person may remain at home alone and call a friend if distress increases.",
+    "rationale": "The person has a possible source of support by phone, so a next-day appointment is considered sufficient.",
+    "safety_plan": "Call the friend if distress increases and attend the scheduled appointment tomorrow.",
+    "follow_up_interval_hours": 18,
+    "emergency_referral_proposed": false
+  },
+  "constraint_compliance": false
+}
