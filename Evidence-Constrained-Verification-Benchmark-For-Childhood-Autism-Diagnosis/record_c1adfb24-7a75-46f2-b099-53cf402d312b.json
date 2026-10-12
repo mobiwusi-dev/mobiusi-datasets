@@ -1,0 +1,221 @@
+{
+  "case_record": {
+    "case_reference": "ACB-041",
+    "developmental_history": "Family reports that differences in reciprocal play and conversational exchange were noticeable before preschool. Early language milestones were described as timely. No formal developmental assessment from that period is available.",
+    "social_communication_evidence": [
+      {
+        "evidence_reference": "S1",
+        "statement": "During conversations, the child often answers direct questions but rarely asks follow-up questions or shares an experience unless prompted.",
+        "context": "Home and family visits, reported by caregivers"
+      },
+      {
+        "evidence_reference": "S2",
+        "statement": "The child frequently looks toward the speaker but does not consistently coordinate gaze with pointing or facial expression when requesting or sharing interest.",
+        "context": "Clinic observation and caregiver report"
+      },
+      {
+        "evidence_reference": "S3",
+        "statement": "The child approaches other children to discuss preferred topics but has difficulty adjusting the conversation when they change the subject.",
+        "context": "School recess and neighborhood play"
+      }
+    ],
+    "restricted_repetitive_behavior_evidence": [
+      {
+        "evidence_reference": "R1",
+        "statement": "The child repeatedly arranges small vehicles in the same sequence and becomes upset if another person moves them.",
+        "context": "Home play, reported by caregivers"
+      },
+      {
+        "evidence_reference": "R2",
+        "statement": "A change to the usual route to school led to prolonged distress and repeated requests to return to the familiar route.",
+        "context": "Morning travel, reported by caregivers"
+      },
+      {
+        "evidence_reference": "R3",
+        "statement": "The child spends much of free time collecting detailed information about transit maps and brings the topic into unrelated conversations.",
+        "context": "Home and school, reported by caregivers and teacher"
+      },
+      {
+        "evidence_reference": "R4",
+        "statement": "Hand dryers and crowded assemblies are described as painful; the child covers both ears and leaves when possible.",
+        "context": "Public restrooms and school assemblies"
+      }
+    ],
+    "cross_context_observations": [
+      {
+        "context_name": "Home",
+        "observation": "Caregivers report limited conversational reciprocity and marked distress when familiar play arrangements or plans change."
+      },
+      {
+        "context_name": "School",
+        "observation": "The teacher reports difficulty sustaining peer exchanges and repeated discussion of transit maps; the child participates more readily in predictable activities."
+      },
+      {
+        "context_name": "Community activities",
+        "observation": "At a weekly group, the child approaches peers but usually returns to transit topics and avoids the noisy indoor hall."
+      }
+    ],
+    "functional_impact": "The child needs advance preparation for routine changes, adult support to participate in group activities, and access to a quieter space during assemblies. Peer play often ends when the conversation moves away from the child's preferred topic."
+  },
+  "overall_rationale": "The record provides evidence for all three A criteria, all four B criteria, early developmental presence, and functional impact. The criterion E explanatory constraint cannot be established from the available information, so the specified constraints cannot be considered fully established.",
+  "diagnostic_standard": {
+    "standard_name": "DSM-5-TR",
+    "version_or_edition": "Text Revision (2022)",
+    "required_criteria": [
+      {
+        "criterion_reference": "A1",
+        "criterion_text": "Persistent deficits in social-emotional reciprocity."
+      },
+      {
+        "criterion_reference": "A2",
+        "criterion_text": "Persistent deficits in nonverbal communicative behaviors used for social interaction."
+      },
+      {
+        "criterion_reference": "A3",
+        "criterion_text": "Persistent deficits in developing, maintaining, and understanding relationships."
+      },
+      {
+        "criterion_reference": "B1",
+        "criterion_text": "At least one form of restricted or repetitive movement, use of objects, or speech."
+      },
+      {
+        "criterion_reference": "B2",
+        "criterion_text": "Insistence on sameness, inflexible adherence to routines, or ritualized patterns of behavior."
+      },
+      {
+        "criterion_reference": "B3",
+        "criterion_text": "Highly restricted, fixated interests abnormal in intensity or focus."
+      },
+      {
+        "criterion_reference": "B4",
+        "criterion_text": "Hyper- or hyporeactivity to sensory input or unusual interest in sensory aspects of the environment."
+      },
+      {
+        "criterion_reference": "C",
+        "criterion_text": "The features are present in the early developmental period, though they may become fully manifest later."
+      },
+      {
+        "criterion_reference": "D",
+        "criterion_text": "The features cause clinically significant impairment in important areas of current functioning."
+      },
+      {
+        "criterion_reference": "E",
+        "criterion_text": "The features are not better explained by intellectual disability or global developmental delay; when both are present, social communication is below that expected for the general developmental level."
+      }
+    ],
+    "additional_constraints": [
+      "All three A criteria must be met.",
+      "At least two of the four B criteria must be met.",
+      "Evaluate developmental onset, functional impact, and the criterion E explanatory constraint; do not infer a diagnosis from isolated features."
+    ]
+  },
+  "key_information_gaps": [
+    {
+      "description": "Information about cognitive and adaptive developmental levels, and whether the social-communication features are better explained by intellectual disability or global developmental delay, is absent.",
+      "affected_criteria": [
+        "E"
+      ]
+    }
+  ],
+  "criterion_assessments": [
+    {
+      "criterion_reference": "A1",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S1",
+        "S3"
+      ],
+      "assessment_rationale": "S1 describes limited spontaneous reciprocal exchange, and S3 describes difficulty adapting conversation to a partner. These reports support the stated reciprocity criterion.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "A2",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S2"
+      ],
+      "assessment_rationale": "S2 reports inconsistent coordination of gaze with pointing and facial expression in social communication.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "A3",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S3"
+      ],
+      "assessment_rationale": "S3 describes difficulty adapting interaction with peers when their conversational interests change; the cross-context observations also report limited peer participation.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B1",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R1"
+      ],
+      "assessment_rationale": "R1 reports repeated ordering of objects in a fixed sequence.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B2",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R2"
+      ],
+      "assessment_rationale": "R2 describes substantial distress and repeated requests when a familiar route changes.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B3",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R3"
+      ],
+      "assessment_rationale": "R3 describes an unusually focused interest that is repeatedly introduced across settings.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B4",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R4"
+      ],
+      "assessment_rationale": "R4 reports pronounced distress in response to specific sounds and leaving a noisy setting.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "C",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The developmental history reports that differences in reciprocal play and conversation were noticeable before preschool.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "D",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The functional-impact field describes support needs in group participation, routine changes, assemblies, and peer play.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "E",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The record notes timely early language milestones, but this alone does not establish whether intellectual disability or global developmental delay better explains the reported social-communication features.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "No cognitive or adaptive-developmental assessment, or explicit evaluation of the criterion E explanatory constraint, is provided."
+      ]
+    }
+  ],
+  "internal_contradictions": [],
+  "overall_constraint_status": "indeterminate"
+}

@@ -1,0 +1,250 @@
+{
+  "case_record": {
+    "case_reference": "ACB-236",
+    "developmental_history": "A caregiver recalls that social concerns first became noticeable around age twelve and does not recall earlier difficulty with conversation or peer play. A preschool progress note from age four, reviewed during the current assessment, describes limited reciprocal play and repeated lining of objects. The record does not explain the difference between the retrospective account and the contemporaneous note. A later cognitive and adaptive assessment is reported to show age-expected general reasoning and adaptive functioning, with no global developmental delay identified.",
+    "social_communication_evidence": [
+      {
+        "evidence_reference": "S1",
+        "statement": "The caregiver recalls that the child began having difficulty maintaining back-and-forth conversation with peers around age twelve; earlier conversation at home is remembered as reciprocal.",
+        "context": "Caregiver retrospective developmental interview"
+      },
+      {
+        "evidence_reference": "S2",
+        "statement": "A preschool progress note states that at age four the child rarely responded to peers' attempts to share play and usually continued a preferred activity without acknowledging their suggestions.",
+        "context": "Contemporaneous preschool record, age four"
+      },
+      {
+        "evidence_reference": "S3",
+        "statement": "During conversation, the young person uses few facial expressions and gestures, and the examiner noted that these were not consistently coordinated with spoken comments.",
+        "context": "Current clinical interview"
+      },
+      {
+        "evidence_reference": "S4",
+        "statement": "The young person wants friendships but reports uncertainty about how to join group conversations and how to tell when peers want to change topics.",
+        "context": "Current interview and school counselor report"
+      }
+    ],
+    "restricted_repetitive_behavior_evidence": [
+      {
+        "evidence_reference": "R1",
+        "statement": "The preschool progress note describes repeatedly lining toys in a fixed order and becoming distressed when the arrangement was changed.",
+        "context": "Contemporaneous preschool record, age four"
+      },
+      {
+        "evidence_reference": "R2",
+        "statement": "At home, the young person follows a fixed evening sequence and becomes markedly distressed when an activity is moved to a different time.",
+        "context": "Home, reported by caregiver"
+      },
+      {
+        "evidence_reference": "R3",
+        "statement": "For several years, the young person has spent extensive free time studying the classification of freshwater plants and brings detailed facts into conversations even when others have shifted topics.",
+        "context": "Home and school, reported by caregiver and teacher"
+      },
+      {
+        "evidence_reference": "R4",
+        "statement": "The young person covers their ears and leaves when exposed to hand dryers or amplified music, and describes these sounds as painful.",
+        "context": "Public settings and school events"
+      }
+    ],
+    "cross_context_observations": [
+      {
+        "context_name": "Home",
+        "observation": "The caregiver reports a fixed evening sequence, distress when plans change, and a sustained interest in freshwater plants."
+      },
+      {
+        "context_name": "School",
+        "observation": "Staff report difficulty entering group conversations and repeated returns to the same detailed topic; the young person participates more in structured small groups."
+      },
+      {
+        "context_name": "Preschool record",
+        "observation": "The age-four note describes limited reciprocal play and repeated lining of toys, whereas the caregiver's retrospective account places the first social concerns much later."
+      }
+    ],
+    "functional_impact": "The young person has difficulty participating in unstructured group discussions, and changes to the evening schedule can interrupt family activities. School staff provide written agendas and advance notice of schedule changes. The reported sound sensitivity limits participation in some assemblies."
+  },
+  "overall_rationale": "The record covers the three A criteria, all four B criteria, current functional impact, and the criterion E explanatory constraint. However, the caregiver's retrospective account conflicts with the contemporaneous preschool evidence about early features. Because the early-developmental-period constraint remains unresolved, the specified constraints cannot be considered established overall.",
+  "diagnostic_standard": {
+    "standard_name": "DSM-5-TR",
+    "version_or_edition": "Text Revision (2022)",
+    "required_criteria": [
+      {
+        "criterion_reference": "A1",
+        "criterion_text": "Persistent deficits in social-emotional reciprocity."
+      },
+      {
+        "criterion_reference": "A2",
+        "criterion_text": "Persistent deficits in nonverbal communicative behaviors used for social interaction."
+      },
+      {
+        "criterion_reference": "A3",
+        "criterion_text": "Persistent deficits in developing, maintaining, and understanding relationships."
+      },
+      {
+        "criterion_reference": "B1",
+        "criterion_text": "At least one form of restricted or repetitive movement, use of objects, or speech."
+      },
+      {
+        "criterion_reference": "B2",
+        "criterion_text": "Insistence on sameness, inflexible adherence to routines, or ritualized patterns of behavior."
+      },
+      {
+        "criterion_reference": "B3",
+        "criterion_text": "Highly restricted, fixated interests abnormal in intensity or focus."
+      },
+      {
+        "criterion_reference": "B4",
+        "criterion_text": "Hyper- or hyporeactivity to sensory input or unusual interest in sensory aspects of the environment."
+      },
+      {
+        "criterion_reference": "C",
+        "criterion_text": "The features are present in the early developmental period, though they may become fully manifest later."
+      },
+      {
+        "criterion_reference": "D",
+        "criterion_text": "The features cause clinically significant impairment in important areas of current functioning."
+      },
+      {
+        "criterion_reference": "E",
+        "criterion_text": "The features are not better explained by intellectual disability or global developmental delay; when both are present, social communication is below that expected for the general developmental level."
+      }
+    ],
+    "additional_constraints": [
+      "All three A criteria must be met.",
+      "At least two of the four B criteria must be met.",
+      "Evaluate developmental onset, functional impact, and the criterion E explanatory constraint; do not infer a diagnosis from isolated features."
+    ]
+  },
+  "key_information_gaps": [
+    {
+      "description": "The discrepancy between the caregiver's retrospective developmental account and the preschool record has not been reconciled, limiting confidence about the timing and course of early features.",
+      "affected_criteria": [
+        "C"
+      ]
+    }
+  ],
+  "criterion_assessments": [
+    {
+      "criterion_reference": "A1",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S2",
+        "S4"
+      ],
+      "assessment_rationale": "S2 describes limited response to peers' attempts to share play in the preschool record; S4 describes current difficulty entering group conversations and tracking conversational shifts.",
+      "conflicting_evidence_references": [
+        "S1",
+        "S2"
+      ],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "A2",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S3"
+      ],
+      "assessment_rationale": "S3 reports few facial expressions and gestures and inconsistent coordination with spoken comments.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "A3",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "S2",
+        "S4"
+      ],
+      "assessment_rationale": "S2 describes limited reciprocal peer play in preschool, and S4 reports current difficulty joining and navigating group conversations despite wanting friendships.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B1",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R1"
+      ],
+      "assessment_rationale": "R1 describes repeated lining of toys in a fixed order.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B2",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R1",
+        "R2"
+      ],
+      "assessment_rationale": "R1 and R2 describe distress when arrangements or schedules are changed and adherence to a fixed routine.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B3",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R3"
+      ],
+      "assessment_rationale": "R3 describes extensive, sustained attention to a specific subject and repeated introduction of detailed facts across settings.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B4",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R4"
+      ],
+      "assessment_rationale": "R4 reports marked sound sensitivity, covering the ears, and leaving noisy settings.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "C",
+      "coverage_status": "conflicting",
+      "supporting_evidence_references": [
+        "S2",
+        "R1"
+      ],
+      "assessment_rationale": "The preschool note documents social-communication and repetitive-behavior features at age four, while the caregiver recalls social concerns beginning around age twelve and no earlier conversational difficulty. The source accounts conflict and are not reconciled.",
+      "conflicting_evidence_references": [
+        "S1",
+        "S2",
+        "R1"
+      ],
+      "missing_information": [
+        "Clarification of the caregiver's retrospective account in relation to the contemporaneous preschool note is needed."
+      ]
+    },
+    {
+      "criterion_reference": "D",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The functional-impact field reports reduced participation in unstructured discussions, disruption of family activities, support needs for schedule changes, and limited participation in some assemblies.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "E",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The developmental history reports age-expected general reasoning and adaptive functioning and no global developmental delay identified in the assessment. On the information provided, this constraint is addressed, though it does not resolve the other criteria.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    }
+  ],
+  "internal_contradictions": [
+    {
+      "description": "The caregiver retrospectively recalls social concerns beginning around age twelve and reciprocal earlier conversation, while the contemporaneous preschool note describes limited reciprocal play at age four; that note also documents repetitive toy arrangement at the same age.",
+      "evidence_references": [
+        "S1",
+        "S2",
+        "R1"
+      ],
+      "affected_criteria": [
+        "C"
+      ]
+    }
+  ],
+  "overall_constraint_status": "indeterminate"
+}

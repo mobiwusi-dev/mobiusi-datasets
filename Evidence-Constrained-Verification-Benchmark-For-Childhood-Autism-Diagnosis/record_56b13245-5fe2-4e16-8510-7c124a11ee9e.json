@@ -1,0 +1,264 @@
+{
+  "case_record": {
+    "case_reference": "ACB-108",
+    "developmental_history": "Caregivers recall no notable social-communication concerns in early childhood and describe the child as comfortable talking with familiar relatives. No preschool records or detailed early developmental assessment are available. School concerns were first documented around age ten.",
+    "social_communication_evidence": [
+      {
+        "evidence_reference": "S1",
+        "statement": "The classroom teacher's weekly notes state that, during lunch across the same six-week period, the student rarely responded to classmates' conversational bids and usually ate alone.",
+        "context": "School lunch, classroom teacher notes"
+      },
+      {
+        "evidence_reference": "S2",
+        "statement": "The lunch supervisor's notes for that same six-week period state that the student regularly initiated and sustained reciprocal conversations with classmates at the table.",
+        "context": "School lunch, lunch supervisor notes"
+      },
+      {
+        "evidence_reference": "S3",
+        "statement": "The student makes eye contact when addressed and points to items of interest; the report does not describe how facial expression, gaze, and gestures are coordinated during interaction.",
+        "context": "School support meeting observation"
+      },
+      {
+        "evidence_reference": "S4",
+        "statement": "The student has one close friend and reports difficulty joining larger peer groups, especially when the activity is unstructured.",
+        "context": "Student interview and school counselor report"
+      }
+    ],
+    "restricted_repetitive_behavior_evidence": [
+      {
+        "evidence_reference": "R1",
+        "statement": "The student has an extensive collection of information about regional rail lines and often redirects conversations to railway timetables.",
+        "context": "Home and school, reported by caregivers and teacher"
+      },
+      {
+        "evidence_reference": "R2",
+        "statement": "Unexpected changes to the order of classroom activities sometimes lead to visible frustration, though the frequency and duration are not recorded.",
+        "context": "Classroom, teacher report"
+      }
+    ],
+    "cross_context_observations": [
+      {
+        "context_name": "Home",
+        "observation": "Caregivers report comfortable conversation with familiar relatives and no marked difficulty with everyday changes."
+      },
+      {
+        "context_name": "School",
+        "observation": "Reports differ about lunch interaction; difficulty joining larger unstructured peer groups and occasional frustration with changed activity order are noted."
+      },
+      {
+        "context_name": "Community club",
+        "observation": "The student attends a weekly club with a familiar friend; the record does not describe reciprocal interaction with other members."
+      }
+    ],
+    "functional_impact": "The counselor reports that difficulty entering larger group projects has reduced the student's participation in class activities. Caregivers do not report comparable participation difficulties at home or in familiar community activities."
+  },
+  "overall_rationale": "The record describes a focused interest and some peer and routine-related concerns, but the A1 reports conflict, other A criteria are only partially covered, and the available record documents fewer than two clearly covered B criteria. Early developmental presence, the extent of impairment, and the criterion E constraint also remain unresolved; the evidence therefore does not establish the specified constraints.",
+  "diagnostic_standard": {
+    "standard_name": "DSM-5-TR",
+    "version_or_edition": "Text Revision (2022)",
+    "required_criteria": [
+      {
+        "criterion_reference": "A1",
+        "criterion_text": "Persistent deficits in social-emotional reciprocity."
+      },
+      {
+        "criterion_reference": "A2",
+        "criterion_text": "Persistent deficits in nonverbal communicative behaviors used for social interaction."
+      },
+      {
+        "criterion_reference": "A3",
+        "criterion_text": "Persistent deficits in developing, maintaining, and understanding relationships."
+      },
+      {
+        "criterion_reference": "B1",
+        "criterion_text": "At least one form of restricted or repetitive movement, use of objects, or speech."
+      },
+      {
+        "criterion_reference": "B2",
+        "criterion_text": "Insistence on sameness, inflexible adherence to routines, or ritualized patterns of behavior."
+      },
+      {
+        "criterion_reference": "B3",
+        "criterion_text": "Highly restricted, fixated interests abnormal in intensity or focus."
+      },
+      {
+        "criterion_reference": "B4",
+        "criterion_text": "Hyper- or hyporeactivity to sensory input or unusual interest in sensory aspects of the environment."
+      },
+      {
+        "criterion_reference": "C",
+        "criterion_text": "The features are present in the early developmental period, though they may become fully manifest later."
+      },
+      {
+        "criterion_reference": "D",
+        "criterion_text": "The features cause clinically significant impairment in important areas of current functioning."
+      },
+      {
+        "criterion_reference": "E",
+        "criterion_text": "The features are not better explained by intellectual disability or global developmental delay; when both are present, social communication is below that expected for the general developmental level."
+      }
+    ],
+    "additional_constraints": [
+      "All three A criteria must be met.",
+      "At least two of the four B criteria must be met.",
+      "Evaluate developmental onset, functional impact, and the criterion E explanatory constraint; do not infer a diagnosis from isolated features."
+    ]
+  },
+  "key_information_gaps": [
+    {
+      "description": "The discrepant observations of lunch interaction need clarification before social-emotional reciprocity and peer relationship functioning can be assessed reliably.",
+      "affected_criteria": [
+        "A1",
+        "A3"
+      ]
+    },
+    {
+      "description": "The record lacks detailed early developmental information and evidence needed to evaluate the criterion E explanatory constraint.",
+      "affected_criteria": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "description": "The record does not adequately characterize routine-change responses, sensory features, or repetitive movements, object use, and speech.",
+      "affected_criteria": [
+        "B1",
+        "B2",
+        "B4"
+      ]
+    }
+  ],
+  "criterion_assessments": [
+    {
+      "criterion_reference": "A1",
+      "coverage_status": "conflicting",
+      "supporting_evidence_references": [
+        "S1",
+        "S2"
+      ],
+      "assessment_rationale": "S1 reports rare responses to peers' conversational bids, while S2 describes regular reciprocal conversation in the same setting and period. The record does not resolve this discrepancy.",
+      "conflicting_evidence_references": [
+        "S1",
+        "S2"
+      ],
+      "missing_information": [
+        "Clarification of the discrepant lunch observations, including the situations and interaction partners observed, is needed."
+      ]
+    },
+    {
+      "criterion_reference": "A2",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [
+        "S3"
+      ],
+      "assessment_rationale": "S3 describes eye contact and pointing but leaves the coordination and social use of nonverbal behaviors undescribed.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "Examples of facial expression, gaze, and gesture coordination during social interaction are not provided."
+      ]
+    },
+    {
+      "criterion_reference": "A3",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [
+        "S4",
+        "S1",
+        "S2"
+      ],
+      "assessment_rationale": "S4 reports difficulty joining larger unstructured peer groups but also identifies a close friend. The conflicting lunch accounts further limit assessment of relationship functioning across contexts.",
+      "conflicting_evidence_references": [
+        "S1",
+        "S2"
+      ],
+      "missing_information": [
+        "The record does not describe the student's understanding of relationships or functioning with peers across a broader range of settings."
+      ]
+    },
+    {
+      "criterion_reference": "B1",
+      "coverage_status": "not_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "No repetitive movements, repetitive object use, or repetitive speech are described in the available case record.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "The record does not assess repetitive movements, object use, or speech."
+      ]
+    },
+    {
+      "criterion_reference": "B2",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [
+        "R2"
+      ],
+      "assessment_rationale": "R2 reports occasional frustration after activity-order changes, but does not establish persistence, inflexibility, or the extent of the response.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "Frequency, duration, severity, and response to routine changes across settings are not reported."
+      ]
+    },
+    {
+      "criterion_reference": "B3",
+      "coverage_status": "covered",
+      "supporting_evidence_references": [
+        "R1"
+      ],
+      "assessment_rationale": "R1 describes extensive, recurring attention to railway information and redirection of conversations to that topic.",
+      "conflicting_evidence_references": [],
+      "missing_information": []
+    },
+    {
+      "criterion_reference": "B4",
+      "coverage_status": "not_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "No sensory reactivity or unusual sensory interests are described in the record.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "Sensory responses across everyday settings are not documented."
+      ]
+    },
+    {
+      "criterion_reference": "C",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "Caregivers recall no early concerns, while school concerns were documented around age ten. Without early records or detailed developmental history, early presence of the relevant features cannot be established or ruled out.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "Detailed early developmental history and records describing social communication and restricted or repetitive features before the school concerns are unavailable."
+      ]
+    },
+    {
+      "criterion_reference": "D",
+      "coverage_status": "partially_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The functional-impact field reports reduced class participation in group projects, but also reports no comparable difficulty at home or familiar community activities; the extent and persistence of impairment are not specified.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "The duration and severity of participation effects, and whether they occur in other important areas of functioning, are not described."
+      ]
+    },
+    {
+      "criterion_reference": "E",
+      "coverage_status": "not_covered",
+      "supporting_evidence_references": [],
+      "assessment_rationale": "The record contains no information about intellectual or global developmental level or whether either better explains the reported features.",
+      "conflicting_evidence_references": [],
+      "missing_information": [
+        "Cognitive and developmental information relevant to the criterion E explanatory constraint is not provided."
+      ]
+    }
+  ],
+  "internal_contradictions": [
+    {
+      "description": "Two reports covering the same six-week lunch period differ: one describes rare responses to classmates and eating alone, while the other describes regular initiation and sustained reciprocal conversation.",
+      "evidence_references": [
+        "S1",
+        "S2"
+      ],
+      "affected_criteria": [
+        "A1",
+        "A3"
+      ]
+    }
+  ],
+  "overall_constraint_status": "indeterminate"
+}
