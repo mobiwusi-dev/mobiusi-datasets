@@ -1,0 +1,48 @@
+{
+  "violations": [],
+  "input_record": {
+    "patient_context": {
+      "age_years": 12,
+      "weight_kg": 40,
+      "diagnoses": [
+        "juvenile idiopathic arthritis"
+      ],
+      "allergies": [],
+      "relevant_findings": []
+    },
+    "medication_order": {
+      "medication_name": "methotrexate",
+      "dose_value": 8,
+      "dose_unit": "mg",
+      "dose_basis": "per dose; once weekly",
+      "route": "oral",
+      "frequency_per_day": 0.1428571429
+    },
+    "constraint_set": {
+      "dose_constraints": [
+        {
+          "constraint_type": "dose_range",
+          "minimum_value": 0.1,
+          "maximum_value": 0.3,
+          "unit": "mg/kg",
+          "is_weight_based": true,
+          "dose_basis": "per dose"
+        },
+        {
+          "constraint_type": "maximum_single_dose",
+          "maximum_value": 15,
+          "unit": "mg",
+          "is_weight_based": false,
+          "dose_basis": "per dose"
+        }
+      ],
+      "contraindications": [],
+      "required_checks": [
+        "Check the weight-based dose range per dose.",
+        "Check the maximum single dose."
+      ]
+    }
+  },
+  "violation_count": 0,
+  "validation_status": "pass"
+}

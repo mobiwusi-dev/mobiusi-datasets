@@ -1,0 +1,58 @@
+{
+  "input_record": {
+    "patient_context": {
+      "age_years": 14,
+      "weight_kg": 42,
+      "diagnoses": [
+        "systemic juvenile idiopathic arthritis"
+      ],
+      "allergies": [
+        "tocilizumab"
+      ],
+      "relevant_findings": [
+        {
+          "finding_name": "C-reactive protein",
+          "finding_value": "12",
+          "unit": "mg/L",
+          "observed_on": "2025-02-10"
+        }
+      ]
+    },
+    "medication_order": {
+      "medication_name": "tocilizumab",
+      "dose_value": 80,
+      "dose_unit": "mg",
+      "dose_basis": "per administration",
+      "route": "intravenous",
+      "frequency_per_day": 0.0714285714
+    },
+    "constraint_set": {
+      "dose_constraints": [
+        {
+          "constraint_type": "maximum_single_dose",
+          "maximum_value": 100,
+          "unit": "mg",
+          "is_weight_based": false,
+          "dose_basis": "per administration"
+        }
+      ],
+      "contraindications": [
+        "Do not order tocilizumab when tocilizumab is listed in the patient's allergies."
+      ],
+      "required_checks": [
+        "Check the maximum single dose.",
+        "Check the medication order against the recorded allergy list and the stated contraindication."
+      ]
+    }
+  },
+  "violations": [
+    {
+      "field_path": "input_record.patient_context.allergies and input_record.medication_order.medication_name",
+      "constraint_code": "ALLERGY_CONTRAINDICATION",
+      "observed_value": "Medication ordered: tocilizumab; recorded allergy: tocilizumab",
+      "expected_condition": "Do not order tocilizumab when it is listed in the patient's allergies."
+    }
+  ],
+  "violation_count": 1,
+  "validation_status": "fail"
+}

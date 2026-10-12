@@ -1,0 +1,60 @@
+{
+  "violations": [
+    {
+      "field_path": "input_record.medication_order.dose_value",
+      "constraint_code": "MAX_SINGLE_DOSE",
+      "observed_value": "750 mg per dose",
+      "expected_condition": "A single dose must not exceed 700 mg."
+    },
+    {
+      "field_path": "input_record.medication_order.dose_value and input_record.medication_order.frequency_per_day",
+      "constraint_code": "MAX_DAILY_DOSE",
+      "observed_value": "750 mg per dose × 2 administrations/day = 1500 mg/day",
+      "expected_condition": "The total daily dose must not exceed 1200 mg/day."
+    }
+  ],
+  "input_record": {
+    "patient_context": {
+      "age_years": 10,
+      "weight_kg": 34,
+      "diagnoses": [
+        "polyarticular juvenile idiopathic arthritis"
+      ],
+      "allergies": [],
+      "relevant_findings": []
+    },
+    "medication_order": {
+      "medication_name": "sulfasalazine",
+      "dose_value": 750,
+      "dose_unit": "mg",
+      "dose_basis": "per dose",
+      "route": "oral",
+      "frequency_per_day": 2
+    },
+    "constraint_set": {
+      "dose_constraints": [
+        {
+          "constraint_type": "maximum_single_dose",
+          "maximum_value": 700,
+          "unit": "mg",
+          "is_weight_based": false,
+          "dose_basis": "per dose"
+        },
+        {
+          "constraint_type": "maximum_daily_dose",
+          "maximum_value": 1200,
+          "unit": "mg",
+          "is_weight_based": false,
+          "dose_basis": "per day"
+        }
+      ],
+      "contraindications": [],
+      "required_checks": [
+        "Check the maximum single dose.",
+        "Calculate the total daily dose from dose per administration and frequency, then check the maximum daily dose."
+      ]
+    }
+  },
+  "violation_count": 2,
+  "validation_status": "fail"
+}
