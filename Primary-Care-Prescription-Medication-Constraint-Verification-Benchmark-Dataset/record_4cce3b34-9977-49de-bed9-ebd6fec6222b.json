@@ -1,0 +1,47 @@
+{
+  "violations": [
+    {
+      "constraint_type": "allergy",
+      "severity": "high",
+      "explanation": "The proposed medication is the same substance listed in the patient's allergy record, which documents a severe immediate reaction.",
+      "evidence": "Patient context lists amoxicillin allergy with anaphylaxis, facial swelling, and difficulty breathing; the proposed prescription is amoxicillin 500 mg every 8 hours.",
+      "recommended_action": "Do not dispense or administer amoxicillin. Select an appropriate alternative after reviewing the allergy history and current clinical guidance."
+    }
+  ],
+  "review_summary": "The prescription is unacceptable because it directly conflicts with a documented severe amoxicillin allergy.",
+  "patient_context": {
+    "age_years": 46,
+    "allergies": [
+      {
+        "substance": "Amoxicillin",
+        "reaction": "Anaphylaxis with facial swelling and difficulty breathing"
+      }
+    ],
+    "current_medications": [
+      {
+        "drug_name": "lisinopril",
+        "strength": "10 mg tablet",
+        "regimen": "10 mg orally once daily"
+      }
+    ],
+    "renal_function": {
+      "egfr_ml_min_1_73m2": 88,
+      "measurement_date": "2025-02-12"
+    },
+    "relevant_conditions": [
+      "Confirmed group A streptococcal pharyngitis"
+    ]
+  },
+  "proposed_prescription": {
+    "drug_name": "amoxicillin",
+    "strength": "500 mg capsule",
+    "dose_amount": 500,
+    "dose_unit": "mg",
+    "route": "oral",
+    "frequency": "Every 8 hours",
+    "duration_days": 7,
+    "quantity": 21,
+    "indication": "Confirmed group A streptococcal pharyngitis"
+  },
+  "is_prescription_acceptable": false
+}

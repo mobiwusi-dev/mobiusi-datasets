@@ -1,0 +1,48 @@
+{
+  "violations": [
+    {
+      "constraint_type": "renal function",
+      "severity": "high",
+      "explanation": "The patient's documented eGFR is below 30 mL/min/1.73 m², a level at which metformin is contraindicated.",
+      "evidence": "Renal function is recorded as eGFR 27 mL/min/1.73 m² on 2025-01-18; the proposed regimen is metformin 500 mg twice daily.",
+      "recommended_action": "Do not initiate metformin at this renal-function level. Review the diabetes treatment plan and renal status with the prescribing clinician."
+    }
+  ],
+  "review_summary": "The proposed metformin regimen is unacceptable because the documented eGFR is below the contraindication threshold.",
+  "patient_context": {
+    "age_years": 72,
+    "allergies": [],
+    "current_medications": [
+      {
+        "drug_name": "losartan",
+        "strength": "50 mg tablet",
+        "regimen": "50 mg orally once daily"
+      },
+      {
+        "drug_name": "atorvastatin",
+        "strength": "20 mg tablet",
+        "regimen": "20 mg orally once daily"
+      }
+    ],
+    "renal_function": {
+      "egfr_ml_min_1_73m2": 27,
+      "measurement_date": "2025-01-18"
+    },
+    "relevant_conditions": [
+      "Type 2 diabetes mellitus",
+      "Chronic kidney disease"
+    ]
+  },
+  "proposed_prescription": {
+    "drug_name": "metformin",
+    "strength": "500 mg tablet",
+    "dose_amount": 500,
+    "dose_unit": "mg",
+    "route": "oral",
+    "frequency": "Twice daily with meals",
+    "duration_days": 30,
+    "quantity": 60,
+    "indication": "Type 2 diabetes mellitus"
+  },
+  "is_prescription_acceptable": false
+}

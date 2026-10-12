@@ -1,0 +1,48 @@
+{
+  "violations": [
+    {
+      "constraint_type": "drug interaction",
+      "severity": "moderate",
+      "explanation": "Trimethoprim-sulfamethoxazole can substantially increase the anticoagulant effect of warfarin and raise bleeding risk, so the combination requires a deliberate prescribing and monitoring plan.",
+      "evidence": "The current medication list includes warfarin 5 mg each evening; the proposed prescription is trimethoprim-sulfamethoxazole 160 mg/800 mg twice daily for 5 days.",
+      "recommended_action": "Consider an appropriate alternative with a lower interaction risk. If this combination is necessary, coordinate close INR monitoring and warfarin management with the responsible clinician."
+    }
+  ],
+  "review_summary": "The proposed antibiotic has a clinically important interaction with the patient's current warfarin therapy and should not be prescribed without an explicit alternative or monitoring plan.",
+  "patient_context": {
+    "age_years": 68,
+    "allergies": [],
+    "current_medications": [
+      {
+        "drug_name": "warfarin",
+        "strength": "5 mg tablet",
+        "regimen": "5 mg orally each evening, adjusted to INR"
+      },
+      {
+        "drug_name": "amlodipine",
+        "strength": "5 mg tablet",
+        "regimen": "5 mg orally once daily"
+      }
+    ],
+    "renal_function": {
+      "egfr_ml_min_1_73m2": 76,
+      "measurement_date": "2025-02-03"
+    },
+    "relevant_conditions": [
+      "Atrial fibrillation",
+      "Acute uncomplicated urinary tract infection"
+    ]
+  },
+  "proposed_prescription": {
+    "drug_name": "trimethoprim-sulfamethoxazole",
+    "strength": "160 mg/800 mg tablet",
+    "dose_amount": 1,
+    "dose_unit": "tablet",
+    "route": "oral",
+    "frequency": "Twice daily",
+    "duration_days": 5,
+    "quantity": 10,
+    "indication": "Acute uncomplicated urinary tract infection"
+  },
+  "is_prescription_acceptable": false
+}
