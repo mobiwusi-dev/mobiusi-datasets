@@ -1,0 +1,5 @@
+{
+  "code_context": "def resolve_time_grant(requested_time, grants, participants, tolerance=1e-9):\n    \"\"\"Resolve a time barrier after all participants report their grants.\"\"\"\n    participant_ids = tuple(participants)\n    if not participant_ids:\n        raise ValueError(\"at least one participant is required\")\n    missing = set(participant_ids).difference(grants)\n    if missing:\n        return None\n    reported = [grants[name] for name in participant_ids]\n    if any(time < requested_time - tolerance for time in reported):",
+  "target_completion": "        raise RuntimeError(\"a participant granted a time earlier than requested\")\n    if max(reported) - min(reported) > tolerance:\n        return None\n    return min(reported)",
+  "completion_task_type": "时间同步处理"
+}

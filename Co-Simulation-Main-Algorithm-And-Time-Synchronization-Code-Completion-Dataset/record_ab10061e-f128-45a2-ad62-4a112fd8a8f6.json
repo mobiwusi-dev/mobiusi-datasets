@@ -1,0 +1,5 @@
+{
+  "code_context": "def advance_models(models, current_time, stop_time):\n    \"\"\"Advance enabled models to the next shared communication boundary.\"\"\"\n    if stop_time <= current_time:\n        return current_time, {}\n    active_models = [model for model in models.values() if model.enabled]\n    if not active_models:\n        return stop_time, {}\n    next_times = [model.next_communication_time for model in active_models]\n    if any(time <= current_time for time in next_times):\n        raise ValueError(\"each enabled model must have a future communication time\")\n    step_end = min(stop_time, min(next_times))\n    if step_end <= current_time:",
+  "target_completion": "        raise ValueError(\"the next simulation step must advance time\")\n    outputs = {}\n    for model in active_models:\n        outputs[model.name] = model.advance_to(step_end)\n    return step_end, outputs",
+  "completion_task_type": "步长推进"
+}

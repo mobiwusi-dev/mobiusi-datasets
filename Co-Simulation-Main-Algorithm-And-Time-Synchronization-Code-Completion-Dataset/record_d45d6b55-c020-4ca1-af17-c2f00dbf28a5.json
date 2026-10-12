@@ -1,0 +1,5 @@
+{
+  "code_context": "def communication_points(periods, start, stop, tolerance=1e-9):\n    \"\"\"Return the ordered communication times within the simulation interval.\"\"\"\n    if stop < start:\n        raise ValueError(\"stop must not precede start\")\n    if any(period <= 0 for period in periods):\n        raise ValueError(\"communication periods must be positive\")\n    points = {start, stop}\n    for period in periods:\n        tick = 1",
+  "target_completion": "        while True:\n            point = start + tick * period\n            if point >= stop - tolerance:\n                break\n            points.add(point)\n            tick += 1\n    return sorted(points)",
+  "completion_task_type": "通信点计算"
+}
