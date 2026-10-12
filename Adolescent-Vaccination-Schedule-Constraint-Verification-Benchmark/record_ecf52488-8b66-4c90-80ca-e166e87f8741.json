@@ -1,0 +1,53 @@
+{
+  "benchmark_case": {
+    "age_years": 13,
+    "evaluation_date": "2025-06-05",
+    "sex_at_birth": "female",
+    "prior_doses": [
+      {
+        "vaccine_code": "HPV9",
+        "administered_on": "2025-01-10",
+        "dose_number": 1
+      }
+    ],
+    "risk_factors": [],
+    "proposed_doses": [
+      {
+        "vaccine_code": "HPV9",
+        "planned_on": "2025-06-05",
+        "dose_number": 2
+      }
+    ]
+  },
+  "benchmark_match": true,
+  "computed_validation": {
+    "computed_valid": true,
+    "computed_violations": []
+  },
+  "expected_validation": {
+    "expected_valid": true,
+    "expected_violations": []
+  },
+  "schedule_constraints": {
+    "program_name": "Adolescent Schedule Constraint Benchmark",
+    "jurisdiction": "Benchmark rule set",
+    "version": "constraint-set-2025.1",
+    "effective_from": "2025-01-01",
+    "vaccine_rules": [
+      {
+        "vaccine_code": "HPV9",
+        "routine_series_doses": 2,
+        "minimum_age_years": 9,
+        "maximum_age_years": 19,
+        "minimum_intervals_days": [
+          {
+            "from_dose_number": 1,
+            "to_dose_number": 2,
+            "minimum_days": 146
+          }
+        ],
+        "risk_indications": []
+      }
+    ]
+  }
+}

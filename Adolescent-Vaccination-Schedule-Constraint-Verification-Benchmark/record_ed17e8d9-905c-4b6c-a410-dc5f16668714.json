@@ -1,0 +1,80 @@
+{
+  "benchmark_case": {
+    "age_years": 16,
+    "evaluation_date": "2025-04-01",
+    "sex_at_birth": "male",
+    "prior_doses": [
+      {
+        "vaccine_code": "HEPB",
+        "administered_on": "2025-01-01",
+        "dose_number": 1
+      },
+      {
+        "vaccine_code": "HEPB",
+        "administered_on": "2025-02-01",
+        "dose_number": 2
+      }
+    ],
+    "risk_factors": [],
+    "proposed_doses": [
+      {
+        "vaccine_code": "HEPB",
+        "planned_on": "2025-04-01",
+        "dose_number": 3
+      }
+    ]
+  },
+  "benchmark_match": true,
+  "computed_validation": {
+    "computed_valid": false,
+    "computed_violations": [
+      {
+        "planned_dose_number": 3,
+        "rule_code": "MIN_INTERVAL_1_3",
+        "explanation": "Dose 3 is planned 90 days after dose 1, below the required 112-day minimum; the 56-day dose 2-to-3 interval is satisfied."
+      }
+    ]
+  },
+  "expected_validation": {
+    "expected_valid": false,
+    "expected_violations": [
+      {
+        "planned_dose_number": 3,
+        "rule_code": "MIN_INTERVAL_1_3",
+        "explanation": "Dose 3 is planned 90 days after dose 1, below the required 112-day minimum; the 56-day dose 2-to-3 interval is satisfied."
+      }
+    ]
+  },
+  "schedule_constraints": {
+    "program_name": "Adolescent Schedule Constraint Benchmark",
+    "jurisdiction": "Benchmark rule set",
+    "version": "constraint-set-2025.1",
+    "effective_from": "2025-01-01",
+    "vaccine_rules": [
+      {
+        "vaccine_code": "HEPB",
+        "routine_series_doses": 3,
+        "minimum_age_years": 0,
+        "maximum_age_years": 19,
+        "minimum_intervals_days": [
+          {
+            "from_dose_number": 1,
+            "to_dose_number": 2,
+            "minimum_days": 28
+          },
+          {
+            "from_dose_number": 2,
+            "to_dose_number": 3,
+            "minimum_days": 56
+          },
+          {
+            "from_dose_number": 1,
+            "to_dose_number": 3,
+            "minimum_days": 112
+          }
+        ],
+        "risk_indications": []
+      }
+    ]
+  }
+}

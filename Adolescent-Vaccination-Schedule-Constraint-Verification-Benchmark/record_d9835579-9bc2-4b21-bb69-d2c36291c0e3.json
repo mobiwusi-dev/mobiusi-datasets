@@ -1,0 +1,57 @@
+{
+  "benchmark_case": {
+    "age_years": 17,
+    "evaluation_date": "2025-07-14",
+    "sex_at_birth": "unknown",
+    "prior_doses": [
+      {
+        "vaccine_code": "MENB",
+        "administered_on": "2025-01-15",
+        "dose_number": 1
+      }
+    ],
+    "risk_factors": [
+      "complement inhibitor therapy"
+    ],
+    "proposed_doses": [
+      {
+        "vaccine_code": "MENB",
+        "planned_on": "2025-07-14",
+        "dose_number": 2
+      }
+    ]
+  },
+  "benchmark_match": true,
+  "computed_validation": {
+    "computed_valid": true,
+    "computed_violations": []
+  },
+  "expected_validation": {
+    "expected_valid": true,
+    "expected_violations": []
+  },
+  "schedule_constraints": {
+    "program_name": "Adolescent Schedule Constraint Benchmark",
+    "jurisdiction": "Benchmark rule set",
+    "version": "constraint-set-2025.2",
+    "effective_from": "2025-06-01",
+    "vaccine_rules": [
+      {
+        "vaccine_code": "MENB",
+        "routine_series_doses": 2,
+        "minimum_age_years": 16,
+        "maximum_age_years": 19,
+        "minimum_intervals_days": [
+          {
+            "from_dose_number": 1,
+            "to_dose_number": 2,
+            "minimum_days": 180
+          }
+        ],
+        "risk_indications": [
+          "complement inhibitor therapy"
+        ]
+      }
+    ]
+  }
+}
