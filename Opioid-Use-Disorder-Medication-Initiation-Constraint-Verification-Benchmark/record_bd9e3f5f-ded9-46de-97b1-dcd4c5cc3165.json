@@ -1,0 +1,45 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_years": 39,
+      "pregnancy_status": "not_pregnant",
+      "opioid_exposure": {
+        "current_opioid": "heroin",
+        "last_use_interval_hours": 48,
+        "route_of_use": "intravenous",
+        "fentanyl_exposure": false,
+        "withdrawal_assessment": {
+          "scale_name": "COWS",
+          "score": 11,
+          "clinically_in_withdrawal": true
+        }
+      },
+      "relevant_conditions": [
+        "Documented prior anaphylaxis to buprenorphine"
+      ],
+      "hepatic_impairment": "none_known"
+    },
+    "clinical_constraints": [
+      {
+        "constraint_code": "BUP-ALLERGY-01",
+        "constraint_category": "contraindication",
+        "constraint_description": "Do not initiate buprenorphine in a patient with documented prior anaphylaxis to buprenorphine.",
+        "severity_if_violated": "critical"
+      }
+    ],
+    "candidate_plan": {
+      "medication": "buprenorphine",
+      "formulation": "sublingual tablet",
+      "initial_dose_mg": 2,
+      "route": "sublingual",
+      "planned_start_after_last_opioid_hours": 48,
+      "induction_strategy": "standard induction"
+    }
+  },
+  "violation_severity": "critical",
+  "assessment_rationale": "The patient context documents prior anaphylaxis to buprenorphine, while the candidate plan proposes initiating buprenorphine. This directly violates BUP-ALLERGY-01; the documented withdrawal status does not alter the stated contraindication.",
+  "constraint_violation": true,
+  "violated_constraint_codes": [
+    "BUP-ALLERGY-01"
+  ]
+}

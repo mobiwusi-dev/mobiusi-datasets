@@ -1,0 +1,43 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_years": 34,
+      "pregnancy_status": "not_pregnant",
+      "opioid_exposure": {
+        "current_opioid": "illicit fentanyl",
+        "last_use_interval_hours": 5,
+        "route_of_use": "intranasal",
+        "fentanyl_exposure": true,
+        "withdrawal_assessment": {
+          "scale_name": "COWS",
+          "score": 5,
+          "clinically_in_withdrawal": false
+        }
+      },
+      "relevant_conditions": [],
+      "hepatic_impairment": "none_known"
+    },
+    "clinical_constraints": [
+      {
+        "constraint_code": "BUP-STD-WD-01",
+        "constraint_category": "withdrawal",
+        "constraint_description": "For a standard buprenorphine induction in this case, do not administer the first dose unless clinically significant withdrawal is documented.",
+        "severity_if_violated": "high"
+      }
+    ],
+    "candidate_plan": {
+      "medication": "buprenorphine",
+      "formulation": "sublingual tablet",
+      "initial_dose_mg": 4,
+      "route": "sublingual",
+      "planned_start_after_last_opioid_hours": 5,
+      "induction_strategy": "standard induction"
+    }
+  },
+  "violation_severity": "high",
+  "assessment_rationale": "Clinically significant withdrawal is documented as absent, with a COWS score of 5. The proposed standard buprenorphine induction therefore violates BUP-STD-WD-01. The five-hour interval and reported fentanyl exposure are consistent with the case context but do not change the stated constraint.",
+  "constraint_violation": true,
+  "violated_constraint_codes": [
+    "BUP-STD-WD-01"
+  ]
+}

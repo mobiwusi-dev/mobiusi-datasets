@@ -1,0 +1,39 @@
+{
+  "violation_severity": "none",
+  "assessment_rationale": "The proposed start is 288 hours after the last oxycodone use, exceeding the 240-hour minimum, and clinically significant withdrawal is documented as absent. Both conditions in NTX-OPIOID-FREE-01 are satisfied, so no supplied constraint is violated.",
+  "constraint_violation": false,
+  "case_input": {
+    "patient_context": {
+      "age_years": 46,
+      "pregnancy_status": "not_applicable",
+      "opioid_exposure": {
+        "current_opioid": "oxycodone",
+        "last_use_interval_hours": 288,
+        "route_of_use": "oral",
+        "fentanyl_exposure": false,
+        "withdrawal_assessment": {
+          "clinically_in_withdrawal": false
+        }
+      },
+      "relevant_conditions": [],
+      "hepatic_impairment": "none_known"
+    },
+    "clinical_constraints": [
+      {
+        "constraint_code": "NTX-OPIOID-FREE-01",
+        "constraint_category": "timing",
+        "constraint_description": "For this case, initiate naltrexone only after at least 240 hours have elapsed since the last opioid use and when clinically significant withdrawal is absent.",
+        "severity_if_violated": "high"
+      }
+    ],
+    "candidate_plan": {
+      "medication": "naltrexone",
+      "formulation": "oral tablet",
+      "initial_dose_mg": 25,
+      "route": "oral",
+      "planned_start_after_last_opioid_hours": 288,
+      "induction_strategy": "oral initiation"
+    }
+  },
+  "violated_constraint_codes": []
+}
