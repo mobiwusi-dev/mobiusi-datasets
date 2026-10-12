@@ -1,0 +1,77 @@
+{
+  "risk_scenario": {
+    "scenario_text": "In an outpatient session, the client describes recurring urges to self-injure but denies suicidal intent, a plan, or an immediate injury. The client agrees to work on a coping plan and a next-day check-in, but says they do not consent to the clinician contacting their sister. The scenario does not meet the service's stated emergency threshold.",
+    "risk_indicators": [
+      "Recurring urges to self-injure",
+      "Denial of suicidal intent and plan",
+      "No immediate injury reported",
+      "Client declines family contact",
+      "Client agrees to a coping plan and next-day check-in"
+    ],
+    "urgency_level": "Urgent, not immediate"
+  },
+  "protocol_rules": [
+    {
+      "constraint_id": "C-201",
+      "rule_text": "When a client reports self-injury urges, assess suicidal intent and plan directly during the same contact and record the responses.",
+      "applicability_conditions": [
+        "The client reports self-injury urges."
+      ]
+    },
+    {
+      "constraint_id": "C-202",
+      "rule_text": "If the client denies immediate intent and agrees to outpatient follow-up, complete a collaborative written coping and safety plan before the session ends.",
+      "applicability_conditions": [
+        "The client denies immediate intent.",
+        "The client agrees to outpatient follow-up."
+      ]
+    },
+    {
+      "constraint_id": "C-203",
+      "rule_text": "Do not contact a support person without the client's consent unless the stated emergency threshold is met.",
+      "applicability_conditions": [
+        "The client has not consented to support-person contact.",
+        "The stated emergency threshold is not met."
+      ]
+    },
+    {
+      "constraint_id": "C-204",
+      "rule_text": "When a client with self-injury urges agrees to a check-in, arrange that check-in within 24 hours.",
+      "applicability_conditions": [
+        "The client reports self-injury urges.",
+        "The client agrees to a check-in."
+      ]
+    }
+  ],
+  "omitted_constraints": [
+    "C-204"
+  ],
+  "assessment_rationale": "A-11 satisfies the same-contact assessment and documentation requirement in C-201, and A-12 completes the plan required by C-202. A-13 contacts the sister without consent when the emergency threshold is not met, violating C-203. Although the client agreed to a next-day check-in, no action arranges one, so C-204 is omitted.",
+  "violated_constraints": [
+    "C-203"
+  ],
+  "compliant_constraints": [
+    "C-201",
+    "C-202"
+  ],
+  "proposed_follow_up_actions": [
+    {
+      "action_id": "A-11",
+      "action_description": "The clinician asks directly about suicidal intent and plan and records the client's denials in the session note.",
+      "timing": "During the current session",
+      "responsible_role": "Treating clinician"
+    },
+    {
+      "action_id": "A-12",
+      "action_description": "The clinician and client complete a written coping and safety plan together.",
+      "timing": "Before the session ends",
+      "responsible_role": "Treating clinician and client"
+    },
+    {
+      "action_id": "A-13",
+      "action_description": "Despite the client's refusal and the absence of the emergency threshold, the clinician messages the client's sister about the client's disclosures.",
+      "timing": "After the session",
+      "responsible_role": "Treating clinician"
+    }
+  ]
+}

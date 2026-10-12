@@ -1,0 +1,74 @@
+{
+  "omitted_constraints": [
+    "C-104"
+  ],
+  "assessment_rationale": "A-01 addresses and documents the specified assessment elements, satisfying C-101. A-03 involves the available sister with the client's consent, satisfying C-103. A-02 ends live contact without a confirmed handoff, contrary to C-102. No proposed action records the assessment, actions, and disposition before the end of the shift, so C-104 is omitted.",
+  "violated_constraints": [
+    "C-102"
+  ],
+  "compliant_constraints": [
+    "C-101",
+    "C-103"
+  ],
+  "risk_scenario": {
+    "scenario_text": "During a telehealth session, the client reports intending to end their life that evening and says they have access to a means of doing so. The client agrees to an urgent evaluation and gives permission to contact their sister, who is available to help.",
+    "risk_indicators": [
+      "Stated intent to die",
+      "Near-term timeframe",
+      "Reported access to a means",
+      "Client consents to involving an available support person"
+    ],
+    "urgency_level": "Immediate"
+  },
+  "protocol_rules": [
+    {
+      "constraint_id": "C-101",
+      "rule_text": "During the same contact, directly assess and document intent, timeframe, access to means, and available protective supports when a client reports suicidal intent.",
+      "applicability_conditions": [
+        "The client reports suicidal intent during the contact."
+      ]
+    },
+    {
+      "constraint_id": "C-102",
+      "rule_text": "For stated intent with a near-term timeframe, maintain live contact while initiating emergency evaluation and do not end contact until the receiving service confirms handoff.",
+      "applicability_conditions": [
+        "The client reports suicidal intent with a near-term timeframe."
+      ]
+    },
+    {
+      "constraint_id": "C-103",
+      "rule_text": "When the client consents and a chosen support person is available, involve that person in immediate safety coordination before ending contact.",
+      "applicability_conditions": [
+        "The client consents to involving a support person.",
+        "The chosen support person is available."
+      ]
+    },
+    {
+      "constraint_id": "C-104",
+      "rule_text": "Record the risk assessment, actions taken, and disposition before the end of the clinician's shift.",
+      "applicability_conditions": [
+        "A crisis response has occurred during the shift."
+      ]
+    }
+  ],
+  "proposed_follow_up_actions": [
+    {
+      "action_id": "A-01",
+      "action_description": "The clinician asks about intent, timeframe, access to means, and available supports, and records the client's responses during the session.",
+      "timing": "During the current session",
+      "responsible_role": "Treating clinician"
+    },
+    {
+      "action_id": "A-02",
+      "action_description": "The clinician tells the client to contact emergency services independently, ends the video session, and does not confirm that a receiving service has accepted the client.",
+      "timing": "Immediately after the assessment",
+      "responsible_role": "Treating clinician"
+    },
+    {
+      "action_id": "A-03",
+      "action_description": "With the client's permission, the clinician contacts the client's sister to coordinate immediate support.",
+      "timing": "Before the session ends",
+      "responsible_role": "Treating clinician"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "risk_scenario": {
+    "scenario_text": "During a phone contact, the client reports having taken more medication than prescribed and now feeling dizzy. The client is alone and has not yet contacted emergency services.",
+    "risk_indicators": [
+      "Reported medication intake above the prescribed amount",
+      "New dizziness",
+      "Client is alone",
+      "No emergency response has been contacted"
+    ],
+    "urgency_level": "Immediate"
+  },
+  "protocol_rules": [
+    {
+      "constraint_id": "C-301",
+      "rule_text": "When a client reports taking more medication than prescribed and has new symptoms, initiate an emergency medical response immediately.",
+      "applicability_conditions": [
+        "The client reports taking more medication than prescribed.",
+        "The client reports new symptoms."
+      ]
+    },
+    {
+      "constraint_id": "C-302",
+      "rule_text": "For this presentation, maintain live contact while emergency assistance is being arranged and until handoff to a responder or receiving service is confirmed.",
+      "applicability_conditions": [
+        "The client reports taking more medication than prescribed and having new symptoms."
+      ]
+    },
+    {
+      "constraint_id": "C-303",
+      "rule_text": "Do not advise the client to drive themselves while experiencing new symptoms after taking more medication than prescribed.",
+      "applicability_conditions": [
+        "The client reports new symptoms after taking more medication than prescribed."
+      ]
+    },
+    {
+      "constraint_id": "C-304",
+      "rule_text": "During the same contact, notify the on-call supervisor when a client reports taking more medication than prescribed and having new symptoms.",
+      "applicability_conditions": [
+        "The client reports taking more medication than prescribed.",
+        "The client reports new symptoms."
+      ]
+    }
+  ],
+  "omitted_constraints": [
+    "C-304"
+  ],
+  "assessment_rationale": "A-21 follows the instruction not to advise self-driving, satisfying C-303. A-22 substitutes a routine appointment for the required immediate emergency response and ends live contact without a confirmed handoff, violating C-301 and C-302. No action notifies the on-call supervisor during the contact, so C-304 is omitted.",
+  "violated_constraints": [
+    "C-301",
+    "C-302"
+  ],
+  "compliant_constraints": [
+    "C-303"
+  ],
+  "proposed_follow_up_actions": [
+    {
+      "action_id": "A-21",
+      "action_description": "The clinician tells the client not to drive and to remain where they are while awaiting further contact.",
+      "timing": "Immediately",
+      "responsible_role": "Treating clinician"
+    },
+    {
+      "action_id": "A-22",
+      "action_description": "The clinician ends the call without contacting emergency services or confirming a handoff, and schedules a routine appointment for the following day instead.",
+      "timing": "During the current contact",
+      "responsible_role": "Treating clinician"
+    }
+  ]
+}
