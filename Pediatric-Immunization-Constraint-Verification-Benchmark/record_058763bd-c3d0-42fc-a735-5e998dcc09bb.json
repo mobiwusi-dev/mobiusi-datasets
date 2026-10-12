@@ -1,0 +1,73 @@
+{
+  "case_input": {
+    "age_months": 24,
+    "immune_status": "The child completed systemic immunosuppressive therapy; the treatment intensity and stop date are not documented.",
+    "prior_doses": [
+      {
+        "vaccine_name": "MMR",
+        "dose_number": 1,
+        "administration_date": "2024-01-10",
+        "age_at_dose_months": 12
+      }
+    ],
+    "infection_or_exposure": {
+      "context_type": "recent infection",
+      "pathogen_or_disease": "Influenza A",
+      "event_date": "2024-12-20",
+      "details": "The reported illness has resolved; no current symptoms are documented."
+    },
+    "proposed_plan": [
+      {
+        "vaccine_name": "MMR",
+        "dose_number": 2,
+        "planned_date": "2025-01-10"
+      }
+    ],
+    "applicable_rules": [
+      {
+        "rule_code": "MMR-MIN-AGE",
+        "rule_type": "minimum age",
+        "rule_description": "For routine MMR vaccination, the dose must be administered at age 12 months or older.",
+        "source_reference": "CDC/ACIP child immunization guidance, MMR minimum age"
+      },
+      {
+        "rule_code": "MMR-MIN-INTERVAL",
+        "rule_type": "minimum interval",
+        "rule_description": "At least 28 days must elapse between the first and second MMR doses.",
+        "source_reference": "CDC/ACIP child immunization guidance, MMR minimum interval"
+      },
+      {
+        "rule_code": "LIVE-VACCINE-IMMUNOSUPPRESSION",
+        "rule_type": "contraindication",
+        "rule_description": "MMR is a live vaccine. Before administration after systemic immunosuppressive therapy, eligibility must be assessed using the therapy details and timing; vaccination is contraindicated during significant immunosuppression.",
+        "source_reference": "CDC General Best Practice Guidelines for Immunization, altered immunocompetence and live vaccines"
+      }
+    ]
+  },
+  "violations": [],
+  "overall_verdict": "indeterminate",
+  "constraint_checks": [
+    {
+      "rule_code": "MMR-MIN-AGE",
+      "status": "pass",
+      "expected_condition": "The child is at least 12 months old on the planned administration date.",
+      "observed_condition": "The child is 24 months old on 2025-01-10.",
+      "explanation": "The planned dose meets the minimum age stated in the applicable rule."
+    },
+    {
+      "rule_code": "MMR-MIN-INTERVAL",
+      "status": "pass",
+      "expected_condition": "At least 28 days between MMR dose 1 and dose 2.",
+      "observed_condition": "Dose 1 was administered on 2024-01-10; dose 2 is planned for 2025-01-10.",
+      "explanation": "The documented interval exceeds the stated minimum."
+    },
+    {
+      "rule_code": "LIVE-VACCINE-IMMUNOSUPPRESSION",
+      "status": "indeterminate",
+      "expected_condition": "Confirm that the child is not significantly immunosuppressed and that the timing after therapy meets applicable safety guidance.",
+      "observed_condition": "Systemic immunosuppressive therapy is reported as completed, but its intensity and stop date are not documented.",
+      "explanation": "The available information is insufficient to determine whether the live-vaccine contraindication applies or whether the post-therapy timing requirement is met."
+    }
+  ],
+  "validation_summary": "The age and dose-interval checks pass. The overall assessment is indeterminate because the record does not provide the treatment intensity or stop date needed to assess the stated live-vaccine safety constraint."
+}

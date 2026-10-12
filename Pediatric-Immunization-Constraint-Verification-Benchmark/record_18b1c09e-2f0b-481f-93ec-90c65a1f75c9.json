@@ -1,0 +1,59 @@
+{
+  "case_input": {
+    "age_months": 11,
+    "immune_status": "Immunocompetent; no history of a vaccine contraindication.",
+    "prior_doses": [],
+    "infection_or_exposure": {
+      "context_type": "active infection",
+      "pathogen_or_disease": "Mild acute otitis media",
+      "event_date": "2025-04-08",
+      "details": "The child is afebrile, symptoms are mild, and no moderate or severe illness is reported."
+    },
+    "proposed_plan": [
+      {
+        "vaccine_name": "Hepatitis A",
+        "dose_number": 1,
+        "planned_date": "2025-04-10"
+      }
+    ],
+    "applicable_rules": [
+      {
+        "rule_code": "HEPA-MIN-AGE",
+        "rule_type": "minimum age",
+        "rule_description": "The first routine hepatitis A vaccine dose must be administered at age 12 months or older.",
+        "source_reference": "CDC/ACIP child immunization guidance, hepatitis A schedule"
+      },
+      {
+        "rule_code": "MILD-ILLNESS",
+        "rule_type": "precaution",
+        "rule_description": "A mild acute illness without moderate or severe symptoms is not a reason to defer vaccination.",
+        "source_reference": "CDC General Best Practice Guidelines for Immunization, precautions and contraindications"
+      }
+    ]
+  },
+  "violations": [
+    {
+      "rule_code": "HEPA-MIN-AGE",
+      "affected_vaccine": "Hepatitis A, dose 1",
+      "violation_description": "The dose is planned at 11 months, before the stated minimum age of 12 months."
+    }
+  ],
+  "overall_verdict": "non_compliant",
+  "constraint_checks": [
+    {
+      "rule_code": "HEPA-MIN-AGE",
+      "status": "fail",
+      "expected_condition": "The child is at least 12 months old on the planned administration date.",
+      "observed_condition": "The child is 11 months old on 2025-04-10.",
+      "explanation": "The planned first dose is below the minimum age stated in the applicable rule."
+    },
+    {
+      "rule_code": "MILD-ILLNESS",
+      "status": "pass",
+      "expected_condition": "No moderate or severe illness that would warrant deferral.",
+      "observed_condition": "The child has mild, afebrile otitis media, with no moderate or severe illness reported.",
+      "explanation": "The documented illness matches the mild-illness condition described in the rule."
+    }
+  ],
+  "validation_summary": "The plan is non-compliant because the first hepatitis A dose is scheduled before the stated minimum age. The documented mild illness does not independently fail the listed precaution rule."
+}
