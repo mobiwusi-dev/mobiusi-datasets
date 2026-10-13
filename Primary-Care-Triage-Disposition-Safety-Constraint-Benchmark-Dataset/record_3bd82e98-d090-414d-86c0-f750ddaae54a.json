@@ -1,0 +1,43 @@
+{
+  "constraint_violations": [],
+  "source_record": {
+    "chief_complaint": "Mild cough and sore throat",
+    "symptoms": [
+      {
+        "symptom_name": "Cough",
+        "severity": "Mild",
+        "onset": "Three days ago",
+        "associated_details": "Intermittent; no shortness of breath reported."
+      },
+      {
+        "symptom_name": "Sore throat",
+        "severity": "Mild",
+        "onset": "Three days ago",
+        "associated_details": "Able to swallow fluids; no difficulty swallowing reported."
+      },
+      {
+        "symptom_name": "Nasal congestion",
+        "severity": "Mild",
+        "onset": "Two days ago",
+        "associated_details": "No rapid worsening reported."
+      }
+    ],
+    "vital_signs": {
+      "temperature_c": 37.1,
+      "heart_rate_bpm": 76,
+      "respiratory_rate_bpm": 16,
+      "systolic_blood_pressure_mmhg": 122,
+      "diastolic_blood_pressure_mmhg": 78,
+      "oxygen_saturation_percent": 98
+    },
+    "candidate_disposition": {
+      "destination": "Home",
+      "timeframe": "Routine follow-up if symptoms persist beyond 7 days",
+      "instructions": "Rest, drink fluids, and contact a clinic sooner if breathing becomes difficult, swallowing becomes difficult, or symptoms significantly worsen."
+    }
+  },
+  "urgency_level": "routine",
+  "safety_rationale": "The reported cough, sore throat, and congestion are mild and have not rapidly worsened. The recorded temperature, heart rate, respiratory rate, blood pressure, and oxygen saturation do not show an abnormality in this record, and no breathing or swallowing difficulty is reported. Home care with routine follow-up and earlier review for worsening symptoms is concordant with the information provided.",
+  "red_flag_findings": [],
+  "disposition_concordant": true
+}

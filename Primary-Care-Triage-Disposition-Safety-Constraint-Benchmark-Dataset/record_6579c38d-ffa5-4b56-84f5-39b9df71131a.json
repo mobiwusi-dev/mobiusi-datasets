@@ -1,0 +1,45 @@
+{
+  "safety_rationale": "Persistent severe chest pressure at rest with shortness of breath and cold sweating, together with low blood pressure, tachycardia, rapid breathing, and reduced oxygen saturation, indicates an emergent presentation. Home care and a next-day appointment are not concordant; immediate emergency assessment is warranted.",
+  "red_flag_findings": [
+    "Severe chest pressure persistent at rest with shortness of breath and cold sweating",
+    "Low blood pressure of 92/60 mmHg",
+    "Heart rate of 118 bpm and respiratory rate of 24 breaths per minute",
+    "Oxygen saturation of 93%"
+  ],
+  "source_record": {
+    "chief_complaint": "Persistent chest pressure",
+    "symptoms": [
+      {
+        "symptom_name": "Central chest pressure",
+        "severity": "Severe",
+        "onset": "Began 45 minutes ago",
+        "associated_details": "Persistent at rest and accompanied by shortness of breath and cold sweating."
+      },
+      {
+        "symptom_name": "Shortness of breath",
+        "severity": "Moderate",
+        "onset": "Began with the chest pressure",
+        "associated_details": "Present at rest."
+      }
+    ],
+    "vital_signs": {
+      "temperature_c": 36.8,
+      "heart_rate_bpm": 118,
+      "respiratory_rate_bpm": 24,
+      "systolic_blood_pressure_mmhg": 92,
+      "diastolic_blood_pressure_mmhg": 60,
+      "oxygen_saturation_percent": 93
+    },
+    "candidate_disposition": {
+      "destination": "Home",
+      "timeframe": "Wait until tomorrow for a routine clinic appointment",
+      "instructions": "Rest and avoid exertion; call the clinic if symptoms worsen."
+    }
+  },
+  "urgency_level": "emergent",
+  "constraint_violations": [
+    "The home disposition and next-day review do not provide immediate emergency assessment despite the reported symptoms and abnormal vital signs.",
+    "The instructions advise waiting for worsening symptoms rather than seeking emergency care now."
+  ],
+  "disposition_concordant": false
+}

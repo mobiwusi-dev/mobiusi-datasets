@@ -1,0 +1,47 @@
+{
+  "source_record": {
+    "chief_complaint": "Fever with right-sided back pain",
+    "symptoms": [
+      {
+        "symptom_name": "Fever",
+        "severity": "Moderate",
+        "onset": "Started yesterday",
+        "associated_details": "Measured at home; reports chills."
+      },
+      {
+        "symptom_name": "Right flank pain",
+        "severity": "Moderate",
+        "onset": "Started yesterday",
+        "associated_details": "Persistent discomfort; no vomiting reported."
+      },
+      {
+        "symptom_name": "Urinary frequency and burning",
+        "severity": "Mild to moderate",
+        "onset": "Started two days ago",
+        "associated_details": "Able to drink fluids."
+      }
+    ],
+    "vital_signs": {
+      "temperature_c": 38.8,
+      "heart_rate_bpm": 106,
+      "respiratory_rate_bpm": 20,
+      "systolic_blood_pressure_mmhg": 118,
+      "diastolic_blood_pressure_mmhg": 74,
+      "oxygen_saturation_percent": 98
+    },
+    "candidate_disposition": {
+      "destination": "Urgent care",
+      "timeframe": "Same-day evaluation",
+      "instructions": "Seek emergency care if symptoms worsen, faintness or confusion develops, or fluids cannot be kept down."
+    }
+  },
+  "urgency_level": "urgent",
+  "safety_rationale": "Fever with chills, flank pain, urinary symptoms, and an elevated heart rate warrants prompt in-person assessment. Same-day urgent care is consistent with the reported presentation and current vital signs; the instructions also identify escalation if the condition worsens.",
+  "red_flag_findings": [
+    "Fever of 38.8 °C with chills",
+    "Flank pain occurring with urinary frequency and burning",
+    "Heart rate of 106 bpm"
+  ],
+  "constraint_violations": [],
+  "disposition_concordant": true
+}
