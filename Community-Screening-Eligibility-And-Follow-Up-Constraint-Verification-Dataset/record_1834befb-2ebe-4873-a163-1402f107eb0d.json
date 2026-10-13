@@ -1,0 +1,85 @@
+{
+  "follow_up_record": {
+    "screening_completed": true,
+    "screening_result": "Result exceeded the program's referral threshold; routine, non-urgent referral indicated.",
+    "disposition": "Referral to primary care liaison",
+    "disposition_date": "2026-03-11",
+    "follow_up_due_date": "2026-03-08",
+    "referral_date": "2026-03-11"
+  },
+  "service_recipient": {
+    "age_years": 67,
+    "risk_factors": [
+      "Documented prior abnormal screening result"
+    ],
+    "contraindications": [],
+    "screening_date": "2026-03-01"
+  },
+  "pathway_validation": {
+    "pathway_consistent": true,
+    "observed_pathway": [
+      "Eligibility criteria reviewed",
+      "Screening completed and result recorded above the referral threshold",
+      "Referral to the primary care liaison recorded"
+    ],
+    "deviations": []
+  },
+  "deadline_validation": {
+    "deadline_met": false,
+    "elapsed_days": 10,
+    "applicable_limit_days": 7,
+    "due_date_consistent": true,
+    "explanation": "The referral occurred 10 days after screening, exceeding the 7-day limit. The recorded due date of 2026-03-08 is exactly 7 days after screening and is consistent with the limit."
+  },
+  "eligibility_assessment": {
+    "eligible": true,
+    "matched_inclusion_criteria": [
+      "Age is within the permitted range of 45 to 80 years",
+      "Documented prior abnormal screening result meets a required risk-factor criterion"
+    ],
+    "unmet_or_exclusion_criteria": [],
+    "explanation": "The recipient is 67 and has the documented risk factor required by the program. No exclusion condition is documented."
+  },
+  "screening_program_rules": {
+    "program_name": "Community Abnormal Result Follow-up Program",
+    "eligibility_criteria": {
+      "minimum_age_years": 45,
+      "maximum_age_years": 80,
+      "required_risk_factors": [
+        "Documented prior abnormal screening result"
+      ],
+      "exclusion_conditions": [
+        "Active enrollment in the program's specialist follow-up pathway"
+      ]
+    },
+    "screening_pathway": [
+      {
+        "step_order": 1,
+        "action": "Confirm age, risk-factor, and exclusion criteria",
+        "responsible_role": "Intake nurse"
+      },
+      {
+        "step_order": 2,
+        "action": "Complete the screening and record the result",
+        "responsible_role": "Screening nurse"
+      },
+      {
+        "step_order": 3,
+        "action": "Refer results above the referral threshold to the primary care liaison",
+        "responsible_role": "Referral coordinator"
+      }
+    ],
+    "follow_up_constraints": {
+      "routine_follow_up_max_days": 30,
+      "referral_max_days": 7,
+      "urgent_referral_required": false
+    }
+  },
+  "overall_constraint_result": {
+    "valid": false,
+    "violation_codes": [
+      "REFERRAL_DEADLINE_EXCEEDED"
+    ],
+    "summary": "Eligibility and pathway checks pass, but the referral was recorded 3 days beyond the permitted deadline."
+  }
+}

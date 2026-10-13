@@ -1,0 +1,91 @@
+{
+  "follow_up_record": {
+    "screening_completed": true,
+    "screening_result": "Positive result flagged by the program for urgent referral.",
+    "disposition": "Urgent referral to the respiratory assessment service",
+    "disposition_date": "2026-04-06",
+    "follow_up_due_date": "2026-04-07",
+    "referral_date": "2026-04-06"
+  },
+  "service_recipient": {
+    "age_years": 35,
+    "risk_factors": [],
+    "contraindications": [
+      "Currently enrolled in active specialty respiratory care"
+    ],
+    "screening_date": "2026-04-04"
+  },
+  "pathway_validation": {
+    "pathway_consistent": false,
+    "observed_pathway": [
+      "Eligibility criteria reviewed",
+      "Screening completed despite the recipient not meeting eligibility criteria",
+      "Positive result recorded and urgent referral initiated"
+    ],
+    "deviations": [
+      "Screening was completed despite the age criterion not being met, the required risk factor being absent, and an exclusion condition being present."
+    ]
+  },
+  "deadline_validation": {
+    "deadline_met": true,
+    "elapsed_days": 2,
+    "applicable_limit_days": 3,
+    "due_date_consistent": true,
+    "explanation": "The urgent referral occurred 2 days after screening, within the 3-day limit. The recorded due date of 2026-04-07 is 3 days after screening and matches the limit."
+  },
+  "eligibility_assessment": {
+    "eligible": false,
+    "matched_inclusion_criteria": [],
+    "unmet_or_exclusion_criteria": [
+      "Age is below the minimum of 40 years",
+      "Required risk factor current tobacco use is not documented",
+      "Exclusion condition applies: currently enrolled in active specialty respiratory care"
+    ],
+    "explanation": "The recipient is below the minimum age, has no documented required risk factor, and has a documented exclusion condition."
+  },
+  "screening_program_rules": {
+    "program_name": "Community Respiratory Risk Screening Program",
+    "eligibility_criteria": {
+      "minimum_age_years": 40,
+      "maximum_age_years": 70,
+      "required_risk_factors": [
+        "Current tobacco use"
+      ],
+      "exclusion_conditions": [
+        "Currently enrolled in active specialty respiratory care"
+      ]
+    },
+    "screening_pathway": [
+      {
+        "step_order": 1,
+        "action": "Review age, risk-factor, and exclusion criteria before screening",
+        "responsible_role": "Community screening nurse"
+      },
+      {
+        "step_order": 2,
+        "action": "Complete screening only for recipients who meet eligibility criteria",
+        "responsible_role": "Community screening nurse"
+      },
+      {
+        "step_order": 3,
+        "action": "For an eligible recipient with a result flagged for urgent referral, initiate referral to the respiratory assessment service",
+        "responsible_role": "Referral coordinator"
+      }
+    ],
+    "follow_up_constraints": {
+      "routine_follow_up_max_days": 21,
+      "referral_max_days": 3,
+      "urgent_referral_required": true
+    }
+  },
+  "overall_constraint_result": {
+    "valid": false,
+    "violation_codes": [
+      "AGE_BELOW_MINIMUM",
+      "REQUIRED_RISK_FACTOR_MISSING",
+      "EXCLUSION_CONDITION_PRESENT",
+      "SCREENING_COMPLETED_WHILE_INELIGIBLE"
+    ],
+    "summary": "The referral timing meets the program limit, but the recipient was ineligible and screening was completed contrary to the pathway."
+  }
+}
