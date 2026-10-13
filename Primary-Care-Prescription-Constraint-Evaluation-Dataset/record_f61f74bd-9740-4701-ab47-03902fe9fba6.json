@@ -1,0 +1,44 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_years": 52,
+      "sex": "Male",
+      "allergies": [],
+      "conditions": [
+        "Acute musculoskeletal pain"
+      ],
+      "current_medications": [
+        {
+          "medication_name": "Acetaminophen",
+          "dose_text": "500 mg",
+          "route": "oral",
+          "frequency": "As needed, no more than twice daily"
+        }
+      ]
+    },
+    "proposed_prescription": {
+      "medication_name": "Ibuprofen",
+      "dose_amount": 800,
+      "dose_unit": "mg",
+      "route": "oral",
+      "frequency": "Three times daily",
+      "duration_days": 5
+    },
+    "constraints": [
+      {
+        "constraint_type": "Dose boundary",
+        "rule_description": "The documented plan for this case sets a maximum single ibuprofen dose of 600 mg.",
+        "maximum_dose": 600,
+        "dose_unit": "mg"
+      }
+    ]
+  },
+  "violation_reasons": [
+    {
+      "constraint_type": "Dose boundary",
+      "reason": "The proposed single dose exceeds the maximum specified in the case constraint.",
+      "evidence": "The proposed dose is 800 mg per dose; the constraint sets a maximum of 600 mg per dose."
+    }
+  ],
+  "has_constraint_violation": true
+}

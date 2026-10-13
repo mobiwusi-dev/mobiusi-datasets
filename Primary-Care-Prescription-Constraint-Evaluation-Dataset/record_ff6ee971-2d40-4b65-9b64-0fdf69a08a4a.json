@@ -1,0 +1,39 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_years": 64,
+      "sex": "Female",
+      "allergies": [],
+      "conditions": [
+        "Hypertension"
+      ],
+      "current_medications": [
+        {
+          "medication_name": "Losartan",
+          "dose_text": "50 mg",
+          "route": "oral",
+          "frequency": "Once daily"
+        }
+      ]
+    },
+    "proposed_prescription": {
+      "medication_name": "Amlodipine",
+      "dose_amount": 5,
+      "dose_unit": "mg",
+      "route": "oral",
+      "frequency": "Once daily",
+      "duration_days": 30
+    },
+    "constraints": [
+      {
+        "constraint_type": "Dose boundary",
+        "rule_description": "The documented plan for this case permits a single amlodipine dose from 2.5 mg through 10 mg.",
+        "minimum_dose": 2.5,
+        "maximum_dose": 10,
+        "dose_unit": "mg"
+      }
+    ]
+  },
+  "violation_reasons": [],
+  "has_constraint_violation": false
+}

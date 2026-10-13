@@ -1,0 +1,37 @@
+{
+  "case_input": {
+    "patient_context": {
+      "age_years": 46,
+      "sex": "Female",
+      "allergies": [
+        "Amoxicillin (hives)"
+      ],
+      "conditions": [
+        "Acute bacterial sinusitis"
+      ],
+      "current_medications": []
+    },
+    "proposed_prescription": {
+      "medication_name": "Amoxicillin",
+      "dose_amount": 500,
+      "dose_unit": "mg",
+      "route": "oral",
+      "frequency": "Every 8 hours",
+      "duration_days": 7
+    },
+    "constraints": [
+      {
+        "constraint_type": "Allergy",
+        "rule_description": "Do not prescribe amoxicillin to a patient with a documented amoxicillin allergy."
+      }
+    ]
+  },
+  "violation_reasons": [
+    {
+      "constraint_type": "Allergy",
+      "reason": "The proposed medication is amoxicillin, which the documented allergy constraint prohibits for this patient.",
+      "evidence": "The patient context lists an allergy to Amoxicillin (hives); the proposed prescription names Amoxicillin."
+    }
+  ],
+  "has_constraint_violation": true
+}
