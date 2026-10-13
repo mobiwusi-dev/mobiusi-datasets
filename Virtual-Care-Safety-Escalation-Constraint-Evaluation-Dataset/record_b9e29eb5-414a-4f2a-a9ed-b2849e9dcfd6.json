@@ -1,0 +1,39 @@
+{
+  "raw_case": {
+    "reported_symptoms": {
+      "symptom_summary": "The patient reports sudden chest pressure with shortness of breath and a brief loss of consciousness.",
+      "symptoms": [
+        "Chest pressure",
+        "Shortness of breath",
+        "Brief loss of consciousness"
+      ],
+      "onset_and_course": "Symptoms began about 20 minutes ago. The patient briefly lost consciousness before starting the video visit and continues to report chest pressure and shortness of breath."
+    },
+    "risk_conditions": [
+      "No additional risk conditions were supplied."
+    ],
+    "virtual_care_context": {
+      "care_channel": "video",
+      "patient_location": "At home in the care region; the patient's current location has been confirmed during the encounter.",
+      "assessment_limitations": "The clinician cannot perform an in-person examination or directly monitor vital signs through the video visit."
+    },
+    "escalation_rules": [
+      "If the patient reports current chest pressure together with shortness of breath or a recent loss of consciousness, emergency referral is required.",
+      "For a patient meeting the emergency-referral rule, arrange access to local emergency services at the confirmed location; do not rely on continued video assessment as the disposition.",
+      "During the emergency handoff, remain connected if feasible and ask the patient to alert a nearby support person, if available."
+    ]
+  },
+  "decision_rationale": "The patient reports current chest pressure and shortness of breath, as well as a recent loss of consciousness, meeting Rule 1. Rule 2 requires arranging local emergency services, which entails in-person emergency assessment. Rule 3 specifies the additional handoff actions.",
+  "applicable_rule_indices": [
+    1,
+    2,
+    3
+  ],
+  "other_escalation_actions": [
+    "Remain connected during the emergency handoff if feasible.",
+    "Ask the patient to alert a nearby support person, if available."
+  ],
+  "emergency_referral_required": true,
+  "constraint_validation_status": "consistent",
+  "in_person_assessment_required": true
+}

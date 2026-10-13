@@ -1,0 +1,36 @@
+{
+  "constraint_validation_status": "consistent",
+  "in_person_assessment_required": true,
+  "emergency_referral_required": false,
+  "raw_case": {
+    "reported_symptoms": {
+      "symptom_summary": "The patient reports a fever while receiving immunosuppressive therapy and denies breathing difficulty, confusion, or fainting.",
+      "symptoms": [
+        "Fever"
+      ],
+      "onset_and_course": "The fever began this morning and has continued through the day. No other symptoms are reported in the encounter."
+    },
+    "risk_conditions": [
+      "Currently receiving immunosuppressive therapy."
+    ],
+    "virtual_care_context": {
+      "care_channel": "phone",
+      "patient_location": "At home in the care region; the patient can arrange transport to a nearby clinic.",
+      "assessment_limitations": "A phone encounter does not permit direct examination or verification of the patient's reported temperature."
+    },
+    "escalation_rules": [
+      "A patient reporting fever while receiving immunosuppressive therapy must receive an in-person assessment at a clinic today.",
+      "Emergency referral is required only if the patient reports breathing difficulty, confusion, or fainting; none of these symptoms are reported in this case.",
+      "Before the patient leaves for the clinic, notify the patient's treating care team that a same-day assessment is being arranged."
+    ]
+  },
+  "decision_rationale": "The reported fever and immunosuppressive therapy meet Rule 1, requiring an in-person assessment today. The symptoms named in Rule 2 are not reported, so that rule does not require emergency referral. Rule 3 requires notifying the treating care team.",
+  "applicable_rule_indices": [
+    1,
+    2,
+    3
+  ],
+  "other_escalation_actions": [
+    "Notify the patient's treating care team that a same-day assessment is being arranged."
+  ]
+}
