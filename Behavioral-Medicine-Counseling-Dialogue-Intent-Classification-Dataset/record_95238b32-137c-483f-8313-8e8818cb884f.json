@@ -1,0 +1,9 @@
+{
+  "intent_labels": [
+    "ambivalence",
+    "goal_setting"
+  ],
+  "intent_rationale": "The patient expresses a reason to change alongside a perceived benefit of continuing to smoke, showing ambivalence, and proposes a specific initial action.",
+  "conversation_text": "Counselor: How are you feeling about cutting back on smoking this month?\nPatient: I want to breathe more easily, but smoking is still how I handle stressful breaks at work. I could start by leaving my cigarettes at home on two workdays each week.",
+  "patient_utterance": "I want to breathe more easily, but smoking is still how I handle stressful breaks at work. I could start by leaving my cigarettes at home on two workdays each week."
+}

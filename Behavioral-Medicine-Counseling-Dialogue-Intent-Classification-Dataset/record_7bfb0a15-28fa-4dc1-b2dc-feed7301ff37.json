@@ -1,0 +1,9 @@
+{
+  "intent_labels": [
+    "barrier_disclosure",
+    "help_seeking"
+  ],
+  "intent_rationale": "The patient identifies changing work shifts and fatigue as obstacles, then directly asks for help finding workable options.",
+  "conversation_text": "Clinician: What has made it difficult to follow the meal plan you discussed last time?\nPatient: My shifts change every week, and I often get home too tired to cook. Could you help me think of options that would work on late nights?",
+  "patient_utterance": "My shifts change every week, and I often get home too tired to cook. Could you help me think of options that would work on late nights?"
+}

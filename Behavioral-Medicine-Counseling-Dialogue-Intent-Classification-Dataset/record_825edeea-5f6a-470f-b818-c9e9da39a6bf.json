@@ -1,0 +1,8 @@
+{
+  "intent_labels": [
+    "information_seeking"
+  ],
+  "intent_rationale": "The patient asks whether a specific activity is sufficient, seeking information about how to begin increasing activity.",
+  "conversation_text": "Counselor: You mentioned wanting to be more active. What would you like to know about getting started?\nPatient: Is a short walk after dinner enough to make a difference, or do I need to exercise for a long time?",
+  "patient_utterance": "Is a short walk after dinner enough to make a difference, or do I need to exercise for a long time?"
+}
