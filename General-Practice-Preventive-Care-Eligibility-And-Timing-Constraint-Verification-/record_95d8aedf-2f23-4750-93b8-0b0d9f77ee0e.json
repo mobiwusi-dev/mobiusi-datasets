@@ -1,0 +1,58 @@
+{
+  "patient_context": {
+    "age_years": 68,
+    "sex_at_birth": "male",
+    "risk_factors": [
+      "25 pack-years of cigarette smoking",
+      "Stopped smoking 8 years ago"
+    ],
+    "prior_preventive_care": [
+      {
+        "service_name": "Low-dose CT lung cancer screening",
+        "last_completed_date": "2024-01-20",
+        "completion_status": "completed"
+      }
+    ],
+    "contraindications": []
+  },
+  "decision_rationale": "The patient meets the specified age and smoking-history criteria, and more than 12 months have elapsed since the previous screening. No exclusion conditions are specified.",
+  "eligibility_status": "eligible",
+  "constraint_assessments": [
+    {
+      "criterion": "Age is between 50 and 80 years, inclusive",
+      "status": "satisfied",
+      "evidence": "The patient is 68 years old."
+    },
+    {
+      "criterion": "At least 20 pack-years of cigarette smoking",
+      "status": "satisfied",
+      "evidence": "The patient has a documented 25 pack-year cigarette smoking history."
+    },
+    {
+      "criterion": "Currently smokes or quit within the past 15 years",
+      "status": "satisfied",
+      "evidence": "The patient stopped smoking 8 years ago."
+    },
+    {
+      "criterion": "At least 12 months have elapsed since the previous low-dose CT screening",
+      "status": "satisfied",
+      "evidence": "The previous screening was completed on 2024-01-20; the proposed date is 2025-02-15."
+    }
+  ],
+  "applicability_constraints": {
+    "minimum_age_years": 50,
+    "maximum_age_years": 80,
+    "applicable_sexes": [],
+    "required_risk_factors": [
+      "At least 20 pack-years of cigarette smoking",
+      "Currently smokes or quit within the past 15 years"
+    ],
+    "minimum_interval_months": 12,
+    "exclusion_conditions": []
+  },
+  "proposed_preventive_measure": {
+    "service_name": "Low-dose CT lung cancer screening",
+    "action_type": "screening",
+    "proposed_date": "2025-02-15"
+  }
+}

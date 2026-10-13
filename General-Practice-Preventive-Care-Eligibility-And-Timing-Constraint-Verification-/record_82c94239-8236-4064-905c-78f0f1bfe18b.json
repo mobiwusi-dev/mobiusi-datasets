@@ -1,0 +1,42 @@
+{
+  "patient_context": {
+    "age_years": 48,
+    "sex_at_birth": "female",
+    "risk_factors": [],
+    "prior_preventive_care": [
+      {
+        "service_name": "Blood pressure screening",
+        "last_completed_date": "2024-01-10",
+        "completion_status": "completed"
+      }
+    ],
+    "contraindications": []
+  },
+  "decision_rationale": "The patient meets the specified age range, and more than 12 months have elapsed since the completed screening. No required risk factors or exclusion conditions are specified.",
+  "eligibility_status": "eligible",
+  "constraint_assessments": [
+    {
+      "criterion": "Age is between 18 and 79 years, inclusive",
+      "status": "satisfied",
+      "evidence": "The patient is 48 years old."
+    },
+    {
+      "criterion": "At least 12 months have elapsed since the previous blood pressure screening",
+      "status": "satisfied",
+      "evidence": "The previous screening was completed on 2024-01-10; the proposed date is 2025-02-01."
+    }
+  ],
+  "applicability_constraints": {
+    "minimum_age_years": 18,
+    "maximum_age_years": 79,
+    "applicable_sexes": [],
+    "required_risk_factors": [],
+    "minimum_interval_months": 12,
+    "exclusion_conditions": []
+  },
+  "proposed_preventive_measure": {
+    "service_name": "Blood pressure screening",
+    "action_type": "screening",
+    "proposed_date": "2025-02-01"
+  }
+}

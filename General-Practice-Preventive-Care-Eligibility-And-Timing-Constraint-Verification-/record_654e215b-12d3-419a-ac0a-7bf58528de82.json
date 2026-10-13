@@ -1,0 +1,49 @@
+{
+  "patient_context": {
+    "age_years": 32,
+    "sex_at_birth": "female",
+    "risk_factors": [],
+    "prior_preventive_care": [
+      {
+        "service_name": "Cervical cytology screening",
+        "last_completed_date": "2024-06-15",
+        "completion_status": "completed"
+      }
+    ],
+    "contraindications": []
+  },
+  "decision_rationale": "The patient meets the specified age and sex criteria, but the proposed screening falls before the required 36-month interval has elapsed.",
+  "eligibility_status": "ineligible",
+  "constraint_assessments": [
+    {
+      "criterion": "Age is between 21 and 65 years, inclusive",
+      "status": "satisfied",
+      "evidence": "The patient is 32 years old."
+    },
+    {
+      "criterion": "The patient's sex at birth is included in the applicable categories",
+      "status": "satisfied",
+      "evidence": "The recorded sex at birth is female, which is included in the applicable sexes."
+    },
+    {
+      "criterion": "At least 36 months have elapsed since the previous cervical cytology screening",
+      "status": "not_satisfied",
+      "evidence": "The previous screening was completed on 2024-06-15, less than 36 months before the proposed date of 2025-06-01."
+    }
+  ],
+  "applicability_constraints": {
+    "minimum_age_years": 21,
+    "maximum_age_years": 65,
+    "applicable_sexes": [
+      "female"
+    ],
+    "required_risk_factors": [],
+    "minimum_interval_months": 36,
+    "exclusion_conditions": []
+  },
+  "proposed_preventive_measure": {
+    "service_name": "Cervical cytology screening",
+    "action_type": "screening",
+    "proposed_date": "2025-06-01"
+  }
+}
