@@ -1,0 +1,70 @@
+{
+  "candidate_sequence": [
+    "PLAN",
+    "REGISTER",
+    "PHASE",
+    "CLOSE"
+  ],
+  "procedure_constraints": {
+    "procedure_id": "NSP-SEQ-108",
+    "steps": [
+      {
+        "step_id": "PLAN",
+        "step_name": "Procedure plan confirmation",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "IMAGE",
+        "step_name": "Baseline imaging review",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [
+          "REGISTER"
+        ],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "REGISTER",
+        "step_name": "Navigation reference registration",
+        "prerequisite_step_ids": [
+          "IMAGE"
+        ],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "PHASE",
+        "step_name": "Planned procedure phase",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "CLOSE",
+        "step_name": "Closure and handoff",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      }
+    ],
+    "ordering_constraints": []
+  },
+  "constraint_check_summary": {
+    "is_sequence_valid": false,
+    "violation_count": 1,
+    "detected_violation_types": [
+      "missing_prerequisite"
+    ]
+  },
+  "reference_violation_labels": [
+    {
+      "violation_type": "missing_prerequisite",
+      "involved_step_ids": [
+        "IMAGE",
+        "REGISTER"
+      ],
+      "explanation": "REGISTER requires IMAGE to be completed first, but IMAGE is absent from the candidate sequence."
+    }
+  ]
+}

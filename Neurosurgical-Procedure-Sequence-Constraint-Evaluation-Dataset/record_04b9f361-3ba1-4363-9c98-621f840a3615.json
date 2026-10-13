@@ -1,0 +1,63 @@
+{
+  "candidate_sequence": [
+    "VERIFY",
+    "CORRIDOR_A",
+    "CORRIDOR_B",
+    "CLOSE"
+  ],
+  "procedure_constraints": {
+    "procedure_id": "NSP-SEQ-263",
+    "steps": [
+      {
+        "step_id": "VERIFY",
+        "step_name": "Pre-procedure verification",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "CORRIDOR_A",
+        "step_name": "Corridor A setup",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": [
+          "CORRIDOR_B"
+        ]
+      },
+      {
+        "step_id": "CORRIDOR_B",
+        "step_name": "Corridor B setup",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": [
+          "CORRIDOR_A"
+        ]
+      },
+      {
+        "step_id": "CLOSE",
+        "step_name": "Closure and handoff",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      }
+    ],
+    "ordering_constraints": []
+  },
+  "constraint_check_summary": {
+    "is_sequence_valid": false,
+    "violation_count": 1,
+    "detected_violation_types": [
+      "incompatible_operations"
+    ]
+  },
+  "reference_violation_labels": [
+    {
+      "violation_type": "incompatible_operations",
+      "involved_step_ids": [
+        "CORRIDOR_A",
+        "CORRIDOR_B"
+      ],
+      "explanation": "Corridor A setup and Corridor B setup are defined as incompatible alternatives, but both appear in the candidate sequence."
+    }
+  ]
+}

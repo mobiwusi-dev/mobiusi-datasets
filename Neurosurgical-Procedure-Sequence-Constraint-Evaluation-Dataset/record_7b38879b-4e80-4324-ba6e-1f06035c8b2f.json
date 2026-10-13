@@ -1,0 +1,72 @@
+{
+  "candidate_sequence": [
+    "PREP",
+    "ACCESS",
+    "REGISTER",
+    "CLOSE"
+  ],
+  "procedure_constraints": {
+    "procedure_id": "NSP-SEQ-041",
+    "steps": [
+      {
+        "step_id": "PREP",
+        "step_name": "Pre-procedure verification",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "REGISTER",
+        "step_name": "Navigation reference registration",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "ACCESS",
+        "step_name": "Planned access phase",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      },
+      {
+        "step_id": "CLOSE",
+        "step_name": "Closure and handoff",
+        "prerequisite_step_ids": [],
+        "dependent_step_ids": [],
+        "incompatible_step_ids": []
+      }
+    ],
+    "ordering_constraints": [
+      {
+        "before_step_id": "PREP",
+        "after_step_id": "REGISTER"
+      },
+      {
+        "before_step_id": "REGISTER",
+        "after_step_id": "ACCESS"
+      },
+      {
+        "before_step_id": "ACCESS",
+        "after_step_id": "CLOSE"
+      }
+    ]
+  },
+  "constraint_check_summary": {
+    "is_sequence_valid": false,
+    "violation_count": 1,
+    "detected_violation_types": [
+      "ordering_violation"
+    ]
+  },
+  "reference_violation_labels": [
+    {
+      "violation_type": "ordering_violation",
+      "involved_step_ids": [
+        "REGISTER",
+        "ACCESS"
+      ],
+      "explanation": "Navigation reference registration must precede the planned access phase, but ACCESS appears first in the candidate sequence."
+    }
+  ]
+}
