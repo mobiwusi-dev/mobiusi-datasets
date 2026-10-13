@@ -1,0 +1,54 @@
+{
+  "field_order_result": [
+    "headline",
+    "call_to_action",
+    "body",
+    "disclaimer"
+  ],
+  "layout_request": {
+    "campaign_name": "老街新味周末市集墙体宣传",
+    "display_type": "墙体广告",
+    "headline": "一面墙，讲好一座城",
+    "body": "老街新味，等你来发现",
+    "call_to_action": "周末来逛市集",
+    "disclaimer": "具体摊位以现场安排为准",
+    "max_chars_per_line": 9,
+    "carousel_max_chars": 7,
+    "required_field_order": [
+      "headline",
+      "call_to_action",
+      "body",
+      "disclaimer"
+    ]
+  },
+  "text_integrity": true,
+  "carousel_segments": [
+    "一面墙，讲好",
+    "一座城",
+    "周末来逛市集",
+    "老街新味，等你",
+    "来发现",
+    "具体摊位以现场",
+    "安排为准"
+  ],
+  "validation_summary": {
+    "line_length_valid": true,
+    "field_order_valid": true,
+    "carousel_length_valid": true,
+    "text_complete": true
+  },
+  "line_length_metrics": {
+    "headline_length": 9,
+    "body_line_lengths": [
+      8,
+      2
+    ],
+    "call_to_action_length": 6,
+    "disclaimer_line_lengths": [
+      9,
+      2
+    ]
+  },
+  "hierarchy_annotation": "[H1 标题] 一面墙，讲好一座城\n[H2 行动号召] 周末来逛市集\n[H3 正文] 老街新味，等你来发现\n[H4 免责声明] 具体摊位以现场安排为准",
+  "formatted_layout_text": "一面墙，讲好一座城\n周末来逛市集\n老街新味，等你来\n发现\n具体摊位以现场安排\n为准"
+}

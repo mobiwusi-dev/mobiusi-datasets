@@ -1,0 +1,54 @@
+{
+  "text_integrity": true,
+  "carousel_segments": [
+    "晨光入杯",
+    "，开启好心情",
+    "甄选云南日晒",
+    "咖啡豆，醇香",
+    "顺滑",
+    "扫码领取首杯优惠",
+    "优惠限新客，每人",
+    "限领一次"
+  ],
+  "field_order_result": [
+    "headline",
+    "body",
+    "call_to_action",
+    "disclaimer"
+  ],
+  "layout_request": {
+    "campaign_name": "晨光咖啡春季户外广告",
+    "display_type": "广告牌",
+    "headline": "晨光入杯，开启好心情",
+    "body": "甄选云南日晒咖啡豆，醇香顺滑",
+    "call_to_action": "扫码领取首杯优惠",
+    "disclaimer": "优惠限新客，每人限领一次",
+    "max_chars_per_line": 12,
+    "carousel_max_chars": 8,
+    "required_field_order": [
+      "headline",
+      "body",
+      "call_to_action",
+      "disclaimer"
+    ]
+  },
+  "validation_summary": {
+    "line_length_valid": true,
+    "field_order_valid": true,
+    "carousel_length_valid": true,
+    "text_complete": true
+  },
+  "line_length_metrics": {
+    "headline_length": 10,
+    "body_line_lengths": [
+      10,
+      4
+    ],
+    "call_to_action_length": 8,
+    "disclaimer_line_lengths": [
+      12
+    ]
+  },
+  "hierarchy_annotation": "[H1 标题] 晨光入杯，开启好心情\n[H2 正文] 甄选云南日晒咖啡豆，醇香顺滑\n[H3 行动号召] 扫码领取首杯优惠\n[H4 免责声明] 优惠限新客，每人限领一次",
+  "formatted_layout_text": "晨光入杯，开启好心情\n甄选云南日晒咖啡豆，\n醇香顺滑\n扫码领取首杯优惠\n优惠限新客，每人限领一次"
+}
