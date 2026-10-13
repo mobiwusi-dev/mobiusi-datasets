@@ -1,0 +1,82 @@
+{
+  "validation_summary": "The sequence violates C01 because the segmental artery is divided before the specified anatomy confirmation, and violates C02 because parenchymal division occurs before plane delineation. Required step S07 is absent.",
+  "is_valid": false,
+  "case_context": {
+    "procedure_type": "Pulmonary segmentectomy",
+    "surgical_approach": "Robot-assisted",
+    "resection_type": "Right upper-lobe apical segmentectomy"
+  },
+  "constraint_set": [
+    {
+      "constraint_id": "C01",
+      "constraint_type": "must_precede",
+      "step_id": "S02",
+      "related_step_id": "S03"
+    },
+    {
+      "constraint_id": "C02",
+      "constraint_type": "requires_prior",
+      "step_id": "S05",
+      "related_step_id": "S06"
+    },
+    {
+      "constraint_id": "C03",
+      "constraint_type": "required_step",
+      "step_id": "S07"
+    }
+  ],
+  "observed_sequence": [
+    {
+      "step_id": "S00",
+      "step_name": "Inspect pleural cavity and confirm target segment",
+      "sequence_index": 0
+    },
+    {
+      "step_id": "S03",
+      "step_name": "Divide target segmental artery",
+      "sequence_index": 1
+    },
+    {
+      "step_id": "S02",
+      "step_name": "Confirm segmental bronchovascular anatomy",
+      "sequence_index": 2
+    },
+    {
+      "step_id": "S04",
+      "step_name": "Divide target segmental bronchus",
+      "sequence_index": 3
+    },
+    {
+      "step_id": "S05",
+      "step_name": "Divide parenchyma along the intersegmental plane",
+      "sequence_index": 4
+    },
+    {
+      "step_id": "S06",
+      "step_name": "Delineate the intersegmental plane",
+      "sequence_index": 5
+    }
+  ],
+  "ordering_violations": [
+    {
+      "constraint_id": "C01",
+      "step_id": "S02",
+      "related_step_id": "S03",
+      "step_sequence_index": 2,
+      "related_step_sequence_index": 1
+    }
+  ],
+  "missing_required_steps": [
+    {
+      "constraint_id": "C03",
+      "step_id": "S07"
+    }
+  ],
+  "precondition_violations": [
+    {
+      "constraint_id": "C02",
+      "step_id": "S05",
+      "prerequisite_step_id": "S06"
+    }
+  ]
+}
