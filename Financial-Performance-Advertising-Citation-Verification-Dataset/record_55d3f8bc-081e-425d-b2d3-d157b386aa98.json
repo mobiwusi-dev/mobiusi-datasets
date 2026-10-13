@@ -1,0 +1,106 @@
+{
+  "claims": [
+    {
+      "claim_text": "账户年利率为6%。",
+      "claim_category": "利率",
+      "claim_value": 6,
+      "claim_unit": "年化百分比",
+      "claim_period": "未说明",
+      "claim_qualifier": "开户即可享受",
+      "is_guarantee_statement": false,
+      "conditions": "开户即可享受，且广告声称无需最低余额。",
+      "limitations": "广告未说明利率仅适用于前6个月，也未说明之后可能调整。"
+    },
+    {
+      "claim_text": "一年可节省2,000元。",
+      "claim_category": "节省金额",
+      "claim_value": 2000,
+      "claim_unit": "元",
+      "claim_period": "一年",
+      "claim_qualifier": "可",
+      "is_guarantee_statement": false,
+      "conditions": "广告声称无需最低余额，开户即可享受。",
+      "limitations": "广告未披露需要平均账户余额达到2万元并开通自动扣款，也未说明节省金额只是估算。"
+    }
+  ],
+  "ad_text": "智能现金账户宣传：年利率6%，一年可节省2,000元，无需最低余额，开户即可享受。",
+  "evidence_text": "测算说明：符合条件的客户在连续12个月内平均账户余额达到2万元且开通自动扣款时，预计可节省1,200元；该估算不构成保证。账户当前年利率为3.5%，利率仅适用于前6个月，之后可能调整。",
+  "evidence_elements": [
+    {
+      "evidence_span": "账户当前年利率为3.5%",
+      "evidence_element_type": "计算结果",
+      "evidence_value": 3.5,
+      "evidence_unit": "年化百分比"
+    },
+    {
+      "evidence_span": "利率仅适用于前6个月，之后可能调整。",
+      "evidence_element_type": "限制",
+      "calculation_period": "前6个月",
+      "limitations": "3.5%的当前年利率仅适用于前6个月，之后可能调整。"
+    },
+    {
+      "evidence_span": "符合条件的客户在连续12个月内平均账户余额达到2万元且开通自动扣款时",
+      "evidence_element_type": "条件",
+      "calculation_period": "连续12个月",
+      "conditions": "平均账户余额达到2万元且开通自动扣款。"
+    },
+    {
+      "evidence_span": "预计可节省1,200元",
+      "evidence_element_type": "计算结果",
+      "evidence_value": 1200,
+      "evidence_unit": "元",
+      "calculation_period": "连续12个月",
+      "limitations": "节省金额为预计值。"
+    },
+    {
+      "evidence_span": "该估算不构成保证。",
+      "evidence_element_type": "保证性说明",
+      "guarantee_or_risk_qualification": "节省金额估算不构成保证。"
+    }
+  ],
+  "verification_result": {
+    "overall_status": "不支持",
+    "claim_supported": false,
+    "numeric_match": false,
+    "period_match": false,
+    "condition_match": false,
+    "limitation_match": false,
+    "guarantee_language_supported": false,
+    "unsupported_aspects": [
+      "广告宣称6%的年利率，而证据仅支持3.5%且只适用于前6个月",
+      "广告宣称一年节省2,000元，而证据预计节省1,200元",
+      "广告遗漏平均账户余额2万元和开通自动扣款条件",
+      "广告未披露节省金额不构成保证及利率可能调整的限制"
+    ],
+    "verification_explanation": "两项核心数值均未获得充分支持：年利率6%与证据中的3.5%不匹配，节省金额2,000元也高于证据中的1,200元。虽然一年与连续12个月相符，但广告遗漏了平均余额、自动扣款等条件，并将有明确限制的估算表述为开户即可享受，因此整体引用不受证据支持。"
+  },
+  "claim_evidence_links": [
+    {
+      "claim_text": "账户年利率为6%。",
+      "evidence_span": "账户当前年利率为3.5%，利率仅适用于前6个月，之后可能调整。",
+      "support_status": "不支持",
+      "supported_components": [],
+      "missing_components": [
+        "数值",
+        "单位",
+        "计算期间",
+        "限制"
+      ],
+      "link_explanation": "证据给出的当前年利率为3.5%，不是广告所称的6%；证据还限定该利率仅适用于前6个月并可能调整，广告没有反映这些期间和限制。"
+    },
+    {
+      "claim_text": "一年可节省2,000元。",
+      "evidence_span": "符合条件的客户在连续12个月内平均账户余额达到2万元且开通自动扣款时，预计可节省1,200元；该估算不构成保证。",
+      "support_status": "部分支持",
+      "supported_components": [
+        "计算期间"
+      ],
+      "missing_components": [
+        "数值",
+        "条件",
+        "限制"
+      ],
+      "link_explanation": "连续12个月与广告的一年期间大致对应，但证据中的预计节省金额为1,200元而非2,000元，并要求平均余额达到2万元和开通自动扣款；证据还说明该金额不构成保证，与无需最低余额及开户即可享受的广告表述不一致。"
+    }
+  ]
+}

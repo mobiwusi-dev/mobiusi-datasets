@@ -1,0 +1,69 @@
+{
+  "claims": [
+    {
+      "claim_text": "活动期内将至少5万元存入账户，可享年化4.20%的储蓄利率，期限为90天。",
+      "claim_category": "利率",
+      "claim_value": 4.2,
+      "claim_unit": "年化百分比",
+      "claim_period": "90天",
+      "claim_qualifier": "可享",
+      "is_guarantee_statement": false,
+      "conditions": "活动期内单笔或累计存入至少5万元，并保持资金满90天。",
+      "limitations": "仅限活动期和符合资格的新客户；利息按实际天数计算，提前支取可能导致应付利息减少。"
+    }
+  ],
+  "ad_text": "新客户活动：在活动期内将至少5万元存入灵活储蓄账户，可享年化4.20%的储蓄利率，计息期限为90天。利息按实际天数计算，提前支取可能影响应付利息。",
+  "evidence_text": "计算说明：符合资格的新客户在活动期内单笔或累计存入至少5万元并连续持有90天，可按年化4.20%计算利息。实际利息按实际天数计，不满90天提前支取时应付利息可能减少；该利率仅适用于本次活动，不代表未来利率。",
+  "evidence_elements": [
+    {
+      "evidence_span": "可按年化4.20%计算利息。",
+      "evidence_element_type": "计算结果",
+      "evidence_value": 4.2,
+      "evidence_unit": "年化百分比",
+      "calculation_period": "连续持有90天"
+    },
+    {
+      "evidence_span": "符合资格的新客户在活动期内单笔或累计存入至少5万元并连续持有90天",
+      "evidence_element_type": "条件",
+      "conditions": "符合资格的新客户；活动期内单笔或累计存入至少5万元；连续持有90天。"
+    },
+    {
+      "evidence_span": "连续持有90天",
+      "evidence_element_type": "计算期间",
+      "calculation_period": "连续持有90天"
+    },
+    {
+      "evidence_span": "实际利息按实际天数计，不满90天提前支取时应付利息可能减少；该利率仅适用于本次活动，不代表未来利率。",
+      "evidence_element_type": "限制",
+      "limitations": "提前支取可能减少应付利息，且年化4.20%仅适用于本次活动。",
+      "guarantee_or_risk_qualification": "该利率不代表未来利率，不构成对后续利率的保证。"
+    }
+  ],
+  "verification_result": {
+    "overall_status": "完全支持",
+    "claim_supported": true,
+    "numeric_match": true,
+    "period_match": true,
+    "condition_match": true,
+    "limitation_match": true,
+    "guarantee_language_supported": false,
+    "unsupported_aspects": [],
+    "verification_explanation": "证据与广告在利率数值、单位、90天期间和至少5万元条件上完全一致，也覆盖了提前支取可能减少利息及活动期限限制。广告使用的是可享等条件性表述，没有作出无条件保证，因此不存在未获支持的保证性主张。"
+  },
+  "claim_evidence_links": [
+    {
+      "claim_text": "活动期内将至少5万元存入账户，可享年化4.20%的储蓄利率，期限为90天。",
+      "evidence_span": "符合资格的新客户在活动期内单笔或累计存入至少5万元并连续持有90天，可按年化4.20%计算利息。实际利息按实际天数计，不满90天提前支取时应付利息可能减少；该利率仅适用于本次活动，不代表未来利率。",
+      "support_status": "完全支持",
+      "supported_components": [
+        "数值",
+        "单位",
+        "计算期间",
+        "条件",
+        "限制"
+      ],
+      "missing_components": [],
+      "link_explanation": "证据明确给出年化4.20%的利率、连续90天的计算期间、至少5万元的存入条件，以及提前支取和活动期限限制，与广告主张一致。广告没有提出额外的保证性表达。"
+    }
+  ]
+}

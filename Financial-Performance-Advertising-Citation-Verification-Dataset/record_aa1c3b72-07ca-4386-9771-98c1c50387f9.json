@@ -1,0 +1,102 @@
+{
+  "claims": [
+    {
+      "claim_text": "过去三年平均年化收益率达到12%。",
+      "claim_category": "收益率",
+      "claim_value": 12,
+      "claim_unit": "年化百分比",
+      "claim_period": "过去三年，即2021年1月1日至2023年12月31日",
+      "claim_qualifier": "达到",
+      "is_guarantee_statement": false,
+      "conditions": "最低投资金额为1万元。",
+      "limitations": "广告未说明该结果来自历史回测，且未披露计算未扣除管理费。"
+    },
+    {
+      "claim_text": "本金绝不会亏损。",
+      "claim_category": "保证性表达",
+      "claim_period": "未说明",
+      "claim_qualifier": "绝不会",
+      "is_guarantee_statement": true,
+      "conditions": "最低投资金额为1万元。",
+      "limitations": "广告未附带本金可能损失或收益不保证的风险限制说明。"
+    }
+  ],
+  "ad_text": "稳健增长组合宣传：过去三年平均年化收益率达到12%，最低投资金额为1万元，而且本金绝不会亏损。",
+  "evidence_text": "回测说明：2021年1月1日至2023年12月31日的历史回测显示，该组合过去三年的平均年化收益率为12%，计算假设分红再投资且未扣除管理费。最低投资金额为1万元。历史回测不代表未来表现，组合净值可能下降，投资者可能损失部分或全部本金，收益不作保证。",
+  "evidence_elements": [
+    {
+      "evidence_span": "该组合过去三年的平均年化收益率为12%",
+      "evidence_element_type": "计算结果",
+      "evidence_value": 12,
+      "evidence_unit": "年化百分比",
+      "calculation_period": "2021年1月1日至2023年12月31日的过去三年"
+    },
+    {
+      "evidence_span": "2021年1月1日至2023年12月31日的历史回测",
+      "evidence_element_type": "计算期间",
+      "calculation_period": "2021年1月1日至2023年12月31日"
+    },
+    {
+      "evidence_span": "最低投资金额为1万元。",
+      "evidence_element_type": "条件",
+      "evidence_value": 1,
+      "evidence_unit": "万元",
+      "conditions": "最低投资金额为1万元。"
+    },
+    {
+      "evidence_span": "计算假设分红再投资且未扣除管理费。",
+      "evidence_element_type": "限制",
+      "limitations": "收益率计算假设分红再投资，且未扣除管理费。"
+    },
+    {
+      "evidence_span": "历史回测不代表未来表现，组合净值可能下降，投资者可能损失部分或全部本金，收益不作保证。",
+      "evidence_element_type": "风险披露",
+      "limitations": "历史回测结果不代表未来表现。",
+      "guarantee_or_risk_qualification": "组合净值可能下降，投资者可能损失部分或全部本金，收益不作保证。"
+    }
+  ],
+  "verification_result": {
+    "overall_status": "部分支持",
+    "claim_supported": false,
+    "numeric_match": true,
+    "period_match": true,
+    "condition_match": true,
+    "limitation_match": false,
+    "guarantee_language_supported": false,
+    "unsupported_aspects": [
+      "广告将历史回测收益率呈现为缺少口径限制的表现",
+      "广告未披露收益率计算未扣除管理费",
+      "本金绝不会亏损的保证性表达与证据中的本金损失风险相反"
+    ],
+    "verification_explanation": "证据能够核对12%的历史回测收益率、过去三年期间和最低1万元投资条件，但没有支持将该结果理解为未来或无条件收益，且广告省略了未扣管理费等限制。关于本金绝不会亏损的表述不仅没有证据支持，还与明确的本金损失风险披露相矛盾，因此整体只能判定为部分支持。"
+  },
+  "claim_evidence_links": [
+    {
+      "claim_text": "过去三年平均年化收益率达到12%。",
+      "evidence_span": "2021年1月1日至2023年12月31日的历史回测显示，该组合过去三年的平均年化收益率为12%，计算假设分红再投资且未扣除管理费。最低投资金额为1万元。",
+      "support_status": "部分支持",
+      "supported_components": [
+        "数值",
+        "单位",
+        "计算期间",
+        "条件"
+      ],
+      "missing_components": [
+        "限制",
+        "风险表述"
+      ],
+      "link_explanation": "证据支持12%的数值、年化单位、过去三年的日期范围和最低1万元投资条件，但明确说明该数值来自历史回测，且分红再投资并未扣除管理费。广告没有呈现这些重要限制，因此不能视为对无条件收益表现的完全支持。"
+    },
+    {
+      "claim_text": "本金绝不会亏损。",
+      "evidence_span": "历史回测不代表未来表现，组合净值可能下降，投资者可能损失部分或全部本金，收益不作保证。",
+      "support_status": "不支持",
+      "supported_components": [],
+      "missing_components": [
+        "保证性表述",
+        "风险表述"
+      ],
+      "link_explanation": "证据明确披露组合净值可能下降、本金可能部分或全部损失且收益不作保证，与本金绝不会亏损的保证性表述相反。"
+    }
+  ]
+}
