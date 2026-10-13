@@ -1,0 +1,77 @@
+{
+  "claim_annotations": [
+    {
+      "claim_text": "The client agreed to provide weekly rides despite wanting to preserve Sunday mornings for rest.",
+      "claim_type": "other",
+      "epistemic_status": "explicit_fact",
+      "evidence": [
+        {
+          "evidence_text": "I said yes, even though I had planned to use Sunday mornings to rest.",
+          "speaker": "Client",
+          "turn_reference": "T3"
+        },
+        {
+          "evidence_text": "My mother called on Sunday and asked me to drive her to appointments every week.",
+          "speaker": "Client",
+          "turn_reference": "T1"
+        }
+      ],
+      "support_level": "strong",
+      "assessment_rationale": "The client explicitly describes the request, agreement, and pre-existing plan to rest."
+    },
+    {
+      "claim_text": "A previous critical comment from the mother may contribute to the client’s expectation of criticism.",
+      "claim_type": "hypothesis",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "When I imagine saying no, I feel guilty and think she will say I am selfish.",
+          "speaker": "Client",
+          "turn_reference": "T4"
+        },
+        {
+          "evidence_text": "She said it once last winter when I could not take her to a store.",
+          "speaker": "Client",
+          "turn_reference": "T6"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The client reports both expecting the same criticism and hearing it once before, which is consistent with the hypothesis but does not establish that the prior comment caused the expectation."
+    },
+    {
+      "claim_text": "Agreeing without discussing limits may be a way to avoid the discomfort of anticipated criticism.",
+      "claim_type": "interpretation",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "When I imagine saying no, I feel guilty and think she will say I am selfish.",
+          "speaker": "Client",
+          "turn_reference": "T4"
+        },
+        {
+          "evidence_text": "I have not told her I want to change the plan.",
+          "speaker": "Client",
+          "turn_reference": "T8"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The reported guilt, anticipated criticism, and unexpressed wish to change the arrangement support this as a possibility, but the client does not explicitly identify avoidance as the reason for agreeing."
+    },
+    {
+      "claim_text": "The client has no dependable support outside the relationship with the mother and is managing the appointments alone.",
+      "claim_type": "interpretation",
+      "epistemic_status": "mixed",
+      "evidence": [
+        {
+          "evidence_text": "My brother offered to take one of the appointments next week, and I felt relieved when he offered.",
+          "speaker": "Client",
+          "turn_reference": "T10"
+        }
+      ],
+      "support_level": "contradicted",
+      "assessment_rationale": "The client explicitly reports that a brother offered practical help, contradicting the claim that there is no dependable support and that the client is managing alone."
+    }
+  ],
+  "model_formulation": "The client agreed to provide weekly rides despite wanting to preserve Sunday mornings for rest, and reports guilt and concern about being called selfish when considering a refusal. A previous critical comment from the mother may contribute to the client’s expectation of criticism, and agreeing without discussing limits may be a way to avoid that discomfort. The client has no dependable support outside the relationship with the mother and is managing the appointments alone.",
+  "session_transcript": "T1 Client: My mother called on Sunday and asked me to drive her to appointments every week.\nT2 Therapist: How did you respond?\nT3 Client: I said yes, even though I had planned to use Sunday mornings to rest.\nT4 Client: When I imagine saying no, I feel guilty and think she will say I am selfish.\nT5 Therapist: Has she said that to you before?\nT6 Client: She said it once last winter when I could not take her to a store.\nT7 Therapist: What has the arrangement been like since you agreed?\nT8 Client: I have driven her twice so far. I was tired afterward, but I have not told her I want to change the plan.\nT9 Therapist: Is there anyone else you can lean on?\nT10 Client: My brother offered to take one of the appointments next week, and I felt relieved when he offered."
+}

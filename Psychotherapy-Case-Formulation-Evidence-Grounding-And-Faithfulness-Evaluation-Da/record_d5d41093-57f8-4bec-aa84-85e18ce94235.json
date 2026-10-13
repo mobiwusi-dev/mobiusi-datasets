@@ -1,0 +1,91 @@
+{
+  "claim_annotations": [
+    {
+      "claim_text": "The client repeatedly delayed sending work reports and missed two deadlines this quarter.",
+      "claim_type": "pattern",
+      "epistemic_status": "explicit_fact",
+      "evidence": [
+        {
+          "evidence_text": "Twice this quarter. Both times I waited until the last day to send a report.",
+          "speaker": "Client",
+          "turn_reference": "T8"
+        },
+        {
+          "evidence_text": "I kept revising the report instead of sending it.",
+          "speaker": "Client",
+          "turn_reference": "T1"
+        }
+      ],
+      "support_level": "strong",
+      "assessment_rationale": "The client directly reports both the repeated delay and the number and timing of missed deadlines."
+    },
+    {
+      "claim_text": "Anticipated criticism from the manager may contribute to the repeated revisions.",
+      "claim_type": "hypothesis",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "I thought my manager might read it and decide I was careless if there were mistakes.",
+          "speaker": "Client",
+          "turn_reference": "T3"
+        },
+        {
+          "evidence_text": "I changed the same two pages several times, even though the figures were already checked.",
+          "speaker": "Client",
+          "turn_reference": "T4"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The client connects concern about the manager’s judgment with mistakes and describes repeated revisions, but does not explicitly state that the fear caused the revisions."
+    },
+    {
+      "claim_text": "The revisions appear to serve as an attempt to prevent mistakes.",
+      "claim_type": "interpretation",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "I thought my manager might read it and decide I was careless if there were mistakes.",
+          "speaker": "Client",
+          "turn_reference": "T3"
+        },
+        {
+          "evidence_text": "I changed the same two pages several times, even though the figures were already checked.",
+          "speaker": "Client",
+          "turn_reference": "T4"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The fear of mistakes alongside repeated editing makes this a plausible interpretation, but the client does not explicitly describe the purpose of revising as mistake prevention."
+    },
+    {
+      "claim_text": "After a missed deadline, harsh self-criticism and reduced sleep may add to the client’s distress.",
+      "claim_type": "interpretation",
+      "epistemic_status": "mixed",
+      "evidence": [
+        {
+          "evidence_text": "I called myself useless and stayed up late trying to finish. I slept about four hours.",
+          "speaker": "Client",
+          "turn_reference": "T6"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The self-critical statement and short sleep are directly reported after the missed deadline; their contribution to distress is a reasonable interpretation, not an explicitly stated causal effect."
+    },
+    {
+      "claim_text": "The pattern originates in childhood experiences in which mistakes were punished.",
+      "claim_type": "hypothesis",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "I am not sure. I cannot think of a specific earlier experience.",
+          "speaker": "Client",
+          "turn_reference": "T10"
+        }
+      ],
+      "support_level": "unsupported",
+      "assessment_rationale": "The client does not report childhood punishment or another earlier cause. The cited turn instead indicates uncertainty about a specific earlier experience."
+    }
+  ],
+  "model_formulation": "The client reports repeatedly delaying work reports through extensive revisions and missing two deadlines this quarter. Anticipated criticism from the manager may contribute to the revisions, which appear to serve as an attempt to prevent mistakes. After a missed deadline, harsh self-criticism and reduced sleep may add to the client’s distress. The pattern originates in childhood experiences in which mistakes were punished, although the client did not identify a specific earlier experience.",
+  "session_transcript": "T1 Client: I missed the project deadline on Friday. I kept revising the report instead of sending it.\nT2 Therapist: What was going through your mind as you revised it?\nT3 Client: I thought my manager might read it and decide I was careless if there were mistakes.\nT4 Client: I changed the same two pages several times, even though the figures were already checked.\nT5 Therapist: What happened after you missed the deadline?\nT6 Client: I called myself useless and stayed up late trying to finish. I slept about four hours.\nT7 Therapist: Has this happened before?\nT8 Client: Twice this quarter. Both times I waited until the last day to send a report.\nT9 Therapist: Do you know where the fear of being seen as careless comes from?\nT10 Client: I am not sure. I cannot think of a specific earlier experience."
+}

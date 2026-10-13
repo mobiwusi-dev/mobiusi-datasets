@@ -1,0 +1,85 @@
+{
+  "claim_annotations": [
+    {
+      "claim_text": "The client attends lectures but leaves before small-group discussions because of worry about saying something foolish and being noticed.",
+      "claim_type": "pattern",
+      "epistemic_status": "mixed",
+      "evidence": [
+        {
+          "evidence_text": "I still attend the lectures, but I leave before the small-group conversations.",
+          "speaker": "Client",
+          "turn_reference": "T1"
+        },
+        {
+          "evidence_text": "I worry I will say something foolish and everyone will notice.",
+          "speaker": "Client",
+          "turn_reference": "T3"
+        }
+      ],
+      "support_level": "strong",
+      "assessment_rationale": "The client directly reports both leaving before group discussions and the stated worry. The connection is supported by their immediate answer to what makes them leave."
+    },
+    {
+      "claim_text": "Rehearsing a question until the discussion ends and imagining negative evaluation may be contributing to avoidance.",
+      "claim_type": "interpretation",
+      "epistemic_status": "mixed",
+      "evidence": [
+        {
+          "evidence_text": "Last week I had a question, but I kept rehearsing it in my head until the discussion ended.",
+          "speaker": "Client",
+          "turn_reference": "T4"
+        },
+        {
+          "evidence_text": "I picture them looking at each other or thinking I should already know the answer.",
+          "speaker": "Client",
+          "turn_reference": "T6"
+        }
+      ],
+      "support_level": "partial",
+      "assessment_rationale": "The client reports the rehearsal, imagined judgment, and a missed opportunity to speak. These details support the interpretation, though the client does not explicitly state that the thoughts caused the broader pattern of leaving."
+    },
+    {
+      "claim_text": "The client believes all classmates have rejected them.",
+      "claim_type": "interpretation",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "One person asked if I wanted to get coffee after class, but I said I was busy.",
+          "speaker": "Client",
+          "turn_reference": "T8"
+        },
+        {
+          "evidence_text": "Not that I can recall.",
+          "speaker": "Client",
+          "turn_reference": "T8"
+        }
+      ],
+      "support_level": "contradicted",
+      "assessment_rationale": "The client does not report believing that all classmates have rejected them and cannot recall a negative response; a classmate’s invitation is contrary to the claim of universal rejection."
+    },
+    {
+      "claim_text": "The group difficulty reflects a broader inability to speak comfortably with others.",
+      "claim_type": "interpretation",
+      "epistemic_status": "inference",
+      "evidence": [
+        {
+          "evidence_text": "I feel it most in groups. I can talk comfortably with my cousin one-on-one.",
+          "speaker": "Client",
+          "turn_reference": "T10"
+        }
+      ],
+      "support_level": "contradicted",
+      "assessment_rationale": "The client explicitly distinguishes group situations from one-on-one conversation and reports being comfortable with a cousin, which does not support a broad inability to speak with others."
+    },
+    {
+      "claim_text": "This pattern began after repeated bullying in childhood.",
+      "claim_type": "hypothesis",
+      "epistemic_status": "inference",
+      "evidence": [],
+      "support_level": "unsupported",
+      "assessment_rationale": "The transcript contains no report of childhood bullying or information about when the pattern began."
+    }
+  ],
+  "model_formulation": "The client attends lectures but leaves before small-group discussions, describing worry about saying something foolish and being noticed. Rehearsing a question until the discussion ends and imagining negative evaluation may be contributing to avoidance. The client believes all classmates have rejected them, and the group difficulty may reflect a broader inability to speak comfortably with others. This pattern began after repeated bullying in childhood.",
+  "session_transcript": "T1 Client: I have been skipping the discussion portion of my evening course. I still attend the lectures, but I leave before the small-group conversations.\nT2 Therapist: What makes you leave at that point?\nT3 Client: I worry I will say something foolish and everyone will notice.\nT4 Client: Last week I had a question, but I kept rehearsing it in my head until the discussion ended.\nT5 Therapist: What do you imagine people would do if you asked it?\nT6 Client: I picture them looking at each other or thinking I should already know the answer.\nT7 Therapist: Has anyone in the group responded negatively to you?\nT8 Client: Not that I can recall. One person asked if I wanted to get coffee after class, but I said I was busy.\nT9 Therapist: Do you remember feeling this way in other settings?\nT10 Client: I feel it most in groups. I can talk comfortably with my cousin one-on-one."
+}
