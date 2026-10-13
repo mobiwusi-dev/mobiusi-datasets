@@ -1,0 +1,7 @@
+{
+  "dialogue_text": "Clinician: What tends to get in the way of preparing meals during the week? Patient: By the time I get home from the late shift, I’m exhausted. I usually grab whatever is nearby, even though I know it doesn’t keep me full. Clinician: Have you found anything that makes cooking feel more manageable? Patient: Not really. I wish there were a way to make this work without spending my whole day off in the kitchen.",
+  "intent_labels": [
+    "Disclosing a barrier to meal planning",
+    "Indirectly seeking practical guidance"
+  ]
+}

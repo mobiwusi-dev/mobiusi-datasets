@@ -1,0 +1,8 @@
+{
+  "dialogue_text": "Clinician: How are you feeling about adding more walking to your routine? Patient: I actually bought walking shoes last weekend. I keep thinking I should start, but my knee sometimes aches after a long day, and I don’t want to make it worse. Clinician: What would help you feel comfortable deciding what to try? Patient: I guess I’d like to know how to start without overdoing it.",
+  "intent_labels": [
+    "Expressing interest in increasing physical activity",
+    "Expressing ambivalence about starting",
+    "Seeking guidance on a cautious starting approach"
+  ]
+}

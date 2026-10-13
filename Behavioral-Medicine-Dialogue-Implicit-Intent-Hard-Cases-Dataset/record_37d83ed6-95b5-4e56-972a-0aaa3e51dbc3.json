@@ -1,0 +1,8 @@
+{
+  "dialogue_text": "Counselor: What has it been like trying to cut down on cigarettes? Patient: I tell my sister I’m going to quit, but after work everyone takes a smoke break and I end up going with them. I’m not ready for another lecture about willpower. Could we talk about what I might do during those breaks instead?",
+  "intent_labels": [
+    "Expressing intention to reduce or quit smoking",
+    "Identifying a social trigger",
+    "Requesting coping strategies indirectly"
+  ]
+}
