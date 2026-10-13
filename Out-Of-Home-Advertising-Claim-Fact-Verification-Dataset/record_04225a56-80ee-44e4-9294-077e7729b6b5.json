@@ -1,0 +1,214 @@
+{
+  "claims": [
+    {
+      "claim_index": 0,
+      "claim_text": "采用RO反渗透膜",
+      "claim_category": "产品",
+      "claim_subject": "澄川净水 Pro家用净水器",
+      "claim_predicate": "采用",
+      "claim_value": "RO反渗透膜",
+      "claim_conditions": [
+        "仅适用于广告所指的Pro型号"
+      ],
+      "claim_scope": "澄川净水Pro型号在中国大陆的销售产品",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 1,
+      "claim_text": "重金属去除率最高达99%",
+      "claim_category": "功效",
+      "claim_subject": "澄川净水 Pro家用净水器",
+      "claim_predicate": "去除水中重金属",
+      "claim_value": "最高达99%",
+      "claim_conditions": [
+        "需明确具体重金属种类",
+        "需满足检测报告规定的进水水质、流量和滤芯状态"
+      ],
+      "claim_scope": "Pro型号及其适用的指定实验水质范围",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 2,
+      "claim_text": "滤芯最长12个月更换一次",
+      "claim_category": "产品",
+      "claim_subject": "澄川净水 Pro家用净水器滤芯",
+      "claim_predicate": "建议更换周期最长为",
+      "claim_value": "12个月",
+      "claim_conditions": [
+        "家庭日均用水量不超过10升",
+        "以先达到12个月或累计制水3600升为准"
+      ],
+      "claim_scope": "普通家庭使用场景下的Pro型号滤芯",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 3,
+      "claim_text": "6月1日至6月30日，立减300元",
+      "claim_category": "促销",
+      "claim_subject": "澄川净水 Pro家用净水器",
+      "claim_predicate": "促销立减",
+      "claim_value": "300元；活动期为6月1日至6月30日",
+      "claim_conditions": [
+        "需在参与活动的官方渠道购买",
+        "每个订单限用一张优惠券，且不可与其他满减叠加"
+      ],
+      "claim_scope": "参与活动的中国大陆官方线上及线下门店",
+      "is_comparative_claim": false
+    }
+  ],
+  "ad_text": "澄川净水 Pro家用净水器：采用RO反渗透膜，重金属去除率最高达99%；滤芯最长12个月更换一次。6月1日至6月30日，立减300元。",
+  "evidence_sources": [
+    {
+      "source_index": 0,
+      "source_type": "官方网站",
+      "source_title": "澄川净水Pro型号产品规格页",
+      "source_publisher": "澄川净水品牌资料库",
+      "source_url": "",
+      "publication_date": "2025-05-20",
+      "evidence_excerpt": "Pro型号过滤组件列明为RO反渗透膜，适用于该型号整机；本规格页未涉及其他型号。",
+      "source_reliability": "中"
+    },
+    {
+      "source_index": 1,
+      "source_type": "检测报告",
+      "source_title": "澄川净水Pro滤芯水质净化性能检测摘要",
+      "source_publisher": "华衡检测资料中心",
+      "source_url": "",
+      "publication_date": "2025-05-22",
+      "evidence_excerpt": "在规定的标准进水浓度、流量和新滤芯条件下，铅、镉、汞三项指标的平均去除率为99.1%。报告未覆盖所有可能的重金属，也未说明使用末期性能。",
+      "source_reliability": "中"
+    },
+    {
+      "source_index": 2,
+      "source_type": "官方网站",
+      "source_title": "Pro滤芯安装与维护说明",
+      "source_publisher": "澄川净水品牌资料库",
+      "source_url": "",
+      "publication_date": "2025-05-18",
+      "evidence_excerpt": "在家庭日均用水量不超过10升的条件下，滤芯应在累计制水3600升或安装满12个月时更换，以先达到者为准。",
+      "source_reliability": "高"
+    },
+    {
+      "source_index": 3,
+      "source_type": "电商或价格页面",
+      "source_title": "澄川净水6月促销规则",
+      "source_publisher": "澄川净水官方商城",
+      "source_url": "",
+      "publication_date": "2025-05-28",
+      "evidence_excerpt": "2025年6月1日00:00至6月30日23:59，购买指定Pro型号并使用活动券可立减300元；每单限用一张，不与其他满减同享。",
+      "source_reliability": "中"
+    }
+  ],
+  "overall_assessment": {
+    "overall_verdict": "部分可信",
+    "overall_confidence": 0.82,
+    "decision_rationale": "产品采用RO膜、滤芯更换周期和300元促销均有对应资料支持，但重金属去除率只在特定污染物和实验条件下成立，且多项限制条件未体现在主广告文案中。整体信息有依据但存在被过度概括的风险。",
+    "review_priority": "中"
+  },
+  "claim_verifications": [
+    {
+      "claim_index": 0,
+      "evidence_source_indices": [
+        0
+      ],
+      "support_level": "完全支持",
+      "verification_status": "通过",
+      "reasoning": "产品规格页直接将Pro型号的过滤组件标注为RO反渗透膜，产品型号与广告主体一致，能够支持该产品属性声明。",
+      "unresolved_issues": "未核验广告投放的实物是否均为Pro型号。"
+    },
+    {
+      "claim_index": 1,
+      "evidence_source_indices": [
+        1
+      ],
+      "support_level": "部分支持",
+      "verification_status": "有条件通过",
+      "reasoning": "检测摘要支持铅、镉、汞在规定实验条件下的平均去除率达到99.1%，但广告使用了概括性的重金属表述，且没有展示实验条件、具体污染物范围和滤芯使用阶段，因此只能在限定条件下通过。",
+      "unresolved_issues": "需要确认广告是否以显著方式披露具体重金属、检测条件及新滤芯限制，不能据此推断所有重金属或全生命周期性能。"
+    },
+    {
+      "claim_index": 2,
+      "evidence_source_indices": [
+        2
+      ],
+      "support_level": "完全支持",
+      "verification_status": "有条件通过",
+      "reasoning": "维护说明明确规定了12个月或3600升的更换上限，并附带日均用水量条件。广告中的最长12个月表述基本准确，但必须同时展示先达到任一阈值即更换的限制。",
+      "unresolved_issues": "广告版面是否充分展示3600升和日均10升的限制尚未确认。"
+    },
+    {
+      "claim_index": 3,
+      "evidence_source_indices": [
+        3
+      ],
+      "support_level": "完全支持",
+      "verification_status": "有条件通过",
+      "reasoning": "促销规则明确了6月1日至6月30日的活动时间和300元优惠金额，与广告核心信息一致；但优惠仅适用于指定型号、指定渠道和活动券使用条件。",
+      "unresolved_issues": "未确认户外广告所在地区的门店是否属于参与渠道。"
+    }
+  ],
+  "evidence_requirements": [
+    {
+      "claim_index": 0,
+      "required_evidence_type": "官方产品资料",
+      "verification_question": "Pro型号的产品规格或铭牌是否明确标注采用RO反渗透膜？",
+      "required_attributes": [
+        "产品型号",
+        "膜元件类型",
+        "规格资料发布日期"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "官方产品说明书"
+      ]
+    },
+    {
+      "claim_index": 1,
+      "required_evidence_type": "检测报告",
+      "verification_question": "在什么实验条件和针对哪些重金属种类下，Pro型号的去除率能够达到最高99%？",
+      "required_attributes": [
+        "检测机构",
+        "具体重金属种类",
+        "进水浓度",
+        "流量和水温",
+        "滤芯状态",
+        "去除率数值"
+      ],
+      "preferred_source_types": [
+        "检测报告",
+        "认证机构"
+      ]
+    },
+    {
+      "claim_index": 2,
+      "required_evidence_type": "官方产品资料",
+      "verification_question": "官方使用说明是否规定滤芯最长12个月更换，并明确相应的用水量限制？",
+      "required_attributes": [
+        "更换周期",
+        "累计制水量",
+        "适用用水量",
+        "适用滤芯型号"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "官方产品说明书"
+      ]
+    },
+    {
+      "claim_index": 3,
+      "required_evidence_type": "价格或促销规则",
+      "verification_question": "活动期间购买指定Pro型号是否确实可以直接减免300元，且活动条件与广告一致？",
+      "required_attributes": [
+        "活动起止日期",
+        "参与渠道",
+        "适用型号",
+        "优惠金额",
+        "叠加和使用限制"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "电商或价格页面"
+      ]
+    }
+  ]
+}

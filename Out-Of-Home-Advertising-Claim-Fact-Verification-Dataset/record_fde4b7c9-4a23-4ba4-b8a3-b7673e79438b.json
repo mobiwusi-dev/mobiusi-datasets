@@ -1,0 +1,173 @@
+{
+  "claims": [
+    {
+      "claim_index": 0,
+      "claim_text": "连续使用7天，干燥泛红肌肤含水量提升20%",
+      "claim_category": "功效",
+      "claim_subject": "森屿舒缓霜",
+      "claim_predicate": "提升干燥泛红肌肤含水量",
+      "claim_value": "连续使用7天后提升20%",
+      "claim_conditions": [
+        "需要明确受试者筛选标准和使用频率",
+        "需明确含水量的测量部位、基线和统计口径",
+        "不能将平均值推广为每位使用者均达到20%"
+      ],
+      "claim_scope": "符合研究条件的干燥泛红肌肤受试者及测试产品",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 1,
+      "claim_text": "敏感肌人群均可放心使用",
+      "claim_category": "功效",
+      "claim_subject": "森屿舒缓霜",
+      "claim_predicate": "适用于并且可安全使用于",
+      "claim_value": "所有敏感肌人群",
+      "claim_conditions": [
+        "需有针对敏感肌人群的安全性评价",
+        "应披露过敏测试、禁用人群和使用注意事项",
+        "个体使用前仍可能需要局部测试"
+      ],
+      "claim_scope": "广告所称的所有敏感肌人群",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 2,
+      "claim_text": "现在买一送一，仅限本周末",
+      "claim_category": "促销",
+      "claim_subject": "森屿舒缓霜",
+      "claim_predicate": "买一件赠送一件",
+      "claim_value": "买一送一；有效期为本周末",
+      "claim_conditions": [
+        "仅限参与活动的门店和指定规格",
+        "赠品可能限同款或指定款式",
+        "需要明确本周末对应的绝对日期"
+      ],
+      "claim_scope": "参与活动的线下门店及官方线上渠道",
+      "is_comparative_claim": false
+    }
+  ],
+  "ad_text": "森屿舒缓霜：连续使用7天，干燥泛红肌肤含水量提升20%；敏感肌人群均可放心使用。现在买一送一，仅限本周末。",
+  "evidence_sources": [
+    {
+      "source_index": 0,
+      "source_type": "科研论文",
+      "source_title": "森屿舒缓霜人体使用观察报告",
+      "source_publisher": "皮肤科学研究组",
+      "source_url": "",
+      "publication_date": "2025-04-12",
+      "evidence_excerpt": "30名自述皮肤干燥的受试者每日早晚使用产品，使用第7天时仪器测得的面颊角质层含水量较基线平均增加20.4%。研究无安慰剂对照，受试者不完全等同于临床意义上的敏感肌人群。",
+      "source_reliability": "中"
+    },
+    {
+      "source_index": 1,
+      "source_type": "官方网站",
+      "source_title": "森屿舒缓霜使用说明与安全提示",
+      "source_publisher": "森屿护肤品牌资料库",
+      "source_url": "",
+      "publication_date": "2025-04-20",
+      "evidence_excerpt": "建议干燥肌和泛红肌在耳后或前臂内侧进行局部测试后使用；出现持续刺痛、红肿或瘙痒应停止使用。说明未宣称产品适用于所有敏感肌人群。",
+      "source_reliability": "高"
+    },
+    {
+      "source_index": 2,
+      "source_type": "电商或价格页面",
+      "source_title": "森屿舒缓霜周末买赠活动规则",
+      "source_publisher": "森屿护肤官方商城",
+      "source_url": "",
+      "publication_date": "2025-05-30",
+      "evidence_excerpt": "2025年6月14日至6月15日，在官方商城购买50克装森屿舒缓霜一件，赠同规格产品一件；活动受库存限制，其他规格和部分授权门店不参加。",
+      "source_reliability": "高"
+    }
+  ],
+  "overall_assessment": {
+    "overall_verdict": "需人工复核",
+    "overall_confidence": 0.93,
+    "decision_rationale": "功效数据仅在小样本、无对照的观察条件下部分支持，敏感肌全称安全声明被产品说明中的局部测试和风险提示直接限制，促销活动也存在日期、规格和渠道条件。由于涉及人身安全和功效夸大风险，应在投放前进行人工及合规复核。",
+    "review_priority": "高"
+  },
+  "claim_verifications": [
+    {
+      "claim_index": 0,
+      "evidence_source_indices": [
+        0
+      ],
+      "support_level": "部分支持",
+      "verification_status": "有条件通过",
+      "reasoning": "人体使用观察报告给出了30名受试者在7天后的平均含水量增加20.4%，与广告数值接近；但研究没有安慰剂对照，受试者主要是干燥肌，不能直接证明所有干燥泛红肌肤或每位消费者都能达到20%。",
+      "unresolved_issues": "需要补充研究设计、统计显著性和泛红肌受试者信息，并在广告中说明20%为特定条件下的平均变化。"
+    },
+    {
+      "claim_index": 1,
+      "evidence_source_indices": [
+        1
+      ],
+      "support_level": "不支持",
+      "verification_status": "不通过",
+      "reasoning": "使用说明要求局部测试并提示可能出现不良反应，且明确没有宣称适用于所有敏感肌人群。现有资料不能支持无条件的全称安全承诺，广告表述具有过度概括和潜在误导风险。",
+      "unresolved_issues": "需要针对敏感肌人群的充分安全性研究和明确的适用、禁用及风险提示；在此之前应删除均可放心使用的绝对表述。"
+    },
+    {
+      "claim_index": 2,
+      "evidence_source_indices": [
+        2
+      ],
+      "support_level": "完全支持",
+      "verification_status": "有条件通过",
+      "reasoning": "活动规则支持买一送一，但有效期实际为6月14日至15日，且仅限官方商城的50克装并受库存限制。广告使用本周末且未展示规格和渠道限制，只有在补充绝对日期及主要条件后才能通过。",
+      "unresolved_issues": "需要确认广告投放日期是否与6月14日至15日一致，并核实户外广告覆盖的门店或渠道是否参加活动。"
+    }
+  ],
+  "evidence_requirements": [
+    {
+      "claim_index": 0,
+      "required_evidence_type": "实验或临床研究",
+      "verification_question": "是否有受控的人体使用研究支持连续使用7天后干燥泛红肌肤含水量平均提升20%，且研究对象和测量方法与广告一致？",
+      "required_attributes": [
+        "受试者数量和筛选标准",
+        "使用周期和频率",
+        "含水量测量仪器与部位",
+        "基线和对照组",
+        "平均变化值及统计不确定性",
+        "产品批次"
+      ],
+      "preferred_source_types": [
+        "科研论文",
+        "检测报告"
+      ]
+    },
+    {
+      "claim_index": 1,
+      "required_evidence_type": "监管或认证文件",
+      "verification_question": "是否有足以支持所有敏感肌人群均可放心使用的安全性资料或监管依据？",
+      "required_attributes": [
+        "敏感肌受试者数量",
+        "皮肤刺激和致敏评价",
+        "排除标准",
+        "不良反应记录",
+        "产品成分和禁用人群"
+      ],
+      "preferred_source_types": [
+        "监管机构",
+        "检测报告",
+        "官方网站"
+      ]
+    },
+    {
+      "claim_index": 2,
+      "required_evidence_type": "价格或促销规则",
+      "verification_question": "买一送一活动的具体起止日期、适用渠道、指定规格和赠品规则是什么？",
+      "required_attributes": [
+        "绝对起止日期",
+        "适用渠道和门店",
+        "购买规格",
+        "赠品规格",
+        "库存限制",
+        "是否需要优惠码"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "电商或价格页面"
+      ]
+    }
+  ]
+}

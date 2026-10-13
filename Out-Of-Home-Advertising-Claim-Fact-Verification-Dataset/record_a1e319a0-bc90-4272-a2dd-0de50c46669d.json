@@ -1,0 +1,217 @@
+{
+  "claims": [
+    {
+      "claim_index": 0,
+      "claim_text": "提供独立工位、会议室和前台收发服务",
+      "claim_category": "服务",
+      "claim_subject": "邻里云办公",
+      "claim_predicate": "提供",
+      "claim_value": "独立工位、会议室和前台收发服务",
+      "claim_conditions": [
+        "服务内容以具体门店配置为准"
+      ],
+      "claim_scope": "邻里云办公参与运营的共享办公门店",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 1,
+      "claim_text": "月租低至899元起",
+      "claim_category": "价格",
+      "claim_subject": "邻里云办公共享工位",
+      "claim_predicate": "月租价格不低于的起始宣传值为",
+      "claim_value": "899元/月起",
+      "claim_conditions": [
+        "仅适用于部分门店和指定工位",
+        "需以签约时的实际空置情况和租期为准"
+      ],
+      "claim_scope": "参与活动的共享办公门店及指定工位",
+      "is_comparative_claim": false
+    },
+    {
+      "claim_index": 2,
+      "claim_text": "比周边传统写字楼租金低30%",
+      "claim_category": "比较",
+      "claim_subject": "邻里云办公共享工位",
+      "claim_predicate": "相较于周边传统写字楼租金低",
+      "claim_value": "30%",
+      "claim_conditions": [
+        "需要明确周边范围、比较时间和租金计算口径",
+        "应比较同等面积、位置和服务条件"
+      ],
+      "claim_scope": "广告所指门店周边的传统写字楼市场",
+      "is_comparative_claim": true
+    },
+    {
+      "claim_index": 3,
+      "claim_text": "首次签约免收一个月服务费，限6月30日前办理",
+      "claim_category": "促销",
+      "claim_subject": "邻里云办公首次签约客户",
+      "claim_predicate": "免收一个月服务费",
+      "claim_value": "一个月；办理截止日为6月30日",
+      "claim_conditions": [
+        "仅限首次签约客户",
+        "需在6月30日前完成签约并提交有效资料",
+        "不适用于会议室临时使用费和增值服务费"
+      ],
+      "claim_scope": "邻里云办公参与活动的门店及其首次签约客户",
+      "is_comparative_claim": false
+    }
+  ],
+  "ad_text": "邻里云办公：提供独立工位、会议室和前台收发服务，月租低至899元起；比周边传统写字楼租金低30%。首次签约免收一个月服务费，限6月30日前办理。",
+  "evidence_sources": [
+    {
+      "source_index": 0,
+      "source_type": "官方网站",
+      "source_title": "邻里云办公门店服务清单",
+      "source_publisher": "邻里云办公运营资料库",
+      "source_url": "",
+      "publication_date": "2025-05-10",
+      "evidence_excerpt": "中心广场店提供独立工位、共享会议室和前台包裹代收发服务；会议室按预约时段计费，前台服务时间为工作日9:00至18:00。",
+      "source_reliability": "高"
+    },
+    {
+      "source_index": 1,
+      "source_type": "电商或价格页面",
+      "source_title": "邻里云办公工位价格表",
+      "source_publisher": "邻里云办公运营资料库",
+      "source_url": "",
+      "publication_date": "2025-05-15",
+      "evidence_excerpt": "中心广场店开放区工位月租899元起，适用于连续签约不少于三个月的指定工位；押金、打印和会议室使用费另计，具体空位以签约日为准。",
+      "source_reliability": "高"
+    },
+    {
+      "source_index": 2,
+      "source_type": "第三方评测",
+      "source_title": "城市共享办公租金抽样比较",
+      "source_publisher": "城市办公观察研究组",
+      "source_url": "",
+      "publication_date": "2025-05-25",
+      "evidence_excerpt": "报告抽取中心广场周边3处共享办公点和3处传统写字楼进行初步比较，邻里云办公开放区工位报价平均低于样本写字楼单工位折算租金约22%。样本量较小，且未统一比较会议室、前台等服务价值。",
+      "source_reliability": "中"
+    },
+    {
+      "source_index": 3,
+      "source_type": "官方网站",
+      "source_title": "邻里云办公六月首次签约活动规则",
+      "source_publisher": "邻里云办公运营资料库",
+      "source_url": "",
+      "publication_date": "2025-05-30",
+      "evidence_excerpt": "首次签约客户于2025年6月30日24:00前完成合同签署并支付押金，可免收一个月基础服务费；会议室临时使用费、打印费及其他增值服务费不在减免范围内。",
+      "source_reliability": "高"
+    }
+  ],
+  "overall_assessment": {
+    "overall_verdict": "部分可信",
+    "overall_confidence": 0.78,
+    "decision_rationale": "服务内容、899元起价格和首次签约优惠均有资料支持，但都附带门店、租期或费用范围限制；核心比较性声明只有小样本且数值低于广告宣称，属于明显证据缺口。",
+    "review_priority": "高"
+  },
+  "claim_verifications": [
+    {
+      "claim_index": 0,
+      "evidence_source_indices": [
+        0
+      ],
+      "support_level": "完全支持",
+      "verification_status": "通过",
+      "reasoning": "门店服务清单逐项列明独立工位、会议室和前台包裹代收发服务，能够支持广告对服务内容的概括。会议室和前台服务存在时间或收费条件，应结合门店说明展示。",
+      "unresolved_issues": "尚未确认广告牌对应的具体门店是否为中心广场店，也未核实其他门店是否提供同样服务。"
+    },
+    {
+      "claim_index": 1,
+      "evidence_source_indices": [
+        1
+      ],
+      "support_level": "部分支持",
+      "verification_status": "有条件通过",
+      "reasoning": "价格表确实列出899元起的月租，但该价格仅对应指定开放区工位、至少三个月租期，并不包括押金和部分增值费用。因此可以作为合规的起始价格，但必须清晰披露适用条件。",
+      "unresolved_issues": "广告是否以同等字号披露指定工位、最低租期和额外费用尚未确认。"
+    },
+    {
+      "claim_index": 2,
+      "evidence_source_indices": [
+        2
+      ],
+      "support_level": "证据不足",
+      "verification_status": "待核验",
+      "reasoning": "抽样报告仅显示样本中的约22%差异，未支持广告宣称的30%；同时样本数量、地区范围和服务价值折算口径不足，不能据此确认比较性声明。",
+      "unresolved_issues": "需要更大样本、明确的周边范围、统一面积与服务口径，以及能够复算30%结论的原始租金数据。"
+    },
+    {
+      "claim_index": 3,
+      "evidence_source_indices": [
+        3
+      ],
+      "support_level": "完全支持",
+      "verification_status": "有条件通过",
+      "reasoning": "活动规则支持首次签约客户在6月30日前完成合同和押金手续后免收一个月基础服务费，但会议室、打印及其他增值服务费不在减免范围内，广告需要避免让消费者误以为所有费用均免除。",
+      "unresolved_issues": "未确认广告发布地点对应的门店是否参加该活动。"
+    }
+  ],
+  "evidence_requirements": [
+    {
+      "claim_index": 0,
+      "required_evidence_type": "官方产品资料",
+      "verification_question": "参与广告活动的门店是否同时提供独立工位、会议室和前台收发服务？",
+      "required_attributes": [
+        "门店名称",
+        "服务项目",
+        "服务可用时间",
+        "是否另行收费"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "官方服务手册"
+      ]
+    },
+    {
+      "claim_index": 1,
+      "required_evidence_type": "价格或促销规则",
+      "verification_question": "是否存在月租899元的指定工位，且该价格不是仅限短期或特殊条件的误导性起价？",
+      "required_attributes": [
+        "门店和工位类型",
+        "月租金额",
+        "最低租期",
+        "押金和附加费用",
+        "价格有效期"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "电商或价格页面"
+      ]
+    },
+    {
+      "claim_index": 2,
+      "required_evidence_type": "统计或行业数据",
+      "verification_question": "在明确的地理范围、时间和同等服务口径下，邻里云办公租金是否比传统写字楼低30%？",
+      "required_attributes": [
+        "比较样本数量",
+        "地理范围",
+        "比较日期",
+        "面积和服务口径",
+        "计算公式",
+        "原始租金数据"
+      ],
+      "preferred_source_types": [
+        "统计或行业数据",
+        "第三方评测"
+      ]
+    },
+    {
+      "claim_index": 3,
+      "required_evidence_type": "价格或促销规则",
+      "verification_question": "首次签约客户在6月30日前办理是否能够免收一个月服务费，且适用限制与广告一致？",
+      "required_attributes": [
+        "首次签约定义",
+        "活动截止时间",
+        "免收费用项目",
+        "适用门店",
+        "排除项目"
+      ],
+      "preferred_source_types": [
+        "官方网站",
+        "电商或价格页面"
+      ]
+    }
+  ]
+}
