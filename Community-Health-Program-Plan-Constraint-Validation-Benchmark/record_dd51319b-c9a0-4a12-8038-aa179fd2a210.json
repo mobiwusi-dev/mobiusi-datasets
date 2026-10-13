@@ -1,0 +1,84 @@
+{
+  "case_input": {
+    "plan": {
+      "service_name": "Neighborhood Blood Pressure and Medication Review",
+      "target_population": "Adults aged 60 and older in Riverbend and Oak Terrace, served during a 12-month program period.",
+      "coverage_target": 300,
+      "service_area": [
+        "Riverbend",
+        "Oak Terrace"
+      ],
+      "budget_requested": 64000,
+      "planned_staffing": [
+        {
+          "role": "Registered Nurse",
+          "count": 2,
+          "qualifications": [
+            "Registered Nurse (RN)"
+          ]
+        },
+        {
+          "role": "Community Health Worker",
+          "count": 3,
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ]
+        }
+      ],
+      "accessibility_provisions": [
+        "Step-free service venue",
+        "Translated appointment materials in Spanish and Vietnamese"
+      ]
+    },
+    "applicable_rules": {
+      "minimum_coverage": 280,
+      "eligible_service_areas": [
+        "Riverbend",
+        "Oak Terrace"
+      ],
+      "maximum_budget": 70000,
+      "required_qualifications": [
+        "Registered Nurse (RN)",
+        "Community Health Worker (CHW) certificate"
+      ],
+      "required_accessibility_standards": [
+        "Step-free service venue",
+        "Translated appointment materials in Spanish and Vietnamese"
+      ]
+    },
+    "available_resources": {
+      "budget_available": 68000,
+      "staff": [
+        {
+          "role": "Registered Nurse",
+          "qualifications": [
+            "Registered Nurse (RN)"
+          ],
+          "service_capacity": 180,
+          "service_areas": [
+            "Riverbend",
+            "Oak Terrace"
+          ]
+        },
+        {
+          "role": "Community Health Worker",
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ],
+          "service_capacity": 150,
+          "service_areas": [
+            "Riverbend",
+            "Oak Terrace"
+          ]
+        }
+      ],
+      "accessibility_resources": [
+        "Step-free service venue",
+        "Translated appointment materials in Spanish and Vietnamese"
+      ]
+    }
+  },
+  "is_compliant": true,
+  "conflict_items": [],
+  "validation_summary": "The plan meets the 280-person minimum with a target of 300, stays within both the $70,000 cap and the $68,000 available budget, and serves only eligible areas. Available staff capacity totals 330, required qualifications are represented, and all required accessibility standards are supported."
+}

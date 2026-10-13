@@ -1,0 +1,99 @@
+{
+  "case_input": {
+    "plan": {
+      "service_name": "Hillcrest and South Market Family Wellness Visits",
+      "target_population": "Families with children under five in Hillcrest and South Market, served during a 12-month program period.",
+      "coverage_target": 180,
+      "service_area": [
+        "Hillcrest",
+        "South Market"
+      ],
+      "budget_requested": 42000,
+      "planned_staffing": [
+        {
+          "role": "Registered Nurse",
+          "count": 1,
+          "qualifications": [
+            "Registered Nurse (RN)"
+          ]
+        },
+        {
+          "role": "Community Health Worker",
+          "count": 2,
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ]
+        }
+      ],
+      "accessibility_provisions": [
+        "Step-free service venue",
+        "Appointment materials in large print and plain language"
+      ]
+    },
+    "applicable_rules": {
+      "minimum_coverage": 200,
+      "eligible_service_areas": [
+        "Hillcrest",
+        "South Market"
+      ],
+      "maximum_budget": 45000,
+      "required_qualifications": [
+        "Registered Nurse (RN)",
+        "Community Health Worker (CHW) certificate"
+      ],
+      "required_accessibility_standards": [
+        "Step-free service venue",
+        "Appointment materials in large print and plain language"
+      ]
+    },
+    "available_resources": {
+      "budget_available": 40000,
+      "staff": [
+        {
+          "role": "Registered Nurse",
+          "qualifications": [
+            "Registered Nurse (RN)"
+          ],
+          "service_capacity": 120,
+          "service_areas": [
+            "Hillcrest",
+            "South Market"
+          ]
+        },
+        {
+          "role": "Community Health Worker",
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ],
+          "service_capacity": 100,
+          "service_areas": [
+            "Hillcrest",
+            "South Market"
+          ]
+        }
+      ],
+      "accessibility_resources": [
+        "Step-free service venue",
+        "Appointment materials in large print and plain language"
+      ]
+    }
+  },
+  "is_compliant": false,
+  "conflict_items": [
+    {
+      "category": "coverage",
+      "constraint": "The planned coverage must meet or exceed the 200-person minimum.",
+      "plan_value": "180 people",
+      "required_value": "At least 200 people",
+      "explanation": "The target is 20 people below the required minimum."
+    },
+    {
+      "category": "budget",
+      "constraint": "The requested budget must not exceed the available budget.",
+      "plan_value": "$42,000 requested; $40,000 available",
+      "required_value": "No more than $40,000 available",
+      "explanation": "The plan requests $2,000 more than the available funding, although it remains below the $45,000 maximum budget."
+    }
+  ],
+  "validation_summary": "The plan meets the geographic, staffing, qualification, and accessibility requirements, and its $42,000 request is below the $45,000 maximum. It is not compliant because the 180-person target is below the 200-person minimum and the request exceeds available funding by $2,000."
+}

@@ -1,0 +1,99 @@
+{
+  "case_input": {
+    "plan": {
+      "service_name": "Eastbank Chronic Disease Outreach Clinics",
+      "target_population": "Adults receiving community-based support for chronic disease management during a 12-month program period.",
+      "coverage_target": 310,
+      "service_area": [
+        "Eastbank",
+        "North Quay"
+      ],
+      "budget_requested": 77000,
+      "planned_staffing": [
+        {
+          "role": "Community Health Worker",
+          "count": 3,
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ]
+        }
+      ],
+      "accessibility_provisions": [
+        "Step-free service venue"
+      ]
+    },
+    "applicable_rules": {
+      "minimum_coverage": 300,
+      "eligible_service_areas": [
+        "Eastbank",
+        "South Ridge"
+      ],
+      "maximum_budget": 70000,
+      "required_qualifications": [
+        "Registered Nurse (RN)",
+        "Community Health Worker (CHW) certificate"
+      ],
+      "required_accessibility_standards": [
+        "Step-free service venue",
+        "On-site language interpretation in Arabic"
+      ]
+    },
+    "available_resources": {
+      "budget_available": 75000,
+      "staff": [
+        {
+          "role": "Community Health Worker",
+          "qualifications": [
+            "Community Health Worker (CHW) certificate"
+          ],
+          "service_capacity": 260,
+          "service_areas": [
+            "Eastbank"
+          ]
+        }
+      ],
+      "accessibility_resources": [
+        "Step-free service venue"
+      ]
+    }
+  },
+  "is_compliant": false,
+  "conflict_items": [
+    {
+      "category": "budget",
+      "constraint": "The requested budget must not exceed the $70,000 maximum or the $75,000 available budget.",
+      "plan_value": "$77,000 requested",
+      "required_value": "No more than $70,000 and no more than $75,000 available",
+      "explanation": "The request exceeds both the applicable budget cap and the funding available."
+    },
+    {
+      "category": "staffing",
+      "constraint": "Available staff capacity must support the planned coverage target.",
+      "plan_value": "310 people planned; available staff capacity is 260 people",
+      "required_value": "Capacity for at least 310 people",
+      "explanation": "The available workforce can serve 50 fewer people than the plan targets."
+    },
+    {
+      "category": "staffing",
+      "constraint": "The plan must provide staff with every required qualification.",
+      "plan_value": "Community Health Worker (CHW) certificate is planned; no Registered Nurse (RN) is planned or available",
+      "required_value": "Registered Nurse (RN) and Community Health Worker (CHW) certificate",
+      "explanation": "The required RN qualification is absent from both planned staffing and available staff."
+    },
+    {
+      "category": "geography",
+      "constraint": "Planned service areas must be eligible under the rules and reachable by available staff.",
+      "plan_value": "North Quay is included in the plan; available staff serve Eastbank only",
+      "required_value": "Eligible areas are Eastbank and South Ridge; available staff can serve Eastbank",
+      "explanation": "North Quay is not an eligible service area and is outside the available staff's service area."
+    },
+    {
+      "category": "accessibility",
+      "constraint": "The plan must provide every required accessibility standard supported by available resources.",
+      "plan_value": "Step-free service venue only; no on-site Arabic interpretation",
+      "required_value": "Step-free service venue and on-site language interpretation in Arabic",
+      "explanation": "The plan omits required Arabic interpretation, which is also absent from the available accessibility resources."
+    }
+  ],
+  "validation_summary": "The plan fails budget, staffing capacity, qualification, geographic eligibility, and accessibility checks. Its coverage target meets the minimum, but available staff cannot serve the full target, the required RN qualification is missing, North Quay is ineligible and unreachable, and Arabic interpretation is not provided."
+}
