@@ -1,0 +1,53 @@
+{
+  "patient_case": {
+    "age_years": 34,
+    "symptoms": [
+      "Sore throat",
+      "Runny nose",
+      "Able to swallow fluids",
+      "No breathing difficulty or drooling"
+    ],
+    "symptom_onset": "Started two days ago",
+    "symptom_duration": {
+      "value": 2,
+      "unit": "days"
+    },
+    "vital_signs": {
+      "temperature_c": 37.6,
+      "heart_rate_bpm": 82,
+      "respiratory_rate_per_min": 16,
+      "systolic_blood_pressure_mmhg": 118,
+      "diastolic_blood_pressure_mmhg": 74,
+      "oxygen_saturation_percent": 99,
+      "measurement_context": "Recorded at rest during the clinic assessment."
+    },
+    "red_flags": [],
+    "relevant_history": [],
+    "proposed_disposition": {
+      "urgency_level": "Routine",
+      "action": "Arrange a non-urgent primary care assessment",
+      "timeframe": "Within 48 hours",
+      "destination": "Primary care clinic"
+    }
+  },
+  "triage_rules": [
+    {
+      "rule_text": "For an adult with a sore throat, stable vital signs, ability to swallow fluids, and no airway warning signs, routine primary care assessment is appropriate within 72 hours.",
+      "trigger_conditions": [
+        "Sore throat",
+        "Stable vital signs",
+        "Able to swallow fluids",
+        "No breathing difficulty or drooling"
+      ],
+      "required_urgency_level": "Routine",
+      "required_response_time": "Within 72 hours."
+    }
+  ],
+  "expected_constraint_judgment": {
+    "violation_detected": false,
+    "urgency_alignment": "aligned",
+    "expected_urgency_level": "Routine",
+    "violated_rule_indices": [],
+    "rationale": "The patient has a sore throat, stable recorded vital signs, can swallow fluids, and has no reported breathing difficulty or drooling. The proposed routine assessment within 48 hours falls within the rule's 72-hour window, so no constraint is violated."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "patient_case": {
+    "age_years": 58,
+    "symptoms": [
+      "New central chest pressure radiating to the jaw",
+      "Cold sweating",
+      "Shortness of breath"
+    ],
+    "symptom_onset": "Began suddenly about one hour ago",
+    "symptom_duration": {
+      "value": 1,
+      "unit": "hour"
+    },
+    "vital_signs": {
+      "temperature_c": 36.8,
+      "heart_rate_bpm": 112,
+      "respiratory_rate_per_min": 24,
+      "systolic_blood_pressure_mmhg": 92,
+      "diastolic_blood_pressure_mmhg": 60,
+      "oxygen_saturation_percent": 95,
+      "measurement_context": "Recorded while seated at the primary care clinic."
+    },
+    "red_flags": [
+      "New central chest pressure with radiation",
+      "Cold sweating",
+      "Systolic blood pressure below 100 mmHg"
+    ],
+    "relevant_history": [
+      "No relevant history provided."
+    ],
+    "proposed_disposition": {
+      "urgency_level": "Routine",
+      "action": "Arrange a standard primary care appointment",
+      "timeframe": "Within 48 hours",
+      "destination": "Primary care clinic"
+    }
+  },
+  "triage_rules": [
+    {
+      "rule_text": "New central chest pressure accompanied by sweating or systolic blood pressure below 100 mmHg requires emergency assessment now; it must not be deferred to a routine appointment.",
+      "trigger_conditions": [
+        "New central chest pressure",
+        "Cold sweating",
+        "Systolic blood pressure below 100 mmHg"
+      ],
+      "required_urgency_level": "Emergency",
+      "required_response_time": "Immediately; arrange emergency transport now."
+    }
+  ],
+  "expected_constraint_judgment": {
+    "violation_detected": true,
+    "urgency_alignment": "under_triage",
+    "expected_urgency_level": "Emergency",
+    "violated_rule_indices": [
+      0
+    ],
+    "rationale": "The patient has new central chest pressure, cold sweating, and a systolic blood pressure of 92 mmHg, meeting the rule's triggers. A routine appointment within 48 hours conflicts with the required immediate emergency assessment, so rule 0 is violated by under-triage."
+  }
+}
