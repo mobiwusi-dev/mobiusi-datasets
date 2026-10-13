@@ -1,0 +1,41 @@
+{
+  "ad_claim_record": {
+    "claim_text": "截至2025年6月30日，基础版月费为29元。引用：《基础版价格公告》v1。",
+    "temporal_expression": "截至2025年6月30日",
+    "temporal_expression_type": "截至某日期",
+    "claimed_fact": "基础版月费为29元。",
+    "ad_publish_datetime": "2025-07-02T14:30:00+08:00",
+    "citation_text": "《基础版价格公告》v1",
+    "citation_locator": "价格表第1行；公告版本页"
+  },
+  "evidence_record": {
+    "evidence_text": "《基础版价格公告》v1于2025年6月1日发布。公告显示，截至2025年6月10日，基础版月费为29元。该价格表于2025年6月15日被v2替代；自2025年6月15日起，基础版月费调整为35元。",
+    "source_title": "基础版价格公告",
+    "publication_datetime": "2025-06-01T09:00:00+08:00",
+    "effective_from": "2025-06-01T00:00:00+08:00",
+    "effective_until": "2025-06-14T23:59:59+08:00",
+    "version_label": "v1",
+    "update_status": "已被v2替代"
+  },
+  "temporal_analysis": {
+    "detected_temporal_expression": "截至2025年6月30日",
+    "temporal_reference_type": "截止日期状态",
+    "reference_datetime": "2025-06-30T23:59:59+08:00",
+    "is_time_sensitive": true,
+    "temporal_requirement": "证据必须覆盖2025年6月30日的价格状态，并且在2025年7月2日广告发布时仍处于有效期或由当时适用的版本支持。"
+  },
+  "evidence_alignment": {
+    "publication_before_ad": true,
+    "ad_publish_within_validity": false,
+    "version_is_relevant_at_publish": false,
+    "temporal_alignment_status": "时间不对齐",
+    "alignment_explanation": "v1在广告发布前发布，但其有效期于2025年6月14日结束，并在2025年6月15日被v2替代。广告发布时间为2025年7月2日，既不在v1有效期内，v1也不是当时适用版本；同时证据只记录了截至6月10日的29元价格，不能支持6月30日的状态。"
+  },
+  "citation_validation": {
+    "factual_support_status": "部分支持",
+    "citation_validity_label": "无效支持",
+    "support_score": 0.1,
+    "evidence_quote": "截至2025年6月10日，基础版月费为29元。该价格表于2025年6月15日被v2替代；自2025年6月15日起，基础版月费调整为35元。",
+    "decision_reason": "证据仅能证明基础版在6月10日曾为29元，不能证明截至6月30日仍为该价格。由于v1在广告发布时已经失效且被v2替代，引用无法在广告发布时点支持该时效性主张。"
+  }
+}

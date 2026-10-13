@@ -1,0 +1,41 @@
+{
+  "ad_claim_record": {
+    "claim_text": "已更新：“晨间配送”服务现支持周一至周六下单，详情见配送政策更新公告。",
+    "temporal_expression": "已更新",
+    "temporal_expression_type": "已更新",
+    "claimed_fact": "晨间配送服务支持周一至周六下单。",
+    "ad_publish_datetime": "2025-09-12T08:00:00+08:00",
+    "citation_text": "《配送政策更新公告》2025年9月15日版，第1节",
+    "citation_locator": "第1节“服务时间调整”"
+  },
+  "evidence_record": {
+    "evidence_text": "自2025年9月15日起，晨间配送服务支持周一至周六下单。本公告为v5更新版，替代此前仅支持周一至周五下单的v4版本。",
+    "source_title": "配送政策更新公告",
+    "publication_datetime": "2025-09-15T10:00:00+08:00",
+    "effective_from": "2025-09-15T00:00:00+08:00",
+    "effective_until": "无明确结束时间（待后续版本替代）",
+    "version_label": "v5",
+    "update_status": "已发布，但晚于广告发布时间；替代v4"
+  },
+  "temporal_analysis": {
+    "detected_temporal_expression": "已更新",
+    "temporal_reference_type": "更新后状态",
+    "reference_datetime": "2025-09-12T08:00:00+08:00",
+    "is_time_sensitive": true,
+    "temporal_requirement": "证据所称的更新必须在广告发布前已经公开并生效；仅在广告发布后生效的版本不能支持发布时点的已更新表述。"
+  },
+  "evidence_alignment": {
+    "publication_before_ad": false,
+    "ad_publish_within_validity": false,
+    "version_is_relevant_at_publish": false,
+    "temporal_alignment_status": "时间不对齐",
+    "alignment_explanation": "v5证据于2025年9月15日发布并从同日生效，而广告发布时间为2025年9月12日。该版本在广告发布时尚未公开或生效，因此广告发布时既不处于其有效期内，也不能视为适用版本。"
+  },
+  "citation_validation": {
+    "factual_support_status": "完全支持",
+    "citation_validity_label": "无效支持",
+    "support_score": 0.25,
+    "evidence_quote": "自2025年9月15日起，晨间配送服务支持周一至周六下单。本公告为v5更新版，替代此前仅支持周一至周五下单的v4版本。",
+    "decision_reason": "证据内容确实支持周一至周六下单这一事实，但该事实对应的v5更新公告在广告发布三天后才发布并生效。由于不能用后续发布的证据证明广告发布时已经完成更新，引用在该时点无效。"
+  }
+}
