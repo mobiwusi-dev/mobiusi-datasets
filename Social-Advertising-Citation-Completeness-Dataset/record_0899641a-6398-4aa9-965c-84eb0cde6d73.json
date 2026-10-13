@@ -1,0 +1,203 @@
+{
+  "fact_claims": [
+    {
+      "claim_key": "T1C1",
+      "claim_text": "每袋含有120毫克咖啡因。",
+      "claim_importance": "高",
+      "claim_category": "数量",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "T1C2",
+      "claim_text": "采用低温真空冻干工艺，锁住现磨香气。",
+      "claim_importance": "高",
+      "claim_category": "工艺与功效",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "T1C3",
+      "claim_text": "每杯热量低于80千卡且不添加蔗糖。",
+      "claim_importance": "高",
+      "claim_category": "营养",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "T1C4",
+      "claim_text": "10名参与者中有7名愿意再次购买。",
+      "claim_importance": "中",
+      "claim_category": "调查",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "T1C5",
+      "claim_text": "已获有机食品认证。",
+      "claim_importance": "高",
+      "claim_category": "认证",
+      "requires_citation": true
+    }
+  ],
+  "coverage_summary": {
+    "total_claims": 5,
+    "citation_required_claims": 5,
+    "fully_supported_claims": 1,
+    "partially_supported_claims": 3,
+    "uncited_claims": 1,
+    "coverage_rate": 0.2
+  },
+  "missing_citations": [
+    {
+      "claim_key": "T1C2",
+      "claim_text": "采用低温真空冻干工艺，锁住现磨香气。",
+      "missing_reason": "T2仅证明使用真空冻干工艺，未提供低温条件或香气保持效果的直接证据。",
+      "claim_importance": "高",
+      "recommended_reference_keys": [
+        "T2"
+      ]
+    },
+    {
+      "claim_key": "T1C3",
+      "claim_text": "每杯热量低于80千卡且不添加蔗糖。",
+      "missing_reason": "T1只支持不添加蔗糖，未提供每杯热量低于80千卡的营养数据。",
+      "claim_importance": "高",
+      "recommended_reference_keys": [
+        "T1"
+      ]
+    },
+    {
+      "claim_key": "T1C4",
+      "claim_text": "10名参与者中有7名愿意再次购买。",
+      "missing_reason": "T3提供了人数和比例，但缺少样本招募、调查方法及代表性说明。",
+      "claim_importance": "中",
+      "recommended_reference_keys": [
+        "T3"
+      ]
+    },
+    {
+      "claim_key": "T1C5",
+      "claim_text": "已获有机食品认证。",
+      "missing_reason": "没有提供认证机构、证书编号或能够核验该认证的参考资料。",
+      "claim_importance": "高",
+      "recommended_reference_keys": []
+    }
+  ],
+  "advertisement_text": "澄野冻干咖啡：每袋含有120毫克咖啡因。[T1] 采用低温真空冻干工艺，锁住现磨香气。[T2] 每杯热量低于80千卡且不添加蔗糖。[T1] 试饮调查显示，10名参与者中有7名愿意再次购买。[T3] 已获有机食品认证。",
+  "reference_materials": [
+    {
+      "reference_key": "T1",
+      "source_title": "澄野冻干咖啡标签与营养资料",
+      "source_url": "",
+      "evidence_excerpt": "产品标签标示每袋咖啡因含量为120毫克，并注明不添加蔗糖；营养资料中的能量字段未给出每杯低于80千卡的结论。",
+      "source_type": "产品标签"
+    },
+    {
+      "reference_key": "T2",
+      "source_title": "澄野冻干咖啡工艺说明",
+      "source_url": "",
+      "evidence_excerpt": "工艺说明称产品采用真空冻干工艺，但未注明冻干过程的温度范围，也未提供锁住香气的对照测试。",
+      "source_type": "产品说明"
+    },
+    {
+      "reference_key": "T3",
+      "source_title": "澄野咖啡内部试饮记录",
+      "source_url": "",
+      "evidence_excerpt": "在10名参与者的试饮记录中，7人表示愿意再次购买。记录未说明参与者招募方式、人口构成或调查问卷设计。",
+      "source_type": "研究报告"
+    }
+  ],
+  "claim_citation_mappings": [
+    {
+      "claim_key": "T1C1",
+      "reference_keys": [
+        "T1"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "T1产品标签明确标示每袋含有120毫克咖啡因，与广告主张一致。"
+    },
+    {
+      "claim_key": "T1C2",
+      "reference_keys": [
+        "T2"
+      ],
+      "mapping_status": "部分",
+      "mapping_rationale": "T2支持采用真空冻干工艺，但没有给出低温范围，也没有证据证明该工艺能够锁住现磨香气。"
+    },
+    {
+      "claim_key": "T1C3",
+      "reference_keys": [
+        "T1"
+      ],
+      "mapping_status": "部分",
+      "mapping_rationale": "T1支持不添加蔗糖，但明确未提供每杯低于80千卡的能量证据，因此只能部分支持复合主张。"
+    },
+    {
+      "claim_key": "T1C4",
+      "reference_keys": [
+        "T3"
+      ],
+      "mapping_status": "部分",
+      "mapping_rationale": "T3记录了10人中7人愿意再次购买，但缺少参与者招募和调查设计信息，不能充分支持更广泛的消费者偏好推断。"
+    },
+    {
+      "claim_key": "T1C5",
+      "reference_keys": [],
+      "mapping_status": "缺失",
+      "mapping_rationale": "广告未提供有机认证机构、证书编号或其他可核验来源，现有资料也没有认证信息。"
+    }
+  ],
+  "evidence_chain_analysis": [
+    {
+      "claim_key": "T1C1",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "T1"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "咖啡因含量主张可直接追溯到T1标签字段。"
+    },
+    {
+      "claim_key": "T1C2",
+      "chain_status": "部分完整",
+      "available_reference_keys": [
+        "T2"
+      ],
+      "missing_evidence_links": [
+        "低温范围未提供",
+        "缺少香气保持效果的对照证据"
+      ],
+      "chain_note": "工艺名称有来源，但广告加入了资料未证明的温度和功效限定。"
+    },
+    {
+      "claim_key": "T1C3",
+      "chain_status": "部分完整",
+      "available_reference_keys": [
+        "T1"
+      ],
+      "missing_evidence_links": [
+        "每杯能量数值缺失"
+      ],
+      "chain_note": "不添加蔗糖环节有证据，热量低于80千卡的环节没有形成完整证据链。"
+    },
+    {
+      "claim_key": "T1C4",
+      "chain_status": "部分完整",
+      "available_reference_keys": [
+        "T3"
+      ],
+      "missing_evidence_links": [
+        "样本招募方式缺失",
+        "调查工具和代表性信息缺失"
+      ],
+      "chain_note": "T3能支持该试饮记录中的人数比例，但不足以支持具有普遍性的消费者结论。"
+    },
+    {
+      "claim_key": "T1C5",
+      "chain_status": "无证据",
+      "available_reference_keys": [],
+      "missing_evidence_links": [
+        "未映射认证来源",
+        "缺少证书或认证机构信息"
+      ],
+      "chain_note": "现有参考资料中没有有机食品认证的证据摘录。"
+    }
+  ]
+}

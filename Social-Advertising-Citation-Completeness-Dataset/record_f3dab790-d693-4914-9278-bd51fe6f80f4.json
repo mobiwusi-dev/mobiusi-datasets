@@ -1,0 +1,137 @@
+{
+  "fact_claims": [
+    {
+      "claim_key": "S1C1",
+      "claim_text": "在中等亮度下可连续照明最长8小时。",
+      "claim_importance": "高",
+      "claim_category": "时间",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "S1C2",
+      "claim_text": "通过IPX5防喷水等级测试。",
+      "claim_importance": "高",
+      "claim_category": "安全性",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "S1C3",
+      "claim_text": "灯体铝合金中含35%消费后再生铝。",
+      "claim_importance": "中",
+      "claim_category": "来源",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "S1C4",
+      "claim_text": "产品提供24个月有限保修。",
+      "claim_importance": "中",
+      "claim_category": "时间",
+      "requires_citation": true
+    }
+  ],
+  "coverage_summary": {
+    "total_claims": 4,
+    "citation_required_claims": 4,
+    "fully_supported_claims": 4,
+    "partially_supported_claims": 0,
+    "uncited_claims": 0,
+    "coverage_rate": 1.0
+  },
+  "missing_citations": [],
+  "advertisement_text": "曜石野营灯：在中等亮度下可连续照明最长8小时。[S1] 通过IPX5防喷水等级测试。[S2] 灯体铝合金中含35%消费后再生铝。[S3] 产品提供24个月有限保修。[S1]",
+  "reference_materials": [
+    {
+      "reference_key": "S1",
+      "source_title": "曜石野营灯产品规格与保修页",
+      "source_url": "",
+      "evidence_excerpt": "规格表注明，中等亮度模式的标称连续照明时间最长为8小时；销售条款注明产品提供24个月有限保修。",
+      "source_type": "产品页面"
+    },
+    {
+      "reference_key": "S2",
+      "source_title": "曜石野营灯防护等级测试报告",
+      "source_url": "",
+      "evidence_excerpt": "实验室测试结论：样品达到IPX5防喷水等级，测试按规定喷水条件完成。",
+      "source_type": "研究报告"
+    },
+    {
+      "reference_key": "S3",
+      "source_title": "曜石野营灯材料声明",
+      "source_url": "",
+      "evidence_excerpt": "灯体铝合金材料声明显示，所用铝材中35%来自消费后回收铝来源。",
+      "source_type": "产品声明"
+    }
+  ],
+  "claim_citation_mappings": [
+    {
+      "claim_key": "S1C1",
+      "reference_keys": [
+        "S1"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "S1规格表明确给出中等亮度模式最长8小时的标称照明时间。"
+    },
+    {
+      "claim_key": "S1C2",
+      "reference_keys": [
+        "S2"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "S2的测试结论直接确认样品达到IPX5防喷水等级。"
+    },
+    {
+      "claim_key": "S1C3",
+      "reference_keys": [
+        "S3"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "S3材料声明明确给出消费后再生铝占铝材的35%，与广告主张一致。"
+    },
+    {
+      "claim_key": "S1C4",
+      "reference_keys": [
+        "S1"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "S1销售条款明确注明24个月有限保修，能够直接支持该主张。"
+    }
+  ],
+  "evidence_chain_analysis": [
+    {
+      "claim_key": "S1C1",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "S1"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "广告中的模式、时长和最长限定均能在S1规格表中定位。"
+    },
+    {
+      "claim_key": "S1C2",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "S2"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "主张可追溯到具体防护等级测试结论，证据内容与主张一致。"
+    },
+    {
+      "claim_key": "S1C3",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "S3"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "材料比例和回收来源的定义均由S3材料声明提供。"
+    },
+    {
+      "claim_key": "S1C4",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "S1"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "保修期限和有限保修性质均可在同一产品规格与条款资料中追溯。"
+    }
+  ]
+}

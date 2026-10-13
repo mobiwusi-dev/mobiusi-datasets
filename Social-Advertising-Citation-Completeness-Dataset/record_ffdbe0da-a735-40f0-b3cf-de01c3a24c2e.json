@@ -1,0 +1,156 @@
+{
+  "advertisement_text": "青岚洗衣凝珠：每颗凝珠含有12克浓缩洗涤剂。[R1] 在模拟棉布污渍测试中，对油渍去除率达到92%。[R1] 在30°C程序中，平均用水量比40°C程序低约20%。[R2] 外包装含80%再生塑料。",
+  "fact_claims": [
+    {
+      "claim_key": "A1",
+      "claim_text": "每颗凝珠含有12克浓缩洗涤剂。",
+      "claim_importance": "高",
+      "claim_category": "数量",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "A2",
+      "claim_text": "在模拟棉布污渍测试中，对油渍去除率达到92%。",
+      "claim_importance": "高",
+      "claim_category": "功效",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "A3",
+      "claim_text": "在30°C程序中，平均用水量比40°C程序低约20%。",
+      "claim_importance": "高",
+      "claim_category": "节能比较",
+      "requires_citation": true
+    },
+    {
+      "claim_key": "A4",
+      "claim_text": "外包装含80%再生塑料。",
+      "claim_importance": "中",
+      "claim_category": "包装",
+      "requires_citation": true
+    }
+  ],
+  "coverage_summary": {
+    "total_claims": 4,
+    "citation_required_claims": 4,
+    "fully_supported_claims": 2,
+    "partially_supported_claims": 1,
+    "uncited_claims": 1,
+    "coverage_rate": 0.5
+  },
+  "missing_citations": [
+    {
+      "claim_key": "A3",
+      "claim_text": "在30°C程序中，平均用水量比40°C程序低约20%。",
+      "missing_reason": "已有R2能够部分支持数值，但试验规模和适用范围有限，缺少对广告普遍性表述的充分证据。",
+      "claim_importance": "高",
+      "recommended_reference_keys": [
+        "R2"
+      ]
+    },
+    {
+      "claim_key": "A4",
+      "claim_text": "外包装含80%再生塑料。",
+      "missing_reason": "广告未标注引用，现有参考资料中没有包装材料构成或再生塑料比例的相关摘录。",
+      "claim_importance": "中",
+      "recommended_reference_keys": []
+    }
+  ],
+  "reference_materials": [
+    {
+      "reference_key": "R1",
+      "source_title": "青岚洗衣凝珠产品测试摘要",
+      "source_url": "",
+      "evidence_excerpt": "配方规格记录显示，每颗凝珠的洗涤剂净含量为12克。模拟棉布油渍测试中，处理组平均油渍去除率为92%。",
+      "source_type": "研究报告"
+    },
+    {
+      "reference_key": "R2",
+      "source_title": "青岚低温洗涤用水量试验记录",
+      "source_url": "",
+      "evidence_excerpt": "小规模试验记录显示，30°C程序的平均用水量约比40°C程序低20%。该试验仅包含5个洗涤循环，未评估不同织物和洗衣机型号的差异。",
+      "source_type": "研究报告"
+    },
+    {
+      "reference_key": "R3",
+      "source_title": "青岚洗衣凝珠香料安全性说明",
+      "source_url": "",
+      "evidence_excerpt": "说明文件讨论了香料成分的皮肤接触注意事项，未提供外包装再生塑料比例信息。",
+      "source_type": "安全性说明"
+    }
+  ],
+  "claim_citation_mappings": [
+    {
+      "claim_key": "A1",
+      "reference_keys": [
+        "R1"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "R1明确记录每颗凝珠含有12克洗涤剂，与广告中的数量主张一致。"
+    },
+    {
+      "claim_key": "A2",
+      "reference_keys": [
+        "R1"
+      ],
+      "mapping_status": "充分",
+      "mapping_rationale": "R1提供了模拟棉布油渍测试及92%平均去除率，直接支持该功效主张。"
+    },
+    {
+      "claim_key": "A3",
+      "reference_keys": [
+        "R2"
+      ],
+      "mapping_status": "部分",
+      "mapping_rationale": "R2记录了30°C与40°C程序约20%的用水量差异，但试验循环数量较少，且广告没有说明该结果仅来自小规模试验。"
+    },
+    {
+      "claim_key": "A4",
+      "reference_keys": [],
+      "mapping_status": "缺失",
+      "mapping_rationale": "广告没有给出引用，现有参考资料也没有提供80%再生塑料比例的证据。"
+    }
+  ],
+  "evidence_chain_analysis": [
+    {
+      "claim_key": "A1",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "R1"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "主张可追溯至R1，来源中的产品规格与广告数量一致。"
+    },
+    {
+      "claim_key": "A2",
+      "chain_status": "完整",
+      "available_reference_keys": [
+        "R1"
+      ],
+      "missing_evidence_links": [],
+      "chain_note": "主张、模拟测试结果和证据摘录之间能够直接对应。"
+    },
+    {
+      "claim_key": "A3",
+      "chain_status": "部分完整",
+      "available_reference_keys": [
+        "R2"
+      ],
+      "missing_evidence_links": [
+        "试验仅包含5个循环",
+        "未说明结果能否推广至不同洗衣机和织物"
+      ],
+      "chain_note": "R2提供了比较数值，但证据范围和样本规模不足以完全支撑广告的无条件表述。"
+    },
+    {
+      "claim_key": "A4",
+      "chain_status": "无证据",
+      "available_reference_keys": [],
+      "missing_evidence_links": [
+        "主张未映射来源",
+        "没有包装材料比例摘录"
+      ],
+      "chain_note": "无法从提供的参考资料追溯80%再生塑料这一主张。"
+    }
+  ]
+}
