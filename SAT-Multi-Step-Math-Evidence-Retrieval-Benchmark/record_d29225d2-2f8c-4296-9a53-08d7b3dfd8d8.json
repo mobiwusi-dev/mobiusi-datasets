@@ -1,0 +1,284 @@
+{
+  "chain_summary": {
+    "step_count": 5,
+    "unique_required_evidence_count": 5,
+    "dependency_depth": 5,
+    "chain_complete": true,
+    "evidence_sufficiency_rule": "必须覆盖指数模型、同底幂相除、正数约束下的平方根、系数反解和目标函数求值五类证据；仅检索到指数函数定义或幂运算公式，不能支持从两个已知函数值确定参数并完成最终求值。"
+  },
+  "source_record": {
+    "question_text": "函数f(x)=a·b^x，其中a和b均为正数。已知f(1)=12且f(3)=48。f(5)的值是多少？",
+    "problem_category": "指数函数与指数运算",
+    "given_conditions": [
+      "f(x)=a·b^x。",
+      "a>0且b>0。",
+      "f(1)=12。",
+      "f(3)=48。"
+    ],
+    "answer_choices": [
+      "A. 96",
+      "B. 144",
+      "C. 192",
+      "D. 384"
+    ],
+    "correct_answer": "C",
+    "candidate_evidence_library": [
+      {
+        "evidence_key": "EXP-E1",
+        "evidence_kind": "函数定义",
+        "evidence_statement": "指数函数模型可以写成f(x)=a·b^x，其中a是正的初始系数，b是正的增长或衰减基数。",
+        "formula_text": "f(x)=a·b^x；a>0，b>0",
+        "applicability_conditions": [
+          "题目明确给出指数函数模型。",
+          "a和b为正数。"
+        ],
+        "source_excerpt": "对于形式f(x)=a·b^x的指数函数，a决定初始尺度，b决定每增加一个单位输入时的乘法变化率。"
+      },
+      {
+        "evidence_key": "EXP-E2",
+        "evidence_kind": "指数运算法则",
+        "evidence_statement": "同底幂相除时，指数相减；将两个函数值相除可以消去共同的系数a。",
+        "formula_text": "(a·b^m)/(a·b^n)=b^(m-n)，a不等于0",
+        "applicability_conditions": [
+          "分子和分母使用同一a和同一底数b。",
+          "分母不为零。"
+        ],
+        "source_excerpt": "同底数幂相除，底数不变、指数相减；公共非零因子可以约去。"
+      },
+      {
+        "evidence_key": "EXP-E3",
+        "evidence_kind": "计算规则",
+        "evidence_statement": "当b为正数且b^2=4时，b只能取正平方根2。",
+        "formula_text": "b^2=4且b>0，所以b=sqrt(4)=2",
+        "applicability_conditions": [
+          "b为正数。",
+          "已知b的平方值。"
+        ],
+        "source_excerpt": "在正数限制下，平方等于4的唯一可能值是2，而不是负平方根。"
+      },
+      {
+        "evidence_key": "EXP-E4",
+        "evidence_kind": "代数变形规则",
+        "evidence_statement": "已知f(1)=a·b后，可以用函数值除以b求出系数a。",
+        "formula_text": "a=f(1)/b",
+        "applicability_conditions": [
+          "b不等于0。",
+          "f(1)=a·b成立。"
+        ],
+        "source_excerpt": "将指数函数在x=1处的值写为a·b，再除以已知基数即可得到a。"
+      },
+      {
+        "evidence_key": "EXP-E5",
+        "evidence_kind": "指数计算规则",
+        "evidence_statement": "计算目标函数值时，先求出指数幂，再与系数相乘。",
+        "formula_text": "f(5)=a·b^5；2^5=32",
+        "applicability_conditions": [
+          "a和b的值已经确定。",
+          "目标输入为x=5。"
+        ],
+        "source_excerpt": "指数函数求值遵循先计算b的x次幂、再乘以系数a的步骤。"
+      },
+      {
+        "evidence_key": "EXP-D1",
+        "evidence_kind": "概念",
+        "evidence_statement": "等差数列相邻两项之间保持固定的加法差值。",
+        "formula_text": "u_n=u_1+(n-1)d",
+        "applicability_conditions": [
+          "相邻项的差保持不变。"
+        ],
+        "source_excerpt": "等差模型描述按固定差值变化的数列。"
+      },
+      {
+        "evidence_key": "EXP-D2",
+        "evidence_kind": "公式",
+        "evidence_statement": "对数可以把指数关系转换为乘方关系。",
+        "formula_text": "log_b(y)=x等价于b^x=y",
+        "applicability_conditions": [
+          "b>0且b不等于1，y>0。"
+        ],
+        "source_excerpt": "对数是指数运算的逆运算。"
+      },
+      {
+        "evidence_key": "EXP-D3",
+        "evidence_kind": "公式",
+        "evidence_statement": "二次方程的根可通过判别式和求根公式确定。",
+        "formula_text": "x=(-b±sqrt(b^2-4ac))/(2a)",
+        "applicability_conditions": [
+          "方程为二次方程。"
+        ],
+        "source_excerpt": "求根公式适用于一般形式的二次方程。"
+      }
+    ],
+    "gold_step_annotations": [
+      {
+        "step_key": "exp_s0",
+        "step_order": 0,
+        "reasoning_goal": "将两个已知函数值写成关于a和b的指数表达式。",
+        "evidence_links": [
+          {
+            "evidence_key": "EXP-E1",
+            "evidence_role": "指数函数模型与参数条件",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "由模型得到a·b=12和a·b^3=48，且a、b均为正数。",
+        "prerequisite_step_keys": []
+      },
+      {
+        "step_key": "exp_s1",
+        "step_order": 1,
+        "reasoning_goal": "将两个函数值相除，消去a并求出b的平方。",
+        "evidence_links": [
+          {
+            "evidence_key": "EXP-E2",
+            "evidence_role": "同底幂相除与公共因子消去",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "(a·b^3)/(a·b)=48/12，所以b^2=4。",
+        "prerequisite_step_keys": [
+          "exp_s0"
+        ]
+      },
+      {
+        "step_key": "exp_s2",
+        "step_order": 2,
+        "reasoning_goal": "利用b为正数的条件确定指数基数b。",
+        "evidence_links": [
+          {
+            "evidence_key": "EXP-E3",
+            "evidence_role": "正平方根取值",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "b=2。",
+        "prerequisite_step_keys": [
+          "exp_s1"
+        ]
+      },
+      {
+        "step_key": "exp_s3",
+        "step_order": 3,
+        "reasoning_goal": "利用f(1)=12求出指数函数的系数a。",
+        "evidence_links": [
+          {
+            "evidence_key": "EXP-E4",
+            "evidence_role": "由函数值反解系数",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "a·2=12，所以a=6。",
+        "prerequisite_step_keys": [
+          "exp_s2"
+        ]
+      },
+      {
+        "step_key": "exp_s4",
+        "step_order": 4,
+        "reasoning_goal": "将a和b代入目标输入x=5，计算函数值。",
+        "evidence_links": [
+          {
+            "evidence_key": "EXP-E5",
+            "evidence_role": "指数函数求值与幂运算",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "f(5)=6·2^5=6·32=192，因此选择C。",
+        "prerequisite_step_keys": [
+          "exp_s3"
+        ]
+      }
+    ]
+  },
+  "evidence_chain": [
+    {
+      "step_key": "exp_s0",
+      "step_order": 0,
+      "step_goal": "根据指数函数模型展开两个已知函数值。",
+      "prerequisite_step_keys": [],
+      "required_evidence_keys": [
+        "EXP-E1"
+      ],
+      "required_evidence_roles": [
+        "指数函数模型与参数条件"
+      ],
+      "expected_conclusion": "得到a·b=12和a·b^3=48。"
+    },
+    {
+      "step_key": "exp_s1",
+      "step_order": 1,
+      "step_goal": "通过相除消去a并得到b^2。",
+      "prerequisite_step_keys": [
+        "exp_s0"
+      ],
+      "required_evidence_keys": [
+        "EXP-E2"
+      ],
+      "required_evidence_roles": [
+        "同底幂相除与公共因子消去"
+      ],
+      "expected_conclusion": "得到b^2=4。"
+    },
+    {
+      "step_key": "exp_s2",
+      "step_order": 2,
+      "step_goal": "使用正数约束求出b。",
+      "prerequisite_step_keys": [
+        "exp_s1"
+      ],
+      "required_evidence_keys": [
+        "EXP-E3"
+      ],
+      "required_evidence_roles": [
+        "正平方根取值"
+      ],
+      "expected_conclusion": "得到b=2。"
+    },
+    {
+      "step_key": "exp_s3",
+      "step_order": 3,
+      "step_goal": "由f(1)求出系数a。",
+      "prerequisite_step_keys": [
+        "exp_s2"
+      ],
+      "required_evidence_keys": [
+        "EXP-E4"
+      ],
+      "required_evidence_roles": [
+        "由函数值反解系数"
+      ],
+      "expected_conclusion": "得到a=6。"
+    },
+    {
+      "step_key": "exp_s4",
+      "step_order": 4,
+      "step_goal": "计算x=5时的指数函数值并匹配选项。",
+      "prerequisite_step_keys": [
+        "exp_s3"
+      ],
+      "required_evidence_keys": [
+        "EXP-E5"
+      ],
+      "required_evidence_roles": [
+        "指数函数求值与幂运算"
+      ],
+      "expected_conclusion": "f(5)=192，正确选项为C。"
+    }
+  ],
+  "retrieval_evaluation_target": {
+    "must_retrieve_all_required": true,
+    "relevant_evidence_keys": [
+      "EXP-E1",
+      "EXP-E2",
+      "EXP-E3",
+      "EXP-E4",
+      "EXP-E5"
+    ],
+    "distractor_evidence_keys": [
+      "EXP-D1",
+      "EXP-D2",
+      "EXP-D3"
+    ],
+    "coverage_unit": "按推理步骤评估必要证据覆盖，并要求整条参数识别到目标求值的证据链完整"
+  }
+}

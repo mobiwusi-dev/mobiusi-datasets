@@ -1,0 +1,272 @@
+{
+  "chain_summary": {
+    "step_count": 4,
+    "unique_required_evidence_count": 5,
+    "dependency_depth": 4,
+    "chain_complete": true,
+    "evidence_sufficiency_rule": "必须覆盖线段相加、斜边高对应的两条直角边关系、正平方根取值以及三角形周长公式；只检索到斜边高定理但没有线段分割或周长公式时，不能支持完整解题链。"
+  },
+  "source_record": {
+    "question_text": "在直角三角形ABC中，∠C=90°。从C向斜边AB作高CD，D在线段AB上。已知AD=9，DB=16。三角形ABC的周长是多少？",
+    "problem_category": "直角三角形、斜边高与线段关系",
+    "given_conditions": [
+      "三角形ABC为直角三角形，∠C=90°。",
+      "CD垂直于AB，且D在线段AB上。",
+      "AD=9。",
+      "DB=16。",
+      "AC和BC均为正长度。"
+    ],
+    "answer_choices": [
+      "A. 54",
+      "B. 60",
+      "C. 64",
+      "D. 70"
+    ],
+    "correct_answer": "B",
+    "candidate_evidence_library": [
+      {
+        "evidence_key": "GEO-E1",
+        "evidence_kind": "线段关系",
+        "evidence_statement": "点D位于线段AB内部时，整条斜边等于两个相邻线段之和。",
+        "formula_text": "AB=AD+DB",
+        "applicability_conditions": [
+          "D在线段AB上。",
+          "AD和DB是AB的两个相邻部分。"
+        ],
+        "source_excerpt": "若点D在线段AB上，则AB的长度等于AD与DB长度之和。"
+      },
+      {
+        "evidence_key": "GEO-E2",
+        "evidence_kind": "定理",
+        "evidence_statement": "直角三角形中，从直角顶点向斜边作高后，一条直角边的平方等于斜边与该直角边在斜边上的投影线段的乘积。",
+        "formula_text": "AC^2=AB×AD",
+        "applicability_conditions": [
+          "ABC在C处为直角。",
+          "CD垂直于AB。",
+          "D位于AB上。"
+        ],
+        "source_excerpt": "斜边上的高将直角三角形分成两个相似三角形，因此AC^2=AB×AD。"
+      },
+      {
+        "evidence_key": "GEO-E3",
+        "evidence_kind": "定理",
+        "evidence_statement": "同样由斜边上的高与相似三角形关系，另一条直角边的平方等于斜边与其投影线段的乘积。",
+        "formula_text": "BC^2=AB×DB",
+        "applicability_conditions": [
+          "ABC在C处为直角。",
+          "CD垂直于AB。",
+          "D位于AB上。"
+        ],
+        "source_excerpt": "在直角三角形中，直角边BC对应的斜边投影为DB，所以BC^2=AB×DB。"
+      },
+      {
+        "evidence_key": "GEO-E4",
+        "evidence_kind": "计算规则",
+        "evidence_statement": "长度取正值，因此由正长度的平方可以取正平方根得到对应线段长度。",
+        "formula_text": "若x>0且x^2=k，则x=sqrt(k)",
+        "applicability_conditions": [
+          "x表示线段长度或其他正量。",
+          "k为非负数。"
+        ],
+        "source_excerpt": "几何长度不能取负值，求线段长度时应使用正平方根。"
+      },
+      {
+        "evidence_key": "GEO-E5",
+        "evidence_kind": "公式",
+        "evidence_statement": "三角形的周长等于三条边长度之和。",
+        "formula_text": "P=AB+AC+BC",
+        "applicability_conditions": [
+          "AB、AC和BC是同一个三角形的三条边。",
+          "各长度使用同一单位。"
+        ],
+        "source_excerpt": "任意三角形的周长是其三条边的长度总和。"
+      },
+      {
+        "evidence_key": "GEO-D1",
+        "evidence_kind": "公式",
+        "evidence_statement": "三角形面积可以用底乘高再除以2计算。",
+        "formula_text": "K=底×高/2",
+        "applicability_conditions": [
+          "已知一条底边及其对应高。"
+        ],
+        "source_excerpt": "三角形的面积等于底边与对应高的乘积的一半。"
+      },
+      {
+        "evidence_key": "GEO-D2",
+        "evidence_kind": "概念",
+        "evidence_statement": "相似三角形对应角相等且对应边成比例。",
+        "formula_text": "AB/AC=对应边之比",
+        "applicability_conditions": [
+          "两个三角形具有相等的对应角。"
+        ],
+        "source_excerpt": "相似三角形的对应边比例相等。"
+      },
+      {
+        "evidence_key": "GEO-D3",
+        "evidence_kind": "公式",
+        "evidence_statement": "圆的周长等于直径乘以圆周率。",
+        "formula_text": "C=πd",
+        "applicability_conditions": [
+          "图形为圆且d为直径。"
+        ],
+        "source_excerpt": "圆的周长公式为π乘以直径。"
+      }
+    ],
+    "gold_step_annotations": [
+      {
+        "step_key": "geo_s0",
+        "step_order": 0,
+        "reasoning_goal": "利用D将斜边分成两段的事实，求出斜边AB。",
+        "evidence_links": [
+          {
+            "evidence_key": "GEO-E1",
+            "evidence_role": "线段分割相加规则",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "AB=AD+DB=9+16=25。",
+        "prerequisite_step_keys": []
+      },
+      {
+        "step_key": "geo_s1",
+        "step_order": 1,
+        "reasoning_goal": "利用斜边高定理和正长度条件求出直角边AC。",
+        "evidence_links": [
+          {
+            "evidence_key": "GEO-E2",
+            "evidence_role": "直角边与投影线段关系",
+            "is_necessary": true
+          },
+          {
+            "evidence_key": "GEO-E4",
+            "evidence_role": "正平方根取值规则",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "AC^2=25×9=225，因AC为正，所以AC=15。",
+        "prerequisite_step_keys": [
+          "geo_s0"
+        ]
+      },
+      {
+        "step_key": "geo_s2",
+        "step_order": 2,
+        "reasoning_goal": "利用另一条直角边的投影关系求出BC。",
+        "evidence_links": [
+          {
+            "evidence_key": "GEO-E3",
+            "evidence_role": "另一条直角边与投影线段关系",
+            "is_necessary": true
+          },
+          {
+            "evidence_key": "GEO-E4",
+            "evidence_role": "正平方根取值规则",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "BC^2=25×16=400，因BC为正，所以BC=20。",
+        "prerequisite_step_keys": [
+          "geo_s0"
+        ]
+      },
+      {
+        "step_key": "geo_s3",
+        "step_order": 3,
+        "reasoning_goal": "把三条边相加，得到三角形ABC的周长。",
+        "evidence_links": [
+          {
+            "evidence_key": "GEO-E5",
+            "evidence_role": "三角形周长公式",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "P=25+15+20=60，因此选择B。",
+        "prerequisite_step_keys": [
+          "geo_s1",
+          "geo_s2"
+        ]
+      }
+    ]
+  },
+  "evidence_chain": [
+    {
+      "step_key": "geo_s0",
+      "step_order": 0,
+      "step_goal": "由AD和DB求斜边AB。",
+      "prerequisite_step_keys": [],
+      "required_evidence_keys": [
+        "GEO-E1"
+      ],
+      "required_evidence_roles": [
+        "线段分割相加规则"
+      ],
+      "expected_conclusion": "AB=25。"
+    },
+    {
+      "step_key": "geo_s1",
+      "step_order": 1,
+      "step_goal": "由斜边高定理求直角边AC。",
+      "prerequisite_step_keys": [
+        "geo_s0"
+      ],
+      "required_evidence_keys": [
+        "GEO-E2",
+        "GEO-E4"
+      ],
+      "required_evidence_roles": [
+        "直角边与投影线段关系",
+        "正平方根取值规则"
+      ],
+      "expected_conclusion": "AC=15。"
+    },
+    {
+      "step_key": "geo_s2",
+      "step_order": 2,
+      "step_goal": "由另一条投影关系求直角边BC。",
+      "prerequisite_step_keys": [
+        "geo_s0"
+      ],
+      "required_evidence_keys": [
+        "GEO-E3",
+        "GEO-E4"
+      ],
+      "required_evidence_roles": [
+        "另一条直角边与投影线段关系",
+        "正平方根取值规则"
+      ],
+      "expected_conclusion": "BC=20。"
+    },
+    {
+      "step_key": "geo_s3",
+      "step_order": 3,
+      "step_goal": "将三条边相加得到周长。",
+      "prerequisite_step_keys": [
+        "geo_s1",
+        "geo_s2"
+      ],
+      "required_evidence_keys": [
+        "GEO-E5"
+      ],
+      "required_evidence_roles": [
+        "三角形周长公式"
+      ],
+      "expected_conclusion": "周长为60，正确选项为B。"
+    }
+  ],
+  "retrieval_evaluation_target": {
+    "must_retrieve_all_required": true,
+    "relevant_evidence_keys": [
+      "GEO-E1",
+      "GEO-E2",
+      "GEO-E3",
+      "GEO-E4",
+      "GEO-E5"
+    ],
+    "distractor_evidence_keys": [
+      "GEO-D1",
+      "GEO-D2",
+      "GEO-D3"
+    ],
+    "coverage_unit": "步骤级必要证据和依赖分支的证据链级完整覆盖"
+  }
+}

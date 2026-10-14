@@ -1,0 +1,279 @@
+{
+  "chain_summary": {
+    "step_count": 4,
+    "unique_required_evidence_count": 6,
+    "dependency_depth": 4,
+    "chain_complete": true,
+    "evidence_sufficiency_rule": "只有同时覆盖LIN-E1至LIN-E6，并且证据适用于对应步骤，才能完成建模、代入、求解和验证；只检索到线性方程公式而缺少变量定义、代入规则或验证规则时，证据链不完整。"
+  },
+  "source_record": {
+    "question_text": "某学校售出成人票和学生票。购买2张成人票和3张学生票共需33美元，购买4张成人票和1张学生票共需31美元。若成人票价格为a美元、学生票价格为s美元，成人票价格是多少？",
+    "problem_category": "线性方程组与实际情境建模",
+    "given_conditions": [
+      "成人票价格为a美元，学生票价格为s美元。",
+      "2张成人票和3张学生票的总价为33美元。",
+      "4张成人票和1张学生票的总价为31美元。",
+      "a和s均为正数。"
+    ],
+    "answer_choices": [
+      "A. 6美元",
+      "B. 7美元",
+      "C. 8美元",
+      "D. 9美元"
+    ],
+    "correct_answer": "A",
+    "candidate_evidence_library": [
+      {
+        "evidence_key": "LIN-E1",
+        "evidence_kind": "概念定义",
+        "evidence_statement": "将实际情境中的未知价格设为变量，并保持变量与题目单位一致。",
+        "formula_text": "a=成人票价格，s=学生票价格",
+        "applicability_conditions": [
+          "题目包含待求的未知量。",
+          "变量能够表示同一类量的单价或数值。"
+        ],
+        "source_excerpt": "建模时先为未知量定义变量，再依据数量关系建立方程。"
+      },
+      {
+        "evidence_key": "LIN-E2",
+        "evidence_kind": "建模规则",
+        "evidence_statement": "总价等于各类商品的单价乘数量之和，因此两组购票条件分别形成两个线性方程。",
+        "formula_text": "2a+3s=33；4a+s=31",
+        "applicability_conditions": [
+          "每种票的单价在题目中固定。",
+          "总价由数量乘单价后相加得到。"
+        ],
+        "source_excerpt": "若有两类商品，数量分别为m和n，单价分别为x和y，则总价关系为mx+ny=总价。"
+      },
+      {
+        "evidence_key": "LIN-E3",
+        "evidence_kind": "解题规则",
+        "evidence_statement": "可以通过对线性方程进行移项和系数化简，把一个未知量表示成另一个未知量的表达式。",
+        "formula_text": "4a+s=31 可化为 s=31-4a",
+        "applicability_conditions": [
+          "方程中变量的系数非零。",
+          "对等式两边执行相同的运算。"
+        ],
+        "source_excerpt": "解线性方程时，可将含有目标变量的项保留在一侧，将其余项移到另一侧并化简。"
+      },
+      {
+        "evidence_key": "LIN-E4",
+        "evidence_kind": "解题规则",
+        "evidence_statement": "代入法把一个方程得到的变量表达式代入另一个方程，以减少未知量的个数。",
+        "formula_text": "若s=31-4a，则2a+3s=33可化为2a+3(31-4a)=33",
+        "applicability_conditions": [
+          "被代入的表达式与原变量等价。",
+          "代入后使用的是同一组方程。"
+        ],
+        "source_excerpt": "在线性方程组中，先解出一个变量，再将其表达式代入另一方程即可得到单变量方程。"
+      },
+      {
+        "evidence_key": "LIN-E5",
+        "evidence_kind": "计算规则",
+        "evidence_statement": "线性方程可以通过合并同类项及对等式两边执行相同的加减乘除运算求解。",
+        "formula_text": "2a+93-12a=33；-10a=-60；a=6",
+        "applicability_conditions": [
+          "等式两边的运算保持等价。",
+          "只合并同类项，不改变变量的指数。"
+        ],
+        "source_excerpt": "化简单变量线性方程后，通过逆运算可以求出变量的唯一值。"
+      },
+      {
+        "evidence_key": "LIN-E6",
+        "evidence_kind": "验证规则",
+        "evidence_statement": "将求得的变量值代回原方程，若所有原方程均成立，则该解满足题目的全部数量条件。",
+        "formula_text": "2(6)+3(7)=33；4(6)+7=31",
+        "applicability_conditions": [
+          "必须使用原始方程进行检验。",
+          "每个方程都应得到正确的等式。"
+        ],
+        "source_excerpt": "完成方程组求解后，应将结果代回原方程检查，以排除计算错误。"
+      },
+      {
+        "evidence_key": "LIN-D1",
+        "evidence_kind": "概念",
+        "evidence_statement": "斜率表示直线的纵坐标变化量与横坐标变化量之比。",
+        "formula_text": "m=(y2-y1)/(x2-x1)",
+        "applicability_conditions": [
+          "题目涉及坐标平面中的直线。"
+        ],
+        "source_excerpt": "斜率用于描述直线的倾斜程度。"
+      },
+      {
+        "evidence_key": "LIN-D2",
+        "evidence_kind": "公式",
+        "evidence_statement": "二次方程可使用求根公式求解。",
+        "formula_text": "x=(-b±sqrt(b^2-4ac))/(2a)",
+        "applicability_conditions": [
+          "方程为ax^2+bx+c=0且a不等于0。"
+        ],
+        "source_excerpt": "二次方程的根可由判别式和求根公式确定。"
+      },
+      {
+        "evidence_key": "LIN-D3",
+        "evidence_kind": "概念",
+        "evidence_statement": "单位率表示每一个单位对应的数量。",
+        "formula_text": "单位率=总量/单位数",
+        "applicability_conditions": [
+          "题目要求比较单位数量或单位价格。"
+        ],
+        "source_excerpt": "单位率问题通常要求把总量除以对应的数量。"
+      }
+    ],
+    "gold_step_annotations": [
+      {
+        "step_key": "lin_s0",
+        "step_order": 0,
+        "reasoning_goal": "定义未知价格并把两条购票条件翻译为线性方程组。",
+        "evidence_links": [
+          {
+            "evidence_key": "LIN-E1",
+            "evidence_role": "未知量定义",
+            "is_necessary": true
+          },
+          {
+            "evidence_key": "LIN-E2",
+            "evidence_role": "数量关系建模",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "得到方程组2a+3s=33和4a+s=31。",
+        "prerequisite_step_keys": []
+      },
+      {
+        "step_key": "lin_s1",
+        "step_order": 1,
+        "reasoning_goal": "从第二个方程中孤立出学生票价格s。",
+        "evidence_links": [
+          {
+            "evidence_key": "LIN-E3",
+            "evidence_role": "线性方程移项与变形",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "由4a+s=31得到s=31-4a。",
+        "prerequisite_step_keys": [
+          "lin_s0"
+        ]
+      },
+      {
+        "step_key": "lin_s2",
+        "step_order": 2,
+        "reasoning_goal": "将s的表达式代入第一个方程并求出成人票价格a。",
+        "evidence_links": [
+          {
+            "evidence_key": "LIN-E4",
+            "evidence_role": "代入法",
+            "is_necessary": true
+          },
+          {
+            "evidence_key": "LIN-E5",
+            "evidence_role": "合并同类项与逆运算",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "2a+3(31-4a)=33，化简得到-10a=-60，因此a=6。",
+        "prerequisite_step_keys": [
+          "lin_s1"
+        ]
+      },
+      {
+        "step_key": "lin_s3",
+        "step_order": 3,
+        "reasoning_goal": "求出另一变量并验证解是否满足原始购票条件，从而选择答案。",
+        "evidence_links": [
+          {
+            "evidence_key": "LIN-E6",
+            "evidence_role": "代回原方程验证",
+            "is_necessary": true
+          }
+        ],
+        "expected_conclusion": "s=31-4(6)=7，且两条原方程均成立，因此成人票价格为6美元，选择A。",
+        "prerequisite_step_keys": [
+          "lin_s2"
+        ]
+      }
+    ]
+  },
+  "evidence_chain": [
+    {
+      "step_key": "lin_s0",
+      "step_order": 0,
+      "step_goal": "定义未知价格并建立两元一次方程组。",
+      "prerequisite_step_keys": [],
+      "required_evidence_keys": [
+        "LIN-E1",
+        "LIN-E2"
+      ],
+      "required_evidence_roles": [
+        "未知量定义",
+        "数量关系建模"
+      ],
+      "expected_conclusion": "得到2a+3s=33和4a+s=31。"
+    },
+    {
+      "step_key": "lin_s1",
+      "step_order": 1,
+      "step_goal": "由第二个线性方程孤立出s。",
+      "prerequisite_step_keys": [
+        "lin_s0"
+      ],
+      "required_evidence_keys": [
+        "LIN-E3"
+      ],
+      "required_evidence_roles": [
+        "线性方程移项与变形"
+      ],
+      "expected_conclusion": "得到s=31-4a。"
+    },
+    {
+      "step_key": "lin_s2",
+      "step_order": 2,
+      "step_goal": "代入并化简单变量方程，求出a。",
+      "prerequisite_step_keys": [
+        "lin_s1"
+      ],
+      "required_evidence_keys": [
+        "LIN-E4",
+        "LIN-E5"
+      ],
+      "required_evidence_roles": [
+        "代入法",
+        "合并同类项与逆运算"
+      ],
+      "expected_conclusion": "得到a=6。"
+    },
+    {
+      "step_key": "lin_s3",
+      "step_order": 3,
+      "step_goal": "求出s并将结果代回原方程验证。",
+      "prerequisite_step_keys": [
+        "lin_s2"
+      ],
+      "required_evidence_keys": [
+        "LIN-E6"
+      ],
+      "required_evidence_roles": [
+        "代回原方程验证"
+      ],
+      "expected_conclusion": "s=7且两条方程均成立，正确选项为A。"
+    }
+  ],
+  "retrieval_evaluation_target": {
+    "must_retrieve_all_required": true,
+    "relevant_evidence_keys": [
+      "LIN-E1",
+      "LIN-E2",
+      "LIN-E3",
+      "LIN-E4",
+      "LIN-E5",
+      "LIN-E6"
+    ],
+    "distractor_evidence_keys": [
+      "LIN-D1",
+      "LIN-D2",
+      "LIN-D3"
+    ],
+    "coverage_unit": "步骤级必要证据以及整条证据链的完整覆盖"
+  }
+}
