@@ -1,0 +1,62 @@
+{
+  "claims": [
+    {
+      "claim_text": "每份含燕麦β-葡聚糖3克，作为均衡饮食的一部分，有助于维持正常血液胆固醇水平。",
+      "claim_category": "成分作用声明",
+      "health_domain": "营养",
+      "target_population": "希望通过饮食管理胆固醇水平的成年消费者",
+      "claimed_effect": "帮助维持正常血液胆固醇水平",
+      "verification_label": "可验证事实",
+      "evidence_sufficiency": "充分",
+      "evidence_rationale": "关于燕麦β-葡聚糖的权威资料支持在达到相应摄入量并纳入整体饮食管理时，其对降低或维持血液胆固醇具有一定作用；但实际效果仍取决于剂量、饮食结构和个体情况。"
+    },
+    {
+      "claim_text": "连续14天能让所有人的胆固醇下降20%。",
+      "claim_category": "功效声明",
+      "health_domain": "营养",
+      "target_population": "所有成年消费者",
+      "claimed_effect": "在固定时间内使胆固醇平均下降20%",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "无直接证据",
+      "evidence_rationale": "现有证据不能支持对所有人、固定14天期限和统一20%降幅的绝对承诺，广告没有说明基线胆固醇、饮食背景、剂量或研究条件。"
+    },
+    {
+      "claim_text": "该产品能把心脏病风险减半。",
+      "claim_category": "风险降低声明",
+      "health_domain": "疾病预防",
+      "target_population": "一般成年消费者",
+      "claimed_effect": "将心脏病发生风险降低50%",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "无直接证据",
+      "evidence_rationale": "燕麦β-葡聚糖对胆固醇指标的影响不能直接等同于心脏病风险降低50%；该表述把替代终点和疾病结局混为一谈，也没有提供长期临床结局证据。"
+    }
+  ],
+  "claim_count": 3,
+  "risk_warnings": [
+    "燕麦β-葡聚糖的实际作用与摄入剂量、产品配方、整体饮食和个体健康状况有关，不能保证所有人达到相同效果。",
+    "胆固醇异常或已有心血管疾病的人不应以该产品替代医生建议、处方药或血脂监测。",
+    "将短期胆固醇变化直接宣传为心脏病风险减半，可能造成消费者延误正规风险评估。"
+  ],
+  "evidence_score": 0.55,
+  "advertisement_text": "早餐燕麦营养包：每份含燕麦β-葡聚糖3克。作为均衡饮食的一部分，有助于维持正常血液胆固醇水平。坚持连续14天，就能让所有人的胆固醇下降20%，并把心脏病风险减半！",
+  "knowledge_evidence": [
+    {
+      "source_reference": "欧洲食品安全局关于燕麦β-葡聚糖与血液胆固醇健康声称的科学意见",
+      "source_type": "权威机构资料",
+      "evidence_summary": "相关评估认为，在达到规定摄入量并作为整体饮食的一部分时，燕麦β-葡聚糖可有助于降低血液胆固醇；该结论不等于对每个人承诺固定幅度或固定时间的变化。",
+      "relevance_to_claims": "直接支持第一条关于β-葡聚糖与胆固醇管理的谨慎表述，但不支持14天下降20%或心脏病风险减半的扩展结论。",
+      "evidence_strength": "高"
+    },
+    {
+      "source_reference": "美国心脏协会关于饮食与心血管健康的科学声明",
+      "source_type": "临床指南",
+      "evidence_summary": "心血管风险管理通常需要综合饮食、运动、血压、血脂、吸烟状况和其他危险因素，单一食品不能替代整体风险管理。",
+      "relevance_to_claims": "支持对第三条风险降低声明进行限制性判断，说明胆固醇相关指标不能直接换算为疾病风险减半。",
+      "evidence_strength": "高"
+    }
+  ],
+  "advertisement_domain": "营养",
+  "contains_medical_claim": true,
+  "overall_verification_label": "混合结论",
+  "overall_evidence_sufficiency": "部分充分"
+}

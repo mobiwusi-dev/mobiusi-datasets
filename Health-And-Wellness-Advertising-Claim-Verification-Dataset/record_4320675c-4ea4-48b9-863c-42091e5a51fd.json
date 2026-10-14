@@ -1,0 +1,69 @@
+{
+  "claims": [
+    {
+      "claim_text": "每天饮用一包胶原饮，28天可以抚平全部细纹并永久逆转肌肤年龄。",
+      "claim_category": "功效声明",
+      "health_domain": "美容",
+      "target_population": "关注皮肤细纹和外观衰老的成年消费者",
+      "claimed_effect": "在短期内消除全部细纹并永久改善皮肤年龄",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "不足",
+      "evidence_rationale": "口服胶原蛋白相关研究对皮肤水分或弹性等指标的结果存在差异，研究周期、产品配方和样本量也不一致；现有依据不能支持28天消除全部细纹或永久逆龄。"
+    },
+    {
+      "claim_text": "配方中的维生素C参与正常胶原形成。",
+      "claim_category": "成分作用声明",
+      "health_domain": "美容",
+      "target_population": "一般成年消费者",
+      "claimed_effect": "支持正常胶原形成及皮肤正常生理功能",
+      "verification_label": "可验证事实",
+      "evidence_sufficiency": "充分",
+      "evidence_rationale": "权威营养健康声称资料支持维生素C参与正常胶原形成，但该生理作用不等同于饮用特定产品后必然产生明显的美容效果。"
+    },
+    {
+      "claim_text": "一包饮品可以完全代替防晒霜并全天阻挡紫外线。",
+      "claim_category": "其他健康声明",
+      "health_domain": "美容",
+      "target_population": "需要日常紫外线防护的消费者",
+      "claimed_effect": "通过饮用产品提供完整、全天候的紫外线防护",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "无直接证据",
+      "evidence_rationale": "口服营养品不能在皮肤表面形成可量化的广谱防护屏障，也没有依据证明该饮品能够替代遮阳、衣物或经过规范测试的防晒产品。"
+    }
+  ],
+  "claim_count": 3,
+  "risk_warnings": [
+    "“28天消除全部细纹”和“永久逆龄”属于绝对化美容承诺，可能导致消费者对产品效果形成不切实际的预期。",
+    "维生素C的营养生理作用不等于特定饮品具有确定的抗皱效果，实际作用还取决于摄入量和整体营养状况。",
+    "口服产品不能替代规范的紫外线防护；户外活动时应采用合适的广谱防晒、遮阳和防护衣物。"
+  ],
+  "evidence_score": 0.3,
+  "advertisement_text": "焕肤胶原饮：每天一包，28天抚平全部细纹、永久逆转肌肤年龄；配方中的维生素C还能促进正常胶原形成。一包饮品就能完全代替防晒霜，全天阻挡紫外线。",
+  "knowledge_evidence": [
+    {
+      "source_reference": "欧洲食品安全局关于维生素C与正常胶原形成的营养健康声称资料",
+      "source_type": "权威机构资料",
+      "evidence_summary": "维生素C对正常胶原形成具有明确的营养生理作用，该结论针对营养素功能，不代表任何含维生素C产品都能产生特定程度的抗皱效果。",
+      "relevance_to_claims": "直接支持第二条关于维生素C生理作用的谨慎表述，不支持第一条的永久逆龄承诺。",
+      "evidence_strength": "高"
+    },
+    {
+      "source_reference": "口服胶原蛋白肽与皮肤水分、弹性相关研究的系统综述性证据",
+      "source_type": "系统综述",
+      "evidence_summary": "部分小样本研究观察到口服胶原蛋白肽对皮肤水分或弹性指标可能有 modest 改善，但研究产品、剂量、持续时间和偏倚风险存在差异，长期和普遍性效果仍不确定。",
+      "relevance_to_claims": "对第一条仅提供有限的间接支持，不能证明28天消除全部细纹或永久改变皮肤年龄。",
+      "evidence_strength": "中"
+    },
+    {
+      "source_reference": "美国皮肤科学会关于日常防晒的公众健康建议",
+      "source_type": "权威机构资料",
+      "evidence_summary": "日常紫外线防护通常需要结合广谱防晒产品、衣物、遮阳和减少强日照暴露等措施；口服饮品不能被视为等效的外用防晒屏障。",
+      "relevance_to_claims": "直接反驳第三条关于完全替代防晒霜的声明。",
+      "evidence_strength": "高"
+    }
+  ],
+  "advertisement_domain": "美容",
+  "contains_medical_claim": false,
+  "overall_verification_label": "混合结论",
+  "overall_evidence_sufficiency": "不足"
+}

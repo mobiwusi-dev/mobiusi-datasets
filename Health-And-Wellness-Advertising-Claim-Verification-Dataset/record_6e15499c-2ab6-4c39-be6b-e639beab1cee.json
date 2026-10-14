@@ -1,0 +1,69 @@
+{
+  "claims": [
+    {
+      "claim_text": "每周进行3次循序渐进的全身力量训练，有助于提高成年初学者的肌力，并可能促进肌肉增长。",
+      "claim_category": "科学效果声明",
+      "health_domain": "健身",
+      "target_population": "无明显运动禁忌的成年初学者",
+      "claimed_effect": "提高肌力并促进一定程度的肌肉适应",
+      "verification_label": "可验证事实",
+      "evidence_sufficiency": "充分",
+      "evidence_rationale": "运动指南和力量训练共识支持规律、渐进式抗阻训练改善肌力；肌肉围度变化还受训练负荷、营养、睡眠和个体差异影响，因此应使用有条件的表述。"
+    },
+    {
+      "claim_text": "完成8周训练后，所有人平均增加30%的肌肉。",
+      "claim_category": "功效声明",
+      "health_domain": "健身",
+      "target_population": "所有参加课程的成年人",
+      "claimed_effect": "在8周内使肌肉量平均增加30%",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "不足",
+      "evidence_rationale": "肌肉增长幅度因训练经验、测量方法、营养和遗传差异而异；没有具体研究设计、样本和测量依据，不能支持对所有人作出统一30%的承诺。"
+    },
+    {
+      "claim_text": "该课程可以彻底治好所有人的慢性腰痛。",
+      "claim_category": "功效声明",
+      "health_domain": "疾病治疗",
+      "target_population": "所有患有慢性腰痛的人群",
+      "claimed_effect": "完全治愈慢性腰痛",
+      "verification_label": "夸大表述",
+      "evidence_sufficiency": "有限",
+      "evidence_rationale": "结构化运动可能帮助部分慢性腰痛患者改善疼痛和功能，但病因、严重程度和适宜运动方案存在差异；“所有人”和“彻底治好”超出了临床证据支持范围。"
+    }
+  ],
+  "claim_count": 3,
+  "risk_warnings": [
+    "增肌结果不能仅凭训练频率预测，广告应说明训练强度、营养、睡眠和个体差异。",
+    "慢性腰痛可能存在不同病因；出现下肢无力、麻木加重或大小便异常等情况时应及时就医。",
+    "课程训练不能替代针对具体病因的医学评估和康复方案。"
+  ],
+  "evidence_score": 0.35,
+  "advertisement_text": "零基础力量8周挑战：每周进行3次循序渐进的全身力量训练，8周平均增加30%肌肉，不用调整饮食也能达到效果；更重要的是，本课程可以彻底治好所有人的慢性腰痛。",
+  "knowledge_evidence": [
+    {
+      "source_reference": "世界卫生组织《身体活动和久坐行为指南》（2020）",
+      "source_type": "权威机构资料",
+      "evidence_summary": "规律身体活动和肌肉强化活动有益于整体健康，但指南并不保证每个人在固定周期内获得相同的肌肉增长幅度。",
+      "relevance_to_claims": "支持规律力量训练有健康和体能益处，不能支持30%的统一增肌承诺。",
+      "evidence_strength": "高"
+    },
+    {
+      "source_reference": "美国运动医学会关于抗阻训练进阶和肌力适应的专业共识",
+      "source_type": "专业共识",
+      "evidence_summary": "渐进增加训练刺激通常能够改善肌力，训练频率、强度、动作选择、恢复和营养会影响结果。",
+      "relevance_to_claims": "支持第一条的条件性训练效果，并反驳不考虑个体差异的固定增肌幅度。",
+      "evidence_strength": "高"
+    },
+    {
+      "source_reference": "世界卫生组织《成人慢性原发性腰痛非手术管理指南》（2023）",
+      "source_type": "临床指南",
+      "evidence_summary": "针对慢性腰痛，适当的运动干预可作为综合管理的一部分，但效果通常是改善疼痛和功能，不能保证完全治愈所有患者。",
+      "relevance_to_claims": "部分支持运动对腰痛管理的潜在帮助，明确不支持“彻底治好所有人”的治疗性表述。",
+      "evidence_strength": "高"
+    }
+  ],
+  "advertisement_domain": "健身",
+  "contains_medical_claim": true,
+  "overall_verification_label": "包含夸大表述",
+  "overall_evidence_sufficiency": "不足"
+}
