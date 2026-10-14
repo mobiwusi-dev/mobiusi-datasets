@@ -1,0 +1,20 @@
+{
+  "claim_units": [
+    {
+      "claim_text": "连续使用四周后，我个人脸颊的紧绷和起皮感减轻了。",
+      "claim_category": "personal_experience",
+      "subject_scope": "individual",
+      "evidence_reference": "对应第1天至第28天的个人使用日志和阶段性照片记录。"
+    }
+  ],
+  "analysis_rationale": "文案明确限定在发布者本人及其四周使用经历内，没有将个人感受扩展到其他用户。配套日志能够较充分地支持其确实报告了症状改善，但不能把主观改善解释为对所有人都成立的产品功效。",
+  "verification_label": "supported_personal_experience",
+  "recommendation_text": "我用了这款无香型保湿霜整整四周。刚开始我的脸颊经常觉得紧绷并且起皮，连续使用后，这种不适感明显减轻了。对我来说，它是目前最适合日常使用的保湿霜。",
+  "supporting_evidence": "证据记录显示，达人保存了第1天、第14天和第28天的使用日志，并在相同光线条件下记录了脸颊状态；日志中持续记载其自述的紧绷和起皮感减轻。没有其他用户样本或对照试验，因此证据只能支持该达人的个人使用经历，不能证明对普遍人群有效。",
+  "evidence_support_level": "strong",
+  "improper_generalization": false,
+  "generalization_direction": "none",
+  "product_attribute_mentions": [],
+  "personal_experience_present": true,
+  "generalized_conclusion_present": false
+}

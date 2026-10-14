@@ -1,0 +1,40 @@
+{
+  "generalized_conclusion_present": true,
+  "claim_units": [
+    {
+      "claim_text": "我连续服用三周后，自己的餐后胀气少了很多。",
+      "claim_category": "personal_experience",
+      "subject_scope": "individual",
+      "evidence_reference": "发布者本人三周使用日记及餐后症状自评。"
+    },
+    {
+      "claim_text": "每袋含有100亿CFU的双歧杆菌和嗜酸乳杆菌。",
+      "claim_category": "product_attribute",
+      "subject_scope": "product_only",
+      "evidence_reference": "产品标签和配方资料中的每袋含量说明。"
+    },
+    {
+      "claim_text": "社群中24名自述肠易激症状的成年人反馈了类似变化。",
+      "claim_category": "personal_experience",
+      "subject_scope": "specific_group",
+      "evidence_reference": "24名参与者的三周自述问卷；该记录属于无对照的小型试用。"
+    },
+    {
+      "claim_text": "所有肠易激综合征患者都会因此改善，任何人都可以把它当作治疗方法。",
+      "claim_category": "generalized_conclusion",
+      "subject_scope": "general_population",
+      "evidence_reference": "现有证据只涉及发布者和24名自愿参与者，未包含一般人群、完整患者群体或治疗效果对照。"
+    }
+  ],
+  "analysis_rationale": "产品标签属性和发布者的个人体验有相应记录，24名参与者的自述也只能说明一个有限群体中的观察结果。文案随后把有限群体的非对照反馈扩展为所有患者都会改善，并进一步称其可作为任何人的治疗方法，超出了证据覆盖范围，因此同时包含有一定支持的声明和不当普遍化声明。",
+  "verification_label": "mixed_valid_and_invalid_claims",
+  "recommendation_text": "我连续服用这款益生菌三周后，自己的餐后胀气少了很多。每袋含有100亿CFU的双歧杆菌和嗜酸乳杆菌。我们社群里还有24名自述肠易激症状的成年人反馈类似变化，所以我认为所有肠易激综合征患者都会因此改善，任何人都可以把它当作治疗方法。",
+  "supporting_evidence": "证据包括产品标签和配方资料，均记录每袋标示含100亿CFU的双歧杆菌和嗜酸乳杆菌；这些资料支持产品的标签属性。发布者及社群中的24名成年人提交了三周自述问卷，部分人报告胀气减轻，但该试用没有随机对照、盲法或统一饮食控制，参与者也不是所有肠易激综合征患者。没有证据支持把该结果表述为治疗方法或适用于任何人。",
+  "evidence_support_level": "moderate",
+  "improper_generalization": true,
+  "generalization_direction": "specific_group_to_general_population",
+  "product_attribute_mentions": [
+    "每袋含有100亿CFU的双歧杆菌和嗜酸乳杆菌"
+  ],
+  "personal_experience_present": true
+}

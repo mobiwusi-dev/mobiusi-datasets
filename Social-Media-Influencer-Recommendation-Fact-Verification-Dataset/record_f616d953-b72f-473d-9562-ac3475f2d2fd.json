@@ -1,0 +1,34 @@
+{
+  "generalized_conclusion_present": true,
+  "claim_units": [
+    {
+      "claim_text": "该产品包装标注SPF50+和PA++++。",
+      "claim_category": "product_attribute",
+      "subject_scope": "product_only",
+      "evidence_reference": "产品包装信息中出现SPF50+和PA++++标识；该证据仅支持包装标注这一属性。"
+    },
+    {
+      "claim_text": "我连续使用7天后没有发现明显晒红。",
+      "claim_category": "personal_experience",
+      "subject_scope": "individual",
+      "evidence_reference": "发布者本人连续7天的使用日记。"
+    },
+    {
+      "claim_text": "它能保护任何人的皮肤，所有人都不会被晒伤，敏感肌也可以放心使用。",
+      "claim_category": "generalized_conclusion",
+      "subject_scope": "general_population",
+      "evidence_reference": "没有针对一般人群或敏感肌人群的测试；现有证据仅来自一名发布者的短期自述。"
+    }
+  ],
+  "analysis_rationale": "包装标注和个人短期体验分别提供了有限的属性信息和个体观察，但不能支持任何人都不会晒伤或敏感肌均可放心使用的结论。文案把单个发布者的观察直接扩展到一般人群，构成从个人到一般人群的不当普遍化。",
+  "verification_label": "unsupported_generalization",
+  "recommendation_text": "这款防晒霜包装标注SPF50+和PA++++。我连续使用了7天，外出后没有发现明显晒红，所以它肯定能保护任何人的皮肤，大家都不会被晒伤，敏感肌也可以放心使用。",
+  "supporting_evidence": "证据中只有一份产品包装信息，显示包装标注SPF50+和PA++++，没有独立检测报告来验证实际防护性能。另有发布者本人连续7天的日记，记载其未观察到明显晒红，但没有记录紫外线暴露量、涂抹用量或对照对象，也没有敏感肌用户的测试证据。",
+  "evidence_support_level": "weak",
+  "improper_generalization": true,
+  "generalization_direction": "individual_to_general_population",
+  "product_attribute_mentions": [
+    "包装标注SPF50+和PA++++"
+  ],
+  "personal_experience_present": true
+}
