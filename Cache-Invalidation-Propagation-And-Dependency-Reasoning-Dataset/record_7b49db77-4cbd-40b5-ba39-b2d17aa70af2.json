@@ -1,0 +1,109 @@
+{
+  "reasoning": "成功更新用户后，redis.del 和 cache.invalidate 发布对 user:{userId} 形成完整的本地及跨实例失效链路。可是 getTeamMembers 使用的是独立的 team:{teamId}:members 键，代码没有根据旧值和新值清理该键，因此 teamId 变更会留下关联实体级脏数据。副本队列仅由 teamId 变化触发，且异步执行，存在短暂的副本滞后。",
+  "final_label": {
+    "affected_scope_level": "跨实体",
+    "stale_data_risk": true,
+    "needs_invalidation_fix": true
+  },
+  "source_code": "async function updateUser(userId, patch) { const before = await db.users.findById(userId); if (!before) return null; const updated = await db.users.update(userId, patch); await redis.del(`user:${userId}`); await redis.publish('cache.invalidate', JSON.stringify({ keys: [`user:${userId}`] })); if (patch.teamId && patch.teamId !== before.teamId) await replicaQueue.add('user.updated', { userId, oldTeamId: before.teamId, newTeamId: patch.teamId }); return updated; } async function getTeamMembers(teamId) { return redis.get(`team:${teamId}:members`); }",
+  "impact_summary": "用户实体缓存会被失效并通过 cache.invalidate 广播到其他实例，但团队成员列表这一关联缓存未被覆盖；团队变更还会条件性地异步同步到用户读副本。",
+  "operation_type": "更新",
+  "changed_entities": [
+    "users 表中的 userId 记录",
+    "user:{userId} 缓存键",
+    "team membership 关系"
+  ],
+  "dependency_graph": [
+    {
+      "source_node": "users:{userId}",
+      "target_node": "user:{userId}",
+      "dependency_relation": "实体缓存映射",
+      "propagation_condition": "db.users.update 成功返回 updated 后，无条件执行 redis.del"
+    },
+    {
+      "source_node": "users:{userId}.teamId",
+      "target_node": "team:{teamId}:members",
+      "dependency_relation": "成员列表查询依赖",
+      "propagation_condition": "patch.teamId 发生变化时该列表受影响，但代码未删除旧团队或新团队的成员列表缓存"
+    },
+    {
+      "source_node": "user:{userId}",
+      "target_node": "cache.invalidate",
+      "dependency_relation": "缓存失效通知发布",
+      "propagation_condition": "用户更新成功并完成本地 user 缓存删除后执行 publish"
+    },
+    {
+      "source_node": "cache.invalidate",
+      "target_node": "其他应用实例的用户缓存",
+      "dependency_relation": "发布订阅广播",
+      "propagation_condition": "下游实例订阅 cache.invalidate 并处理消息中的 keys"
+    },
+    {
+      "source_node": "users:{userId}",
+      "target_node": "用户读副本同步队列",
+      "dependency_relation": "条件异步复制",
+      "propagation_condition": "仅当 patch.teamId 存在且不同于 before.teamId 时入队 user.updated"
+    }
+  ],
+  "dirty_data_paths": [
+    {
+      "path_steps": [
+        "更新 users:{userId} 的 teamId",
+        "旧团队成员关系发生变化",
+        "读取 team:{oldTeamId}:members",
+        "成员列表缓存未被删除"
+      ],
+      "dirty_data_cause": "代码只失效 user:{userId}，没有按照 before.teamId 和新 teamId 失效关联的团队成员列表。",
+      "risk_level": "高",
+      "path_explanation": "getTeamMembers 明确使用 team:{teamId}:members，而 teamId 更新会改变该查询结果。由于更新分支没有删除旧、新团队列表，后续读取可能继续返回过期成员关系。"
+    },
+    {
+      "path_steps": [
+        "更新 teamId",
+        "写入 user.updated 副本队列",
+        "副本队列延迟处理",
+        "从用户读副本读取旧团队归属"
+      ],
+      "dirty_data_cause": "副本同步只在 teamId 变化时条件入队且采用异步处理，传播期间主库与读副本可能不一致。",
+      "risk_level": "中",
+      "path_explanation": "代码在缓存通知后才将团队变化放入异步队列，没有等待副本确认；读流量切到副本时可能看到更新前的团队字段。"
+    }
+  ],
+  "invalidation_assessment": {
+    "trigger_detected": true,
+    "trigger_conditions": [
+      "before 存在且 db.users.update 成功返回 updated",
+      "成功更新分支都会执行 redis.del(`user:${userId}`)"
+    ],
+    "invalidated_keys": [
+      "user:${userId}"
+    ],
+    "invalidation_scope": "实体级"
+  },
+  "replica_sync_assessment": {
+    "sync_triggered": true,
+    "replica_targets": [
+      "用户读副本同步队列",
+      "用户资料读副本集群"
+    ],
+    "sync_mode": "条件同步",
+    "lag_or_race_risk": "普通资料字段更新不会进入该队列；teamId 变化时队列处理是异步的，队列延迟期间副本可能保留旧的团队归属。"
+  },
+  "notification_propagation": {
+    "notification_emitted": true,
+    "notification_channels": [
+      "cache.invalidate"
+    ],
+    "downstream_consumers": [
+      "其他应用实例的用户缓存订阅者",
+      "跨进程用户缓存节点"
+    ],
+    "propagation_order": [
+      "更新 users:{userId}",
+      "删除本地 user:{userId} 缓存",
+      "发布 cache.invalidate 通知",
+      "订阅实例按 keys 删除用户缓存",
+      "teamId 变化时将 user.updated 写入副本队列"
+    ]
+  }
+}

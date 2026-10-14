@@ -1,0 +1,105 @@
+{
+  "reasoning": "删除成功是缓存失效的必要条件，redis.del 会执行单键删除。然而代码使用 removed === 1 作为发布 product.invalidate 和写入 product.deleted 队列的条件，这把本地缓存状态错误地等同于全局缓存状态。不同节点的缓存内容并不相同，因此本地未命中时仍必须广播删除事件。通知本身还具有异步传播窗口。",
+  "final_label": {
+    "affected_scope_level": "实体级",
+    "stale_data_risk": true,
+    "needs_invalidation_fix": true
+  },
+  "source_code": "async function removeProduct(productId) { const deleted = await db.products.delete(productId); if (!deleted) return false; const removed = await redis.del(`product:${productId}`); if (removed === 1) { await pubsub.publish('product.invalidate', JSON.stringify({ productId })); await replicaQueue.add('product.deleted', { productId }); } return true; } pubsub.subscribe('product.invalidate', onProductInvalidation);",
+  "impact_summary": "商品数据库记录删除后会尝试失效当前节点的单个缓存键，但跨节点通知和副本删除被本地缓存命中结果限制；本地未命中时会形成远端商品缓存和副本的脏数据。",
+  "operation_type": "删除",
+  "changed_entities": [
+    "products 表中的 productId 记录",
+    "product:{productId} 缓存键",
+    "商品读副本中的 productId 记录"
+  ],
+  "dependency_graph": [
+    {
+      "source_node": "products:{productId}",
+      "target_node": "product:{productId}",
+      "dependency_relation": "商品实体缓存依赖",
+      "propagation_condition": "数据库删除成功后调用 redis.del"
+    },
+    {
+      "source_node": "product:{productId}",
+      "target_node": "product.invalidate",
+      "dependency_relation": "条件性失效通知",
+      "propagation_condition": "redis.del 返回 1，表示本地缓存确实存在并被删除"
+    },
+    {
+      "source_node": "product.invalidate",
+      "target_node": "区域商品缓存实例",
+      "dependency_relation": "发布订阅失效传播",
+      "propagation_condition": "product.invalidate 消息被发布且下游订阅者在线处理"
+    },
+    {
+      "source_node": "products:{productId}",
+      "target_node": "product.deleted 副本队列",
+      "dependency_relation": "条件异步副本删除",
+      "propagation_condition": "只有 redis.del 返回 1 时才写入 product.deleted 队列"
+    }
+  ],
+  "dirty_data_paths": [
+    {
+      "path_steps": [
+        "删除 products:{productId}",
+        "本地 redis.del 返回 0",
+        "跳过 product.invalidate 发布",
+        "区域缓存继续保留 product:{productId}",
+        "读取到已删除商品"
+      ],
+      "dirty_data_cause": "将本地缓存删除结果错误地作为跨节点通知和副本同步的前置条件；本地缓存未命中并不代表其他节点没有该键。",
+      "risk_level": "高",
+      "path_explanation": "数据库删除成功后，即使当前节点的 Redis 没有 product:{productId}，其他区域仍可能拥有该键。由于 removed === 1 条件不成立，代码不会发布失效通知，也不会写副本队列，导致远端缓存永久或长时间保留删除前的值。"
+    },
+    {
+      "path_steps": [
+        "本地缓存删除成功",
+        "发布 product.invalidate",
+        "订阅者异步处理",
+        "通知处理前的远端读取命中旧缓存"
+      ],
+      "dirty_data_cause": "发布订阅传播存在异步窗口，通知到达前远端缓存仍可返回旧值。",
+      "risk_level": "中",
+      "path_explanation": "即使 removed === 1，代码只保证消息被发布，不保证所有订阅者已经完成删除；在消息处理延迟期间，远端读请求仍可能命中旧商品数据。"
+    }
+  ],
+  "invalidation_assessment": {
+    "trigger_detected": true,
+    "trigger_conditions": [
+      "db.products.delete 成功返回真值",
+      "成功删除后始终调用 redis.del(`product:${productId}`)",
+      "跨节点通知仅在 redis.del 返回 1 时触发"
+    ],
+    "invalidated_keys": [
+      "product:${productId}"
+    ],
+    "invalidation_scope": "单键"
+  },
+  "replica_sync_assessment": {
+    "sync_triggered": true,
+    "replica_targets": [
+      "商品读副本同步队列",
+      "区域商品副本集群"
+    ],
+    "sync_mode": "条件同步",
+    "lag_or_race_risk": "副本删除与通知都被本地 redis.del 的返回值门控；若本地缓存未命中，远端副本不会收到删除事件，可能持续提供已删除商品。"
+  },
+  "notification_propagation": {
+    "notification_emitted": true,
+    "notification_channels": [
+      "product.invalidate"
+    ],
+    "downstream_consumers": [
+      "onProductInvalidation",
+      "区域商品缓存实例"
+    ],
+    "propagation_order": [
+      "删除 products:{productId}",
+      "删除本地 product:{productId} 缓存",
+      "仅当 removed === 1 时发布 product.invalidate",
+      "订阅者执行远端缓存失效",
+      "仅当 removed === 1 时写入 product.deleted 副本队列"
+    ]
+  }
+}

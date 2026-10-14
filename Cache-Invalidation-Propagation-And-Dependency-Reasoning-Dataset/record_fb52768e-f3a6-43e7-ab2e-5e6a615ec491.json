@@ -1,0 +1,112 @@
+{
+  "reasoning": "事务保证订单和库存的数据库修改具有原子性，但不自动传播到缓存。代码显式删除的只有 user:{userId}:orders，orders.changed 的订阅者也重复执行同一删除，未覆盖 inventory:{itemId} 和 dashboard:{userId}。由于 dashboard 同时依赖订单和库存，任何一个实体变化都要求清理该聚合键；副本队列的异步延迟还会扩大短暂不一致窗口。",
+  "final_label": {
+    "affected_scope_level": "跨实体",
+    "stale_data_risk": true,
+    "needs_invalidation_fix": true
+  },
+  "source_code": "async function addOrder(userId, itemId, qty) { const order = await db.transaction(async tx => { const created = await tx.orders.insert({ userId, itemId, qty }); await tx.inventory.decrement(itemId, qty); return created; }); await redis.del(`user:${userId}:orders`); await pubsub.publish('orders.changed', JSON.stringify({ userId, orderId: order.id, itemId })); await replicaQueue.add('orders.changed', { orderId: order.id, itemId }); return order; } async function getDashboard(userId) { return redis.get(`dashboard:${userId}`); } async function getInventory(itemId) { return redis.get(`inventory:${itemId}`); } pubsub.subscribe('orders.changed', ({ userId }) => redis.del(`user:${userId}:orders`)); // dashboard is materialized from orders and inventory",
+  "impact_summary": "订单写入和库存扣减在事务中共同提交，用户订单列表键会被本地及订阅者失效，并通过事件队列异步同步副本；但库存实体缓存和由订单、库存组成的仪表盘聚合缓存均未失效，影响范围跨越多个实体。",
+  "operation_type": "写入",
+  "changed_entities": [
+    "orders 表中的新订单",
+    "inventory 表中的 itemId 库存",
+    "user:{userId}:orders 缓存键",
+    "dashboard:{userId} 聚合缓存",
+    "inventory:{itemId} 缓存键"
+  ],
+  "dependency_graph": [
+    {
+      "source_node": "orders:{orderId}",
+      "target_node": "user:{userId}:orders",
+      "dependency_relation": "用户订单列表缓存依赖",
+      "propagation_condition": "创建订单后显式删除该用户订单列表键"
+    },
+    {
+      "source_node": "orders:{orderId} 与 inventory:{itemId}",
+      "target_node": "dashboard:{userId}",
+      "dependency_relation": "跨实体仪表盘聚合依赖",
+      "propagation_condition": "仪表盘由订单和库存数据物化，但写入流程没有删除 dashboard 键"
+    },
+    {
+      "source_node": "inventory:{itemId}",
+      "target_node": "inventory:{itemId} 缓存键",
+      "dependency_relation": "库存实体缓存映射",
+      "propagation_condition": "库存数量在事务中扣减后应失效，但代码未调用该键删除"
+    },
+    {
+      "source_node": "orders.changed",
+      "target_node": "user:{userId}:orders",
+      "dependency_relation": "事件订阅失效",
+      "propagation_condition": "orders.changed 发布后订阅者仅删除用户订单列表键"
+    },
+    {
+      "source_node": "orders.changed",
+      "target_node": "订单和库存读副本",
+      "dependency_relation": "异步副本同步",
+      "propagation_condition": "事务提交后将 orderId 和 itemId 写入 replicaQueue"
+    }
+  ],
+  "dirty_data_paths": [
+    {
+      "path_steps": [
+        "事务内新增订单并扣减库存",
+        "提交事务",
+        "未删除 inventory:{itemId}",
+        "getInventory 命中旧库存缓存"
+      ],
+      "dirty_data_cause": "库存实体被修改，但失效流程只删除用户订单列表键，没有删除对应的 inventory:{itemId}。",
+      "risk_level": "高",
+      "path_explanation": "inventory.decrement 与订单插入在同一事务中完成，说明库存确实发生变化。getInventory 使用独立的 inventory:{itemId} 键，而后续所有失效和通知处理均未覆盖该键，因此库存读请求可返回扣减前的数量。"
+    },
+    {
+      "path_steps": [
+        "新增订单并扣减库存",
+        "orders.changed 通知到达",
+        "订阅者只删除 user:{userId}:orders",
+        "getDashboard 命中 dashboard:{userId}"
+      ],
+      "dirty_data_cause": "dashboard 是由订单和库存共同物化的跨实体缓存，但通知消费者只处理用户订单列表键。",
+      "risk_level": "高",
+      "path_explanation": "dashboard:{userId} 同时依赖订单和库存，新增订单及库存扣减都会改变其结果。代码没有删除 dashboard 键，也没有在 orders.changed 中携带或处理该聚合键，因此旧仪表盘内容可以继续被返回。"
+    }
+  ],
+  "invalidation_assessment": {
+    "trigger_detected": true,
+    "trigger_conditions": [
+      "orders 插入和 inventory 扣减事务成功提交",
+      "事务提交后执行 redis.del(`user:${userId}:orders`)",
+      "orders.changed 发布不包含 dashboard 或 inventory 缓存键"
+    ],
+    "invalidated_keys": [
+      "user:${userId}:orders"
+    ],
+    "invalidation_scope": "单键"
+  },
+  "replica_sync_assessment": {
+    "sync_triggered": true,
+    "replica_targets": [
+      "订单读副本集群",
+      "库存读副本集群"
+    ],
+    "sync_mode": "异步",
+    "lag_or_race_risk": "事务提交后才入队，队列延迟期间读副本可能同时缺少新订单和库存扣减；即使副本完成同步，未失效的聚合缓存仍可能覆盖最新结果。"
+  },
+  "notification_propagation": {
+    "notification_emitted": true,
+    "notification_channels": [
+      "orders.changed"
+    ],
+    "downstream_consumers": [
+      "用户订单列表缓存订阅者",
+      "订单与库存副本同步消费者"
+    ],
+    "propagation_order": [
+      "事务内写入 orders 并扣减 inventory",
+      "删除 user:{userId}:orders",
+      "发布 orders.changed",
+      "订阅者再次删除用户订单列表键",
+      "将订单和商品标识写入副本队列"
+    ]
+  }
+}
