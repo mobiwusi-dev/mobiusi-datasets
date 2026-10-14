@@ -1,0 +1,288 @@
+{
+  "protocol_overview": "该实现采用租约加单调版本号和多数副本提交的缓存一致性协议。写入者必须持有当前租约，并以期望版本执行比较并交换；新值先由多数副本确认，再更新本地缓存并发布失效通知。读取只有在本地租约仍有效且缓存版本不低于调用方要求的最小版本时才命中，否则返回未命中并应回源。租约纪元用于隔离旧持有者。",
+  "read_write_paths": [
+    {
+      "operation": "VersionedCache.read",
+      "path_type": "读路径",
+      "preconditions": [
+        "本地存在缓存项",
+        "调用方提供的 min_version 已知且不低于其因果依赖",
+        "当前节点仍持有与缓存项一致的有效租约"
+      ],
+      "version_or_epoch_check": "要求 entries[key].version >= min_version，并要求缓存项 epoch 与当前有效租约 epoch 相同；任一条件不满足则返回未命中。",
+      "lease_or_lock_check": "通过 LeaseManager.valid 检查 owner、epoch 和 expires_at；租约过期或所有者不匹配时不能使用本地值。",
+      "arbitration_condition": "读路径不在副本间自行选值；本地项不满足版本条件时回源，由回源层选择已提交版本。",
+      "state_changes": [
+        "命中时不改变缓存值，仅记录一次读取",
+        "未命中时不返回旧值，并要求上层回源或重建缓存"
+      ],
+      "consistency_result": "在租约有效且版本满足最小版本约束时提供有界新鲜度读取；不能保证所有未携带因果版本的调用都立即观察到最新提交。"
+    },
+    {
+      "operation": "VersionedCache.write",
+      "path_type": "写路径",
+      "preconditions": [
+        "写入者持有未过期租约",
+        "expected_version 与 VersionStore 的当前版本一致",
+        "副本数足以形成多数派"
+      ],
+      "version_or_epoch_check": "先读取当前版本并比较 expected_version，成功后将版本推进为 current + 1；提交和本地更新都携带同一新版本。",
+      "lease_or_lock_check": "写入前验证租约所有者和纪元；租约失效时立即拒绝，不产生本地副作用。",
+      "arbitration_condition": "并发写入通过版本 CAS 和多数副本确认仲裁；先成功推进版本的写入获胜，其他旧 expected_version 写入失败。",
+      "state_changes": [
+        "多数副本写入新值、版本和租约纪元",
+        "VersionStore 版本推进",
+        "本地 entries 更新",
+        "发布键版本失效事件"
+      ],
+      "consistency_result": "成功写入具有单调版本和多数派提交语义；并发旧写不会覆盖已经提交的新版本。"
+    },
+    {
+      "operation": "LeaseManager.acquire",
+      "path_type": "恢复路径",
+      "preconditions": [
+        "当前租约不存在或其 expires_at 不晚于当前时间",
+        "新持有者能够访问租约管理状态"
+      ],
+      "version_or_epoch_check": "新租约 epoch 等于旧 epoch 加一，避免旧持有者在网络延迟后继续使用相同纪元。",
+      "lease_or_lock_check": "只有过期租约才能被重新获取；未过期租约不会被第二个节点抢占。",
+      "arbitration_condition": "租约管理器对同一键采用单一当前记录，按原子更新决定唯一持有者。",
+      "state_changes": [
+        "更新 owner",
+        "递增 epoch",
+        "设置新的 expires_at",
+        "旧纪元的读写请求随后校验失败"
+      ],
+      "consistency_result": "通过纪元递增隔离旧写入者；若租约服务本身不可用，协议应拒绝新写入而不是无条件放行。"
+    }
+  ],
+  "source_code": "from dataclasses import dataclass\n\n@dataclass\nclass Lease:\n    owner: str\n    epoch: int\n    expires_at: int\n\nclass LeaseManager:\n    def __init__(self, ttl):\n        self.ttl = ttl\n        self.leases = {}\n\n    def acquire(self, key, owner, now):\n        current = self.leases.get(key)\n        if current is None or current.expires_at <= now:\n            epoch = 1 if current is None else current.epoch + 1\n            lease = Lease(owner, epoch, now + self.ttl)\n            self.leases[key] = lease\n            return lease\n        return None\n\n    def valid(self, key, owner, epoch, now):\n        lease = self.leases.get(key)\n        return lease is not None and lease.owner == owner and lease.epoch == epoch and lease.expires_at > now\n\nclass VersionedCache:\n    def __init__(self, lease_manager, version_store, quorum, invalidator):\n        self.lease_manager = lease_manager\n        self.version_store = version_store\n        self.quorum = quorum\n        self.invalidator = invalidator\n        self.entries = {}\n\n    def read(self, key, owner, now, min_version=0):\n        entry = self.entries.get(key)\n        if entry and self.lease_manager.valid(key, owner, entry.epoch, now) and entry.version >= min_version:\n            return entry\n        return None\n\n    def write(self, key, value, owner, expected_version, now):\n        lease = self.lease_manager.leases.get(key)\n        if lease is None or not self.lease_manager.valid(key, owner, lease.epoch, now):\n            return False\n        current = self.version_store.read(key)\n        if current != expected_version:\n            return False\n        new_version = current + 1\n        if not self.quorum.commit(key, value, new_version, lease.epoch):\n            return False\n        self.version_store.cas(key, expected_version, new_version)\n        self.entries[key] = Entry(value, new_version, lease.epoch)\n        self.invalidator.publish(key, new_version)\n        return True",
+  "state_dependencies": [
+    {
+      "state_name": "LeaseManager.leases[key]",
+      "state_role": "键的所有权、纪元和过期状态",
+      "prerequisite_states": [
+        "当前时间",
+        "键的既有租约记录或空记录"
+      ],
+      "readers": [
+        "VersionedCache.read",
+        "VersionedCache.write",
+        "LeaseManager.valid"
+      ],
+      "writers": [
+        "LeaseManager.acquire"
+      ],
+      "invalidation_trigger": "expires_at <= now，或租约被更高纪元的新持有者替换。",
+      "dependency_explanation": "缓存读写必须先依赖有效租约；若跳过 owner、epoch 或过期检查，旧持有者可能在新持有者获得租约后继续服务或写入，造成陈旧读和冲突写。"
+    },
+    {
+      "state_name": "VersionStore[key]",
+      "state_role": "键的单调提交版本",
+      "prerequisite_states": [
+        "已存在的键版本或初始版本 0",
+        "写入请求中的 expected_version"
+      ],
+      "readers": [
+        "VersionedCache.write",
+        "QuorumCommitter"
+      ],
+      "writers": [
+        "VersionedCache.write 的 CAS 操作",
+        "多数副本提交流程"
+      ],
+      "invalidation_trigger": "检测到 expected_version 小于当前版本，或恢复流程发现副本版本落后。",
+      "dependency_explanation": "本地缓存更新必须依赖版本 CAS 成功和多数派提交；若先写本地缓存再校验版本，会让未提交值对读者可见并可能覆盖较新值。"
+    },
+    {
+      "state_name": "entries[key].epoch",
+      "state_role": "缓存值对应的租约纪元",
+      "prerequisite_states": [
+        "有效的 LeaseManager.leases[key]",
+        "与缓存值一同提交的版本"
+      ],
+      "readers": [
+        "VersionedCache.read",
+        "VersionedCache.write"
+      ],
+      "writers": [
+        "VersionedCache.write"
+      ],
+      "invalidation_trigger": "本地租约过期或键出现更高租约纪元。",
+      "dependency_explanation": "缓存项只有在其纪元等于当前有效租约纪元时才可使用；纪元不匹配说明缓存项可能由旧所有者产生，必须丢弃或重新验证。"
+    },
+    {
+      "state_name": "QuorumCommitter 的提交状态",
+      "state_role": "候选值是否已获得多数副本确认",
+      "prerequisite_states": [
+        "候选值的版本",
+        "有效租约纪元",
+        "可用副本集合"
+      ],
+      "readers": [
+        "VersionedCache.write",
+        "回源读取路径"
+      ],
+      "writers": [
+        "QuorumCommitter.commit"
+      ],
+      "invalidation_trigger": "确认数低于多数派、节点响应超时或租约纪元被拒绝。",
+      "dependency_explanation": "只有提交状态成立后才能推进本地可见状态和发布失效通知；若把部分副本确认当作提交，故障期间可能出现读到未提交值或不同节点长期分歧。"
+    }
+  ],
+  "analysis_conclusion": "该代码实现的是一种偏安全的租约版本协议：租约和纪元限制写入者，版本 CAS 防止丢失更新，多数派提交提供故障容忍。它能保证成功写入的版本顺序和旧写拒绝，但本地读仍依赖租约与失效通知机制；在通知延迟或调用方没有提供最小版本时，仍可能出现短暂陈旧读。",
+  "protocol_components": [
+    {
+      "component_name": "VersionedCache",
+      "component_type": "缓存节点",
+      "responsibilities": "保存带版本号和租约纪元的本地缓存项，执行带最小版本约束的读取，并在多数提交后更新本地副本。",
+      "preconditions": [
+        "读取时本地缓存项必须存在且其租约纪元仍由当前节点持有",
+        "写入时必须能够取得当前键的有效租约",
+        "写入者提供的 expected_version 必须与版本存储中的版本一致"
+      ],
+      "outputs_or_effects": "读取返回满足版本约束的缓存项或返回未命中；写入成功时更新本地值、版本和纪元，并触发失效通知。",
+      "state_reads": [
+        "entries[key].value",
+        "entries[key].version",
+        "entries[key].epoch",
+        "LeaseManager.leases[key]",
+        "VersionStore[key]"
+      ],
+      "state_writes": [
+        "entries[key]",
+        "VersionStore[key]",
+        "InvalidationBus 上的版本失效事件"
+      ]
+    },
+    {
+      "component_name": "LeaseManager",
+      "component_type": "租约管理器",
+      "responsibilities": "为键分配互斥的持有者和递增纪元，检查租约所有者、纪元及过期时间。",
+      "preconditions": [
+        "获取租约时当前租约不存在或已经过期",
+        "校验租约时必须提供节点身份、纪元和当前时间"
+      ],
+      "outputs_or_effects": "成功获取时生成新的租约纪元并设置过期时间；校验失败时拒绝读写操作。",
+      "state_reads": [
+        "leases[key].owner",
+        "leases[key].epoch",
+        "leases[key].expires_at",
+        "当前时间"
+      ],
+      "state_writes": [
+        "leases[key].owner",
+        "leases[key].epoch",
+        "leases[key].expires_at"
+      ]
+    },
+    {
+      "component_name": "VersionStore",
+      "component_type": "版本管理器",
+      "responsibilities": "保存每个键的提交版本，并为并发写入提供期望版本校验。",
+      "preconditions": [
+        "读取或 CAS 更新必须针对已注册的键",
+        "CAS 更新必须携带当前期望版本"
+      ],
+      "outputs_or_effects": "返回当前版本；只有版本匹配时才允许推进到新版本。",
+      "state_reads": [
+        "key 的当前提交版本"
+      ],
+      "state_writes": [
+        "key 的单调递增提交版本"
+      ]
+    },
+    {
+      "component_name": "QuorumCommitter",
+      "component_type": "仲裁器",
+      "responsibilities": "将带有版本和租约纪元的候选值发送给副本，并要求多数副本确认后才视为提交。",
+      "preconditions": [
+        "候选版本高于或等于副本已知版本",
+        "提交请求携带有效租约纪元",
+        "可用副本数达到多数派"
+      ],
+      "outputs_or_effects": "多数派确认时返回成功，少于多数派时拒绝提交且不应使本地写入可见。",
+      "state_reads": [
+        "副本当前版本",
+        "副本接受的最大租约纪元",
+        "可用副本集合"
+      ],
+      "state_writes": [
+        "多数副本上的值、版本和租约纪元"
+      ]
+    },
+    {
+      "component_name": "InvalidationBus",
+      "component_type": "失效通知组件",
+      "responsibilities": "向其他缓存节点传播键及其最新版本，使低版本本地项失效或重新验证。",
+      "preconditions": [
+        "只有多数提交成功后才发布通知",
+        "事件必须包含键和提交版本"
+      ],
+      "outputs_or_effects": "其他节点收到更高版本通知后删除旧项或标记其必须回源验证。",
+      "state_reads": [
+        "提交后的键版本"
+      ],
+      "state_writes": [
+        "订阅节点的失效标记或本地缓存删除状态"
+      ]
+    }
+  ],
+  "consistency_strategy": {
+    "strategy_name": "租约、版本 CAS 与多数派提交的组合策略",
+    "versioning_mechanism": "每次成功写入将键版本加一；写入先用 expected_version 与 VersionStore 比较，再由多数副本确认同一新版本，旧版本写入被拒绝。",
+    "lease_mechanism": "LeaseManager 为每个键分配 owner、递增 epoch 和过期时间；读写均检查所有者、纪元和时间，过期后必须重新获取租约。",
+    "arbitration_mechanism": "并发写入由版本 CAS 决定先后，多数副本确认决定提交；相同键同时存在旧纪元操作时，副本拒绝旧纪元请求。",
+    "read_visibility_rule": "本地读只返回租约有效且版本不低于 min_version 的项；未命中时不得把本地旧值作为成功结果，应回源读取已提交版本。",
+    "write_commit_rule": "候选值获得多数副本确认并通过版本检查后才算提交，随后才更新本地缓存并发布失效事件。",
+    "failure_handling": "版本冲突直接返回失败并要求重读；租约过期拒绝写入；多数派不可用时保持未提交状态；收到更高版本失效事件时删除或重新验证旧缓存。",
+    "guarantees": [
+      "成功写入具有单调递增版本",
+      "同一时刻只有有效租约持有者可执行写入",
+      "少数副本故障不会使未提交值成为成功写入",
+      "版本 CAS 防止基于旧读的更新覆盖较新提交"
+    ],
+    "known_risks": [
+      "失效通知丢失时，不携带 min_version 的本地读可能暂时返回较旧但仍在租约期内的值",
+      "租约服务或版本存储不可用会降低写入可用性",
+      "多数派提交与本地缓存更新之间发生故障时需要恢复流程补齐缓存"
+    ],
+    "stale_read_possible": true,
+    "lost_update_possible": false,
+    "split_brain_possible": false
+  },
+  "dependency_relations": [
+    {
+      "upstream": "LeaseManager.leases[key]",
+      "downstream": "VersionedCache.write",
+      "relation_type": "租约依赖",
+      "trigger_condition": "执行写入前以及提交前检查租约",
+      "required_state": "owner 等于当前节点、epoch 匹配且 expires_at 大于当前时间",
+      "consequence": "写入被拒绝；若忽略该依赖，旧持有者可能与新持有者并发写入。"
+    },
+    {
+      "upstream": "VersionStore[key]",
+      "downstream": "VersionedCache.write",
+      "relation_type": "版本依赖",
+      "trigger_condition": "写入提交前比较 expected_version",
+      "required_state": "VersionStore[key] 等于 expected_version",
+      "consequence": "版本冲突时拒绝更新，避免旧读覆盖较新值。"
+    },
+    {
+      "upstream": "QuorumCommitter.commit",
+      "downstream": "VersionedCache.entries[key]",
+      "relation_type": "提交依赖",
+      "trigger_condition": "副本确认数达到多数派且租约纪元有效",
+      "required_state": "提交状态为 committed",
+      "consequence": "未提交时本地缓存不得更新；否则读者可能观察到无法从多数副本恢复的值。"
+    },
+    {
+      "upstream": "InvalidationBus",
+      "downstream": "VersionedCache.read",
+      "relation_type": "失效依赖",
+      "trigger_condition": "收到高于本地版本的失效事件",
+      "required_state": "本地项被删除或标记为需要回源",
+      "consequence": "若不处理事件，本地读可能继续返回陈旧版本，直到租约过期。"
+    }
+  ]
+}

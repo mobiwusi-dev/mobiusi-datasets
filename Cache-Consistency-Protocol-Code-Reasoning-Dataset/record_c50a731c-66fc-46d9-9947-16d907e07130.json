@@ -1,0 +1,258 @@
+{
+  "source_code": "from dataclasses import dataclass\n\n@dataclass\nclass Entry:\n    value: object\n    timestamp: int\n    node_id: str\n\nclass LwwCache:\n    def __init__(self, node_id, bus, clock):\n        self.node_id = node_id\n        self.bus = bus\n        self.clock = clock\n        self.data = {}\n\n    def read(self, key):\n        return self.data.get(key)\n\n    def write(self, key, value):\n        entry = Entry(value, self.clock.now(), self.node_id)\n        self.data[key] = entry\n        self.bus.publish(key, entry)\n        return entry\n\n    def apply_remote(self, key, incoming):\n        current = self.data.get(key)\n        if current is None or (incoming.timestamp, incoming.node_id) > (current.timestamp, current.node_id):\n            self.data[key] = incoming\n\n    def repair(self, key, replicas):\n        candidates = [r.read(key) for r in replicas]\n        candidates = [e for e in candidates if e is not None]\n        if candidates:\n            winner = max(candidates, key=lambda e: (e.timestamp, e.node_id))\n            self.data[key] = winner\n            return winner\n        return None",
+  "read_write_paths": [
+    {
+      "operation": "LwwCache.read",
+      "path_type": "读路径",
+      "preconditions": [
+        "本地缓存进程可用",
+        "调用方接受本地副本可能尚未收敛"
+      ],
+      "version_or_epoch_check": "不检查版本下限或纪元，只返回 data[key] 当前保存的项。",
+      "lease_or_lock_check": "没有租约、锁或所有权检查。",
+      "arbitration_condition": "读路径不进行跨副本仲裁，冲突处理被延后到远程事件处理或 repair。",
+      "state_changes": [
+        "读取本地 Entry，不更新数据"
+      ],
+      "consistency_result": "提供低延迟的本地读，但可能返回尚未收到较新事件的陈旧值。"
+    },
+    {
+      "operation": "LwwCache.write",
+      "path_type": "写路径",
+      "preconditions": [
+        "本地时钟可用",
+        "本地节点能够生成唯一或可比较的 node_id"
+      ],
+      "version_or_epoch_check": "使用本地 clock.now() 生成 timestamp；代码不验证时间戳是否大于此前本地写入。并列时间戳由 node_id 决定。",
+      "lease_or_lock_check": "没有租约或锁；网络分区期间多个节点可以同时成功写入。",
+      "arbitration_condition": "冲突最终由最大 timestamp 再按 node_id 选择，未获胜的写入在收敛后被覆盖。",
+      "state_changes": [
+        "立即更新本地 data[key]",
+        "异步发布包含完整 Entry 的事件"
+      ],
+      "consistency_result": "写入具有本地立即可见和最终收敛特征，但成功返回不代表其他节点已经可见。"
+    },
+    {
+      "operation": "LwwCache.repair",
+      "path_type": "恢复路径",
+      "preconditions": [
+        "能够访问一个或多个副本",
+        "返回的候选项包含可比较的排序字段"
+      ],
+      "version_or_epoch_check": "在所有候选项中按 timestamp、node_id 取最大项；不识别事务提交标记。",
+      "lease_or_lock_check": "不需要租约或锁，故障恢复期间仍可能与并发写入交错。",
+      "arbitration_condition": "使用全体可见候选项的最大排序键作为唯一获胜结果；未读取到的更新不会参与本轮仲裁。",
+      "state_changes": [
+        "将获胜项写入本地缓存",
+        "无候选项时保持本地状态不变"
+      ],
+      "consistency_result": "在读取范围覆盖最新写入且时钟排序可靠时可推动副本收敛；分区期间只能保证部分收敛。"
+    }
+  ],
+  "protocol_overview": "该实现采用无租约、异步失效和最后写入者获胜的缓存策略。每个节点本地写入后立即返回，并通过逻辑上的时间戳和节点标识进行确定性冲突合并。读取直接返回本地值，不检查提交状态、版本下限或失效事件是否已经送达，因此更偏向可用性和最终一致性，而不是强一致性。",
+  "state_dependencies": [
+    {
+      "state_name": "data[key]",
+      "state_role": "本地缓存值及其 LWW 排序元数据",
+      "prerequisite_states": [
+        "本地节点身份",
+        "写入时钟或远程 Entry"
+      ],
+      "readers": [
+        "LwwCache.read",
+        "LwwCache.apply_remote",
+        "LwwCache.repair"
+      ],
+      "writers": [
+        "LwwCache.write",
+        "LwwCache.apply_remote",
+        "LwwCache.repair"
+      ],
+      "invalidation_trigger": "收到排序键更大的远程 Entry，或 repair 发现更大的副本项。",
+      "dependency_explanation": "本地读直接依赖 data[key]，没有提交状态或租约保护；因此事件延迟会直接转化为陈旧读。远程更新只有排序键更大时才能覆盖本地值。"
+    },
+    {
+      "state_name": "Entry.timestamp",
+      "state_role": "LWW 冲突排序的时间戳",
+      "prerequisite_states": [
+        "本地时钟或远程事件中的 timestamp"
+      ],
+      "readers": [
+        "LwwCache.apply_remote",
+        "LwwCache.repair",
+        "LwwResolver"
+      ],
+      "writers": [
+        "LwwCache.write",
+        "原始写入节点"
+      ],
+      "invalidation_trigger": "发现时钟回拨、时钟偏差或收到更大的远程时间戳。",
+      "dependency_explanation": "时间戳决定候选项的优先级；若物理时钟不可靠，较新的业务写入可能拥有较小时间戳并被覆盖，协议仍会收敛但语义不一定符合真实写入先后。"
+    },
+    {
+      "state_name": "Entry.node_id",
+      "state_role": "相同时间戳下的确定性平局破除字段",
+      "prerequisite_states": [
+        "每个写入节点具有稳定且唯一的标识"
+      ],
+      "readers": [
+        "LwwCache.apply_remote",
+        "LwwCache.repair",
+        "LwwResolver"
+      ],
+      "writers": [
+        "LwwCache.write"
+      ],
+      "invalidation_trigger": "节点标识发生变化或不同节点采用不一致的排序规则。",
+      "dependency_explanation": "node_id 使相同时间戳的冲突可以确定性收敛；若标识不稳定，不同节点可能选择不同获胜者并反复互相覆盖。"
+    },
+    {
+      "state_name": "InvalidationBus.event_queue",
+      "state_role": "异步更新传播状态",
+      "prerequisite_states": [
+        "已生成的完整 Entry",
+        "订阅者或重试机制"
+      ],
+      "readers": [
+        "订阅节点的 apply_remote",
+        "RepairService"
+      ],
+      "writers": [
+        "LwwCache.write",
+        "消息重试逻辑"
+      ],
+      "invalidation_trigger": "事件延迟、丢失、重复或订阅者暂时不可用。",
+      "dependency_explanation": "队列不是提交屏障；本地写成功不依赖远端接收，因此提高可用性但允许副本短暂分歧。repair 是弥补丢失事件的独立路径。"
+    }
+  ],
+  "analysis_conclusion": "该实现牺牲强一致性换取了分区可写和低延迟读写。LWW 规则保证在候选集合最终一致且排序元数据可靠时收敛，但本地读没有新鲜度约束，且并发更新可能被静默覆盖。它适合可接受最终一致性和最后写入者语义的缓存，不适合要求不丢业务更新或线性一致读的场景。",
+  "protocol_components": [
+    {
+      "component_name": "LwwCache",
+      "component_type": "缓存节点",
+      "responsibilities": "保存本地值和时间戳，直接服务本地读写，并按照时间戳及节点标识合并远程更新。",
+      "preconditions": [
+        "读取不要求租约或仲裁许可",
+        "写入时本地时钟能够返回时间戳",
+        "应用远程事件时需要能够比较本地项和远程项"
+      ],
+      "outputs_or_effects": "本地写入立即改变缓存并异步发布；远程项只有在排序键更大时才覆盖本地项。",
+      "state_reads": [
+        "data[key]",
+        "本地时钟",
+        "远程 Entry 的 timestamp 和 node_id"
+      ],
+      "state_writes": [
+        "data[key]",
+        "InvalidationBus 中的远程更新事件"
+      ]
+    },
+    {
+      "component_name": "LwwResolver",
+      "component_type": "冲突解析器",
+      "responsibilities": "使用 timestamp 和 node_id 的字典序选择唯一获胜项，确保不同节点以相同规则收敛。",
+      "preconditions": [
+        "候选项具有可比较的时间戳和非空节点标识",
+        "所有节点使用同一比较顺序"
+      ],
+      "outputs_or_effects": "返回排序键最大的候选项；相同时间戳时由 node_id 作为确定性平局破除规则。",
+      "state_reads": [
+        "候选副本的 timestamp",
+        "候选副本的 node_id"
+      ],
+      "state_writes": [
+        "不直接写状态，由调用方写入获胜项"
+      ]
+    },
+    {
+      "component_name": "InvalidationBus",
+      "component_type": "异步失效组件",
+      "responsibilities": "传播本地写入事件和远程更新，最终促使其他节点执行 LWW 合并。",
+      "preconditions": [
+        "事件包含键、值、时间戳和节点标识",
+        "订阅者最终能够收到事件或通过修复路径重新拉取"
+      ],
+      "outputs_or_effects": "异步投递更新；延迟、重复或丢失事件不会改变 LWW 比较规则，但会延长收敛时间。",
+      "state_reads": [
+        "待发送的 Entry"
+      ],
+      "state_writes": [
+        "订阅队列和重试状态"
+      ]
+    },
+    {
+      "component_name": "RepairService",
+      "component_type": "恢复组件",
+      "responsibilities": "从多个副本读取候选值，选择最大排序键并修复本地缓存。",
+      "preconditions": [
+        "至少能够读取一个非空副本",
+        "副本项使用兼容的时间戳和节点标识格式"
+      ],
+      "outputs_or_effects": "将选中的获胜项写入本地；无候选项时返回未命中。",
+      "state_reads": [
+        "各副本的 data[key]"
+      ],
+      "state_writes": [
+        "本地 data[key] 的修复值"
+      ]
+    }
+  ],
+  "consistency_strategy": {
+    "strategy_name": "无租约异步 LWW 最终一致性策略",
+    "versioning_mechanism": "每次写入生成 timestamp，并以 node_id 作为平局破除字段；代码不使用 CAS、提交索引或因果版本。",
+    "lease_mechanism": "没有租约、锁或单一写入者，任意可用节点都能在分区期间接受写入。",
+    "arbitration_mechanism": "冲突项按 timestamp 最大者获胜；时间戳相同时按 node_id 字典序决定结果，所有节点应使用相同比较函数。",
+    "read_visibility_rule": "读取直接返回本地 data[key]，不等待异步事件、不要求多数副本确认，也不验证版本新鲜度。",
+    "write_commit_rule": "本地写入并成功加入异步发布流程即可返回成功；远端可见和副本收敛不属于同步提交条件。",
+    "failure_handling": "消息延迟或丢失通过重复事件、重试或 repair 逐步恢复；网络分区期间各节点继续接受写入，恢复后通过 LWW 规则收敛。",
+    "guarantees": [
+      "相同候选集合和排序规则下副本最终选择同一获胜项",
+      "本地写入低延迟且不依赖远端可用性",
+      "重复投递通常具有幂等效果",
+      "能够在无中心租约服务时继续提供写入可用性"
+    ],
+    "known_risks": [
+      "异步传播期间存在陈旧读",
+      "无 CAS 时并发业务更新可能被 LWW 静默覆盖",
+      "物理时钟偏差可能让业务上较新的写入落败",
+      "网络分区期间多个节点都可写，恢复前存在副本分歧"
+    ],
+    "stale_read_possible": true,
+    "lost_update_possible": true,
+    "split_brain_possible": true
+  },
+  "dependency_relations": [
+    {
+      "upstream": "本地时钟和 node_id",
+      "downstream": "LwwCache.write",
+      "relation_type": "版本生成依赖",
+      "trigger_condition": "创建新的 Entry 时",
+      "required_state": "timestamp 可生成且 node_id 稳定可比较",
+      "consequence": "若时间戳异常或标识不一致，冲突选择可能不符合预期或无法收敛。"
+    },
+    {
+      "upstream": "LwwCache.write",
+      "downstream": "InvalidationBus.event_queue",
+      "relation_type": "传播依赖",
+      "trigger_condition": "本地 Entry 写入后发布更新",
+      "required_state": "事件包含完整键、值、timestamp 和 node_id",
+      "consequence": "事件丢失会使其他节点保持旧值，直到重试或 repair；本地写入本身仍可能返回成功。"
+    },
+    {
+      "upstream": "InvalidationBus.event_queue",
+      "downstream": "LwwCache.apply_remote",
+      "relation_type": "读取依赖",
+      "trigger_condition": "订阅节点收到远程更新",
+      "required_state": "远程 Entry 的排序键可与本地项比较",
+      "consequence": "排序键较小的事件被忽略，排序键较大的事件覆盖本地项；延迟会延长陈旧窗口。"
+    },
+    {
+      "upstream": "RepairService",
+      "downstream": "LwwCache.data[key]",
+      "relation_type": "恢复依赖",
+      "trigger_condition": "节点重连或检测到副本可能分歧",
+      "required_state": "至少一个副本返回候选项",
+      "consequence": "只能在可见候选范围内修复；未访问到的更新不会参与本轮选择。"
+    }
+  ]
+}
