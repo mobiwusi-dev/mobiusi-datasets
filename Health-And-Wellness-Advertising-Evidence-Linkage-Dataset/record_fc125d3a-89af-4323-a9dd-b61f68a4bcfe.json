@@ -1,0 +1,63 @@
+{
+  "raw_material": {
+    "ad_claim_text": "每日补充3克燕麦β-葡聚糖，连续8周就能显著降低胆固醇，并保护所有成年人的心脏健康。",
+    "citation_text": "一项为期8周的随机、双盲、安慰剂对照试验评估每日3克燕麦β-葡聚糖对血脂的影响。",
+    "evidence_excerpt": "在120名40至65岁、低密度脂蛋白胆固醇轻度升高的成年人中，β-葡聚糖组每日摄入3克，8周后低密度脂蛋白胆固醇平均下降6%；安慰剂组下降2%，组间差异达到统计学显著。研究未测量心血管事件或长期心脏结局。",
+    "source_context": {
+      "source_type": "随机对照临床研究",
+      "source_title_or_product_name": "燕麦β-葡聚糖与血脂变化的随机对照试验",
+      "publication_year_or_version": "，2023年",
+      "study_design": "随机、双盲、安慰剂对照、平行组试验，干预期8周。",
+      "population_description": "120名40至65岁且低密度脂蛋白胆固醇轻度升高的成年人；排除了已确诊心血管疾病者。",
+      "intervention_description": "干预组每日摄入3克燕麦β-葡聚糖粉末，安慰剂组摄入等量非活性粉末。",
+      "outcome_description": "主要结果为低密度脂蛋白胆固醇变化；未测量心肌梗死、卒中或其他心血管临床事件。",
+      "study_conditions": "每日一次，连续8周；受试者维持原有饮食和活动习惯；结果与安慰剂组比较。"
+    }
+  },
+  "claim_annotation": {
+    "claim_category": "身体指标",
+    "claim_target": "燕麦β-葡聚糖",
+    "claimed_effect": "降低胆固醇并保护心脏健康",
+    "claimed_effect_direction": "降低或减少",
+    "claimed_effect_strength": "显著效果",
+    "claimed_population": "所有成年人",
+    "claimed_outcome": "低密度脂蛋白胆固醇和心脏健康",
+    "claim_conditions": "每日补充3克，连续8周。"
+  },
+  "support_judgment": {
+    "relation_label": "部分支持",
+    "support_level": "中",
+    "dimension_assessment": {
+      "effect_direction_match": "部分匹配",
+      "effect_strength_match": "部分匹配",
+      "population_match": "部分匹配",
+      "outcome_match": "部分匹配",
+      "condition_match": "完全匹配",
+      "evidence_design_relevance": "部分相关"
+    },
+    "extrapolation_flags": [
+      "扩大适用人群",
+      "夸大效果强度",
+      "扩大结果指标"
+    ],
+    "unsupported_claim_aspects": [
+      "对所有成年人均适用",
+      "能够保护心脏健康或降低心血管事件",
+      "显著或强效的长期效果"
+    ],
+    "is_overgeneralized": true,
+    "support_score": 0.62,
+    "confidence": 0.94,
+    "reasoning": "随机对照试验支持每日3克燕麦β-葡聚糖在特定血脂异常成年人中短期降低低密度脂蛋白胆固醇，因此广告关于降低胆固醇的方向和使用条件有一定依据。但研究只持续8周，效果幅度较小，且没有测量心脏保护或心血管事件，也未覆盖所有成年人。广告将血脂指标的短期变化扩大为普遍且显著的心脏保护结论，属于部分支持并存在过度外推。"
+  },
+  "evidence_annotation": {
+    "evidence_type": "随机对照试验",
+    "evidence_population": "40至65岁、低密度脂蛋白胆固醇轻度升高且无已确诊心血管疾病的成年人。",
+    "evidence_intervention": "每日3克燕麦β-葡聚糖，连续8周，并与安慰剂比较。",
+    "evidence_outcome": "低密度脂蛋白胆固醇平均下降6%，安慰剂组下降2%；未报告心血管事件。",
+    "evidence_effect_direction": "低密度脂蛋白胆固醇下降，方向与广告中降低胆固醇的部分表述一致。",
+    "evidence_effect_strength": "短期轻微至中等幅度下降，组间差异具有统计学显著性，但未证明强效或临床心脏保护。",
+    "evidence_conditions": "仅在特定年龄、轻度血脂异常成年人中每日3克并持续8周；有安慰剂对照，未评估长期临床结局。",
+    "evidence_scope_summary": "证据支持特定成年人在8周内低密度脂蛋白胆固醇出现小幅下降，但不覆盖所有成年人，也不支持降低心肌梗死、卒中等心血管事件的结论。"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "raw_material": {
+    "ad_claim_text": "这款高浓度绿茶儿茶素能杀死癌细胞，按建议用量服用即可预防所有人患结肠癌。",
+    "citation_text": "研究人员在培养的结肠癌细胞系中观察绿茶儿茶素提取物对细胞活力的影响。",
+    "evidence_excerpt": "在体外培养的两种结肠癌细胞系中，20至50微摩尔浓度的绿茶儿茶素暴露24小时后，细胞活力较溶剂对照下降约25%至40%。该研究未使用动物或人类受试者，也未评估口服产品能否达到相同组织浓度。",
+    "source_context": {
+      "source_type": "机制或实验室研究",
+      "source_title_or_product_name": "绿茶儿茶素对结肠癌细胞活力影响的体外实验",
+      "publication_year_or_version": "，2022年",
+      "study_design": "体外细胞培养实验，设置不同儿茶素浓度和溶剂对照，观察24小时后的细胞活力。",
+      "population_description": "两种培养的结肠癌细胞系，不代表动物或人类人群。",
+      "intervention_description": "向细胞培养液加入20至50微摩尔浓度的绿茶儿茶素提取物，暴露24小时。",
+      "outcome_description": "结肠癌细胞活力相对于溶剂对照的变化；未测量癌症发生率、肿瘤缩小或患者生存。",
+      "study_conditions": "体外培养环境，儿茶素直接接触细胞24小时；未评估吸收、代谢、组织浓度或人体安全剂量。"
+    }
+  },
+  "claim_annotation": {
+    "claim_category": "疾病风险",
+    "claim_target": "高浓度绿茶儿茶素提取物",
+    "claimed_effect": "杀死癌细胞并预防所有人患结肠癌",
+    "claimed_effect_direction": "预防",
+    "claimed_effect_strength": "强效或近乎确定",
+    "claimed_population": "所有人",
+    "claimed_outcome": "结肠癌发生率和癌细胞清除",
+    "claim_conditions": "按产品建议用量口服，未说明具体剂量或持续时间。"
+  },
+  "support_judgment": {
+    "relation_label": "不支持",
+    "support_level": "无",
+    "dimension_assessment": {
+      "effect_direction_match": "不匹配",
+      "effect_strength_match": "不匹配",
+      "population_match": "不匹配",
+      "outcome_match": "不匹配",
+      "condition_match": "不匹配",
+      "evidence_design_relevance": "不相关"
+    },
+    "extrapolation_flags": [
+      "扩大适用人群",
+      "夸大效果强度",
+      "扩大结果指标",
+      "忽略剂量或时长",
+      "从机制证据推断临床效果"
+    ],
+    "unsupported_claim_aspects": [
+      "能够预防所有人患结肠癌",
+      "口服产品能在人体内达到实验浓度",
+      "能够杀死人体内癌细胞或改善患者结局",
+      "按建议用量即可获得确定效果"
+    ],
+    "is_overgeneralized": true,
+    "support_score": 0.03,
+    "confidence": 0.99,
+    "reasoning": "该证据是体外细胞实验，观察到的是特定高浓度儿茶素直接暴露后癌细胞活力下降，并未研究人体吸收、实际组织浓度、癌症发生率或患者治疗结局。广告将机制层面的实验室发现直接转化为对所有人的癌症预防和确定性治疗效果，且未提供可比的口服剂量和持续时间，因此不支持该广告主张。"
+  },
+  "evidence_annotation": {
+    "evidence_type": "机制或实验室研究",
+    "evidence_population": "两种体外培养的结肠癌细胞系，不包括动物或人类受试者。",
+    "evidence_intervention": "20至50微摩尔浓度的绿茶儿茶素提取物直接加入细胞培养液，暴露24小时。",
+    "evidence_outcome": "结肠癌细胞活力下降约25%至40%；没有癌症预防或治疗的临床指标。",
+    "evidence_effect_direction": "体外细胞活力下降，但不能据此判断人体结肠癌发生风险下降。",
+    "evidence_effect_strength": "在特定体外浓度和24小时条件下出现中等程度的细胞活力抑制，人体效果和确定性未知。",
+    "evidence_conditions": "仅限体外培养、特定浓度和24小时暴露；没有口服吸收、体内浓度、剂量安全性或临床随访信息。",
+    "evidence_scope_summary": "证据仅显示绿茶儿茶素在体外可能影响结肠癌细胞活力，不能覆盖人体结肠癌预防、治疗效果、适用人群或口服产品剂量。"
+  }
+}

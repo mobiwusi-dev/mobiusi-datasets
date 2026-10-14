@@ -1,0 +1,63 @@
+{
+  "raw_material": {
+    "ad_claim_text": "每天喝三杯黑咖啡，可让成年人患2型糖尿病的风险降低30%。",
+    "citation_text": "一项前瞻性队列研究随访无糖尿病成年人，比较不同咖啡摄入量与后续2型糖尿病发生之间的关系。",
+    "evidence_excerpt": "研究纳入12,000名基线时无糖尿病的30至65岁成年人，随访10年。与每天少于1杯者相比，自报每天饮用3杯或以上咖啡者发生2型糖尿病的调整后风险比为0.70。研究为观察性设计，作者指出饮食、体力活动和社会经济因素等残余混杂不能完全排除。",
+    "source_context": {
+      "source_type": "前瞻性观察性研究",
+      "source_title_or_product_name": "咖啡摄入与新发2型糖尿病风险的队列研究",
+      "publication_year_or_version": "，2024年",
+      "study_design": "前瞻性队列研究，根据基线自报咖啡摄入量分组，随访10年并使用调整后风险比比较新发2型糖尿病风险。",
+      "population_description": "12,000名30至65岁、基线时无糖尿病的成年人；研究人群不包括儿童、老年人及基线已有糖尿病者。",
+      "intervention_description": "观察受试者通常饮用的黑咖啡摄入量；高摄入组为自报每天3杯或以上，未随机分配饮用咖啡。",
+      "outcome_description": "随访期间新发2型糖尿病，依据医疗记录和研究随访报告判定。",
+      "study_conditions": "观察期10年；咖啡摄入量主要在基线自报，未严格控制咖啡种类、杯量、冲泡方式、添加糖或奶，以及其他生活方式因素。"
+    }
+  },
+  "claim_annotation": {
+    "claim_category": "疾病风险",
+    "claim_target": "黑咖啡",
+    "claimed_effect": "降低成年人发生2型糖尿病的风险30%",
+    "claimed_effect_direction": "降低或减少",
+    "claimed_effect_strength": "显著效果",
+    "claimed_population": "成年人",
+    "claimed_outcome": "2型糖尿病发生风险",
+    "claim_conditions": "每天饮用三杯黑咖啡，未说明持续时间、杯量标准或其他生活方式条件。"
+  },
+  "support_judgment": {
+    "relation_label": "部分支持",
+    "support_level": "中",
+    "dimension_assessment": {
+      "effect_direction_match": "完全匹配",
+      "effect_strength_match": "部分匹配",
+      "population_match": "部分匹配",
+      "outcome_match": "完全匹配",
+      "condition_match": "部分匹配",
+      "evidence_design_relevance": "部分相关"
+    },
+    "extrapolation_flags": [
+      "扩大适用人群",
+      "忽略研究条件",
+      "从相关性推断因果性"
+    ],
+    "unsupported_claim_aspects": [
+      "对所有成年人均有相同效果",
+      "每天三杯黑咖啡能够因果性地降低风险30%",
+      "不同咖啡杯量、冲泡方式和生活方式下效果一致"
+    ],
+    "is_overgeneralized": true,
+    "support_score": 0.48,
+    "confidence": 0.92,
+    "reasoning": "前瞻性队列研究报告了较高咖啡摄入与较低新发2型糖尿病风险之间的关联，结果指标和方向与广告一致，且风险比约为0.70。但研究没有随机分配咖啡摄入，咖啡量为自报，且人群限定为30至65岁、基线无糖尿病者；残余混杂不能排除。因此证据只能部分支持相关性，不能证明对所有成年人每天三杯黑咖啡都具有确定的30%因果风险降低效果。"
+  },
+  "evidence_annotation": {
+    "evidence_type": "观察性研究",
+    "evidence_population": "30至65岁、基线无糖尿病的成年人，共12,000人。",
+    "evidence_intervention": "观察自报咖啡摄入量；高摄入组为每天3杯或以上，未进行随机干预。",
+    "evidence_outcome": "10年随访中新发2型糖尿病；高摄入组相对每天少于1杯者的调整后风险比为0.70。",
+    "evidence_effect_direction": "较高咖啡摄入与较低的新发2型糖尿病风险相关。",
+    "evidence_effect_strength": "观察到约30%的相对风险差异，但属于调整后的相关性估计，因果效果大小存在不确定性。",
+    "evidence_conditions": "持续观察10年，摄入量主要基线自报；未严格控制杯量、冲泡方式、添加物和饮食、运动等混杂因素。",
+    "evidence_scope_summary": "研究支持特定年龄且基线无糖尿病人群中较高咖啡摄入与较低发病风险相关，但不能单独证明每天喝三杯黑咖啡会因果性地使所有成年人风险降低30%。"
+  }
+}
