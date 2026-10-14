@@ -1,0 +1,30 @@
+{
+  "claim_text": "在2024年4月至6月对中国大陆18至35岁、曾购买运动饮料的社交媒体用户进行的调查中，62%的受访者表示他们会因短视频广告中的真实使用场景而考虑购买。",
+  "citation_text": "调查记录显示：2024年4月1日至6月30日，在中国大陆18至35岁且过去六个月购买过运动饮料的1,200名社交媒体用户中，有744人表示会因短视频广告中的真实使用场景而考虑购买，占全部受访者的62%。该比例按有效问卷人数计算，未进行加权调整。",
+  "claim_analysis": {
+    "claim_type": "percentage",
+    "claimed_value": 62,
+    "claimed_unit": "百分比",
+    "claimed_denominator": "1,200名中国大陆18至35岁、过去六个月购买过运动饮料的社交媒体用户",
+    "claimed_time_range": "2024年4月1日至6月30日",
+    "claimed_metric_definition": "在符合指定年龄、地域和购买经历条件的有效受访者中，表示会因短视频广告中的真实使用场景而考虑购买运动饮料的受访者比例，按有效问卷人数计算。"
+  },
+  "citation_analysis": {
+    "cited_value": 62,
+    "cited_unit": "百分比",
+    "cited_denominator": "1,200名中国大陆18至35岁、过去六个月购买过运动饮料的社交媒体用户；744人作出肯定回答",
+    "cited_time_range": "2024年4月1日至6月30日",
+    "cited_metric_definition": "以1,200名符合筛选条件的有效受访者为分母，计算表示会因短视频广告中的真实使用场景而考虑购买的人数比例，未进行加权调整。",
+    "evidence_span": "有744人表示会因短视频广告中的真实使用场景而考虑购买，占全部受访者的62%。"
+  },
+  "validation_result": {
+    "value_supported": true,
+    "metric_supported": true,
+    "scope_supported": true,
+    "denominator_supported": true,
+    "numeric_consistency": true,
+    "overall_supported": true,
+    "unsupported_reason": "无；引用中的62%、744人、1,200名受访者、调查时间及指标计算口径均与广告主张一致。",
+    "confidence_score": 0.99
+  }
+}

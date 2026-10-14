@@ -1,0 +1,30 @@
+{
+  "claim_text": "本次社交广告偏好调查共收集了2,500份有效问卷。",
+  "citation_text": "调查方法说明：调查于2024年5月10日至5月24日开展，面向过去30天内看过社交媒体广告的成年用户，共回收2,738份问卷；剔除答题时长过短、关键题目缺失和重复提交的问卷后，保留2,500份有效问卷。",
+  "claim_analysis": {
+    "claim_type": "sample_size",
+    "claimed_value": 2500,
+    "claimed_unit": "份有效问卷",
+    "claimed_denominator": "本次调查回收的全部问卷，经质量筛选后的有效问卷总数",
+    "claimed_time_range": "2024年5月10日至5月24日",
+    "claimed_metric_definition": "通过预设质量规则筛选后，可用于社交广告偏好分析的有效问卷数量，不等同于原始回收问卷数量。"
+  },
+  "citation_analysis": {
+    "cited_value": 2500,
+    "cited_unit": "份有效问卷",
+    "cited_denominator": "共回收2,738份问卷，剔除不合格问卷后的有效问卷总数",
+    "cited_time_range": "2024年5月10日至5月24日",
+    "cited_metric_definition": "在面向过去30天内看过社交媒体广告的成年用户的调查中，剔除答题时长过短、关键题目缺失和重复提交后保留的可分析问卷数量。",
+    "evidence_span": "共回收2,738份问卷；剔除答题时长过短、关键题目缺失和重复提交的问卷后，保留2,500份有效问卷。"
+  },
+  "validation_result": {
+    "value_supported": true,
+    "metric_supported": true,
+    "scope_supported": true,
+    "denominator_supported": true,
+    "numeric_consistency": true,
+    "overall_supported": true,
+    "unsupported_reason": "无；引用明确给出2,500份有效问卷，并说明了原始回收量、筛选规则、调查对象和调查时间，与主张一致。",
+    "confidence_score": 0.98
+  }
+}

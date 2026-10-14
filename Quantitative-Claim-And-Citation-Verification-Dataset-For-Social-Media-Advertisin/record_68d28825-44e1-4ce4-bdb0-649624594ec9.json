@@ -1,0 +1,30 @@
+{
+  "claim_text": "我们的社交广告工具让中小企业用户平均每周少花35分钟制作推广素材，数据来自2024年第一季度的900名用户。",
+  "citation_text": "产品调研摘要显示：2024年1月1日至3月31日，800名完成至少一次素材制作任务的试用用户在使用社交广告工具后，平均每周少花28分钟制作推广素材。该平均值根据用户自报的使用前后每周制作时间差计算，仅覆盖试用用户。",
+  "claim_analysis": {
+    "claim_type": "average",
+    "claimed_value": 35,
+    "claimed_unit": "分钟/周",
+    "claimed_denominator": "900名中小企业用户",
+    "claimed_time_range": "2024年1月1日至3月31日",
+    "claimed_metric_definition": "中小企业用户使用社交广告工具前后每周制作推广素材所花时间的平均减少量，统计对象为900名用户。"
+  },
+  "citation_analysis": {
+    "cited_value": 28,
+    "cited_unit": "分钟/周",
+    "cited_denominator": "800名完成至少一次素材制作任务的试用用户",
+    "cited_time_range": "2024年1月1日至3月31日",
+    "cited_metric_definition": "根据试用用户自报的使用前后每周素材制作时间差，计算完成至少一次素材制作任务的800名试用用户的平均减少量。",
+    "evidence_span": "800名完成至少一次素材制作任务的试用用户在使用社交广告工具后，平均每周少花28分钟制作推广素材。"
+  },
+  "validation_result": {
+    "value_supported": false,
+    "metric_supported": false,
+    "scope_supported": false,
+    "denominator_supported": false,
+    "numeric_consistency": false,
+    "overall_supported": false,
+    "unsupported_reason": "引用支持的平均值为28分钟/周，而主张为35分钟/周；引用分母为800名完成任务的试用用户，而主张为900名中小企业用户；引用还将统计对象限定为试用用户，未覆盖主张所称的全部中小企业用户。",
+    "confidence_score": 0.99
+  }
+}
