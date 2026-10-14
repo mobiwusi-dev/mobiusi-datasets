@@ -1,0 +1,24 @@
+{
+  "tool_category": "计算器不可用场景（Reading and Writing部分）",
+  "answer": "不能。无论是Bluebook内嵌计算器还是考生自带的手持计算器，都不能在Reading and Writing section使用。计算器许可适用于Math section；进入Reading and Writing部分后，应关闭并收起计算器，依据文章内容、句子结构和语法规则作答。",
+  "key_rule": "计算器只能在数字SAT的Math section使用；Reading and Writing section禁止使用内嵌计算器和自带计算器。",
+  "question": "数字SAT的Reading and Writing部分能否使用Bluebook内嵌计算器或自带计算器？",
+  "source_url": "https://satsuite.collegeboard.org/digital/what-to-bring-do/what-to-bring/calculator-policy",
+  "source_html": "<html><head><title>计算器不可用的考试部分</title></head><body><h1>Reading and Writing部分的计算器规则</h1><p>数字SAT的计算器政策只适用于Math section。Reading and Writing section不允许使用计算器，包括Bluebook内嵌计算器和考生自带的手持计算器。</p><p>进入Math section后，考生可以使用内嵌计算器或符合规定的自带计算器；但这项许可不会延伸到Reading and Writing section。</p><p>在阅读与语法题中，应依据文章、句子结构和语法规则作答，而不能借助计算器进行计算。</p></body></html>",
+  "operation_steps": [
+    "开始Reading and Writing section前关闭并收起Bluebook计算器界面。",
+    "不要在该部分使用自带手持计算器、手机或其他电子设备进行计算。",
+    "根据文章证据、句子结构和语法规则完成题目。",
+    "进入Math section后，再按照考试规则使用内嵌或合规的自带计算器。"
+  ],
+  "evidence_excerpt": "<p>Reading and Writing section不允许使用计算器，包括Bluebook内嵌计算器和考生自带的手持计算器。</p><p>进入Math section后，考生可以使用内嵌计算器或符合规定的自带计算器；但这项许可不会延伸到Reading and Writing section。</p>",
+  "input_limitations": [
+    "Reading and Writing section不允许使用Bluebook内嵌计算器。",
+    "Reading and Writing section也不允许使用考生自带的手持计算器。",
+    "手机、平板电脑和其他未获准电子设备不能作为替代计算工具。",
+    "计算器许可只适用于Math section，不能跨部分使用。"
+  ],
+  "applicable_scenario": "适用于判断数字SAT不同考试部分的工具权限，尤其是在从Math section切换到Reading and Writing section时。",
+  "common_misconception": "考生常把数字SAT数学部分的计算器许可理解为整场考试都可以使用计算器，认为既然Bluebook中有内嵌工具，就能在Reading and Writing部分打开它。",
+  "correction_explanation": "数字SAT的计算器权限按考试部分划分。Math section允许使用内嵌或合规自带计算器，但Reading and Writing section完全不允许使用计算器。看到屏幕中存在工具并不意味着该工具在当前考试部分可用。"
+}

@@ -1,0 +1,25 @@
+{
+  "evidence_excerpt": "<p>在Bluebook中，数学部分的每一道题都可以使用内嵌计算器。</p><p>分别在两行中输入y = 2x + 1和y = 7 - x。两条图线的交点就是方程组的解。</p><p>计算器不会自动替考生提交答案。</p>",
+  "input_limitations": [
+    "内嵌计算器可用于数字SAT数学部分，但不能用于Reading and Writing部分。",
+    "输入函数时应使用计算器支持的标准数学表达式和运算符。",
+    "图形交点提供的是计算结果，考生仍需自行判断题目要求填写横坐标、纵坐标还是完整解。",
+    "计算器不会自动将图形结果提交到答题界面。"
+  ],
+  "applicable_scenario": "适用于数字SAT数学部分中需要解线性方程组、比较函数图像或读取交点坐标的题目。",
+  "common_misconception": "许多考生认为打开内嵌计算器后，系统会自动识别方程组并把解提交给答题系统，或者认为数学部分的每道题都必须先画图才能作答。",
+  "correction_explanation": "内嵌Desmos只是供考生自行输入和检查计算的工具，不会自动完成答题或提交答案。它适合处理图像、交点和数值计算，但简单题目也可以直接用代数方法解决；使用计算器不是强制要求。",
+  "answer": "进入数字SAT的Math section后，点击calculator图标并打开Desmos图形计算器。在两行中分别输入y=2x+1和y=7-x，读取两条直线的交点。交点为(2,5)，因此方程组的解是x=2、y=5。读取结果后，还要根据题目要求手动填写答案；内嵌计算器不会自动提交答案。",
+  "key_rule": "数字SAT数学部分允许使用Bluebook内嵌计算器；考生可以使用其中的Desmos图形或科学计算器功能，但必须自行读取结果并提交答案。",
+  "question": "在数字SAT数学部分，如何使用Bluebook内嵌的Desmos图形计算器求解方程组2x+1=y和7-x=y？",
+  "source_url": "https://satsuite.collegeboard.org/digital/what-to-bring-do/what-to-bring/calculator-policy",
+  "source_html": "<html><head><title>数字SAT数学部分的内嵌计算器</title></head><body><h1>数字SAT数学部分：内嵌计算器</h1><p>在Bluebook中，数学部分的每一道题都可以使用内嵌计算器。考生可以打开Desmos图形计算器，也可以切换到科学计算器视图。</p><h2>使用图形计算器解方程组</h2><p>进入Math section后，选择屏幕上的calculator图标。分别在两行中输入y = 2x + 1和y = 7 - x。两条图线的交点就是方程组的解，本例中的交点为(2, 5)。</p><p>计算器不会自动替考生提交答案；考生仍须按照题目要求在答案框中输入结果。</p></body></html>",
+  "tool_category": "内嵌计算器（Desmos图形计算器）",
+  "operation_steps": [
+    "进入Bluebook中的Math section。",
+    "选择屏幕上的calculator图标，打开内嵌Desmos计算器。",
+    "在第一行输入y=2x+1，在第二行输入y=7-x。",
+    "在图像中找到两条直线的交点(2,5)。",
+    "按照题目要求将x=2或相应结果手动输入答案框。"
+  ]
+}

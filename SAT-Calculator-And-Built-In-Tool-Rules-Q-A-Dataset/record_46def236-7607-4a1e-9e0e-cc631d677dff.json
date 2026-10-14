@@ -1,0 +1,26 @@
+{
+  "answer": "可以，但自带图形计算器必须符合College Board现行计算器政策，并且只能在数学部分使用。考生应提前核对具体型号：带计算机代数系统（CAS）、互联网或无线通信功能，或带QWERTY键盘的计算器不得使用；手机、平板电脑和笔记本电脑也不能替代合规计算器。若无法确认设备是否合规，应使用Bluebook内嵌计算器或查阅最新官方政策。",
+  "key_rule": "数字SAT数学部分可以使用Bluebook内嵌计算器或符合规定的自带计算器；禁止使用具有CAS、互联网或无线通信功能、QWERTY键盘的计算器，以及手机、平板电脑和笔记本电脑。",
+  "question": "数字SAT考生可以携带自己的图形计算器吗？哪些计算器功能会导致设备不符合规定？",
+  "source_url": "https://satsuite.collegeboard.org/digital/what-to-bring-do/what-to-bring/calculator-policy",
+  "source_html": "<html><head><title>数字SAT可携带计算器政策</title></head><body><h1>可携带的计算器</h1><p>数字SAT数学部分允许考生使用Bluebook内嵌计算器，也允许使用符合College Board现行政策的自带计算器。多数科学计算器和图形计算器可以使用，但考生应在考试前核对具体型号及其功能。</p><p>不得使用带有计算机代数系统（CAS）、互联网或无线通信功能的计算器，也不得使用带有QWERTY键盘的设备。手机、平板电脑和笔记本电脑不能作为考试计算器使用。</p><p>自带计算器只能在Math section使用，不能在Reading and Writing section使用。</p></body></html>",
+  "tool_category": "允许携带的计算器（科学计算器或图形计算器）",
+  "operation_steps": [
+    "在考试前查看当前College Board计算器政策，并核对自带设备的具体型号。",
+    "确认设备不含CAS、互联网或无线通信功能，也不使用QWERTY键盘。",
+    "将符合规定的计算器带入考场，并仅在Math section使用。",
+    "在Reading and Writing section关闭并收起自带计算器。",
+    "如果设备资格存在疑问，改用Bluebook内嵌计算器。"
+  ],
+  "evidence_excerpt": "<p>数字SAT数学部分允许考生使用Bluebook内嵌计算器，也允许使用符合College Board现行政策的自带计算器。</p><p>不得使用带有计算机代数系统（CAS）、互联网或无线通信功能的计算器，也不得使用带有QWERTY键盘的设备。</p><p>手机、平板电脑和笔记本电脑不能作为考试计算器使用。</p>",
+  "input_limitations": [
+    "计算器必须符合考试政策，不能仅因为具有图形显示功能就自动获准使用。",
+    "带CAS、互联网或无线通信功能的计算器不允许使用。",
+    "带QWERTY键盘的计算器不允许使用。",
+    "手机、平板电脑和笔记本电脑不能作为SAT计算器。",
+    "自带计算器不能用于Reading and Writing section。"
+  ],
+  "applicable_scenario": "适用于考生计划在数字SAT数学部分使用自带计算器，并需要在考前判断设备是否符合考试规定的情境。",
+  "common_misconception": "考生常认为只要是图形计算器就一定允许带入考场，或者认为关闭互联网功能后，带CAS或QWERTY键盘的设备也会自动合规。",
+  "correction_explanation": "是否允许使用取决于设备及其功能是否符合现行考试政策，而不只是计算器的品牌或是否能够绘图。CAS、网络或无线通信能力以及QWERTY键盘都可能使设备不合规；关闭某项功能并不等于该设备因此自动获准。应提前查看官方政策并核对具体型号。"
+}
