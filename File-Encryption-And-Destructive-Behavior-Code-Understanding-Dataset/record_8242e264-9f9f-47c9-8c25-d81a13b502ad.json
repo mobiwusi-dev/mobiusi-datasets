@@ -1,0 +1,89 @@
+{
+  "source_record": {
+    "source_code": "from pathlib import Path\nimport os\n\nfrom cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\nROOT = Path(\"/srv/lab/incoming\")\nTARGET_SUFFIXES = {\".docx\", \".xlsx\", \".pdf\", \".jpg\"}\n\ndef transform(path: Path, key: bytes) -> None:\n    nonce = os.urandom(12)\n    encrypted = AESGCM(key).encrypt(nonce, path.read_bytes(), None)\n    # 直接改写原文件，再改变扩展名。\n    path.write_bytes(nonce + encrypted)\n    path.rename(path.with_name(path.name + \".locked\"))\n\ndef process_tree() -> None:\n    key = bytes.fromhex(os.environ[\"LAB_KEY_HEX\"])\n    for path in ROOT.rglob(\"*\"):\n        if path.is_file() and path.suffix.lower() in TARGET_SUFFIXES:\n            transform(path, key)\n\nif __name__ == \"__main__\":\n    process_tree()",
+    "programming_language": "Python",
+    "sample_context": "隔离实验室代码审查样本。代码声称只处理/srv/lab/incoming，但其控制流程模拟了未经逐文件确认的批量文件变换，用于训练识别原地加密、扩展名重命名和密钥不可恢复等危险组合。"
+  },
+  "risk_assessment": {
+    "risk_level": "极高风险",
+    "confidence_score": 0.99,
+    "destructive_indicators": [
+      "递归批量处理多个常见用户文件类型",
+      "对原始路径直接write_bytes覆盖",
+      "批量追加.locked扩展名",
+      "没有备份、恢复清单或解密流程",
+      "使用单一环境密钥处理整批文件",
+      "执行入口会自动运行而不要求逐文件确认"
+    ],
+    "legitimate_use_indicators": [
+      "代码中的根目录名称指向隔离实验目录",
+      "使用了标准AES-GCM和随机nonce",
+      "目标后缀集合是显式列出的而非任意文件"
+    ],
+    "rationale": "尽管示例路径带有实验室语义，实际控制流组合了广泛递归遍历、原地覆盖和批量重命名，并且缺乏可靠的密钥恢复与备份机制。这些行为会直接造成大量文件不可用，危险性远高于正常的归档加密；若路径限制、密钥来源或调用权限被改变，影响可迅速扩大。"
+  },
+  "boundary_analysis": {
+    "legitimate_boundary": "若仅在一次性测试数据上运行，路径由强制沙箱校验保护，输出写入独立目录且有可验证备份、明确的解密流程和用户确认，类似算法可以用于实验性加密测试。",
+    "dangerous_boundary": "当代码对真实用户目录、共享盘或备份目录递归运行，并同时执行原地覆盖、扩展名重命名且不保留可验证备份或恢复密钥时，即构成未经授权的大规模数据破坏风险。",
+    "uncertainty_points": [
+      "ROOT是否始终指向不可包含真实数据的沙箱目录需要运行时验证",
+      "LAB_KEY_HEX是否由安全密钥管理系统注入无法从代码确认",
+      "代码未展示异常处理，部分文件处理失败时目录可能处于混合状态",
+      "调用进程的运行账户和目录写权限范围未知"
+    ]
+  },
+  "operation_analysis": [
+    {
+      "operation_type": "遍历",
+      "target_scope": "/srv/lab/incoming及其所有子目录中的.docx、.xlsx、.pdf和.jpg文件。",
+      "action_mechanism": "使用Path.rglob递归枚举目录，利用is_file()和TARGET_SUFFIXES进行筛选；没有数量上限、排除目录或逐文件授权检查。",
+      "destructive_effect": true,
+      "evidence": "单次process_tree调用会自动处理所有匹配文件，范围覆盖递归子目录，且缺少预览、确认和中止控制。"
+    },
+    {
+      "operation_type": "密钥读取",
+      "target_scope": "环境变量LAB_KEY_HEX中的对称密钥。",
+      "action_mechanism": "通过os.environ读取字符串并使用bytes.fromhex转换为密钥字节，随后将同一密钥传给所有文件的transform函数。",
+      "destructive_effect": true,
+      "evidence": "同一密钥控制整批文件，代码没有密钥标识、每文件密钥封装或恢复元数据，密钥一旦丢失将影响整批数据。"
+    },
+    {
+      "operation_type": "加密",
+      "target_scope": "所有匹配的办公文档、PDF和图片文件。",
+      "action_mechanism": "读取path.read_bytes()后调用AESGCM.encrypt生成密文，并将随机nonce与密文拼接。",
+      "destructive_effect": true,
+      "evidence": "加密后结果未写入独立副本，而是进入下一步对原路径的write_bytes调用，导致原始内容被替换。"
+    },
+    {
+      "operation_type": "覆盖",
+      "target_scope": "每个被选中的原始文件路径。",
+      "action_mechanism": "path.write_bytes(nonce + encrypted)会截断并重写原文件，代码没有临时文件、备份或原子替换前的校验。",
+      "destructive_effect": true,
+      "evidence": "原始明文在同一路径被密文覆盖，异常中断或密钥不可用时可能造成不可恢复的数据丢失。"
+    },
+    {
+      "operation_type": "重命名",
+      "target_scope": "已被覆盖的目标文件。",
+      "action_mechanism": "调用path.rename(path.with_name(path.name + \".locked\"))追加.locked后缀。",
+      "destructive_effect": true,
+      "evidence": "扩展名批量改变会阻断普通应用直接打开文件，并与原地覆盖行为结合，形成典型的文件不可用效果。"
+    }
+  ],
+  "code_behavior_summary": "程序从环境变量读取十六进制密钥，递归扫描固定实验目录中多个常见文档和图片后缀的文件。对每个文件读取全部内容、使用AES-GCM加密，然后通过write_bytes直接覆盖原路径，最后将文件重命名为.locked。代码没有备份、恢复清单、逐文件确认或解密流程，因而即使路径被限定为实验目录，也呈现出明显的破坏性批处理模式。",
+  "key_management_analysis": {
+    "key_sources": [
+      "环境变量LAB_KEY_HEX中的单一十六进制密钥"
+    ],
+    "algorithm_usage": "对每个文件使用AES-GCM并生成随机12字节nonce，但所有文件复用同一个环境变量密钥；密文和nonce直接写入原文件路径。",
+    "key_storage_risk": "密钥依赖进程环境，可能被同主机上的调试、进程检查或错误日志暴露；代码没有密钥服务、访问控制、轮换或安全擦除机制，也没有保存密钥标识。",
+    "key_recovery_capability": "代码没有解密函数、密钥备份、恢复清单或管理员恢复流程。只有在外部环境仍保留正确的LAB_KEY_HEX且具备对应解密实现时，才可能恢复文件，当前样本无法证明这一点。"
+  },
+  "mitigation_recommendations": [
+    "立即禁止对真实目录运行该实现，并在代码层加入不可绕过的沙箱路径校验和测试数据标记。",
+    "将输出改为独立目标目录的临时文件，完成校验和备份确认后再进行受控替换，禁止直接覆盖原文件。",
+    "使用密钥管理服务保存、轮换和审计密钥，生成每个任务的密钥标识，并建立经过演练的解密恢复流程。",
+    "增加预览模式、文件数量和总容量上限、逐任务人工确认、速率限制及可中止机制。",
+    "对递归加密、批量扩展名变化、异常写入速率和目录容量突变建立告警与自动隔离策略。",
+    "在生产环境通过最小权限、离线备份和恢复演练降低单个进程对共享数据的影响范围。"
+  ]
+}

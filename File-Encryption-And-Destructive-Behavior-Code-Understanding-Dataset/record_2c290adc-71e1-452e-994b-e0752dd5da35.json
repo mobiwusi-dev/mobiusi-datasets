@@ -1,0 +1,97 @@
+{
+  "source_record": {
+    "source_code": "from pathlib import Path\nimport base64\nimport json\nimport os\n\nimport keyring\nfrom cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\ndef encrypt_staged_export(staged_file: str, destination_dir: str) -> dict:\n    source = Path(staged_file).resolve()\n    destination_root = Path(destination_dir).resolve()\n    if source.parent.name != \"staging\":\n        raise ValueError(\"only staging copies may be consumed\")\n    if source.suffix.lower() not in {\".csv\", \".json\"}:\n        raise ValueError(\"unsupported export type\")\n\n    encoded_key = keyring.get_password(\"report-export\", os.environ[\"SERVICE_ACCOUNT\"])\n    if not encoded_key:\n        raise RuntimeError(\"encryption key is unavailable\")\n    key = base64.b64decode(encoded_key)\n    nonce = os.urandom(12)\n    ciphertext = AESGCM(key).encrypt(nonce, source.read_bytes(), source.name.encode())\n\n    destination_root.mkdir(parents=True, exist_ok=True)\n    output = destination_root / (source.stem + \".bundle\")\n    temporary = output.with_suffix(\".tmp\")\n    temporary.write_bytes(nonce + ciphertext)\n    temporary.replace(output)\n\n    metadata = {\"source_name\": source.name, \"encrypted_name\": output.name, \"algorithm\": \"AES-256-GCM\"}\n    (destination_root / (source.stem + \".json\")).write_text(json.dumps(metadata), encoding=\"utf-8\")\n    source.unlink()\n    return metadata",
+    "programming_language": "Python",
+    "sample_context": "报表导出服务样本。source参数必须是服务生成的staging临时副本，成功创建并原子提交加密bundle后才删除该临时副本；用户原始文件位于其他目录，不由此函数处理。密钥由操作系统密钥环按服务账户读取。"
+  },
+  "risk_assessment": {
+    "risk_level": "需关注",
+    "confidence_score": 0.93,
+    "destructive_indicators": [
+      "成功后删除staging中的明文临时副本",
+      "同名.bundle存在时temporary.replace可能替换已有输出",
+      "删除与加密成功判断之间缺少独立的恢复确认记录"
+    ],
+    "legitimate_use_indicators": [
+      "只处理单个临时文件而非递归批量目录",
+      "强制要求输入来自staging目录并限制文件后缀",
+      "密钥从操作系统密钥环读取",
+      "使用临时文件和原子替换提交密文",
+      "用户原始文件不在函数处理范围内",
+      "删除发生在加密输出成功写入之后"
+    ],
+    "rationale": "该实现主要符合受控导出加密场景，范围单一、输入受限、密钥来源相对安全，且采用原子写入。需要关注的地方是成功后删除临时明文、同名输出替换以及缺少版本化密钥和恢复确认；这些问题可能导致误删或覆盖，但从现有代码看尚未达到大规模破坏或勒索软件式影响。"
+  },
+  "boundary_analysis": {
+    "legitimate_boundary": "仅允许服务生成且可重新生成的staging临时副本，确保加密bundle已经原子提交并经过完整性校验，再删除临时明文；用户原始文件应处于不同目录且由独立权限保护。",
+    "dangerous_boundary": "如果调用者能够把任意用户路径伪装为staging、destination_dir指向原始数据目录，或函数被改造成递归处理并在没有成功确认时删除源文件，则删除和覆盖行为可能造成不可逆数据损失。",
+    "uncertainty_points": [
+      "source.parent.name的目录名校验不足以证明路径确实属于受控临时区",
+      "keyring后端的备份、审计和服务账户隔离情况未在代码中体现",
+      "metadata写入未采用临时文件和原子提交，失败时可能出现密文与元数据不一致",
+      "同名bundle的冲突处理和覆盖授权策略未明确"
+    ]
+  },
+  "operation_analysis": [
+    {
+      "operation_type": "遍历",
+      "target_scope": "单个调用者传入的staged_file，而非递归目录；仅接受父目录名称为staging且后缀为.csv或.json的文件。",
+      "action_mechanism": "使用resolve()规范化路径，通过source.parent.name和后缀白名单进行前置校验，不包含目录递归遍历。",
+      "destructive_effect": false,
+      "evidence": "函数只接收一个文件路径，并在执行加密前拒绝非staging目录和不支持的文件类型。"
+    },
+    {
+      "operation_type": "密钥读取",
+      "target_scope": "操作系统密钥环中service account对应的report-export条目。",
+      "action_mechanism": "读取SERVICE_ACCOUNT环境变量后调用keyring.get_password获取Base64编码的密钥，缺失时抛出异常并停止。",
+      "destructive_effect": false,
+      "evidence": "密钥不从源文件或代码常量中读取，且在密钥不可用时不会继续写入或删除文件。"
+    },
+    {
+      "operation_type": "加密",
+      "target_scope": "单个staging目录中的CSV或JSON临时副本。",
+      "action_mechanism": "生成12字节随机nonce，使用AESGCM对文件内容加密，并以文件名作为附加认证数据。",
+      "destructive_effect": false,
+      "evidence": "密文先写入destination_dir下的临时输出文件，成功后再原子替换为.bundle目标文件。"
+    },
+    {
+      "operation_type": "覆盖",
+      "target_scope": "destination_dir中的同名.tmp临时输出路径和最终.bundle路径。",
+      "action_mechanism": "先调用temporary.write_bytes写临时文件，再使用temporary.replace(output)完成原子提交。",
+      "destructive_effect": false,
+      "evidence": "覆盖仅针对新生成的输出临时文件和目标bundle，不涉及用户原始文件；但同名bundle存在时可能被替换，需配合冲突策略。"
+    },
+    {
+      "operation_type": "删除",
+      "target_scope": "已成功生成加密bundle后的staging临时明文副本。",
+      "action_mechanism": "在密文写入、原子替换和metadata写入之后调用source.unlink()。",
+      "destructive_effect": true,
+      "evidence": "source.unlink()会删除staging中的明文副本；该副本按上下文属于可再生成的临时文件，但删除失败或恢复依赖仍需监控。"
+    },
+    {
+      "operation_type": "密钥存储",
+      "target_scope": "操作系统密钥环中的report-export服务条目。",
+      "action_mechanism": "代码通过keyring接口读取密钥，不负责生成或持久化密钥；密钥环负责底层存储和访问控制。",
+      "destructive_effect": false,
+      "evidence": "源代码没有将key写入导出目录、metadata或日志，metadata只记录算法和文件名。"
+    }
+  ],
+  "code_behavior_summary": "函数只接受名为staging的目录中的CSV或JSON临时导出副本，从操作系统密钥环读取服务账户对应的密钥，使用AES-GCM加密后先写入临时文件，再原子替换为.bundle文件，同时保存元数据。加密提交成功后删除staging中的临时明文副本。该删除行为有明确的临时文件边界，但代码仍需要外部权限和恢复机制保障。",
+  "key_management_analysis": {
+    "key_sources": [
+      "操作系统密钥环中report-export服务条目",
+      "SERVICE_ACCOUNT环境变量提供的服务账户标识"
+    ],
+    "algorithm_usage": "使用AES-256-GCM对单个临时导出文件加密，每次调用生成随机12字节nonce，以源文件名作为附加认证数据；密文写入.bundle文件。",
+    "key_storage_risk": "密钥不硬编码，也不写入导出目录，但风险取决于操作系统密钥环的权限隔离、服务账户环境变量保护和密钥环备份策略。Base64仅是编码，不提供额外保密性。",
+    "key_recovery_capability": "若密钥环有受控备份且服务账户仍可授权读取，运维人员可以使用metadata定位bundle并解密；代码未实现密钥轮换、旧密钥版本标识和解密工具，恢复流程需要补充。"
+  },
+  "mitigation_recommendations": [
+    "使用预配置的staging根目录进行realpath校验，而不是仅检查父目录名称，并拒绝符号链接和跨租户路径。",
+    "删除临时明文前写入成功状态、校验输出哈希并确保metadata原子提交；失败时保留临时文件供审计和重试。",
+    "为bundle名称加入不可碰撞的任务标识或在覆盖前要求显式版本策略，避免替换已有归档。",
+    "在密钥环中使用版本化密钥标识，建立轮换、备份、撤销和解密恢复演练。",
+    "限制服务账户只能访问staging和destination所需路径，禁止访问用户原始目录和共享备份。",
+    "监控删除数量、输出替换事件和异常失败率，发现非预期路径或批量调用时自动暂停服务。"
+  ]
+}

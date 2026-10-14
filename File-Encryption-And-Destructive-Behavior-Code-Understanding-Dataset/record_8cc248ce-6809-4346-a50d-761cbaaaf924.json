@@ -1,0 +1,76 @@
+{
+  "source_record": {
+    "source_code": "from pathlib import Path\nimport json\nimport os\n\nfrom cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\ndef load_data_key(key_ref: str) -> bytes:\n    # 实际系统通过受控的密钥服务获取数据密钥。\n    return kms_client.decrypt_data_key(key_ref)\n\ndef encrypt_reports(source_dir: str, output_dir: str) -> None:\n    source = Path(source_dir).resolve()\n    output = Path(output_dir).resolve()\n    output.mkdir(parents=True, exist_ok=True)\n    key_ref = os.environ[\"REPORT_KEY_REF\"]\n    key = load_data_key(key_ref)\n    manifest = \n\n    for path in source.rglob(\"*\"):\n        if not path.is_file() or path.suffix.lower() not in {\".csv\", \".json\"}:\n            continue\n        relative = path.relative_to(source)\n        destination = output / (str(relative) + \".enc\")\n        destination.parent.mkdir(parents=True, exist_ok=True)\n        nonce = os.urandom(12)\n        ciphertext = AESGCM(key).encrypt(nonce, path.read_bytes(), str(relative).encode())\n        destination.write_bytes(nonce + ciphertext)\n        manifest.append({\"source\": str(relative), \"output\": str(destination.relative_to(output))})\n\n    (output / \"manifest.json\").write_text(\n        json.dumps({\"key_ref\": key_ref, \"files\": manifest}, ensure_ascii=False),\n        encoding=\"utf-8\",\n    )",
+    "programming_language": "Python",
+    "sample_context": "企业报表归档组件。任务是在授权的报表目录中读取CSV和JSON文件，将加密副本写入单独的归档目录，原始文件供业务继续使用。密钥服务和kms_client接口由外部受控提供。"
+  },
+  "risk_assessment": {
+    "risk_level": "正常",
+    "confidence_score": 0.96,
+    "destructive_indicators": [],
+    "legitimate_use_indicators": [
+      "目标后缀明确限制为报表文件",
+      "加密结果写入独立归档目录",
+      "原始文件未被覆盖、删除或重命名",
+      "使用外部密钥服务而非硬编码密钥",
+      "生成manifest以支持文件映射和后续恢复"
+    ],
+    "rationale": "代码表现为范围受控的报表归档加密：输入范围由目录和后缀共同限制，加密结果另存，且没有破坏源文件的操作。虽然批量处理文件需要权限控制和恢复演练，但当前实现缺少勒索软件常见的原地覆盖、删除备份或无边界扩散特征，因此评为正常。"
+  },
+  "boundary_analysis": {
+    "legitimate_boundary": "仅对经过授权的报表目录执行，使用明确的后缀白名单，将结果写入访问受控的独立归档位置，并确保密钥服务、manifest和解密流程均可用。",
+    "dangerous_boundary": "如果将source_dir扩大到用户主目录或共享盘、取消后缀和路径限制、把output指向source目录，或增加原地覆盖和删除源文件的逻辑，该组件可能转变为大范围数据不可用风险。",
+    "uncertainty_points": [
+      "kms_client的实际访问控制、审计和密钥备份策略未在代码中展示",
+      "输出目录是否与源目录物理隔离需要运行环境确认",
+      "示例未包含解密、密钥轮换和manifest完整性校验实现"
+    ]
+  },
+  "operation_analysis": [
+    {
+      "operation_type": "遍历",
+      "target_scope": "调用者指定的source_dir及其子目录，后缀限制为.csv和.json的普通文件。",
+      "action_mechanism": "使用Path.resolve()确定目录，使用source.rglob(\"*\")递归枚举文件，并通过is_file()和后缀集合进行过滤。",
+      "destructive_effect": false,
+      "evidence": "遍历逻辑只读取目录项并筛选目标后缀，没有删除、覆盖或改变源目录内容的调用。"
+    },
+    {
+      "operation_type": "密钥读取",
+      "target_scope": "环境变量REPORT_KEY_REF指定的外部密钥引用。",
+      "action_mechanism": "读取REPORT_KEY_REF后调用load_data_key，由外部kms_client.decrypt_data_key获取数据密钥。",
+      "destructive_effect": false,
+      "evidence": "代码只取得用于本次归档的密钥材料，没有将密钥写入输出文件；manifest仅保存key_ref。"
+    },
+    {
+      "operation_type": "加密",
+      "target_scope": "筛选出的CSV和JSON文件内容。",
+      "action_mechanism": "为每个文件生成12字节随机nonce，调用AESGCM.encrypt，并将nonce与密文写入归档目录中的.enc文件。",
+      "destructive_effect": false,
+      "evidence": "加密结果写入output目录的独立目标路径，源文件通过read_bytes()读取且未执行写回。"
+    },
+    {
+      "operation_type": "密钥存储",
+      "target_scope": "归档目录中的manifest.json。",
+      "action_mechanism": "使用json.dumps保存key_ref、源文件相对路径和输出文件相对路径，不保存明文数据密钥。",
+      "destructive_effect": false,
+      "evidence": "manifest字段只包含密钥引用和文件映射，未包含key本身；输出文件与源目录分离。"
+    }
+  ],
+  "code_behavior_summary": "代码递归遍历指定报表目录，仅选择CSV和JSON文件，将每个文件使用AES-GCM加密后写入独立的归档目录，并生成记录源文件与加密副本对应关系的manifest.json。原始文件不会被覆盖、删除或重命名；密钥通过外部密钥服务按引用获取，代码本身不保存明文密钥。",
+  "key_management_analysis": {
+    "key_sources": [
+      "环境变量REPORT_KEY_REF提供的外部密钥引用",
+      "受控密钥服务通过kms_client.decrypt_data_key返回的数据密钥"
+    ],
+    "algorithm_usage": "使用AES-GCM对每个选定文件独立加密，每个文件生成12字节随机nonce，并将相对路径作为附加认证数据；密文写入独立的.enc文件。",
+    "key_storage_risk": "代码不直接硬编码或写入明文密钥，风险主要取决于环境变量、密钥服务接口和运行账户的访问控制。manifest暴露密钥引用和文件名，但不包含密钥材料。",
+    "key_recovery_capability": "若密钥服务保留该key_ref对应的密钥并支持授权解密，合法运维人员可以依据manifest恢复文件；示例未展示密钥备份、轮换和解密流程，需由密钥服务和归档策略补充。"
+  },
+  "mitigation_recommendations": [
+    "对source_dir和output_dir实施路径白名单、租户隔离和最小权限校验，拒绝系统目录及符号链接逃逸。",
+    "为批量归档增加预览、文件数量上限、用户确认和可中止机制。",
+    "在密钥服务中启用密钥轮换、访问审计、备份恢复和按任务授权，并避免将密钥材料写入日志。",
+    "为manifest增加完整性保护和版本信息，并定期验证随机抽样文件的解密可恢复性。",
+    "监控异常文件数量、加密速率和输出容量变化，发现偏离正常归档模式时自动暂停任务。"
+  ]
+}
