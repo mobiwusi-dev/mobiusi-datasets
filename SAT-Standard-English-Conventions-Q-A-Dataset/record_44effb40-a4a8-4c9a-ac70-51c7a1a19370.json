@@ -1,0 +1,14 @@
+{
+  "grammar_topic": "修饰语",
+  "question_type": "边界辨析",
+  "answer_text": "原句中的 After reviewing the survey responses 逻辑上应修饰 committee，因为委员会进行了审阅；但主句主语是 the proposal，造成悬垂修饰语。可改为：After reviewing the survey responses, the committee revised the proposal.",
+  "rule_basis": "句首分词短语必须在逻辑上修饰主句主语。原句中 reviewing 的逻辑执行者是 committee，而主句主语却是 proposal，因此不符合该规则。",
+  "reasoning_steps": "1. 找出句首短语的隐含主语：reviewing 的执行者必须是进行审阅的人或机构。2. 检查主句主语：原句主语是 the proposal，它不能主动 review survey responses。3. 判断为悬垂修饰语。4. 将 committee 放在主句主语位置并使用主动谓语 revised，使逻辑修饰关系清晰。",
+  "source_material": {
+    "rule_text": "置于句首的分词短语或其他修饰语，必须在逻辑上修饰主句的主语。若修饰语的逻辑执行者与主句主语不一致，就会产生悬垂修饰语。应改写句子，使被修饰的名词直接出现在主句主语位置。",
+    "question_text": "下列句子中的句首修饰语是否有明确的逻辑修饰对象？如果没有，应如何修改？",
+    "question_context": "After reviewing the survey responses, the proposal was revised by the committee.",
+    "source_reference": "修饰语与逻辑主语"
+  },
+  "boundary_analysis": "被动结构本身并不必然错误；关键在于句首修饰语的逻辑执行者是否与主句主语一致。例如 After being reviewed by the committee, the proposal was revised 是合理的，因为 proposal 是被 reviewed 的对象。若要保留原来的主动 reviewing，则应让 committee 充当主句主语。"
+}

@@ -1,0 +1,14 @@
+{
+  "rule_basis": "规则规定，两个独立分句不能只用逗号连接；连接副词 however 连接两个独立分句时，前面通常使用分号，后面使用逗号。",
+  "answer_text": "应改为：The restoration team preserved the theater’s original murals; however, the new lighting system altered their appearance. 原句用逗号连接两个独立分句，构成逗号拼接；在 however 前使用分号、后使用逗号，能够正确标示两个完整分句之间的关系。",
+  "grammar_topic": "句子边界",
+  "question_type": "句子修改",
+  "reasoning_steps": "1. 判断两侧是否都是独立分句：两侧分别有主语和限定动词，均能独立成句。2. 识别 however 的功能：它是连接副词，不是并列连词。3. 排除只用逗号连接的原句，因为这会造成逗号拼接。4. 在第一个独立分句后使用分号，并在 however 后保留逗号，得到符合规则的句子。",
+  "source_material": {
+    "rule_text": "两个独立分句之间不能只用逗号连接。两个独立分句可以用句号、分号，或逗号加并列连词连接。连接副词（如 however）不能单独充当并列连词；当 however 连接两个独立分句时，前面通常使用分号，后面使用逗号。",
+    "question_text": "选择能够正确连接下列两个独立分句的修改方式。",
+    "question_context": "The restoration team preserved the theater’s original murals, however, the new lighting system altered their appearance.",
+    "source_reference": "句子边界与连接副词"
+  },
+  "boundary_analysis": "如果 however 位于一个独立分句内部，而不是连接两个独立分句，它通常只需用逗号隔开，例如 The system, however, altered their appearance。若两个分句之间使用 and、but 等并列连词，则可采用逗号加并列连词，而不应机械地在 however 前后使用分号。"
+}

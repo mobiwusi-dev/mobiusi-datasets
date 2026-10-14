@@ -1,0 +1,14 @@
+{
+  "boundary_analysis": "介词短语 from the coastal surveys 只是修饰 maps，不改变主语 collection 的单复数。需要注意，a number of + 复数名词通常搭配复数谓语，而 the number of + 复数名词通常搭配单数谓语；因此不能把所有含有 of 的结构都按照同一种形式处理。",
+  "rule_basis": "规则要求主语和谓语保持数的一致，并指出谓语形式应依据真正的主语中心词确定，而不能被修饰语中的名词干扰。这里 collection 是单数，所以应使用 provides。",
+  "answer_text": "错误在于谓语 provide。真正的主语中心词是单数名词 collection，而不是介词短语 from the coastal surveys 中的复数名词 surveys，因此应改为 provides：The collection of maps from the coastal surveys provides researchers with evidence of shoreline change.",
+  "grammar_topic": "主谓一致",
+  "question_type": "错误识别",
+  "reasoning_steps": "1. 暂时去掉修饰语 from the coastal surveys，得到核心结构 The collection provides researchers with evidence。2. 确认 collection 是单数主语中心词。3. 将谓语 provide 改为第三人称单数形式 provides。4. 将修饰语放回后检查句意和结构，句子保持完整且主谓一致。",
+  "source_material": {
+    "rule_text": "主语和谓语必须保持数的一致。判断谓语形式时，应先找到真正的主语中心词，不要被介词短语、插入成分或其他修饰语中的名词干扰。例如，The collection of maps is valuable 中，主语中心词是单数名词 collection，因此使用 is。",
+    "question_text": "指出句中的主谓一致错误，并给出正确形式。",
+    "question_context": "The collection of maps from the coastal surveys provide researchers with evidence of shoreline change.",
+    "source_reference": "主谓一致"
+  }
+}
