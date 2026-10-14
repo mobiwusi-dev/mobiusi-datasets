@@ -1,0 +1,82 @@
+{
+  "question_type": "句法",
+  "annotation_confidence": 0.98,
+  "source_record": {
+    "question_text": "Which choice completes the text so that it conforms to Standard English?",
+    "passage_text": "The collection of field notes from several coastal surveys reveal how shorebirds adapt to changing tides.",
+    "answer_options": [
+      {
+        "option_label": "A",
+        "option_text": "reveal"
+      },
+      {
+        "option_label": "B",
+        "option_text": "reveals"
+      },
+      {
+        "option_label": "C",
+        "option_text": "have revealed"
+      },
+      {
+        "option_label": "D",
+        "option_text": "are revealing"
+      }
+    ],
+    "correct_answer_label": "B",
+    "rule_entries": [
+      {
+        "rule_key": "SUBJECT_VERB_AGREEMENT_HEAD_NOUN",
+        "rule_name": "主语中心词与动词保持一致",
+        "rule_description": "带有 of 短语或其他介词短语的名词短语中，动词应与主语的中心名词保持数的一致，而不是与介词短语中的修饰名词一致。本句主语中心词是单数名词 collection。",
+        "rule_scope": "考查复杂名词短语、of 短语和插入性修饰语中的主谓一致。",
+        "rule_examples": [
+          {
+            "example_text": "The collection of photographs reveals a pattern in the data.",
+            "example_explanation": "主语中心词 collection 是单数，of photographs 只是修饰语，因此谓语使用单数形式 reveals。"
+          },
+          {
+            "example_text": "The photographs in the collection reveal a pattern in the data.",
+            "example_explanation": "此处主语中心词是复数 photographs，所以谓语使用复数形式 reveal；介词短语 in the collection 不改变主语数量。"
+          }
+        ]
+      }
+    ],
+    "answer_rule_relations": [
+      {
+        "answer_label": "B",
+        "rule_key": "SUBJECT_VERB_AGREEMENT_HEAD_NOUN",
+        "relation_note": "选项B与主语中心词 collection 的单数形式一致，直接体现复杂名词短语中的主谓一致规则。"
+      }
+    ]
+  },
+  "evidence_spans": [
+    {
+      "source_field": "passage_text",
+      "evidence_text": "The collection",
+      "start_char": 0,
+      "end_char": 14,
+      "evidence_reason": "collection 是整个主语名词短语的中心词，属于单数名词，因此要求后面的谓语使用单数形式。"
+    },
+    {
+      "source_field": "passage_text",
+      "evidence_text": "surveys reveal",
+      "start_char": 51,
+      "end_char": 64,
+      "evidence_reason": "reveal 紧跟在复数名词 surveys 后，容易造成就近一致的误判；但 surveys 位于 of 短语中，不是主句主语的中心词。"
+    }
+  ],
+  "issue_categories": [
+    "主谓一致",
+    "准确性"
+  ],
+  "rule_answer_link": {
+    "answer_label": "B",
+    "rule_key": "SUBJECT_VERB_AGREEMENT_HEAD_NOUN",
+    "association_type": "直接依据",
+    "supporting_reason": "选项B使用单数谓语 reveals，与复杂主语中的中心词 collection 一致，准确解决了介词短语造成的主谓一致干扰。"
+  },
+  "answer_explanation": "正确答案是 B reveals。完整主语是 The collection of field notes from several coastal surveys，其中中心词是单数名词 collection，of field notes from several coastal surveys 只是修饰该中心词的介词短语。因此谓语必须使用单数形式 reveals。A reveal 与复数名词 surveys 的表面形式一致，但没有与真正的主语中心词保持一致；C have revealed 和 D are revealing 同样使用了复数形式，均不符合主谓一致要求。",
+  "applicable_rule_keys": [
+    "SUBJECT_VERB_AGREEMENT_HEAD_NOUN"
+  ]
+}

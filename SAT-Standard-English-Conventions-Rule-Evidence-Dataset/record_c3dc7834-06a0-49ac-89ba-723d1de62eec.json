@@ -1,0 +1,82 @@
+{
+  "question_type": "衔接",
+  "annotation_confidence": 0.99,
+  "source_record": {
+    "question_text": "The writer wants to emphasize a contrast between the garden's original condition and its current productivity. Which choice best completes the text with the most logical transition?",
+    "passage_text": "The community garden began as a vacant lot. However, volunteers now grow enough vegetables to supply the neighborhood pantry.",
+    "answer_options": [
+      {
+        "option_label": "A",
+        "option_text": "Similarly,"
+      },
+      {
+        "option_label": "B",
+        "option_text": "However,"
+      },
+      {
+        "option_label": "C",
+        "option_text": "For example,"
+      },
+      {
+        "option_label": "D",
+        "option_text": "Therefore,"
+      }
+    ],
+    "correct_answer_label": "B",
+    "rule_entries": [
+      {
+        "rule_key": "TRANSITION_CONTRAST_CONTEXT",
+        "rule_name": "使用表示对比的过渡表达",
+        "rule_description": "当相邻句子之间存在明显反差时，应使用表示转折或对比的过渡词。过渡表达必须符合前后句的逻辑关系，而不能仅根据句子位置机械选择。",
+        "rule_scope": "考查句间逻辑衔接、转折关系以及表示相似、举例和因果的过渡表达的区分。",
+        "rule_examples": [
+          {
+            "example_text": "The first design was inexpensive. However, it was difficult to repair.",
+            "example_explanation": "第二句说明第一种设计的另一面，与 inexpensive 形成转折，因此使用 However。"
+          },
+          {
+            "example_text": "The first design was inexpensive. Therefore, the team selected it for the project.",
+            "example_explanation": "第二句是由第一句事实推出的结果，使用 Therefore 表示因果，而不是表示对比。"
+          }
+        ]
+      }
+    ],
+    "answer_rule_relations": [
+      {
+        "answer_label": "B",
+        "rule_key": "TRANSITION_CONTRAST_CONTEXT",
+        "relation_note": "选项B连接了 vacant lot 与 now grow enough vegetables 两种相反状态，直接符合语境中的转折关系。"
+      }
+    ]
+  },
+  "evidence_spans": [
+    {
+      "source_field": "passage_text",
+      "evidence_text": "The community garden began as a vacant lot.",
+      "start_char": 0,
+      "end_char": 43,
+      "evidence_reason": "第一句说明花园最初只是空地，建立了较为有限的起始状态。"
+    },
+    {
+      "source_field": "passage_text",
+      "evidence_text": "However, volunteers now grow",
+      "start_char": 44,
+      "end_char": 73,
+      "evidence_reason": "第二句以 However 开头，并说明志愿者现在能够种植足够蔬菜，当前状态与原来的 vacant lot 形成明显对比。"
+    }
+  ],
+  "issue_categories": [
+    "逻辑衔接",
+    "过渡表达"
+  ],
+  "rule_answer_link": {
+    "answer_label": "B",
+    "rule_key": "TRANSITION_CONTRAST_CONTEXT",
+    "association_type": "直接依据",
+    "supporting_reason": "选项B准确标示了花园从空地到高产菜园的状态反差，使相邻句子的逻辑关系清晰连贯。"
+  },
+  "answer_explanation": "正确答案是 B However。第一句说明社区花园起初是一块空地，第二句说明志愿者现在能够种植足够供应社区食物储藏室的蔬菜，前后状态构成明显对比。A Similarly 表示相似，不能表达这种反差；C For example 用于引出例子，句中没有例证关系；D Therefore 表示因果结果，但第二句重点不是第一句导致的结果，而是对花园现状的转折性补充。",
+  "applicable_rule_keys": [
+    "TRANSITION_CONTRAST_CONTEXT"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "question_type": "标点",
+  "source_record": {
+    "question_text": "In the passage, the writer wants to join two independent clauses. Which choice completes the sentence in accordance with Standard English conventions?",
+    "passage_text": "The observatory's new telescope can detect distant galaxies, it also records changes in their brightness with unusual precision.",
+    "answer_options": [
+      {
+        "option_label": "A",
+        "option_text": "galaxies, it also records"
+      },
+      {
+        "option_label": "B",
+        "option_text": "galaxies; it also records"
+      },
+      {
+        "option_label": "C",
+        "option_text": "galaxies: it also records"
+      },
+      {
+        "option_label": "D",
+        "option_text": "galaxies it also records"
+      }
+    ],
+    "correct_answer_label": "B",
+    "rule_entries": [
+      {
+        "rule_key": "PUNCT_INDEPENDENT_CLAUSES",
+        "rule_name": "独立分句之间使用分号",
+        "rule_description": "当两个分句都能独立成句，且语义上关系紧密时，可以用分号连接。仅用逗号连接两个独立分句会造成逗号拼接；若第二分句不是解释或具体说明，通常不应使用冒号。",
+        "rule_scope": "考查两个独立分句之间的标点选择，包括分号、逗号、冒号和无标点连接。",
+        "rule_examples": [
+          {
+            "example_text": "The experiment produced a clear result; the researchers repeated it the next day.",
+            "example_explanation": "前后两部分都包含完整的主语和谓语，分号可以在不使用并列连词的情况下连接两个关系紧密的独立分句。"
+          },
+          {
+            "example_text": "The experiment produced a clear result, the researchers repeated it the next day.",
+            "example_explanation": "两个独立分句只用逗号连接，构成逗号拼接，应改用分号、句号或逗号加并列连词。"
+          }
+        ]
+      }
+    ],
+    "answer_rule_relations": [
+      {
+        "answer_label": "B",
+        "rule_key": "PUNCT_INDEPENDENT_CLAUSES",
+        "relation_note": "选项B用分号连接两个结构完整且语义紧密的独立分句，直接适用该规则。"
+      }
+    ]
+  },
+  "evidence_spans": [
+    {
+      "source_field": "passage_text",
+      "evidence_text": "galaxies, it also records",
+      "start_char": 51,
+      "end_char": 76,
+      "evidence_reason": "该片段在 galaxies 后用逗号连接了 it also records 引导的第二个完整分句，形成逗号拼接；将逗号改为分号即可明确两个独立分句的边界。"
+    }
+  ],
+  "issue_categories": [
+    "标点规范",
+    "句子边界"
+  ],
+  "rule_answer_link": {
+    "answer_label": "B",
+    "rule_key": "PUNCT_INDEPENDENT_CLAUSES",
+    "association_type": "直接依据",
+    "supporting_reason": "选项B恰好应用了独立分句之间使用分号的规则，既避免逗号拼接，又保持两个分句之间的紧密逻辑关系。"
+  },
+  "answer_explanation": "正确答案是 B。galaxies 前后的两部分分别以 telescope can detect 和 it also records 为核心，都是可以独立成句的分句，因此应使用分号连接。A 保留逗号，会造成逗号拼接；C 的冒号通常用于引出解释、结果或具体内容，本句并非这种关系；D 删除标点会形成无标点连接的句子边界错误。",
+  "applicable_rule_keys": [
+    "PUNCT_INDEPENDENT_CLAUSES"
+  ],
+  "annotation_confidence": 0.99
+}
