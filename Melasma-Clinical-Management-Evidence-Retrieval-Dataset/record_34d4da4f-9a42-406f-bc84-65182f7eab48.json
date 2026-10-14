@@ -1,0 +1,70 @@
+{
+  "evidence_domains": [
+    "哺乳期外用治疗安全性",
+    "壬二酸治疗黄褐斑",
+    "妊娠及产后病程",
+    "光防护管理",
+    "治疗升级与疗效评估"
+  ],
+  "clinical_record": "29岁女性，产后6个月，正在母乳喂养。妊娠晚期开始发现额部、鼻梁、双侧颧部及上唇出现对称性淡褐色斑片，分娩后颜色较妊娠期略淡但仍持续存在，日晒后明显加深。无鳞屑、瘙痒或疼痛，未发现其他部位色素异常。未使用口服避孕药、激素替代治疗或其他激素药物。曾自行使用壬二酸15%凝胶，每晚一次约8周，色斑轻度变淡，初次涂抹时有短暂轻微刺痒，无明显红斑或脱屑。日常使用SPF50+防晒霜，每天早晨涂抹，外出时佩戴宽檐帽，但因照顾婴儿和户外活动时间不固定，通常不补涂。既往无明确治疗后复发记录。",
+  "trigger_factors": [
+    "妊娠期激素变化",
+    "产后激素水平变化",
+    "日晒",
+    "防晒措施补涂不足"
+  ],
+  "recurrence_status": {
+    "recurrence": false,
+    "recurrence_count": 0,
+    "interval_since_last_relapse": "不适用，尚无明确治疗后复发记录。",
+    "relapse_trigger": "无既往复发；日晒后色斑会暂时加深。"
+  },
+  "lesion_distribution": {
+    "lesion_sites": [
+      "额部",
+      "鼻梁",
+      "双侧颧部",
+      "上唇"
+    ],
+    "bilateral_symmetry": true,
+    "distribution_pattern": "面中部型",
+    "affected_extent": "累及额部、鼻梁、双侧颧部和上唇，分布较广但颜色较浅至中等，未见炎症性皮损。"
+  },
+  "management_questions": [
+    "哺乳期黄褐斑患者使用壬二酸的有效性和安全性证据如何？",
+    "哺乳期是否应避免或谨慎使用氢醌及外用维A酸，替代治疗有哪些证据支持？",
+    "产后激素变化导致的黄褐斑是否可能自然减轻，何时需要升级治疗？",
+    "如何优化防晒霜补涂和遮光行为以减少色斑加深？"
+  ],
+  "safety_considerations": [
+    "患者正在母乳喂养，新增或更换外用药物前需核对哺乳期局部用药安全性和乳房接触风险。",
+    "壬二酸曾引起短暂刺痒，需关注持续刺激、红斑或屏障受损。",
+    "妊娠及产后激素背景可能影响病程，治疗效果和自然减退不宜仅凭短期变化判断。",
+    "应避免将未经核实的美白复方或含有潜在高风险成分的产品用于哺乳期。"
+  ],
+  "photoprotection_history": {
+    "sunscreen_use": true,
+    "sunscreen_details": "使用SPF50+防晒霜，每天早晨涂抹；户外活动时佩戴宽檐帽，但通常不补涂防晒霜。",
+    "photoprotection_adherence": "基本执行但不规律，补涂和遮光措施受日常照护婴儿及户外活动影响。"
+  },
+  "pregnancy_hormone_context": {
+    "pregnancy_status": "产后6个月，正在母乳喂养，暂无再次妊娠计划。",
+    "hormonal_exposure": "黄褐斑于妊娠晚期出现；未使用口服避孕药、激素替代治疗或其他激素药物。",
+    "hormonal_risk_note": "需要核对哺乳期黄褐斑外用治疗的安全性，尤其是壬二酸、氢醌和外用维A酸等常见方案的适用边界；同时关注妊娠和产后激素变化对病程的影响。"
+  },
+  "topical_treatment_history": [
+    {
+      "treatment_name": "壬二酸15%凝胶",
+      "active_ingredient": "壬二酸",
+      "duration": "每晚1次，约8周",
+      "response": "色斑轻度变淡，但尚未达到满意改善。",
+      "adverse_reaction": "初次使用时有短暂轻微刺痒，未出现明显红斑、脱屑或持续不适。"
+    }
+  ],
+  "evidence_retrieval_queries": [
+    "azelaic acid topical treatment melasma breastfeeding safety efficacy",
+    "melasma treatment during lactation hydroquinone topical retinoids safety guidance",
+    "postpartum melasma natural course persistence after pregnancy hormonal changes",
+    "sunscreen reapplication photoprotection recommendations for melasma during postpartum period"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "trigger_factors": [
+    "长期日间户外紫外线暴露",
+    "高温和出汗",
+    "防晒霜补涂不足",
+    "氢醌停用后的维持治疗不足"
+  ],
+  "evidence_domains": [
+    "复发性或难治性黄褐斑治疗",
+    "氢醌与非氢醌外用药比较",
+    "职业性光防护",
+    "维持治疗与复发预防",
+    "外用药物刺激和长期安全性"
+  ],
+  "clinical_record": "46岁男性，面部色斑反复约5年。长期从事道路施工工作，日间户外暴露和高温出汗较多。双侧颧部、鼻旁及下颌缘可见褐色色斑，右侧较左侧明显，无鳞屑和瘙痒，夏季及连续户外工作后加深。无口服避孕药、激素治疗或其他明确激素暴露史。曾使用4%氢醌乳膏每晚一次16周，早期颜色约减轻三成，但后期出现局部干燥、轻度红斑和瘙痒，停用后缓解；随后使用5%半胱胺乳膏约12周，色斑有部分改善，但因气味和轻度刺激未能持续。平时使用SPF30防晒霜，通常出门前涂一次，工作期间很少补涂，偶尔戴帽子。氢醌停用并经历夏季高强度日晒后色斑再次加深，既往治疗后约复发2次，最近一次加重距本次就诊约6个月。",
+  "recurrence_status": {
+    "recurrence": true,
+    "recurrence_count": 2,
+    "interval_since_last_relapse": "约6个月",
+    "relapse_trigger": "氢醌停用后缺乏持续维持治疗，且夏季从事高强度户外工作、紫外线和热暴露增加。"
+  },
+  "lesion_distribution": {
+    "lesion_sites": [
+      "双侧颧部",
+      "鼻旁",
+      "双侧下颌缘"
+    ],
+    "bilateral_symmetry": false,
+    "distribution_pattern": "颧部-下颌混合型，右侧较明显",
+    "affected_extent": "累及双侧颧部、鼻旁及下颌缘，右侧受累更重，面积约占面部可见皮肤的四分之一，色素中等至较深。"
+  },
+  "management_questions": [
+    "对于长期户外暴露且反复发作的黄褐斑，氢醌、半胱胺及其他外用方案的疗效和耐受性如何比较？",
+    "如何为户外工作者设计可执行的防晒、补涂和遮光方案以降低复发风险？",
+    "氢醌疗程结束后的维持治疗有哪些证据，长期或不规范使用的风险是什么？",
+    "既往治疗后复发且分布不完全对称时，是否需要重新评估诊断或考虑其他色素性疾病？"
+  ],
+  "safety_considerations": [
+    "既往氢醌使用期间出现干燥、红斑和瘙痒，重新使用时需关注刺激性皮炎和耐受性。",
+    "长期或不规范使用氢醌需检索外源性褐黄病等少见不良反应及推荐疗程。",
+    "半胱胺存在气味和轻度刺激，需评估持续使用的可行性和局部耐受性。",
+    "分布不完全对称且治疗反应有限，不能仅按黄褐斑处理，应结合临床表现考虑必要的诊断复核。"
+  ],
+  "photoprotection_history": {
+    "sunscreen_use": true,
+    "sunscreen_details": "使用SPF30防晒霜，通常仅在出门前涂用一次；道路施工期间很少补涂，偶尔佩戴帽子，未持续使用其他遮光措施。",
+    "photoprotection_adherence": "不规律，能够使用基础防晒，但职业性户外暴露下补涂和遮光不足。"
+  },
+  "pregnancy_hormone_context": {
+    "pregnancy_status": "男性，不涉及妊娠、哺乳或生育相关用药情境。",
+    "hormonal_exposure": "否认口服激素、激素替代治疗及其他明确激素暴露。",
+    "hormonal_risk_note": "当前病历未提示妊娠或外源性激素相关风险；检索重点应放在长期光热暴露、复发性黄褐斑及外用治疗耐受性。"
+  },
+  "topical_treatment_history": [
+    {
+      "treatment_name": "4%氢醌乳膏",
+      "active_ingredient": "氢醌",
+      "duration": "每晚1次，连续16周",
+      "response": "早期色斑颜色约减轻三成，停用后在强日晒季节再次加深。",
+      "adverse_reaction": "后期出现局部干燥、轻度红斑和瘙痒，停用后缓解。"
+    },
+    {
+      "treatment_name": "5%半胱胺乳膏",
+      "active_ingredient": "半胱胺",
+      "duration": "约12周，使用不连续",
+      "response": "色斑部分改善，但未达到满意程度。",
+      "adverse_reaction": "存在轻度刺激和明显气味，影响持续使用。"
+    }
+  ],
+  "evidence_retrieval_queries": [
+    "recurrent refractory melasma maintenance treatment after hydroquinone relapse",
+    "cysteamine versus hydroquinone topical treatment melasma efficacy tolerability",
+    "occupational outdoor sun exposure heat photoprotection adherence melasma recurrence prevention",
+    "long-term hydroquinone use melasma adverse effects ochronosis irritant dermatitis",
+    "melasma asymmetric facial pigmentation differential diagnosis clinical evaluation"
+  ]
+}

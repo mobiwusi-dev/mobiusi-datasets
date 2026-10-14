@@ -1,0 +1,76 @@
+{
+  "evidence_domains": [
+    "外用治疗疗效与比较",
+    "激素暴露相关安全性",
+    "光防护与维持治疗",
+    "复发管理",
+    "外用药物不良反应"
+  ],
+  "clinical_record": "32岁女性，面部色素沉着约2年。妊娠中晚期开始出现，分娩后部分减退但未消退；近一年服用复方口服避孕药。双侧颧部、额部和上唇出现边界较清楚的浅至中褐色色斑，无鳞屑、红斑或瘙痒，日晒及夏季户外活动后加深。既往使用含氢醌、维A酸和弱效糖皮质激素的复方外用方案，每晚一次12周，颜色约减轻一半，但第4周起有轻度刺痛和脱屑，停用后缓解；之后间断使用壬二酸15%乳膏约8周，改善不明显且无明显刺激。平时使用SPF50+ PA++++防晒霜，但通常仅早晨涂一次，长时间户外时偶尔使用遮阳伞，补涂不规律。复方方案停用并经历一次夏季日晒后色斑再次加深，过去约有2次类似复发，最近一次加重距本次就诊约4个月。",
+  "trigger_factors": [
+    "妊娠期激素变化",
+    "复方口服避孕药相关激素暴露",
+    "日晒，尤其是夏季户外活动",
+    "治疗停用后的维持不足"
+  ],
+  "recurrence_status": {
+    "recurrence": true,
+    "recurrence_count": 2,
+    "interval_since_last_relapse": "约4个月",
+    "relapse_trigger": "复方方案停用后维持治疗不足，并在夏季经历较多日晒后色斑再次加深。"
+  },
+  "lesion_distribution": {
+    "lesion_sites": [
+      "双侧颧部",
+      "额部",
+      "上唇"
+    ],
+    "bilateral_symmetry": true,
+    "distribution_pattern": "混合型，以面中部分布为主",
+    "affected_extent": "累及双侧面颊、额部和上唇，约占面部可见皮肤的五分之一；色素中等程度，无明显炎症表现。"
+  },
+  "management_questions": [
+    "对于既往复方外用方案有效但出现刺激且停药后复发的患者，哪些外用治疗和维持策略证据较充分？",
+    "复方口服避孕药是否可能促进黄褐斑加重，是否需要评估替代避孕方式？",
+    "规律广谱防晒和补涂对降低黄褐斑复发风险的证据及推荐做法是什么？",
+    "含氢醌、维A酸和糖皮质激素的复方方案应如何控制疗程并监测局部不良反应？"
+  ],
+  "safety_considerations": [
+    "既往复方外用方案引起刺痛和脱屑，需检索刺激性皮炎及停药后的监测与替代方案。",
+    "含维A酸和糖皮质激素的复方制剂不宜在缺乏疗程控制和随访的情况下长期使用。",
+    "需评估复方口服避孕药与黄褐斑加重的可能关联，并结合患者生育计划讨论避孕选择。",
+    "长期或不规范使用氢醌需关注局部刺激及其他皮肤不良反应。"
+  ],
+  "photoprotection_history": {
+    "sunscreen_use": true,
+    "sunscreen_details": "使用SPF50+、PA++++防晒霜，通常每日早晨涂用；长时间户外活动时偶尔使用遮阳伞，未能按需规律补涂。",
+    "photoprotection_adherence": "间断，基础防晒能够执行，但补涂和遮光措施不规律。"
+  },
+  "pregnancy_hormone_context": {
+    "pregnancy_status": "目前未妊娠，已结束上次妊娠，当前无哺乳情况，暂无再次妊娠计划。",
+    "hormonal_exposure": "近一年使用复方口服避孕药；黄褐斑最初在妊娠中晚期出现。",
+    "hormonal_risk_note": "需检索口服避孕药及妊娠相关激素变化与黄褐斑发生或加重的关联，并核对未来妊娠时外用治疗的安全边界；既往复方方案出现刺激，应关注维A酸及含糖皮质激素成分的使用风险。"
+  },
+  "topical_treatment_history": [
+    {
+      "treatment_name": "复方脱色外用方案",
+      "active_ingredient": "氢醌、维A酸、氟轻松",
+      "duration": "每晚1次，连续12周",
+      "response": "色斑颜色约减轻一半，停用后未能维持。",
+      "adverse_reaction": "使用第4周起出现轻度刺痛和脱屑，停用后缓解。"
+    },
+    {
+      "treatment_name": "壬二酸15%乳膏",
+      "active_ingredient": "壬二酸",
+      "duration": "间断使用约8周，每晚1次",
+      "response": "改善不明显。",
+      "adverse_reaction": "未见明显刺激或其他不良反应。"
+    }
+  ],
+  "evidence_retrieval_queries": [
+    "melasma maintenance therapy recurrence prevention after triple combination cream hydroquinone tretinoin corticosteroid",
+    "combined oral contraceptives hormonal exposure melasma worsening evidence",
+    "broad-spectrum sunscreen adherence reapplication melasma relapse prevention guideline",
+    "topical hydroquinone tretinoin corticosteroid triple combination duration adverse effects melasma"
+  ]
+}
