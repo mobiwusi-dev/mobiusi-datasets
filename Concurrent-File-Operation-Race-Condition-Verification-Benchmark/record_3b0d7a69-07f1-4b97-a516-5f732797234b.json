@@ -1,0 +1,25 @@
+{
+  "source_code": "import threading\n\nclass FileStore:\n    def __init__(self):\n        self.handles = {}\n        self.cache = {}\n        self.lock = threading.Lock()\n\n    def open_for_read(self, path):\n        with self.lock:\n            handle = self.handles.get(path)\n            if handle is None:\n                handle = open(path, \"rb\")\n                self.handles[path] = handle\n            return handle\n\n    def read(self, path):\n        handle = self.open_for_read(path)\n        data = handle.read()\n        self.cache[path] = data\n        return data\n\n    def close(self, path):\n        with self.lock:\n            handle = self.handles.pop(path, None)\n            if handle is not None:\n                handle.close()",
+  "task_context": "这是一个模拟分布式文件客户端的共享文件句柄缓存。多个读取线程通过同一个 FileStore 访问远端挂载点上的文件，后台清理线程根据空闲策略调用 close。open_for_read 只在锁保护下查找或创建句柄，但 read 在释放锁后继续使用返回的句柄。",
+  "repair_objective": "修复文件句柄生命周期竞态，确保 close 不会在另一个线程完成 read 之前关闭句柄。可以让读取操作在生命周期锁内完成，或引入引用计数和关闭等待机制。同时，缓存更新也必须与成功的读取绑定，不能在关闭后的无效读取或异常读取后写入缓存。",
+  "concurrency_risks": [
+    "共享文件句柄生命周期竞态",
+    "关闭后访问",
+    "缓存状态与文件句柄状态不一致",
+    "异常路径资源管理不完整"
+  ],
+  "validation_criteria": [
+    "在 close 与 read 被刻意交错时，read 不得访问已关闭的句柄，也不得抛出因生命周期竞态导致的 ValueError。",
+    "多个读取线程并发访问同一路径时，句柄关闭只能发生在活动读取引用数归零之后。",
+    "读取异常后，handles、引用计数和 cache 不得留下指向无效句柄或不完整数据的状态。",
+    "缓存中的数据只能来自成功完成的读取，关闭操作不能使缓存与句柄生命周期产生无法解释的状态。"
+  ],
+  "programming_language": "Python 3",
+  "concurrency_test_setup": "使用测试控制事件顺序：读取线程在 open_for_read 返回句柄后暂停，清理线程随后获得锁并执行 close，读取线程再调用 handle.read。另测异常路径，即 read 抛出 ValueError 或 I/O 异常时检查句柄表和缓存是否仍保持一致。测试不依赖真实采集数据，文件内容可由临时测试桩提供。",
+  "deadlock_risk_detected": false,
+  "race_condition_detected": true,
+  "expected_correct_behavior": "读取操作应持有句柄生命周期保护直到 read 完成，或者为每个句柄增加引用计数，使 close 只标记待关闭并等待活动读取结束。只有成功读取的数据才能更新缓存；最后一个读取者释放引用后，句柄才可关闭。异常发生时也必须释放引用并清理待关闭句柄。",
+  "operation_and_lock_summary": "lock 只保护 handles 字典中的查找、插入和移除；read 返回句柄后已经离开锁的保护范围，因此 close 可以移除并关闭同一个句柄。read 还在未获得同一把锁的情况下更新 cache，导致缓存更新与实际读取生命周期脱节。",
+  "repair_verification_summary": "静态检查可确定返回句柄后再使用的时间窗口与 close 存在生命周期竞态。修复后应通过受控事件顺序验证读取和关闭的边界；当前记录不宣称已经执行测试，仍需关注读取异常、重复 close 和清理线程取消等待等边界路径。",
+  "state_consistency_risk_detected": true
+}

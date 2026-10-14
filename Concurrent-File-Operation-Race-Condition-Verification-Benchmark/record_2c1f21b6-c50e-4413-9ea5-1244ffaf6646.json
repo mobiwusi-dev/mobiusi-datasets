@@ -1,0 +1,25 @@
+{
+  "race_condition_detected": false,
+  "source_code": "import threading\n\nclass MetadataCache:\n    def __init__(self):\n        self.metadata = {}\n        self.cache = {}\n        self.metadata_lock = threading.Lock()\n        self.cache_lock = threading.Lock()\n\n    def refresh(self, path, stat):\n        with self.metadata_lock:\n            self.metadata[path] = stat\n            with self.cache_lock:\n                self.cache[path] = {\n                    \"mtime_ns\": stat.st_mtime_ns,\n                    \"size\": stat.st_size,\n                }\n\n    def invalidate(self, path):\n        with self.cache_lock:\n            self.cache.pop(path, None)\n            with self.metadata_lock:\n                self.metadata.pop(path, None)",
+  "task_context": "这是一个文件客户端的元数据刷新与失效场景。刷新线程先更新元数据表，再更新内容缓存；删除或重命名通知线程先清理内容缓存，再清理元数据。两个线程可能同时处理同一个路径，且两类操作都需要同时维护两个共享结构。",
+  "repair_objective": "消除 metadata_lock 和 cache_lock 的锁顺序反转。所有需要同时持有两把锁的操作必须遵守同一全局顺序，例如始终先获取 metadata_lock、再获取 cache_lock；异常路径也必须通过上下文管理器释放锁，并保证元数据和缓存的失效操作具有一致的可见结果。",
+  "concurrency_risks": [
+    "锁获取顺序反转",
+    "死锁",
+    "元数据与缓存部分失效导致的状态不一致",
+    "复合更新缺乏统一锁顺序"
+  ],
+  "validation_criteria": [
+    "在屏障强制形成相互等待的调度下，所有线程都应在超时前完成，不能出现循环等待。",
+    "代码中的每条执行路径都应遵守相同的锁获取顺序，且锁应在 finally 或上下文管理器路径中释放。",
+    "invalidate 完成后，同一路径不应只存在于 metadata 或 cache 其中一个结构中，除非该状态由明确协议定义。",
+    "并发刷新和失效操作重复执行后，最终可观察状态应与最后一个已提交操作一致，不能因死锁中断留下半完成更新。"
+  ],
+  "programming_language": "Python 3",
+  "concurrency_test_setup": "构造两个线程并使用屏障：刷新线程获取 metadata_lock 后暂停，失效线程获取 cache_lock 后暂停，然后分别继续尝试获取第二把锁。测试设置超时检测循环等待，并增加异常注入以检查部分更新。另测试多个路径交错刷新和失效，确认不会因锁顺序不同产生不可恢复的阻塞。",
+  "deadlock_risk_detected": true,
+  "expected_correct_behavior": "所有复合操作均按固定的全局顺序获取锁，并在完成两个共享结构的更新后再释放锁。刷新和失效操作不得永久阻塞；失效完成后路径不应只从一个结构中消失。若操作失败，应通过明确的回滚或一致的失效标记避免暴露半更新状态。",
+  "operation_and_lock_summary": "refresh 按 metadata_lock 到 cache_lock 的顺序嵌套获取锁，而 invalidate 按 cache_lock 到 metadata_lock 的相反顺序获取锁。两条路径都在持有第一把锁时等待第二把锁，因此可能形成循环等待；如果其中一条路径中断或被阻塞，缓存和元数据还可能只完成一半更新。",
+  "repair_verification_summary": "静态锁图显示 refresh 与 invalidate 存在明确的环形等待关系，因此死锁风险为真；共享字典的单项访问均受相应锁保护，未发现独立的无锁读写竞态。修复应统一锁顺序并验证复合更新的原子可见性；不代表已经运行过线程测试。",
+  "state_consistency_risk_detected": true
+}

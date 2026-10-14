@@ -1,0 +1,25 @@
+{
+  "source_code": "import threading\n\nclass AppendStore:\n    def __init__(self):\n        self.io_lock = threading.Lock()\n\n    def append_record(self, path, record):\n        with self.io_lock:\n            with open(path, \"r\", encoding=\"utf-8\") as stream:\n                previous = stream.read()\n\n        updated = previous + record\n\n        with self.io_lock:\n            with open(path, \"w\", encoding=\"utf-8\") as stream:\n                stream.write(updated)",
+  "task_context": "这是一个向分布式文件系统中的日志文件追加记录的客户端封装。多个工作线程共享一个 AppendStore，先读取完整文件，再在稍后重新打开文件写回追加后的内容。代码使用了同一把锁，但读取和写回被分成两个临界区。",
+  "repair_objective": "将读取、追加内容计算和写回操作放在同一个不可分割的临界区内，或改用具有追加语义且满足并发要求的文件操作。修复必须保证两个并发调用的记录都被保留，不能让后完成写入的线程用过期快照覆盖先完成的更新。",
+  "concurrency_risks": [
+    "读-改-写数据竞态",
+    "丢失更新",
+    "过期快照覆盖新内容",
+    "文件内容状态不一致"
+  ],
+  "validation_criteria": [
+    "两个线程基于同一初始内容并发追加时，最终文件必须包含两条记录，不能只保留其中一条。",
+    "锁的保护范围必须覆盖读取、更新计算和写回，或者实现等价的原子追加协议。",
+    "重复执行不同调度顺序后，记录不能被旧快照覆盖，也不能出现由竞态造成的重复记录。",
+    "发生写入异常时，文件句柄必须关闭，并且修复方案不能把未完整提交的内容作为成功状态暴露给后续读取者。"
+  ],
+  "programming_language": "Python 3",
+  "concurrency_test_setup": "使用两个线程对同一路径追加不同的记录，并在第一次临界区读取完成后设置屏障，使两个线程都拿到相同的 previous 快照，再允许它们依次进入写回阶段。重复测试不同的锁调度，并检查最终文件内容是否同时包含两条记录且没有重复或丢失。",
+  "deadlock_risk_detected": false,
+  "race_condition_detected": true,
+  "expected_correct_behavior": "每次追加应以一个完整的原子临界区完成，其他线程不能在当前调用读取快照到写回结果之间插入。修复后两个并发追加都应被保留，文件应保持合法的记录格式，且任一 I/O 异常都不应让文件处于半写入状态。",
+  "operation_and_lock_summary": "io_lock 分别保护读取和写回，但没有覆盖完整的读-改-写事务。两个线程可以先后读取相同的旧内容，分别计算自己的 updated 值，之后后写入者会覆盖先写入者的记录。文件句柄本身在各个 with 块内正确关闭，但这不能消除跨临界区的逻辑竞态。",
+  "repair_verification_summary": "静态分析表明同一把锁被拆分用于两个阶段，无法保护读-改-写整体，因此存在确定的丢失更新路径。修复后应通过屏障控制的并发追加测试验证两条记录均保留；若改用操作系统追加语义，还需额外确认单次写入边界、记录格式和分布式文件系统的原子性保证。",
+  "state_consistency_risk_detected": true
+}
