@@ -1,0 +1,137 @@
+{
+  "source_code": "from dataclasses import dataclass\nfrom fastapi import APIRouter, Depends, Header, HTTPException\nfrom app.auth import decode_access_token\nfrom app.broker import broker\n\nrouter = APIRouter()\n\n@dataclass\nclass RequestContext:\n    subject: str\n    tenant_id: str\n    role: str\n    scopes: set[str]\n\ndef require_context(authorization: str = Header(...)) -> RequestContext:\n    if not authorization.startswith('Bearer '):\n        raise HTTPException(status_code=401, detail='missing bearer token')\n    claims = decode_access_token(authorization[7:])\n    if claims is None:\n        raise HTTPException(status_code=401, detail='invalid token')\n    return RequestContext(\n        subject=claims['sub'],\n        tenant_id=claims['tenant_id'],\n        role=claims.get('role', 'member'),\n        scopes=set(claims.get('scopes', )),\n    )\n\ndef publish_event(ctx: RequestContext, body: dict) -> dict:\n    topic = body['topic']\n    if not topic.startswith(f'{ctx.tenant_id}.'):\n        raise HTTPException(status_code=403, detail='tenant boundary violation')\n    broker.publish(topic=topic, payload=body['payload'], headers={'tenant_id': ctx.tenant_id})\n    return {'accepted': True}\n\n@router.post('/v1/events')\ndef publish(body: dict, ctx: RequestContext = Depends(require_context)):\n    return publish_event(ctx, body)\n\n@router.post('/admin/tenants/{tenant_id}/replay')\ndef replay(tenant_id: str, event_id: str, authorization: str = Header(...)) -> dict:\n    ctx = require_context(authorization)\n    if ctx.role != 'platform_admin':\n        raise HTTPException(status_code=403, detail='platform admin required')\n    if tenant_id != ctx.tenant_id and ctx.role != 'platform_admin':\n        raise HTTPException(status_code=403, detail='tenant mismatch')\n    broker.replay(tenant_id=tenant_id, event_id=event_id)\n    return {'accepted': True}",
+  "task_context": {
+    "task_description": "分析事件发布和租户管理接口的安全调用链，定位普通已认证用户是否可以绕过细粒度发布权限，并提出不破坏平台管理员跨租户运维能力的修复方案。",
+    "target_files": [
+      "app/api/events.py",
+      "app/auth.py",
+      "app/broker.py"
+    ],
+    "requested_change": "在 publish_event 中强制检查 events:publish 权限，并继续使用令牌中的 tenant_id 进行主题边界校验；为管理员重放接口保留 platform_admin 检查，同时补充针对跨租户操作的审计记录。"
+  },
+  "security_domains": [
+    "Bearer 令牌认证",
+    "基于作用域的授权",
+    "租户隔离",
+    "事件发布访问控制",
+    "管理接口权限检查"
+  ],
+  "security_summary": "该代码正确验证了 Bearer 令牌并在事件发布和管理重放路径中传播租户上下文，但普通事件发布路径只做了主题前缀校验，没有执行 events:publish 细粒度授权。管理接口具备 platform_admin 检查，不过跨租户操作的审计和策略表达仍不够明确。",
+  "detected_language": "Python",
+  "security_call_chain": {
+    "entry_points": [
+      "POST /v1/events",
+      "POST /admin/tenants/{tenant_id}/replay"
+    ],
+    "nodes": [
+      {
+        "symbol_name": "publish",
+        "file_path": "app/api/events.py",
+        "node_type": "接口处理函数",
+        "security_role": "接收事件发布请求并注入认证上下文"
+      },
+      {
+        "symbol_name": "require_context",
+        "file_path": "app/api/events.py",
+        "node_type": "依赖函数",
+        "security_role": "解析 Bearer 令牌并构造主体、租户和作用域上下文"
+      },
+      {
+        "symbol_name": "publish_event",
+        "file_path": "app/api/events.py",
+        "node_type": "函数",
+        "security_role": "执行主题租户前缀校验并提交消息"
+      },
+      {
+        "symbol_name": "broker.publish",
+        "file_path": "app/broker.py",
+        "node_type": "消息发布方法",
+        "security_role": "将带租户标识的事件写入消息平台"
+      },
+      {
+        "symbol_name": "replay",
+        "file_path": "app/api/events.py",
+        "node_type": "接口处理函数",
+        "security_role": "检查平台管理员身份并执行管理重放操作"
+      },
+      {
+        "symbol_name": "broker.replay",
+        "file_path": "app/broker.py",
+        "node_type": "管理方法",
+        "security_role": "按租户和事件标识重新投递事件"
+      }
+    ],
+    "edges": [
+      {
+        "caller": "publish",
+        "callee": "require_context",
+        "relation": "依赖注入",
+        "propagated_policy": "Bearer 身份、subject、tenant_id 和 scopes 进入请求上下文"
+      },
+      {
+        "caller": "publish",
+        "callee": "publish_event",
+        "relation": "直接调用",
+        "propagated_policy": "RequestContext 中的 tenant_id 被用于主题边界校验"
+      },
+      {
+        "caller": "publish_event",
+        "callee": "broker.publish",
+        "relation": "直接调用",
+        "propagated_policy": "tenant_id 写入消息头，但当前未传播或检查 events:publish 作用域"
+      },
+      {
+        "caller": "replay",
+        "callee": "require_context",
+        "relation": "直接调用",
+        "propagated_policy": "Bearer 身份和 role 进入管理接口检查"
+      },
+      {
+        "caller": "replay",
+        "callee": "broker.replay",
+        "relation": "直接调用",
+        "propagated_policy": "platform_admin 策略和目标 tenant_id 传递至重放操作"
+      }
+    ]
+  },
+  "authorization_findings": [
+    {
+      "finding_type": "缺少细粒度发布权限校验",
+      "severity": "高",
+      "location": "app/api/events.py: publish_event",
+      "evidence": "def publish_event(ctx: RequestContext, body: dict) -> dict:\n    topic = body['topic']\n    if not topic.startswith(f'{ctx.tenant_id}.'):\n        raise HTTPException(status_code=403, detail='tenant boundary violation')\n    broker.publish(topic=topic, payload=body['payload'], headers={'tenant_id': ctx.tenant_id})",
+      "impact": "任何持有有效 Bearer 令牌且属于目标租户的成员，只要能够构造合法租户前缀的主题，就可能发布消息，即使其令牌没有 events:publish 作用域。攻击者可注入伪造事件、触发下游流程或增加租户消息成本。",
+      "recommended_fix": "在主题校验前调用统一授权器，例如 authorize(ctx, 'events:publish', topic)，明确拒绝缺少作用域的请求；同时为允许的角色和作用域增加单元测试及审计日志。"
+    }
+  ],
+  "admin_permission_checks": [
+    {
+      "endpoint": "POST /admin/tenants/{tenant_id}/replay",
+      "required_permission": "platform_admin，且目标租户应与主体租户一致，跨租户时需平台级运维授权",
+      "check_location": "app/api/events.py: replay",
+      "check_result": "已检查 platform_admin 角色并执行租户条件判断；由于第二个条件包含同一角色的否定分支，平台管理员可以跨租户操作，但当前没有显式审计事件或独立的跨租户权限名称。"
+    }
+  ],
+  "tenant_isolation_analysis": {
+    "isolation_mechanisms": [
+      "令牌 claims 中的 tenant_id 绑定请求上下文",
+      "发布主题必须以当前租户标识加句点开头",
+      "发布消息头写入 tenant_id",
+      "管理重放接口要求 platform_admin 角色"
+    ],
+    "tenant_context_flow": "require_context 从已验证令牌提取 tenant_id，构造 RequestContext 后传入 publish_event；publish_event 使用该值校验主题前缀，并将其写入 broker.publish 的消息头。replay 接口单独读取相同上下文并把路径中的 tenant_id 传给管理操作。",
+    "cross_tenant_risks": [
+      "当前主题前缀校验只能约束租户边界，不能替代资源级发布权限检查。",
+      "管理重放接口的跨租户分支由 platform_admin 条件保护，但缺少显式的跨租户审计记录。"
+    ]
+  },
+  "implementation_change_plan": "1. 在 app/auth.py 或统一策略模块增加 authorize 函数，区分身份认证、作用域授权和租户资源授权。2. 在 publish_event 中检查 events:publish，并将 topic 作为资源传入授权器。3. 保留 tenant_id 前缀校验，避免将作用域授权误当作租户隔离。4. 为普通成员、无作用域成员、同租户管理员和跨租户平台管理员分别增加测试。5. 在 replay 的跨租户分支写入审计事件，并验证 broker 层不会接受缺失租户上下文的调用。",
+  "transport_security_controls": [
+    {
+      "control_type": "访问令牌传输",
+      "location": "app/api/events.py: require_context",
+      "implementation_status": "部分实现",
+      "evidence": "代码只接受 Authorization 头中的 Bearer 令牌；HTTPS 终止和令牌传输加密未在该代码片段中体现。"
+    }
+  ]
+}

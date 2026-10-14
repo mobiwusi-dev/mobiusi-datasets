@@ -1,0 +1,144 @@
+{
+  "source_code": "import ssl\nfrom fastapi import APIRouter, Header, HTTPException\nfrom app.auth import decode_access_token\nfrom app.broker import BrokerClient\n\nrouter = APIRouter()\n\nclass BrokerTLSConfig:\n    def build_context(self) -> ssl.SSLContext:\n        context = ssl.create_default_context()\n        context.minimum_version = ssl.TLSVersion.TLSv1_2\n        context.check_hostname = False\n        context.verify_mode = ssl.CERT_NONE\n        return context\n\n    def connect(self, host: str, port: int) -> BrokerClient:\n        return BrokerClient(host=host, port=port, ssl_context=self.build_context())\n\nclient = BrokerTLSConfig().connect('broker.internal', 9093)\n\n@router.delete('/admin/topics/{topic}')\ndef delete_topic(topic: str, authorization: str = Header(...)) -> dict:\n    token = decode_access_token(authorization.removeprefix('Bearer '))\n    if token is None:\n        raise HTTPException(status_code=401, detail='invalid token')\n    client.delete_topic(topic)\n    return {'deleted': topic}\n\n@router.get('/v1/topics/{topic}/metadata')\ndef topic_metadata(topic: str, authorization: str = Header(...)) -> dict:\n    token = decode_access_token(authorization.removeprefix('Bearer '))\n    if token is None:\n        raise HTTPException(status_code=401, detail='invalid token')\n    if not topic.startswith(f\"{token['tenant_id']}.\"):\n        raise HTTPException(status_code=403, detail='tenant mismatch')\n    return client.metadata(topic)",
+  "task_context": {
+    "task_description": "检查消息代理客户端的 TLS 配置以及删除主题管理接口，定位证书校验和高风险管理操作授权方面的问题，并给出最小安全修复。",
+    "target_files": [
+      "app/broker_client.py",
+      "app/api/admin_topics.py",
+      "app/auth.py"
+    ],
+    "requested_change": "启用主机名和证书链校验，限制到 TLS 1.2 或更高版本；删除主题接口必须要求 platform_admin 或 topics:delete 权限，并在授权前后绑定目标租户。"
+  },
+  "security_domains": [
+    "传输安全",
+    "TLS 证书校验",
+    "Bearer 令牌认证",
+    "管理接口授权",
+    "租户隔离"
+  ],
+  "security_summary": "该代码在 TLS 版本上有基本限制，但显式关闭了证书和主机名校验，传输安全不足。主题元数据读取具备租户前缀检查，而删除主题管理接口只有认证没有授权和租户绑定，构成严重的高风险管理操作暴露。",
+  "detected_language": "Python",
+  "security_call_chain": {
+    "entry_points": [
+      "BrokerTLSConfig.connect",
+      "DELETE /admin/topics/{topic}",
+      "GET /v1/topics/{topic}/metadata"
+    ],
+    "nodes": [
+      {
+        "symbol_name": "BrokerTLSConfig.build_context",
+        "file_path": "app/broker_client.py",
+        "node_type": "方法",
+        "security_role": "创建消息代理 TLS 上下文"
+      },
+      {
+        "symbol_name": "BrokerTLSConfig.connect",
+        "file_path": "app/broker_client.py",
+        "node_type": "方法",
+        "security_role": "使用 TLS 上下文建立代理客户端"
+      },
+      {
+        "symbol_name": "delete_topic",
+        "file_path": "app/api/admin_topics.py",
+        "node_type": "接口处理函数",
+        "security_role": "认证后执行删除主题管理操作"
+      },
+      {
+        "symbol_name": "topic_metadata",
+        "file_path": "app/api/admin_topics.py",
+        "node_type": "接口处理函数",
+        "security_role": "认证并校验租户主题边界后读取元数据"
+      },
+      {
+        "symbol_name": "client.delete_topic",
+        "file_path": "app/broker_client.py",
+        "node_type": "客户端方法",
+        "security_role": "向代理发送删除主题请求"
+      }
+    ],
+    "edges": [
+      {
+        "caller": "BrokerTLSConfig.connect",
+        "callee": "BrokerTLSConfig.build_context",
+        "relation": "直接调用",
+        "propagated_policy": "TLS 最低版本和证书验证配置传入 BrokerClient"
+      },
+      {
+        "caller": "delete_topic",
+        "callee": "decode_access_token",
+        "relation": "直接调用",
+        "propagated_policy": "Bearer 令牌身份进入管理请求，但未解析权限或租户约束"
+      },
+      {
+        "caller": "delete_topic",
+        "callee": "client.delete_topic",
+        "relation": "直接调用",
+        "propagated_policy": "仅传播未经资源授权的 topic 参数"
+      },
+      {
+        "caller": "topic_metadata",
+        "callee": "decode_access_token",
+        "relation": "直接调用",
+        "propagated_policy": "token 中的 tenant_id 用于主题前缀校验"
+      },
+      {
+        "caller": "topic_metadata",
+        "callee": "client.metadata",
+        "relation": "直接调用",
+        "propagated_policy": "通过前缀检查后的租户主题进入代理读取操作"
+      }
+    ]
+  },
+  "authorization_findings": [
+    {
+      "finding_type": "管理接口缺少高风险操作权限校验",
+      "severity": "严重",
+      "location": "app/api/admin_topics.py: delete_topic",
+      "evidence": "def delete_topic(topic: str, authorization: str = Header(...)) -> dict:\n    token = decode_access_token(authorization.removeprefix('Bearer '))\n    if token is None:\n        raise HTTPException(status_code=401, detail='invalid token')\n    client.delete_topic(topic)",
+      "impact": "任何能够获得有效令牌的主体都可能删除任意主题。该操作可造成跨租户消息丢失、业务中断和不可逆的数据破坏。",
+      "recommended_fix": "在 client.delete_topic 之前调用统一授权器，要求 platform_admin 或 topics:delete，并验证 token 的 tenant_id 与目标主题所属租户一致；跨租户删除应使用单独的 platform_topics:delete 权限并记录审计事件。"
+    },
+    {
+      "finding_type": "租户边界未传播到删除操作",
+      "severity": "高",
+      "location": "app/api/admin_topics.py: delete_topic",
+      "evidence": "delete_topic 只检查 decode_access_token 的返回值是否为空，没有读取 token['tenant_id']，也没有检查 topic 的租户前缀。",
+      "impact": "即使补充了一个通用删除权限，拥有该权限的普通租户主体仍可能将主题路径替换为其他租户的主题，从而造成跨租户删除。",
+      "recommended_fix": "解析主题所属租户并与令牌 tenant_id 做资源级比较；将目标租户作为授权器输入，而不是仅依赖 URL 或字符串参数。"
+    }
+  ],
+  "admin_permission_checks": [
+    {
+      "endpoint": "DELETE /admin/topics/{topic}",
+      "required_permission": "platform_admin 或 topics:delete；跨租户操作需要 platform_topics:delete",
+      "check_location": "app/api/admin_topics.py: delete_topic",
+      "check_result": "仅检查令牌是否能够解析，未检查角色、作用域、目标主题租户或操作审计，因此权限检查不完整。"
+    }
+  ],
+  "tenant_isolation_analysis": {
+    "isolation_mechanisms": [
+      "主题元数据接口使用 token tenant_id 进行前缀校验",
+      "租户标识嵌入主题命名约定"
+    ],
+    "tenant_context_flow": "topic_metadata 从令牌中读取 tenant_id，并要求 topic 以该值加句点开头后才调用 client.metadata。delete_topic 虽然解析了令牌，但没有把其中的 tenant_id 传播到授权或代理删除调用。",
+    "cross_tenant_risks": [
+      "删除主题接口未校验主题所属租户，路径参数可被替换为其他租户主题。",
+      "主题命名约定只在元数据读取接口使用，未形成代理客户端层的统一资源边界。"
+    ]
+  },
+  "implementation_change_plan": "1. 将 TLS 上下文改为使用受信任 CA，并保持 check_hostname 为 True、verify_mode 为 ssl.CERT_REQUIRED。2. 为 BrokerClient 增加不可绕过的安全默认值，拒绝外部传入 CERT_NONE。3. 在 delete_topic 中解析主题所属租户，调用 authorize(token, 'topics:delete', resource_tenant)。4. 对 platform_admin 的跨租户删除使用显式权限和审计事件。5. 增加证书不受信、主机名不匹配、普通成员删除同租户主题、跨租户删除和合法管理员删除等测试。",
+  "transport_security_controls": [
+    {
+      "control_type": "TLS 协议版本",
+      "location": "app/broker_client.py: BrokerTLSConfig.build_context",
+      "implementation_status": "已实现但仍需配置审计",
+      "evidence": "context.minimum_version = ssl.TLSVersion.TLSv1_2 将最低版本限制为 TLS 1.2。"
+    },
+    {
+      "control_type": "服务器证书和主机名校验",
+      "location": "app/broker_client.py: BrokerTLSConfig.build_context",
+      "implementation_status": "弱配置，待修复",
+      "evidence": "context.check_hostname = False\ncontext.verify_mode = ssl.CERT_NONE\n这会关闭主机名和证书链校验，使客户端容易受到中间人攻击。"
+    }
+  ]
+}

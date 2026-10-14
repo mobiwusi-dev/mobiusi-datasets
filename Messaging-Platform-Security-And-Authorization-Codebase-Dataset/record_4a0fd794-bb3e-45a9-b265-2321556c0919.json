@@ -1,0 +1,160 @@
+{
+  "security_call_chain": {
+    "entry_points": [
+      "POST /v1/events/{event_id}/retry",
+      "retry_in_background",
+      "POST /admin/keys/rotate"
+    ],
+    "nodes": [
+      {
+        "symbol_name": "retry_event",
+        "file_path": "app/api/retry.py",
+        "node_type": "接口处理函数",
+        "security_role": "认证请求并检查事件租户和重试权限"
+      },
+      {
+        "symbol_name": "build_context",
+        "file_path": "app/api/retry.py",
+        "node_type": "函数",
+        "security_role": "从令牌构造主体、租户和作用域上下文"
+      },
+      {
+        "symbol_name": "authorize",
+        "file_path": "app/policy.py",
+        "node_type": "策略组件",
+        "security_role": "判断主体是否拥有目标动作和资源权限"
+      },
+      {
+        "symbol_name": "tasks.enqueue",
+        "file_path": "app/queue.py",
+        "node_type": "队列方法",
+        "security_role": "将重试任务提交到异步执行边界"
+      },
+      {
+        "symbol_name": "retry_in_background",
+        "file_path": "app/api/retry.py",
+        "node_type": "后台任务函数",
+        "security_role": "读取事件并重新发布，目前未执行授权和租户校验"
+      },
+      {
+        "symbol_name": "publisher.publish",
+        "file_path": "app/publisher.py",
+        "node_type": "发布方法",
+        "security_role": "将重试事件写回消息平台"
+      },
+      {
+        "symbol_name": "rotate_keys",
+        "file_path": "app/api/retry.py",
+        "node_type": "管理接口处理函数",
+        "security_role": "检查密钥轮换权限并执行平台密钥变更"
+      }
+    ],
+    "edges": [
+      {
+        "caller": "retry_event",
+        "callee": "build_context",
+        "relation": "直接调用",
+        "propagated_policy": "Bearer 令牌转换为 tenant_id、subject 和 scopes"
+      },
+      {
+        "caller": "retry_event",
+        "callee": "authorize",
+        "relation": "直接调用",
+        "propagated_policy": "events:retry 策略在 HTTP 请求内以事件主题为资源执行"
+      },
+      {
+        "caller": "retry_event",
+        "callee": "tasks.enqueue",
+        "relation": "事件触发",
+        "propagated_policy": "仅传递 event_id，未传递 SecurityContext 或签名授权快照"
+      },
+      {
+        "caller": "tasks.enqueue",
+        "callee": "retry_in_background",
+        "relation": "异步调度",
+        "propagated_policy": "异步边界丢失主体、租户和 events:retry 策略"
+      },
+      {
+        "caller": "retry_in_background",
+        "callee": "publisher.publish",
+        "relation": "直接调用",
+        "propagated_policy": "仅传递事件主题和负载，没有租户或权限策略"
+      },
+      {
+        "caller": "rotate_keys",
+        "callee": "authorize",
+        "relation": "直接调用",
+        "propagated_policy": "keys:rotate 权限绑定 platform 资源"
+      }
+    ]
+  },
+  "source_code": "from dataclasses import dataclass\nfrom fastapi import APIRouter, Header, HTTPException\nfrom app.auth import decode_access_token\nfrom app.events import event_store\nfrom app.policy import authorize\nfrom app.queue import tasks\nfrom app.publisher import publisher\n\nrouter = APIRouter()\n\n@dataclass\nclass SecurityContext:\n    subject: str\n    tenant_id: str\n    scopes: set[str]\n\ndef build_context(authorization: str) -> SecurityContext:\n    if not authorization.startswith('Bearer '):\n        raise HTTPException(status_code=401, detail='missing bearer token')\n    claims = decode_access_token(authorization[7:])\n    if claims is None:\n        raise HTTPException(status_code=401, detail='invalid token')\n    return SecurityContext(\n        subject=claims['sub'],\n        tenant_id=claims['tenant_id'],\n        scopes=set(claims.get('scopes', )),\n    )\n\n@router.post('/v1/events/{event_id}/retry')\ndef retry_event(event_id: str, authorization: str = Header(...)) -> dict:\n    ctx = build_context(authorization)\n    event = event_store.get(event_id)\n    if event is None or event.tenant_id != ctx.tenant_id:\n        raise HTTPException(status_code=404, detail='event not found')\n    authorize(ctx, 'events:retry', event.topic)\n    tasks.enqueue(retry_in_background, event_id)\n    return {'queued': True}\n\ndef retry_in_background(event_id: str) -> None:\n    event = event_store.get(event_id)\n    if event is None:\n        return\n    publisher.publish(topic=event.topic, payload=event.payload)\n\n@router.post('/admin/keys/rotate')\ndef rotate_keys(authorization: str = Header(...)) -> dict:\n    ctx = build_context(authorization)\n    authorize(ctx, 'keys:rotate', 'platform')\n    event_store.rotate_signing_key()\n    return {'rotated': True}",
+  "task_context": {
+    "task_description": "分析事件重试请求从 HTTP 入口进入后台任务的安全策略传播，确认授权上下文是否在异步边界丢失，并设计不会允许未授权重新发布的修改方案。",
+    "target_files": [
+      "app/api/retry.py",
+      "app/policy.py",
+      "app/queue.py",
+      "app/publisher.py"
+    ],
+    "requested_change": "让后台任务携带不可篡改的租户和主体上下文，或在任务执行时重新验证授权；发布前必须再次确认 events:retry 权限和事件租户归属，不能仅凭 event_id 查询后直接发布。"
+  },
+  "security_domains": [
+    "令牌认证",
+    "事件重试授权",
+    "异步任务安全上下文传播",
+    "租户隔离",
+    "策略执行",
+    "密钥管理接口权限"
+  ],
+  "security_summary": "该代码在 HTTP 入口正确执行了身份认证、同租户检查和 events:retry 授权，但异步队列只保存 event_id，导致主体、租户和策略在边界处丢失。后台 worker 随后无条件发布事件，形成严重的授权绕过和潜在跨租户风险。密钥轮换接口采用统一授权器，整体模式较好，但发布器底层传输安全仍需单独审查。",
+  "detected_language": "Python",
+  "authorization_findings": [
+    {
+      "finding_type": "异步任务中的策略传播丢失",
+      "severity": "严重",
+      "location": "app/api/retry.py: retry_event 与 retry_in_background",
+      "evidence": "retry_event 中先执行 authorize(ctx, 'events:retry', event.topic)，但随后只调用 tasks.enqueue(retry_in_background, event_id)。retry_in_background 通过 event_store.get(event_id) 后直接调用 publisher.publish，没有接收或重新构造 SecurityContext。",
+      "impact": "队列调用方只要能让任务携带一个有效 event_id，后台执行路径就可能绕过入口处的 events:retry 授权；若事件标识可被预测、重放或由受信任内部组件滥用，可能导致未授权事件重新发布和跨租户消息扩散。",
+      "recommended_fix": "任务消息应包含受保护的 tenant_id、subject、event_id 和授权版本，并在 worker 中重新加载事件后执行租户归属及 events:retry 检查；更安全的方案是 worker 使用服务身份调用统一策略引擎，同时把原始请求主体作为审计字段。"
+    },
+    {
+      "finding_type": "后台发布缺少租户边界校验",
+      "severity": "高",
+      "location": "app/api/retry.py: retry_in_background",
+      "evidence": "def retry_in_background(event_id: str) -> None:\n    event = event_store.get(event_id)\n    if event is None:\n        return\n    publisher.publish(topic=event.topic, payload=event.payload)",
+      "impact": "后台函数没有验证任务主体租户与事件 tenant_id 是否一致，也没有向 publisher 传递租户上下文；错误路由或被篡改的任务可能重新发布其他租户的事件。",
+      "recommended_fix": "为任务载荷增加 tenant_id，并在 worker 中使用恒等比较验证 event.tenant_id；publisher.publish 也应要求显式 tenant_id，拒绝缺失或不匹配的调用。"
+    }
+  ],
+  "admin_permission_checks": [
+    {
+      "endpoint": "POST /admin/keys/rotate",
+      "required_permission": "keys:rotate，资源为 platform",
+      "check_location": "app/api/retry.py: rotate_keys",
+      "check_result": "接口先通过 build_context 认证，再调用 authorize(ctx, 'keys:rotate', 'platform')；从当前代码看权限检查位置正确，但应确保 authorize 拒绝空作用域、过期令牌和非平台资源主体。"
+    }
+  ],
+  "tenant_isolation_analysis": {
+    "isolation_mechanisms": [
+      "HTTP 入口根据 event.tenant_id 与 ctx.tenant_id 做同租户检查",
+      "授权器接收事件主题作为资源",
+      "事件记录包含 tenant_id 字段"
+    ],
+    "tenant_context_flow": "retry_event 从令牌创建 SecurityContext，使用 tenant_id 校验事件后在同步路径调用 authorize；提交队列时只传递 event_id，进入 retry_in_background 后租户上下文不再存在，最终 publisher.publish 也未收到 tenant_id。密钥轮换接口使用 platform 资源执行独立授权。",
+    "cross_tenant_risks": [
+      "异步任务仅凭 event_id 读取和发布事件，缺少任务租户与事件租户的绑定。",
+      "发布器接口不要求租户上下文，导致调用方可以绕开入口层隔离。",
+      "若队列消息可重放，已过期或已撤销的重试权限不会在后台执行时重新检查。"
+    ]
+  },
+  "implementation_change_plan": "1. 定义不可篡改的 RetryTask，包括 event_id、tenant_id、subject、授权版本和过期时间，并由队列生产端签名或使用受保护的任务通道。2. 在 retry_in_background 中重新读取事件后验证任务 tenant_id 与 event.tenant_id 一致。3. 在 worker 执行时重新调用策略引擎检查 events:retry，处理权限撤销和策略变更。4. 修改 publisher.publish 接口为强制参数 tenant_id，并在发布器内部再次验证主题租户前缀。5. 增加任务重放、权限撤销、跨租户 event_id、租户不匹配和签名失效测试。",
+  "transport_security_controls": [
+    {
+      "control_type": "消息发布链路加密",
+      "location": "app/publisher.py: publisher.publish 的实现未包含在片段中",
+      "implementation_status": "无法从当前代码确认",
+      "evidence": "当前片段只展示 publisher.publish 的调用，没有展示其 TLS、证书校验或安全协议配置；应在发布器初始化和连接配置中进一步审查。"
+    }
+  ]
+}
