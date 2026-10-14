@@ -1,0 +1,15 @@
+{
+  "claim_text": "云杉协作 Pro 团队版月费比星河协作 Team 低 20%，而且两者功能完全相同。",
+  "risk_flags": "价格比较未覆盖增值服务和折扣条件；使用“功能完全相同”的绝对化表述，存在套餐不可比风险。",
+  "is_supported": false,
+  "claim_category": "价格优势",
+  "evidence_basis": "价格对照表显示，云杉协作 Pro 基础月费为每用户 80 元，星河协作 Team 为每用户 100 元，价格差为 20%；但两种套餐的存储容量和客服等级不同，无法证明功能完全相同。",
+  "fact_check_label": "部分支持",
+  "comparison_target": "星河协作 Team",
+  "normalized_relation": "云杉协作 Pro 的基础月费低于星河协作 Team 20%，但两者功能并不完全等同。",
+  "comparison_dimension": "价格与功能",
+  "condition_consistency": "部分一致",
+  "qualifying_conditions": "比较范围为价格表中的中国大陆地区团队基础套餐，统计时间为 2025 年 1 月；未纳入增值存储、专属客服和促销折扣。",
+  "evidence_support_level": "有限支持",
+  "fact_check_explanation": "价格资料支持云杉协作 Pro 在指定基础套餐和地区下便宜 20%，但证据同时显示两款套餐在存储和客服等方面存在差异，因此广告中关于价格的部分成立，关于功能完全相同的部分未获支持。"
+}

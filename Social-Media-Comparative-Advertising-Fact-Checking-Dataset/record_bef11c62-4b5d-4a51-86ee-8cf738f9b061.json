@@ -1,0 +1,15 @@
+{
+  "claim_text": "澄明净水器 X3 在标准流量下的铅去除率比清源净水器 Q3 高至少 10 个百分点。",
+  "risk_flags": "结论仅适用于铅去除率和指定实验条件，不应扩展为对所有污染物或所有使用场景的普遍优越性。",
+  "is_supported": true,
+  "claim_category": "效果优越性",
+  "evidence_basis": "对照测试记录显示，在预设标准条件下，澄明净水器 X3 的铅去除率为 98%，清源净水器 Q3 为 87%，前者高 11 个百分点；两组测试采用相同样本数量和判定方法。",
+  "fact_check_label": "支持",
+  "comparison_target": "清源净水器 Q3",
+  "normalized_relation": "在指定标准流量和测试条件下，澄明净水器 X3 的铅去除率比清源净水器 Q3 高 11 个百分点。",
+  "comparison_dimension": "净化效果",
+  "condition_consistency": "一致",
+  "qualifying_conditions": "比较对象均为测试中的在售版本，使用同一进水水质、相同滤芯寿命阶段和标准流量条件；结论仅适用于铅去除率，不延伸至其他污染物。",
+  "evidence_support_level": "充分支持",
+  "fact_check_explanation": "测试对两款产品采用了相同的进水条件、滤芯寿命阶段、流量和判定方法，结果显示铅去除率差异为 11 个百分点，超过广告所称的至少 10 个百分点，因此该限定范围内的效果优越性声明得到充分支持。"
+}

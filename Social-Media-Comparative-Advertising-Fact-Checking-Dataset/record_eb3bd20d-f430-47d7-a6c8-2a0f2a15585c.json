@@ -1,0 +1,15 @@
+{
+  "claim_text": "截至 2024 年底，云帆外卖是本市商户数量第一的外卖平台。",
+  "risk_flags": "市场排名容易混淆商户数量、订单量和用户数；虽已给出时间和地区，仍需在广告中明确统计指标和排名来源。",
+  "is_supported": false,
+  "claim_category": "市场排名",
+  "evidence_basis": "市场报告记录显示，2024 年 12 月本市注册商户数量排名为：速达外卖第一、云帆外卖第二、邻里送第三；报告统计口径与广告声明中的商户数量和时间范围一致。",
+  "fact_check_label": "不支持",
+  "comparison_target": "本市其他外卖平台",
+  "normalized_relation": "云帆外卖在指定城市和商户数量口径下排名第二，而非第一。",
+  "comparison_dimension": "市场排名",
+  "condition_consistency": "一致",
+  "qualifying_conditions": "声明限定为市场报告统计的 2024 年 12 月、本市注册餐饮商户数量，不代表订单量、用户数或全国排名。",
+  "evidence_support_level": "证据反驳",
+  "fact_check_explanation": "广告声明的时间、地区和指标口径与该报告一致，但报告明确显示速达外卖的注册商户数量最多，云帆外卖排名第二，因此“第一”的核心排名结论被证据直接反驳。"
+}
