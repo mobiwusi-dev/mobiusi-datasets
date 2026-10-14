@@ -1,0 +1,59 @@
+{
+  "final_answer": "可以。两次成绩可以组合为阅读和写作720分加数学730分，即1450分；SAT规则允许这种拼分，而Lakeview College明确接受拼分。由于该校对2026年秋季本科申请实行考试可选，并接受申请系统自报，申请阶段可以自报1450分，不必立即发送官方成绩报告。若被录取并确认入学，应按照学校通知再完成官方成绩核验。",
+  "question_text": "我准备申请Lakeview College 2026年秋季本科。我参加过两次SAT：第一次是阅读和写作690、数学730，第二次是阅读和写作720、数学700。该校是考试可选并接受拼分。我能否在申请系统中提交1450的拼分成绩，而不立即发送官方成绩报告？",
+  "sat_score_facts": {
+    "score_components": [
+      {
+        "section_name": "阅读和写作",
+        "minimum_score": 200,
+        "maximum_score": 800
+      },
+      {
+        "section_name": "数学",
+        "minimum_score": 200,
+        "maximum_score": 800
+      }
+    ],
+    "total_score_range": {
+      "minimum_score": 400,
+      "maximum_score": 1600
+    },
+    "score_release_rule": "SAT成绩通常在考试日期后的2至4周内发布。",
+    "score_send_rule": "申请阶段可按院校要求自报成绩；需要官方成绩时，可选择考试日期发送成绩报告，具体要求以院校政策为准。",
+    "superscoring_rule": "不同考试日期的阅读和写作、数学最高分可以组合为拼分成绩，但必须以院校明确接受拼分为前提。"
+  },
+  "linkage_analysis": {
+    "relevant_sat_rule": "SAT两个部分各为200至800分，拼分可以从不同考试日期选取各部分最高分；申请阶段是否需要官方送分由院校政策决定。",
+    "relevant_university_policy": "Lakeview College对2026年秋季本科申请实行考试可选，接受申请系统自报成绩和SAT拼分，申请阶段不要求立即发送官方成绩报告。",
+    "inference_chain": [
+      "申请人的两次成绩可分别取阅读和写作720分、数学730分，形成1450分的拼分成绩。",
+      "SAT规则允许这种跨考试日期组合，但院校政策是判断能否使用该拼分的关键；Lakeview College明确接受拼分。",
+      "由于该校考试可选且接受自报，申请人可以选择提交1450分拼分，也可以不提交SAT；申请阶段不必立即发送官方成绩报告。",
+      "若申请人被录取并确认入学，则仍需按照学校后续通知完成官方成绩核验。"
+    ],
+    "applicant_action": "在申请系统中按学校要求分别填写两次考试成绩，并将拼分结果标为1450；保存两份成绩报告，暂不发送官方成绩，除非招生办公室另行要求。录取后按时完成官方核验。"
+  },
+  "sat_rules_source": "<article><h1>SAT规则资料</h1><p>数字SAT由阅读和写作、数学两个部分组成，每部分分数范围为200至800，总分范围为400至1600。</p><p>考试成绩通常在考试日期后的2至4周内发布。申请人可以在申请系统允许的情况下先自报成绩；如果院校要求官方成绩报告，申请人可以在成绩账户中选择要发送的考试日期。最终是否需要官方送分以及送分时限由院校政策决定。</p><p>拼分是指从不同考试日期分别取阅读和写作、数学部分的最高分组成新的总分，但只有明确接受拼分的院校才会按这种方式审阅。</p></article>",
+  "answer_confidence": 0.97,
+  "evidence_citations": [
+    {
+      "source_type": "SAT规则资料",
+      "evidence_text": "不同考试日期的阅读和写作、数学最高分可以组合为拼分成绩，但必须以院校明确接受拼分为前提。",
+      "evidence_role": "定义拼分的形成方式并限定其适用条件。"
+    },
+    {
+      "source_type": "院校政策资料",
+      "evidence_text": "Lakeview College接受SAT拼分，并接受申请系统中的自报成绩；申请阶段不要求立即发送官方成绩报告。",
+      "evidence_role": "确认该校允许使用1450拼分以及申请阶段的提交方式。"
+    }
+  ],
+  "university_policy_facts": {
+    "institution_name": "Lakeview College",
+    "test_policy_type": "考试可选，提交后审阅",
+    "sat_submission_required": false,
+    "sat_submission_method": "申请系统自报；录取并确认入学后按学校要求进行官方成绩核验",
+    "superscoring_allowed": true,
+    "policy_effective_context": "2026年秋季本科一年级申请人；适用于选择提交SAT的申请者"
+  },
+  "university_policy_source": "<article><h1>Lakeview College</h1><p>适用于2026年秋季入学的本科一年级申请人。标准化考试为考试可选，申请人可以选择不提交SAT；选择提交时，招生办公室接受申请系统中的自报成绩。</p><p>Lakeview College接受SAT拼分。申请阶段不要求所有申请人立即发送官方成绩报告；被录取并确认入学的学生须按照学校后续通知完成官方成绩核验。若发送官方报告，申请人应按考试日期选择包含相应成绩的报告。</p></article>"
+}

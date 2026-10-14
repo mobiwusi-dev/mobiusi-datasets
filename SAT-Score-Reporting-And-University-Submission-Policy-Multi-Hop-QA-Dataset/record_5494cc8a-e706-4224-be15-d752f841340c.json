@@ -1,0 +1,59 @@
+{
+  "answer_confidence": 0.98,
+  "final_answer": "不能向Eastbridge提交1530作为认可的SAT成绩，因为1530是把两次考试的阅读和写作790分、数学740分跨日期组合而成的拼分，而该校明确不接受拼分。如果选择提交，应填写某一次考试日期的真实单次总分；两次单次总分都是1500分。你也可以完全不提交SAT，因为Eastbridge对2026年秋季本科实行考试可选政策，不提交不会被视为材料缺失。若选择提交并最终入学，再按学校要求发送所选考试日期的官方成绩报告。",
+  "question_text": "我准备申请Eastbridge University 2026年秋季本科。我有两次SAT成绩：第一次阅读和写作760、数学740，总分1500；第二次阅读和写作790、数学710，总分也是1500。我想把790和740组合成1530提交给学校。该校考试可选，但不接受拼分。我是否可以只提交拼分后的1530，或者完全不提交SAT？",
+  "sat_score_facts": {
+    "score_components": [
+      {
+        "section_name": "阅读和写作",
+        "minimum_score": 200,
+        "maximum_score": 800
+      },
+      {
+        "section_name": "数学",
+        "minimum_score": 200,
+        "maximum_score": 800
+      }
+    ],
+    "total_score_range": {
+      "minimum_score": 400,
+      "maximum_score": 1600
+    },
+    "score_release_rule": "SAT成绩通常在考试日期后的2至4周内发布。",
+    "score_send_rule": "申请人可按照院校政策选择是否提交成绩；若提交并需要官方报告，应按考试日期发送对应考试的成绩。",
+    "superscoring_rule": "跨考试日期组合各部分最高分属于拼分，只有明确接受拼分的院校才会将其作为申请成绩；不接受拼分的院校只审阅单次考试成绩。"
+  },
+  "linkage_analysis": {
+    "relevant_sat_rule": "1530分是由第二次考试的阅读和写作790分与第一次考试的数学740分组合得到的跨考试日期拼分，不能视为某一次考试的单次总分。",
+    "relevant_university_policy": "Eastbridge University实行考试可选政策，但选择提交时只审阅单次考试日期的总分，不接受跨日期拼分。",
+    "inference_chain": [
+      "申请人的两次实际单次考试总分分别都是1500分，1530分只存在于跨日期组合的拼分结果中。",
+      "虽然SAT规则允许在接受拼分的院校中组合790分和740分，但Eastbridge明确不接受拼分。",
+      "因此申请人不能向该校提交1530作为认可的SAT成绩；若提交，应选择某一次考试日期并填写该次的1500分。",
+      "由于该校是考试可选，申请人也可以完全不提交SAT，且不因此被视为材料缺失。"
+    ],
+    "applicant_action": "不要在Eastbridge申请系统中填写1530拼分。根据申请整体竞争力和学校材料要求，选择提交第一次或第二次考试的单次1500分，或者利用考试可选政策不提交SAT。若提交并被录取，再按学校要求发送所选考试日期的官方成绩报告。"
+  },
+  "sat_rules_source": "<article><h1>SAT规则资料</h1><p>数字SAT由阅读和写作、数学两个部分组成，每部分分数范围为200至800，总分范围为400至1600。</p><p>成绩通常在考试日期后的2至4周内发布。申请人可以根据院校政策选择是否提交成绩；需要提交时，可以按考试日期发送相应的官方成绩报告。</p><p>拼分可以把不同考试日期的各部分最高分组合起来，但拼分不是所有院校都接受。如果院校只审阅单次考试总分，则不能把不同日期的部分分数合成为该校认可的成绩。</p></article>",
+  "evidence_citations": [
+    {
+      "source_type": "SAT规则资料",
+      "evidence_text": "拼分可以组合不同考试日期的各部分最高分，但不是所有院校都接受；只审阅单次考试总分的院校不能采用跨日期组合分。",
+      "evidence_role": "区分SAT规则允许的拼分与具体院校是否接受拼分。"
+    },
+    {
+      "source_type": "院校政策资料",
+      "evidence_text": "Eastbridge University的SAT为考试可选；选择提交时只审阅同一考试日期内的总分，不接受跨考试日期拼分。",
+      "evidence_role": "同时支持不提交SAT的选择，并否定1530拼分的可用性。"
+    }
+  ],
+  "university_policy_facts": {
+    "institution_name": "Eastbridge University",
+    "test_policy_type": "考试可选，不接受拼分",
+    "sat_submission_required": false,
+    "sat_submission_method": "可选择不提交；选择提交时在申请系统自报一个考试日期的成绩，录取后可能要求对应官方成绩报告",
+    "superscoring_allowed": false,
+    "policy_effective_context": "2026年秋季本科一年级申请人；仅审阅单次考试日期的总分"
+  },
+  "university_policy_source": "<article><h1>Eastbridge University</h1><p>适用于2026年秋季本科一年级申请人。SAT为考试可选，申请人可以选择不提交SAT，且不会因不提交而被视为材料缺失。</p><p>如果申请人选择提交SAT，Eastbridge University只审阅同一考试日期内的总分，不接受跨考试日期拼分。申请阶段可以在申请系统中自报一个考试日期的成绩；学校可能在录取后要求提交该成绩的官方报告。</p><p>申请人应按照自己的意愿选择是否提交。如果提交，应填写真实的单次考试日期和该日期对应的总分，不得以跨日期组合分代替单次考试总分。</p></article>"
+}
