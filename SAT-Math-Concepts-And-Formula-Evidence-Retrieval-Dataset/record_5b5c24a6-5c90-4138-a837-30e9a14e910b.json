@@ -1,0 +1,47 @@
+{
+  "question_text": "A town has a population of 5,000. If its population increases by 6 percent each year, what will the population be after 2 years, assuming the growth rate remains constant?",
+  "retrieval_text": "题目给出初始人口 5,000、固定年增长率 6% 和时间 2 年。固定百分比增长对应指数模型 P=P₀(1+r)^t。代入 P₀=5000、r=0.06、t=2，得到 P=5000(1.06)^2=5618，所以正确答案为 5,618。关键适用条件是每个年度的增长比例相同；若增长的是固定人数，模型将改为线性增长。",
+  "evidence_quality": 0.94,
+  "source_knowledge": "指数增长知识材料：当一个量以固定百分比增长时，每个时间周期都乘以同一个增长因子。若初始量为 P₀，周期增长率为 r，经过 t 个周期后的量为 P=P₀(1+r)^t。这里的增长率必须用小数表示。",
+  "solution_relation": {
+    "relation_type": "直接应用",
+    "linked_concepts": [
+      "百分比增长",
+      "增长因子",
+      "指数函数",
+      "指数增长模型"
+    ],
+    "reasoning_link": "题目说明人口每年增加固定的 6%，因此不能将每年增加的数量固定为 300，而应在每一年将当前人口乘以 1.06。初始人口对应 P₀，2 年对应 t=2。",
+    "answer_derivation": "代入指数增长公式：P=5000(1+0.06)^2=5000(1.06)^2=5000×1.1236=5618。因此 2 年后的模型预计人口为 5,618，对应选项 5,618。",
+    "limitation_notes": "常见错误包括把 6% 写成 6、只计算一次增长，或将每年的增长额都固定为初始人口的 6%。若题目说明的是每年增加固定人数，则应使用线性模型而不是指数模型。"
+  },
+  "knowledge_evidence": {
+    "concept_name": "指数增长模型",
+    "concept_definition": "若某个量在每个相同时间周期内都按固定百分比增长，则该量形成指数增长。每个周期的增长因子为 1+r，其中 r 是以小数表示的正增长率。",
+    "formula_or_theorem": "P=P₀(1+r)^t，其中 P₀ 为初始量，r 为每个周期的增长率，t 为周期数。",
+    "applicability_conditions": [
+      "每个周期的百分比增长率保持不变。",
+      "增长率 r 应以小数代入公式，例如 6% 应写为 0.06。",
+      "t 表示完整的相同时间周期数。",
+      "该模型给出的是按模型计算的预计值，不表示实际人口必然为整数或实际增长完全稳定。"
+    ],
+    "source_basis": "OpenStax, Algebra and Trigonometry 2e，Exponential and Logarithmic Functions 章节中关于指数增长与衰减模型的内容；本样例中的出处说明和证据摘录为中文意译整理，非逐字引文。",
+    "evidence_excerpt": "中文意译摘录：指数增长模型将初始量乘以增长因子的 t 次幂；对于每周期增长率为 r 的情形，增长因子为 1+r。"
+  },
+  "structured_conditions": {
+    "question_type": "问题解决与数据分析：指数增长模型",
+    "given_conditions": [
+      "初始人口为 5,000。",
+      "每年增长率为 6%，即 r=0.06。",
+      "增长率每年保持不变。",
+      "计算时间为 2 年。"
+    ],
+    "target_quantity": "求 2 年后的预计人口。",
+    "answer_choices": [
+      "5,300",
+      "5,600",
+      "5,618",
+      "5,636"
+    ]
+  }
+}

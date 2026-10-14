@@ -1,0 +1,45 @@
+{
+  "question_text": "A line passes through the points (2, 5) and (8, 17). What is the x-coordinate of the point where the line intersects the x-axis?",
+  "retrieval_text": "题目给定直线经过 (2,5) 和 (8,17)，要求求其 x 轴截距。根据斜率公式 m=(17−5)/(8−2)=2，点斜式给出 y−5=2(x−2)，即 y=2x+1。x 轴上的点满足 y=0，因此 0=2x+1，x=−1/2。该题直接应用两点斜率、点斜式和截距定义；适用前提是两点横坐标不同且确实位于同一直线上。",
+  "evidence_quality": 0.95,
+  "source_knowledge": "线性函数知识材料：非竖直直线的斜率等于两点纵坐标差与横坐标差之比。直线通常可写成斜截式 y=mx+b，其中 m 为斜率，b 为 y 轴截距。与 x 轴的交点满足 y=0。",
+  "solution_relation": {
+    "relation_type": "直接应用",
+    "linked_concepts": [
+      "两点式斜率",
+      "点斜式",
+      "斜截式",
+      "x 轴截距"
+    ],
+    "reasoning_link": "题目给出的两个点直接提供了计算斜率所需的坐标。将 (2,5) 和 (8,17) 代入斜率公式得到 m=2，再用点斜式建立直线方程，最后利用 x 轴上 y=0 的条件求截距。",
+    "answer_derivation": "m=(17−5)/(8−2)=2。使用点斜式：y−5=2(x−2)，化简得 y=2x+1。令 y=0，得到 0=2x+1，因此 x=−1/2，对应选项 −1/2。",
+    "limitation_notes": "不能把 x 轴截距误认为 y 轴截距；x 轴截距要求 y=0，而 y 轴截距要求 x=0。还需注意斜率计算中坐标差的顺序必须保持一致。"
+  },
+  "knowledge_evidence": {
+    "concept_name": "斜率、斜截式与 x 轴截距",
+    "concept_definition": "给定两个横坐标不同的点，直线斜率为 m=(y₂−y₁)/(x₂−x₁)。直线的斜截式为 y=mx+b；令 y=0 即可求出其与 x 轴交点的横坐标。",
+    "formula_or_theorem": "m=(y₂−y₁)/(x₂−x₁)；y−y₁=m(x−x₁)；x 轴截距由 y=0 求得。",
+    "applicability_conditions": [
+      "两点的横坐标必须不同，否则斜率公式的分母为零。",
+      "两点必须确定同一条直线。",
+      "求 x 轴截距时必须将 y 设为 0。"
+    ],
+    "source_basis": "OpenStax, Algebra and Trigonometry 2e，Linear Functions 章节中关于斜率与直线方程的内容；本样例中的出处说明和证据摘录为中文意译整理，非逐字引文。",
+    "evidence_excerpt": "中文意译摘录：直线的斜率表示纵坐标相对于横坐标的变化率；已知斜率和直线上的一点，可以使用点斜式建立直线方程。"
+  },
+  "structured_conditions": {
+    "question_type": "代数：线性方程与直线模型",
+    "given_conditions": [
+      "直线经过点 (2, 5)。",
+      "直线经过点 (8, 17)。",
+      "x 轴上的点满足 y=0。"
+    ],
+    "target_quantity": "求该直线与 x 轴交点的横坐标。",
+    "answer_choices": [
+      "−1/2",
+      "1/2",
+      "2",
+      "−2"
+    ]
+  }
+}

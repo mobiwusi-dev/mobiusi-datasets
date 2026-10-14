@@ -1,0 +1,47 @@
+{
+  "question_text": "In a circle, AB is a diameter and C is a point on the circle. If AC=9 and BC=12, what is the area of the circle?",
+  "retrieval_text": "在圆中，AB 是直径，C 在圆上，AC=9、BC=12。根据直径所对圆周角为直角，三角形 ABC 是以 AB 为斜边的直角三角形。由勾股定理，AB²=9²+12²=225，所以直径 AB=15，半径 r=15/2。圆面积为 A=πr²=π(15/2)²=225π/4。该题是圆周角定理、勾股定理和圆面积公式的组合应用。",
+  "evidence_quality": 0.93,
+  "source_knowledge": "圆与直角三角形知识材料：以圆的直径为一边、圆周上另一点为顶点的圆周角为直角。因此，当 AB 是直径且 C 在圆上时，三角形 ABC 在 C 处为直角三角形。直径 AB 是该直角三角形的斜边，可用勾股定理求出，再将直径除以 2 得半径，最后使用圆面积公式。",
+  "solution_relation": {
+    "relation_type": "组合应用",
+    "linked_concepts": [
+      "直径所对圆周角为直角",
+      "勾股定理",
+      "圆的半径",
+      "圆面积"
+    ],
+    "reasoning_link": "因为 AB 是直径且 C 在圆上，所以 ∠ACB 为直角，AC 和 BC 是两条直角边，AB 是斜边。先用勾股定理求直径，再将其转换为半径并计算圆面积。",
+    "answer_derivation": "AB²=9²+12²=81+144=225，所以 AB=15。半径 r=15/2。圆面积 A=π(15/2)²=225π/4，因此正确答案为 225π/4。",
+    "limitation_notes": "不能仅由 AC=9 和 BC=12 直接假设三角形为直角三角形；直角性质来自 AB 为直径且 C 在圆上。另一个常见错误是把 15 当作半径，导致面积错误扩大四倍。"
+  },
+  "knowledge_evidence": {
+    "concept_name": "圆周角定理、勾股定理与圆面积",
+    "concept_definition": "若一个三角形的三个顶点都在同一圆上，且其中一边是圆的直径，则该直径所对的圆周角为直角。因此，直径是该直角三角形的斜边。直角三角形的边长满足勾股定理，圆的面积等于 π 乘以半径的平方。",
+    "formula_or_theorem": "∠ACB=90°；AB²=AC²+BC²；A=πr²，且 r=AB/2。",
+    "applicability_conditions": [
+      "AB 必须确实是圆的直径，且 A、B、C 都位于同一个圆上。",
+      "勾股定理只能用于直角三角形。",
+      "圆的半径等于直径的一半，不能直接把直径代入圆面积公式。"
+    ],
+    "source_basis": "CK-12 Geometry FlexBook 2.0，Right Triangles 与 Circles 相关章节；本样例中的出处说明和证据摘录为中文意译整理，非逐字引文。",
+    "evidence_excerpt": "中文意译摘录：直径所对的圆周角为直角；在直角三角形中，斜边平方等于两直角边平方之和；圆的面积由 πr² 给出。"
+  },
+  "structured_conditions": {
+    "question_type": "几何：圆、直角三角形与勾股定理",
+    "given_conditions": [
+      "AB 是圆的直径。",
+      "点 C 在该圆上。",
+      "AC=9。",
+      "BC=12。",
+      "圆面积公式为 A=πr²。"
+    ],
+    "target_quantity": "求该圆的面积。",
+    "answer_choices": [
+      "225π/16",
+      "225π/4",
+      "225π/2",
+      "450π"
+    ]
+  }
+}
