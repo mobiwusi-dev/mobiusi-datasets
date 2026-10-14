@@ -1,0 +1,201 @@
+{
+  "source_code": "const SLOT_RANGES = [\n  { start: 0, end: 5, primary: \"cache-a\", replica: \"cache-b\" },\n  { start: 6, end: 11, primary: \"cache-b\", replica: \"cache-a\" },\n  { start: 12, end: 15, primary: \"cache-c\", replica: \"cache-a\" }\n];\nconst registry = {\n  \"cache-a\": { state: \"up\" },\n  \"cache-b\": { state: \"up\" },\n  \"cache-c\": { state: \"up\" }\n};\nfunction hashKey(key) {\n  return key.split(\"\").reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);\n}\nfunction route(key, localNode = \"cache-b\") {\n  const keyHash = hashKey(key);\n  const slot = keyHash % 16;\n  const range = SLOT_RANGES.find(item => slot >= item.start && slot <= item.end);\n  const target = registry[range.primary].state === \"up\" ? range.primary : range.replica;\n  if (target !== localNode) {\n    return { node: target, redirect: true, target, reason: \"owner-mismatch\" };\n  }\n  return { node: target, redirect: false, target };\n}",
+  "control_flow": [
+    {
+      "step_index": 1,
+      "operation": "执行滚动哈希",
+      "condition": "请求键传入 route",
+      "reads": [
+        "key",
+        "hashKey"
+      ],
+      "writes": [
+        "keyHash"
+      ],
+      "branch_effect": "生成用于区间映射的无符号键哈希。"
+    },
+    {
+      "step_index": 2,
+      "operation": "计算槽位",
+      "condition": "keyHash 已生成",
+      "reads": [
+        "keyHash"
+      ],
+      "writes": [
+        "slot"
+      ],
+      "branch_effect": "把哈希值归一化到 0 到 15 的槽位空间。"
+    },
+    {
+      "step_index": 3,
+      "operation": "查找槽位区间",
+      "condition": "存在满足 start <= slot <= end 的区间",
+      "reads": [
+        "SLOT_RANGES",
+        "slot"
+      ],
+      "writes": [
+        "range"
+      ],
+      "branch_effect": "确定该槽位的主节点和副本节点。"
+    },
+    {
+      "step_index": 4,
+      "operation": "检查主节点状态并选择目标",
+      "condition": "registry[range.primary].state === \"up\"",
+      "reads": [
+        "registry",
+        "range.primary",
+        "range.replica"
+      ],
+      "writes": [
+        "target"
+      ],
+      "branch_effect": "主节点可用时访问主节点，否则切换到副本节点。"
+    },
+    {
+      "step_index": 5,
+      "operation": "判断本地节点是否匹配",
+      "condition": "target !== localNode",
+      "reads": [
+        "target",
+        "localNode"
+      ],
+      "writes": [
+        "redirect"
+      ],
+      "branch_effect": "本地节点不是目标节点时产生节点归属转发；匹配时直接处理请求。"
+    }
+  ],
+  "change_impact": [
+    {
+      "change_type": "节点下线",
+      "changed_component": "registry.cache-c.state",
+      "affected_slot_range": "12-15",
+      "original_node": "cache-c",
+      "new_node": "cache-a",
+      "request_path_before": "请求从 cache-b 转发到可用主节点 cache-c。",
+      "request_path_after": "请求从 cache-b 检测到 cache-c 不可用后，回退并转发到副本 cache-a。",
+      "path_changed": true,
+      "impact_explanation": "区间映射和哈希槽位不变，但主节点状态检查的结果改变。由于代码在主节点不可用时选择 replica，槽位 13 的最终目标由 cache-c 变为 cache-a，并改变了重定向目标。"
+    }
+  ],
+  "evidence_spans": [
+    {
+      "line_start": 1,
+      "line_end": 5,
+      "code_excerpt": "const SLOT_RANGES = [\n  { start: 0, end: 5, primary: \"cache-a\", replica: \"cache-b\" },\n  { start: 6, end: 11, primary: \"cache-b\", replica: \"cache-a\" },\n  { start: 12, end: 15, primary: \"cache-c\", replica: \"cache-a\" }\n];",
+      "evidence_role": "定义连续槽位区间及每个区间的主节点、副本节点。"
+    },
+    {
+      "line_start": 11,
+      "line_end": 14,
+      "code_excerpt": "const keyHash = hashKey(key);\nconst slot = keyHash % 16;\nconst range = SLOT_RANGES.find(item => slot >= item.start && slot <= item.end);",
+      "evidence_role": "支撑哈希值到槽位以及槽位到区间配置的映射关系。"
+    },
+    {
+      "line_start": 14,
+      "line_end": 19,
+      "code_excerpt": "const target = registry[range.primary].state === \"up\" ? range.primary : range.replica;\nif (target !== localNode) {\n  return { node: target, redirect: true, target, reason: \"owner-mismatch\" };",
+      "evidence_role": "说明主节点健康检查、故障回退和节点不匹配重定向的控制流。"
+    }
+  ],
+  "route_decision": {
+    "request_key": "k1",
+    "key_hash": 10093,
+    "selected_slot": 13,
+    "candidate_nodes": [
+      "cache-c",
+      "cache-a"
+    ],
+    "selected_node": "cache-c",
+    "redirect": {
+      "redirect_required": true,
+      "redirect_type": "节点归属转发",
+      "redirect_target": "cache-c"
+    },
+    "migration_handling": {
+      "migration_detected": false,
+      "handling_strategy": "当前没有迁移槽位，按区间主节点状态选择主节点或副本。",
+      "fallback_node": "cache-a"
+    },
+    "decision_explanation": "对 k1 执行初始值为 7 的滚动哈希得到 10093，10093 % 16 为 13。槽位 13 落在 12 到 15 区间，该区间的主节点 cache-c 当前可用，因此选定 cache-c。请求当前位于 cache-b，目标不匹配，路由器需要将请求转发到 cache-c。"
+  },
+  "dependency_graph": [
+    {
+      "source_symbol": "key",
+      "target_symbol": "hashKey",
+      "dependency_kind": "调用",
+      "dependency_reason": "滚动哈希的输入决定键哈希值。"
+    },
+    {
+      "source_symbol": "keyHash",
+      "target_symbol": "slot",
+      "dependency_kind": "写入",
+      "dependency_reason": "键哈希经 16 取模后成为槽位编号。"
+    },
+    {
+      "source_symbol": "slot",
+      "target_symbol": "SLOT_RANGES.find",
+      "dependency_kind": "映射查找",
+      "dependency_reason": "槽位编号决定使用哪个连续区间配置。"
+    },
+    {
+      "source_symbol": "range.primary",
+      "target_symbol": "registry[range.primary].state",
+      "dependency_kind": "读取",
+      "dependency_reason": "主节点状态决定是否可以继续访问主节点。"
+    },
+    {
+      "source_symbol": "registry[range.primary].state",
+      "target_symbol": "target",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "主节点不可用时将副本节点写入目标变量。"
+    },
+    {
+      "source_symbol": "target",
+      "target_symbol": "redirect",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "目标节点与当前节点不同时触发重定向。"
+    }
+  ],
+  "inference_summary": "该实现使用滚动哈希和连续槽位区间映射。请求 k1 的哈希为 10093，落入槽位 13 及区间 12 到 15，正常情况下由 cache-c 承载。由于请求从 cache-b 进入，代码产生到 cache-c 的转发；若 cache-c 下线，同一槽位会依据区间中的副本配置回退到 cache-a，表明节点状态会改变最终路径而不会改变哈希槽位。",
+  "routing_data_structures": {
+    "hashing_strategy": "以 7 为初始值、按字符执行 h * 31 + charCode 的滚动哈希，并截断为无符号整数。",
+    "slot_space": {
+      "slot_count": 16,
+      "slot_range": "有效槽位为 0 到 15，槽位由 keyHash % 16 计算。"
+    },
+    "slot_mapping": {
+      "mapping_type": "连续槽位区间映射，每个区间配置主节点和副本节点。",
+      "hash_to_slot_rule": "slot = hashKey(key) % 16。",
+      "slot_to_node_rule": "查找包含 slot 的区间；主节点状态为 up 时选择 primary，否则回退到 replica。"
+    },
+    "node_registry": [
+      {
+        "node_id": "cache-a",
+        "endpoint": "cache-a.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      },
+      {
+        "node_id": "cache-b",
+        "endpoint": "cache-b.internal:6379",
+        "node_state": "可用",
+        "weight": 1.5
+      },
+      {
+        "node_id": "cache-c",
+        "endpoint": "cache-c.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      }
+    ],
+    "migration_state": {
+      "migration_active": false,
+      "migrating_slots": [],
+      "source_node": "",
+      "target_node": ""
+    }
+  }
+}

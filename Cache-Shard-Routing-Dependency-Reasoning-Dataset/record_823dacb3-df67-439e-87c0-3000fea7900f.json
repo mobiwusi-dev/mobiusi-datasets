@@ -1,0 +1,199 @@
+{
+  "source_code": "const SLOT_COUNT = 16;\nconst slots = { 3: { primary: \"cache-a\", replica: \"cache-b\" } };\nconst migrating = new Set([3]);\nfunction hashKey(key) {\n  return [...key].reduce((h, c) => h + c.charCodeAt(0), 0) >>> 0;\n}\nfunction route(key, localNode = \"cache-a\") {\n  const keyHash = hashKey(key);\n  const slot = keyHash % SLOT_COUNT;\n  const owner = slots[slot];\n  if (!owner) throw new Error(\"unassigned slot\");\n  if (migrating.has(slot)) {\n    const target = owner.replica;\n    return { node: target, redirect: localNode !== target, target, migration: \"forward-to-replica\" };\n  }\n  const target = owner.primary;\n  return { node: target, redirect: localNode !== target, target };\n}",
+  "control_flow": [
+    {
+      "step_index": 1,
+      "operation": "计算请求键哈希",
+      "condition": "请求进入 route 函数",
+      "reads": [
+        "key",
+        "hashKey"
+      ],
+      "writes": [
+        "keyHash"
+      ],
+      "branch_effect": "为后续槽位计算提供确定的整数哈希值。"
+    },
+    {
+      "step_index": 2,
+      "operation": "计算槽位编号",
+      "condition": "keyHash 已生成",
+      "reads": [
+        "keyHash",
+        "SLOT_COUNT"
+      ],
+      "writes": [
+        "slot"
+      ],
+      "branch_effect": "将请求映射到 0 到 15 之间的槽位。"
+    },
+    {
+      "step_index": 3,
+      "operation": "读取槽位归属",
+      "condition": "slots[slot] 存在",
+      "reads": [
+        "slots",
+        "slot"
+      ],
+      "writes": [
+        "owner"
+      ],
+      "branch_effect": "取得该槽位的主节点和副本节点；若不存在则抛出未分配槽位错误。"
+    },
+    {
+      "step_index": 4,
+      "operation": "检测迁移状态",
+      "condition": "migrating.has(slot) 为 true",
+      "reads": [
+        "migrating",
+        "slot",
+        "owner.replica"
+      ],
+      "writes": [
+        "target"
+      ],
+      "branch_effect": "跳过主节点直达路径，把迁移槽位请求发送到副本目标节点。"
+    },
+    {
+      "step_index": 5,
+      "operation": "生成路由结果",
+      "condition": "迁移分支或正常分支完成目标选择",
+      "reads": [
+        "localNode",
+        "target"
+      ],
+      "writes": [
+        "redirect",
+        "routeResult"
+      ],
+      "branch_effect": "当本地节点不是目标节点时标记重定向，否则直接访问选定节点。"
+    }
+  ],
+  "change_impact": [
+    {
+      "change_type": "迁移完成",
+      "changed_component": "migrating 集合及 slots[3] 的节点归属",
+      "affected_slot_range": "3",
+      "original_node": "cache-a",
+      "new_node": "cache-b",
+      "request_path_before": "请求进入 cache-a，命中迁移分支后转发至 cache-b。",
+      "request_path_after": "请求根据槽位表直接访问 cache-b，不再执行迁移转发分支。",
+      "path_changed": true,
+      "impact_explanation": "迁移完成后应移除槽位 3 的迁移标记，并将其主节点更新为 cache-b。相同请求的哈希和槽位不变，但控制流从迁移分支变为正常主节点访问，实际目标和中间转发行为发生变化。"
+    }
+  ],
+  "evidence_spans": [
+    {
+      "line_start": 1,
+      "line_end": 3,
+      "code_excerpt": "const SLOT_COUNT = 16;\nconst slots = { 3: { primary: \"cache-a\", replica: \"cache-b\" } };\nconst migrating = new Set([3]);",
+      "evidence_role": "定义槽位总数、槽位到主副本节点的静态映射，以及正在迁移的槽位集合。"
+    },
+    {
+      "line_start": 8,
+      "line_end": 14,
+      "code_excerpt": "const keyHash = hashKey(key);\nconst slot = keyHash % SLOT_COUNT;\nconst owner = slots[slot];\nif (migrating.has(slot)) {\n  const target = owner.replica;",
+      "evidence_role": "支撑从请求键到槽位、再到迁移目标节点的控制流依赖。"
+    },
+    {
+      "line_start": 14,
+      "line_end": 17,
+      "code_excerpt": "return { node: target, redirect: localNode !== target, target, migration: \"forward-to-replica\" };\n}\nconst target = owner.primary;",
+      "evidence_role": "说明迁移分支选择副本并产生重定向，而正常分支选择主节点。"
+    }
+  ],
+  "route_decision": {
+    "request_key": "ab",
+    "key_hash": 195,
+    "selected_slot": 3,
+    "candidate_nodes": [
+      "cache-a",
+      "cache-b"
+    ],
+    "selected_node": "cache-b",
+    "redirect": {
+      "redirect_required": true,
+      "redirect_type": "迁移期间转发",
+      "redirect_target": "cache-b"
+    },
+    "migration_handling": {
+      "migration_detected": true,
+      "handling_strategy": "槽位 3 迁移期间从源节点 cache-a 转发到副本及目标节点 cache-b。",
+      "fallback_node": "cache-a"
+    },
+    "decision_explanation": "字符串 ab 的字符编码和为 195，195 % 16 得到槽位 3。该槽位位于 migrating 集合中，静态表显示 cache-a 是源主节点、cache-b 是副本目标，因此请求不走正常的 primary 路径，而是从当前路由节点 cache-a 转发到 cache-b。"
+  },
+  "dependency_graph": [
+    {
+      "source_symbol": "key",
+      "target_symbol": "hashKey",
+      "dependency_kind": "调用",
+      "dependency_reason": "请求键作为哈希函数输入，决定后续槽位。"
+    },
+    {
+      "source_symbol": "hashKey(key)",
+      "target_symbol": "slot",
+      "dependency_kind": "写入",
+      "dependency_reason": "哈希值通过取模生成槽位编号。"
+    },
+    {
+      "source_symbol": "slot",
+      "target_symbol": "slots[slot]",
+      "dependency_kind": "映射查找",
+      "dependency_reason": "槽位编号用于取得主节点和副本节点。"
+    },
+    {
+      "source_symbol": "migrating",
+      "target_symbol": "migrating.has(slot)",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "迁移集合决定请求是否绕过主节点并进入迁移分支。"
+    },
+    {
+      "source_symbol": "owner.replica",
+      "target_symbol": "target",
+      "dependency_kind": "读取",
+      "dependency_reason": "迁移期间副本节点成为请求转发目标。"
+    },
+    {
+      "source_symbol": "localNode",
+      "target_symbol": "redirect",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "本地节点与最终目标不一致时需要重定向。"
+    }
+  ],
+  "inference_summary": "该路由器先对请求键做字符累加哈希，再通过 16 取模得到槽位。槽位 3 的静态归属为 cache-a 主节点和 cache-b 副本；由于槽位 3 位于迁移集合，控制流选择 cache-b 作为目标并在本地节点不匹配时转发。迁移完成后哈希和槽位保持不变，但槽位归属及分支路径会从迁移转发变为直接访问新主节点。",
+  "routing_data_structures": {
+    "hashing_strategy": "对请求键逐字符累加 Unicode 编码值，并使用无符号右移得到非负整数哈希。",
+    "slot_space": {
+      "slot_count": 16,
+      "slot_range": "有效槽位为 0 到 15，计算规则为 keyHash % 16。"
+    },
+    "slot_mapping": {
+      "mapping_type": "静态槽位表，单个槽位记录主节点和副本节点。",
+      "hash_to_slot_rule": "slot = hashKey(key) % SLOT_COUNT。",
+      "slot_to_node_rule": "先读取 slots[slot]；正常路径选择 primary，迁移路径选择 replica。"
+    },
+    "node_registry": [
+      {
+        "node_id": "cache-a",
+        "endpoint": "cache-a.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      },
+      {
+        "node_id": "cache-b",
+        "endpoint": "cache-b.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      }
+    ],
+    "migration_state": {
+      "migration_active": true,
+      "migrating_slots": [
+        3
+      ],
+      "source_node": "cache-a",
+      "target_node": "cache-b"
+    }
+  }
+}

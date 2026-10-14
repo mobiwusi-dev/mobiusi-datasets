@@ -1,0 +1,206 @@
+{
+  "source_code": "const SLOT_COUNT = 32;\nconst slotOwner = Array.from({ length: SLOT_COUNT }, (_, slot) =>\n  slot < 16 ? \"cache-a\" : \"cache-b\"\n);\nconst nodes = {\n  \"cache-a\": { endpoint: \"cache-a.internal:6379\", state: \"up\" },\n  \"cache-b\": { endpoint: \"cache-b.internal:6379\", state: \"up\" },\n  \"cache-c\": { endpoint: \"cache-c.internal:6379\", state: \"migrating\" }\n};\nconst migration = { active: true, slots: new Set([12]), from: \"cache-a\", to: \"cache-c\" };\nfunction hashKey(key) {\n  return [...key].reduce((h, c) => h + c.charCodeAt(0), 0) >>> 0;\n}\nfunction route(key, localNode = \"cache-a\") {\n  const keyHash = hashKey(key);\n  const slot = keyHash % SLOT_COUNT;\n  const source = slotOwner[slot];\n  if (migration.active && migration.slots.has(slot)) {\n    const target = migration.to;\n    return { node: target, redirect: localNode !== target, target, migration: \"read-source-on-miss\" };\n  }\n  return { node: source, redirect: localNode !== source, target: source };\n}",
+  "control_flow": [
+    {
+      "step_index": 1,
+      "operation": "计算字符累加哈希",
+      "condition": "route 收到请求键",
+      "reads": [
+        "key",
+        "hashKey"
+      ],
+      "writes": [
+        "keyHash"
+      ],
+      "branch_effect": "为槽位计算提供请求键的整数表示。"
+    },
+    {
+      "step_index": 2,
+      "operation": "执行槽位取模",
+      "condition": "keyHash 已生成",
+      "reads": [
+        "keyHash",
+        "SLOT_COUNT"
+      ],
+      "writes": [
+        "slot"
+      ],
+      "branch_effect": "将请求放入 32 个槽位之一。"
+    },
+    {
+      "step_index": 3,
+      "operation": "读取原始槽位所有者",
+      "condition": "slotOwner[slot] 存在",
+      "reads": [
+        "slotOwner",
+        "slot"
+      ],
+      "writes": [
+        "source"
+      ],
+      "branch_effect": "得到迁移前负责该槽位的源节点。"
+    },
+    {
+      "step_index": 4,
+      "operation": "检测迁移槽位",
+      "condition": "migration.active && migration.slots.has(slot)",
+      "reads": [
+        "migration.active",
+        "migration.slots",
+        "slot"
+      ],
+      "writes": [
+        "target"
+      ],
+      "branch_effect": "迁移命中时不返回 source，而是选择 migration.to 作为目标节点。"
+    },
+    {
+      "step_index": 5,
+      "operation": "生成转发结果",
+      "condition": "localNode !== target 或 localNode === target",
+      "reads": [
+        "localNode",
+        "target",
+        "source"
+      ],
+      "writes": [
+        "redirect",
+        "routeResult"
+      ],
+      "branch_effect": "迁移期间从源节点进入的请求被转发到目标节点；未命中迁移时直接访问槽位所有者。"
+    }
+  ],
+  "change_impact": [
+    {
+      "change_type": "迁移完成",
+      "changed_component": "migration.active、migration.slots 及 slotOwner[12]",
+      "affected_slot_range": "12",
+      "original_node": "cache-a",
+      "new_node": "cache-c",
+      "request_path_before": "请求从 cache-a 进入，命中迁移集合后转发到 cache-c。",
+      "request_path_after": "slotOwner[12] 更新为 cache-c，迁移状态清除后请求直接访问 cache-c。",
+      "path_changed": true,
+      "impact_explanation": "迁移完成后应把槽位 12 的所有者更新为 cache-c，并移除迁移标记。哈希与槽位保持不变，但请求不再依赖 migration.to 分支，也不再以 cache-a 作为源节点，控制流和实际访问路径均发生变化。"
+    }
+  ],
+  "evidence_spans": [
+    {
+      "line_start": 1,
+      "line_end": 4,
+      "code_excerpt": "const SLOT_COUNT = 32;\nconst slotOwner = Array.from({ length: SLOT_COUNT }, (_, slot) =>\n  slot < 16 ? \"cache-a\" : \"cache-b\"\n);",
+      "evidence_role": "定义 32 槽位空间及迁移前的区间所有者映射。"
+    },
+    {
+      "line_start": 10,
+      "line_end": 10,
+      "code_excerpt": "const migration = { active: true, slots: new Set([12]), from: \"cache-a\", to: \"cache-c\" };",
+      "evidence_role": "直接提供迁移是否激活、迁移槽位、源节点和目标节点依赖。"
+    },
+    {
+      "line_start": 15,
+      "line_end": 23,
+      "code_excerpt": "const slot = keyHash % SLOT_COUNT;\nconst source = slotOwner[slot];\nif (migration.active && migration.slots.has(slot)) {\n  const target = migration.to;\n  return { node: target, redirect: localNode !== target, target, migration: \"read-source-on-miss\" };",
+      "evidence_role": "支撑槽位计算、源节点读取、迁移条件判断以及目标节点覆盖原始所有者的路径。"
+    }
+  ],
+  "route_decision": {
+    "request_key": "acct:7",
+    "key_hash": 524,
+    "selected_slot": 12,
+    "candidate_nodes": [
+      "cache-a",
+      "cache-c"
+    ],
+    "selected_node": "cache-c",
+    "redirect": {
+      "redirect_required": true,
+      "redirect_type": "迁移目标转发",
+      "redirect_target": "cache-c"
+    },
+    "migration_handling": {
+      "migration_detected": true,
+      "handling_strategy": "槽位 12 迁移期间保留 cache-a 作为源节点，并将命中的请求转发到目标节点 cache-c；未命中时可回退读取源节点。",
+      "fallback_node": "cache-a"
+    },
+    "decision_explanation": "acct:7 的字符编码和为 524，524 % 32 得到槽位 12。slotOwner 将该槽位的原始所有者标记为 cache-a，但迁移状态覆盖槽位 12，migration.to 为 cache-c，因此实际目标变为 cache-c。当前入口节点为 cache-a，故需要一次迁移目标转发。"
+  },
+  "dependency_graph": [
+    {
+      "source_symbol": "key",
+      "target_symbol": "hashKey",
+      "dependency_kind": "调用",
+      "dependency_reason": "请求键的字符编码和决定哈希值。"
+    },
+    {
+      "source_symbol": "keyHash",
+      "target_symbol": "slot",
+      "dependency_kind": "写入",
+      "dependency_reason": "哈希值通过 32 取模确定槽位。"
+    },
+    {
+      "source_symbol": "slot",
+      "target_symbol": "slotOwner[slot]",
+      "dependency_kind": "映射查找",
+      "dependency_reason": "槽位用于取得迁移前的源节点。"
+    },
+    {
+      "source_symbol": "migration.slots",
+      "target_symbol": "migration.slots.has(slot)",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "迁移槽位集合决定是否覆盖原始槽位所有者。"
+    },
+    {
+      "source_symbol": "migration.to",
+      "target_symbol": "target",
+      "dependency_kind": "读取",
+      "dependency_reason": "迁移命中时目标节点由迁移状态的 to 字段提供。"
+    },
+    {
+      "source_symbol": "localNode",
+      "target_symbol": "redirect",
+      "dependency_kind": "条件判断",
+      "dependency_reason": "当前节点不是迁移目标时需要执行转发。"
+    }
+  ],
+  "inference_summary": "该实现先将请求键映射到 32 个槽位，再通过 slotOwner 得到迁移前源节点。acct:7 映射到槽位 12，原始所有者是 cache-a；由于槽位 12 正在从 cache-a 迁移到 cache-c，迁移分支覆盖正常所有者并将请求转发至 cache-c。迁移完成后需要更新槽位所有者并清除迁移集合，使同一请求从迁移转发路径变为直接访问 cache-c。",
+  "routing_data_structures": {
+    "hashing_strategy": "对请求键逐字符累加 Unicode 编码值并转换为无符号整数。",
+    "slot_space": {
+      "slot_count": 32,
+      "slot_range": "有效槽位为 0 到 31；slot = keyHash % 32。"
+    },
+    "slot_mapping": {
+      "mapping_type": "由数组生成的区间所有者映射，槽位 0 到 15 初始属于 cache-a，槽位 16 到 31 属于 cache-b。",
+      "hash_to_slot_rule": "slot = hashKey(key) % SLOT_COUNT。",
+      "slot_to_node_rule": "通过 slotOwner[slot] 查找源节点；若迁移状态覆盖该槽位，则将目标节点 migration.to 作为实际请求节点。"
+    },
+    "node_registry": [
+      {
+        "node_id": "cache-a",
+        "endpoint": "cache-a.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      },
+      {
+        "node_id": "cache-b",
+        "endpoint": "cache-b.internal:6379",
+        "node_state": "可用",
+        "weight": 1
+      },
+      {
+        "node_id": "cache-c",
+        "endpoint": "cache-c.internal:6379",
+        "node_state": "迁移中",
+        "weight": 1
+      }
+    ],
+    "migration_state": {
+      "migration_active": true,
+      "migrating_slots": [
+        12
+      ],
+      "source_node": "cache-a",
+      "target_node": "cache-c"
+    }
+  }
+}
