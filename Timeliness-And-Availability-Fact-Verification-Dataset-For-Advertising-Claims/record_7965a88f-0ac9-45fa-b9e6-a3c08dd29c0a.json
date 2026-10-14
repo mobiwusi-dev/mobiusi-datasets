@@ -1,0 +1,48 @@
+{
+  "claim_text": "春日焕新活动全场八折，活动截止至4月30日，错过不再。",
+  "risk_flags": [
+    "expired_claim"
+  ],
+  "evidence_text": "活动规则记录显示：春日焕新活动有效期为2025年3月20日00:00至2025年4月30日23:59:59，活动已于截止时间结束。2025年5月2日活动页面不再提供八折优惠。",
+  "claim_analysis": {
+    "claim_category": "promotion_deadline",
+    "claim_subject": "春日焕新全场八折活动",
+    "claimed_value": "活动截止时间为2025年4月30日",
+    "temporal_dependency": true,
+    "geographic_dependency": false
+  },
+  "confidence_score": 0.99,
+  "validation_label": "expired",
+  "constraint_context": {
+    "reference_time": "2025-05-02T09:30:00+08:00",
+    "valid_from": "2025-03-20T00:00:00+08:00",
+    "valid_until": "2025-04-30T23:59:59+08:00",
+    "target_region": "中国大陆线上商城",
+    "service_scope": "中国大陆线上商城账户可参与，具体商品以活动页面为准",
+    "availability_status": "available"
+  },
+  "evidence_validation": {
+    "support_status": "contradicted",
+    "evidence_recency": "current",
+    "support_excerpt": "活动已于2025年4月30日23:59:59结束；2025年5月2日活动页面不再提供八折优惠。",
+    "rationale": "依据文本是参考时间附近的当前活动记录，明确表明优惠已经结束，反驳了广告在评估时仍可使用的含义。"
+  },
+  "temporal_validation": {
+    "status": "expired",
+    "extracted_start": "2025-03-20T00:00:00+08:00",
+    "extracted_end": "2025-04-30T23:59:59+08:00",
+    "comparison_basis": "参考时间为2025年5月2日，晚于2025年4月30日23:59:59的活动截止时间，因此该促销声明已经过期。"
+  },
+  "geographic_validation": {
+    "status": "not_applicable",
+    "normalized_claim_region": "未声明具体地域，适用于中国大陆线上商城",
+    "scope_interpretation": "广告未提出独立的地域覆盖承诺，地域信息仅作为线上活动的参与范围背景。",
+    "mismatch_reason": "广告没有需要与实际服务范围比较的具体地域声明，因此不适用地域匹配判断。"
+  },
+  "availability_validation": {
+    "status": "not_applicable",
+    "claimed_availability": "unknown",
+    "contextual_availability": "available",
+    "reason": "该声明的核心内容是促销截止日期，并未声称商品库存、服务或功能可用性，因此不适用可用性一致性判断。"
+  }
+}

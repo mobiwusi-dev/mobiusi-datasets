@@ -1,0 +1,46 @@
+{
+  "risk_flags": [],
+  "claim_text": "星跃冷萃咖啡豆现货供应，上海浦东新区下单，工作日两小时内送达。",
+  "evidence_text": "配送系统快照显示：截至2025年6月15日10:00，星跃冷萃咖啡豆在浦东新区仓库有现货；工作日订单预计在支付后两小时内送达，服务范围与浦东新区可配送地址一致。",
+  "claim_analysis": {
+    "claim_category": "delivery_time",
+    "claim_subject": "星跃冷萃咖啡豆浦东新区配送服务",
+    "claimed_value": "浦东新区现货供应并承诺工作日两小时内送达",
+    "temporal_dependency": true,
+    "geographic_dependency": true
+  },
+  "confidence_score": 0.97,
+  "validation_label": "valid",
+  "constraint_context": {
+    "reference_time": "2025-06-15T10:00:00+08:00",
+    "valid_from": "2025-06-01T00:00:00+08:00",
+    "valid_until": "2025-06-30T23:59:59+08:00",
+    "target_region": "上海市浦东新区",
+    "service_scope": "上海市浦东新区大部分街道，工作日配送服务覆盖可配送地址",
+    "availability_status": "available"
+  },
+  "evidence_validation": {
+    "support_status": "supported",
+    "evidence_recency": "current",
+    "support_excerpt": "截至2025年6月15日10:00，星跃冷萃咖啡豆在浦东新区仓库有现货；工作日订单预计在支付后两小时内送达。",
+    "rationale": "依据文本与参考时间一致，直接确认了库存状态、配送时效和目标区域，能够支持广告声明。"
+  },
+  "temporal_validation": {
+    "status": "current",
+    "extracted_start": "2025-06-01T00:00:00+08:00",
+    "extracted_end": "2025-06-30T23:59:59+08:00",
+    "comparison_basis": "参考时间为2025年6月15日，处于2025年6月1日至6月30日的有效期内，因此时间状态为当前有效。"
+  },
+  "geographic_validation": {
+    "status": "match",
+    "normalized_claim_region": "上海市浦东新区",
+    "scope_interpretation": "广告将配送区域限定为浦东新区，实际服务范围覆盖该区大部分可配送地址。",
+    "mismatch_reason": "声明区域与实际服务范围一致，未发现地域错配。"
+  },
+  "availability_validation": {
+    "status": "consistent",
+    "claimed_availability": "available",
+    "contextual_availability": "available",
+    "reason": "广告明确声称现货供应，库存快照也记录该商品在参考时间于浦东新区仓库有现货。"
+  }
+}

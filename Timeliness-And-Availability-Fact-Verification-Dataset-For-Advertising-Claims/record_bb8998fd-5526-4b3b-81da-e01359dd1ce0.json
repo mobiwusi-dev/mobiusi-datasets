@@ -1,0 +1,50 @@
+{
+  "claim_text": "云盒Pro智能摘要功能现已在华东地区全面上线，所有用户都能立即使用，无需申请。",
+  "risk_flags": [
+    "geography_mismatch",
+    "partial_coverage",
+    "availability_mismatch"
+  ],
+  "evidence_text": "功能发布说明记录显示：截至2025年8月15日，智能摘要功能仍处于定向测试阶段，仅向南京市鼓楼区和苏州市工业园区的受邀账户开放，其他地区及未受邀账户暂不可使用。",
+  "claim_analysis": {
+    "claim_category": "latest_feature",
+    "claim_subject": "云盒Pro智能摘要功能",
+    "claimed_value": "功能已在华东地区全面上线，所有用户无需申请即可使用",
+    "temporal_dependency": true,
+    "geographic_dependency": true
+  },
+  "confidence_score": 0.98,
+  "validation_label": "multiple_issues",
+  "constraint_context": {
+    "reference_time": "2025-08-15T14:00:00+08:00",
+    "valid_from": "2025-08-01T00:00:00+08:00",
+    "valid_until": "2025-12-31T23:59:59+08:00",
+    "target_region": "华东地区",
+    "service_scope": "仅覆盖江苏省南京市鼓楼区和苏州市工业园区的邀请测试账户",
+    "availability_status": "limited"
+  },
+  "evidence_validation": {
+    "support_status": "contradicted",
+    "evidence_recency": "current",
+    "support_excerpt": "截至2025年8月15日，智能摘要功能仍处于定向测试阶段，仅向南京市鼓楼区和苏州市工业园区的受邀账户开放。",
+    "rationale": "依据文本与参考时间相符，并同时限定了实际区域和账户资格，明确反驳了全面上线及所有用户可用的广告表述。"
+  },
+  "temporal_validation": {
+    "status": "current",
+    "extracted_start": "2025-08-01T00:00:00+08:00",
+    "extracted_end": "2025-12-31T23:59:59+08:00",
+    "comparison_basis": "参考时间为2025年8月15日，处于声明限定的2025年8月1日至12月31日有效期内，时间上属于当前阶段。"
+  },
+  "geographic_validation": {
+    "status": "partial_match",
+    "normalized_claim_region": "华东地区",
+    "scope_interpretation": "广告将范围表述为整个华东地区，而实际功能仅覆盖南京市鼓楼区和苏州市工业园区的受邀测试账户。",
+    "mismatch_reason": "实际覆盖的两个指定行政区域仅构成华东地区的一小部分，无法支持全面上线的区域表述。"
+  },
+  "availability_validation": {
+    "status": "inconsistent",
+    "claimed_availability": "available",
+    "contextual_availability": "limited",
+    "reason": "广告声称所有用户均可立即使用且无需申请，但实际状态为仅受邀账户可用，属于定向测试，二者不一致。"
+  }
+}
