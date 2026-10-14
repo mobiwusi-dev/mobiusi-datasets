@@ -1,0 +1,143 @@
+{
+  "answer_key": {
+    "option_label": "B",
+    "confidence": 0.99,
+    "derivation_basis": "前句指出非书籍馆藏因规格、价值和维护需求不同而需要谨慎管理，后句说明图书馆因此制定政策和检查流程，逻辑关系是因果，故应选择 As a result。"
+  },
+  "source_record": {
+    "section_type": "语法与写作",
+    "passage_text": "Many public libraries now lend more than books. Some branches provide tools, seeds, and musical instruments. These collections can require careful management because items differ in size, value, and maintenance needs. [BLANK] libraries often create detailed lending policies and inspection routines.",
+    "question_text": "Which choice best completes the text?",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "In contrast,"
+      },
+      {
+        "option_label": "B",
+        "option_text": "As a result,"
+      },
+      {
+        "option_label": "C",
+        "option_text": "For example,"
+      },
+      {
+        "option_label": "D",
+        "option_text": "Meanwhile,"
+      }
+    ],
+    "evidence_annotations": [
+      {
+        "option_label": "A",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+        "evidence_span": {
+          "start_char": 108,
+          "end_char": 215
+        },
+        "annotation_note": "前句说明馆藏管理复杂的原因，后句应表达由此产生的结果，而不是转折关系。"
+      },
+      {
+        "option_label": "B",
+        "evidence_role": "支持正确选项",
+        "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+        "evidence_span": {
+          "start_char": 108,
+          "end_char": 215
+        },
+        "annotation_note": "馆藏管理需求较高导致图书馆制定政策和检查流程，因此 As a result 形成正确的因果衔接。"
+      },
+      {
+        "option_label": "C",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+        "evidence_span": {
+          "start_char": 108,
+          "end_char": 215
+        },
+        "annotation_note": "后句不是前句的具体例子，而是对管理需求的结果性回应。"
+      },
+      {
+        "option_label": "D",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+        "evidence_span": {
+          "start_char": 108,
+          "end_char": 215
+        },
+        "annotation_note": "前后句之间存在明确因果关系，不是同时发生或时间推进关系。"
+      }
+    ]
+  },
+  "evidence_index": [
+    {
+      "option_label": "A",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+      "source_span": {
+        "start_char": 108,
+        "end_char": 215
+      },
+      "retrieval_tags": [
+        "A",
+        "转折",
+        "逻辑衔接",
+        "反驳对比关系"
+      ]
+    },
+    {
+      "option_label": "B",
+      "evidence_role": "支持正确选项",
+      "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+      "source_span": {
+        "start_char": 108,
+        "end_char": 215
+      },
+      "retrieval_tags": [
+        "B",
+        "因果关系",
+        "管理需求",
+        "结果性连接词",
+        "支持正确选项"
+      ]
+    },
+    {
+      "option_label": "C",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+      "source_span": {
+        "start_char": 108,
+        "end_char": 215
+      },
+      "retrieval_tags": [
+        "C",
+        "举例关系",
+        "逻辑衔接",
+        "反驳具体例子"
+      ]
+    },
+    {
+      "option_label": "D",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "These collections can require careful management because items differ in size, value, and maintenance needs.",
+      "source_span": {
+        "start_char": 108,
+        "end_char": 215
+      },
+      "retrieval_tags": [
+        "D",
+        "时间关系",
+        "同时发生",
+        "反驳时间推进"
+      ]
+    }
+  ],
+  "coverage_report": {
+    "total_options": 4,
+    "annotated_options": 4,
+    "uncovered_option_labels": [],
+    "has_supporting_evidence": true,
+    "has_rebuttal_evidence": true
+  },
+  "retrieval_query": "检索材料中说明非书籍馆藏管理复杂性及其后果的句子，判断空缺处应使用表示因果、转折、举例还是时间关系的过渡语。"
+}

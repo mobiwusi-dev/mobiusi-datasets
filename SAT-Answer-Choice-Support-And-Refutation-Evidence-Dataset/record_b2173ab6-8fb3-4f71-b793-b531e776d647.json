@@ -1,0 +1,143 @@
+{
+  "evidence_index": [
+    {
+      "option_label": "A",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "The study did find that females approached calls more often when the calls varied in rhythm.",
+      "source_span": {
+        "start_char": 201,
+        "end_char": 292
+      },
+      "retrieval_tags": [
+        "A",
+        "节奏变化",
+        "雌蛙接近",
+        "反驳无差异"
+      ]
+    },
+    {
+      "option_label": "B",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "A 2022 field study, however, found that call pitch was unrelated to body length.",
+      "source_span": {
+        "start_char": 120,
+        "end_char": 200
+      },
+      "retrieval_tags": [
+        "B",
+        "音调",
+        "体长无关",
+        "反驳低音调吸引力"
+      ]
+    },
+    {
+      "option_label": "C",
+      "evidence_role": "支持正确选项",
+      "evidence_text": "The study did find that females approached calls more often when the calls varied in rhythm.",
+      "source_span": {
+        "start_char": 201,
+        "end_char": 292
+      },
+      "retrieval_tags": [
+        "C",
+        "节奏变化",
+        "雌蛙接近频率",
+        "交配信号",
+        "支持正确选项"
+      ]
+    },
+    {
+      "option_label": "D",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "A 2022 field study, however, found that call pitch was unrelated to body length.",
+      "source_span": {
+        "start_char": 120,
+        "end_char": 200
+      },
+      "retrieval_tags": [
+        "D",
+        "音调与体长",
+        "无关",
+        "反驳强相关"
+      ]
+    }
+  ],
+  "retrieval_query": "检索田野研究中关于叫声音调、体长、节奏变化以及雌蛙接近行为的证据，判断哪项发现最直接支持节奏变化是更可靠的交配信号。",
+  "coverage_report": {
+    "total_options": 4,
+    "annotated_options": 4,
+    "uncovered_option_labels": [],
+    "has_supporting_evidence": true,
+    "has_rebuttal_evidence": true
+  },
+  "answer_key": {
+    "option_label": "C",
+    "confidence": 0.99,
+    "derivation_basis": "研究直接观察到节奏变化的叫声更常引来雌蛙接近，这一发现支持节奏变化是可靠信号；相反，材料说明音调与体长无关，不能支持关于低音调或音调相关性的选项。"
+  },
+  "source_record": {
+    "section_type": "阅读",
+    "passage_text": "At first, biologists assumed that the silver marsh frog's bright call attracted mates by advertising the caller's size. A 2022 field study, however, found that call pitch was unrelated to body length. The study did find that females approached calls more often when the calls varied in rhythm. The researchers concluded that rhythmic variation, not low pitch, was the more reliable mating signal.",
+    "question_text": "Which finding most directly supports the researchers' conclusion?",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "The study found no difference in how females responded to calls with different rhythms."
+      },
+      {
+        "option_label": "B",
+        "option_text": "Low-pitched calls attracted more females in the field study."
+      },
+      {
+        "option_label": "C",
+        "option_text": "Females approached calls more often when their rhythms varied."
+      },
+      {
+        "option_label": "D",
+        "option_text": "Call pitch was strongly related to body length."
+      }
+    ],
+    "evidence_annotations": [
+      {
+        "option_label": "A",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "The study did find that females approached calls more often when the calls varied in rhythm.",
+        "evidence_span": {
+          "start_char": 201,
+          "end_char": 292
+        },
+        "annotation_note": "材料明确指出不同节奏的叫声引发了不同的接近频率，否定了没有差异的说法。"
+      },
+      {
+        "option_label": "B",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "A 2022 field study, however, found that call pitch was unrelated to body length.",
+        "evidence_span": {
+          "start_char": 120,
+          "end_char": 200
+        },
+        "annotation_note": "研究发现音调与体长无关，且结论强调节奏而非低音调，因此不能推出低音调吸引更多雌蛙。"
+      },
+      {
+        "option_label": "C",
+        "evidence_role": "支持正确选项",
+        "evidence_text": "The study did find that females approached calls more often when the calls varied in rhythm.",
+        "evidence_span": {
+          "start_char": 201,
+          "end_char": 292
+        },
+        "annotation_note": "该发现直接表明节奏变化提高了雌蛙接近叫声的频率，正是结论所依据的观察结果。"
+      },
+      {
+        "option_label": "D",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "A 2022 field study, however, found that call pitch was unrelated to body length.",
+        "evidence_span": {
+          "start_char": 120,
+          "end_char": 200
+        },
+        "annotation_note": "音调与体长无关，直接否定了音调与体长存在强相关的说法。"
+      }
+    ]
+  }
+}

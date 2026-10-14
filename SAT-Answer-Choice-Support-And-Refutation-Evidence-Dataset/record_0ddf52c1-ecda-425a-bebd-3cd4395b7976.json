@@ -1,0 +1,143 @@
+{
+  "answer_key": {
+    "option_label": "B",
+    "confidence": 0.98,
+    "derivation_basis": "材料指出树木存活比单纯种植数量更重要，并显示定期浇水能显著提高五年存活率；结尾明确建议将植树活动与维护计划配套，因此 B 最符合材料。"
+  },
+  "source_record": {
+    "section_type": "阅读",
+    "passage_text": "Urban tree planting programs are often judged by the number of trees installed, but survival matters more than installation. In a five-year study of three neighborhoods, trees planted with regular watering survived at nearly twice the rate of trees planted without follow-up care. The researchers therefore recommend pairing planting campaigns with maintenance plans rather than treating planting day as the endpoint.",
+    "question_text": "根据材料，哪项最能概括研究人员的建议？",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "城市植树项目的成效应主要根据种植树木的数量来衡量。"
+      },
+      {
+        "option_label": "B",
+        "option_text": "植树活动应当配套持续的维护计划。"
+      },
+      {
+        "option_label": "C",
+        "option_text": "定期浇水对树木的存活率没有明显影响。"
+      },
+      {
+        "option_label": "D",
+        "option_text": "植树日可以取代后续的长期养护。"
+      }
+    ],
+    "evidence_annotations": [
+      {
+        "option_label": "A",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "Urban tree planting programs are often judged by the number of trees installed, but survival matters more than installation.",
+        "evidence_span": {
+          "start_char": 0,
+          "end_char": 124
+        },
+        "annotation_note": "材料明确将树木存活置于种植数量之上，因此不能以种植数量作为主要衡量标准。"
+      },
+      {
+        "option_label": "B",
+        "evidence_role": "支持正确选项",
+        "evidence_text": "In a five-year study of three neighborhoods, trees planted with regular watering survived at nearly twice the rate of trees planted without follow-up care.",
+        "evidence_span": {
+          "start_char": 125,
+          "end_char": 280
+        },
+        "annotation_note": "长期照料与更高的存活率相关，直接支持配套维护计划的建议。"
+      },
+      {
+        "option_label": "C",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "In a five-year study of three neighborhoods, trees planted with regular watering survived at nearly twice the rate of trees planted without follow-up care.",
+        "evidence_span": {
+          "start_char": 125,
+          "end_char": 280
+        },
+        "annotation_note": "定期浇水组的存活率接近对照组的两倍，说明浇水具有明显影响。"
+      },
+      {
+        "option_label": "D",
+        "evidence_role": "反驳干扰选项",
+        "evidence_text": "The researchers therefore recommend pairing planting campaigns with maintenance plans rather than treating planting day as the endpoint.",
+        "evidence_span": {
+          "start_char": 281,
+          "end_char": 417
+        },
+        "annotation_note": "研究人员主张将种植活动与维护计划结合，而不是用种植日替代后续养护。"
+      }
+    ]
+  },
+  "evidence_index": [
+    {
+      "option_label": "A",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "Urban tree planting programs are often judged by the number of trees installed, but survival matters more than installation.",
+      "source_span": {
+        "start_char": 0,
+        "end_char": 124
+      },
+      "retrieval_tags": [
+        "A",
+        "衡量标准",
+        "存活率优先",
+        "反驳种植数量"
+      ]
+    },
+    {
+      "option_label": "B",
+      "evidence_role": "支持正确选项",
+      "evidence_text": "In a five-year study of three neighborhoods, trees planted with regular watering survived at nearly twice the rate of trees planted without follow-up care.",
+      "source_span": {
+        "start_char": 125,
+        "end_char": 280
+      },
+      "retrieval_tags": [
+        "B",
+        "定期浇水",
+        "长期维护",
+        "存活率",
+        "支持正确选项"
+      ]
+    },
+    {
+      "option_label": "C",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "In a five-year study of three neighborhoods, trees planted with regular watering survived at nearly twice the rate of trees planted without follow-up care.",
+      "source_span": {
+        "start_char": 125,
+        "end_char": 280
+      },
+      "retrieval_tags": [
+        "C",
+        "浇水效果",
+        "存活率提高",
+        "反驳无影响"
+      ]
+    },
+    {
+      "option_label": "D",
+      "evidence_role": "反驳干扰选项",
+      "evidence_text": "The researchers therefore recommend pairing planting campaigns with maintenance plans rather than treating planting day as the endpoint.",
+      "source_span": {
+        "start_char": 281,
+        "end_char": 417
+      },
+      "retrieval_tags": [
+        "D",
+        "维护计划",
+        "种植日不是终点",
+        "反驳替代养护"
+      ]
+    }
+  ],
+  "coverage_report": {
+    "total_options": 4,
+    "annotated_options": 4,
+    "uncovered_option_labels": [],
+    "has_supporting_evidence": true,
+    "has_rebuttal_evidence": true
+  },
+  "retrieval_query": "检索材料中关于城市植树项目成效衡量标准、定期浇水对树木存活率的影响，以及研究人员是否建议配套长期维护计划的证据，以判断哪个选项准确概括研究建议。"
+}
