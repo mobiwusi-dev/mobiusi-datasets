@@ -1,0 +1,120 @@
+{
+  "ad_claim": "这款SPF 50+防晒霜一次涂抹即可让所有肤质获得全天候99%的紫外线防护，无需补涂。",
+  "citations": [
+    {
+      "citation_label": "CIT-1",
+      "source_title": "SPF 50防晒配方在标准化紫外线暴露下的防护表现",
+      "source_url": "",
+      "publication_date": "2023-04-18",
+      "quoted_text": "在每平方厘米涂布2毫克样品并采用标准化紫外线照射的条件下，SPF 50配方显著延迟了受试皮肤出现红斑的时间；本试验未评估游泳、出汗或长时间户外暴露后的防护持续性。",
+      "source_scope": "实验室条件；标准涂布量；受控紫外线暴露；不涉及实际户外活动或所有肤质人群。",
+      "source_type": "研究论文"
+    },
+    {
+      "citation_label": "CIT-2",
+      "source_title": "非处方防晒产品标签与使用建议",
+      "source_url": "",
+      "publication_date": "2024-02-06",
+      "quoted_text": "防晒产品的标示SPF值来自规定条件下的测试，不等同于一次涂抹即可全天维持同等防护。户外活动时通常应至少每两小时补涂，并在游泳、擦拭或大量出汗后重新使用。",
+      "source_scope": "面向一般消费者的公共健康指导；涵盖户外活动、出汗、游泳和擦拭等实际使用条件。",
+      "source_type": "官方报告"
+    },
+    {
+      "citation_label": "CIT-3",
+      "source_title": "某SPF 50+防晒霜八小时受控暴露测试摘要",
+      "source_url": "",
+      "publication_date": "2023-09-12",
+      "quoted_text": "在室内模拟光源、未游泳且未擦拭的测试条件下，单次使用后8小时仍观察到较高的紫外线阻隔率。本结果不代表所有户外环境下均无需补涂。",
+      "source_scope": "单一产品配方；室内模拟光源；无游泳、出汗和擦拭；不代表所有肤质或实际户外场景。",
+      "source_type": "产品资料"
+    }
+  ],
+  "conflict_count": 1,
+  "conflict_pairs": [
+    {
+      "citation_label_a": "CIT-1",
+      "citation_label_b": "CIT-2",
+      "relation": "适用范围不同",
+      "conflict_description": "CIT-1证明的是标准实验室条件下的防护能力，CIT-2讨论的是现实户外使用中的持续性和补涂要求；两者并非直接否定同一实验结果，但不能由前者推出广告中的全天候结论。",
+      "applicability_difference": "CIT-1适用于标准涂布量和受控紫外线暴露，CIT-2适用于一般消费者的户外活动、出汗、游泳和擦拭场景。",
+      "mergeability": "仅限条件下合并",
+      "resolution_note": "可以同时使用，但应明确区分实验室SPF结果与现实使用建议，不得将实验室结果改写为无需补涂的承诺。"
+    },
+    {
+      "citation_label_a": "CIT-1",
+      "citation_label_b": "CIT-3",
+      "relation": "适用范围不同",
+      "conflict_description": "两条引用都支持该配方在受控条件下具有紫外线防护能力，但CIT-3观察的是单次使用后的室内持续时间，CIT-1主要测量标准化条件下的SPF表现，指标和暴露设计不同。",
+      "applicability_difference": "CIT-1强调标准涂布量和红斑反应，CIT-3强调室内模拟光源下的8小时阻隔；二者都未覆盖实际户外活动。",
+      "mergeability": "仅限条件下合并",
+      "resolution_note": "可以并列说明不同测试结果，但不能把SPF值、8小时阻隔率和全天候防护视为同一指标。"
+    },
+    {
+      "citation_label_a": "CIT-2",
+      "citation_label_b": "CIT-3",
+      "relation": "部分冲突",
+      "conflict_description": "CIT-3在限定的室内、无出汗和无擦拭条件下报告单次使用后8小时仍有较高阻隔率，而CIT-2明确建议户外活动中至少每两小时补涂。差异主要出现在将受控测试结果外推到现实使用时。",
+      "applicability_difference": "CIT-2针对一般户外使用和实际损耗，CIT-3仅针对室内模拟光源下未受干扰的产品测试。",
+      "mergeability": "仅限条件下合并",
+      "resolution_note": "应保留CIT-3的测试限定，并以CIT-2作为现实使用建议；不能用产品资料取消官方补涂建议。"
+    }
+  ],
+  "citation_analyses": [
+    {
+      "citation_label": "CIT-1",
+      "stance": "部分支持",
+      "support_scope": "支持该配方在标准化实验室条件下具有较高的UVB防护能力，但不能支持所有肤质、99%防护、全天候持续或无需补涂等扩展结论。",
+      "evidence_strength": 0.82,
+      "key_conclusions": [
+        "标准涂布量下SPF 50配方能够延迟紫外线诱导的红斑反应。",
+        "实验没有检验长时间户外使用后的防护保持情况。"
+      ],
+      "limitations": [
+        "实验室暴露条件与真实户外环境不同。",
+        "未覆盖不同肤质、出汗、游泳和擦拭情境。",
+        "没有直接证明99%的紫外线伤害均被阻止。"
+      ]
+    },
+    {
+      "citation_label": "CIT-2",
+      "stance": "反驳",
+      "support_scope": "反驳一次涂抹即可全天候有效且无需补涂的绝对表述；支持防晒效果取决于规范使用和重复涂抹。",
+      "evidence_strength": 0.9,
+      "key_conclusions": [
+        "标示SPF值不等同于全天候防护。",
+        "户外活动或出汗、游泳、擦拭后需要补涂。"
+      ],
+      "limitations": [
+        "该指南提供一般使用建议，没有针对该广告产品进行独立测试。",
+        "补涂间隔可能因产品标签、活动强度和环境而异。"
+      ]
+    },
+    {
+      "citation_label": "CIT-3",
+      "stance": "部分支持",
+      "support_scope": "支持该产品在特定室内模拟条件下单次使用后可维持数小时的较高阻隔率，但不能外推到所有户外活动、所有肤质或无需补涂。",
+      "evidence_strength": 0.61,
+      "key_conclusions": [
+        "受控光源下单次使用后8小时仍观察到较高阻隔率。",
+        "测试明确排除了游泳、出汗和擦拭。"
+      ],
+      "limitations": [
+        "产品资料可能存在选择性报告。",
+        "测试条件不能代表真实户外暴露。",
+        "未提供99%防护或所有肤质均适用的证据。"
+      ]
+    }
+  ],
+  "overall_assessment": {
+    "consistency_level": "部分冲突",
+    "support_sufficiency": false,
+    "support_score": 0.28,
+    "decision": "证据相互冲突",
+    "reasoning": "CIT-1和CIT-3只能支持该产品在受控条件下具有较强或较持久的防护表现，均不足以支持所有肤质、99%防护和全天候无需补涂的绝对主张。CIT-2直接指出现实户外环境下需要补涂，且与产品资料的8小时表述存在外推层面的冲突，因此现有引用不能充分支持广告文案。",
+    "unresolved_questions": [
+      "该产品在真实户外暴露、出汗和游泳后的防护保持时间是多少？",
+      "是否有覆盖不同肤质并采用标准涂布量的独立临床测试？",
+      "广告中的99%具体指哪一种紫外线指标，而不是笼统的紫外线伤害？"
+    ]
+  }
+}

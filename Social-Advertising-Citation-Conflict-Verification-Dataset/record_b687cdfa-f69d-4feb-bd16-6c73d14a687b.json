@@ -1,0 +1,119 @@
+{
+  "ad_claim": "这款可降解洗衣凝珠进入下水道后会在7天内完全分解，因此对河流和水生生物无害。",
+  "citations": [
+    {
+      "citation_label": "CIT-1",
+      "source_title": "可降解洗衣凝珠七日生物降解测试",
+      "source_url": "",
+      "publication_date": "2023-03-27",
+      "quoted_text": "在规定的实验室生物降解筛选条件下，配方的初级生物降解率在7天时达到90%。该结果不等同于所有成分完全矿化，也未单独证明对水生生物无毒。",
+      "source_scope": "规定实验室筛选条件；特定洗衣凝珠配方；测量初级生物降解率；未覆盖河流实际环境和长期生态效应。",
+      "source_type": "产品资料"
+    },
+    {
+      "citation_label": "CIT-2",
+      "source_title": "含表面活性剂洗涤配方在不同水环境中的降解与急性毒性",
+      "source_url": "",
+      "publication_date": "2022-08-19",
+      "quoted_text": "在不同温度、微生物群落和水体条件下，受测洗涤配方7日降解率为70%至95%；部分未降解组分在较高浓度下对水蚤表现出急性毒性，降解率本身不能排除生态风险。",
+      "source_scope": "多种模拟淡水环境和不同浓度条件；关注洗涤配方的降解率及水生生物急性毒性。",
+      "source_type": "研究论文"
+    },
+    {
+      "citation_label": "CIT-3",
+      "source_title": "可降解清洁产品的环境安全声称评估原则",
+      "source_url": "",
+      "publication_date": "2024-05-10",
+      "quoted_text": "可降解性描述只能说明材料在特定测试条件下的转化趋势，不能单独证明产品对河流生态系统或水生生物无害。无害性声称还需要与具体配方、环境浓度和水生毒性测试相匹配。",
+      "source_scope": "清洁产品环境声称的监管评估原则；适用于可降解性、生态毒性和无害化表述的审查。",
+      "source_type": "官方报告"
+    }
+  ],
+  "conflict_count": 1,
+  "conflict_pairs": [
+    {
+      "citation_label_a": "CIT-1",
+      "citation_label_b": "CIT-2",
+      "relation": "部分冲突",
+      "conflict_description": "CIT-1报告特定实验室条件下7日初级降解率为90%，CIT-2报告不同环境下为70%至95%，并指出高浓度残留可能具有急性毒性。因此，两者对降解率范围的描述部分重叠，但对完全分解和无生态风险的外推明显不一致。",
+      "applicability_difference": "CIT-1针对单一产品和规定筛选条件，CIT-2覆盖多种模拟淡水环境、温度、微生物群落和浓度。",
+      "mergeability": "仅限条件下合并",
+      "resolution_note": "应分别保留具体测试条件和浓度信息，不能用单一实验室的90%结果证明产品在所有河流中完全分解且无害。"
+    },
+    {
+      "citation_label_a": "CIT-1",
+      "citation_label_b": "CIT-3",
+      "relation": "相互一致",
+      "conflict_description": "CIT-1明确区分初级生物降解与完全矿化，并承认未证明水生无毒；CIT-3同样指出可降解性不能单独推出生态无害性。两者在限制广告外推方面一致。",
+      "applicability_difference": "CIT-1是该产品的具体测试资料，CIT-3是适用于清洁产品环境声称的通用评估原则。",
+      "mergeability": "可以合并",
+      "resolution_note": "可以将CIT-1的具体测试结果与CIT-3的通用解释结合，用于说明该产品资料不足以支持无害声称。"
+    },
+    {
+      "citation_label_a": "CIT-2",
+      "citation_label_b": "CIT-3",
+      "relation": "相互一致",
+      "conflict_description": "CIT-2通过降解率差异和浓度相关毒性说明生态风险不能由降解率单独排除，CIT-3从评估原则上得出同样结论；两者相互补充而非相互否定。",
+      "applicability_difference": "CIT-2提供模拟环境中的实证结果，CIT-3提供对环境声称进行审查时所需的证据框架。",
+      "mergeability": "可以合并",
+      "resolution_note": "可结合使用：CIT-2说明潜在风险机制，CIT-3说明为什么需要独立的水生毒性证据。"
+    }
+  ],
+  "citation_analyses": [
+    {
+      "citation_label": "CIT-1",
+      "stance": "部分支持",
+      "support_scope": "支持该配方在特定实验室条件下7天达到约90%的初级生物降解率，但不支持7天内完全分解或对水生生物无害。",
+      "evidence_strength": 0.7,
+      "key_conclusions": [
+        "特定实验条件下7日初级生物降解率达到90%。",
+        "测试没有证明所有成分完全矿化或无水生毒性。"
+      ],
+      "limitations": [
+        "初级生物降解率不等于完全分解。",
+        "实验室筛选条件不能代表不同河流环境。",
+        "没有提供完整的水生毒性测试结果。"
+      ]
+    },
+    {
+      "citation_label": "CIT-2",
+      "stance": "反驳",
+      "support_scope": "反驳7天完全分解和对水生生物无害的绝对结论；支持降解效果依赖环境条件，且残留成分在较高浓度下可能产生急性毒性。",
+      "evidence_strength": 0.84,
+      "key_conclusions": [
+        "不同水环境下7日降解率存在70%至95%的差异。",
+        "较高浓度的部分残留组分可能对水生生物产生急性毒性。"
+      ],
+      "limitations": [
+        "研究使用模拟环境，不能直接量化所有真实河流的风险。",
+        "毒性结果与具体浓度和配方组成有关。"
+      ]
+    },
+    {
+      "citation_label": "CIT-3",
+      "stance": "反驳",
+      "support_scope": "反驳从可降解性直接推导生态无害性的逻辑，并要求结合配方、环境浓度和水生毒性数据评价无害声称。",
+      "evidence_strength": 0.88,
+      "key_conclusions": [
+        "可降解性和生态安全是不同性质的结论。",
+        "无害性声称需要独立且匹配具体产品的水生毒性证据。"
+      ],
+      "limitations": [
+        "该报告提供的是评估原则，不是该洗衣凝珠的实测毒性结果。",
+        "未判断该产品在某一具体河流中的实际环境浓度。"
+      ]
+    }
+  ],
+  "overall_assessment": {
+    "consistency_level": "部分冲突",
+    "support_sufficiency": false,
+    "support_score": 0.18,
+    "decision": "不支持",
+    "reasoning": "CIT-1至多支持特定实验室条件下的初级生物降解，CIT-2显示降解率随环境变化且残留物在一定浓度下可能有毒，CIT-3则明确否定从可降解性推导水生无害性的做法。引用整体上共同削弱广告的完全分解和生态无害两部分核心表述，不能充分支持该广告主张。",
+    "unresolved_questions": [
+      "该产品完整配方在真实河流环境中的降解路径和最终矿化程度如何？",
+      "实际排放浓度下对当地水生生物的急性和慢性毒性是否经过独立测试？",
+      "广告所称7天是初级降解、最终矿化还是其他指标，测试条件是否与真实排放场景相符？"
+    ]
+  }
+}
