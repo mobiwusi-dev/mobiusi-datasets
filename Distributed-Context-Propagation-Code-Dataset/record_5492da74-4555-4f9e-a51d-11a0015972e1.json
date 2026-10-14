@@ -1,0 +1,44 @@
+{
+  "framework": "Express + OpenTelemetry JavaScript + node-fetch",
+  "code_summary": "Express 路由从入站请求头提取父上下文，在该父上下文上创建 inventory.lookup 服务端 span，并通过 trace.setSpan 建立请求上下文。调用库存服务前创建新的 headers 对象并注入传播字段，异常路径记录到 span，最终结束 span并返回下游响应。",
+  "source_artifact": {
+    "source_code": "import express from 'express';\nimport { context, propagation, trace, SpanKind } from '@opentelemetry/api';\nimport fetch from 'node-fetch';\n\nconst app = express();\nconst tracer = trace.getTracer('inventory-gateway');\n\napp.get('/inventory/:sku', async (req, res) => {\n  const parentContext = propagation.extract(context.active(), req.headers);\n  const span = tracer.startSpan('inventory.lookup', { kind: SpanKind.SERVER }, parentContext);\n  const requestContext = trace.setSpan(parentContext, span);\n  try {\n    const headers = {};\n    propagation.inject(requestContext, headers);\n    const upstream = await fetch(`http://inventory/internal/items/${req.params.sku}`, { headers });\n    res.status(upstream.status).send(await upstream.text());\n  } catch (error) {\n    span.recordException(error);\n    res.status(502).send('upstream failure');\n  } finally {\n    span.end();\n  }\n});\n\napp.listen(3000);\n",
+    "declared_language": "JavaScript",
+    "declared_framework": "Express + OpenTelemetry JavaScript + node-fetch",
+    "file_path": "src/routes/inventory.js"
+  },
+  "context_api_names": [
+    "context.active",
+    "propagation.extract",
+    "tracer.startSpan",
+    "trace.setSpan",
+    "propagation.inject",
+    "span.recordException",
+    "span.end"
+  ],
+  "metadata_carriers": [
+    "Express req.headers",
+    "Node.js headers object",
+    "HTTP response headers"
+  ],
+  "propagation_stages": [
+    "入站 Express 请求头提取",
+    "服务端 span 创建",
+    "当前请求上下文关联",
+    "下游 HTTP 请求头注入",
+    "异常记录与 span 结束"
+  ],
+  "propagation_pattern": "使用 OpenTelemetry JavaScript Context 显式保存父上下文和当前 span，并将传播上下文注入 node-fetch 的出站 HTTP headers。",
+  "programming_language": "JavaScript",
+  "service_boundary_types": [
+    "Express HTTP 入站边界",
+    "node-fetch HTTP 出站边界",
+    "网关到库存服务调用"
+  ],
+  "trace_identifier_types": [
+    "W3C traceparent",
+    "trace_id",
+    "span_id"
+  ],
+  "supports_cross_service_propagation": true
+}

@@ -1,0 +1,45 @@
+{
+  "code_summary": "FastAPI 处理器将入站请求头转换为字典并提取父上下文，然后使用 context.attach 将其绑定到当前异步执行范围。处理器创建 recommendation.lookup 服务端 span，使用 propagate.inject 生成发往 profile 服务的 HTTP 传播头，完成调用后通过 context.detach 恢复原有上下文。",
+  "framework": "FastAPI + OpenTelemetry Python + httpx",
+  "source_artifact": {
+    "source_code": "from fastapi import FastAPI, Request\nfrom opentelemetry import context, propagate, trace\nfrom opentelemetry.trace import SpanKind\nimport httpx\n\napp = FastAPI()\ntracer = trace.get_tracer('recommendation-service')\n\n@app.get('/recommendations')\nasync def recommendations(request: Request):\n    carrier = dict(request.headers)\n    parent_ctx = propagate.extract(carrier)\n    token = context.attach(parent_ctx)\n    try:\n        with tracer.start_as_current_span('recommendation.lookup', kind=SpanKind.SERVER) as span:\n            outbound_headers = {}\n            propagate.inject(outbound_headers)\n            async with httpx.AsyncClient() as client:\n                upstream = await client.get('http://profile/internal/preferences', headers=outbound_headers)\n            return {'status_code': upstream.status_code}\n    finally:\n        context.detach(token)\n",
+    "declared_language": "Python",
+    "declared_framework": "FastAPI + OpenTelemetry Python + httpx",
+    "file_path": "app/routes/recommendations.py"
+  },
+  "context_api_names": [
+    "propagate.extract",
+    "context.attach",
+    "tracer.start_as_current_span",
+    "propagate.inject",
+    "context.detach",
+    "SpanKind.SERVER"
+  ],
+  "metadata_carriers": [
+    "FastAPI Request headers",
+    "Python dict",
+    "HTTP request headers"
+  ],
+  "propagation_stages": [
+    "入站请求头转换为 carrier",
+    "父上下文提取",
+    "异步任务上下文绑定",
+    "服务端 span 创建",
+    "下游 HTTP 请求头注入",
+    "请求结束后上下文恢复"
+  ],
+  "propagation_pattern": "通过 OpenTelemetry Python 的 Context 显式 attach 到异步请求处理过程，并使用标准 propagator 在 HTTP header 字典中提取和注入追踪及 baggage 元数据。",
+  "programming_language": "Python",
+  "service_boundary_types": [
+    "FastAPI HTTP 入站边界",
+    "httpx HTTP 出站边界",
+    "推荐服务到用户画像服务调用"
+  ],
+  "trace_identifier_types": [
+    "W3C traceparent",
+    "trace_id",
+    "span_id",
+    "baggage"
+  ],
+  "supports_cross_service_propagation": true
+}

@@ -1,0 +1,42 @@
+{
+  "code_summary": "代码先从入站 HTTP 请求头中提取传播上下文，再以该上下文创建 checkout-service 的服务端 span。调用下游 orders 服务时，通过 NewRequestWithContext 绑定上下文，并使用 HeaderCarrier 将 traceparent 等传播字段注入出站请求头，从而实现跨 HTTP 服务边界的追踪上下文转发。",
+  "framework": "Go net/http + OpenTelemetry Go",
+  "source_artifact": {
+    "source_code": "package checkout\n\nimport (\n\t\"net/http\"\n\t\"go.opentelemetry.io/otel\"\n\t\"go.opentelemetry.io/otel/propagation\"\n)\n\nfunc ForwardOrder(w http.ResponseWriter, r *http.Request) {\n\tctx := otel.GetTextMapPropagator().Extract(r.Context(), propagation.HeaderCarrier(r.Header))\n\ttracer := otel.Tracer(\"checkout-service\")\n\tctx, span := tracer.Start(ctx, \"forward-order\")\n\tdefer span.End()\n\n\treq, err := http.NewRequestWithContext(ctx, http.MethodGet, \"http://orders/internal/order\", nil)\n\tif err != nil { http.Error(w, err.Error(), http.StatusBadRequest); return }\n\totel.GetTextMapPropagator().Inject(ctx, propagation.HeaderCarrier(req.Header))\n\tresp, err := http.DefaultClient.Do(req)\n\tif err != nil { http.Error(w, err.Error(), http.StatusBadGateway); return }\n\tdefer resp.Body.Close()\n\tw.WriteHeader(resp.StatusCode)\n}\n",
+    "declared_language": "Go",
+    "declared_framework": "Go net/http + OpenTelemetry Go",
+    "file_path": "internal/http/forward_order.go"
+  },
+  "context_api_names": [
+    "r.Context()",
+    "otel.GetTextMapPropagator().Extract",
+    "tracer.Start",
+    "http.NewRequestWithContext",
+    "otel.GetTextMapPropagator().Inject",
+    "propagation.HeaderCarrier"
+  ],
+  "metadata_carriers": [
+    "HTTP request headers",
+    "http.Header",
+    "propagation.HeaderCarrier"
+  ],
+  "propagation_stages": [
+    "入站 HTTP 请求头提取",
+    "服务端 span 创建",
+    "下游 HTTP 请求上下文绑定",
+    "出站 HTTP 请求头注入"
+  ],
+  "propagation_pattern": "基于 Go context.Context 的显式上下文传递，并通过 OpenTelemetry W3C propagator 将上下文注入和提取到 HTTP 请求头。",
+  "programming_language": "Go",
+  "service_boundary_types": [
+    "HTTP 入站服务边界",
+    "HTTP 出站服务调用",
+    "微服务到微服务调用"
+  ],
+  "trace_identifier_types": [
+    "W3C traceparent",
+    "trace_id",
+    "span_id"
+  ],
+  "supports_cross_service_propagation": true
+}
