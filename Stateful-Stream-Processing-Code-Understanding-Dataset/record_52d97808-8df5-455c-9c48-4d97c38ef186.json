@@ -1,0 +1,209 @@
+{
+  "state_model": {
+    "has_state": true,
+    "state_descriptors": [
+      {
+        "state_name": "orders_by_id",
+        "state_type": "映射状态",
+        "key_definition": "按 order_id 分区，每个连接键最多保存当前等待匹配的订单。",
+        "value_definition": "保存订单原始记录及其 event_time_ms、amount 等字段。",
+        "update_rule": "订单到达时写入或覆盖对应 order_id 的订单；若支付状态已存在且时间满足区间条件则立即输出连接结果。",
+        "retention_policy": "注册订单事件时间加 5000 毫秒的定时器，连接等待区间结束后删除订单状态。"
+      },
+      {
+        "state_name": "payments_by_id",
+        "state_type": "映射状态",
+        "key_definition": "按 order_id 分区，每个连接键保存当前等待匹配的支付。",
+        "value_definition": "保存支付原始记录及其 event_time_ms、status 等字段。",
+        "update_rule": "支付到达时写入或覆盖对应 order_id 的支付；只有 status 为 SETTLED 且与订单时间差不超过 5000 毫秒时才生成输出。",
+        "retention_policy": "连接区间结束后由事件时间定时器清理，未匹配支付不会永久保留。"
+      }
+    ],
+    "state_scope": "按连接键 order_id 和连接区间作用域隔离。"
+  },
+  "explanation": {
+    "operator_chain_explanation": "订单流和支付流分别提取事件时间并按 order_id 分区，随后进入双输入区间连接处理器。处理器读取双方键控状态，匹配时间差不超过 5 秒且支付已结算的记录，成功结果写入事务性汇。",
+    "state_change_explanation": "订单和支付分别保存在两个映射状态中，直到连接窗口结束。任一侧到达时都会检查另一侧状态；连接成功后输出结果，事件时间定时器负责清理已完成或未匹配的键。检查点同时保存两类连接状态和两个输入偏移。",
+    "event_result_explanation": "o501 先写入等待状态，p501 在 4 秒后到达并满足全部匹配条件，因此产生一条已结算订单。p502 没有对应订单，只能等待到区间结束，之后被清理。",
+    "assumptions_and_uncertainties": "示例将框架的双流连接抽象为 KeyedCoProcessFunction 风格，并假设同一 order_id 在连接区间内至多保留一条有效记录。实际框架对重复支付、迟到旁路和定时器去重的细节可能不同。"
+  },
+  "source_code": "from datetime import timedelta\n\nclass OrderPaymentJoin:\n    def open(self):\n        self.orders = MapState('orders_by_id')\n        self.payments = MapState('payments_by_id')\n\n    def process_order(self, order, ctx, out):\n        self.orders.put(order['order_id'], order)\n        payment = self.payments.get(order['order_id'])\n        if payment and abs(order['event_time_ms'] - payment['event_time_ms']) <= 5000 and payment['status'] == 'SETTLED':\n            out.emit(join_record(order, payment))\n        ctx.register_event_time_timer(order['event_time_ms'] + 5000)\n\n    def process_payment(self, payment, ctx, out):\n        self.payments.put(payment['order_id'], payment)\n        order = self.orders.get(payment['order_id'])\n        if order and abs(order['event_time_ms'] - payment['event_time_ms']) <= 5000 and payment['status'] == 'SETTLED':\n            out.emit(join_record(order, payment))\n        ctx.register_event_time_timer(payment['event_time_ms'] + 5000)\n\n    def on_timer(self, timestamp, ctx):\n        for order_id in ctx.keys_with_expired_interval(timestamp):\n            self.orders.remove(order_id)\n            self.payments.remove(order_id)\n\norders = source('orders').assign_timestamps_and_watermarks(max_out_of_orderness_ms=3000)\npayments = source('payments').assign_timestamps_and_watermarks(max_out_of_orderness_ms=3000)\njoined = orders.key_by(lambda x: x['order_id']).connect(\n    payments.key_by(lambda x: x['order_id'])\n).process(OrderPaymentJoin(), interval_ms=5000, status='SETTLED')\njoined.sink('settled-orders', transactional=True)\ncheckpoint(enable=True, interval_ms=15000, mode='EXACTLY_ONCE')",
+  "join_semantics": {
+    "join_type": "事件时间内连接",
+    "left_key": "order.order_id",
+    "right_key": "payment.order_id",
+    "join_window": "payment.event_time_ms - 5000 <= order.event_time_ms <= payment.event_time_ms + 5000",
+    "match_condition": "两个事件的 order_id 相同，事件时间差绝对值不超过 5000 毫秒，且 payment.status == 'SETTLED'。",
+    "unmatched_record_policy": "在连接区间结束前保存在对应状态中等待另一侧；区间结束仍未匹配的记录被清理且不输出。"
+  },
+  "operator_chain": [
+    {
+      "node_id": "o1",
+      "operator_type": "数据源",
+      "operator_name": "source('orders')",
+      "input_nodes": [],
+      "output_nodes": [
+        "o2"
+      ],
+      "semantic_role": "读取订单事件，并提供 order_id、event_time_ms 和 amount。"
+    },
+    {
+      "node_id": "o2",
+      "operator_type": "水位线",
+      "operator_name": "orders.assign_timestamps_and_watermarks",
+      "input_nodes": [
+        "o1"
+      ],
+      "output_nodes": [
+        "o3"
+      ],
+      "semantic_role": "从订单事件时间生成带 3 秒最大乱序容忍的水位线。"
+    },
+    {
+      "node_id": "o3",
+      "operator_type": "键控分区",
+      "operator_name": "orders.key_by(order_id)",
+      "input_nodes": [
+        "o2"
+      ],
+      "output_nodes": [
+        "o5"
+      ],
+      "semantic_role": "按订单号将订单事件路由到对应的连接键。"
+    },
+    {
+      "node_id": "o4",
+      "operator_type": "数据源",
+      "operator_name": "source('payments')",
+      "input_nodes": [],
+      "output_nodes": [
+        "o6"
+      ],
+      "semantic_role": "读取支付事件，并提供 order_id、event_time_ms 和 status。"
+    },
+    {
+      "node_id": "o6",
+      "operator_type": "水位线与键控分区",
+      "operator_name": "payments.assign_timestamps_and_watermarks().key_by(order_id)",
+      "input_nodes": [
+        "o4"
+      ],
+      "output_nodes": [
+        "o5"
+      ],
+      "semantic_role": "为支付流生成水位线并按 order_id 分区。"
+    },
+    {
+      "node_id": "o5",
+      "operator_type": "区间连接",
+      "operator_name": "connect().process(OrderPaymentJoin())",
+      "input_nodes": [
+        "o3",
+        "o6"
+      ],
+      "output_nodes": [
+        "o7"
+      ],
+      "semantic_role": "在同一 order_id 下匹配事件时间相差不超过 5000 毫秒且支付状态为 SETTLED 的订单和支付。"
+    },
+    {
+      "node_id": "o7",
+      "operator_type": "数据汇",
+      "operator_name": "sink('settled-orders')",
+      "input_nodes": [
+        "o5"
+      ],
+      "output_nodes": [],
+      "semantic_role": "以事务方式输出匹配成功的已结算订单记录。"
+    }
+  ],
+  "window_semantics": {
+    "window_type": "区间连接窗口",
+    "time_basis": "事件时间",
+    "window_size_ms": 10000,
+    "slide_interval_ms": 5000,
+    "allowed_lateness_ms": 3000,
+    "watermark_strategy": "两条输入流都使用最大事件时间减去 3000 毫秒的水位线，连接算子等待双方水位线推进。",
+    "trigger_condition": "任一侧事件到达且另一侧已有满足条件的记录时触发连接；等待定时器在事件时间加 5000 毫秒后触发清理。",
+    "late_event_policy": "超过对应水位线和连接等待边界的记录不再参与连接，并由实际框架的迟到旁路或丢弃策略处理。"
+  },
+  "state_transitions": [
+    {
+      "sequence": 1,
+      "state_name": "orders_by_id",
+      "trigger_event": "订单 o501：order_id=A17，event_time=10:00:00，amount=42.50。",
+      "before_state": "A17：不存在。",
+      "after_state": "A17 -> order(event_time=10:00:00, amount=42.50)。",
+      "transition_reason": "订单先到达，暂时没有对应支付，因此写入等待状态并注册 10:00:05 定时器。"
+    },
+    {
+      "sequence": 2,
+      "state_name": "payments_by_id",
+      "trigger_event": "支付 p501：order_id=A17，event_time=10:00:04，status=SETTLED。",
+      "before_state": "A17：不存在。",
+      "after_state": "A17 -> payment(event_time=10:00:04, status=SETTLED)。",
+      "transition_reason": "支付写入状态后读取到订单 o501；两者时间差为 4 秒，满足区间连接条件。"
+    },
+    {
+      "sequence": 3,
+      "state_name": "orders_by_id/payments_by_id",
+      "trigger_event": "连接输出 order o501 与 payment p501。",
+      "before_state": "订单 A17 和支付 A17 均保存在连接状态中。",
+      "after_state": "输出 joined(A17)，状态继续保留到连接区间定时器清理。",
+      "transition_reason": "连接键相同、时间差在 5 秒范围内且支付已结算。"
+    },
+    {
+      "sequence": 4,
+      "state_name": "orders_by_id/payments_by_id",
+      "trigger_event": "A17 的事件时间定时器在连接等待区间结束时触发。",
+      "before_state": "订单 A17 与支付 A17 仍在状态中。",
+      "after_state": "订单 A17 和支付 A17 均删除。",
+      "transition_reason": "连接区间已结束，清理状态以避免无界增长。"
+    }
+  ],
+  "event_time_results": [
+    {
+      "event_id": "o501",
+      "event_time": "2025-03-02T10:00:00Z",
+      "processing_time": "2025-03-02T10:00:01Z",
+      "window_id": "order_id=A17 / interval[-5000ms,+5000ms]",
+      "aggregation_result": "null",
+      "is_late_event": false,
+      "emitted_result": "null",
+      "result_explanation": "订单先到达，只写入 orders_by_id 并等待支付；在连接时间范围尚未结束前不会输出未匹配订单。"
+    },
+    {
+      "event_id": "p501",
+      "event_time": "2025-03-02T10:00:04Z",
+      "processing_time": "2025-03-02T10:00:05Z",
+      "window_id": "order_id=A17 / interval[-5000ms,+5000ms]",
+      "aggregation_result": "{\"order_id\":\"A17\",\"amount\":42.5,\"payment_status\":\"SETTLED\"}",
+      "is_late_event": false,
+      "emitted_result": "{\"order_id\":\"A17\",\"amount\":42.5,\"payment_id\":\"p501\",\"payment_status\":\"SETTLED\"}",
+      "result_explanation": "支付事件与订单共享 order_id，且事件时间相差 4 秒，满足 5 秒区间和 SETTLED 状态条件，因此输出连接记录。"
+    },
+    {
+      "event_id": "p502",
+      "event_time": "2025-03-02T10:01:20Z",
+      "processing_time": "2025-03-02T10:01:21Z",
+      "window_id": "order_id=A18 / interval[-5000ms,+5000ms]",
+      "aggregation_result": "null",
+      "is_late_event": false,
+      "emitted_result": "null",
+      "result_explanation": "该支付没有在连接区间内找到订单，暂存至 payments_by_id；如果定时器到期仍无订单，则清理且不产生输出。"
+    }
+  ],
+  "checkpoint_recovery": {
+    "checkpoint_enabled": true,
+    "checkpoint_interval_ms": 15000,
+    "checkpointed_state": [
+      "orders_by_id",
+      "payments_by_id",
+      "orders-source-offset",
+      "payments-source-offset"
+    ],
+    "recovery_strategy": "失败后恢复两侧连接状态、事件时间定时器和两个输入源偏移，并从最近检查点继续重放。",
+    "exactly_once_semantics": true,
+    "failure_effect": "连接状态与源偏移保持一致；重放期间可能再次计算连接，但事务性输出汇会去重或原子提交，从而避免已确认结果重复可见。"
+  }
+}

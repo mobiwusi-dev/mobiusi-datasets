@@ -1,0 +1,200 @@
+{
+  "explanation": {
+    "operator_chain_explanation": "事件先由 meter-events 输入，经事件时间戳提取和水位线生成后按 device_id 分区，再进入 60 秒滚动窗口。窗口聚合同时维护总和与数量，正常结果写入事务性指标汇，超过允许迟到边界的记录从旁路写入迟到事件汇。",
+    "state_change_explanation": "每个设备的每个窗口拥有独立的 sum/count 聚合状态。事件到达时累加，水位线触发首次输出，允许迟到事件到达时继续更新；窗口结束并经过 10 秒保留期后状态被清理。状态、偏移和水位线进度都纳入周期性检查点。",
+    "event_result_explanation": "e101 和 e102 按事件时间进入同一窗口，结果依次为 4.0/1 和 7.0/2。e103 虽然处理得较晚，但事件时间仍属于已触发窗口且没有超过允许迟到边界，因此将结果修订为 9.0/3。",
+    "assumptions_and_uncertainties": "示例假设事件时间字段单位为毫秒、窗口算子支持允许迟到后的更新输出，并且 transactional=True 的 sink 与检查点协议正确集成。具体框架版本如何表示窗口更新消息和旁路输出，需要结合实际运行配置确认。"
+  },
+  "source_code": "from pyflink.datastream import StreamExecutionEnvironment\nfrom pyflink.common import Time\n\nenv = StreamExecutionEnvironment.get_execution_environment()\nenv.enable_checkpointing(30000)\nenv.get_checkpoint_config().set_checkpointing_mode('EXACTLY_ONCE')\n\nevents = env.from_source('meter-events')\nwith_watermarks = events.assign_timestamps_and_watermarks(\n    timestamp_field='event_time_ms',\n    max_out_of_orderness_ms=5000\n)\nkeyed = with_watermarks.key_by(lambda event: event['device_id'])\nwindowed = keyed.window(\n    window_type='TUMBLING_EVENT_TIME',\n    size_ms=60000,\n    allowed_lateness_ms=10000\n)\naggregated = windowed.aggregate(sum_field='value', count_field='value')\nlate_events = aggregated.get_side_output('late-events')\naggregated.sink('minute-device-metrics', transactional=True)\nlate_events.sink('late-meter-events')",
+  "state_model": {
+    "has_state": true,
+    "state_descriptors": [
+      {
+        "state_name": "window_sum_count",
+        "state_type": "聚合状态",
+        "key_definition": "按 device_id 和 [window_start, window_end) 窗口键分区。",
+        "value_definition": "保存 value_sum 和 value_count 两个字段。",
+        "update_rule": "窗口内每到一个事件就读取当前累加器，将 value 加到 value_sum，并将 value_count 加一；允许迟到范围内的事件会更新已触发窗口。",
+        "retention_policy": "窗口结束且超过 10000 毫秒允许迟到时间后清理。"
+      }
+    ],
+    "state_scope": "按设备键和事件时间窗口作用域隔离。"
+  },
+  "join_semantics": {
+    "join_type": "无连接",
+    "left_key": "不适用",
+    "right_key": "不适用",
+    "join_window": "不适用",
+    "match_condition": "不适用",
+    "unmatched_record_policy": "不适用，程序只有单输入流。"
+  },
+  "operator_chain": [
+    {
+      "node_id": "n1",
+      "operator_type": "数据源",
+      "operator_name": "from_source('meter-events')",
+      "input_nodes": [],
+      "output_nodes": [
+        "n2"
+      ],
+      "semantic_role": "读取包含 device_id、event_time_ms 和 value 的电表事件。"
+    },
+    {
+      "node_id": "n2",
+      "operator_type": "事件时间与水位线",
+      "operator_name": "assign_timestamps_and_watermarks",
+      "input_nodes": [
+        "n1"
+      ],
+      "output_nodes": [
+        "n3"
+      ],
+      "semantic_role": "提取事件时间，并使用最大乱序时间 5 秒生成水位线。"
+    },
+    {
+      "node_id": "n3",
+      "operator_type": "键控分区",
+      "operator_name": "key_by(device_id)",
+      "input_nodes": [
+        "n2"
+      ],
+      "output_nodes": [
+        "n4"
+      ],
+      "semantic_role": "按设备标识分区，使每个设备的窗口聚合状态彼此隔离。"
+    },
+    {
+      "node_id": "n4",
+      "operator_type": "窗口",
+      "operator_name": "TUMBLING_EVENT_TIME",
+      "input_nodes": [
+        "n3"
+      ],
+      "output_nodes": [
+        "n5"
+      ],
+      "semantic_role": "为每个设备创建 60 秒事件时间滚动窗口，并允许窗口结束后继续接收 10 秒内的迟到事件。"
+    },
+    {
+      "node_id": "n5",
+      "operator_type": "聚合",
+      "operator_name": "aggregate(sum_field='value', count_field='value')",
+      "input_nodes": [
+        "n4"
+      ],
+      "output_nodes": [
+        "n6",
+        "n7"
+      ],
+      "semantic_role": "维护窗口内 value 的总和与数量；正常结果进入主输出，超过允许迟到范围的事件进入旁路。"
+    },
+    {
+      "node_id": "n6",
+      "operator_type": "数据汇",
+      "operator_name": "sink('minute-device-metrics')",
+      "input_nodes": [
+        "n5"
+      ],
+      "output_nodes": [],
+      "semantic_role": "以事务方式写出每个设备每分钟的聚合结果。"
+    },
+    {
+      "node_id": "n7",
+      "operator_type": "迟到事件旁路",
+      "operator_name": "sink('late-meter-events')",
+      "input_nodes": [
+        "n5"
+      ],
+      "output_nodes": [],
+      "semantic_role": "接收超过允许迟到边界、无法再更新窗口结果的事件。"
+    }
+  ],
+  "window_semantics": {
+    "window_type": "滚动窗口",
+    "time_basis": "事件时间",
+    "window_size_ms": 60000,
+    "slide_interval_ms": 60000,
+    "allowed_lateness_ms": 10000,
+    "watermark_strategy": "水位线约等于当前观测到的最大事件时间减去 5000 毫秒。",
+    "trigger_condition": "水位线达到窗口结束时间时首次输出；在允许迟到期内收到事件时再次输出更新结果。",
+    "late_event_policy": "窗口结束后 10000 毫秒内的事件更新窗口并产生修订结果，超过该边界的事件发送到 late-events 旁路。"
+  },
+  "state_transitions": [
+    {
+      "sequence": 1,
+      "state_name": "window_sum_count",
+      "trigger_event": "事件 e101：device_id=d17，event_time=2025-03-01T12:00:12Z，value=4.0。",
+      "before_state": "d17 / [12:00:00,12:01:00)：不存在。",
+      "after_state": "d17 / [12:00:00,12:01:00)：value_sum=4.0，value_count=1。",
+      "transition_reason": "第一个事件为该设备创建窗口聚合状态。"
+    },
+    {
+      "sequence": 2,
+      "state_name": "window_sum_count",
+      "trigger_event": "事件 e102：device_id=d17，event_time=2025-03-01T12:00:45Z，value=3.0。",
+      "before_state": "d17 / [12:00:00,12:01:00)：value_sum=4.0，value_count=1。",
+      "after_state": "d17 / [12:00:00,12:01:00)：value_sum=7.0，value_count=2。",
+      "transition_reason": "事件仍属于同一事件时间窗口，聚合状态累加。"
+    },
+    {
+      "sequence": 3,
+      "state_name": "window_sum_count",
+      "trigger_event": "迟到事件 e103：device_id=d17，event_time=2025-03-01T12:00:20Z，processing_time=2025-03-01T12:01:06Z，value=2.0。",
+      "before_state": "d17 / [12:00:00,12:01:00)：value_sum=7.0，value_count=2，窗口已因水位线触发过一次输出。",
+      "after_state": "d17 / [12:00:00,12:01:00)：value_sum=9.0，value_count=3。",
+      "transition_reason": "事件晚于当前水位线但仍在 10000 毫秒允许迟到范围内，因此更新已输出窗口。"
+    },
+    {
+      "sequence": 4,
+      "state_name": "window_sum_count",
+      "trigger_event": "窗口 [12:00:00,12:01:00) 的允许迟到计时器到期。",
+      "before_state": "d17 / [12:00:00,12:01:00)：value_sum=9.0，value_count=3。",
+      "after_state": "d17 / [12:00:00,12:01:00)：已清理。",
+      "transition_reason": "窗口结束后的允许迟到期已结束，后续事件只能进入旁路。"
+    }
+  ],
+  "event_time_results": [
+    {
+      "event_id": "e101",
+      "event_time": "2025-03-01T12:00:12Z",
+      "processing_time": "2025-03-01T12:00:13Z",
+      "window_id": "d17/[12:00:00,12:01:00)",
+      "aggregation_result": "{\"sum\":4.0,\"count\":1}",
+      "is_late_event": false,
+      "emitted_result": "{\"device_id\":\"d17\",\"window\":\"[12:00:00,12:01:00)\",\"sum\":4.0,\"count\":1,\"update\":false}",
+      "result_explanation": "事件时间落入 12:00 到 12:01 的窗口，创建初始聚合状态；水位线尚未关闭该窗口。"
+    },
+    {
+      "event_id": "e102",
+      "event_time": "2025-03-01T12:00:45Z",
+      "processing_time": "2025-03-01T12:00:46Z",
+      "window_id": "d17/[12:00:00,12:01:00)",
+      "aggregation_result": "{\"sum\":7.0,\"count\":2}",
+      "is_late_event": false,
+      "emitted_result": "{\"device_id\":\"d17\",\"window\":\"[12:00:00,12:01:00)\",\"sum\":7.0,\"count\":2,\"update\":false}",
+      "result_explanation": "事件与 e101 属于同一设备和同一窗口，聚合和计数分别更新为 7.0 与 2。"
+    },
+    {
+      "event_id": "e103",
+      "event_time": "2025-03-01T12:00:20Z",
+      "processing_time": "2025-03-01T12:01:06Z",
+      "window_id": "d17/[12:00:00,12:01:00)",
+      "aggregation_result": "{\"sum\":9.0,\"count\":3}",
+      "is_late_event": true,
+      "emitted_result": "{\"device_id\":\"d17\",\"window\":\"[12:00:00,12:01:00)\",\"sum\":9.0,\"count\":3,\"update\":true}",
+      "result_explanation": "e103 的事件时间早于当前水位线，因此是迟到事件，但仍在允许迟到范围内；它使已输出窗口产生修订结果，而不是进入旁路。"
+    }
+  ],
+  "checkpoint_recovery": {
+    "checkpoint_enabled": true,
+    "checkpoint_interval_ms": 30000,
+    "checkpointed_state": [
+      "window_sum_count",
+      "source_offsets",
+      "watermark_progress"
+    ],
+    "recovery_strategy": "任务失败后从最近一次成功检查点恢复窗口累加状态和源偏移，并从偏移位置重放事件。",
+    "exactly_once_semantics": true,
+    "failure_effect": "窗口状态和源偏移从同一检查点恢复；事务性汇保证已提交结果不会因重放重复写入，未提交结果会重新计算。"
+  }
+}

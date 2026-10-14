@@ -1,0 +1,214 @@
+{
+  "explanation": {
+    "operator_chain_explanation": "点击流提取事件时间后按用户分区，规则流被广播并与点击流连接。处理器先进行 event_id 去重，再把事件加入所有覆盖它的 5 分钟滑动窗口，从广播状态读取活动阈值，达到阈值时向告警汇输出。",
+    "state_change_explanation": "seen_event_ids 防止同一事件重复计数，window_accumulators 保存用户、活动和窗口的收入与数量，rule_state 保存各活动的最新规则。窗口状态在允许迟到期结束后清理，而规则状态持续保留最新版本。",
+    "event_result_explanation": "e701 建立 55.0 的窗口累计，e702 虽然迟到但仍可修订同一窗口，使累计达到 115.0 并触发告警；再次到达的 e701 被去重，不改变聚合结果。",
+    "assumptions_and_uncertainties": "示例假设同一活动规则在点击处理时以广播状态中的最新版本生效，并假设滑动窗口会为每个覆盖区间分别维护累计值。由于检查点模式为 AT_LEAST_ONCE，外部告警汇是否具备幂等键会影响最终重复告警风险。"
+  },
+  "source_code": "class CampaignSlidingProcessor:\n    def open(self):\n        self.seen_event_ids = MapState('seen_event_ids')\n        self.window_accumulators = MapState('window_accumulators')\n        self.rule_state = BroadcastState('campaign_rules')\n\n    def on_rule(self, rule):\n        self.rule_state.put(rule['campaign_id'], rule)\n\n    def on_click(self, event, ctx, out):\n        if self.seen_event_ids.contains(event['event_id']):\n            return\n        self.seen_event_ids.put(event['event_id'], event['event_time_ms'])\n        rule = self.rule_state.get(event['campaign_id'])\n        for window_start in sliding_starts(event['event_time_ms'], size_ms=300000, slide_ms=60000):\n            key = (event['user_id'], event['campaign_id'], window_start)\n            current = self.window_accumulators.get(key, {'count': 0, 'revenue': 0.0})\n            current['count'] += 1\n            current['revenue'] += event['revenue']\n            self.window_accumulators.put(key, current)\n            if rule and rule['active'] and current['revenue'] >= rule['alert_threshold']:\n                out.emit_alert(key, current)\n        ctx.register_event_time_timer(event['event_time_ms'] + 330000)\n\nclicks = source('campaign-clicks').assign_timestamps_and_watermarks(max_out_of_orderness_ms=10000)\nrules = source('campaign-rules').broadcast('campaign_rules')\nalerts = clicks.key_by(lambda e: e['user_id']).connect(rules).process(\n    CampaignSlidingProcessor(), window_size_ms=300000, slide_ms=60000, allowed_lateness_ms=30000\n)\nalerts.sink('campaign-alerts')\ncheckpoint(enable=True, interval_ms=20000, mode='AT_LEAST_ONCE')",
+  "state_model": {
+    "has_state": true,
+    "state_descriptors": [
+      {
+        "state_name": "seen_event_ids",
+        "state_type": "映射状态",
+        "key_definition": "按 user_id 分区，以 event_id 作为去重键。",
+        "value_definition": "保存 event_id 首次看到时的 event_time_ms。",
+        "update_rule": "事件首次出现时写入；若 event_id 已存在则直接丢弃，不更新窗口累计。",
+        "retention_policy": "事件时间超过窗口结束及 30000 毫秒允许迟到期后清理。"
+      },
+      {
+        "state_name": "window_accumulators",
+        "state_type": "映射状态",
+        "key_definition": "以 user_id、campaign_id 和 window_start 组成复合键。",
+        "value_definition": "保存滑动窗口内的 count 和 revenue。",
+        "update_rule": "去重通过后，事件被加入其覆盖的所有 5 分钟窗口；revenue 累加，count 加一；满足广播规则阈值时输出告警。",
+        "retention_policy": "窗口结束后保留 30000 毫秒以接受迟到更新，之后由事件时间定时器清理。"
+      },
+      {
+        "state_name": "rule_state",
+        "state_type": "广播状态",
+        "key_definition": "按 campaign_id 存储，所有并行实例都拥有规则副本。",
+        "value_definition": "保存 active、alert_threshold 和规则版本等字段。",
+        "update_rule": "规则事件到达时按 campaign_id 覆盖旧规则；后续点击读取当前规则。",
+        "retention_policy": "保留最新规则，直到新的规则覆盖或作业停止。"
+      }
+    ],
+    "state_scope": "点击去重和窗口聚合按用户键作用域，规则状态按算子实例广播作用域。"
+  },
+  "join_semantics": {
+    "join_type": "广播连接",
+    "left_key": "click.campaign_id",
+    "right_key": "rule.campaign_id",
+    "join_window": "无独立规则时间窗口，点击处理时读取当前广播规则；点击自身仍受 5 分钟滑动窗口约束。",
+    "match_condition": "规则 campaign_id 相同且 rule.active 为 true；只有匹配到活动规则时才检查 alert_threshold。",
+    "unmatched_record_policy": "没有对应规则时仍保留点击的窗口聚合，但不生成告警。"
+  },
+  "operator_chain": [
+    {
+      "node_id": "c1",
+      "operator_type": "数据源",
+      "operator_name": "source('campaign-clicks')",
+      "input_nodes": [],
+      "output_nodes": [
+        "c2"
+      ],
+      "semantic_role": "读取包含 event_id、user_id、campaign_id、event_time_ms 和 revenue 的点击事件。"
+    },
+    {
+      "node_id": "c2",
+      "operator_type": "事件时间与水位线",
+      "operator_name": "assign_timestamps_and_watermarks",
+      "input_nodes": [
+        "c1"
+      ],
+      "output_nodes": [
+        "c3"
+      ],
+      "semantic_role": "提取点击事件时间，并按最大乱序 10 秒推进水位线。"
+    },
+    {
+      "node_id": "c3",
+      "operator_type": "键控去重",
+      "operator_name": "key_by(user_id)",
+      "input_nodes": [
+        "c2"
+      ],
+      "output_nodes": [
+        "c5"
+      ],
+      "semantic_role": "按用户分区，并通过 seen_event_ids 丢弃已经处理过的 event_id。"
+    },
+    {
+      "node_id": "c4",
+      "operator_type": "规则数据源",
+      "operator_name": "source('campaign-rules').broadcast",
+      "input_nodes": [],
+      "output_nodes": [
+        "c5"
+      ],
+      "semantic_role": "读取营销活动阈值规则并广播到所有处理实例。"
+    },
+    {
+      "node_id": "c5",
+      "operator_type": "广播连接与处理",
+      "operator_name": "connect(rules).process(CampaignSlidingProcessor())",
+      "input_nodes": [
+        "c3",
+        "c4"
+      ],
+      "output_nodes": [
+        "c6"
+      ],
+      "semantic_role": "将点击事件与广播规则结合，按滑动窗口累积收入并在达到规则阈值时发出告警。"
+    },
+    {
+      "node_id": "c6",
+      "operator_type": "数据汇",
+      "operator_name": "sink('campaign-alerts')",
+      "input_nodes": [
+        "c5"
+      ],
+      "output_nodes": [],
+      "semantic_role": "输出达到活动收入阈值的用户窗口告警。"
+    }
+  ],
+  "window_semantics": {
+    "window_type": "滑动窗口",
+    "time_basis": "事件时间",
+    "window_size_ms": 300000,
+    "slide_interval_ms": 60000,
+    "allowed_lateness_ms": 30000,
+    "watermark_strategy": "水位线约等于当前观测到的最大事件时间减去 10000 毫秒。",
+    "trigger_condition": "水位线到达窗口结束时间时输出当前聚合；在允许迟到期内事件更新窗口并可再次触发阈值告警。",
+    "late_event_policy": "窗口结束后 30000 毫秒内的迟到事件更新尚未清理的窗口，超过边界的事件不再进入聚合；重复 event_id 无论是否迟到都直接丢弃。"
+  },
+  "state_transitions": [
+    {
+      "sequence": 1,
+      "state_name": "rule_state",
+      "trigger_event": "规则 r9：campaign_id=summer，active=true，alert_threshold=100.0。",
+      "before_state": "summer：不存在。",
+      "after_state": "summer -> active=true，alert_threshold=100.0。",
+      "transition_reason": "广播规则到达并初始化活动阈值，之后所有处理实例可读取该规则。"
+    },
+    {
+      "sequence": 2,
+      "state_name": "seen_event_ids",
+      "trigger_event": "点击 e701：user_id=u7，campaign_id=summer，event_time=09:02:30，revenue=55.0。",
+      "before_state": "u7 的 seen_event_ids 中没有 e701。",
+      "after_state": "u7 的 seen_event_ids 新增 e701 -> 09:02:30。",
+      "transition_reason": "事件首次出现，通过去重检查并允许进入窗口处理。"
+    },
+    {
+      "sequence": 3,
+      "state_name": "window_accumulators",
+      "trigger_event": "点击 e701 进入 [09:00:00,09:05:00) 等滑动窗口。",
+      "before_state": "u7/summer/[09:00:00,09:05:00)：count=0，revenue=0.0。",
+      "after_state": "u7/summer/[09:00:00,09:05:00)：count=1，revenue=55.0。",
+      "transition_reason": "事件按事件时间加入覆盖它的滑动窗口，尚未达到 100.0 告警阈值。"
+    },
+    {
+      "sequence": 4,
+      "state_name": "window_accumulators",
+      "trigger_event": "迟到点击 e702：user_id=u7，campaign_id=summer，event_time=09:01:50，processing_time=09:03:20，revenue=60.0。",
+      "before_state": "u7/summer/[09:00:00,09:05:00)：count=1，revenue=55.0。",
+      "after_state": "u7/summer/[09:00:00,09:05:00)：count=2，revenue=115.0。",
+      "transition_reason": "e702 早于当前水位线但仍在允许迟到范围内，更新窗口并使收入超过规则阈值。"
+    },
+    {
+      "sequence": 5,
+      "state_name": "seen_event_ids",
+      "trigger_event": "重复点击 e701 再次到达。",
+      "before_state": "u7 的 seen_event_ids 已包含 e701。",
+      "after_state": "状态不变，e701 被丢弃。",
+      "transition_reason": "event_id 去重优先于窗口聚合，重复记录不会造成收入重复累计。"
+    }
+  ],
+  "event_time_results": [
+    {
+      "event_id": "e701",
+      "event_time": "2025-03-03T09:02:30Z",
+      "processing_time": "2025-03-03T09:02:35Z",
+      "window_id": "u7/summer/[09:00:00,09:05:00)",
+      "aggregation_result": "{\"count\":1,\"revenue\":55.0}",
+      "is_late_event": false,
+      "emitted_result": "null",
+      "result_explanation": "e701 首次到达并被加入多个滑动窗口，其中示例窗口当前收入为 55.0，未达到活动规则的 100.0 阈值，因此没有告警。"
+    },
+    {
+      "event_id": "e702",
+      "event_time": "2025-03-03T09:01:50Z",
+      "processing_time": "2025-03-03T09:03:20Z",
+      "window_id": "u7/summer/[09:00:00,09:05:00)",
+      "aggregation_result": "{\"count\":2,\"revenue\":115.0}",
+      "is_late_event": true,
+      "emitted_result": "{\"user_id\":\"u7\",\"campaign_id\":\"summer\",\"window\":\"[09:00:00,09:05:00)\",\"revenue\":115.0,\"alert\":true}",
+      "result_explanation": "e702 的事件时间早于当前水位线，是迟到事件，但仍在 30000 毫秒允许迟到范围内；它将窗口收入从 55.0 更新为 115.0，超过广播规则阈值并生成告警。"
+    },
+    {
+      "event_id": "e701-duplicate",
+      "event_time": "2025-03-03T09:02:30Z",
+      "processing_time": "2025-03-03T09:03:25Z",
+      "window_id": "未进入窗口",
+      "aggregation_result": "{\"dropped\":true,\"reason\":\"duplicate_event_id\"}",
+      "is_late_event": false,
+      "emitted_result": "null",
+      "result_explanation": "该记录携带已经存在的 event_id=e701，在更新窗口前被 seen_event_ids 拦截，因此不会再次增加 count 或 revenue。"
+    }
+  ],
+  "checkpoint_recovery": {
+    "checkpoint_enabled": true,
+    "checkpoint_interval_ms": 20000,
+    "checkpointed_state": [
+      "seen_event_ids",
+      "window_accumulators",
+      "rule_state",
+      "click-source-offset",
+      "rule-source-offset"
+    ],
+    "recovery_strategy": "从最近检查点恢复去重表、窗口累计、广播规则和两个输入源偏移，然后继续重放。",
+    "exactly_once_semantics": false,
+    "failure_effect": "检查点恢复可恢复关键状态，但代码配置为 AT_LEAST_ONCE，故障重启后输出汇可能看到重复告警；去重状态可降低重复累计，但不能单独保证外部输出恰好一次。"
+  }
+}
