@@ -1,0 +1,32 @@
+{
+  "promotion_text": "周末闪购：蓝牙降噪耳机原价99元，限时5折，现价49.5元。仅限2025年3月15日23:59前下单，售完即止。",
+  "gift_offer": null,
+  "is_expired": true,
+  "sale_price": 49.5,
+  "stock_limit": null,
+  "discount_rate": 50,
+  "minimum_spend": null,
+  "is_unsupported": false,
+  "original_price": 99,
+  "currency": "CNY",
+  "claim_type": "限时优惠",
+  "record_context": {
+    "platform": "抖音",
+    "published_at": "2025-03-10 18:30",
+    "region": "中国大陆",
+    "currency": "CNY"
+  },
+  "evidence_status": "充分",
+  "confidence_score": 0.99,
+  "promotion_deadline": "2025-03-15 23:59",
+  "detected_conditions": [
+    "适用于蓝牙降噪耳机指定商品",
+    "须在2025年3月15日23:59前下单",
+    "优惠受售完即止条件限制",
+    "活动适用于中国大陆市场"
+  ],
+  "missing_requirements": [],
+  "verification_conclusion": "已过期",
+  "supporting_evidence_text": "店铺活动规则记录显示，该耳机原价99元，活动期间售价49.50元，相当于原价的50%，活动结束时间为2025年3月15日23:59。核验时间为2025年3月20日10:00，活动页面已标记为结束，当前订单不再享受49.50元优惠。",
+  "verification_explanation": "证据确认原价、5折优惠和49.50元售价均与文案一致，但核验时间为2025年3月20日，已经晚于2025年3月15日23:59的截止时间，因此该促销声明在核验时已过期。"
+}

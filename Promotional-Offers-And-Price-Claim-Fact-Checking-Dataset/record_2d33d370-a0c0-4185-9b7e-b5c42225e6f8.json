@@ -1,0 +1,39 @@
+{
+  "is_expired": false,
+  "sale_price": null,
+  "stock_limit": null,
+  "discount_rate": 50,
+  "minimum_spend": 200,
+  "is_unsupported": true,
+  "original_price": null,
+  "promotion_text": "今晚全场低至5折，会员专享！单笔满200元减50元，再送旅行收纳袋，数量有限，今晚23:59截止。",
+  "currency": "CNY",
+  "claim_type": "组合促销",
+  "gift_offer": "旅行收纳袋",
+  "record_context": {
+    "platform": "小红书",
+    "published_at": "2026-05-08 09:00",
+    "region": "中国大陆",
+    "currency": "CNY"
+  },
+  "evidence_status": "缺失",
+  "confidence_score": 0.91,
+  "promotion_deadline": "2026-05-08 23:59（文案称‘今晚’）",
+  "detected_conditions": [
+    "文案声称适用于全场，但具体商品范围未明确",
+    "仅限会员参加",
+    "单笔消费满200元减50元",
+    "购买后赠旅行收纳袋",
+    "文案声称活动于2026年5月8日23:59截止",
+    "活动声称适用于中国大陆市场"
+  ],
+  "missing_requirements": [
+    "官方活动规则或可核验的活动页面",
+    "适用商品或SKU清单",
+    "会员资格及会员等级要求",
+    "赠品库存或数量限制证明"
+  ],
+  "verification_conclusion": "条件缺失",
+  "supporting_evidence_text": "现有证据仅为一张促销截图，截图可辨识‘低至5折’、‘满200减50’和‘赠旅行收纳袋’等文字，但未提供正式活动规则、适用商品清单或会员资格说明，也未给出赠品数量和库存记录。核验时间为2026年5月8日10:00，无法仅凭截图确认‘全场’范围及会员专享条件。",
+  "verification_explanation": "证据能够识别出5折、满200减50、赠品和截止时间等文字，但缺少官方规则来证明适用SKU、会员资格、赠品库存及‘全场’范围；因此无法完整验证该组合促销是否适用于消费者。核验时尚未超过文案所称截止时间。"
+}

@@ -1,0 +1,33 @@
+{
+  "currency": "CNY",
+  "claim_type": "组合促销",
+  "gift_offer": "防水收纳袋",
+  "is_expired": false,
+  "sale_price": 300,
+  "stock_limit": 200,
+  "discount_rate": 25,
+  "minimum_spend": 500,
+  "is_unsupported": false,
+  "original_price": 400,
+  "promotion_text": "春季焕新活动：原价400元的轻量羽绒服直降25%，活动价300元；单笔实付满500元再减80元，并赠防水收纳袋，限量200件，活动至2026年3月31日23:59。",
+  "record_context": {
+    "platform": "微博",
+    "published_at": "2026-03-01 09:00",
+    "region": "中国大陆",
+    "currency": "CNY"
+  },
+  "evidence_status": "充分",
+  "confidence_score": 0.98,
+  "promotion_deadline": "2026-03-31 23:59",
+  "detected_conditions": [
+    "适用于轻量羽绒服指定商品",
+    "单笔实付满500元可减80元",
+    "赠品数量与活动库存相关",
+    "活动适用于中国大陆市场",
+    "活动截止时间为2026年3月31日23:59"
+  ],
+  "missing_requirements": [],
+  "verification_conclusion": "支持",
+  "supporting_evidence_text": "活动规则显示，轻量羽绒服标注原价400元、活动售价300元，折扣为直降25%；满减条件为单笔实付满500元减80元，赠品为防水收纳袋，活动总量限制为200件。规则有效期为2026年3月1日00:00至2026年3月31日23:59。库存记录显示活动总量为200件，核验时仍在活动期限内。",
+  "verification_explanation": "证据同时核对了原价400元、直降25%、活动价300元、满500减80、赠品、限量200件及截止时间，文案中的各项促销声明均与活动规则一致，核验时尚未超过截止时间。"
+}
