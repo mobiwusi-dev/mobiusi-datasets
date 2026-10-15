@@ -1,0 +1,62 @@
+{
+  "claim_category": "公司或交易事实",
+  "record_evidence": {
+    "declarations": [
+      {
+        "source_reference": "案卷C-10，被告公司秘书声明",
+        "declarant": "许宁（被告公司秘书）",
+        "excerpt": "2024年11月12日董事会会议讨论了潜在收购事项。由于我未参加全部讨论，不能确认董事会是否就批准收购作出正式表决。",
+        "location": "第4页第9至15段"
+      }
+    ],
+    "deposition_excerpts": [
+      {
+        "source_reference": "案卷C-17，被告董事长证词记录",
+        "deponent": "顾衡（被告董事长）",
+        "excerpt": "董事会当日听取了管理层关于星河物流的汇报，但我不记得会议是否形成了批准收购的决议。后续交易仍取决于尽职调查和最终合同条款。",
+        "location": "第31页第3至18行"
+      }
+    ],
+    "evidence_list": [
+      {
+        "exhibit_label": "证据C-2",
+        "description": "2024年11月12日董事会会议议程，列有星河物流收购项目讨论事项",
+        "location": "案卷C-2，第1页"
+      },
+      {
+        "exhibit_label": "证据C-5",
+        "description": "董事会会议纪要草稿，记载管理层汇报及讨论，但未列明通过收购决议",
+        "location": "案卷C-5，第2至3页"
+      }
+    ],
+    "attachments": [
+      {
+        "attachment_reference": "附件C-2-1",
+        "file_name": "收购项目董事会材料.pdf",
+        "attachment_format": "董事会汇报材料",
+        "content_excerpt": "材料标题为‘星河物流潜在收购项目’，末页建议董事会在完成尽职调查后再审议最终交易方案。"
+      },
+      {
+        "attachment_reference": "附件C-5-1",
+        "file_name": "董事会纪要草稿.docx",
+        "attachment_format": "会议纪要草稿",
+        "content_excerpt": "纪要草稿记载董事会听取了项目介绍并要求继续进行尽职调查；文件没有‘批准收购’或授权签署最终协议的表述。"
+      }
+    ]
+  },
+  "confidence_score": 0.91,
+  "motion_statement": "原告在简易判决动议中主张：被告董事会已于2024年11月12日正式批准收购星河物流有限公司，并据此授权首席执行官签署最终收购协议。",
+  "normalized_claim": "被告董事会于2024年11月12日正式批准收购星河物流，并授权首席执行官签署最终协议。",
+  "verification_status": "记录无法确认",
+  "verification_assessment": {
+    "supporting_records": [],
+    "contradicting_records": [],
+    "unresolved_points": [
+      "案卷中没有经认证的最终董事会会议纪要或正式决议文本。",
+      "公司秘书和董事长均不能确认会议是否进行过批准收购的表决。",
+      "现有材料显示项目仍需完成尽职调查，但尚不能确定董事会是否在其他未提交记录中作出授权。",
+      "没有记录证明首席执行官已获得签署最终收购协议的具体授权。"
+    ],
+    "reasoning": "议程和汇报材料证明董事会讨论过潜在收购，草稿纪要也记载了继续尽职调查，但这些材料不能证明正式批准或授权签署。两名相关人员均无法确认是否存在批准决议；现有记录既未明确支持也未明确否定会议可能作出正式决定，因此该主张在当前案卷范围内无法确认。"
+  }
+}

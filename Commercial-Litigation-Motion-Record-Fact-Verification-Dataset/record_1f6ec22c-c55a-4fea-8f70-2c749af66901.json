@@ -1,0 +1,84 @@
+{
+  "motion_statement": "被告在驳回动议中主张：原告于2024年9月30日无保留地接受了全部1,200件定制包装材料，因此其后不得再主张货物存在规格不符。",
+  "normalized_claim": "原告于2024年9月30日无保留接受了全部1,200件定制包装材料。",
+  "verification_status": "被记录否定",
+  "claim_category": "合同履行事实",
+  "record_evidence": {
+    "declarations": [
+      {
+        "source_reference": "案卷B-8，原告采购主管声明",
+        "declarant": "唐薇（原告采购主管）",
+        "excerpt": "9月30日收到货物时，我们在送货单上注明‘数量待复核、质量待检’，并未签署无保留验收。抽检后发现部分包装盒的印刷颜色和合同样稿不一致。",
+        "location": "第2页第5至11段"
+      }
+    ],
+    "deposition_excerpts": [
+      {
+        "source_reference": "案卷B-15，被告仓储经理证词记录",
+        "deponent": "赵恺（被告仓储经理）",
+        "excerpt": "送货单上确实有‘待检’的手写标记。我不能确认原告当日是否完成了质量验收，也没有看到原告签署无保留接收文件。",
+        "location": "第27页第12至24行"
+      }
+    ],
+    "evidence_list": [
+      {
+        "exhibit_label": "证据B-3",
+        "description": "2024年9月30日送货单，载有数量待复核、质量待检的手写备注",
+        "location": "案卷B-3，第1页"
+      },
+      {
+        "exhibit_label": "证据B-6",
+        "description": "双方合同及包装材料规格样稿",
+        "location": "案卷B-6，第4至9页"
+      }
+    ],
+    "attachments": [
+      {
+        "attachment_reference": "附件B-3-1",
+        "file_name": "送货单-20240930.pdf",
+        "attachment_format": "送货单扫描件",
+        "content_excerpt": "收货备注：数量待复核、质量待检；签收人：原告仓库人员。"
+      },
+      {
+        "attachment_reference": "附件B-11-1",
+        "file_name": "质量异议邮件.msg",
+        "attachment_format": "电子邮件",
+        "content_excerpt": "原告于2024年10月3日通知被告，称部分包装盒印刷颜色与批准样稿不一致，并要求更换。"
+      }
+    ]
+  },
+  "confidence_score": 0.97,
+  "verification_assessment": {
+    "supporting_records": [],
+    "contradicting_records": [
+      {
+        "source_type": "声明",
+        "source_reference": "案卷B-8",
+        "quoted_text": "我们在送货单上注明‘数量待复核、质量待检’，并未签署无保留验收。",
+        "explanation": "原告采购主管明确否认无保留接受，并说明收货时保留了数量和质量核验权利。"
+      },
+      {
+        "source_type": "证据清单",
+        "source_reference": "证据B-3",
+        "quoted_text": "送货单载有‘数量待复核、质量待检’的手写备注。",
+        "explanation": "送货单的同期记录与无保留接受的表述直接冲突。"
+      },
+      {
+        "source_type": "附件",
+        "source_reference": "附件B-11-1",
+        "quoted_text": "原告于2024年10月3日通知被告，称部分包装盒印刷颜色与批准样稿不一致，并要求更换。",
+        "explanation": "交货后三日提出具体质量异议，进一步否定了原告在交货时已无保留接受全部货物的主张。"
+      },
+      {
+        "source_type": "证词摘录",
+        "source_reference": "案卷B-15，第27页第12至24行",
+        "quoted_text": "送货单上确实有‘待检’的手写标记。",
+        "explanation": "被告仓储经理也确认了保留检验的记录，削弱了被告关于无保留接受的主张。"
+      }
+    ],
+    "unresolved_points": [
+      "记录未确定1,200件货物中具体有多少件存在印刷颜色差异。"
+    ],
+    "reasoning": "送货单明确保留数量和质量检验，原告声明及后续异议邮件均与无保留接受相冲突，且被告仓储经理确认了待检标记。因此，案卷记录否定了‘无保留接受’这一核心事实，尽管具体不合格数量仍未完全确定。"
+  }
+}

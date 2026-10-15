@@ -1,0 +1,78 @@
+{
+  "claim_category": "合同履行事实",
+  "record_evidence": {
+    "declarations": [
+      {
+        "source_reference": "案卷A-12，原告项目经理声明",
+        "declarant": "林岚（原告项目经理）",
+        "excerpt": "我们于2024年5月15日完成第一阶段，6月28日完成第二阶段，8月31日完成第三阶段上线。被告在收到第三阶段验收通知后未提出书面缺陷清单。",
+        "location": "第3页第8至14段"
+      }
+    ],
+    "deposition_excerpts": [
+      {
+        "source_reference": "案卷A-19，周启明证词记录",
+        "deponent": "周启明（被告信息技术负责人）",
+        "excerpt": "我确认系统在8月31日已经部署到被告的生产环境。财务部门后来还没有支付剩余的30%，我不知道有任何针对第三阶段的正式拒收通知。",
+        "location": "第42页第6至19行"
+      }
+    ],
+    "evidence_list": [
+      {
+        "exhibit_label": "证据A-4",
+        "description": "项目阶段交付及验收跟踪表，列明三个阶段的完成日期及上线状态",
+        "location": "案卷A-4，第1至2页"
+      },
+      {
+        "exhibit_label": "证据A-7",
+        "description": "被告付款记录，显示已支付合同总价的70%",
+        "location": "案卷A-7，第1页"
+      }
+    ],
+    "attachments": [
+      {
+        "attachment_reference": "附件A-4-1",
+        "file_name": "第三阶段上线通知.eml",
+        "attachment_format": "电子邮件",
+        "content_excerpt": "主题：库存系统第三阶段上线通知；发送时间：2024年8月31日；正文称第三阶段已完成部署，请于五个工作日内反馈书面验收意见。"
+      },
+      {
+        "attachment_reference": "附件A-7-1",
+        "file_name": "付款明细表.xlsx",
+        "attachment_format": "电子表格",
+        "content_excerpt": "合同价款总额为100万元，已付款70万元，未付款30万元。"
+      }
+    ]
+  },
+  "confidence_score": 0.94,
+  "motion_statement": "原告在简易判决反对意见中主张：截至2024年8月31日，原告已依约完成云端库存系统的全部三阶段交付，且被告仅支付了合同总价的70%。",
+  "normalized_claim": "原告于2024年8月31日前完成库存系统三阶段交付，被告已支付合同价款的70%，尚欠30%。",
+  "verification_status": "有记录支持",
+  "verification_assessment": {
+    "supporting_records": [
+      {
+        "source_type": "声明",
+        "source_reference": "案卷A-12",
+        "quoted_text": "我们于2024年5月15日完成第一阶段，6月28日完成第二阶段，8月31日完成第三阶段上线。",
+        "explanation": "原告项目经理的声明具体列出了三个阶段的完成日期，并直接支持全部交付已完成的主张。"
+      },
+      {
+        "source_type": "证词摘录",
+        "source_reference": "案卷A-19，第42页第6至19行",
+        "quoted_text": "我确认系统在8月31日已经部署到被告的生产环境。",
+        "explanation": "被告信息技术负责人确认了第三阶段部署时间，属于来自对方人员的相互印证。"
+      },
+      {
+        "source_type": "附件",
+        "source_reference": "附件A-7-1",
+        "quoted_text": "合同价款总额为100万元，已付款70万元，未付款30万元。",
+        "explanation": "付款明细直接支持被告仅支付70%且尚欠30%的金额事实。"
+      }
+    ],
+    "contradicting_records": [],
+    "unresolved_points": [
+      "现有记录能够证明部署和付款比例，但未详细说明系统上线后是否存在轻微维护缺陷。"
+    ],
+    "reasoning": "项目经理声明、被告技术负责人证词及付款附件分别支持交付完成和付款比例，且没有记录明确否定这些事实。因此，主张在记录范围内获得充分支持，但不延伸判断系统是否完全不存在任何瑕疵。"
+  }
+}
