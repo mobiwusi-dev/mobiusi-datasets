@@ -1,0 +1,121 @@
+{
+  "clarification_dialogue": [
+    {
+      "turn_id": 1,
+      "speaker": "用户",
+      "utterance": "选项C把TLS、数据加密和数字证书放在一起，TLS到底是负责加密还是负责验证证书？"
+    },
+    {
+      "turn_id": 2,
+      "speaker": "助手",
+      "utterance": "TLS协议负责协商安全参数并建立加密通信，也提供数据完整性保护。在握手过程中，客户端可以检查服务器发送的数字证书，从而验证服务器身份，所以C把TLS提供的通信保护和证书参与的身份认证概括在了一起。"
+    },
+    {
+      "turn_id": 3,
+      "speaker": "用户",
+      "utterance": "那数字证书是不是等于把网站内容加密后保存起来？"
+    },
+    {
+      "turn_id": 4,
+      "speaker": "助手",
+      "utterance": "不是。数字证书主要绑定网站身份与公钥，并由受信任的机构签名。它用于帮助客户端判断连接的服务器是否是证书声明的对象，不是用来保存网页内容或用户密码的文件。"
+    },
+    {
+      "turn_id": 5,
+      "speaker": "用户",
+      "utterance": "TCP已经负责可靠传输，为什么不能选A？"
+    },
+    {
+      "turn_id": 6,
+      "speaker": "助手",
+      "utterance": "可靠传输和加密是不同功能。TCP可以保证数据按序、尽量可靠地传送，但不会自动隐藏HTTP内容。HTTPS的加密和完整性保护来自TLS，因此A错误，C才符合题意。"
+    },
+    {
+      "turn_id": 7,
+      "speaker": "用户",
+      "utterance": "DNS也参与访问网站，是否意味着它会把网页明文变成密文？"
+    },
+    {
+      "turn_id": 8,
+      "speaker": "助手",
+      "utterance": "不会。DNS主要负责把域名解析为IP地址，网页内容的HTTPS保护由HTTP与TLS的组合提供。DNS是否采用额外的安全扩展，不改变本题对网页通信加密功能的判断。"
+    }
+  ],
+  "question_page": {
+    "page_url": "",
+    "page_title": "HTTPS与TLS作用辨析",
+    "question_stem": "用户通过浏览器访问一个以HTTPS开头的网站。下列关于HTTPS所提供安全功能的说法，正确的是：",
+    "question_type": "单选题",
+    "options": [
+      "A. TCP协议会自动对所有HTTP数据进行加密",
+      "B. 数字证书本身会保存用户登录密码",
+      "C. TLS可以加密应用层通信、校验数据完整性，并借助数字证书验证服务器身份",
+      "D. DNS会把网页明文内容转换为密文"
+    ],
+    "correct_answer": "C",
+    "explanation": "HTTPS通常表示HTTP运行在TLS之上。TLS负责建立安全通信，提供传输数据的机密性和完整性，并通过证书及证书链帮助客户端验证服务器身份。TCP和DNS本身不承担题述的HTTPS加密功能，数字证书也不保存用户密码。"
+  },
+  "clarification_focus": "解题依据",
+  "reference_resolution": {
+    "reference_answer": "C",
+    "answer_explanation": "HTTPS通常由HTTP和TLS组成。TLS负责建立安全通信并保护应用数据的机密性与完整性，数字证书则帮助客户端确认服务器身份及其公钥。TCP的可靠传输和DNS的域名解析都不等同于网页内容加密，所以A、D错误；证书也不保存用户密码，所以B错误。",
+    "evidence_turn_ids": [
+      2,
+      4,
+      6,
+      8
+    ]
+  },
+  "clarification_summary": "用户围绕C项追问TLS、数字证书、TCP和DNS各自承担的功能。助手区分了加密通信、完整性保护、身份认证、可靠传输和域名解析，说明证书用于绑定身份与公钥，TCP和DNS不会自动加密网页内容，最终确认C项正确。",
+  "resolved_interpretation": {
+    "interpreted_conditions": [
+      "题目中的HTTPS可理解为HTTP运行在TLS安全通信机制之上。",
+      "题目考查的是HTTPS相关的通信机密性、完整性和服务器身份验证，而不是普通网络传输或域名解析功能。",
+      "数字证书参与服务器身份验证并携带公钥信息，不是用于保存网页内容或用户密码。"
+    ],
+    "term_explanations": [
+      {
+        "term": "TLS",
+        "explanation": "传输层安全协议，用于协商密钥并保护应用层通信，通常提供机密性、完整性和通信对端身份验证支持。"
+      },
+      {
+        "term": "数字证书",
+        "explanation": "由证书签发机构签名的身份凭证，用于将网站身份与公钥绑定，帮助客户端验证服务器身份。"
+      },
+      {
+        "term": "DNS",
+        "explanation": "域名系统，主要将域名解析为IP地址；它本身不负责加密网页正文。"
+      }
+    ],
+    "option_distinctions": [
+      {
+        "option_label": "A",
+        "difference": "A把TCP的可靠、有序传输功能误认为了应用数据加密功能。",
+        "relevance": "TCP不会自动加密HTTP正文，HTTPS的加密保护来自TLS，因此A错误。"
+      },
+      {
+        "option_label": "B",
+        "difference": "B错误地把数字证书描述成保存用户机密信息的存储文件。",
+        "relevance": "证书用于身份与公钥绑定，不保存用户登录密码，因此不符合证书用途。"
+      },
+      {
+        "option_label": "C",
+        "difference": "C同时概括了TLS对通信数据的加密和完整性保护，以及证书对服务器身份验证的支持。",
+        "relevance": "这些功能与HTTPS的核心安全机制相符，因此C正确。"
+      },
+      {
+        "option_label": "D",
+        "difference": "D将DNS的域名解析功能与网页内容加密混为一谈。",
+        "relevance": "DNS主要解析域名，不能把网页明文自动转换成密文，因此D错误。"
+      }
+    ],
+    "reasoning_basis": "判断各选项是否正确，需要区分网络分层功能。HTTPS通过TLS保护HTTP通信，TLS可提供加密和完整性保护，并在握手中利用证书验证服务器身份；TCP只负责可靠传输，DNS主要负责域名解析。因此只有C完整符合题意。"
+  },
+  "context_consistency_assessment": {
+    "is_consistent": true,
+    "consistency_score": 0.99,
+    "consistency_label": "完全一致",
+    "assessment_rationale": "对话逐步区分了TLS、数字证书、TCP和DNS的职责，所有解释均回扣HTTPS的安全功能。最终对C项的确认与题干、页面解析及各轮澄清保持一致。",
+    "unresolved_issues": []
+  }
+}

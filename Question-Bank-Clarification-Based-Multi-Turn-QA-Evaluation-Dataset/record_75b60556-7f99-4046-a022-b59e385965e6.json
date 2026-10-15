@@ -1,0 +1,106 @@
+{
+  "question_page": {
+    "page_url": "",
+    "page_title": "功与动能定理基础题",
+    "question_stem": "在光滑水平面上，一个质量为2 kg的物体从静止开始运动。现对物体施加大小为6 N、方向与位移方向相同的恒力，物体移动3 m。求该力对物体所做的功。",
+    "question_type": "单选题",
+    "options": [
+      "A. 6 J",
+      "B. 18 J",
+      "C. 36 J",
+      "D. 9 J"
+    ],
+    "correct_answer": "B",
+    "explanation": "力与位移同向，因此功为 W=Fs=6×3=18 J。光滑水平面只表示不计摩擦力，不改变该恒力做功的计算结果。"
+  },
+  "clarification_focus": "条件解释",
+  "reference_resolution": {
+    "reference_answer": "B（18 J）",
+    "answer_explanation": "恒力与位移同向，夹角为0°。因此 W=Fs cos0°=6 N×3 m=18 J。光滑水平面意味着不考虑摩擦力，不能把它理解为不计算外力做功。",
+    "evidence_turn_ids": [
+      2,
+      4,
+      6
+    ]
+  },
+  "clarification_summary": "用户先追问光滑水平面的含义，随后确认力与位移同向时的功公式，并将功与动能变化联系起来。助手说明光滑只意味着忽略摩擦力，明确夹角为零度，最后依据 W=Fs=18 J 以及动能定理排除了36 J，确认标准答案为B。",
+  "clarification_dialogue": [
+    {
+      "turn_id": 1,
+      "speaker": "用户",
+      "utterance": "题目说水平面光滑，具体是在计算这个力的功时把哪些因素忽略了？"
+    },
+    {
+      "turn_id": 2,
+      "speaker": "助手",
+      "utterance": "光滑表示物体与水平面之间的摩擦力可视为零，因此不需要计入摩擦力做功。它不表示施加的恒力不存在，也不改变题目已经给出的力和位移。"
+    },
+    {
+      "turn_id": 3,
+      "speaker": "用户",
+      "utterance": "这里的恒力和位移方向相同，所以功的公式可以直接用 W=Fs 吗？"
+    },
+    {
+      "turn_id": 4,
+      "speaker": "助手",
+      "utterance": "可以。一般公式是 W=Fs cosθ，其中θ是力与位移的夹角。本题两者同向，θ=0°，cosθ=1，所以 W=6 N×3 m=18 J。"
+    },
+    {
+      "turn_id": 5,
+      "speaker": "用户",
+      "utterance": "为什么不能选36 J？我想到物体最后的动能可能和力做功有关。"
+    },
+    {
+      "turn_id": 6,
+      "speaker": "助手",
+      "utterance": "动能定理说明合力做的功等于动能变化量，但本题合力就是这个恒力，且物体从静止开始，所以动能增加量确实也是18 J，而不是36 J。36 J并不是由题给数据计算出的结果。"
+    }
+  ],
+  "resolved_interpretation": {
+    "interpreted_conditions": [
+      "光滑水平面表示摩擦力可忽略，不表示题目中的外力被忽略。",
+      "物体的位移为3 m，恒力大小为6 N，且力与位移同向，因此夹角θ为0°。",
+      "物体从静止开始且水平方向没有其他需要计入的力，所以该恒力的功等于合力所做的功。"
+    ],
+    "term_explanations": [
+      {
+        "term": "光滑水平面",
+        "explanation": "在本题中指接触面无摩擦或摩擦力可忽略的水平面。它主要影响是否需要计算摩擦力做功。"
+      },
+      {
+        "term": "动能定理",
+        "explanation": "合力对物体所做的总功等于物体动能的变化量。本题物体初速度为零，因此恒力做的18 J功转化为动能增加。"
+      }
+    ],
+    "option_distinctions": [
+      {
+        "option_label": "A",
+        "difference": "6 J只相当于将力的数值误当作功，遗漏了位移因素。",
+        "relevance": "功的单位是力与位移单位的乘积，不能只写6 J。"
+      },
+      {
+        "option_label": "B",
+        "difference": "使用功的定义式，并将力、位移和夹角条件全部代入。",
+        "relevance": "W=6×3×cos0°=18 J，符合题目条件，因此正确。"
+      },
+      {
+        "option_label": "C",
+        "difference": "36 J不符合W=Fs cosθ的计算结果，也不是由给定数据得到的动能变化。",
+        "relevance": "题目没有使功加倍的条件，故不能选择。"
+      },
+      {
+        "option_label": "D",
+        "difference": "9 J没有对应的正确计算过程，既不是力乘位移，也不是相关的动能变化。",
+        "relevance": "与题干数据和功的定义均不一致。"
+      }
+    ],
+    "reasoning_basis": "根据功的定义式 W=Fs cosθ，题中F=6 N、s=3 m、θ=0°，所以W=6×3×1=18 J。光滑条件只排除了摩擦力的影响；从能量角度看，合力做功为18 J，也等于物体动能的增加量。"
+  },
+  "context_consistency_assessment": {
+    "is_consistent": true,
+    "consistency_score": 0.99,
+    "consistency_label": "完全一致",
+    "assessment_rationale": "对话始终围绕同一道功的计算题展开。助手对光滑条件、力与位移夹角及动能定理的解释均与页面题干和标准解析一致，最终答案B与18 J的计算结果相符。",
+    "unresolved_issues": []
+  }
+}
