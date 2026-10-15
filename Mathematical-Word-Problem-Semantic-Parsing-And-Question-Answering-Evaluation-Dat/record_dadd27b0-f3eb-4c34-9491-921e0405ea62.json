@@ -1,0 +1,55 @@
+{
+  "operation": "单位换算后减法",
+  "relations": [
+    {
+      "subject_entity": "剩余水量",
+      "relation_type": "比初始水量少",
+      "object_entity": "初始水量",
+      "relation_value": 750,
+      "unit": "毫升"
+    }
+  ],
+  "quantities": [
+    {
+      "entity_name": "初始水量",
+      "value": 2500,
+      "unit": "毫升",
+      "role": "已知量",
+      "source_text": "2升500毫升"
+    },
+    {
+      "entity_name": "倒出水量",
+      "value": 750,
+      "unit": "毫升",
+      "role": "已知量",
+      "source_text": "750毫升"
+    },
+    {
+      "entity_name": "剩余水量",
+      "value": 1750,
+      "unit": "毫升",
+      "role": "待求量",
+      "source_text": "还剩多少水"
+    }
+  ],
+  "answer_target": {
+    "answer_value": 1750,
+    "answer_unit": "毫升",
+    "answer_text": "剩余1750毫升水，即1升750毫升。"
+  },
+  "question_type": "求剩余数量",
+  "problem_record": {
+    "problem_statement": "一个水壶中有2升500毫升水，倒出750毫升后，水壶中还剩多少水？",
+    "question_text": "水壶中还剩多少水？",
+    "reference_answer": "还剩1750毫升水，即1升750毫升。"
+  },
+  "unit_constraints": [
+    "计算前须将2升500毫升统一换算为2500毫升。",
+    "倒出量和剩余量均用毫升表示，计算结果为2500减750。"
+  ],
+  "implicit_conditions": [
+    "倒出的750毫升水来自水壶中的初始水量。",
+    "2升500毫升表示同一份初始水量，需要先合并换算。"
+  ],
+  "normalized_question": "将水壶初始的2500毫升水倒出750毫升后，剩余水量是多少毫升？"
+}

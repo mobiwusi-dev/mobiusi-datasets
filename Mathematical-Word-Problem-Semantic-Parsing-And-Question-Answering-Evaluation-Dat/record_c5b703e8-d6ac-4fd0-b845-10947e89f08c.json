@@ -1,0 +1,77 @@
+{
+  "operation": "先减法后乘法",
+  "relations": [
+    {
+      "subject_entity": "足球",
+      "relation_type": "比篮球少",
+      "object_entity": "篮球",
+      "relation_value": 9,
+      "unit": "个"
+    },
+    {
+      "subject_entity": "排球",
+      "relation_type": "是足球的2倍",
+      "object_entity": "足球",
+      "relation_value": 2,
+      "unit": "倍"
+    }
+  ],
+  "quantities": [
+    {
+      "entity_name": "篮球",
+      "value": 28,
+      "unit": "个",
+      "role": "比较基准量",
+      "source_text": "28个篮球"
+    },
+    {
+      "entity_name": "足球比篮球少的数量",
+      "value": 9,
+      "unit": "个",
+      "role": "已知差量",
+      "source_text": "少9个"
+    },
+    {
+      "entity_name": "足球",
+      "value": 19,
+      "unit": "个",
+      "role": "中间量",
+      "source_text": "足球"
+    },
+    {
+      "entity_name": "排球与足球的倍数",
+      "value": 2,
+      "unit": "倍",
+      "role": "已知倍数",
+      "source_text": "2倍"
+    },
+    {
+      "entity_name": "排球",
+      "value": 38,
+      "unit": "个",
+      "role": "待求量",
+      "source_text": "排球"
+    }
+  ],
+  "answer_target": {
+    "answer_value": 38,
+    "answer_unit": "个",
+    "answer_text": "排球有38个。"
+  },
+  "question_type": "先求差再求倍数",
+  "problem_record": {
+    "problem_statement": "学校体育器材室有28个篮球，足球比篮球少9个，排球的数量是足球的2倍。问器材室有多少个排球？",
+    "question_text": "器材室有多少个排球？",
+    "reference_answer": "器材室有38个排球。"
+  },
+  "unit_constraints": [
+    "篮球和足球的数量差使用单位‘个’，所以先计算28减9得到19个足球。",
+    "2倍为无量纲关系，排球数量计算为19乘2，结果单位为个。"
+  ],
+  "implicit_conditions": [
+    "足球和篮球的数量都以个为单位。",
+    "足球数量由篮球数量减去少的9个得到。",
+    "排球数量以足球数量19个为倍数计算基准。"
+  ],
+  "normalized_question": "器材室有28个篮球，足球数量比篮球少9个，排球数量是足球数量的2倍，求排球数量。"
+}

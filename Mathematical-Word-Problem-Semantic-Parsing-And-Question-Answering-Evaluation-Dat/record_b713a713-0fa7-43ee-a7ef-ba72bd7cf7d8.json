@@ -1,0 +1,55 @@
+{
+  "answer_target": {
+    "answer_value": 144,
+    "answer_unit": "棵",
+    "answer_text": "梨树有144棵。"
+  },
+  "operation": "乘法",
+  "relations": [
+    {
+      "subject_entity": "梨树",
+      "relation_type": "是苹果树的3倍",
+      "object_entity": "苹果树",
+      "relation_value": 3,
+      "unit": "倍"
+    }
+  ],
+  "quantities": [
+    {
+      "entity_name": "苹果树",
+      "value": 48,
+      "unit": "棵",
+      "role": "比较基准量",
+      "source_text": "48棵苹果树"
+    },
+    {
+      "entity_name": "梨树与苹果树的倍数",
+      "value": 3,
+      "unit": "倍",
+      "role": "已知倍数",
+      "source_text": "3倍"
+    },
+    {
+      "entity_name": "梨树",
+      "value": 144,
+      "unit": "棵",
+      "role": "待求量",
+      "source_text": "梨树"
+    }
+  ],
+  "question_type": "求倍数关系中的较大量",
+  "problem_record": {
+    "problem_statement": "果园里有48棵苹果树，梨树的棵数是苹果树的3倍。果园里有多少棵梨树？",
+    "question_text": "果园里有多少棵梨树？",
+    "reference_answer": "果园里有144棵梨树。"
+  },
+  "unit_constraints": [
+    "48棵与计算得到的144棵使用相同的数量单位‘棵’。",
+    "3倍是无量纲的倍数，计算为48乘3。"
+  ],
+  "implicit_conditions": [
+    "苹果树和梨树的数量都按树的棵数计算。",
+    "梨树数量的3倍关系以苹果树数量48棵为基准。"
+  ],
+  "normalized_question": "已知苹果树有48棵，梨树数量是苹果树数量的3倍，求梨树的数量。"
+}
