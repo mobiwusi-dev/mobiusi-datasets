@@ -1,0 +1,83 @@
+{
+  "query_context": {
+    "claim_text": "原告在保密协议有效期间将客户名单发送给竞争对手。",
+    "query_kind": "重大事实主张",
+    "legal_issue": "保密协议有效期间向竞争对手披露客户名单是否构成违约或违反商业秘密义务",
+    "requested_outcome": "拒绝被告的简易判决申请并允许披露责任争点进入审理",
+    "case_stage": "原告反对简易判决阶段"
+  },
+  "citation_quality": {
+    "all_claims_cited": true,
+    "admissible_citation_ratio": 0.5,
+    "citation_completeness_label": "部分完整",
+    "quality_notes": "主要事实主张已关联至明确的附件行号。发送日志的可采纳性较明确，但外部投递报告存在真实性和完整性异议，导致可采纳引证比例为0.5，且无法仅凭当前案卷确定邮件是否成功到达竞争对手。"
+  },
+  "case_file_records": [
+    {
+      "record_type": "书面证据",
+      "document_title": "邮件服务器发送日志",
+      "author_or_witness": "周岚（公司信息安全主管）",
+      "document_date": "2024-08-10",
+      "page_or_paragraph": "附件C-4第3行",
+      "record_text": "邮件服务器日志显示，原告于2024年8月3日在协议有效期间将客户名单发送给竞争对手星河公司。",
+      "admissibility_status": "无异议；以业务记录认证声明提交",
+      "attachment_reference": "附件C-4"
+    },
+    {
+      "record_type": "附件",
+      "document_title": "外部投递追踪报告",
+      "author_or_witness": "第三方邮件服务商系统记录",
+      "document_date": "2024-08-11",
+      "page_or_paragraph": "附件C-5第2段",
+      "record_text": "外部邮件追踪记录未显示该邮件成功投递至星河公司，收件服务器记录仍待核实。",
+      "admissibility_status": "被告对完整性提出异议，真实性待裁定",
+      "attachment_reference": "附件C-5"
+    }
+  ],
+  "retrieval_summary": {
+    "matched_record_count": 2,
+    "supporting_record_count": 1,
+    "opposing_record_count": 0,
+    "unresolved_record_count": 1,
+    "overall_relation": "不确定",
+    "summary_text": "邮件服务器日志直接支持原告在保密协议有效期间向竞争对手发送客户名单，但外部投递追踪报告未确认邮件成功到达，且该报告的完整性仍待裁定。因此，发送记录具有较强支持力，但投递结果和附件可靠性构成未决问题。"
+  },
+  "evidence_citations": [
+    {
+      "claim_span": {
+        "text": "原告在保密协议有效期间将客户名单发送给竞争对手。",
+        "start_offset": 0,
+        "end_offset": 24
+      },
+      "evidence_span": {
+        "record_index": 0,
+        "paragraph_reference": "附件C-4第3行",
+        "text": "邮件服务器日志显示，原告于2024年8月3日在协议有效期间将客户名单发送给竞争对手星河公司。",
+        "start_offset": 0,
+        "end_offset": 46
+      },
+      "relation_label": "支持",
+      "rationale": "服务器日志同时记载发送时间处于协议有效期间、发送内容为客户名单以及收件方为竞争对手星河公司，直接覆盖查询中的主要事实要素。",
+      "admissibility_judgment": "可采纳；该日志以业务记录认证声明提交，案卷中未记载对其真实性提出异议。",
+      "confidence_score": 0.94
+    },
+    {
+      "claim_span": {
+        "text": "原告在保密协议有效期间将客户名单发送给竞争对手。",
+        "start_offset": 0,
+        "end_offset": 24
+      },
+      "evidence_span": {
+        "record_index": 1,
+        "paragraph_reference": "附件C-5第2段",
+        "text": "外部邮件追踪记录未显示该邮件成功投递至星河公司，收件服务器记录仍待核实。",
+        "start_offset": 0,
+        "end_offset": 36
+      },
+      "relation_label": "无法确定",
+      "rationale": "该记录没有否定发送日志的存在，但未显示外部投递成功且收件服务器记录尚待核实，因此只能说明送达结果存在不确定性，不能明确支持或反驳发送行为本身。",
+      "admissibility_judgment": "待裁定；被告对附件完整性提出异议，且案卷尚无收件服务器的完整记录。",
+      "confidence_score": 0.86
+    }
+  ]
+}

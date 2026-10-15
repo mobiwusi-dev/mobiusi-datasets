@@ -1,0 +1,83 @@
+{
+  "query_context": {
+    "claim_text": "被告未按约支付第二期货款。",
+    "query_kind": "重大事实主张",
+    "legal_issue": "买卖合同项下第二期货款是否到期且未支付",
+    "requested_outcome": "支持原告就第二期货款责任部分的简易判决申请",
+    "case_stage": "原告简易判决申请阶段"
+  },
+  "citation_quality": {
+    "all_claims_cited": true,
+    "admissible_citation_ratio": 1.0,
+    "citation_completeness_label": "完整",
+    "quality_notes": "主张已关联至两条具有明确页码的案卷记录。第一条记录直接证明未付款，第二条记录提供相反抗辩；两条材料的可采纳性均有案卷依据，但抵销的实体效力仍存在争议。"
+  },
+  "case_file_records": [
+    {
+      "record_type": "宣誓陈述",
+      "document_title": "原告财务经理李宁宣誓陈述",
+      "author_or_witness": "李宁（原告财务经理）",
+      "document_date": "2024-05-08",
+      "page_or_paragraph": "第12页第4段",
+      "record_text": "截至2024年4月30日仍未支付第二期货款。",
+      "admissibility_status": "无异议；作为财务记录保管人陈述提交",
+      "attachment_reference": "附件A-3"
+    },
+    {
+      "record_type": "书面证据",
+      "document_title": "被告付款及抵销通知",
+      "author_or_witness": "被告公司财务部门",
+      "document_date": "2024-05-02",
+      "page_or_paragraph": "第27页第2段",
+      "record_text": "被告主张已支付20,000元，并提出货款抵销通知。",
+      "admissibility_status": "真实性无争议，但原告对其抵销法律效力提出异议",
+      "attachment_reference": "附件B-2"
+    }
+  ],
+  "retrieval_summary": {
+    "matched_record_count": 2,
+    "supporting_record_count": 1,
+    "opposing_record_count": 1,
+    "unresolved_record_count": 0,
+    "overall_relation": "混合",
+    "summary_text": "第12页第4段直接支持第二期货款逾期未付，第27页第2段则记载被告已付款及抵销抗辩。两项记录均可作为案卷依据，但付款金额及抵销是否足以消灭全部债务仍需结合合同和付款凭证判断。"
+  },
+  "evidence_citations": [
+    {
+      "claim_span": {
+        "text": "被告未按约支付第二期货款。",
+        "start_offset": 0,
+        "end_offset": 13
+      },
+      "evidence_span": {
+        "record_index": 0,
+        "paragraph_reference": "第12页第4段",
+        "text": "截至2024年4月30日仍未支付第二期货款。",
+        "start_offset": 0,
+        "end_offset": 22
+      },
+      "relation_label": "支持",
+      "rationale": "该段明确记载第二期货款截至约定日期仍未支付，直接支持被告存在逾期付款事实。",
+      "admissibility_judgment": "可采纳；陈述由财务记录保管人作出，且案卷记载未提出真实性异议。",
+      "confidence_score": 0.98
+    },
+    {
+      "claim_span": {
+        "text": "被告未按约支付第二期货款。",
+        "start_offset": 0,
+        "end_offset": 13
+      },
+      "evidence_span": {
+        "record_index": 1,
+        "paragraph_reference": "第27页第2段",
+        "text": "被告主张已支付20,000元，并提出货款抵销通知。",
+        "start_offset": 0,
+        "end_offset": 25
+      },
+      "relation_label": "反驳",
+      "rationale": "该段显示被告主张已经支付部分款项并提出抵销，削弱被告完全未付款的表述，但不能单独证明第二期货款已经全部清偿。",
+      "admissibility_judgment": "可采纳；付款主张和通知的真实性未被否认，但其抵销法律效力仍属争议事项。",
+      "confidence_score": 0.91
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "query_context": {
+    "claim_text": "原告未在十日期限内完成整改。",
+    "query_kind": "反对简易判决论点",
+    "legal_issue": "缺陷通知后的合同整改期限是否已经届满，以及原告是否及时完成整改",
+    "requested_outcome": "支持被告关于违约责任的简易判决申请",
+    "case_stage": "被告简易判决申请阶段"
+  },
+  "citation_quality": {
+    "all_claims_cited": true,
+    "admissible_citation_ratio": 1.0,
+    "citation_completeness_label": "部分完整",
+    "quality_notes": "主张已关联到明确的证言段落和附件行号。证据定位清楚且可采纳性争议有限，但两条记录对完成日期及整改范围的记载不一致，无法仅凭现有引证确定全部缺陷的最终修复时间。"
+  },
+  "case_file_records": [
+    {
+      "record_type": "证言摘录",
+      "document_title": "项目经理宣誓证言摘录",
+      "author_or_witness": "陈浩（项目经理）",
+      "document_date": "2024-07-01",
+      "page_or_paragraph": "第18页第6段",
+      "record_text": "项目经理确认，原告于2024年6月20日才完成整改，超过通知后的十日期限。",
+      "admissibility_status": "无异议；证人基于现场管理记录作证",
+      "attachment_reference": "附件D-1"
+    },
+    {
+      "record_type": "附件",
+      "document_title": "现场签到及维修记录",
+      "author_or_witness": "被告工程部",
+      "document_date": "2024-06-14",
+      "page_or_paragraph": "附件D-2第1页第3行",
+      "record_text": "现场签到表显示，原告于2024年6月14日已完成主要修复工作。",
+      "admissibility_status": "真实性无争议；原告仅对记录能否证明全部整改完成提出异议",
+      "attachment_reference": "附件D-2"
+    }
+  ],
+  "retrieval_summary": {
+    "matched_record_count": 2,
+    "supporting_record_count": 1,
+    "opposing_record_count": 1,
+    "unresolved_record_count": 0,
+    "overall_relation": "混合",
+    "summary_text": "项目经理证言支持原告于6月20日才完成整改的说法，而现场签到记录显示6月14日已完成主要修复工作。两条记录均可采纳，但对主要修复是否等同于全部整改存在实质性事实分歧。"
+  },
+  "evidence_citations": [
+    {
+      "claim_span": {
+        "text": "原告未在十日期限内完成整改。",
+        "start_offset": 0,
+        "end_offset": 14
+      },
+      "evidence_span": {
+        "record_index": 0,
+        "paragraph_reference": "第18页第6段",
+        "text": "项目经理确认，原告于2024年6月20日才完成整改，超过通知后的十日期限。",
+        "start_offset": 0,
+        "end_offset": 37
+      },
+      "relation_label": "支持",
+      "rationale": "证人明确说明整改完成日为6月20日，并指出该日期超过通知后的十日期限，直接支持逾期整改主张。",
+      "admissibility_judgment": "可采纳；证言基于项目管理记录，且案卷记载双方未对证人的现场管理身份提出异议。",
+      "confidence_score": 0.96
+    },
+    {
+      "claim_span": {
+        "text": "原告未在十日期限内完成整改。",
+        "start_offset": 0,
+        "end_offset": 14
+      },
+      "evidence_span": {
+        "record_index": 1,
+        "paragraph_reference": "附件D-2第1页第3行",
+        "text": "现场签到表显示，原告于2024年6月14日已完成主要修复工作。",
+        "start_offset": 0,
+        "end_offset": 31
+      },
+      "relation_label": "反驳",
+      "rationale": "签到表显示主要修复工作在十日期限内完成，至少削弱原告完全未及时整改的主张；但其文字未明确证明所有缺陷均已修复。",
+      "admissibility_judgment": "可采纳；附件真实性无争议，但其证明范围仅限于主要修复工作，完整整改程度仍需解释。",
+      "confidence_score": 0.88
+    }
+  ]
+}
