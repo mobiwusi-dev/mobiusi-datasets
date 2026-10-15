@@ -1,0 +1,339 @@
+{
+  "case_documents": [
+    {
+      "document_ref": "D1",
+      "document_type": "诉状",
+      "document_title": "起诉状（青岚数据服务诉远舟资本）",
+      "document_date": "2025-02-10",
+      "document_text": "原告青岚数据服务有限公司主张，被告远舟资本管理有限公司在收购谈判中表示，标的业务不存在正在进行的监管调查，且年度经常性收入为2,400万元、客户流失率低于5%。原告据此于2024年9月30日支付收购价款3,000万元并完成交割。交割后，原告发现监管机构早在交割前已发出问询，实际年度经常性收入约为1,340万元、客户流失率约为18%。原告主张因此承担整改、客户退款和业务价值减损，共计损失900万元。被告否认存在欺诈，称投资材料含有概括性免责声明。",
+      "page_count": 24,
+      "attachment_refs": [
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ]
+    },
+    {
+      "document_ref": "D2",
+      "document_type": "附件",
+      "document_title": "远舟资本收购推介材料及经营指标页",
+      "document_date": "2024-08-16",
+      "document_text": "监管状态：截至本材料日期，标的业务不存在正在进行的监管调查。经营指标：年度经常性收入2,400万元，客户流失率低于5%。上述数据用于说明标的业务的持续经营能力。",
+      "page_count": 12,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D3",
+      "document_type": "声明",
+      "document_title": "青岚数据服务合规负责人沈宁声明",
+      "document_date": "2025-03-01",
+      "document_text": "我在2024年8月22日看到监管机构发给标的业务的书面问询，问询涉及客户数据留存和营销披露。财务系统的收入调节表显示，过去十二个月年度经常性收入约为1,340万元，客户流失率约为18%。我在交割前将问询摘要和调节表发给远舟资本的财务负责人。",
+      "page_count": 9,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D4",
+      "document_type": "证言摘录",
+      "document_title": "远舟资本财务负责人顾砚证言摘录",
+      "document_date": "2025-04-18",
+      "document_text": "问：你在交割前是否收到过监管问询摘要？答：收到过，但我认为那只是初步沟通。问：你是否看到过收入调节表？答：看过，表中的经常性收入低于推介材料，不过交易团队决定继续使用推介材料的指标。问：青岚是否说明其收购决定依赖这些指标？答：青岚在董事会材料中把2,400万元收入作为估值基础。",
+      "page_count": 16,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D5",
+      "document_type": "动议",
+      "document_title": "远舟资本关于驳回欺诈请求的动议摘录",
+      "document_date": "2025-03-20",
+      "document_text": "被告主张推介材料仅为估算，且材料末尾写明经营指标未经审计；被告否认在交割前收到足以构成正式监管调查的通知，并争议原告对客户流失率和价值减损的计算方法。该动议未否认推介材料中出现2,400万元和低于5%的表述。",
+      "page_count": 14,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D6",
+      "document_type": "附件",
+      "document_title": "青岚数据服务损失及估值减损报告",
+      "document_date": "2025-01-25",
+      "document_text": "监管整改和法律顾问费用180万元，客户退款及合同补偿120万元，因收入缺口导致的业务价值减损600万元，合计主张损失900万元。报告将收入调节表、客户流失清单和交割付款记录列为基础材料，并注明价值减损金额可能需要专家证言进一步确认。",
+      "page_count": 18,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_ref": "Q3",
+      "claim_ref": "C3",
+      "claim_text": "远舟资本在收购交割前声称不存在监管调查且年度经常性收入为2,400万元、客户流失率低于5%，青岚数据服务因信赖这些陈述支付3,000万元，后因发现监管问询和较低的真实经营指标而遭受900万元损失。",
+      "target_elements": [
+        "虚假陈述",
+        "知情或故意",
+        "信赖",
+        "因果关系",
+        "损失"
+      ],
+      "question_text": "请检索收购推介材料、合规负责人声明、财务负责人证言、被告动议和损失报告，区分支持与反驳证据，并判断五项欺诈要件的覆盖程度及剩余争议。",
+      "originating_document_ref": "D1"
+    }
+  ],
+  "retrieval_summary": {
+    "element_coverage": [
+      {
+        "element_name": "虚假陈述",
+        "coverage_status": "部分覆盖",
+        "evidence_count": 3,
+        "unresolved_reason": "被告动议对监管问询的法律性质、经营指标的估算属性及表述的证明力提出反驳。"
+      },
+      {
+        "element_name": "知情或故意",
+        "coverage_status": "部分覆盖",
+        "evidence_count": 3,
+        "unresolved_reason": "被告承认收到问询和看到财务调节表，但否认其足以构成正式监管调查，主观故意仍有争议。"
+      },
+      {
+        "element_name": "信赖",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "因果关系",
+        "coverage_status": "部分覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": "整改和退款与经营缺口的联系较清楚，但600万元价值减损仍需要专家分析。"
+      },
+      {
+        "element_name": "损失",
+        "coverage_status": "部分覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": "900万元有分项报告，但价值减损金额及计算方法受到被告动议质疑。"
+      }
+    ],
+    "chain_completeness": true,
+    "coverage_score": 0.74,
+    "summary_text": "本样例包含支持与反驳材料，适合检验多跳证据关联而非单向匹配。D2提供对外陈述，D3和D4将交割前的相反信息及被告知悉状态连接起来，D5保留被告关于估算、免责声明和监管问询性质的抗辩，D6则量化损失并主动标注价值减损的证明缺口。信赖要件证据较完整，虚假陈述、知情或故意、因果关系和损失均已建立文书链路但仍存在明确争议。"
+  },
+  "evidence_chain_results": [
+    {
+      "query_ref": "Q3",
+      "claim_ref": "C3",
+      "claim_text": "远舟资本在收购交割前声称不存在监管调查且年度经常性收入为2,400万元、客户流失率低于5%，青岚数据服务因信赖这些陈述支付3,000万元，后因发现监管问询和较低的真实经营指标而遭受900万元损失。",
+      "element_results": [
+        {
+          "element_name": "虚假陈述",
+          "finding": "D2记载不存在监管调查、收入2,400万元和流失率低于5%的陈述；D3提供了交割前监管问询及相反经营数据，D5则承认相关表述存在但主张其为未经审计的估算，因此事实支持较强但仍有解释争议。",
+          "support_level": "部分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D2",
+              "document_type": "附件",
+              "location": "第4页，监管状态和经营指标栏",
+              "quoted_text": "监管状态：截至本材料日期，标的业务不存在正在进行的监管调查。经营指标：年度经常性收入2,400万元，客户流失率低于5%。",
+              "evidence_role": "支持主张来源",
+              "supporting_fact": "该附件直接记录了被指为虚假的监管状态和经营指标。",
+              "linked_evidence_refs": [
+                "D3#p4",
+                "D5#p6"
+              ]
+            },
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第4至5页，问询和收入调节部分",
+              "quoted_text": "我在2024年8月22日看到监管机构发给标的业务的书面问询，问询涉及客户数据留存和营销披露。财务系统的收入调节表显示，过去十二个月年度经常性收入约为1,340万元，客户流失率约为18%。",
+              "evidence_role": "反驳并补强",
+              "supporting_fact": "该声明以交割前形成的问询和财务调节表反驳推介材料中的监管状态及经营指标。",
+              "linked_evidence_refs": [
+                "D2#p4",
+                "D4#问答31"
+              ]
+            },
+            {
+              "document_ref": "D5",
+              "document_type": "动议",
+              "location": "第6至7页，被告抗辩部分",
+              "quoted_text": "被告否认在交割前收到足以构成正式监管调查的通知，并争议原告对客户流失率和价值减损的计算方法。",
+              "evidence_role": "反驳和争议标记",
+              "supporting_fact": "动议对监管问询的法律性质及经营指标的证明力提出反驳，说明该要件并非无争议事实。",
+              "linked_evidence_refs": [
+                "D3#p4-p5"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "知情或故意",
+          "finding": "D3称问询摘要和收入调节表在交割前已发送给远舟资本，D4承认收到问询并看过收入调节表；D5对通知是否构成正式调查提出否认，故主观状态有较强支持但存在抗辩。",
+          "support_level": "部分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第6页，第1段",
+              "quoted_text": "我在交割前将问询摘要和调节表发给远舟资本的财务负责人。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段将相反事实信息的形成时间和传递对象指向被告财务负责人。",
+              "linked_evidence_refs": [
+                "D4#问答30-31"
+              ]
+            },
+            {
+              "document_ref": "D4",
+              "document_type": "证言摘录",
+              "location": "第9页，问答30至31",
+              "quoted_text": "收到过，但我认为那只是初步沟通。看过，表中的经常性收入低于推介材料，不过交易团队决定继续使用推介材料的指标。",
+              "evidence_role": "支持并显示争议",
+              "supporting_fact": "证言承认收到监管问询和看到相反财务数据，同时承认交易团队继续使用较高指标，但对问询性质作出不同解释。",
+              "linked_evidence_refs": [
+                "D3#p6",
+                "D2#p4",
+                "D5#p6"
+              ]
+            },
+            {
+              "document_ref": "D5",
+              "document_type": "动议",
+              "location": "第6页，被告主张部分",
+              "quoted_text": "被告否认在交割前收到足以构成正式监管调查的通知。",
+              "evidence_role": "反驳",
+              "supporting_fact": "被告对通知的性质和主观认知提出相反立场，削弱了故意要件的无争议程度。",
+              "linked_evidence_refs": [
+                "D3#p4",
+                "D4#问答30"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "信赖",
+          "finding": "诉状记载青岚因推介材料完成付款，顾砚证言进一步确认青岚董事会将2,400万元收入作为估值基础；现有材料对信赖行为的支持较强。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第6页，第2段",
+              "quoted_text": "原告据此于2024年9月30日支付收购价款3,000万元并完成交割。",
+              "evidence_role": "支持",
+              "supporting_fact": "据此将付款和交割行为与推介材料中的经营和监管陈述连接起来。",
+              "linked_evidence_refs": [
+                "D2#p4",
+                "D4#问答32"
+              ]
+            },
+            {
+              "document_ref": "D4",
+              "document_type": "证言摘录",
+              "location": "第10页，问答32",
+              "quoted_text": "青岚在董事会材料中把2,400万元收入作为估值基础。",
+              "evidence_role": "补强",
+              "supporting_fact": "该证言具体说明了收入指标如何进入原告的估值和收购决策，而非仅作为一般宣传信息。",
+              "linked_evidence_refs": [
+                "D1#p6",
+                "D2#p4"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "因果关系",
+          "finding": "收购付款在推介材料使用之后发生，交割后发现监管问询和收入缺口，并出现整改、退款及价值减损，文书支持交易决定与后果之间的因果链，但价值减损仍需进一步证明。",
+          "support_level": "部分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第6至8页，交易和损失部分",
+              "quoted_text": "交割后，原告发现监管机构早在交割前已发出问询，实际年度经常性收入约为1,340万元、客户流失率约为18%。原告主张因此承担整改、客户退款和业务价值减损，共计损失900万元。",
+              "evidence_role": "支持",
+              "supporting_fact": "诉状按时间顺序记载交割、发现相反事实和发生损失，但属于当事人主张。",
+              "linked_evidence_refs": [
+                "D3#p4-p6",
+                "D6#p3"
+              ]
+            },
+            {
+              "document_ref": "D6",
+              "document_type": "附件",
+              "location": "第4至6页，损失构成部分",
+              "quoted_text": "监管整改和法律顾问费用180万元，客户退款及合同补偿120万元，因收入缺口导致的业务价值减损600万元，合计主张损失900万元。",
+              "evidence_role": "补强但保留争议",
+              "supporting_fact": "附件将整改、退款和价值减损分别量化，并将收入调节表列为基础材料；其中价值减损的因果和金额仍需专家意见。",
+              "linked_evidence_refs": [
+                "D1#p8",
+                "D5#p7"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "损失",
+          "finding": "D6对900万元进行了分项计算，整改和退款部分有较明确的费用类别，600万元价值减损被明确标注为可能需要专家证言确认，故损失要件部分覆盖。",
+          "support_level": "部分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D6",
+              "document_type": "附件",
+              "location": "第3至7页，损失及估值减损报告",
+              "quoted_text": "监管整改和法律顾问费用180万元，客户退款及合同补偿120万元，因收入缺口导致的业务价值减损600万元，合计主张损失900万元。",
+              "evidence_role": "支持并标注缺口",
+              "supporting_fact": "报告提供损失总额和分项金额，但对价值减损的证明力作出需专家进一步确认的限定。",
+              "linked_evidence_refs": [
+                "D1#p8"
+              ]
+            },
+            {
+              "document_ref": "D5",
+              "document_type": "动议",
+              "location": "第7页，损失争议部分",
+              "quoted_text": "被告争议原告对客户流失率和价值减损的计算方法。",
+              "evidence_role": "反驳",
+              "supporting_fact": "被告对损失计算方法提出具体争议，说明900万元尚非完全无争议的确定金额。",
+              "linked_evidence_refs": [
+                "D6#p4-p7"
+              ]
+            }
+          ]
+        }
+      ],
+      "chain_links": [
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D2",
+          "relation_type": "附件归属",
+          "link_explanation": "诉状将收购推介材料作为主张来源，D2保存了监管状态、收入和客户流失率等核心陈述。"
+        },
+        {
+          "from_document_ref": "D2",
+          "to_document_ref": "D3",
+          "relation_type": "印证和反驳",
+          "link_explanation": "D3的交割前问询和财务调节数据与D2的对外指标形成直接对照。"
+        },
+        {
+          "from_document_ref": "D3",
+          "to_document_ref": "D4",
+          "relation_type": "来源追溯和相互印证",
+          "link_explanation": "D3记载相反信息已发送给被告，D4确认收到问询并看过调节表，同时说明交易团队仍使用较高指标。"
+        },
+        {
+          "from_document_ref": "D5",
+          "to_document_ref": "D2",
+          "relation_type": "反驳",
+          "link_explanation": "被告动议承认D2中存在相关表述，但主张其为未经审计的估算并否认监管问询达到正式调查程度。"
+        },
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D6",
+          "relation_type": "附件归属和损失追溯",
+          "link_explanation": "D6将诉状主张的900万元拆分为整改、退款和价值减损，并标注价值减损需要进一步专家证明。"
+        }
+      ]
+    }
+  ]
+}

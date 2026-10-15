@@ -1,0 +1,296 @@
+{
+  "case_documents": [
+    {
+      "document_ref": "D1",
+      "document_type": "诉状",
+      "document_title": "起诉状（海岚电池材料诉北辰精密设备）",
+      "document_date": "2024-11-06",
+      "document_text": "原告海岚电池材料有限公司主张，被告北辰精密设备有限公司在2024年1月的采购谈判中表示，其连续涂布生产线每日稳定产出1,000个电芯，并持有有效期至2026年的安全认证。原告据此于2024年2月18日支付设备款780万元并签署安装合同。设备投产后平均每日只能完成620个电芯，且被告交付的认证文件已于2023年10月失效。原告称其因停线改造、临时外包和延期交付向客户支付违约金，共损失186万元。",
+      "page_count": 21,
+      "attachment_refs": [
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ]
+    },
+    {
+      "document_ref": "D2",
+      "document_type": "附件",
+      "document_title": "北辰精密设备产能与认证报价书",
+      "document_date": "2024-01-22",
+      "document_text": "本设备在连续运行条件下可稳定达到每日1,000个电芯的产出；配套安全认证有效期至2026年6月30日。上述产能和认证状态构成海岚电池材料采购决策的基础。",
+      "page_count": 6,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D3",
+      "document_type": "声明",
+      "document_title": "北辰精密设备技术经理顾衡声明",
+      "document_date": "2024-12-02",
+      "document_text": "我在2024年1月测试记录中看到，该生产线连续七日的平均产出为620个电芯，只有在短时空载测试中达到过1,000个。公司质量部门在2023年11月已经通知销售部门，现有安全认证已于2023年10月失效，但报价书仍沿用了旧证书编号。",
+      "page_count": 8,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D4",
+      "document_type": "证言摘录",
+      "document_title": "北辰精密设备销售总监梁启证言摘录",
+      "document_date": "2025-01-14",
+      "document_text": "问：你在发出报价书前是否看过连续运行测试记录？答：看过，记录中的平均产出大约是620个。问：你是否知道安全认证已经过期？答：质量部门发过邮件，我知道旧证书不能代表当前有效状态，但仍按客户要求先完成签约。",
+      "page_count": 13,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D5",
+      "document_type": "附件",
+      "document_title": "海岚电池材料损失核算及付款凭证目录",
+      "document_date": "2024-10-20",
+      "document_text": "2024年2月18日设备付款780万元。因产能不足发生临时外包费92万元、停线改造费54万元、客户延期违约金40万元，合计可归因损失186万元。外包发票、改造合同和客户扣款通知分别列于本附件第3至5页。",
+      "page_count": 9,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_ref": "Q2",
+      "claim_ref": "C2",
+      "claim_text": "北辰精密设备在签约前声称生产线可稳定日产1,000个电芯且安全认证有效至2026年，海岚电池材料因信赖该陈述购买设备，后因实际产能仅约620个且认证已过期而遭受186万元损失。",
+      "target_elements": [
+        "虚假陈述",
+        "知情或故意",
+        "信赖",
+        "因果关系",
+        "损失"
+      ],
+      "question_text": "请将报价书中的产能和认证陈述与技术声明、销售证言及损失核算材料进行交叉检索，判断各欺诈要件的证据支持程度，并保留从采购主张到附件和证言的文书链路。",
+      "originating_document_ref": "D1"
+    }
+  ],
+  "retrieval_summary": {
+    "element_coverage": [
+      {
+        "element_name": "虚假陈述",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "知情或故意",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "信赖",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "因果关系",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "损失",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      }
+    ],
+    "chain_completeness": true,
+    "coverage_score": 0.95,
+    "summary_text": "产能和认证两项外部陈述均有报价书、内部技术声明和销售证言交叉支持。D3和D4对被告知悉测试结果及认证失效的事实提供了较强依据；D1和D2共同说明信赖与采购决策的联系，D5则量化了由产能不足引发的后续支出。五项要件均已覆盖，文书之间的附件归属、内部来源追溯和损失凭证链路完整。"
+  },
+  "evidence_chain_results": [
+    {
+      "query_ref": "Q2",
+      "claim_ref": "C2",
+      "claim_text": "北辰精密设备在签约前声称生产线可稳定日产1,000个电芯且安全认证有效至2026年，海岚电池材料因信赖该陈述购买设备，后因实际产能仅约620个且认证已过期而遭受186万元损失。",
+      "element_results": [
+        {
+          "element_name": "虚假陈述",
+          "finding": "D2明确作出日产1,000个电芯和认证有效至2026年的陈述，D3和D4分别提供了实际产能及认证状态的相反信息。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D2",
+              "document_type": "附件",
+              "location": "第2页，产能及认证条款",
+              "quoted_text": "本设备在连续运行条件下可稳定达到每日1,000个电芯的产出；配套安全认证有效期至2026年6月30日。",
+              "evidence_role": "支持",
+              "supporting_fact": "报价书把产能和认证有效期作为明确的交易信息对外提供。",
+              "linked_evidence_refs": [
+                "D3#p3",
+                "D4#问答22"
+              ]
+            },
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第3至4页，测试记录和质量通知部分",
+              "quoted_text": "该生产线连续七日的平均产出为620个电芯，只有在短时空载测试中达到过1,000个。公司质量部门在2023年11月已经通知销售部门，现有安全认证已于2023年10月失效。",
+              "evidence_role": "反驳并补强",
+              "supporting_fact": "内部测试和质量通知分别反驳了稳定日产能力和认证有效期两项外部陈述。",
+              "linked_evidence_refs": [
+                "D2#p2",
+                "D4#问答22"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "知情或故意",
+          "finding": "技术经理声明显示公司质量部门在签约前已通知认证失效，销售总监又承认看过低产能测试并知道旧证书不能代表当前状态，支持至少明知或重大过失地继续作出陈述。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第4页，第2段",
+              "quoted_text": "公司质量部门在2023年11月已经通知销售部门，现有安全认证已于2023年10月失效，但报价书仍沿用了旧证书编号。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段将失效通知、销售知悉渠道和报价书继续使用旧证书编号连接起来。",
+              "linked_evidence_refs": [
+                "D4#问答23"
+              ]
+            },
+            {
+              "document_ref": "D4",
+              "document_type": "证言摘录",
+              "location": "第7页，问答22至23",
+              "quoted_text": "质量部门发过邮件，我知道旧证书不能代表当前有效状态，但仍按客户要求先完成签约。",
+              "evidence_role": "支持",
+              "supporting_fact": "销售总监直接承认知道认证状态不真实仍推进签约，构成对主观知情的直接补强。",
+              "linked_evidence_refs": [
+                "D3#p4",
+                "D2#p2"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "信赖",
+          "finding": "诉状将付款和签署安装合同置于报价陈述之后，且报价书明确写明这些信息构成采购决策基础，能够支持原告将陈述作为交易依据。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第6页，第2至3段",
+              "quoted_text": "原告据此于2024年2月18日支付设备款780万元并签署安装合同。",
+              "evidence_role": "支持",
+              "supporting_fact": "据此一词将原告的付款和签约行为直接指向D2中的产能与认证陈述。",
+              "linked_evidence_refs": [
+                "D2#p2",
+                "D5#p2"
+              ]
+            },
+            {
+              "document_ref": "D2",
+              "document_type": "附件",
+              "location": "第2页，末句",
+              "quoted_text": "上述产能和认证状态构成海岚电池材料采购决策的基础。",
+              "evidence_role": "补强",
+              "supporting_fact": "报价文件本身把两项陈述与采购决策建立了明确的语义联系。",
+              "linked_evidence_refs": [
+                "D1#p6"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "因果关系",
+          "finding": "产能不足和认证失效在设备投产后被发现，并随后产生外包、停线改造及客户违约金，文书形成从陈述、购买、投产到支出的连续时间链条。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第7至8页，第1至2段",
+              "quoted_text": "设备投产后平均每日只能完成620个电芯，且被告交付的认证文件已于2023年10月失效。原告称其因停线改造、临时外包和延期交付向客户支付违约金。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段同时描述了设备表现、认证问题和后续经营后果，为因果顺序提供主张来源。",
+              "linked_evidence_refs": [
+                "D3#p3-p4",
+                "D5#p3"
+              ]
+            },
+            {
+              "document_ref": "D5",
+              "document_type": "附件",
+              "location": "第3至5页，费用目录",
+              "quoted_text": "因产能不足发生临时外包费92万元、停线改造费54万元、客户延期违约金40万元，合计可归因损失186万元。",
+              "evidence_role": "补强",
+              "supporting_fact": "费用附件将后果性支出逐项归因于产能不足及其导致的交付延误。",
+              "linked_evidence_refs": [
+                "D1#p7-p8"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "损失",
+          "finding": "付款凭证和费用目录共同记载了186万元损失，并列明外包、改造和客户违约金的具体构成。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D5",
+              "document_type": "附件",
+              "location": "第2至5页，付款和损失明细",
+              "quoted_text": "2024年2月18日设备付款780万元。因产能不足发生临时外包费92万元、停线改造费54万元、客户延期违约金40万元，合计可归因损失186万元。",
+              "evidence_role": "支持",
+              "supporting_fact": "该附件提供损失总额、分项金额和凭证类型，直接支撑损失要件。",
+              "linked_evidence_refs": [
+                "D1#p8"
+              ]
+            },
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第8页，第2段",
+              "quoted_text": "原告称其因停线改造、临时外包和延期交付向客户支付违约金，共损失186万元。",
+              "evidence_role": "来源追溯",
+              "supporting_fact": "诉状概括的金额和损失类型可由D5的费用目录及付款凭证进一步核验。",
+              "linked_evidence_refs": [
+                "D5#p2-p5"
+              ]
+            }
+          ]
+        }
+      ],
+      "chain_links": [
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D2",
+          "relation_type": "附件归属",
+          "link_explanation": "诉状引用报价书作为采购陈述的来源，D2同时记录了产能和认证两项核心信息。"
+        },
+        {
+          "from_document_ref": "D2",
+          "to_document_ref": "D3",
+          "relation_type": "印证和反驳",
+          "link_explanation": "D3的连续运行测试及质量通知分别反驳D2中的产能与认证陈述。"
+        },
+        {
+          "from_document_ref": "D3",
+          "to_document_ref": "D4",
+          "relation_type": "相互印证",
+          "link_explanation": "技术经理声明记载内部通知和测试结果，销售总监证言则确认其实际知悉这些事实，形成对主观状态的多文书印证。"
+        },
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D5",
+          "relation_type": "附件归属和损失追溯",
+          "link_explanation": "D5将诉状中的186万元损失拆分并连接到付款凭证、外包发票、改造合同和客户扣款通知。"
+        }
+      ]
+    }
+  ]
+}

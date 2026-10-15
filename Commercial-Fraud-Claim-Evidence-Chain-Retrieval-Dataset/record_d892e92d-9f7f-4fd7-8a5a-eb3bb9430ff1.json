@@ -1,0 +1,298 @@
+{
+  "case_documents": [
+    {
+      "document_ref": "D1",
+      "document_type": "诉状",
+      "document_title": "起诉状（澄海零售科技诉曜石云）",
+      "document_date": "2024-08-15",
+      "document_text": "原告澄海零售科技有限公司主张，被告曜石云服务有限公司在2024年3月12日的演示和报价中表示，其零售预测平台有1,800家付费客户、过去十二个月续费率为92%，并承诺首年最低回款1,200万元。原告项目负责人在签约前核对演示材料后认为平台适合其新店扩张计划，于2024年4月2日支付1,200万元并部署平台。2024年7月内部复核发现，平台实际活跃客户不足1,100家，续费率约为61%，相关数字排除了已取消客户。原告因此停止推广，并支出替换系统、退款、未使用许可和培训费用合计380万元。",
+      "page_count": 18,
+      "attachment_refs": [
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ]
+    },
+    {
+      "document_ref": "D2",
+      "document_type": "附件",
+      "document_title": "2024年3月12日销售报价邮件及客户指标页",
+      "document_date": "2024-03-12",
+      "document_text": "截至2024年2月29日，平台拥有1,800家付费客户，过去十二个月续费率为92%。我们承诺首年最低回款1,200万元。该指标页由曜石云销售副总裁发送给澄海零售科技项目组。",
+      "page_count": 3,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D3",
+      "document_type": "声明",
+      "document_title": "曜石云前财务分析师林岚声明",
+      "document_date": "2024-09-03",
+      "document_text": "我在2024年2月的内部经营会议上看到，活跃客户约为1,050家，续费率约为61%。销售团队仍要求对外使用1,800家和92%的数字，因为已取消客户未从历史客户表中移除。该表格后来被用于2024年3月的报价材料。",
+      "page_count": 7,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D4",
+      "document_type": "证言摘录",
+      "document_title": "销售副总裁周岑证言摘录",
+      "document_date": "2024-10-11",
+      "document_text": "问：你是否知道1,800家包含已经取消的客户？答：知道，销售副总裁说这些数字用于报价，不要在演示中拆分。问：你是否知道实际续费率约为61%？答：在签约前看过内部报表，但没有把报表交给澄海。",
+      "page_count": 11,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    },
+    {
+      "document_ref": "D5",
+      "document_type": "附件",
+      "document_title": "澄海零售科技损失计算表",
+      "document_date": "2024-08-01",
+      "document_text": "2024年4月2日支付1,200万元；替换系统和退款支出260万元；未使用许可及培训支出120万元；扣除可回收服务费后，可归因损失合计380万元。损失计算以付款凭证、替换合同和退款清单为基础。",
+      "page_count": 5,
+      "attachment_refs": [],
+      "parent_document_ref": "D1"
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "query_ref": "Q1",
+      "claim_ref": "C1",
+      "claim_text": "曜石云在签约前声称其平台有1,800家付费客户且续费率为92%，澄海零售因信赖该陈述支付并部署，后因实际客户和续费率显著较低而遭受380万元损失。",
+      "target_elements": [
+        "虚假陈述",
+        "知情或故意",
+        "信赖",
+        "因果关系",
+        "损失"
+      ],
+      "question_text": "请从诉状、销售报价、内部声明、销售人员证言和损失计算表中，分别检索五项欺诈要件的依据，并说明各文书之间的引用、印证和来源追溯关系。",
+      "originating_document_ref": "D1"
+    }
+  ],
+  "retrieval_summary": {
+    "element_coverage": [
+      {
+        "element_name": "虚假陈述",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "知情或故意",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "信赖",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "因果关系",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      },
+      {
+        "element_name": "损失",
+        "coverage_status": "已覆盖",
+        "evidence_count": 2,
+        "unresolved_reason": ""
+      }
+    ],
+    "chain_completeness": true,
+    "coverage_score": 0.92,
+    "summary_text": "五项目标要件均有至少两份关联文书提供依据。D2的报价指标与D3的内部声明形成核心事实对照，D4进一步补强知情和故意使用不完整数据的判断；D1记录了原告基于报价付款部署的行为，D5提供了损失金额的明细。诉状、报价、内部声明、证言和损失表之间的附件归属、印证及来源追溯关系完整，尚未发现足以切断因果关系的相反材料。"
+  },
+  "evidence_chain_results": [
+    {
+      "query_ref": "Q1",
+      "claim_ref": "C1",
+      "claim_text": "曜石云在签约前声称其平台有1,800家付费客户且续费率为92%，澄海零售因信赖该陈述支付并部署，后因实际客户和续费率显著较低而遭受380万元损失。",
+      "element_results": [
+        {
+          "element_name": "虚假陈述",
+          "finding": "D2记录的客户数和续费率与D3所述内部数据明显不一致，且D4说明销售人员知道客户数包含已取消客户，足以支持对陈述真实性的质疑。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D2",
+              "document_type": "附件",
+              "location": "第2页，指标页第3至4行",
+              "quoted_text": "截至2024年2月29日，平台拥有1,800家付费客户，过去十二个月续费率为92%。",
+              "evidence_role": "支持",
+              "supporting_fact": "销售报价向交易相对方明确给出了1,800家客户和92%续费率这两个可核验的经营指标。",
+              "linked_evidence_refs": [
+                "D3#p4",
+                "D4#问答18"
+              ]
+            },
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第4页，第2段",
+              "quoted_text": "活跃客户约为1,050家，续费率约为61%。销售团队仍要求对外使用1,800家和92%的数字。",
+              "evidence_role": "反驳并补强",
+              "supporting_fact": "内部声明提供了与对外报价相反的同期数据，说明对外指标至少未完整反映实际客户状态。",
+              "linked_evidence_refs": [
+                "D2#p2",
+                "D4#问答19"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "知情或故意",
+          "finding": "内部财务数据、销售团队继续使用旧指标的指示以及周岑对数据处理方式的承认，共同表明相关人员在报价时至少知道陈述存在重大不完整性。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D3",
+              "document_type": "声明",
+              "location": "第5页，第1段",
+              "quoted_text": "销售团队仍要求对外使用1,800家和92%的数字，因为已取消客户未从历史客户表中移除。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段同时说明了数据缺陷和继续对外使用该数据的行为，连接了事实认知与对外陈述。",
+              "linked_evidence_refs": [
+                "D4#问答18"
+              ]
+            },
+            {
+              "document_ref": "D4",
+              "document_type": "证言摘录",
+              "location": "第6页，问答18至19",
+              "quoted_text": "知道，销售副总裁说这些数字用于报价，不要在演示中拆分。",
+              "evidence_role": "支持",
+              "supporting_fact": "证言承认知悉客户数口径问题，并指向将该口径用于报价的具体决定。",
+              "linked_evidence_refs": [
+                "D3#p5",
+                "D2#p2"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "信赖",
+          "finding": "诉状记载原告在核对销售材料后决定采用平台，且付款和部署行为发生在涉案陈述之后；证言进一步确认这些数字被用于报价决策。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第7页，第3至4段",
+              "quoted_text": "原告项目负责人在签约前核对演示材料后认为平台适合其新店扩张计划，于2024年4月2日支付1,200万元并部署平台。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段将原告对演示材料的审阅、采用平台的决定与付款部署行为按时间顺序连接起来。",
+              "linked_evidence_refs": [
+                "D2#p2",
+                "D5#p2"
+              ]
+            },
+            {
+              "document_ref": "D4",
+              "document_type": "证言摘录",
+              "location": "第8页，问答27",
+              "quoted_text": "这些数字用于报价，不要在演示中拆分。",
+              "evidence_role": "补强",
+              "supporting_fact": "该证言说明客户指标并非一般背景信息，而是被放入报价场景中影响交易条件。",
+              "linked_evidence_refs": [
+                "D1#p7",
+                "D2#p2"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "因果关系",
+          "finding": "付款和部署发生在报价之后，损失计算表又将替换、退款和闲置支出与该部署直接相连，现有材料支持陈述对交易及后续支出的因果影响。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第8页，第1至3段",
+              "quoted_text": "2024年7月内部复核发现，平台实际活跃客户不足1,100家，续费率约为61%，相关数字排除了已取消客户。原告因此停止推广。",
+              "evidence_role": "支持",
+              "supporting_fact": "该段说明发现真实指标后立即停止推广，形成了从发现差异到停止使用的时间链条。",
+              "linked_evidence_refs": [
+                "D3#p4",
+                "D5#p3"
+              ]
+            },
+            {
+              "document_ref": "D5",
+              "document_type": "附件",
+              "location": "第3页，费用明细表",
+              "quoted_text": "替换系统和退款支出260万元；未使用许可及培训支出120万元；扣除可回收服务费后，可归因损失合计380万元。",
+              "evidence_role": "补强",
+              "supporting_fact": "费用明细把替换、退款和未使用服务支出量化为原告主张的后果性损失。",
+              "linked_evidence_refs": [
+                "D1#p8",
+                "D5#p2"
+              ]
+            }
+          ]
+        },
+        {
+          "element_name": "损失",
+          "finding": "D5列明了付款、替换、退款和未使用服务成本，并将可归因损失计算为380万元；D1对同一数额和损失类型作了概括。",
+          "support_level": "充分支持",
+          "evidence_spans": [
+            {
+              "document_ref": "D5",
+              "document_type": "附件",
+              "location": "第2至4页，损失计算表",
+              "quoted_text": "2024年4月2日支付1,200万元；替换系统和退款支出260万元；未使用许可及培训支出120万元；扣除可回收服务费后，可归因损失合计380万元。",
+              "evidence_role": "支持",
+              "supporting_fact": "该附件提供了损失金额的构成和扣除项目，直接支持380万元的计算结果。",
+              "linked_evidence_refs": [
+                "D1#p8"
+              ]
+            },
+            {
+              "document_ref": "D1",
+              "document_type": "诉状",
+              "location": "第8页，第3段",
+              "quoted_text": "原告因此停止推广，并支出替换系统、退款、未使用许可和培训费用合计380万元。",
+              "evidence_role": "来源追溯",
+              "supporting_fact": "诉状将损失概括为380万元，并可追溯至D5的具体费用明细。",
+              "linked_evidence_refs": [
+                "D5#p2-p4"
+              ]
+            }
+          ]
+        }
+      ],
+      "chain_links": [
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D2",
+          "relation_type": "附件归属",
+          "link_explanation": "诉状将销售报价邮件作为附件引用，D2提供了构成欺诈主张核心的客户数和续费率原始表述。"
+        },
+        {
+          "from_document_ref": "D2",
+          "to_document_ref": "D3",
+          "relation_type": "印证和反驳",
+          "link_explanation": "D3的内部数据与D2的对外指标直接对照，说明报价指标与内部经营数据之间存在差异。"
+        },
+        {
+          "from_document_ref": "D3",
+          "to_document_ref": "D4",
+          "relation_type": "相互印证",
+          "link_explanation": "D3说明销售团队继续使用旧指标，D4由销售人员承认知悉该口径并将其用于报价，形成从内部数据到行为认知的多跳链路。"
+        },
+        {
+          "from_document_ref": "D1",
+          "to_document_ref": "D5",
+          "relation_type": "附件归属和损失追溯",
+          "link_explanation": "D5将诉状概括的380万元损失拆分为付款、替换、退款和闲置成本，连接主张与金额依据。"
+        }
+      ]
+    }
+  ]
+}
