@@ -1,0 +1,123 @@
+{
+  "confidence": 0.98,
+  "result_claim": {
+    "claim_text": "在12 V电源和6 Ω电阻组成的电路中，电流为1.5 A。",
+    "claim_relation": "等于",
+    "claimed_value": 1.5,
+    "claimed_unit": "A"
+  },
+  "truth_verdict": false,
+  "sensor_readings": [
+    {
+      "measurement_time": 0.5,
+      "sensor_name": "电压传感器-01",
+      "measurement_type": "电压",
+      "reading_value": 12,
+      "unit": "V",
+      "uncertainty": 0.02
+    },
+    {
+      "measurement_time": 0.5,
+      "sensor_name": "电流传感器-01",
+      "measurement_type": "电流",
+      "reading_value": 2.01,
+      "unit": "A",
+      "uncertainty": 0.01
+    }
+  ],
+  "experiment_setup": {
+    "experiment_domain": "电学",
+    "experiment_name": "定值电阻欧姆定律验证",
+    "parameters": {
+      "electricity": {
+        "voltage": 12,
+        "resistance": 6,
+        "current": 2
+      }
+    }
+  },
+  "operation_events": [
+    {
+      "event_index": 0,
+      "event_time": 0,
+      "action": "接通直流电源",
+      "target": "12 V直流电源",
+      "event_parameters": {
+        "numeric_value": 12,
+        "text_value": "开启",
+        "unit": "V"
+      }
+    },
+    {
+      "event_index": 1,
+      "event_time": 0.1,
+      "action": "闭合开关",
+      "target": "定值电阻",
+      "event_parameters": {
+        "text_value": "闭合"
+      }
+    },
+    {
+      "event_index": 2,
+      "event_time": 0.5,
+      "action": "读取电流",
+      "target": "电流传感器"
+    }
+  ],
+  "calculation_process": {
+    "formula_expression": "I=U/R",
+    "calculation_steps": [
+      {
+        "step_index": 1,
+        "operation": "根据电源和电阻参数计算理论电流",
+        "input_values": "U=12 V，R=6 Ω",
+        "output_value": 2,
+        "output_unit": "A"
+      },
+      {
+        "step_index": 2,
+        "operation": "提取仿真电流传感器读数",
+        "input_values": "电流传感器在0.5 s时的读数为2.01 A",
+        "output_value": 2.01,
+        "output_unit": "A"
+      },
+      {
+        "step_index": 3,
+        "operation": "将理论电流与结果声明比较",
+        "input_values": "理论电流2 A，声明电流1.5 A",
+        "output_value": 0.5,
+        "output_unit": "A"
+      }
+    ],
+    "computed_quantities": [
+      {
+        "quantity_name": "电路电流",
+        "expected_value": 2,
+        "observed_value": 2.01,
+        "unit": "A",
+        "calculation_basis": "依据欧姆定律I=U/R计算理论值，并与电流传感器读数比较。"
+      }
+    ],
+    "comparisons": [
+      {
+        "comparison_target": "理论电流与仿真传感器读数",
+        "expected_value": 2,
+        "observed_value": 2.01,
+        "absolute_error": 0.01,
+        "relative_error": 0.005,
+        "tolerance": 0.02,
+        "within_tolerance": true
+      },
+      {
+        "comparison_target": "结果声明中的电流值",
+        "expected_value": 2,
+        "observed_value": 1.5,
+        "absolute_error": 0.5,
+        "relative_error": 0.25,
+        "tolerance": 0.02,
+        "within_tolerance": false
+      }
+    ]
+  },
+  "verification_explanation": "依据欧姆定律，理论电流为12/6=2 A，仿真传感器读数为2.01 A，与理论值的误差仅为0.01 A并在允许范围内。但结果声明给出的1.5 A与理论值相差0.5 A，相对误差为25%，超过0.02 A的允许误差，因此该声明为假。"
+}

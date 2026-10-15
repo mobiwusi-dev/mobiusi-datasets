@@ -1,0 +1,123 @@
+{
+  "sensor_readings": [
+    {
+      "measurement_time": 1.2,
+      "sensor_name": "光屏位置传感器-01",
+      "measurement_type": "像距",
+      "reading_value": 0.149,
+      "unit": "m",
+      "uncertainty": 0.001
+    },
+    {
+      "measurement_time": 1.2,
+      "sensor_name": "光强传感器-01",
+      "measurement_type": "光强",
+      "reading_value": 0.86,
+      "unit": "相对光强",
+      "uncertainty": 0.02
+    }
+  ],
+  "experiment_setup": {
+    "experiment_domain": "光学",
+    "experiment_name": "凸透镜成像物像距测量",
+    "parameters": {
+      "optics": {
+        "wavelength": 5.5e-07,
+        "focal_length": 0.1,
+        "object_distance": 0.3,
+        "image_distance": 0.15
+      }
+    }
+  },
+  "confidence": 0.98,
+  "result_claim": {
+    "claim_text": "焦距为0.100 m、物距为0.300 m时，凸透镜的像距约为0.150 m。",
+    "claim_relation": "近似等于",
+    "claimed_value": 0.15,
+    "claimed_unit": "m"
+  },
+  "truth_verdict": true,
+  "operation_events": [
+    {
+      "event_index": 0,
+      "event_time": 0,
+      "action": "设置透镜与光屏",
+      "target": "焦距为0.1 m的凸透镜",
+      "event_parameters": {
+        "numeric_value": 0.1,
+        "text_value": "透镜焦距",
+        "unit": "m"
+      }
+    },
+    {
+      "event_index": 1,
+      "event_time": 0.2,
+      "action": "移动物体至指定位置",
+      "target": "物体",
+      "event_parameters": {
+        "numeric_value": 0.3,
+        "text_value": "距透镜0.3 m",
+        "unit": "m"
+      }
+    },
+    {
+      "event_index": 2,
+      "event_time": 1,
+      "action": "移动光屏至清晰成像位置",
+      "target": "光屏"
+    },
+    {
+      "event_index": 3,
+      "event_time": 1.2,
+      "action": "读取像距",
+      "target": "位置传感器"
+    }
+  ],
+  "calculation_process": {
+    "formula_expression": "1/f=1/u+1/v；v=1/(1/f-1/u)",
+    "calculation_steps": [
+      {
+        "step_index": 1,
+        "operation": "计算焦距倒数",
+        "input_values": "f=0.1 m",
+        "output_value": 10,
+        "output_unit": "1/m"
+      },
+      {
+        "step_index": 2,
+        "operation": "计算像距倒数",
+        "input_values": "1/f=10 1/m，1/u=1/0.3=3.333333 1/m",
+        "output_value": 6.666667,
+        "output_unit": "1/m"
+      },
+      {
+        "step_index": 3,
+        "operation": "计算理论像距",
+        "input_values": "v=1/6.666667 m",
+        "output_value": 0.15,
+        "output_unit": "m"
+      }
+    ],
+    "computed_quantities": [
+      {
+        "quantity_name": "凸透镜像距",
+        "expected_value": 0.15,
+        "observed_value": 0.149,
+        "unit": "m",
+        "calculation_basis": "依据薄透镜成像公式1/f=1/u+1/v，并采用光屏位置传感器读数作为观测值。"
+      }
+    ],
+    "comparisons": [
+      {
+        "comparison_target": "结果声明中的凸透镜像距",
+        "expected_value": 0.15,
+        "observed_value": 0.149,
+        "absolute_error": 0.001,
+        "relative_error": 0.0066666667,
+        "tolerance": 0.002,
+        "within_tolerance": true
+      }
+    ]
+  },
+  "verification_explanation": "由薄透镜公式计算得到像距v=0.150 m，光屏位置传感器测得0.149 m，绝对误差为0.001 m，小于0.002 m的允许误差。声明中的约0.150 m与理论计算和仿真读数均一致，因此判定为真。"
+}
