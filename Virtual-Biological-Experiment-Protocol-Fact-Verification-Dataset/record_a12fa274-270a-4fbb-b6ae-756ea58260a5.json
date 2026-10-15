@@ -1,0 +1,41 @@
+{
+  "verdict": "支持",
+  "claim_text": "该细胞培养协议要求在37°C和5% CO2条件下培养24小时。",
+  "confidence": 0.99,
+  "protocol_text": "将贴壁型哺乳动物细胞接种于含10%胎牛血清的DMEM培养基中。\n置于37°C、5% CO2和饱和湿度培养箱内培养24小时。\n细胞达到约80%融合度后，用PBS清洗一次，再用胰蛋白酶消化并传代。\n该流程用于维持细胞增殖，不包含药物处理或终点活性测定。",
+  "evidence_spans": [
+    {
+      "quote": "置于37°C、5% CO2和饱和湿度培养箱内培养24小时。",
+      "relation": "支持",
+      "start_offset": 32,
+      "end_offset": 61
+    }
+  ],
+  "protocol_steps": [
+    "将贴壁型哺乳动物细胞接种于含10%胎牛血清的DMEM培养基中。",
+    "在37°C、5% CO2和饱和湿度条件下培养24小时。",
+    "细胞达到约80%融合度后用PBS清洗一次。",
+    "使用胰蛋白酶消化细胞并进行传代。"
+  ],
+  "protocol_category": "细胞培养",
+  "protocol_page_html": "<article><h1>细胞培养协议</h1><p>将贴壁型哺乳动物细胞接种于含10%胎牛血清的DMEM培养基中。</p><p>置于37°C、5% CO2和饱和湿度培养箱内培养24小时。</p><p>细胞达到约80%融合度后，用PBS清洗一次，再用胰蛋白酶消化并传代。</p><p>该流程用于维持细胞增殖，不包含药物处理或终点活性测定。</p></article>",
+  "verification_reason": "协议正文明确给出了37°C、5% CO2和24小时培养时长，与待验证主张中的全部关键条件一致。",
+  "experimental_subjects": [
+    "贴壁型哺乳动物细胞",
+    "DMEM培养基",
+    "胰蛋白酶"
+  ],
+  "experimental_conditions": {
+    "temperature": 37,
+    "temperature_unit": "摄氏度",
+    "duration": 24,
+    "duration_unit": "小时",
+    "culture_medium": "含10%胎牛血清的DMEM培养基",
+    "gas_condition": "5% CO2、饱和湿度",
+    "other_constraints": [
+      "细胞达到约80%融合度后再传代",
+      "传代前用PBS清洗一次",
+      "不进行药物处理或终点活性测定"
+    ]
+  }
+}

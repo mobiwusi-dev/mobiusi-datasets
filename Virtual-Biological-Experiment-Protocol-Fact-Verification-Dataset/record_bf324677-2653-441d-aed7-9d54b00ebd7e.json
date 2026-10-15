@@ -1,0 +1,41 @@
+{
+  "verdict": "反驳",
+  "claim_text": "该协议在厌氧条件下培养大肠杆菌K-12 8小时。",
+  "confidence": 0.99,
+  "protocol_text": "将大肠杆菌K-12单菌落接种到LB液体培养基中。\n在37°C、180 rpm振荡条件下培养8小时，培养过程中保持有氧通气。\n培养结束后取样测定OD600，不将OD600读数解释为菌落形成单位。\n该协议用于获得对数末期附近的培养物。",
+  "evidence_spans": [
+    {
+      "quote": "在37°C、180 rpm振荡条件下培养8小时，培养过程中保持有氧通气。",
+      "relation": "反驳",
+      "start_offset": 25,
+      "end_offset": 61
+    }
+  ],
+  "protocol_steps": [
+    "将大肠杆菌K-12单菌落接种到LB液体培养基中。",
+    "在37°C、180 rpm振荡条件下培养8小时。",
+    "培养过程中保持有氧通气。",
+    "培养结束后取样测定OD600。",
+    "不将OD600读数解释为菌落形成单位。"
+  ],
+  "protocol_category": "微生物培养",
+  "protocol_page_html": "<article><h1>大肠杆菌培养协议</h1><p>将大肠杆菌K-12单菌落接种到LB液体培养基中。</p><p>在37°C、180 rpm振荡条件下培养8小时，培养过程中保持有氧通气。</p><p>培养结束后取样测定OD600，不将OD600读数解释为菌落形成单位。</p><p>该协议用于获得对数末期附近的培养物。</p></article>",
+  "verification_reason": "协议明确规定培养过程中保持有氧通气，因此与待验证主张所称的厌氧条件相矛盾；8小时的培养时长虽然一致，但不能改变气体条件相反这一事实。",
+  "experimental_subjects": [
+    "大肠杆菌K-12",
+    "LB液体培养基"
+  ],
+  "experimental_conditions": {
+    "temperature": 37,
+    "temperature_unit": "摄氏度",
+    "duration": 8,
+    "duration_unit": "小时",
+    "culture_medium": "LB液体培养基",
+    "gas_condition": "有氧通气",
+    "other_constraints": [
+      "振荡速度为180 rpm",
+      "培养结束后测定OD600",
+      "OD600不解释为菌落形成单位"
+    ]
+  }
+}
