@@ -1,0 +1,31 @@
+{
+  "patent_evidence": {
+    "patent_publication_number": "CN_SYN_201800003A",
+    "patent_title": "用于低功耗网关的安全启动方法",
+    "jurisdiction": "中国",
+    "cited_excerpt": "该申请公开涉及一种低功耗网关的安全启动方法，申请日为2018年3月12日，公开日为2018年9月28日。",
+    "excerpt_location": "扉页及摘要"
+  },
+  "verification_label": "insufficient_evidence",
+  "evidence_assessment": {
+    "supporting_evidence_locations": [],
+    "refuting_evidence_locations": [],
+    "unverified_fact_components": [
+      "截至2025年1月1日的法律有效状态",
+      "专利期限是否届满",
+      "年费是否按时缴纳",
+      "是否存在恢复、无效或其他影响权利状态的程序事实"
+    ],
+    "evidence_linkage_notes": "专利扉页仅证明申请和公开日期，审查意见仅涉及实质审查问题；两者均未提供目标日期的法律状态或期限计算依据，不能完成从公开日期到失效结论的推导。"
+  },
+  "atomic_fact_statement": "截至2025年1月1日，专利CN_SYN_201800003B已经在中国失效，目标产品因此不存在该专利的有效侵权风险。",
+  "verification_rationale": "公开日和申请日信息本身不足以证明专利在特定日期已经失效。专利期限、年费缴纳、是否存在权利恢复或其他终止事由均可能影响有效状态，而所引程序文书明确未处理这些问题。因此现有材料既不能支持也不能反驳截至指定日期已经失效的结论。",
+  "legal_procedure_evidence": {
+    "procedure_document_type": "审查意见",
+    "procedure_document_reference": "EXAM-003",
+    "procedure_date": "2020-11-06",
+    "cited_excerpt": "本审查意见仅讨论权利要求的清楚性和创造性问题，不涉及专利权期限届满、年费缴纳状态或权利终止情况。",
+    "excerpt_location": "第1页第3段"
+  },
+  "evidence_sufficiency_score": 0.28
+}

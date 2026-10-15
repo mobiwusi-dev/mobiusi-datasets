@@ -1,0 +1,29 @@
+{
+  "verification_rationale": "专利权利要求1直接列出双测温元件和基于两者输出差值生成校准参数的结构，审查意见进一步确认了该限定的含义。原子事实所述的双点校准结构与两份引证材料中的技术要素相对应，因此引证能够支持该事实陈述。",
+  "patent_evidence": {
+    "patent_publication_number": "CN_SYN_202400001A",
+    "patent_title": "具有双点校准功能的温度传感模块",
+    "jurisdiction": "中国",
+    "cited_excerpt": "权利要求1要求温度传感模块包括第一测温元件、第二测温元件以及根据两个测温元件的输出差值生成校准参数的校准处理器。",
+    "excerpt_location": "权利要求1"
+  },
+  "verification_label": "support",
+  "evidence_assessment": {
+    "supporting_evidence_locations": [
+      "CN_SYN_202400001A，权利要求1",
+      "EXAM-001，第3页第2段"
+    ],
+    "refuting_evidence_locations": [],
+    "unverified_fact_components": [],
+    "evidence_linkage_notes": "专利权利要求提供结构性事实依据，审查意见提供对校准处理器功能限定的解释；二者共同对应原子事实中的双测温元件和差值校准两个要素。"
+  },
+  "atomic_fact_statement": "目标产品的温度传感模块落入专利权利要求1所限定的双点校准结构。",
+  "legal_procedure_evidence": {
+    "procedure_document_type": "审查意见",
+    "procedure_document_reference": "EXAM-001",
+    "procedure_date": "2024-06-15",
+    "cited_excerpt": "审查员确认，权利要求1中的校准处理器必须接收第一测温元件和第二测温元件的输出，并据此生成校准参数；仅具有单一测温元件的方案不满足该限定。",
+    "excerpt_location": "第3页第2段"
+  },
+  "evidence_sufficiency_score": 0.95
+}

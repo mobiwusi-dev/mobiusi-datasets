@@ -1,0 +1,29 @@
+{
+  "patent_evidence": {
+    "patent_publication_number": "EP_SYN_202300002B1",
+    "patent_title": "可拆卸电源接口的便携式控制器",
+    "jurisdiction": "欧洲专利局",
+    "cited_excerpt": "权利要求7的便携式控制器包括控制电路、可拆卸电池组以及与外部直流电源连接的有线输入接口；该权利要求未列出无线充电线圈作为必要技术特征。",
+    "excerpt_location": "权利要求7"
+  },
+  "verification_label": "refute",
+  "evidence_assessment": {
+    "supporting_evidence_locations": [],
+    "refuting_evidence_locations": [
+      "EP_SYN_202300002B1，权利要求7",
+      "OPP-002，第8页第4至5段"
+    ],
+    "unverified_fact_components": [],
+    "evidence_linkage_notes": "专利权利要求直接显示缺少无线充电线圈限定，无效决定解释了该缺失不能通过说明书中的可选实施方式予以补足；两份材料均针对原子事实的核心前提。"
+  },
+  "atomic_fact_statement": "专利权利要求7明确要求产品包含无线充电线圈，因此不含无线充电线圈的有线供电版本仍然落入权利要求7。",
+  "verification_rationale": "原子事实错误地断言权利要求7明确要求无线充电线圈，并进一步主张有线版本仍落入该权利要求。专利权利要求文本没有无线充电线圈限定，程序文书也明确将其认定为可选特征。因此现有引证反驳了该原子事实陈述。",
+  "legal_procedure_evidence": {
+    "procedure_document_type": "无效决定",
+    "procedure_document_reference": "OPP-002",
+    "procedure_date": "2024-02-20",
+    "cited_excerpt": "审理机构认定，权利要求7的文字限定仅涉及有线输入接口，不能将说明书中作为可选实施方式描述的无线充电线圈追加解释为该权利要求的必要要素。",
+    "excerpt_location": "第8页第4至5段"
+  },
+  "evidence_sufficiency_score": 0.93
+}
