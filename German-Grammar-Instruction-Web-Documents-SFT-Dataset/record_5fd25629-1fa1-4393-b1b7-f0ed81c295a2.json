@@ -1,0 +1,143 @@
+{
+  "source_html": "<html><head><title>Weil-Sätze und denn-Sätze</title></head><body><h1>Weil-Sätze und denn-Sätze</h1><p>Mit weil nennt man einen Grund. Weil leitet einen Nebensatz ein; das konjugierte Verb steht am Ende.</p><h2>Beispiele mit weil</h2><p>Ich bleibe zu Hause, weil ich krank bin. Weil es regnet, nehme ich einen Schirm.</p><h2>Der Unterschied zu denn</h2><p>Auch denn nennt einen Grund, aber denn verbindet zwei Hauptsätze. Nach denn bleibt das konjugierte Verb auf Position zwei: Ich bleibe zu Hause, denn ich bin krank.</p><h2>Übung</h2><p>Verbinde die Sätze mit weil oder denn und achte auf die Stellung des Verbs.</p></body></html>",
+  "grammar_rules": [
+    {
+      "rule_statement": "weil leitet einen Kausalsatz als Nebensatz ein; das konjugierte Verb steht im weil-Satz am Ende.",
+      "applicability_conditions": [
+        "weil begründet die Aussage des übergeordneten Satzes",
+        "weil steht am Anfang oder nach einem Komma vor dem Nebensatz",
+        "der Nebensatz folgt der Nebensatzwortstellung"
+      ],
+      "exception_conditions": [
+        "In gesprochener Umgangssprache kommt gelegentlich eine Verbzweitstellung nach weil vor; sie gilt nicht als die standardsprachliche Zielstruktur dieser Lektion"
+      ],
+      "example_sentences": [
+        "Ich bleibe zu Hause, weil ich krank bin.（我待在家里，因为我生病了。）",
+        "Weil es regnet, nehme ich einen Schirm.（因为下雨，我带了一把伞。）"
+      ],
+      "practice_hints": [
+        "先找出原因从句，再把其中的限定动词移到末尾",
+        "将主句和weil从句互换位置，检查逗号和动词位置是否仍然正确"
+      ]
+    },
+    {
+      "rule_statement": "denn verbindet zwei Hauptsätze und verändert die Verbzweitstellung im zweiten Satz nicht.",
+      "applicability_conditions": [
+        "denn表达前一句所述情况的原因",
+        "denn连接两个可以独立成句的主句",
+        "denn后的限定动词仍位于第二句的第二位置"
+      ],
+      "exception_conditions": [
+        "denn本身不引导Nebensatz，因此不能按照weil从句规则把限定动词移到句末"
+      ],
+      "example_sentences": [
+        "Ich bleibe zu Hause, denn ich bin krank.（我待在家里，因为我生病了。）",
+        "Er nimmt einen Schirm mit, denn es regnet.（他带上伞，因为正在下雨。）"
+      ],
+      "practice_hints": [
+        "把denn后的分句单独朗读，确认它仍然具有主句语序",
+        "比较Ich bleibe zu Hause, weil ich krank bin和Ich bleibe zu Hause, denn ich bin krank中的动词位置"
+      ]
+    }
+  ],
+  "grammar_sections": [
+    {
+      "section_title": "Einleitung",
+      "paragraph_index": 0,
+      "section_content": "Mit weil nennt man einen Grund. Weil leitet einen Nebensatz ein; das konjugierte Verb steht am Ende.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Beispiele mit weil",
+      "paragraph_index": 1,
+      "section_content": "Ich bleibe zu Hause, weil ich krank bin. Weil es regnet, nehme ich einen Schirm.",
+      "section_role": "例句讲解"
+    },
+    {
+      "section_title": "Der Unterschied zu denn",
+      "paragraph_index": 2,
+      "section_content": "Auch denn nennt einen Grund, aber denn verbindet zwei Hauptsätze. Nach denn bleibt das konjugierte Verb auf Position zwei: Ich bleibe zu Hause, denn ich bin krank.",
+      "section_role": "对比说明"
+    },
+    {
+      "section_title": "Übung",
+      "paragraph_index": 3,
+      "section_content": "Verbinde die Sätze mit weil oder denn und achte auf die Stellung des Verbs.",
+      "section_role": "练习提示"
+    }
+  ],
+  "document_overview": {
+    "page_title": "Weil-Sätze und denn-Sätze",
+    "grammar_topic": "Kausalsätze mit weil und denn",
+    "learner_level": "A2",
+    "document_language": "Deutsch",
+    "overview_summary": "本文讲解德语中表达原因的两种连接方式。weil引导从句，限定动词置于从句末尾；denn连接两个主句，后面的限定动词仍位于第二位。页面通过例句、对比说明和练习提示帮助学习者辨析两者的句法位置和使用条件。"
+  },
+  "cross_paragraph_qa": [
+    {
+      "question": "Warum steht bin in Ich bleibe zu Hause, weil ich krank bin am Ende, aber in Ich bleibe zu Hause, denn ich bin krank an zweiter Stelle?",
+      "answer": "weil引导Nebensatz，所以限定动词bin必须放在从句末尾；denn连接两个Hauptsätze，denn后的ich bin krank仍然遵循主句动词第二位规则。两种结构都表达原因，但句法连接方式不同。",
+      "evidence_paragraphs": [
+        0,
+        1,
+        2
+      ],
+      "reasoning": "第0段说明weil从句的句末动词规则，第1段提供weil例句，第2段对比denn连接主句及其动词第二位语序。综合三段即可解释两个bin位置的差异。"
+    },
+    {
+      "question": "如何判断一个表达原因的句子应该使用weil还是denn？",
+      "answer": "如果选择从属结构并把限定动词放到原因从句末尾，可以使用weil；如果希望连接两个保持独立主句语序的分句，可以使用denn。比如Ich bleibe zu Hause, weil ich krank bin和Ich bleibe zu Hause, denn ich bin krank都正确，但动词位置不同。",
+      "evidence_paragraphs": [
+        0,
+        2,
+        3
+      ],
+      "reasoning": "第0段给出weil的结构规则，第2段给出denn的对比规则，第3段要求学习者根据连接词和动词位置进行辨析练习。"
+    }
+  ],
+  "semantic_explanations": [
+    {
+      "target_expression": "weil",
+      "semantic_explanation": "weil是因果从属连词，表示前后两个命题之间的原因关系，中文通常译为“因为”。它引导Nebensatz，因此限定动词要放在从句末尾。",
+      "contextual_meaning": "在Ich bleibe zu Hause, weil ich krank bin中，生病是待在家里的原因；bin位于从句末尾正是weil从句的句法标志。",
+      "key_terms": [
+        "Kausalsatz",
+        "Nebensatz",
+        "konjugiertes Verb"
+      ]
+    },
+    {
+      "target_expression": "denn",
+      "semantic_explanation": "denn也是表示原因的连词，但它是并列连词，不会把后面的分句变成从句。因此denn后的句子保留主句语序，限定动词位于第二位置。",
+      "contextual_meaning": "在Ich bleibe zu Hause, denn ich bin krank中，denn后的ich bin krank可以独立成句，原因关系通过并列连接表达。",
+      "key_terms": [
+        "Hauptsatz",
+        "Konjunktion",
+        "Verbzweitstellung"
+      ]
+    }
+  ],
+  "rule_applicability_judgments": [
+    {
+      "sentence": "Ich bleibe zu Hause, weil ich krank bin.",
+      "is_applicable": true,
+      "judgment_explanation": "句中weil引导原因从句，限定动词bin位于从句末尾，符合weil从句的标准语序。",
+      "applicable_rule_statement": "weil引导从句，限定动词置于从句末尾。",
+      "confidence": 0.99
+    },
+    {
+      "sentence": "Ich bleibe zu Hause, denn ich bin krank.",
+      "is_applicable": false,
+      "judgment_explanation": "该句使用的是denn而不是weil。denn连接两个主句，所以ich bin krank保留动词第二位；不能套用weil从句的句末动词规则。",
+      "applicable_rule_statement": "weil从句的句末动词规则不适用于denn连接的主句。",
+      "confidence": 0.99
+    },
+    {
+      "sentence": "Weil es regnet, nehme ich einen Schirm.",
+      "is_applicable": true,
+      "judgment_explanation": "weil从句位于主句之前，限定动词regnet位于该从句末尾；主句中的nehme位于整个主句的第二位置，结构正确。",
+      "applicable_rule_statement": "weil引导的原因从句中，限定动词位于末尾。",
+      "confidence": 0.98
+    }
+  ]
+}

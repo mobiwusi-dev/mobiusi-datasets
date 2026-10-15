@@ -1,0 +1,191 @@
+{
+  "cross_paragraph_qa": [
+    {
+      "question": "为什么Wir sind nach Berlin gefahren使用sein，而Ich habe das Auto gefahren使用haben？",
+      "answer": "前句中的fahren是不及物用法，主语wir自身发生了到柏林的地点变化，因此使用sein；后句中的fahren带直接宾语das Auto，表示驾驶汽车这一及物行为，因此使用haben。助动词选择取决于动词的配价和具体语义，而不只是词典中的动词形式。",
+      "evidence_paragraphs": [
+        1,
+        2,
+        3
+      ],
+      "reasoning": "第1段说明及物动词通常用haben，第2段说明主语地点变化用sein，第3段用fahren的两个例句展示同一动词因语义和宾语不同而选择不同助动词。"
+    },
+    {
+      "question": "如何构成weil从句Ich habe einen Brief geschrieben的Perfekt形式？",
+      "answer": "先用haben作为变位助动词，再使用schreiben的第二分词geschrieben。在主句中说Ich habe einen Brief geschrieben；放入weil从句后，变位助动词移到从句末尾，形成weil ich einen Brief geschrieben habe。",
+      "evidence_paragraphs": [
+        0,
+        1,
+        4
+      ],
+      "reasoning": "第0段给出Perfekt由助动词和Partizip II组成的结构，第1段确认schreiben使用haben，第4段说明从句中变位助动词位于末尾。"
+    }
+  ],
+  "source_html": "<html><head><title>Das Perfekt mit haben und sein</title></head><body><h1>Das Perfekt mit haben und sein</h1><p>Das Perfekt besteht aus einem konjugierten Hilfsverb und dem Partizip II. Im Hauptsatz steht das Hilfsverb meistens an Position zwei und das Partizip II am Ende.</p><h2>Wann verwendet man haben?</h2><p>haben steht bei den meisten Verben, besonders bei transitiven und reflexiven Verben: Ich habe einen Brief geschrieben. Sie hat sich gewaschen.</p><h2>Wann verwendet man sein?</h2><p>sein steht oft bei intransitiven Verben der Ortsveränderung oder Zustandsveränderung sowie bei sein, werden und bleiben: Wir sind nach Berlin gefahren. Er ist eingeschlafen. Sie ist zu Hause geblieben.</p><h2>Besonderheiten der Bewegungsverben</h2><p>Bei fahren oder fliegen hängt das Hilfsverb von der Bedeutung ab. Ich bin nach Berlin gefahren beschreibt die eigene Ortsveränderung; Ich habe das Auto gefahren beschreibt ein transitives Objekt.</p><h2>Nebensätze und Übung</h2><p>Im Nebensatz steht das konjugierte Hilfsverb am Ende: ..., weil ich einen Brief geschrieben habe. Bilde weitere Sätze im Perfekt und begründe die Wahl von haben oder sein.</p></body></html>",
+  "grammar_rules": [
+    {
+      "rule_statement": "Das Perfekt wird mit einem konjugierten Hilfsverb und dem Partizip II gebildet; im Hauptsatz steht das Hilfsverb auf Position zwei und das Partizip II am Satzende.",
+      "applicability_conditions": [
+        "表达过去已完成或与现在相关的事件",
+        "需要一个现在时变位的助动词和一个Partizip II",
+        "句子为主句时助动词通常处于第二位置"
+      ],
+      "exception_conditions": [
+        "在从句中变位助动词移到从句末尾，而不是保持主句第二位置",
+        "口语中句子成分前置可能改变表面位置，但助动词仍是有限动词"
+      ],
+      "example_sentences": [
+        "Ich habe einen Brief geschrieben.（我写了一封信。）",
+        "Wir sind nach Berlin gefahren.（我们去了柏林。）"
+      ],
+      "practice_hints": [
+        "先找出Partizip II，再判断需要haben还是sein",
+        "分别检查主句和weil从句中变位助动词的位置"
+      ]
+    },
+    {
+      "rule_statement": "haben用于大多数动词，尤其是带直接宾语的及物动词和反身动词。",
+      "applicability_conditions": [
+        "动词带有直接宾语",
+        "动词是反身结构",
+        "动词不表示典型的地点变化或状态变化"
+      ],
+      "exception_conditions": [
+        "部分表示移动的动词在强调主语自身位置变化时使用sein",
+        "具体助动词还可能受方言或固定用法影响，本页面采用标准教学用法"
+      ],
+      "example_sentences": [
+        "Ich habe einen Brief geschrieben.（我写了一封信。）",
+        "Sie hat sich gewaschen.（她洗了澡。）",
+        "Ich habe das Auto gefahren.（我驾驶了这辆车。）"
+      ],
+      "practice_hints": [
+        "检查动词后是否有第四格直接宾语",
+        "反身代词sich不等于地点变化，反身动词通常使用haben"
+      ]
+    },
+    {
+      "rule_statement": "sein常用于表示主语自身地点变化或状态变化的不及物动词，也用于sein、werden和bleiben。",
+      "applicability_conditions": [
+        "主语自身发生地点变化",
+        "主语状态发生改变",
+        "动词为sein、werden或bleiben等固定使用sein的动词"
+      ],
+      "exception_conditions": [
+        "fahren、fliegen等移动动词带直接宾语时可使用haben",
+        "并非所有与移动概念相关的动词都自动使用sein，需要结合动词配价和句意判断"
+      ],
+      "example_sentences": [
+        "Wir sind nach Berlin gefahren.（我们去了柏林。）",
+        "Er ist eingeschlafen.（他睡着了。）",
+        "Sie ist zu Hause geblieben.（她留在家里。）"
+      ],
+      "practice_hints": [
+        "判断是主语自己移动还是主语操作某个宾语",
+        "比较Ich bin nach Berlin gefahren和Ich habe das Auto gefahren的语义差异"
+      ]
+    }
+  ],
+  "grammar_sections": [
+    {
+      "section_title": "Aufbau des Perfekts",
+      "paragraph_index": 0,
+      "section_content": "Das Perfekt besteht aus einem konjugierten Hilfsverb und dem Partizip II. Im Hauptsatz steht das Hilfsverb meistens an Position zwei und das Partizip II am Ende.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Verwendung von haben",
+      "paragraph_index": 1,
+      "section_content": "haben steht bei den meisten Verben, besonders bei transitiven und reflexiven Verben: Ich habe einen Brief geschrieben. Sie hat sich gewaschen.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Verwendung von sein",
+      "paragraph_index": 2,
+      "section_content": "sein steht oft bei intransitiven Verben der Ortsveränderung oder Zustandsveränderung sowie bei sein, werden und bleiben: Wir sind nach Berlin gefahren. Er ist eingeschlafen. Sie ist zu Hause geblieben.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Besonderheiten der Bewegungsverben",
+      "paragraph_index": 3,
+      "section_content": "Bei fahren oder fliegen hängt das Hilfsverb von der Bedeutung ab. Ich bin nach Berlin gefahren beschreibt die eigene Ortsveränderung; Ich habe das Auto gefahren beschreibt ein transitives Objekt.",
+      "section_role": "例外说明"
+    },
+    {
+      "section_title": "Nebensätze und Übung",
+      "paragraph_index": 4,
+      "section_content": "Im Nebensatz steht das konjugierte Hilfsverb am Ende: ..., weil ich einen Brief geschrieben habe. Bilde weitere Sätze im Perfekt und begründe die Wahl von haben oder sein.",
+      "section_role": "练习提示"
+    }
+  ],
+  "document_overview": {
+    "page_title": "Das Perfekt mit haben und sein",
+    "grammar_topic": "德语现在完成时的构成及haben与sein的选择",
+    "learner_level": "A2",
+    "document_language": "Deutsch",
+    "overview_summary": "本文讲解德语Perfekt的基本结构、助动词haben和sein的选择，以及主句和从句中的词序。haben用于大多数动词，尤其是及物动词和反身动词；sein常用于表示位置变化或状态变化的不及物动词，也用于sein、werden和bleiben。页面还通过fahren的不同意义说明助动词选择取决于动词的语义和配价。"
+  },
+  "semantic_explanations": [
+    {
+      "target_expression": "Ich habe einen Brief geschrieben",
+      "semantic_explanation": "该句使用haben加Partizip II geschrieben构成Perfekt。schreiben是及物动词，直接宾语为einen Brief，因此使用haben。",
+      "contextual_meaning": "句子表示“我已经写了一封信”，动作的对象明确是信，而不是主语发生位置变化。",
+      "key_terms": [
+        "Perfekt",
+        "Hilfsverb",
+        "Partizip II",
+        "transitives Verb"
+      ]
+    },
+    {
+      "target_expression": "Wir sind nach Berlin gefahren",
+      "semantic_explanation": "sein与Partizip II gefahren构成Perfekt。此处fahren是不及物用法，主语wir发生了前往柏林的地点变化。",
+      "contextual_meaning": "重点不是驾驶某个物体，而是说主语从原地点移动到柏林，因此使用sein。",
+      "key_terms": [
+        "Ortsveränderung",
+        "intransitives Verb",
+        "sein"
+      ]
+    },
+    {
+      "target_expression": "Ich habe das Auto gefahren",
+      "semantic_explanation": "虽然fahren通常与移动有关，但这里带有直接宾语das Auto，表示驾驶汽车这一及物行为，所以使用haben。",
+      "contextual_meaning": "与Ich bin nach Berlin gefahren相比，本句强调主语操作的对象是汽车，而不是主语自身到达某地。",
+      "key_terms": [
+        "fahren",
+        "Akkusativobjekt",
+        "Bedeutungsunterschied"
+      ]
+    }
+  ],
+  "rule_applicability_judgments": [
+    {
+      "sentence": "Ich habe einen Brief geschrieben.",
+      "is_applicable": true,
+      "judgment_explanation": "Perfekt由haben和Partizip II geschrieben构成；schreiben带直接宾语einen Brief，符合及物动词通常使用haben的条件。",
+      "applicable_rule_statement": "haben特别用于带直接宾语的及物动词。",
+      "confidence": 0.99
+    },
+    {
+      "sentence": "Wir sind nach Berlin gefahren.",
+      "is_applicable": true,
+      "judgment_explanation": "fahren在该句中表示主语自身向柏林发生地点变化，且没有直接宾语，因此使用sein。",
+      "applicable_rule_statement": "表示主语地点变化的不及物动词通常使用sein。",
+      "confidence": 0.98
+    },
+    {
+      "sentence": "Ich habe das Auto gefahren.",
+      "is_applicable": false,
+      "judgment_explanation": "如果判断目标是主语自身地点变化时使用sein，则本句不适用，因为fahren带有直接宾语das Auto，表示驾驶对象，标准教学用法使用haben。",
+      "applicable_rule_statement": "移动动词带直接宾语并表示操作对象时，可按及物用法使用haben。",
+      "confidence": 0.97
+    },
+    {
+      "sentence": "..., weil ich einen Brief geschrieben habe.",
+      "is_applicable": true,
+      "judgment_explanation": "该句是weil从句，Perfekt助动词habe位于从句末尾，Partizip II geschrieben位于其前，符合从句中的完成时词序。",
+      "applicable_rule_statement": "Perfekt从句中，变位助动词位于从句末尾。",
+      "confidence": 0.99
+    }
+  ]
+}

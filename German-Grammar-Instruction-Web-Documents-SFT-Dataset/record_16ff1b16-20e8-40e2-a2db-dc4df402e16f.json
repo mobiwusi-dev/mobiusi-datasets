@@ -1,0 +1,186 @@
+{
+  "source_html": "<html><head><title>Adjektivdeklination nach Artikeln</title></head><body><h1>Adjektivdeklination nach Artikeln</h1><p>Die Endung eines attributiven Adjektivs hängt vom Artikel, vom Kasus, vom Genus und vom Numerus ab.</p><h2>Nach dem bestimmten Artikel</h2><p>Nach der bestimmte Artikelwortgruppe trägt das Adjektiv meistens die schwache Endung. Im Nominativ Singular stehen zum Beispiel der gute Mann, die gute Frau und das gute Kind. In den meisten anderen Formen steht -en.</p><h2>Nach dem unbestimmten Artikel</h2><p>Nach ein, eine oder kein zeigt das Adjektiv die Information, die am Artikel fehlt: ein guter Mann, ein gutes Kind, eine gute Frau, aber einen guten Mann.</p><h2>Ohne Artikel und prädikativ</h2><p>Ohne Artikel trägt das Adjektiv die starke Endung: guter Wein, kaltes Wasser. Nach sein steht das Adjektiv prädikativ und erhält keine Endung: Das Wasser ist kalt.</p><h2>Übung</h2><p>Bestimme Kasus und Genus und ergänze danach die passende Adjektivendung.</p></body></html>",
+  "grammar_rules": [
+    {
+      "rule_statement": "Nach einem bestimmten Artikel wie der, die oder das steht das attributive Adjektiv im Nominativ Singular meist mit der schwachen Endung -e; in den meisten übrigen Formen steht -en.",
+      "applicability_conditions": [
+        "das Adjektiv steht vor einem Substantiv",
+        "ein bestimmter Artikel oder eine entsprechende Artikelwortgruppe steht vor dem Adjektiv",
+        "Kasus, Genus und Numerus des Bezugsworts sind bestimmt"
+      ],
+      "exception_conditions": [
+        "Die Endung richtet sich im vollständigen Paradigma weiterhin nach Kasus, Genus und Numerus; -e gilt nicht für jede Form",
+        "Bei prädikativem Gebrauch nach sein steht keine attributive Endung"
+      ],
+      "example_sentences": [
+        "Der gute Mann hilft dem Kind.（这个好心的男人帮助孩子。）",
+        "Die gute Frau liest ein Buch.（这个好心的女人在读一本书。）",
+        "Ich sehe den guten Mann.（我看见那个好心的男人。）"
+      ],
+      "practice_hints": [
+        "先识别定冠词和名词的格，再判断是Nominativ Singular还是其他形式",
+        "特别比较der gute Mann和den guten Mann中的格变化"
+      ]
+    },
+    {
+      "rule_statement": "Nach einem unbestimmten Artikel oder einem Possessiv- beziehungsweise Negativartikel zeigt das Adjektiv häufig die fehlende Genus- oder Kasusinformation durch eine starke Endung.",
+      "applicability_conditions": [
+        "前面出现ein、eine、kein或相应的物主限定词",
+        "该限定词没有明确标出全部的性和格信息",
+        "形容词作名词前的定语"
+      ],
+      "exception_conditions": [
+        "在已由限定词清楚标记的形式中，形容词可使用弱词尾，如einen guten Mann中的-en",
+        "表语形容词不适用定语形容词词尾规则"
+      ],
+      "example_sentences": [
+        "Ein guter Mann hilft mir.（一个好心的男人帮助我。）",
+        "Ein gutes Kind spielt im Garten.（一个乖孩子在花园里玩。）",
+        "Ich sehe einen guten Mann.（我看见一个好心的男人。）"
+      ],
+      "practice_hints": [
+        "观察ein类限定词是否已经标出名词的性和格",
+        "将ein guter Mann与einen guten Mann成对比较，先改变格再确定词尾"
+      ]
+    },
+    {
+      "rule_statement": "Ohne Artikel steht attributives Adjektiv häufig mit einer starken Endung, während ein prädikatives Adjektiv nach sein keine Endung erhält.",
+      "applicability_conditions": [
+        "无冠词形容词直接位于名词前时使用强变化词尾",
+        "形容词位于sein之后并作表语时不作为名词前定语",
+        "词尾需要承担名词性、格和数的信息"
+      ],
+      "exception_conditions": [
+        "具体强变化词尾仍由格、性和数决定，不能只记作单一形式",
+        "该规则不表示所有位于动词后的形容词都没有词尾，需先确认是否为表语结构"
+      ],
+      "example_sentences": [
+        "Guter Wein passt zu diesem Essen.（好酒适合这道菜。）",
+        "Kaltes Wasser steht auf dem Tisch.（冷水放在桌上。）",
+        "Das Wasser ist kalt.（水是凉的。）"
+      ],
+      "practice_hints": [
+        "区分形容词是在名词前作定语，还是在sein后作表语",
+        "对无冠词短语先确定名词的格、性和数，再选择强词尾"
+      ]
+    }
+  ],
+  "grammar_sections": [
+    {
+      "section_title": "Grundprinzip",
+      "paragraph_index": 0,
+      "section_content": "Die Endung eines attributiven Adjektivs hängt vom Artikel, vom Kasus, vom Genus und vom Numerus ab.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Nach dem bestimmten Artikel",
+      "paragraph_index": 1,
+      "section_content": "Nach der bestimmten Artikelwortgruppe trägt das Adjektiv meistens die schwache Endung. Im Nominativ Singular stehen zum Beispiel der gute Mann, die gute Frau und das gute Kind. In den meisten anderen Formen steht -en.",
+      "section_role": "规则说明"
+    },
+    {
+      "section_title": "Nach dem unbestimmten Artikel",
+      "paragraph_index": 2,
+      "section_content": "Nach ein, eine oder kein zeigt das Adjektiv die Information, die am Artikel fehlt: ein guter Mann, ein gutes Kind, eine gute Frau, aber einen guten Mann.",
+      "section_role": "例句讲解"
+    },
+    {
+      "section_title": "Ohne Artikel und prädikativ",
+      "paragraph_index": 3,
+      "section_content": "Ohne Artikel trägt das Adjektiv die starke Endung: guter Wein, kaltes Wasser. Nach sein steht das Adjektiv prädikativ und erhält keine Endung: Das Wasser ist kalt.",
+      "section_role": "例外说明"
+    },
+    {
+      "section_title": "Übung",
+      "paragraph_index": 4,
+      "section_content": "Bestimme Kasus und Genus und ergänze danach die passende Adjektivendung.",
+      "section_role": "练习提示"
+    }
+  ],
+  "document_overview": {
+    "page_title": "Adjektivdeklination nach Artikeln",
+    "grammar_topic": "德语形容词词尾变化",
+    "learner_level": "B1",
+    "document_language": "Deutsch",
+    "overview_summary": "本文介绍定语形容词词尾如何受到冠词、格、性和数的影响。重点比较定冠词后的弱变化、不定冠词或kein后的混合变化，以及无冠词时的强变化；同时说明表语形容词位于sein之后时不加词尾。"
+  },
+  "cross_paragraph_qa": [
+    {
+      "question": "为什么Der gute Mann、ein guter Mann和guter Wein中的形容词词尾不同？",
+      "answer": "Der gute Mann中定冠词der已经明确标出阳性单数第一格，所以形容词使用弱词尾-e；ein guter Mann中ein没有完整标示这些语法信息，形容词用-er补充信息；guter Wein没有冠词，形容词本身承担更多格和性的标记，因此使用强词尾-er。",
+      "evidence_paragraphs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reasoning": "第0段说明词尾取决于冠词、格、性和数，第1段讲定冠词后的弱变化，第2段讲不定冠词后的混合变化，第3段讲无冠词时的强变化。"
+    },
+    {
+      "question": "如何区分Ich sehe einen guten Mann和Das Wasser ist kalt中的形容词用法？",
+      "answer": "guten位于名词Mann之前，是阳性单数第四格中的定语形容词，需要词尾-en；kalt位于sein之后作表语，不直接修饰名词，因此不加形容词词尾。",
+      "evidence_paragraphs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reasoning": "第1和第2段提供定语形容词按冠词和格变化的规则，第3段说明sein后的表语形容词不加词尾，第4段要求学习者先判断句法功能。"
+    }
+  ],
+  "semantic_explanations": [
+    {
+      "target_expression": "der gute Mann",
+      "semantic_explanation": "这是定冠词后的定语形容词短语。der已经明确表示阳性、单数、第一格，因此形容词通常使用弱词尾-e。",
+      "contextual_meaning": "在Der gute Mann hilft dem Kind中，gute修饰Mann，Mann是主语，处于阳性单数第一格；dem Kind是接受帮助的对象。",
+      "key_terms": [
+        "bestimmter Artikel",
+        "Nominativ",
+        "schwache Deklination"
+      ]
+    },
+    {
+      "target_expression": "ein guter Mann",
+      "semantic_explanation": "ein在阳性单数第一格中没有像der那样完整显示格和性信息，因此形容词用强词尾-er来补充这些信息。",
+      "contextual_meaning": "该短语表示“一个好心的男人”，guter既修饰Mann，又通过-er提示阳性单数第一格。",
+      "key_terms": [
+        "unbestimmter Artikel",
+        "Mischdeklination",
+        "starke Endung"
+      ]
+    },
+    {
+      "target_expression": "Das Wasser ist kalt",
+      "semantic_explanation": "kalt在sein之后作表语，不直接位于名词前，因此不发生定语形容词词尾变化。",
+      "contextual_meaning": "句子描述水的状态，而不是用形容词作为名词前的限定成分，所以使用词典形式kalt。",
+      "key_terms": [
+        "Prädikativ",
+        "sein",
+        "attributiv"
+      ]
+    }
+  ],
+  "rule_applicability_judgments": [
+    {
+      "sentence": "Der gute Mann hilft dem Kind.",
+      "is_applicable": true,
+      "judgment_explanation": "gute位于定冠词der之后并直接修饰阳性单数主语Mann，属于定语形容词；第一格阳性单数使用弱词尾-e。",
+      "applicable_rule_statement": "定冠词后的阳性单数第一格定语形容词通常使用弱词尾-e。",
+      "confidence": 0.99
+    },
+    {
+      "sentence": "Ich sehe einen guten Mann.",
+      "is_applicable": true,
+      "judgment_explanation": "guten直接修饰Mann，前面的einen是阳性单数第四格的不定冠词形式；该格中形容词使用-en。",
+      "applicable_rule_statement": "不定冠词后的定语形容词根据格和限定词信息变化；阳性第四格使用-en。",
+      "confidence": 0.99
+    },
+    {
+      "sentence": "Das Wasser ist kalt.",
+      "is_applicable": false,
+      "judgment_explanation": "kalt位于sein之后作表语，不是名词前的定语形容词，因此不适用定语形容词词尾变化规则。",
+      "applicable_rule_statement": "表语形容词位于sein之后时通常不加定语词尾。",
+      "confidence": 0.99
+    }
+  ]
+}
