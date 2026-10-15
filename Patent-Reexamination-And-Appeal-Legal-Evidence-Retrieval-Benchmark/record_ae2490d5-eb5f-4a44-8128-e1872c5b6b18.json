@@ -1,0 +1,234 @@
+{
+  "evidence_spans": [
+    {
+      "source_ref": "D1#P2",
+      "normalized_quote": "对比文件1公开了温度传感器、控制器和风扇，并根据检测到的当前温度超过阈值启动风扇。",
+      "evidence_role": "界定现有技术控制方式",
+      "supports_argument": "对比文件1未公开预测温升和提前调节冷却功率",
+      "evidence_quality": 0.98
+    },
+    {
+      "source_ref": "D1#P3",
+      "normalized_quote": "权利要求1还要求根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率。该预测控制避免了负载突增造成的温度滞后，产生了降低峰值温度的技术效果。",
+      "evidence_role": "确认区别特征及技术效果",
+      "supports_argument": "预测控制是具有实际技术效果的区别特征",
+      "evidence_quality": 0.99
+    },
+    {
+      "source_ref": "D1#P4",
+      "normalized_quote": "现有技术没有给出将上述预测控制用于对比文件1的技术启示。因此，权利要求1具备创造性，复审请求成立。",
+      "evidence_role": "确认缺乏技术启示并得出结论",
+      "supports_argument": "权利要求1具备创造性",
+      "evidence_quality": 0.99
+    }
+  ],
+  "evaluation_task": {
+    "query_text": "请检索复审决定中直接支持权利要求1具备创造性的证据，并说明裁决机关如何区分当前温度阈值控制与预测温升控制。",
+    "issue_description": "权利要求1相对于对比文件1的预测温升和提前调节冷却功率是否构成具有技术效果的区别特征，以及现有技术是否给出相应技术启示。",
+    "target_document_types": [
+      "复审决定",
+      "上诉理由书",
+      "答辩文书"
+    ],
+    "retrieval_scope": "重点检索D1中关于对比文件公开内容、区别特征、技术效果和技术启示的论证段落。",
+    "evidence_requirements": [
+      "应定位裁决文本中的直接引文，而非仅引用当事人主张。",
+      "应同时覆盖区别特征、技术效果和缺乏技术启示三个论证环节。",
+      "应说明证据如何支持创造性结论。"
+    ]
+  },
+  "normalized_task": {
+    "normalized_query": "定位复审决定中关于当前温度阈值控制、预测温升控制及其技术启示的直接证据。",
+    "dispute_points": [
+      "对比文件1公开的控制方式是什么",
+      "预测温升和提前调节冷却功率是否为区别特征",
+      "区别特征是否产生降低峰值温度的技术效果",
+      "现有技术是否给出相应技术启示"
+    ],
+    "decision_reasoning_targets": [
+      "最接近现有技术的公开内容",
+      "区别特征识别",
+      "技术效果判断",
+      "技术启示和创造性结论"
+    ]
+  },
+  "gold_annotations": {
+    "decision_result": "权利要求1具备创造性，复审请求成立。",
+    "direct_evidence_annotations": [
+      {
+        "source_ref": "D1#P2",
+        "text_quote": "对比文件1公开了温度传感器、控制器和风扇，并根据检测到的当前温度超过阈值启动风扇。",
+        "evidence_role": "界定最接近现有技术及其控制方式",
+        "supports_issue": "对比文件1是否已经公开预测温升和提前调节冷却功率"
+      },
+      {
+        "source_ref": "D1#P3",
+        "text_quote": "权利要求1还要求根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率。该预测控制避免了负载突增造成的温度滞后，产生了降低峰值温度的技术效果。",
+        "evidence_role": "确认区别特征及其技术效果",
+        "supports_issue": "预测温升控制是否构成具有技术效果的区别特征"
+      },
+      {
+        "source_ref": "D1#P4",
+        "text_quote": "现有技术没有给出将上述预测控制用于对比文件1的技术启示。因此，权利要求1具备创造性，复审请求成立。",
+        "evidence_role": "支持缺乏技术启示及创造性结论",
+        "supports_issue": "现有技术是否给出组合区别特征的技术启示"
+      }
+    ],
+    "adopted_arguments": [
+      {
+        "argument_text": "对比文件1仅根据当前温度阈值启停风扇，未公开根据预测温升提前调节冷却功率。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "A1#P2",
+          "D1#P2"
+        ],
+        "decision_rationale": "复审决定确认对比文件1采用当前温度阈值控制，并据此将预测温升和提前调节冷却功率认定为区别特征。"
+      },
+      {
+        "argument_text": "预测控制能够减小电池负载突增造成的温度滞后并降低峰值温度。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "D1#P3"
+        ],
+        "decision_rationale": "决定文本明确记载了预测控制产生的技术效果，并将其纳入创造性判断。"
+      }
+    ]
+  },
+  "source_documents": [
+    {
+      "document_ref": "A1",
+      "document_type": "上诉理由书",
+      "document_title": "关于一种电池热管理系统的复审请求上诉理由书",
+      "document_text": "申请人主张，权利要求1相对于对比文件1至少具有基于预测温升调整冷却功率的区别特征。对比文件1仅根据当前温度阈值启停风扇，未公开预测温升或根据预测结果提前调节冷却功率。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "A1#P1",
+          "paragraph_text": "申请人主张，权利要求1相对于对比文件1至少具有基于预测温升调整冷却功率的区别特征。",
+          "page_number": 2
+        },
+        {
+          "paragraph_ref": "A1#P2",
+          "paragraph_text": "对比文件1仅根据当前温度阈值启停风扇，未公开预测温升或根据预测结果提前调节冷却功率。",
+          "page_number": 2
+        }
+      ]
+    },
+    {
+      "document_ref": "R1",
+      "document_type": "答辩文书",
+      "document_title": "关于复审请求的答辩意见",
+      "document_text": "审查意见认为，温度传感器和风扇控制器属于常规部件，技术人员可以按照需要设置控制阈值。申请人答辩称，常规阈值控制不能解决电池负载突增时的热惯性问题。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "R1#P1",
+          "paragraph_text": "审查意见认为，温度传感器和风扇控制器属于常规部件，技术人员可以按照需要设置控制阈值。",
+          "page_number": 1
+        },
+        {
+          "paragraph_ref": "R1#P2",
+          "paragraph_text": "申请人答辩称，常规阈值控制不能解决电池负载突增时的热惯性问题。",
+          "page_number": 1
+        }
+      ]
+    },
+    {
+      "document_ref": "D1",
+      "document_type": "复审决定",
+      "document_title": "关于电池热管理系统发明专利申请的复审决定",
+      "document_text": "本决定审理的争点是权利要求1相对于对比文件1是否具备创造性。对比文件1公开了温度传感器、控制器和风扇，并根据检测到的当前温度超过阈值启动风扇。权利要求1还要求根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率。该预测控制避免了负载突增造成的温度滞后，产生了降低峰值温度的技术效果。现有技术没有给出将上述预测控制用于对比文件1的技术启示。因此，权利要求1具备创造性，复审请求成立。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "D1#P1",
+          "paragraph_text": "本决定审理的争点是权利要求1相对于对比文件1是否具备创造性。",
+          "page_number": 3
+        },
+        {
+          "paragraph_ref": "D1#P2",
+          "paragraph_text": "对比文件1公开了温度传感器、控制器和风扇，并根据检测到的当前温度超过阈值启动风扇。",
+          "page_number": 3
+        },
+        {
+          "paragraph_ref": "D1#P3",
+          "paragraph_text": "权利要求1还要求根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率。该预测控制避免了负载突增造成的温度滞后，产生了降低峰值温度的技术效果。",
+          "page_number": 4
+        },
+        {
+          "paragraph_ref": "D1#P4",
+          "paragraph_text": "现有技术没有给出将上述预测控制用于对比文件1的技术启示。因此，权利要求1具备创造性，复审请求成立。",
+          "page_number": 4
+        }
+      ]
+    }
+  ],
+  "retrieval_evaluation": {
+    "hit_at_1": 1,
+    "hit_at_5": 1,
+    "hit_at_10": 1,
+    "evidence_precision": 0.67,
+    "evidence_recall": 0.67,
+    "citation_accuracy": 1,
+    "evaluation_summary": "前两条结果准确命中三条金标准证据中的两条，覆盖了区别特征、技术效果和技术启示的核心论证，但未返回D1#P2，因此直接证据召回率为三分之二。提交引用均正确对应来源和论证作用。"
+  },
+  "retrieval_submission": {
+    "ranked_results": [
+      {
+        "source_ref": "D1#P3",
+        "rank": 1,
+        "retrieved_text": "权利要求1还要求根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率。该预测控制避免了负载突增造成的温度滞后，产生了降低峰值温度的技术效果。",
+        "retrieval_score": 0.97
+      },
+      {
+        "source_ref": "D1#P4",
+        "rank": 2,
+        "retrieved_text": "现有技术没有给出将上述预测控制用于对比文件1的技术启示。因此，权利要求1具备创造性，复审请求成立。",
+        "retrieval_score": 0.94
+      },
+      {
+        "source_ref": "R1#P1",
+        "rank": 3,
+        "retrieved_text": "审查意见认为，温度传感器和风扇控制器属于常规部件，技术人员可以按照需要设置控制阈值。",
+        "retrieval_score": 0.61
+      }
+    ],
+    "generated_answer": "复审决定认为，对比文件1只公开了根据当前温度超过阈值启动风扇，而权利要求1进一步根据电池负载预测未来温升并提前逐步提高冷却功率。该预测控制能够减少温度滞后并降低峰值温度。由于现有技术没有给出将该预测控制用于对比文件1的技术启示，权利要求1具备创造性。",
+    "submitted_citations": [
+      {
+        "source_ref": "D1#P3",
+        "quoted_text": "根据电池负载变化预测未来温升，并在达到预测温度前逐步提高冷却功率；该预测控制产生了降低峰值温度的技术效果。",
+        "citation_role": "支持区别特征和技术效果"
+      },
+      {
+        "source_ref": "D1#P4",
+        "quoted_text": "现有技术没有给出将上述预测控制用于对比文件1的技术启示。",
+        "citation_role": "支持创造性结论"
+      }
+    ]
+  },
+  "argument_evidence_links": [
+    {
+      "argument_text": "对比文件1仅根据当前温度阈值启停风扇，未公开根据预测温升提前调节冷却功率。",
+      "evidence_refs": [
+        "D1#P2",
+        "D1#P3"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.98
+    },
+    {
+      "argument_text": "预测控制能够减小电池负载突增造成的温度滞后并降低峰值温度。",
+      "evidence_refs": [
+        "D1#P3"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    },
+    {
+      "argument_text": "现有技术没有给出将预测控制用于对比文件1的技术启示。",
+      "evidence_refs": [
+        "D1#P4"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    }
+  ]
+}

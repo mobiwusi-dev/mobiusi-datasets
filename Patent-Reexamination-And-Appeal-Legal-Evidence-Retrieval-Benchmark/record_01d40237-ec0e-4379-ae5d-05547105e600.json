@@ -1,0 +1,242 @@
+{
+  "evidence_spans": [
+    {
+      "source_ref": "D3#P2",
+      "normalized_quote": "对比文件3公开了卷积特征提取和分类器，但未公开按照边缘方向生成多个层次的特征，并将各层特征输入同一分类器。",
+      "evidence_role": "界定完整组合区别特征",
+      "supports_argument": "现有技术未公开权利要求1的处理链路",
+      "evidence_quality": 0.99
+    },
+    {
+      "source_ref": "D3#P3",
+      "normalized_quote": "权利要求1通过上述处理链路使不同方向的边缘信息得到保留，能够降低低照度图像中的误识别率，该效果并非各个已知步骤简单相加所得。",
+      "evidence_role": "界定组合产生的协同技术效果",
+      "supports_argument": "组合具有超出简单叠加的技术效果",
+      "evidence_quality": 0.99
+    },
+    {
+      "source_ref": "D3#P4",
+      "normalized_quote": "虽然分层提取和分类器分别属于已知技术，但现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。因此，权利要求1具备创造性，原驳回决定予以撤销。",
+      "evidence_role": "界定组合启示不足并支持裁决结论",
+      "supports_argument": "权利要求1具备创造性",
+      "evidence_quality": 1
+    }
+  ],
+  "evaluation_task": {
+    "query_text": "请定位复审决定中支持将分层特征提取和分类处理作为整体评价，并据此认定权利要求1具备创造性的直接证据。",
+    "issue_description": "分层特征提取与分类器分别已知时，二者按照权利要求1的处理链路结合是否产生协同技术效果，以及现有技术是否给出该组合启示。",
+    "target_document_types": [
+      "复审决定",
+      "上诉理由书",
+      "答辩文书"
+    ],
+    "retrieval_scope": "重点检索D3关于对比文件3未公开的处理链路、低照度识别技术效果、整体评价和组合启示的裁决论证。",
+    "evidence_requirements": [
+      "应定位裁决机关而非当事人主张的直接依据。",
+      "应区分结构差异、协同技术效果与技术启示。",
+      "应说明为何分别已知的技术特征组合后仍可具备创造性。"
+    ]
+  },
+  "normalized_task": {
+    "normalized_query": "定位关于分层特征提取与分类处理完整组合、协同技术效果及缺乏组合启示的复审决定依据。",
+    "dispute_points": [
+      "对比文件3是否公开完整处理链路",
+      "分层特征与分类器是否应整体评价",
+      "组合是否产生非简单相加的技术效果",
+      "现有技术是否具有按该链路组合的启示"
+    ],
+    "decision_reasoning_targets": [
+      "区别特征和处理链路",
+      "整体评价原则",
+      "协同技术效果",
+      "组合动机和创造性结论"
+    ]
+  },
+  "gold_annotations": {
+    "decision_result": "权利要求1具备创造性，原驳回决定予以撤销。",
+    "direct_evidence_annotations": [
+      {
+        "source_ref": "D3#P2",
+        "text_quote": "对比文件3公开了卷积特征提取和分类器，但未公开按照边缘方向生成多个层次的特征，并将各层特征输入同一分类器。",
+        "evidence_role": "确认处理链路的区别特征",
+        "supports_issue": "对比文件3是否公开权利要求1的完整组合"
+      },
+      {
+        "source_ref": "D3#P3",
+        "text_quote": "权利要求1通过上述处理链路使不同方向的边缘信息得到保留，能够降低低照度图像中的误识别率，该效果并非各个已知步骤简单相加所得。",
+        "evidence_role": "支持协同技术效果和整体评价",
+        "supports_issue": "区别特征组合是否产生超出简单叠加的技术效果"
+      },
+      {
+        "source_ref": "D3#P4",
+        "text_quote": "虽然分层提取和分类器分别属于已知技术，但现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。因此，权利要求1具备创造性，原驳回决定予以撤销。",
+        "evidence_role": "支持缺乏组合启示及创造性结论",
+        "supports_issue": "现有技术是否给出组合区别特征的启示"
+      }
+    ],
+    "adopted_arguments": [
+      {
+        "argument_text": "分层特征提取和分类器应按照权利要求1限定的处理链路作为整体评价，不能将各步骤割裂。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "A3#P2",
+          "D3#P1",
+          "D3#P3"
+        ],
+        "decision_rationale": "复审决定明确以处理链路为整体评价对象，并认定该组合产生了非简单相加的效果。"
+      },
+      {
+        "argument_text": "分别已知的分层提取和分类器并不意味着现有技术具有按照本案处理链路进行组合的动机。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "D3#P4"
+        ],
+        "decision_rationale": "决定区分了单个技术手段已知与具体组合具有技术启示两个问题。"
+      }
+    ]
+  },
+  "source_documents": [
+    {
+      "document_ref": "A3",
+      "document_type": "上诉理由书",
+      "document_title": "关于图像识别装置专利申请的复审请求书",
+      "document_text": "申请人主张，权利要求1中的分层特征提取模块并非普通图像处理步骤，而是先按照边缘方向生成分层特征，再将各层特征输入同一分类器，以减少低照度图像中的误识别。审查决定将各技术特征割裂评价，忽略了它们之间的协同关系。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "A3#P1",
+          "paragraph_text": "申请人主张，权利要求1中的分层特征提取模块并非普通图像处理步骤，而是先按照边缘方向生成分层特征，再将各层特征输入同一分类器，以减少低照度图像中的误识别。",
+          "page_number": 4
+        },
+        {
+          "paragraph_ref": "A3#P2",
+          "paragraph_text": "审查决定将各技术特征割裂评价，忽略了它们之间的协同关系。",
+          "page_number": 4
+        }
+      ]
+    },
+    {
+      "document_ref": "R3",
+      "document_type": "答辩文书",
+      "document_title": "图像识别装置复审答辩意见",
+      "document_text": "答辩意见指出，对比文件3虽然公开了卷积特征提取和分类器，但没有公开按照边缘方向进行分层并将各层特征输入同一分类器的处理链路。低照度误识别率的降低是该处理链路共同作用的结果。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "R3#P1",
+          "paragraph_text": "答辩意见指出，对比文件3虽然公开了卷积特征提取和分类器，但没有公开按照边缘方向进行分层并将各层特征输入同一分类器的处理链路。",
+          "page_number": 2
+        },
+        {
+          "paragraph_ref": "R3#P2",
+          "paragraph_text": "低照度误识别率的降低是该处理链路共同作用的结果。",
+          "page_number": 2
+        }
+      ]
+    },
+    {
+      "document_ref": "D3",
+      "document_type": "复审决定",
+      "document_title": "关于图像识别装置发明专利申请的复审决定",
+      "document_text": "本案的核心争点在于，权利要求1所限定的分层特征提取与分类处理是否应作为整体评价。对比文件3公开了卷积特征提取和分类器，但未公开按照边缘方向生成多个层次的特征，并将各层特征输入同一分类器。权利要求1通过上述处理链路使不同方向的边缘信息得到保留，能够降低低照度图像中的误识别率，该效果并非各个已知步骤简单相加所得。虽然分层提取和分类器分别属于已知技术，但现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。因此，权利要求1具备创造性，原驳回决定予以撤销。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "D3#P1",
+          "paragraph_text": "本案的核心争点在于，权利要求1所限定的分层特征提取与分类处理是否应作为整体评价。",
+          "page_number": 6
+        },
+        {
+          "paragraph_ref": "D3#P2",
+          "paragraph_text": "对比文件3公开了卷积特征提取和分类器，但未公开按照边缘方向生成多个层次的特征，并将各层特征输入同一分类器。",
+          "page_number": 6
+        },
+        {
+          "paragraph_ref": "D3#P3",
+          "paragraph_text": "权利要求1通过上述处理链路使不同方向的边缘信息得到保留，能够降低低照度图像中的误识别率，该效果并非各个已知步骤简单相加所得。",
+          "page_number": 7
+        },
+        {
+          "paragraph_ref": "D3#P4",
+          "paragraph_text": "虽然分层提取和分类器分别属于已知技术，但现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。因此，权利要求1具备创造性，原驳回决定予以撤销。",
+          "page_number": 7
+        }
+      ]
+    }
+  ],
+  "retrieval_evaluation": {
+    "hit_at_1": 1,
+    "hit_at_5": 1,
+    "hit_at_10": 1,
+    "evidence_precision": 0.75,
+    "evidence_recall": 1,
+    "citation_accuracy": 1,
+    "evaluation_summary": "前四条结果覆盖全部三条裁决直接依据，其中前两条准确命中协同效果和组合启示，第三条虽来自答辩文书但与裁决中的结构差异判断一致，第四条为当事人概括。因此直接证据召回率为百分之百，直接证据精确率按三条直接命中结果与四条返回结果计算为零点七五，提交引用均准确。"
+  },
+  "retrieval_submission": {
+    "ranked_results": [
+      {
+        "source_ref": "D3#P4",
+        "rank": 1,
+        "retrieved_text": "虽然分层提取和分类器分别属于已知技术，但现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。因此，权利要求1具备创造性，原驳回决定予以撤销。",
+        "retrieval_score": 0.98
+      },
+      {
+        "source_ref": "D3#P3",
+        "rank": 2,
+        "retrieved_text": "权利要求1通过上述处理链路使不同方向的边缘信息得到保留，能够降低低照度图像中的误识别率，该效果并非各个已知步骤简单相加所得。",
+        "retrieval_score": 0.96
+      },
+      {
+        "source_ref": "R3#P1",
+        "rank": 3,
+        "retrieved_text": "对比文件3虽然公开了卷积特征提取和分类器，但没有公开按照边缘方向进行分层并将各层特征输入同一分类器的处理链路。",
+        "retrieval_score": 0.72
+      },
+      {
+        "source_ref": "A3#P2",
+        "rank": 4,
+        "retrieved_text": "审查决定将各技术特征割裂评价，忽略了它们之间的协同关系。",
+        "retrieval_score": 0.55
+      }
+    ],
+    "generated_answer": "复审决定将分层特征提取和分类处理作为权利要求1限定的整体处理链路评价。对比文件3没有公开按照边缘方向生成多层特征并将各层输入同一分类器的组合。该链路保留了不同方向的边缘信息，降低了低照度图像误识别率，效果并非已知步骤的简单相加。虽然单独的分层提取和分类器已知，但现有技术没有给出按该链路结合以解决低照度识别问题的启示，因此权利要求1具备创造性。",
+    "submitted_citations": [
+      {
+        "source_ref": "D3#P3",
+        "quoted_text": "该效果并非各个已知步骤简单相加所得。",
+        "citation_role": "支持协同技术效果"
+      },
+      {
+        "source_ref": "D3#P4",
+        "quoted_text": "现有技术没有给出将二者按照权利要求1的处理链路结合以解决低照度识别问题的启示。",
+        "citation_role": "支持缺乏组合启示和创造性结论"
+      }
+    ]
+  },
+  "argument_evidence_links": [
+    {
+      "argument_text": "分层特征提取和分类处理应按照权利要求1限定的处理链路作为整体评价。",
+      "evidence_refs": [
+        "D3#P1",
+        "D3#P2",
+        "D3#P3"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.98
+    },
+    {
+      "argument_text": "该处理链路使不同方向的边缘信息得到保留并降低低照度图像误识别率，效果并非简单相加。",
+      "evidence_refs": [
+        "D3#P3"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    },
+    {
+      "argument_text": "分别已知的技术手段不等于现有技术给出了按本案处理链路进行组合的启示。",
+      "evidence_refs": [
+        "D3#P4"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    }
+  ]
+}

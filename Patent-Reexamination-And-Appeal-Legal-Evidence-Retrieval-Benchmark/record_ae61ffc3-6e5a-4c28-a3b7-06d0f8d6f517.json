@@ -1,0 +1,236 @@
+{
+  "evidence_spans": [
+    {
+      "source_ref": "D2#P2",
+      "normalized_quote": "原说明书第0042段明确记载了设置可逆锁止件，并记载该锁止件在连接器受到拉力时保持端子位置。",
+      "evidence_role": "确认原申请的具体记载",
+      "supports_argument": "补正特征具有原始公开基础",
+      "evidence_quality": 0.98
+    },
+    {
+      "source_ref": "D2#P3",
+      "normalized_quote": "补正只是将该段已经记载的结构特征并入权利要求1，所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。",
+      "evidence_role": "确认补正未超范围",
+      "supports_argument": "补正合法性成立",
+      "evidence_quality": 0.99
+    },
+    {
+      "source_ref": "D2#P4",
+      "normalized_quote": "对比文件2公开了固定卡扣，但没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出采用该结构解决反复插拔后端子松脱问题的技术启示。",
+      "evidence_role": "确认现有技术差异和缺乏技术启示",
+      "supports_argument": "补正后的权利要求具备创造性",
+      "evidence_quality": 0.99
+    }
+  ],
+  "evaluation_task": {
+    "query_text": "请检索裁决机关认定补正未超出原申请记载范围并支持补正后权利要求具备创造性的直接依据。",
+    "issue_description": "将说明书中已记载的可逆锁止件加入权利要求1是否构成超范围补正，以及补正后的结构相对于对比文件2是否具备创造性。",
+    "target_document_types": [
+      "复审决定",
+      "上诉理由书",
+      "答辩文书"
+    ],
+    "retrieval_scope": "检索D2中关于原说明书记载、直接明确得到、对比文件差异和技术启示的段落。",
+    "evidence_requirements": [
+      "必须区分补正合法性判断与创造性判断。",
+      "应定位裁决机关的直接依据，并覆盖说明书记载和现有技术对比。",
+      "应说明各证据支持的具体法律结论。"
+    ]
+  },
+  "normalized_task": {
+    "normalized_query": "定位关于可逆锁止件原始记载、补正未超范围以及对比文件2缺少相同结构和技术启示的裁决依据。",
+    "dispute_points": [
+      "原说明书是否明确记载可逆锁止件及其作用",
+      "补正后的技术方案能否直接明确地从原申请得到",
+      "对比文件2是否公开相同结构配合",
+      "现有技术是否给出解决端子松脱问题的技术启示"
+    ],
+    "decision_reasoning_targets": [
+      "原始记载基础",
+      "补正范围判断",
+      "现有技术差异",
+      "创造性结论"
+    ]
+  },
+  "gold_annotations": {
+    "decision_result": "补正未超出原申请记载范围，补正后的权利要求1具备创造性，复审请求成立。",
+    "direct_evidence_annotations": [
+      {
+        "source_ref": "D2#P2",
+        "text_quote": "原说明书第0042段明确记载了设置可逆锁止件，并记载该锁止件在连接器受到拉力时保持端子位置。",
+        "evidence_role": "确认补正特征在原申请中的记载基础",
+        "supports_issue": "可逆锁止件是否已经记载于原申请文件"
+      },
+      {
+        "source_ref": "D2#P3",
+        "text_quote": "补正只是将该段已经记载的结构特征并入权利要求1，所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。",
+        "evidence_role": "支持补正未超范围的法律判断",
+        "supports_issue": "补正是否超出原申请记载范围"
+      },
+      {
+        "source_ref": "D2#P4",
+        "text_quote": "对比文件2公开了固定卡扣，但没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出采用该结构解决反复插拔后端子松脱问题的技术启示。补正后的权利要求1具备创造性，复审请求成立。",
+        "evidence_role": "支持区别特征、技术启示和创造性结论",
+        "supports_issue": "补正后的权利要求1是否具备创造性"
+      }
+    ],
+    "adopted_arguments": [
+      {
+        "argument_text": "说明书第0042段已经记载可逆锁止件及其保持端子位置的作用，将其加入权利要求不属于新增技术内容。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "A2#P1",
+          "R2#P2",
+          "D2#P2",
+          "D2#P3"
+        ],
+        "decision_rationale": "决定确认原说明书具有明确记载，且技术人员能够直接、明确地得到补正后的技术方案。"
+      },
+      {
+        "argument_text": "对比文件2的固定卡扣不能替代可逆锁止件在受拉时保持端子位置的结构配合。",
+        "adoption_status": "采纳",
+        "supporting_source_refs": [
+          "D2#P4"
+        ],
+        "decision_rationale": "决定明确区分了固定卡扣与可逆锁止结构，并认定现有技术没有相应技术启示。"
+      }
+    ]
+  },
+  "source_documents": [
+    {
+      "document_ref": "A2",
+      "document_type": "上诉理由书",
+      "document_title": "关于具有可逆锁止结构的连接器专利申请上诉理由书",
+      "document_text": "申请人主张，审查阶段提交的补正仅将说明书第0042段明确记载的可逆锁止件加入权利要求1，没有引入新的技术内容。补正后的权利要求1还具有防止插拔过程中端子松脱的效果。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "A2#P1",
+          "paragraph_text": "申请人主张，审查阶段提交的补正仅将说明书第0042段明确记载的可逆锁止件加入权利要求1，没有引入新的技术内容。",
+          "page_number": 3
+        },
+        {
+          "paragraph_ref": "A2#P2",
+          "paragraph_text": "补正后的权利要求1还具有防止插拔过程中端子松脱的效果。",
+          "page_number": 3
+        }
+      ]
+    },
+    {
+      "document_ref": "R2",
+      "document_type": "答辩文书",
+      "document_title": "连接器专利复审答辩意见",
+      "document_text": "审查员认为，可逆锁止件在原权利要求中没有单独列明，补正超出了原申请记载范围。申请人答辩称，说明书第0042段已经以结构和作用相结合的方式记载该部件。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "R2#P1",
+          "paragraph_text": "审查员认为，可逆锁止件在原权利要求中没有单独列明，补正超出了原申请记载范围。",
+          "page_number": 2
+        },
+        {
+          "paragraph_ref": "R2#P2",
+          "paragraph_text": "申请人答辩称，说明书第0042段已经以结构和作用相结合的方式记载该部件。",
+          "page_number": 2
+        }
+      ]
+    },
+    {
+      "document_ref": "D2",
+      "document_type": "复审决定",
+      "document_title": "关于连接器专利申请补正及创造性的复审决定",
+      "document_text": "本案首先需要判断补正后的权利要求1是否超出原申请记载范围。原说明书第0042段明确记载了设置可逆锁止件，并记载该锁止件在连接器受到拉力时保持端子位置。补正只是将该段已经记载的结构特征并入权利要求1，所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。就创造性而言，对比文件2公开了固定卡扣，但没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出采用该结构解决反复插拔后端子松脱问题的技术启示。补正后的权利要求1具备创造性，复审请求成立。",
+      "paragraphs": [
+        {
+          "paragraph_ref": "D2#P1",
+          "paragraph_text": "本案首先需要判断补正后的权利要求1是否超出原申请记载范围。",
+          "page_number": 5
+        },
+        {
+          "paragraph_ref": "D2#P2",
+          "paragraph_text": "原说明书第0042段明确记载了设置可逆锁止件，并记载该锁止件在连接器受到拉力时保持端子位置。",
+          "page_number": 5
+        },
+        {
+          "paragraph_ref": "D2#P3",
+          "paragraph_text": "补正只是将该段已经记载的结构特征并入权利要求1，所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。",
+          "page_number": 5
+        },
+        {
+          "paragraph_ref": "D2#P4",
+          "paragraph_text": "对比文件2公开了固定卡扣，但没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出采用该结构解决反复插拔后端子松脱问题的技术启示。补正后的权利要求1具备创造性，复审请求成立。",
+          "page_number": 6
+        }
+      ]
+    }
+  ],
+  "retrieval_evaluation": {
+    "hit_at_1": 1,
+    "hit_at_5": 1,
+    "hit_at_10": 1,
+    "evidence_precision": 0.67,
+    "evidence_recall": 1,
+    "citation_accuracy": 1,
+    "evaluation_summary": "前三条结果覆盖了全部三条金标准证据，且前两条直接命中补正合法性和创造性判断。由于第三条结果来自上诉理由书而非裁决直接依据，证据精确率按三条结果中两条直接命中计算为三分之二；提交引用准确对应裁决段落。"
+  },
+  "retrieval_submission": {
+    "ranked_results": [
+      {
+        "source_ref": "D2#P3",
+        "rank": 1,
+        "retrieved_text": "补正只是将该段已经记载的结构特征并入权利要求1，所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。",
+        "retrieval_score": 0.96
+      },
+      {
+        "source_ref": "D2#P4",
+        "rank": 2,
+        "retrieved_text": "对比文件2公开了固定卡扣，但没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出采用该结构解决反复插拔后端子松脱问题的技术启示。补正后的权利要求1具备创造性，复审请求成立。",
+        "retrieval_score": 0.95
+      },
+      {
+        "source_ref": "A2#P2",
+        "rank": 3,
+        "retrieved_text": "补正后的权利要求1还具有防止插拔过程中端子松脱的效果。",
+        "retrieval_score": 0.58
+      }
+    ],
+    "generated_answer": "裁决机关认为，原说明书第0042段已经明确记载可逆锁止件及其在受拉时保持端子位置的作用，补正只是将既有结构特征并入权利要求，因此未超出原申请记载范围。创造性方面，对比文件2仅有固定卡扣，没有公开相同的结构配合，也没有解决反复插拔后端子松脱问题的技术启示，所以补正后的权利要求1具备创造性。",
+    "submitted_citations": [
+      {
+        "source_ref": "D2#P3",
+        "quoted_text": "所属技术人员能够直接、明确地从原申请文件得到该技术方案。因此，补正未超出原申请记载范围。",
+        "citation_role": "支持补正合法性"
+      },
+      {
+        "source_ref": "D2#P4",
+        "quoted_text": "对比文件2没有公开可逆锁止件在受拉时保持端子位置的结构配合，也没有给出相应技术启示。",
+        "citation_role": "支持创造性结论"
+      }
+    ]
+  },
+  "argument_evidence_links": [
+    {
+      "argument_text": "可逆锁止件及其保持端子位置的作用已经记载于原说明书，补正未超范围。",
+      "evidence_refs": [
+        "D2#P2",
+        "D2#P3"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    },
+    {
+      "argument_text": "对比文件2的固定卡扣不能替代可逆锁止件在受拉时保持端子位置的结构配合。",
+      "evidence_refs": [
+        "D2#P4"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.98
+    },
+    {
+      "argument_text": "现有技术没有给出解决反复插拔后端子松脱问题的技术启示。",
+      "evidence_refs": [
+        "D2#P4"
+      ],
+      "relation_type": "直接支持",
+      "linkage_confidence": 0.99
+    }
+  ]
+}
