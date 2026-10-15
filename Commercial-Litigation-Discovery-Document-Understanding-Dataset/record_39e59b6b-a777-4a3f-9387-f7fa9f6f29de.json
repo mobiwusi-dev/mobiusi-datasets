@@ -1,0 +1,163 @@
+{
+  "objections": [
+    {
+      "target_item_number": 4,
+      "objection_basis": "模糊性及范围过宽",
+      "legal_basis": "《南川市民事诉讼证据开示规则》第36条",
+      "objection_explanation": "请求使用全部维护服务费这一概括表述，未区分已完成服务、未完成工单及争议款项，导致答复方无法对未限定的整体事实作出准确承认或否认。",
+      "asserted_scope": "适用于第4项中将与三张未完成工单有关的款项扩大为全部维护服务费的部分。",
+      "partial_response": true
+    }
+  ],
+  "case_context": {
+    "case_caption": "栖衡医疗器械贸易有限公司诉沐岑技术服务有限公司",
+    "jurisdiction": "南川市中级人民法院",
+    "parties": {
+      "requesting_party": "栖衡医疗器械贸易有限公司",
+      "responding_party": "沐岑技术服务有限公司"
+    },
+    "procedural_stage": "第一组承认请求及答复阶段",
+    "document_date": "2025-05-06"
+  },
+  "reservations": [
+    {
+      "target_item_number": 3,
+      "reservation_type": "修改或更正",
+      "reservation_text": "在两项尚未验收服务完成验收后，被告可能根据最终验收结果补充或更新对相应款项到期性的答复。",
+      "effect_on_response": "当前答复仅对全部发票金额是否到期保持无法承认或否认，待验收事实明确后可能形成更具体的立场。"
+    },
+    {
+      "target_item_number": 2,
+      "reservation_type": "补充答复",
+      "reservation_text": "被告保留在核对服务工单和现场记录后补充三张未完成工单的编号及履行情况。",
+      "effect_on_response": "不改变当前对第2项整体命题的否认，但可能补充否认的事实依据。"
+    }
+  ],
+  "document_type": "承认请求",
+  "discovery_items": [
+    {
+      "item_number": 1,
+      "request_type": "承认",
+      "request_scope": {
+        "scope_category": "合同事实",
+        "scope_summary": "确认双方是否于指定日期签署区域设备维护协议。",
+        "temporal_scope": "2023年6月1日",
+        "custodian_scope": "双方合同管理部门及签约文件"
+      },
+      "request_text": "请承认被告于2023年6月1日与原告签署《区域设备维护协议》。",
+      "response_text": "承认。",
+      "response_position": "承认",
+      "objection_basis": [],
+      "reservation_text": "",
+      "production_status": "不适用",
+      "disputed_issue": ""
+    },
+    {
+      "item_number": 2,
+      "request_type": "承认",
+      "request_scope": {
+        "scope_category": "服务履行事实",
+        "scope_summary": "确认原告是否完成2023年第三季度全部维护服务，以及是否存在未完成工单。",
+        "temporal_scope": "2023年7月1日至2023年9月30日",
+        "custodian_scope": "服务工单系统、现场服务记录及项目经理周报"
+      },
+      "request_text": "请承认原告已按照协议完成2023年第三季度全部维护服务，且不存在任何未完成的服务工单。",
+      "response_text": "否认。原告在2023年8月有三张工单未按约完成。",
+      "response_position": "否认",
+      "objection_basis": [],
+      "reservation_text": "被告保留根据后续核对的服务工单编号补充说明具体未完成事项的权利。",
+      "production_status": "不适用",
+      "disputed_issue": "请求方认为被告的否认缺乏具体工单编号；答复方称三张工单的履行状态仍需结合现场记录核对。"
+    },
+    {
+      "item_number": 3,
+      "request_type": "承认",
+      "request_scope": {
+        "scope_category": "发票与付款义务",
+        "scope_summary": "确认发票金额及该金额是否全部到期应付。",
+        "temporal_scope": "2023年9月15日及其后付款期限",
+        "custodian_scope": "财务部、应付账款系统及服务验收记录"
+      },
+      "request_text": "请承认原告于2023年9月15日向被告发送的发票金额为人民币128万元，且该金额全部已到期应付。",
+      "response_text": "被告承认收到发票并承认发票记载金额为人民币128万元，但无法承认或否认该金额全部到期，因为其中包含两项尚未验收的服务。",
+      "response_position": "无法承认或否认",
+      "objection_basis": [
+        "事实前提包含尚未确定的付款到期条件"
+      ],
+      "reservation_text": "被告保留在两项服务完成验收后更新对到期金额的立场。",
+      "production_status": "不适用",
+      "disputed_issue": "双方对两项服务是否已经验收及其对应款项是否到期存在争议。"
+    },
+    {
+      "item_number": 4,
+      "request_type": "承认",
+      "request_scope": {
+        "scope_category": "付款通知与范围",
+        "scope_summary": "确认被告是否通知原告暂停支付全部维护服务费。",
+        "temporal_scope": "2023年10月3日及其后",
+        "custodian_scope": "财务部邮件、合同管理部门通知及双方往来函件"
+      },
+      "request_text": "请承认被告曾以书面形式通知原告暂停支付全部维护服务费。",
+      "response_text": "被告对请求中全部维护服务费的表述不明确，提出异议；在不放弃异议的前提下，承认被告于2023年10月3日通知原告暂缓支付与三张未完成工单有关的款项，但否认曾暂停支付全部维护服务费。",
+      "response_position": "提出异议后答复",
+      "objection_basis": [
+        "表述含糊",
+        "请求范围过宽"
+      ],
+      "reservation_text": "",
+      "production_status": "不适用",
+      "disputed_issue": "请求方主张10月3日通知的实际效果是暂停全部付款；答复方区分未完成工单对应款项与其他维护服务费。"
+    },
+    {
+      "item_number": 5,
+      "request_type": "承认",
+      "request_scope": {
+        "scope_category": "服务质量异议",
+        "scope_summary": "确认被告是否曾就原告服务质量异议提供书面说明。",
+        "temporal_scope": "2023年9月1日至2023年10月31日",
+        "custodian_scope": "项目经理、质量管理部门及双方电子邮件"
+      },
+      "request_text": "请承认被告未就原告提出的服务质量异议提供任何书面说明。",
+      "response_text": "否认。被告曾于2023年9月28日向原告发送质量整改通知。",
+      "response_position": "否认",
+      "objection_basis": [],
+      "reservation_text": "",
+      "production_status": "不适用",
+      "disputed_issue": "请求方认为质量整改通知不是针对其异议的实质答复；答复方认为该通知已构成书面说明。"
+    }
+  ],
+  "disputed_issues": [
+    {
+      "issue_summary": "第3项所称128万元发票中包含的两项服务是否已完成验收，以及对应款项是否已经到期。",
+      "issue_category": "答复充分性",
+      "related_item_numbers": [
+        3
+      ],
+      "party_positions": {
+        "requesting_party_position": "请求方认为发票已经发送且服务已实际完成，全部128万元均已到期应付。",
+        "responding_party_position": "答复方承认发票金额和收件事实，但认为两项服务未验收，因此无法确认全部金额已到期。"
+      },
+      "resolution_status": "未解决"
+    },
+    {
+      "issue_summary": "第4项中的书面通知是否构成暂停支付全部维护服务费，还是仅暂停三张未完成工单对应的款项。",
+      "issue_category": "请求范围",
+      "related_item_numbers": [
+        4
+      ],
+      "party_positions": {
+        "requesting_party_position": "请求方将2023年10月3日通知理解为对全部维护服务费的暂停支付。",
+        "responding_party_position": "答复方认为请求表述过宽，并仅承认暂缓支付与三张未完成工单有关的款项。"
+      },
+      "resolution_status": "未解决"
+    }
+  ],
+  "document_summary": "该文书为承认请求答复。答复方承认合同签署和发票金额等有限事实，否认第三季度全部服务完成及未提供质量说明的概括命题，并对付款通知的范围提出模糊性和过宽异议。核心争议集中在未验收服务对应款项是否到期，以及暂缓付款通知是否覆盖全部维护服务费。",
+  "raw_document_text": "南川市中级人民法院，案号（2025）南商初字第76号。原告栖衡医疗器械贸易有限公司诉被告沐岑技术服务有限公司合同价款纠纷。原告向被告送达第一组承认请求，被告作出如下答复。第1项：请承认被告于2023年6月1日与原告签署《区域设备维护协议》。答复：承认。第2项：请承认原告已按照协议完成2023年第三季度全部维护服务，且不存在任何未完成的服务工单。答复：否认。被告说明原告在2023年8月有三张工单未按约完成。第3项：请承认原告于2023年9月15日向被告发送的发票金额为人民币128万元，且该金额全部已到期应付。答复：被告承认收到发票并承认发票记载金额为人民币128万元，但无法承认或否认该金额全部到期，因为其中包含两项尚未验收的服务。第4项：请承认被告曾以书面形式通知原告暂停支付全部维护服务费。答复：被告对该请求中全部维护服务费的表述不明确，提出异议；在不放弃异议的前提下，承认被告于2023年10月3日通知原告暂缓支付与三张未完成工单有关的款项，但否认曾暂停支付全部维护服务费。第5项：请承认被告未就原告提出的服务质量异议提供任何书面说明。答复：否认，并指向2023年9月28日发送的质量整改通知。",
+  "supplemental_response": {
+    "is_supplemental": false,
+    "prior_response_reference": "",
+    "changes": []
+  },
+  "overall_response_position": "部分异议并答复"
+}
