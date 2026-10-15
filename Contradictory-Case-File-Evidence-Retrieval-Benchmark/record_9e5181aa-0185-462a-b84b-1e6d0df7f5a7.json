@@ -1,0 +1,18 @@
+{
+  "query_claim": "被告在2024年6月1日前已经收到原告发出的违约通知。",
+  "source_anchor": "《民事起诉状及附件清单》第7页第5段仅记载“原告于5月28日寄送通知”，未列出邮寄或送达凭证；第7页第9—10段的发票签收单仅标注“五月服务费发票”。",
+  "relation_label": "insufficient_basis",
+  "source_metadata": {
+    "case_reference": "商事案件-C-003",
+    "document_reference": "民事起诉状及附件清单",
+    "document_type": "起诉状",
+    "source_locator": "第7页第3—10段；附件清单第2项",
+    "document_date": "2024-06-20"
+  },
+  "is_claim_refuted": false,
+  "candidate_excerpt": "原告起诉状称其于2024年5月28日向被告寄送违约通知，但本节未附邮寄凭证、签收回执或被告确认收悉的通信记录。案卷中仅有一张2024年5月29日的发票签收单，该签收单载明的文件名称为“五月服务费发票”，未提及违约通知。",
+  "annotation_rationale": "片段与通知日期和被告收悉问题表面相关，但起诉状中的单方陈述没有送达凭证，唯一签收记录对应的是发票而非违约通知。因此，该材料不足以证明主张成立，也没有直接证明通知未被收到。",
+  "counterevidence_type": "missing_foundation",
+  "annotation_confidence": 0.93,
+  "retrieval_relevance_score": 0.82
+}

@@ -1,0 +1,18 @@
+{
+  "query_claim": "被告已于2024年3月15日收到原告关于解除供货合同的有效通知。",
+  "source_anchor": "《证据目录及电子邮件往来记录-第12号》第4页第3段：“邮件于2024年3月15日14时32分投递至被告指定邮箱”；第5段记载被告次日回复“已阅知”。",
+  "relation_label": "supporting",
+  "source_metadata": {
+    "case_reference": "商事案件-C-001",
+    "document_reference": "证据目录及电子邮件往来记录-第12号",
+    "document_type": "电子邮件记录",
+    "source_locator": "第4页第2—6段，邮件服务器回执行号E-20240315-1432",
+    "document_date": "2024-03-15"
+  },
+  "is_claim_refuted": false,
+  "candidate_excerpt": "2024年3月15日，原告法务人员通过合同约定的电子邮箱向被告发送《合同解除通知》。案卷中的邮件服务器回执显示，邮件于当日14时32分投递至被告指定邮箱，附件名称为“合同解除通知书.pdf”。被告次日回复称已阅知该通知，但不同意解除理由。",
+  "annotation_rationale": "候选片段不仅涉及同一份解除通知，还记载了合同约定邮箱、服务器投递回执及被告后续回复，能够直接支持通知已送达且被告已知悉的主张。",
+  "counterevidence_type": "none",
+  "annotation_confidence": 0.97,
+  "retrieval_relevance_score": 0.98
+}

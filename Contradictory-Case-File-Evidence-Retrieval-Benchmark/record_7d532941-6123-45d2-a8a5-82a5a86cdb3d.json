@@ -1,0 +1,18 @@
+{
+  "query_claim": "原告已于2024年5月20日前按照合同完成全部十台设备的交付。",
+  "source_anchor": "《庭审笔录（第二次庭审）》第18页第9—12行：“5月20日清点时只有A01至A08”；第13—15行记载A09、A10于6月3日到货，且第26页入库单只列八台设备。",
+  "relation_label": "contradictory",
+  "source_metadata": {
+    "case_reference": "商事案件-C-002",
+    "document_reference": "庭审笔录（第二次庭审）",
+    "document_type": "证人证言",
+    "source_locator": "第18页第7—15行；配套仓库入库单见第26页",
+    "document_date": "2024-08-12"
+  },
+  "is_claim_refuted": true,
+  "candidate_excerpt": "被告仓库管理员林某在庭审中陈述：2024年5月20日清点入库时，仅收到编号为A01至A08的八台设备，A09和A10直到2024年6月3日才由承运人送达。仓库入库单同日仅列明八台设备，未记载其余两台的到货情况。",
+  "annotation_rationale": "候选片段明确限定了交付截止日，并具体指出当日只有八台设备入库，另两台在主张日期之后才到达，直接否定了“5月20日前完成十台全部交付”的事实主张。",
+  "counterevidence_type": "direct_refutation",
+  "annotation_confidence": 0.96,
+  "retrieval_relevance_score": 0.99
+}
