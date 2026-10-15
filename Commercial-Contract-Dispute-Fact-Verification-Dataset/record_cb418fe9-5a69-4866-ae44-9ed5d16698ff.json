@@ -1,0 +1,55 @@
+{
+  "confidence_score": 0.99,
+  "missing_evidence": [],
+  "claim_text": "海岚智能设备（上海）有限公司已按照设备采购合同约定，于2024年4月24日向瀚川自动化技术有限公司支付全部合同价款人民币1280000元。",
+  "review_notes": "付款凭证直接证明资金支付事实，但不单独证明发票是否合规，发票交付情况由合同相关记载补充。",
+  "claim_category": "付款义务",
+  "claim_subjects": [
+    "合同总价款",
+    "付款期限",
+    "银行转账"
+  ],
+  "evidence_spans": [
+    {
+      "document_type": "合同正文",
+      "passage_text": "买方应在收到卖方开具的全额增值税专用发票后10个工作日内，将合同总价人民币1280000元支付至卖方指定账户。",
+      "location": "第5.2条，第3页",
+      "evidence_role": "支持",
+      "relevance_score": 0.94
+    },
+    {
+      "document_type": "付款凭证",
+      "passage_text": "付款人海岚智能设备（上海）有限公司，收款人瀚川自动化技术有限公司，金额人民币1280000元，交易日期2024年4月24日，交易状态为成功。",
+      "location": "付款凭证第1页",
+      "evidence_role": "支持",
+      "relevance_score": 1.0
+    }
+  ],
+  "document_bundle": [
+    {
+      "document_type": "合同正文",
+      "document_text": "《设备采购合同》第5.2条约定：买方应在收到卖方开具的全额增值税专用发票后10个工作日内，将合同总价人民币1280000元支付至卖方指定账户。卖方于2024年4月10日开具并交付发票。",
+      "source_location": "第5.2条，第3页"
+    },
+    {
+      "document_type": "付款凭证",
+      "document_text": "银行电子回单显示：付款人海岚智能设备（上海）有限公司，收款人瀚川自动化技术有限公司，金额人民币1280000元，交易日期2024年4月24日，交易状态为成功。",
+      "source_location": "付款凭证第1页"
+    }
+  ],
+  "normalized_claim": {
+    "actor": "海岚智能设备（上海）有限公司（买方）",
+    "action": "支付合同价款",
+    "subject": "设备采购合同项下全部设备款",
+    "amount": 1280000,
+    "due_date": "2024年4月24日"
+  },
+  "evidence_coverage": {
+    "has_supporting_evidence": true,
+    "has_refuting_evidence": false,
+    "has_direct_contract_clause": true
+  },
+  "assessment_summary": "合同正文明确规定了1280000元价款的付款义务，付款凭证显示买方于2024年4月24日完成同额转账，金额、付款方、收款方和日期均与事实主张一致。",
+  "verification_label": "支持",
+  "contradiction_points": []
+}

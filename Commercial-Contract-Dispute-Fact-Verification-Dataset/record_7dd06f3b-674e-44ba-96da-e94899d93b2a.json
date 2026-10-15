@@ -1,0 +1,62 @@
+{
+  "assessment_summary": "合同确实规定了2024年9月15日前的交付期限，但交付及验收单显示卖方已于2024年9月12日完成5000只货物的交付，并由买方人员签收。该直接交付记录反驳了截至2024年9月20日仍未交付的主张。",
+  "verification_label": "反驳",
+  "claim_text": "瀚源包装材料有限公司违反合同约定，直至2024年9月20日仍未向锦程食品供应链有限公司交付全部冷链包装箱。",
+  "review_notes": "诉状中的单方陈述不能推翻具有交付日期、数量及买方签收信息的交付验收单；本条标注针对的是未交付事实，不延伸判断货物是否存在后续质量争议。",
+  "claim_category": "交付义务",
+  "claim_subjects": [
+    "冷链包装箱",
+    "交付期限",
+    "仓库收货"
+  ],
+  "evidence_spans": [
+    {
+      "document_type": "合同正文",
+      "passage_text": "卖方应于2024年9月15日前，将合同项下全部冷链包装箱运抵买方指定仓库并完成交付。",
+      "location": "第4.1条，第2页",
+      "evidence_role": "背景信息",
+      "relevance_score": 0.86
+    },
+    {
+      "document_type": "其他",
+      "passage_text": "2024年9月12日，瀚源包装材料有限公司向锦程食品供应链有限公司指定仓库交付冷链包装箱共计5000只；买方仓库管理员周某签字确认收货，验收结果为数量及外观合格。",
+      "location": "货物交付及验收单第1页",
+      "evidence_role": "反驳",
+      "relevance_score": 1.0
+    }
+  ],
+  "document_bundle": [
+    {
+      "document_type": "合同正文",
+      "document_text": "《冷链包装箱采购合同》第4.1条约定：卖方应于2024年9月15日前，将合同项下全部冷链包装箱运抵买方指定仓库并完成交付。",
+      "source_location": "第4.1条，第2页"
+    },
+    {
+      "document_type": "其他",
+      "document_text": "《货物交付及验收单》记载：2024年9月12日，瀚源包装材料有限公司向锦程食品供应链有限公司指定仓库交付冷链包装箱共计5000只；买方仓库管理员周某签字确认收货，验收结果为数量及外观合格。",
+      "source_location": "货物交付及验收单第1页"
+    },
+    {
+      "document_type": "诉状",
+      "document_text": "原告在诉状中称，被告未在合同期限内交付冷链包装箱，并请求承担逾期交付违约责任。诉状未附与该陈述相匹配的未收货记录。",
+      "source_location": "诉状事实与理由部分，第4页"
+    }
+  ],
+  "confidence_score": 0.97,
+  "missing_evidence": [],
+  "normalized_claim": {
+    "actor": "瀚源包装材料有限公司（卖方）",
+    "action": "交付合同项下全部货物",
+    "subject": "冷链包装箱5000只",
+    "due_date": "2024年9月15日"
+  },
+  "evidence_coverage": {
+    "has_supporting_evidence": false,
+    "has_refuting_evidence": true,
+    "has_direct_contract_clause": true
+  },
+  "contradiction_points": [
+    "主张称截至2024年9月20日仍未交付，但货物交付及验收单记载已于2024年9月12日完成交付。",
+    "主张所称未交付与买方仓库管理员签字确认收货的记录不一致。"
+  ]
+}
