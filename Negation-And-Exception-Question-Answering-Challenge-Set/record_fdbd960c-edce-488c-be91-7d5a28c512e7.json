@@ -1,0 +1,92 @@
+{
+  "raw_record": {
+    "page_text": "题目：下列各项中，不属于可再生能源的是。 A. 太阳能 B. 风能 C. 地热能 D. 天然气 答案：D。解析：太阳能、风能和地热能在通常能源分类中属于可再生能源；天然气形成周期很长，属于化石燃料和不可再生能源。",
+    "question_text": "下列各项中，不属于可再生能源的是。",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "太阳能"
+      },
+      {
+        "option_label": "B",
+        "option_text": "风能"
+      },
+      {
+        "option_label": "C",
+        "option_text": "地热能"
+      },
+      {
+        "option_label": "D",
+        "option_text": "天然气"
+      }
+    ],
+    "provided_answer": "D",
+    "provided_explanation": "太阳能、风能和地热能属于可再生能源，天然气属于不可再生的化石燃料，因此 D 项不属于可再生能源。",
+    "source_url": ""
+  },
+  "gold_answer": {
+    "answer_labels": [
+      "D"
+    ],
+    "answer_text": "D：天然气。",
+    "rationale": "“不属于”要求在给出的能源中寻找不属于可再生能源的例外项。A、B、C均属于通常意义上的可再生能源，D为不可再生化石燃料，因此答案为 D。",
+    "answer_source": "人工校准答案"
+  },
+  "cue_annotations": [
+    {
+      "cue_text": "下列各项中",
+      "cue_type": "范围词",
+      "scope_target": "待判断的能源选项 A 至 D",
+      "semantic_effect": "将判断范围限定为列出的四种能源，不要求对未列出的能源进行判断。"
+    },
+    {
+      "cue_text": "不属于",
+      "cue_type": "否定词",
+      "scope_target": "可再生能源这一类别与各选项之间的归属关系",
+      "semantic_effect": "要求找出不具备可再生能源归属的例外项。"
+    }
+  ],
+  "option_analysis": [
+    {
+      "option_label": "A",
+      "option_text": "太阳能",
+      "option_status": "正确",
+      "evidence": "太阳能可由持续的太阳辐射获得，通常归入可再生能源。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "B",
+      "option_text": "风能",
+      "option_status": "正确",
+      "evidence": "风能来源于大气运动，具有自然补充特征，通常归入可再生能源。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "C",
+      "option_text": "地热能",
+      "option_status": "正确",
+      "evidence": "地热能来自地球内部热能，在通常分类中属于可再生能源。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "D",
+      "option_text": "天然气",
+      "option_status": "属于例外",
+      "evidence": "天然气是形成周期极长的化石燃料，不能在人类使用尺度内持续补充，因此不属于可再生能源。",
+      "matches_question_requirement": true
+    }
+  ],
+  "question_task_type": "例外判断",
+  "diagnostic_annotation": {
+    "risk_level": "中",
+    "failure_modes": [
+      "忽略不属于造成的类别排除关系",
+      "把多数项的共同类别错误套用于全部选项",
+      "未追踪下列各项中的选项范围"
+    ],
+    "requires_negation_resolution": true,
+    "requires_scope_tracking": true,
+    "annotation_notes": "该题通过三个同类能源和一个化石燃料构成例外结构；“属于例外”表示 D 是题目要求找出的类别外项目。"
+  },
+  "normalized_question_text": "下列各项中，不属于可再生能源的是？"
+}

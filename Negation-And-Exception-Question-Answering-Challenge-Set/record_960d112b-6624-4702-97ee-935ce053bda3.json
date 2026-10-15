@@ -1,0 +1,99 @@
+{
+  "raw_record": {
+    "page_text": "题目：对于一次函数 y=ax+b（a≠0），在只讨论图像随 x 变化的增减方向这一范围内，下列说法不正确的是？ A. 当 a>0 时，图像从左向右上升。 B. 当 a<0 时，图像从左向右下降。 C. 改变 b 只会使图像发生上下平移，不改变增减方向。 D. 当 a<0 时，图像从左向右上升。答案：D。解析：在 a≠0 的条件下，一次函数图像的增减方向由斜率 a 的正负决定；a<0 时图像从左向右下降。",
+    "question_text": "对于一次函数 y=ax+b（a≠0），在只讨论图像随 x 变化的增减方向这一范围内，下列说法不正确的是？",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "当 a>0 时，图像从左向右上升。"
+      },
+      {
+        "option_label": "B",
+        "option_text": "当 a<0 时，图像从左向右下降。"
+      },
+      {
+        "option_label": "C",
+        "option_text": "改变 b 只会使图像发生上下平移，不改变增减方向。"
+      },
+      {
+        "option_label": "D",
+        "option_text": "当 a<0 时，图像从左向右上升。"
+      }
+    ],
+    "provided_answer": "D",
+    "provided_explanation": "题干将讨论限定在 a≠0 的一次函数及图像增减方向范围内。斜率 a<0 时，图像从左向右下降，所以 D 项说法不正确。",
+    "source_url": ""
+  },
+  "gold_answer": {
+    "answer_labels": [
+      "D"
+    ],
+    "answer_text": "D：当 a<0 时，图像从左向右上升。",
+    "rationale": "题干同时规定了非零斜率条件、只判断增减方向的范围，并要求寻找“不正确”的说法。负斜率对应从左向右下降，因此 D 与给定条件下的一次函数性质相矛盾。",
+    "answer_source": "人工校准答案"
+  },
+  "cue_annotations": [
+    {
+      "cue_text": "a≠0",
+      "cue_type": "条件词",
+      "scope_target": "所讨论的一次函数参数及其图像性质",
+      "semantic_effect": "排除常数函数情形，使判断建立在非零斜率的一次函数上。"
+    },
+    {
+      "cue_text": "只讨论图像随 x 变化的增减方向这一范围内",
+      "cue_type": "范围词",
+      "scope_target": "题目要求判断的函数性质",
+      "semantic_effect": "将判断范围限定为图像的上升或下降方向，不要求判断截距、定义域等其他性质。"
+    },
+    {
+      "cue_text": "不正确",
+      "cue_type": "否定词",
+      "scope_target": "A 至 D 关于上述条件下图像增减方向的陈述",
+      "semantic_effect": "要求选出在给定条件和讨论范围内不成立的陈述。"
+    }
+  ],
+  "option_analysis": [
+    {
+      "option_label": "A",
+      "option_text": "当 a>0 时，图像从左向右上升。",
+      "option_status": "正确",
+      "evidence": "一次函数斜率为正时，随着 x 增大，函数值增大，图像从左向右上升。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "B",
+      "option_text": "当 a<0 时，图像从左向右下降。",
+      "option_status": "正确",
+      "evidence": "一次函数斜率为负时，随着 x 增大，函数值减小，图像从左向右下降。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "C",
+      "option_text": "改变 b 只会使图像发生上下平移，不改变增减方向。",
+      "option_status": "正确",
+      "evidence": "参数 b 改变纵截距，斜率 a 不变，因此图像上下平移而增减方向不变。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "D",
+      "option_text": "当 a<0 时，图像从左向右上升。",
+      "option_status": "错误",
+      "evidence": "a<0 表示斜率为负，图像应从左向右下降，而不是上升。",
+      "matches_question_requirement": true
+    }
+  ],
+  "question_task_type": "混合类型",
+  "diagnostic_annotation": {
+    "risk_level": "高",
+    "failure_modes": [
+      "忽略不正确的反向选择要求",
+      "把斜率条件 a<0 错误映射为上升",
+      "忽略只讨论增减方向的范围限制",
+      "将参数 b 对位置的影响误认为对增减方向的影响"
+    ],
+    "requires_negation_resolution": true,
+    "requires_scope_tracking": true,
+    "annotation_notes": "该题要求先应用 a≠0 条件，再将分析限定到增减方向，最后从四个陈述中选择不成立者；D 仅在方向判断上违反斜率符号规则。"
+  },
+  "normalized_question_text": "对于一次函数 y=ax+b（a≠0），在只讨论图像随 x 变化的增减方向这一范围内，下列说法不正确的是？"
+}

@@ -1,0 +1,86 @@
+{
+  "raw_record": {
+    "page_text": "题目：关于最小权限原则，下列说法不正确的是？ A. 用户只获得完成工作所必需的权限。 B. 应定期审查并回收不再需要的权限。 C. 为保证业务连续性，所有用户应默认拥有系统管理员权限。 D. 关键操作可以通过职责分离降低滥用风险。答案：C。解析：最小权限原则要求主体仅拥有完成任务所必需的最低权限，不能为了便利而默认授予所有用户管理员权限。",
+    "question_text": "关于最小权限原则，下列说法不正确的是？",
+    "options": [
+      {
+        "option_label": "A",
+        "option_text": "用户只获得完成工作所必需的权限。"
+      },
+      {
+        "option_label": "B",
+        "option_text": "应定期审查并回收不再需要的权限。"
+      },
+      {
+        "option_label": "C",
+        "option_text": "为保证业务连续性，所有用户应默认拥有系统管理员权限。"
+      },
+      {
+        "option_label": "D",
+        "option_text": "关键操作可以通过职责分离降低滥用风险。"
+      }
+    ],
+    "provided_answer": "C",
+    "provided_explanation": "最小权限原则要求主体仅拥有完成任务所必需的最低权限。默认授予所有用户管理员权限会造成权限过度扩大，因此 C 项说法不正确。",
+    "source_url": ""
+  },
+  "gold_answer": {
+    "answer_labels": [
+      "C"
+    ],
+    "answer_text": "C：为保证业务连续性，所有用户应默认拥有系统管理员权限。",
+    "rationale": "题干中的“不正确”要求寻找违反最小权限原则的选项。C 项将所有用户默认提升为管理员，未遵循按需授权和最低权限要求，因此是唯一符合否定选择条件的选项。",
+    "answer_source": "人工校准答案"
+  },
+  "cue_annotations": [
+    {
+      "cue_text": "不正确",
+      "cue_type": "否定词",
+      "scope_target": "选项 A 至 D 关于最小权限原则的全部陈述",
+      "semantic_effect": "要求选出唯一不符合最小权限原则的说法，而不是选出正确说法。"
+    }
+  ],
+  "option_analysis": [
+    {
+      "option_label": "A",
+      "option_text": "用户只获得完成工作所必需的权限。",
+      "option_status": "正确",
+      "evidence": "该表述体现了仅授予完成任务所需最低权限的核心要求。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "B",
+      "option_text": "应定期审查并回收不再需要的权限。",
+      "option_status": "正确",
+      "evidence": "定期审查和回收权限有助于维持最小权限状态，符合权限管理实践。",
+      "matches_question_requirement": false
+    },
+    {
+      "option_label": "C",
+      "option_text": "为保证业务连续性，所有用户应默认拥有系统管理员权限。",
+      "option_status": "错误",
+      "evidence": "默认授予所有用户管理员权限明显超出完成一般工作的必要范围，违反最小权限原则。",
+      "matches_question_requirement": true
+    },
+    {
+      "option_label": "D",
+      "option_text": "关键操作可以通过职责分离降低滥用风险。",
+      "option_status": "正确",
+      "evidence": "职责分离是降低单一主体权限集中和滥用风险的常见控制措施，与题干原则相容。",
+      "matches_question_requirement": false
+    }
+  ],
+  "question_task_type": "否定判断",
+  "diagnostic_annotation": {
+    "risk_level": "高",
+    "failure_modes": [
+      "将不正确误读为正确",
+      "只识别最小权限主题而忽略题干的否定要求",
+      "无法把否定范围限定到全部选项陈述"
+    ],
+    "requires_negation_resolution": true,
+    "requires_scope_tracking": true,
+    "annotation_notes": "A、B、D 是符合原则的陈述，C 是违反原则的陈述；正确作答必须在知识判断后再次应用“不正确”的反向选择条件。"
+  },
+  "normalized_question_text": "关于最小权限原则，下列说法不正确的是？"
+}
