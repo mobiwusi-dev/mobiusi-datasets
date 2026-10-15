@@ -1,0 +1,11 @@
+{
+  "source_text": "<article><h2>典型错误：从句中的动词位置</h2><p>错误示例：Ich weiß, dass er kommt morgen.</p><p>说明：由 dass 引导的从句中，限定动词通常位于从句末尾。</p></article>",
+  "grammar_rule": "在由 dass、weil、ob 等从属连词引导的从句中，限定动词通常置于句末；主句则通常遵循限定动词位于第二句法位置的规则。",
+  "error_category": "词序",
+  "error_sentence": "Ich weiß, dass er kommt morgen.",
+  "corrected_sentence": "Ich weiß, dass er morgen kommt.",
+  "correction_explanation": "将限定动词 kommt 从 morgen 前移到从句末尾，得到“dass er morgen kommt”。其中 er 是主语，morgen 是时间副词，kommt 是从句的限定动词。",
+  "answer": "dass 引导的是从句。在标准德语中，从句的限定动词通常位于从句末尾，所以 kommt 不能放在主语 er 后面，而应置于从句最后。时间副词 morgen 可以放在动词之前，例如“dass er morgen kommt”。主句“Ich weiß”仍然遵循主句的动词第二位规则；只有 dass 从句内部采用从句词序。",
+  "question": "为什么在“dass”引导的从句中要把“kommt”放到句末？“morgen”应该放在哪里？",
+  "error_cause": "学习者把主句的动词第二位规则直接迁移到 dass 从句中，形成了“主语后立即放限定动词”的词序。"
+}

@@ -1,0 +1,11 @@
+{
+  "source_text": "<article><h2>典型错误：warten auf 的格</h2><p>错误示例：Ich warte auf der Bus.</p><p>说明：表示“等待某人或某物”时，warten auf 固定搭配第四格。</p></article>",
+  "answer": "这里的 auf 不是表示静态位置，而是 warten auf 的固定搭配，意思是“等待某人或某物”。在这一用法中，auf 支配第四格，因此阳性单数名词 Bus 前应使用第四格定冠词 den，而不是第三格定冠词 der。正确句子是“Ich warte auf den Bus.”。",
+  "question": "为什么“auf der Bus”在表示“等公交车”时不正确？介词“auf”在这个搭配中支配什么格？",
+  "error_cause": "学习者根据 auf 既可以支配第三格也可以支配第四格这一一般规律，误把该句理解成了静态位置关系，因而使用了第三格 der；同时没有掌握 warten auf 的固定格要求。",
+  "grammar_rule": "双向介词 auf 在表示位置时常与第三格连用、表示方向或对象时常与第四格连用；但 warten auf 表示“等待”时固定支配第四格，例如 auf den Bus warten、auf eine Antwort warten。",
+  "error_category": "介词",
+  "error_sentence": "Ich warte auf der Bus.",
+  "corrected_sentence": "Ich warte auf den Bus.",
+  "correction_explanation": "将 der 改为 den。Bus 是阳性单数名词，作为 warten auf 的宾语使用第四格，因此形式为 auf den Bus。句子表达的是等待对象，而不是人在公交车上方或某个位置停留。"
+}

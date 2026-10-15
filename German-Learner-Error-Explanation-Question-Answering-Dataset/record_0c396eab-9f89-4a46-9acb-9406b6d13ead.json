@@ -1,0 +1,11 @@
+{
+  "answer": "错误在于把 helfen 的宾语误当成了第四格。动词 helfen 通常支配第三格，表示“帮助某人”时，被帮助的人是间接宾语。因此，阳性单数名词 Mann 的定冠词要从第四格的 den 改为第三格的 dem。正确句子是“Ich helfe dem Mann.”。这与句子的语序无关，而是由动词 helfen 的格支配决定的。",
+  "question": "为什么“den Mann”在“Ich helfe den Mann.”中需要改成“dem Mann”？这里适用什么格支配规则？",
+  "error_cause": "学习者将“帮助某人”按照汉语或英语中的直接宾语结构理解，误用了阳性单数第四格冠词 den，没有记住 helfen 支配第三格。",
+  "source_text": "<article><h2>典型错误：helfen 后的格</h2><p>错误示例：Ich helfe den Mann.</p><p>说明：动词 helfen 通常支配第三格，阳性单数定冠词应使用 dem。</p></article>",
+  "grammar_rule": "动词 helfen 支配第三格（Dativ）：jemandem helfen。阳性单数定冠词的变化为 der（第一格）、den（第四格）、dem（第三格），因此应说 dem Mann。",
+  "error_category": "格变化",
+  "error_sentence": "Ich helfe den Mann.",
+  "corrected_sentence": "Ich helfe dem Mann.",
+  "correction_explanation": "将 den 改为 dem。Mann 是阳性单数名词，在第三格中使用定冠词 dem；名词本身 Mann 在这里不发生词尾变化。修改后的 dem Mann 充当 helfen 的第三格宾语。"
+}
