@@ -1,0 +1,40 @@
+{
+  "question": "为什么“سُئِلَ”中的汉姆宰写在雅اء承载字母上？",
+  "has_exception": false,
+  "rule_category": "汉姆宰位置",
+  "answer": "“سُئِلَ”中的汉姆宰写作“ئ”。它位于词中，汉姆宰带kasra，前一字母“س”带ḍamma。由于kasra的判定强度高于ḍamma，汉姆宰应承载在雅اء上，形成“ئ”。",
+  "examples": [
+    {
+      "arabic_example": "سُئِلَ",
+      "transliteration_or_translation": "su'ila，‘被询问’",
+      "explanation": "汉姆宰位于词中并带kasra，前面的س带ḍamma；kasra较强，所以写成ئ。"
+    },
+    {
+      "arabic_example": "بِئْر",
+      "transliteration_or_translation": "bi'r，‘井’",
+      "explanation": "词中汉姆宰前的ب带kasra，汉姆宰本身静音；kasra占优势，因此汉姆宰写在雅اء上，形成ئ。"
+    }
+  ],
+  "keywords": [
+    "汉姆宰",
+    "词中汉姆宰",
+    "ئ",
+    "雅اء",
+    "kasra",
+    "ḍamma"
+  ],
+  "source_record": {
+    "raw_question": "为什么“سُئِلَ”中的汉姆宰写在雅اء承载字母上？",
+    "raw_answer": "“سُئِلَ”中的汉姆宰写作“ئ”，因为这是词中汉姆宰。判定承载字母时比较汉姆宰本身及其前一字母的元音强弱；汉姆宰带kasra，前一字母带ḍamma，而kasra强于ḍamma，所以汉姆宰写在雅اء承载字母上。",
+    "page_title": "阿拉伯语词中汉姆宰的承载规则"
+  },
+  "hamza_analysis": {
+    "position": "词中",
+    "seat": "雅اء承载字母（ئ）",
+    "preceding_letter": "س（带ḍamma：سُ）",
+    "following_letter": "ل（带fatḥa：لَ）",
+    "decision_reason": "汉姆宰带kasra（ِ），前一字母带ḍamma（ُ）。在常用的元音强弱排序中，kasra强于ḍamma，因此选择雅اء作为承载字母。"
+  },
+  "rule_statement": "词中汉姆宰的承载字母通常依据汉姆宰及其前一字母的元音强弱确定；kasra强于ḍamma、fatḥa和sukūn，因此优先写在雅اء上。",
+  "exception_notes": "本例适用一般的词中汉姆宰承载规则；实际拼写还需结合完整元音标注和传统词形核对。"
+}

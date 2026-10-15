@@ -1,0 +1,45 @@
+{
+  "keywords": [
+    "词尾汉姆宰",
+    "独立汉姆宰",
+    "ء",
+    "sukūn",
+    "词尾承载字母",
+    "جُزْء"
+  ],
+  "question": "为什么“جُزْء”中的词尾汉姆宰独立写在字母线上？",
+  "has_exception": true,
+  "rule_category": "汉姆宰位置",
+  "answer": "“جُزْء”中的汉姆宰位于词尾，前面的ز带sukūn（ْ）。按照常见的词尾汉姆宰规则，当前置字母带sukūn时，汉姆宰可独立写在字母线上，形成“ء”。因此该词写作“جُزْء”，意为‘部分’。",
+  "examples": [
+    {
+      "arabic_example": "جُزْء",
+      "transliteration_or_translation": "juz'，‘部分’",
+      "explanation": "词尾汉姆宰前的ز带sukūn，因此汉姆宰独立写在字母线上。"
+    },
+    {
+      "arabic_example": "مَلْجَأ",
+      "transliteration_or_translation": "malja'，‘避难所’",
+      "explanation": "这是词尾汉姆宰写在阿列夫上的例子；前置字母ج带fatḥa，因而形成أ，而不是独立的ء。"
+    },
+    {
+      "arabic_example": "قَارِئ",
+      "transliteration_or_translation": "qāri'，‘读者’",
+      "explanation": "这是词尾汉姆宰写在雅اء承载字母上的例子；前置字母ر带kasra，因此写成ئ。"
+    }
+  ],
+  "source_record": {
+    "raw_question": "为什么“جُزْء”中的词尾汉姆宰独立写在字母线上？",
+    "raw_answer": "“جُزْء”中的汉姆宰位于词尾。词尾汉姆宰的写法主要根据它前面的字母及其元音判断；当它前面的字母带sukūn时，汉姆宰通常独立写在字母线上，因此写作ء，而不写成أ、ؤ或ئ。",
+    "page_title": "阿拉伯语词尾汉姆宰的书写规则"
+  },
+  "hamza_analysis": {
+    "position": "词尾",
+    "seat": "独立形式、写在字母线上（ء）",
+    "preceding_letter": "ز（带sukūn：زْ）",
+    "following_letter": "无，汉姆宰位于词末",
+    "decision_reason": "前置字母ز带sukūn，既没有kasra、ḍamma或fatḥa来要求汉姆宰承载在ئ、ؤ或أ上，因此词尾汉姆宰独立写作ء。"
+  },
+  "rule_statement": "词尾汉姆宰的承载形式主要依据前置字母的元音确定；当前置字母带sukūn或属于相应的长元音环境时，汉姆宰常独立写在字母线上。",
+  "exception_notes": "词尾汉姆宰的完整判定还要考虑前置字母是否为长元音字母及传统词形；不能只根据汉姆宰在词尾这一位置机械选择同一种承载形式。"
+}
