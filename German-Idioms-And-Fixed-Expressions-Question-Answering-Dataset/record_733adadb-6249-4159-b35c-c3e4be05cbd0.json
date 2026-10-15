@@ -1,0 +1,36 @@
+{
+  "answer": "Da liegt der Hase im Pfeffer 的字面意思是“兔子躺在胡椒里”，实际用于表示“问题的症结就在这里”或“真正的困难在于此”。它常用于分析一件事为什么失败、计划为什么受阻，或指出被忽略的根本原因，语体偏口语化。例如在项目缺少负责人的情况下，可以说 Wir haben genug Geld und gute Ideen, aber niemand übernimmt die Organisation – da liegt der Hase im Pfeffer。",
+  "examples": [
+    {
+      "german_sentence": "Wir haben genug Geld und gute Ideen, aber niemand übernimmt die Organisation – da liegt der Hase im Pfeffer.",
+      "chinese_translation": "我们既有足够的资金，也有不错的想法，但没人负责组织工作——问题的症结就在这里。",
+      "usage_context": "说话者在分析项目迟迟无法启动的原因时，指出真正的瓶颈不是资金或创意，而是缺少负责人。"
+    },
+    {
+      "german_sentence": "Warum der Antrag abgelehnt wurde, steht im Kleingedruckten; da liegt der Hase im Pfeffer.",
+      "chinese_translation": "申请被拒的原因写在细则里；关键问题就在那儿。",
+      "usage_context": "表达者提醒他人注意容易被忽略的细节，并强调该细节决定了结果。"
+    }
+  ],
+  "question": "德语表达 Da liegt der Hase im Pfeffer 的实际含义是什么，通常在什么情况下使用？",
+  "question_type": "实际含义解释",
+  "actual_meaning": "问题的关键、症结或真正困难之处就在这里。它通常用于指出表面现象背后的根本原因。",
+  "source_webpage": {
+    "page_title": "德语熟语 Da liegt der Hase im Pfeffer",
+    "source_url": "",
+    "raw_content": "<html><head><title>Da liegt der Hase im Pfeffer</title></head><body><h1>Da liegt der Hase im Pfeffer</h1><p>字面义：兔子躺在胡椒里。</p><p>实际含义：问题的关键或真正困难之处就在这里。</p><p>该表达常用于解释某件事失败或复杂的根本原因，语体较为口语化。</p></body></html>"
+  },
+  "literal_meaning": "兔子躺在胡椒里。",
+  "usage_conditions": [
+    "常用于口语和非正式书面语中，用来指出某个问题的核心所在。",
+    "通常出现在分析原因、解释失败或揭示困难来源的语境中。",
+    "表达带有强调或恍然大悟的色彩，但一般不具有冒犯性。"
+  ],
+  "german_expression": "Da liegt der Hase im Pfeffer",
+  "expression_category": "成语",
+  "related_expressions": [
+    "Der Knackpunkt ist ...",
+    "Das ist der springende Punkt.",
+    "Die Ursache liegt in ..."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "related_expressions": [
+    "etwas Offensichtliches übersehen",
+    "etwas nicht sehen wollen",
+    "blind für etwas sein"
+  ],
+  "answer": "这句话并不是说对方的眼睛上真的有西红柿，而是用 Tomaten auf den Augen haben 夸张地表示“没有看到眼前明显的东西”。在例句中，钥匙就在手机旁边，对方却没有发现，因此说话者用带有调侃和轻微责备的语气提醒他。由于这种表达比较口语化且可能显得直接，通常适合熟人之间使用。",
+  "examples": [
+    {
+      "german_sentence": "Du hast doch Tomaten auf den Augen! Die Schlüssel liegen direkt neben deinem Handy.",
+      "chinese_translation": "你真是视而不见！钥匙就放在你手机旁边。",
+      "usage_context": "说话者以熟人间的调侃语气，指出对方没有看到就在眼前的钥匙。"
+    },
+    {
+      "german_sentence": "Ich hatte wohl Tomaten auf den Augen und habe das Warnschild am Eingang nicht bemerkt.",
+      "chinese_translation": "我大概是没注意到眼前的东西，竟然没有看到入口处的警示牌。",
+      "usage_context": "说话者自嘲地承认自己漏看了明显的警示牌，语气比直接责备他人更缓和。"
+    }
+  ],
+  "question": "例句 Du hast doch Tomaten auf den Augen! Die Schlüssel liegen direkt neben deinem Handy. 表达了怎样的语气和含义？",
+  "question_type": "例句理解",
+  "actual_meaning": "没有注意到眼前明显存在的人或事，或者对显而易见的事实视而不见。",
+  "source_webpage": {
+    "page_title": "德语惯用表达 Tomaten auf den Augen haben",
+    "source_url": "",
+    "raw_content": "<html><head><title>Tomaten auf den Augen haben</title></head><body><h1>Tomaten auf den Augen haben</h1><p>字面义：眼睛上长着西红柿。</p><p>实际含义：没有看到眼前明显的事物，或对显而易见的事实视而不见。</p><p>该表达多用于熟人之间的口语交流，有时带有戏谑或轻微责备意味。</p></body></html>"
+  },
+  "literal_meaning": "眼睛上长着西红柿，因此什么也看不见。",
+  "usage_conditions": [
+    "主要用于口语，常见于朋友、家人或关系较熟的同事之间。",
+    "通常带有调侃、戏谑或轻微责备色彩，不宜随意对不熟悉的人使用。",
+    "表达针对的是暂时没有发现某事，不一定表示对方真的粗心或能力不足。"
+  ],
+  "german_expression": "Tomaten auf den Augen haben",
+  "expression_category": "惯用表达"
+}

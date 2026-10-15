@@ -1,0 +1,36 @@
+{
+  "related_expressions": [
+    "zwei Ziele auf einmal erreichen",
+    "zwei Vorteile miteinander verbinden",
+    "eine Win-win-Situation schaffen"
+  ],
+  "answer": "zwei Fliegen mit einer Klappe schlagen 字面上是“用一下拍子打死两只苍蝇”，实际表示一次行动同时达到两个目的，即“一举两得”。它适合用于日常会话以及工作、学习和出行计划等较为自然的语境，通常用来积极评价某种高效安排。例如一次出差既拜访客户又参观展会时，可以使用该表达。在正式公文中，则可以换成更中性的同时实现两个目标。",
+  "examples": [
+    {
+      "german_sentence": "Wenn wir das Treffen in Berlin abhalten, können wir den Kunden besuchen und gleichzeitig die Messe besichtigen – so schlagen wir zwei Fliegen mit einer Klappe.",
+      "chinese_translation": "如果我们在柏林举行会议，就可以同时拜访客户并参观展会——这样就能一举两得。",
+      "usage_context": "说话者说明一次出差如何兼顾商务拜访和展会参观，以强调安排的效率。"
+    },
+    {
+      "german_sentence": "Mit einem gemeinsamen Workshop schlagen wir zwei Fliegen mit einer Klappe: Die neuen Kollegen lernen das Team kennen, und wir entwickeln den Projektplan.",
+      "chinese_translation": "通过一次联合研讨会，我们可以一举两得：新同事能够熟悉团队，我们也能制定项目计划。",
+      "usage_context": "在工作场景中，该表达用于概括一项活动同时服务于团队融入和项目规划两个目标。"
+    }
+  ],
+  "question": "zwei Fliegen mit einer Klappe schlagen 适合在什么语境中使用？",
+  "question_type": "语用条件说明",
+  "actual_meaning": "通过一次行动同时实现两个目标，即一举两得或一箭双雕。",
+  "source_webpage": {
+    "page_title": "德语俗语 Zwei Fliegen mit einer Klappe schlagen",
+    "source_url": "",
+    "raw_content": "<html><head><title>Zwei Fliegen mit einer Klappe schlagen</title></head><body><h1>Zwei Fliegen mit einer Klappe schlagen</h1><p>字面义：用一下拍子打死两只苍蝇。</p><p>实际含义：通过一次行动同时达到两个目的，一举两得。</p><p>该俗语可用于日常会话、工作计划和问题解决等场景，通常含有积极评价。</p></body></html>"
+  },
+  "literal_meaning": "用一下拍子同时打死两只苍蝇。",
+  "usage_conditions": [
+    "可用于日常口语，也常见于工作、学习和计划安排等非正式语境。",
+    "通常用于肯定高效的安排，但并不保证两个目标都能完全实现。",
+    "表达本身较为形象，正式公文中可根据语体改用 gleichzeitig zwei Ziele erreichen 等中性说法。"
+  ],
+  "german_expression": "zwei Fliegen mit einer Klappe schlagen",
+  "expression_category": "俗语"
+}
