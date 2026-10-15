@@ -1,0 +1,210 @@
+{
+  "rag_record": {
+    "query_text": "被许可方获授予的软件使用权是否具有排他性、可转让性和再许可权，允许使用的地域及场景是什么？",
+    "context_chunks": [
+      "CH1",
+      "CH2"
+    ],
+    "evidence_references": [
+      "E1"
+    ],
+    "retrieval_filter": {
+      "topics": [
+        "软件许可",
+        "使用范围",
+        "再许可限制"
+      ],
+      "clause_types": [
+        "授权范围",
+        "期限与地域"
+      ],
+      "authorization_dimensions": [
+        "授权范围",
+        "地域",
+        "期限"
+      ]
+    },
+    "answer_support_scope": "回答应限定在C1规定的软件使用许可范围内：许可为非独占且不可转让，仅允许在中国大陆直营网点使用，不得再许可、出租或向第三方提供服务。"
+  },
+  "source_data": {
+    "document_reference": "LIC-001",
+    "contract_text": "软件平台许可与技术支持协议。第一条 授权范围。1.1 许可方星河软件授予被许可方云栖零售一项非独占、不可转让的许可，可在其中国大陆直营网点内部署并使用星河库存管理软件，不包括再许可、出租或向第三方提供服务。第二条 期限与地域。2.1 许可期限自2025年1月1日起至2027年12月31日止，地域限于中国大陆。第三条 许可费。3.1 被许可方应支付一次性许可费人民币180000元，合同签署后10个工作日内支付。",
+    "clause_segments": [
+      {
+        "clause_reference": "C1",
+        "parent_reference": "",
+        "section_path": [
+          "第一条 授权范围",
+          "1.1 使用许可"
+        ],
+        "clause_title": "使用许可",
+        "clause_text": "许可方星河软件授予被许可方云栖零售一项非独占、不可转让的许可，可在其中国大陆直营网点内部署并使用星河库存管理软件，不包括再许可、出租或向第三方提供服务。"
+      },
+      {
+        "clause_reference": "C2",
+        "parent_reference": "",
+        "section_path": [
+          "第二条 期限与地域",
+          "2.1 许可期限"
+        ],
+        "clause_title": "许可期限与地域",
+        "clause_text": "许可期限自2025年1月1日起至2027年12月31日止，地域限于中国大陆。"
+      },
+      {
+        "clause_reference": "C3",
+        "parent_reference": "",
+        "section_path": [
+          "第三条 许可费",
+          "3.1 一次性许可费"
+        ],
+        "clause_title": "一次性许可费",
+        "clause_text": "被许可方应支付一次性许可费人民币180000元，合同签署后10个工作日内支付。"
+      }
+    ],
+    "legal_question": "被许可方可以在哪些范围内使用软件，是否可以再许可？",
+    "evidence_clauses": [
+      {
+        "evidence_reference": "E1",
+        "clause_reference": "C1",
+        "evidence_text": "许可方星河软件授予被许可方云栖零售一项非独占、不可转让的许可，可在其中国大陆直营网点内部署并使用星河库存管理软件，不包括再许可、出租或向第三方提供服务。",
+        "relevance_note": "该条款直接规定了许可的性质、使用地域、使用场景以及再许可、出租和对外提供服务的限制。"
+      }
+    ]
+  },
+  "query_profile": {
+    "normalized_question": "被许可方获授予的软件使用权是否具有排他性、可转让性和再许可权，允许使用的地域及场景是什么？",
+    "intent_type": "授权范围",
+    "target_topics": [
+      "软件许可",
+      "使用范围",
+      "再许可限制",
+      "地域限制"
+    ],
+    "target_attributes": [
+      "许可性质",
+      "使用场景",
+      "地域",
+      "再许可权"
+    ],
+    "question_language": "中文"
+  },
+  "retrieval_chunks": [
+    {
+      "chunk_reference": "CH1",
+      "clause_reference": "C1",
+      "chunk_text": "许可方授予被许可方一项非独占、不可转让的许可，可在中国大陆直营网点内部署并使用库存管理软件，但不得再许可、出租或向第三方提供服务。",
+      "retrieval_text": "授权范围；软件许可；非独占、不可转让；中国大陆直营网点；禁止再许可、出租及向第三方提供服务。",
+      "keywords": [
+        "非独占许可",
+        "不可转让",
+        "中国大陆",
+        "直营网点",
+        "再许可"
+      ],
+      "retrieval_metadata": {
+        "topic": "软件使用许可",
+        "authorization_dimension": "授权范围",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "CH2",
+      "clause_reference": "C2",
+      "chunk_text": "许可期限自2025年1月1日起至2027年12月31日止，地域限于中国大陆。",
+      "retrieval_text": "期限与地域；2025年1月1日至2027年12月31日；中国大陆地域限制。",
+      "keywords": [
+        "许可期限",
+        "2027年12月31日",
+        "中国大陆"
+      ],
+      "retrieval_metadata": {
+        "topic": "许可期限与地域",
+        "authorization_dimension": "期限",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "CH3",
+      "clause_reference": "C3",
+      "chunk_text": "被许可方应支付一次性许可费人民币180000元，合同签署后10个工作日内支付。",
+      "retrieval_text": "许可费用；人民币180000元；合同签署后10个工作日内付款。",
+      "keywords": [
+        "许可费",
+        "180000元",
+        "付款期限"
+      ],
+      "retrieval_metadata": {
+        "topic": "许可费",
+        "authorization_dimension": "费用",
+        "is_leaf_clause": true
+      }
+    }
+  ],
+  "evidence_alignment": [
+    {
+      "evidence_reference": "E1",
+      "matched_clause_references": [
+        "C1"
+      ],
+      "evidence_text": "许可方授予被许可方一项非独占、不可转让的许可，可在中国大陆直营网点内部署并使用库存管理软件，但不得再许可、出租或向第三方提供服务。",
+      "relevance_score": 0.99,
+      "support_type": "直接支持",
+      "alignment_rationale": "C1同时明确了许可的非独占和不可转让属性、允许的使用地域及场景，并明确排除了再许可、出租和对外提供服务，因此能够直接回答问题。"
+    }
+  ],
+  "normalized_clauses": [
+    {
+      "clause_reference": "C1",
+      "parent_reference": "",
+      "section_path": [
+        "第一条 授权范围",
+        "1.1 使用许可"
+      ],
+      "clause_title": "使用许可",
+      "clause_text": "许可方授予被许可方一项非独占、不可转让的许可，可在中国大陆直营网点内部署并使用库存管理软件，但不得再许可、出租或向第三方提供服务。",
+      "clause_type": "授权范围",
+      "topic_tags": [
+        "软件许可",
+        "非独占许可",
+        "不可转让",
+        "再许可限制",
+        "地域限制"
+      ],
+      "retrieval_text": "第一条 授权范围｜1.1 使用许可｜软件许可：非独占、不可转让，仅限中国大陆直营网点内部署和使用，不得再许可、出租或向第三方提供服务。"
+    },
+    {
+      "clause_reference": "C2",
+      "parent_reference": "",
+      "section_path": [
+        "第二条 期限与地域",
+        "2.1 许可期限"
+      ],
+      "clause_title": "许可期限与地域",
+      "clause_text": "许可期限自2025年1月1日起至2027年12月31日止，地域限于中国大陆。",
+      "clause_type": "期限与地域",
+      "topic_tags": [
+        "许可期限",
+        "中国大陆",
+        "地域限制"
+      ],
+      "retrieval_text": "第二条 期限与地域｜2.1 许可期限｜许可期限为2025年1月1日至2027年12月31日，地域为中国大陆。"
+    },
+    {
+      "clause_reference": "C3",
+      "parent_reference": "",
+      "section_path": [
+        "第三条 许可费",
+        "3.1 一次性许可费"
+      ],
+      "clause_title": "一次性许可费",
+      "clause_text": "被许可方应支付一次性许可费人民币180000元，合同签署后10个工作日内支付。",
+      "clause_type": "费用",
+      "topic_tags": [
+        "许可费",
+        "一次性付款",
+        "付款期限"
+      ],
+      "retrieval_text": "第三条 许可费｜3.1 一次性许可费｜一次性许可费为人民币180000元，合同签署后10个工作日内支付。"
+    }
+  ]
+}

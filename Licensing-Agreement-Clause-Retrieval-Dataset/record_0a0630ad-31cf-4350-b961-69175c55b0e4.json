@@ -1,0 +1,305 @@
+{
+  "rag_record": {
+    "query_text": "许可方可基于哪些违约情形解除专利许可协议，解除后被许可方的专利实施和技术资料处置义务是什么？",
+    "context_chunks": [
+      "PH3",
+      "PH4",
+      "PH1"
+    ],
+    "evidence_references": [
+      "E4",
+      "E5"
+    ],
+    "retrieval_filter": {
+      "topics": [
+        "违约解除",
+        "解除后义务",
+        "专利许可"
+      ],
+      "clause_types": [
+        "终止与解除",
+        "终止后义务"
+      ],
+      "authorization_dimensions": [
+        "终止",
+        "授权范围"
+      ]
+    },
+    "answer_support_scope": "可据P4回答：连续两个季度未支付运行费或未经许可向第三方再许可时，许可方可书面通知解除；可据P5回答：解除后应立即停止新的专利实施，并在60日内销毁或返还技术资料载体，但已依法售出的设备可继续获得售后维护。"
+  },
+  "source_data": {
+    "document_reference": "LIC-003",
+    "contract_text": "工业检测算法专利许可协议。第一条 专利许可。1.1 许可方北辰技术研究院授予被许可方安澜制造一项非独占、不可再许可的专利实施许可，仅限被许可方自有工厂生产内部检测设备，不得向第三方销售包含该算法的独立软件。第二条 许可费与报告。2.1 被许可方支付首期许可费人民币120000元，并按使用该算法制造的合格设备销售额的2.5%支付运行费。2.2 被许可方每季度提交销售及使用报告。第三条 终止。3.1 如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。3.2 协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。",
+    "clause_segments": [
+      {
+        "clause_reference": "P1",
+        "parent_reference": "",
+        "section_path": [
+          "第一条 专利许可",
+          "1.1 实施范围"
+        ],
+        "clause_title": "实施范围",
+        "clause_text": "许可方授予被许可方一项非独占、不可再许可的专利实施许可，仅限被许可方自有工厂生产内部检测设备，不得向第三方销售包含该算法的独立软件。"
+      },
+      {
+        "clause_reference": "P2",
+        "parent_reference": "",
+        "section_path": [
+          "第二条 许可费与报告",
+          "2.1 许可费"
+        ],
+        "clause_title": "许可费",
+        "clause_text": "被许可方支付首期许可费人民币120000元，并按使用该算法制造的合格设备销售额的2.5%支付运行费。"
+      },
+      {
+        "clause_reference": "P3",
+        "parent_reference": "",
+        "section_path": [
+          "第二条 许可费与报告",
+          "2.2 报告义务"
+        ],
+        "clause_title": "报告义务",
+        "clause_text": "被许可方每季度提交销售及使用报告。"
+      },
+      {
+        "clause_reference": "P4",
+        "parent_reference": "",
+        "section_path": [
+          "第三条 终止",
+          "3.1 解除事由"
+        ],
+        "clause_title": "解除事由",
+        "clause_text": "如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。"
+      },
+      {
+        "clause_reference": "P5",
+        "parent_reference": "",
+        "section_path": [
+          "第三条 终止",
+          "3.2 解除后的处理"
+        ],
+        "clause_title": "解除后的处理",
+        "clause_text": "协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。"
+      }
+    ],
+    "legal_question": "在什么情况下许可方可以解除协议？解除后被许可方还可以继续实施专利或保留技术资料吗？",
+    "evidence_clauses": [
+      {
+        "evidence_reference": "E4",
+        "clause_reference": "P4",
+        "evidence_text": "如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。",
+        "relevance_note": "该条款列明了连续欠付运行费和未经许可再许可两项解除事由。"
+      },
+      {
+        "evidence_reference": "E5",
+        "clause_reference": "P5",
+        "evidence_text": "协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。",
+        "relevance_note": "该条款规定了解除后的停止实施、技术资料返还或销毁，以及已售设备售后维护的例外。"
+      }
+    ]
+  },
+  "query_profile": {
+    "normalized_question": "许可方可基于哪些违约情形解除专利许可协议，解除后被许可方的专利实施和技术资料处置义务是什么？",
+    "intent_type": "终止与解除",
+    "target_topics": [
+      "专利许可",
+      "违约解除",
+      "运行费支付",
+      "再许可限制",
+      "解除后义务"
+    ],
+    "target_attributes": [
+      "解除事由",
+      "通知方式",
+      "停止实施义务",
+      "资料返还或销毁",
+      "售后维护例外"
+    ],
+    "question_language": "中文"
+  },
+  "retrieval_chunks": [
+    {
+      "chunk_reference": "PH1",
+      "clause_reference": "P1",
+      "chunk_text": "被许可方获得非独占、不可再许可的专利实施许可，仅限自有工厂生产内部检测设备，不得向第三方销售包含该算法的独立软件。",
+      "retrieval_text": "专利实施许可范围；非独占；不可再许可；自有工厂内部生产；独立软件销售限制。",
+      "keywords": [
+        "专利实施许可",
+        "不可再许可",
+        "内部生产",
+        "销售限制"
+      ],
+      "retrieval_metadata": {
+        "topic": "专利许可范围",
+        "authorization_dimension": "授权范围",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "PH2",
+      "clause_reference": "P2",
+      "chunk_text": "被许可方支付首期许可费人民币120000元，并按使用该算法制造的合格设备销售额的2.5%支付运行费。",
+      "retrieval_text": "专利许可费用；首期许可费120000元；合格设备销售额2.5%运行费。",
+      "keywords": [
+        "120000元",
+        "运行费",
+        "2.5%",
+        "设备销售额"
+      ],
+      "retrieval_metadata": {
+        "topic": "专利许可费",
+        "authorization_dimension": "费用",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "PH3",
+      "clause_reference": "P4",
+      "chunk_text": "如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。",
+      "retrieval_text": "协议解除条件；连续两个季度欠付运行费；未经许可向第三方再许可；书面解除通知。",
+      "keywords": [
+        "解除协议",
+        "连续两个季度",
+        "欠付运行费",
+        "未经许可再许可",
+        "书面通知"
+      ],
+      "retrieval_metadata": {
+        "topic": "违约解除",
+        "authorization_dimension": "终止",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "PH4",
+      "clause_reference": "P5",
+      "chunk_text": "协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。",
+      "retrieval_text": "解除后的专利实施和资料义务；立即停止新的实施；60日内销毁或返还技术资料；已售设备售后维护例外。",
+      "keywords": [
+        "停止实施",
+        "60日",
+        "销毁技术资料",
+        "返还技术资料",
+        "售后维护"
+      ],
+      "retrieval_metadata": {
+        "topic": "解除后义务",
+        "authorization_dimension": "终止",
+        "is_leaf_clause": true
+      }
+    }
+  ],
+  "evidence_alignment": [
+    {
+      "evidence_reference": "E4",
+      "matched_clause_references": [
+        "P4"
+      ],
+      "evidence_text": "如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。",
+      "relevance_score": 0.99,
+      "support_type": "直接支持",
+      "alignment_rationale": "P4明确列出两项解除事由，并规定许可方通过书面通知行使解除权，能够直接支持解除条件部分的回答。"
+    },
+    {
+      "evidence_reference": "E5",
+      "matched_clause_references": [
+        "P5"
+      ],
+      "evidence_text": "协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。",
+      "relevance_score": 0.99,
+      "support_type": "直接支持",
+      "alignment_rationale": "P5直接规定了解除后的停止实施、技术资料处置期限及已售设备售后维护例外，能够回答解除后的权利和义务问题。"
+    }
+  ],
+  "normalized_clauses": [
+    {
+      "clause_reference": "P1",
+      "parent_reference": "",
+      "section_path": [
+        "第一条 专利许可",
+        "1.1 实施范围"
+      ],
+      "clause_title": "实施范围",
+      "clause_text": "被许可方获得非独占、不可再许可的专利实施许可，仅限自有工厂生产内部检测设备，不得向第三方销售包含该算法的独立软件。",
+      "clause_type": "授权范围",
+      "topic_tags": [
+        "专利许可",
+        "非独占",
+        "不可再许可",
+        "内部生产",
+        "销售限制"
+      ],
+      "retrieval_text": "第一条 专利许可｜1.1 实施范围｜非独占、不可再许可；限于自有工厂生产内部检测设备；不得向第三方销售包含算法的独立软件。"
+    },
+    {
+      "clause_reference": "P2",
+      "parent_reference": "",
+      "section_path": [
+        "第二条 许可费与报告",
+        "2.1 许可费"
+      ],
+      "clause_title": "许可费",
+      "clause_text": "被许可方支付首期许可费人民币120000元，并按使用该算法制造的合格设备销售额的2.5%支付运行费。",
+      "clause_type": "费用",
+      "topic_tags": [
+        "首期许可费",
+        "运行费",
+        "销售额提成"
+      ],
+      "retrieval_text": "第二条 许可费与报告｜2.1 许可费｜首期许可费人民币120000元，运行费为合格设备销售额的2.5%。"
+    },
+    {
+      "clause_reference": "P3",
+      "parent_reference": "",
+      "section_path": [
+        "第二条 许可费与报告",
+        "2.2 报告义务"
+      ],
+      "clause_title": "报告义务",
+      "clause_text": "被许可方每季度提交销售及使用报告。",
+      "clause_type": "报告义务",
+      "topic_tags": [
+        "季度报告",
+        "销售报告",
+        "使用报告"
+      ],
+      "retrieval_text": "第二条 许可费与报告｜2.2 报告义务｜被许可方须每季度提交销售及使用报告。"
+    },
+    {
+      "clause_reference": "P4",
+      "parent_reference": "",
+      "section_path": [
+        "第三条 终止",
+        "3.1 解除事由"
+      ],
+      "clause_title": "解除事由",
+      "clause_text": "如被许可方连续两个季度未支付运行费，或未经许可向第三方再许可，许可方可书面通知解除协议。",
+      "clause_type": "终止与解除",
+      "topic_tags": [
+        "解除事由",
+        "欠付运行费",
+        "未经许可再许可",
+        "书面通知"
+      ],
+      "retrieval_text": "第三条 终止｜3.1 解除事由｜连续两个季度未支付运行费，或未经许可向第三方再许可时，许可方可书面通知解除协议。"
+    },
+    {
+      "clause_reference": "P5",
+      "parent_reference": "",
+      "section_path": [
+        "第三条 终止",
+        "3.2 解除后的处理"
+      ],
+      "clause_title": "解除后的处理",
+      "clause_text": "协议解除后，被许可方应立即停止新的专利实施，并在60日内销毁或返还含有许可方技术资料的载体，但已依法售出的设备可继续获得售后维护。",
+      "clause_type": "终止后义务",
+      "topic_tags": [
+        "停止实施",
+        "资料返还",
+        "资料销毁",
+        "售后维护例外"
+      ],
+      "retrieval_text": "第三条 终止｜3.2 解除后的处理｜解除后立即停止新的专利实施，60日内销毁或返还技术资料载体；已依法售出的设备可继续售后维护。"
+    }
+  ]
+}

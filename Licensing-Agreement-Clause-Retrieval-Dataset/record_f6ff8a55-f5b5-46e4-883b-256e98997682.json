@@ -1,0 +1,276 @@
+{
+  "rag_record": {
+    "query_text": "歌曲《潮汐之后》的数字播放授权期限截止日期及授权地域是什么？",
+    "context_chunks": [
+      "MH2",
+      "MH3",
+      "MH1"
+    ],
+    "evidence_references": [
+      "E2",
+      "E3"
+    ],
+    "retrieval_filter": {
+      "topics": [
+        "授权期限",
+        "授权地域",
+        "音乐作品许可"
+      ],
+      "clause_types": [
+        "期限与地域",
+        "期限届满处理"
+      ],
+      "authorization_dimensions": [
+        "期限与地域",
+        "授权范围"
+      ]
+    },
+    "answer_support_scope": "可据M2回答授权截止日期为2026年6月30日，授权地域为中国大陆、香港和澳门；据M3补充说明到期后停止新增播放，已缓存内容须在30日内下线。"
+  },
+  "source_data": {
+    "document_reference": "LIC-002",
+    "contract_text": "原创音乐作品数字发行许可协议。第一条 授权内容。1.1 许可方澄海音乐工作室授权被许可方声浪平台在授权地域内通过网站、移动应用及智能电视提供歌曲《潮汐之后》的在线播放和按需点播服务，不包含下载、改编或再许可权。第二条 授权期限与地域。2.1 授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。2.2 期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。第三条 版税。3.1 被许可方按该歌曲含税净收入的8%向许可方支付版税，每季度结算一次。",
+    "clause_segments": [
+      {
+        "clause_reference": "M1",
+        "parent_reference": "",
+        "section_path": [
+          "第一条 授权内容",
+          "1.1 数字传播权"
+        ],
+        "clause_title": "数字传播权",
+        "clause_text": "许可方授权被许可方在授权地域内通过网站、移动应用及智能电视提供歌曲《潮汐之后》的在线播放和按需点播服务，不包含下载、改编或再许可权。"
+      },
+      {
+        "clause_reference": "M2",
+        "parent_reference": "",
+        "section_path": [
+          "第二条 授权期限与地域",
+          "2.1 期限和地域"
+        ],
+        "clause_title": "期限和地域",
+        "clause_text": "授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。"
+      },
+      {
+        "clause_reference": "M3",
+        "parent_reference": "",
+        "section_path": [
+          "第二条 授权期限与地域",
+          "2.2 期限届满后的处理"
+        ],
+        "clause_title": "期限届满后的处理",
+        "clause_text": "期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。"
+      },
+      {
+        "clause_reference": "M4",
+        "parent_reference": "",
+        "section_path": [
+          "第三条 版税",
+          "3.1 版税结算"
+        ],
+        "clause_title": "版税结算",
+        "clause_text": "被许可方按该歌曲含税净收入的8%向许可方支付版税，每季度结算一次。"
+      }
+    ],
+    "legal_question": "该歌曲的数字播放授权何时到期，授权地域包括哪些地区？",
+    "evidence_clauses": [
+      {
+        "evidence_reference": "E2",
+        "clause_reference": "M2",
+        "evidence_text": "授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。",
+        "relevance_note": "该条款直接给出授权起止日期和完整授权地域，是判断授权期限与地域的核心证据。"
+      },
+      {
+        "evidence_reference": "E3",
+        "clause_reference": "M3",
+        "evidence_text": "期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。",
+        "relevance_note": "该条款补充说明期限届满后的内容处置要求，但不改变授权到期日。"
+      }
+    ]
+  },
+  "query_profile": {
+    "normalized_question": "歌曲《潮汐之后》的数字播放授权期限截止日期及授权地域是什么？",
+    "intent_type": "期限与地域",
+    "target_topics": [
+      "音乐作品许可",
+      "数字传播",
+      "授权期限",
+      "授权地域"
+    ],
+    "target_attributes": [
+      "起始日期",
+      "到期日期",
+      "授权地域",
+      "期限届满后的处理"
+    ],
+    "question_language": "中文"
+  },
+  "retrieval_chunks": [
+    {
+      "chunk_reference": "MH1",
+      "clause_reference": "M1",
+      "chunk_text": "被许可方可在授权地域内通过网站、移动应用及智能电视提供歌曲的在线播放和按需点播服务，但不享有下载、改编或再许可权。",
+      "retrieval_text": "音乐作品数字传播授权；网站、移动应用、智能电视；在线播放和点播；不包括下载、改编及再许可。",
+      "keywords": [
+        "数字传播",
+        "在线播放",
+        "按需点播",
+        "下载限制",
+        "再许可"
+      ],
+      "retrieval_metadata": {
+        "topic": "音乐作品数字许可",
+        "authorization_dimension": "授权范围",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "MH2",
+      "clause_reference": "M2",
+      "chunk_text": "授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。",
+      "retrieval_text": "授权期限与授权地域；2024年7月1日至2026年6月30日；中国大陆、香港、澳门。",
+      "keywords": [
+        "到期日",
+        "2026年6月30日",
+        "中国大陆",
+        "香港",
+        "澳门"
+      ],
+      "retrieval_metadata": {
+        "topic": "授权期限与地域",
+        "authorization_dimension": "期限与地域",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "MH3",
+      "clause_reference": "M3",
+      "chunk_text": "期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。",
+      "retrieval_text": "授权到期后的处理；停止新增播放；缓存内容30日内下线。",
+      "keywords": [
+        "期限届满",
+        "停止新增播放",
+        "缓存内容",
+        "30日下线"
+      ],
+      "retrieval_metadata": {
+        "topic": "期限届满处理",
+        "authorization_dimension": "期限",
+        "is_leaf_clause": true
+      }
+    },
+    {
+      "chunk_reference": "MH4",
+      "clause_reference": "M4",
+      "chunk_text": "被许可方按该歌曲含税净收入的8%向许可方支付版税，每季度结算一次。",
+      "retrieval_text": "音乐许可版税；含税净收入8%；季度结算。",
+      "keywords": [
+        "版税",
+        "8%",
+        "季度结算"
+      ],
+      "retrieval_metadata": {
+        "topic": "版税",
+        "authorization_dimension": "费用",
+        "is_leaf_clause": true
+      }
+    }
+  ],
+  "evidence_alignment": [
+    {
+      "evidence_reference": "E2",
+      "matched_clause_references": [
+        "M2"
+      ],
+      "evidence_text": "授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。",
+      "relevance_score": 0.99,
+      "support_type": "直接支持",
+      "alignment_rationale": "M2同时明确了授权起始日、到期日和三个授权地域，能够直接回答问题。"
+    },
+    {
+      "evidence_reference": "E3",
+      "matched_clause_references": [
+        "M3"
+      ],
+      "evidence_text": "期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。",
+      "relevance_score": 0.87,
+      "support_type": "限定条件支持",
+      "alignment_rationale": "M3不用于确定到期日期或地域，但补充了到期后停止新增播放及缓存内容下线的处理要求。"
+    }
+  ],
+  "normalized_clauses": [
+    {
+      "clause_reference": "M1",
+      "parent_reference": "",
+      "section_path": [
+        "第一条 授权内容",
+        "1.1 数字传播权"
+      ],
+      "clause_title": "数字传播权",
+      "clause_text": "被许可方可在授权地域内通过网站、移动应用及智能电视提供歌曲的在线播放和按需点播服务，但不享有下载、改编或再许可权。",
+      "clause_type": "授权范围",
+      "topic_tags": [
+        "音乐作品",
+        "在线播放",
+        "按需点播",
+        "下载限制",
+        "再许可限制"
+      ],
+      "retrieval_text": "第一条 授权内容｜1.1 数字传播权｜允许通过网站、移动应用和智能电视在线播放及点播，不包括下载、改编和再许可。"
+    },
+    {
+      "clause_reference": "M2",
+      "parent_reference": "",
+      "section_path": [
+        "第二条 授权期限与地域",
+        "2.1 期限和地域"
+      ],
+      "clause_title": "期限和地域",
+      "clause_text": "授权期限自2024年7月1日起至2026年6月30日止；授权地域为中国大陆、香港和澳门。",
+      "clause_type": "期限与地域",
+      "topic_tags": [
+        "授权期限",
+        "到期日",
+        "中国大陆",
+        "香港",
+        "澳门"
+      ],
+      "retrieval_text": "第二条 授权期限与地域｜2.1 期限和地域｜授权期限为2024年7月1日至2026年6月30日，地域为中国大陆、香港和澳门。"
+    },
+    {
+      "clause_reference": "M3",
+      "parent_reference": "",
+      "section_path": [
+        "第二条 授权期限与地域",
+        "2.2 期限届满后的处理"
+      ],
+      "clause_title": "期限届满后的处理",
+      "clause_text": "期限届满后，被许可方应停止新增播放，但已缓存内容应在30日内下线。",
+      "clause_type": "期限届满处理",
+      "topic_tags": [
+        "期限届满",
+        "停止播放",
+        "缓存内容",
+        "下线期限"
+      ],
+      "retrieval_text": "第二条 授权期限与地域｜2.2 期限届满后的处理｜到期后停止新增播放，已缓存内容须在30日内下线。"
+    },
+    {
+      "clause_reference": "M4",
+      "parent_reference": "",
+      "section_path": [
+        "第三条 版税",
+        "3.1 版税结算"
+      ],
+      "clause_title": "版税结算",
+      "clause_text": "被许可方按该歌曲含税净收入的8%向许可方支付版税，每季度结算一次。",
+      "clause_type": "费用",
+      "topic_tags": [
+        "版税",
+        "净收入",
+        "季度结算"
+      ],
+      "retrieval_text": "第三条 版税｜3.1 版税结算｜按歌曲含税净收入的8%支付版税，每季度结算。"
+    }
+  ]
+}
