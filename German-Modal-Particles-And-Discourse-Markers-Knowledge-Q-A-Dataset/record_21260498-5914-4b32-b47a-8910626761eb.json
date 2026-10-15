@@ -1,0 +1,62 @@
+{
+  "answer": "情态小品词 ja 不能简单等同于回答问题时的“是”。它通常出现在一个完整命题的中场，用来表示说话者认为该命题对听话者来说已经知道、可以识别或具有明显性。\n\n在 Du weißt ja, dass er morgen kommt 中，ja 提醒听话者双方已经共享或至少应当共享“他明天来”这一信息，因此中文可以译为“你也知道，他明天来”。它不是在回答一个是非问题，而是在激活共同背景知识。\n\n在 Du bist ja schon da! 中，ja 使“你已经到了”听起来像说话者当下发现并确认的事实，同时根据语调表达惊讶、感叹或亲切的注意。可以译为“你都已经到了呀”或“原来你已经到了”。\n\n位置上，情态小品词 ja 通常位于陈述句中场，例如变位动词之后或从句内部的相应中场位置。句首的 Ja, das stimmt 是回答词，直接肯定前文，不能据此推断它具有情态小品词的共同预设功能。",
+  "evidence": {
+    "supporting_excerpt": "Ja 作为情态小品词时，不等同于回答问题时的“是”。它表示说话者把命题视为听话者可以识别、已经知道或容易确认的事实，并可根据语境表达提醒、强调、惊讶或感叹。情态小品词 ja 通常位于陈述句的中场。句首的 Ja, das stimmt 是回答词，承担肯定前文的功能。",
+    "source_relation": "该原文直接支持情态小品词 ja 的共享知识、提醒和惊讶功能，并明确区分中场 ja 与句首回答词 Ja；问答中的三个例句分别展示了提醒、感叹和直接肯定。"
+  },
+  "examples": [
+    {
+      "german_sentence": "Du weißt ja, dass er morgen kommt.",
+      "chinese_translation": "你也知道，他明天要来。",
+      "pragmatic_analysis": "ja 激活了说话者认为双方已经共享的背景知识，带有提醒意味。没有 ja 时，句子只是告知或陈述事实；加入 ja 后，听话者被定位为应当知道该信息的人。"
+    },
+    {
+      "german_sentence": "Du bist ja schon da!",
+      "chinese_translation": "你都已经到了呀！",
+      "pragmatic_analysis": "这里的 ja 将“你已经到了”呈现为说话者当下确认到的明显事实，并通过感叹语调表达惊讶或欣喜。去掉 ja 后，句子只说明到达状态，缺少即时发现和情绪色彩。"
+    },
+    {
+      "german_sentence": "Ja, das stimmt.",
+      "chinese_translation": "是的，没错。",
+      "pragmatic_analysis": "句首的 Ja 是回答词，直接肯定前一句话或一个问题。它本身不表示“这个事实你也知道”的共同预设，因此不能把此处的 Ja 与 Du weißt ja 中的情态小品词 ja 当作同一语用功能。"
+    }
+  ],
+  "question": "情态小品词 ja 与回答词 Ja 有什么区别？在 Du weißt ja, dass er morgen kommt 和 Du bist ja schon da! 中，ja 如何表达提醒与惊讶？",
+  "question_type": "语气功能",
+  "usage_context": {
+    "situation": "说话者提及一个认为听话者已经知道的事实，或在看到某个出乎意料但已成为当前事实的情况时发表评论。",
+    "speaker_intention": "说话者使用 ja 将命题包装为双方可识别的背景信息；在带有感叹语调的句子中，还希望表达即时发现、惊讶或情绪反应。",
+    "listener_effect": "听话者会被提示把该内容当作共同知识或明显事实来理解；在某些语调下，也可能感到说话者在提醒自己本应知道这件事。",
+    "register": "中性到口语化，尤其常见于对话；具体的亲切、惊讶或责备色彩取决于语调和上下文。"
+  },
+  "source_webpage": {
+    "source_url": "",
+    "page_title": "德语情态小品词 ja 的语用功能",
+    "page_content": "<article><h1>德语情态小品词 ja</h1><p>Ja 作为情态小品词时，不等同于回答问题时的“是”。它表示说话者把命题视为听话者可以识别、已经知道或容易确认的事实，并可根据语境表达提醒、强调、惊讶或感叹。情态小品词 ja 通常位于陈述句的中场，例如 Du weißt ja, dass er morgen kommt。句首的 Ja, das stimmt 是回答词，承担肯定前文的功能。</p><p>在 Du bist ja schon da! 中，ja 表示说话者把对方已经到场这一事实作为当前可确认的信息，同时带有惊讶或感叹色彩。</p></article>",
+    "source_language": "德语（附中文说明）"
+  },
+  "target_expression": "ja",
+  "pragmatic_functions": [
+    "提示共享知识",
+    "确认命题的明显性",
+    "提醒听话者注意背景信息",
+    "表达惊讶或感叹"
+  ],
+  "position_constraints": [
+    {
+      "position": "陈述句中场，常位于变位动词之后",
+      "restriction": "可用于 Du weißt ja ...、Das ist ja ... 等命题内部结构。",
+      "explanation": "中场位置表明 ja 修饰整个命题的交际状态，提示其具有共享性或明显性，而不是单独回答一个问题。"
+    },
+    {
+      "position": "从句内部的中场",
+      "restriction": "在 dass、weil 等从句中，ja 仍位于从句内部的中场，不占据句首连接位置。",
+      "explanation": "情态小品词的句法位置服从所在从句的结构；它表达说话者态度，而不是建立从句之间的语法连接。"
+    },
+    {
+      "position": "句首并与前文形成 Ja, ...",
+      "restriction": "Ja, das stimmt 一类用法是回答词，主要表示肯定，不应与中场情态小品词 ja 混同。",
+      "explanation": "句首回答词独立回应前文或问题；其功能是确认对方命题，而情态小品词 ja 则把当前命题标记为共享、明显或值得注意。"
+    }
+  ]
+}

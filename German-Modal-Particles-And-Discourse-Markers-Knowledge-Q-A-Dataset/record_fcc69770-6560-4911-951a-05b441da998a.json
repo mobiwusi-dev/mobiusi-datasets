@@ -1,0 +1,62 @@
+{
+  "answer": "这里的 doch 是情态小品词，不是具有单一词典译法的实义副词。\n\n在 Du hast das doch gewusst 中，doch 提示说话者把“你知道这件事”视为此前已经存在的事实或合理预设，同时暗示这一事实与听话者当前的表现、否认或遗忘相冲突。根据语境，它可以译为“你明明知道”“你不是已经知道了吗”，但不一定带有强烈责备。\n\n在 Komm doch mit! 中，doch 放在祈使句中，弱化了直接命令的强制感，使话语更像“来嘛，一起去吧”或“你就一起过来吧”。它仍然保留劝说和推动对方行动的功能。\n\n位置上，作为情态小品词的 doch 通常出现在主句中场，例如位于变位动词之后的 Du kommst doch morgen；在祈使句中也常位于动词之后。它通常不能占据句首前场。句首的 Doch, er kommt 则更接近表示反驳或转折的句子副词，功能不同。因此，doch 的具体中文效果必须结合共同预设、对方态度和句型判断，不能机械地固定翻译。",
+  "evidence": {
+    "supporting_excerpt": "Doch 作为情态小品词时，常表示说话者认为某个事实与听话者的预期、怀疑或先前说法不一致，也可以提醒听话者注意双方共享的预设。在陈述句中，doch 通常位于句子中场；在祈使句中，它可以使邀请或要求显得较为缓和。句首的 Doch, er kommt 通常是表示反驳或转折的句子副词，不应与中场的情态小品词 doch 混同。",
+    "source_relation": "该原文直接支持 doch 的冲突预设、提醒、缓和祈使和位置区别等结论；例句分析则将这些功能具体落实到陈述句、祈使句和句首反驳结构中。"
+  },
+  "examples": [
+    {
+      "german_sentence": "Du hast das doch gewusst.",
+      "chinese_translation": "你明明知道这件事的。",
+      "pragmatic_analysis": "doch 提醒听话者这一事实被说话者视为共同已知，并暗示听话者现在的否认、惊讶或行为与该预设不一致。去掉 doch 后，句子只是在陈述听话者过去知道这件事，提醒和轻微质问的语气明显减弱。"
+    },
+    {
+      "german_sentence": "Komm doch mit!",
+      "chinese_translation": "来嘛，一起去吧！",
+      "pragmatic_analysis": "祈使句中的 doch 将直接要求转化为带有劝说和亲近感的邀请。没有 doch 的 Komm mit! 更像直接命令；加入 doch 后，强制性降低，但仍保留希望对方同行的意图。"
+    },
+    {
+      "german_sentence": "Doch, er hat die E-Mail gelesen.",
+      "chinese_translation": "不，他确实读过那封邮件。",
+      "pragmatic_analysis": "句首 Doch 带有明确反驳前述否定的功能，相当于“恰恰相反”或“不是的”。这里的 Doch 不是中场情态小品词，说明位置变化会导致话语功能变化。"
+    }
+  ],
+  "question": "在 Du hast das doch gewusst 和 Komm doch mit! 中，doch 分别表达什么语用意义？它在句法位置上有哪些限制，为什么不能简单翻译成一个固定的中文词？",
+  "question_type": "对比辨析",
+  "usage_context": {
+    "situation": "说话者认为听话者本应知道某个事实，或者在邀请对方参加活动时希望减弱命令感。",
+    "speaker_intention": "说话者借助 doch 激活双方共享的背景知识，指出当前情况与对方预期不一致，或以较亲近、劝说性的方式促使对方行动。",
+    "listener_effect": "听话者可能感到自己被提醒已经知道的事实，也可能感到邀请比直接命令更友好；在责备性语境中，doch 也可能带来轻微的质问感。",
+    "register": "主要见于口语和非正式会话；在书面语中也可以出现，但其语气高度依赖上下文。"
+  },
+  "source_webpage": {
+    "source_url": "",
+    "page_title": "德语情态小品词 doch 的语用功能",
+    "page_content": "<article><h1>德语情态小品词 doch</h1><p>Doch 作为情态小品词时，常表示说话者认为某个事实与听话者的预期、怀疑或先前说法不一致，也可以提醒听话者注意双方共享的预设。在陈述句中，doch 通常位于句子中场；在祈使句中，它可以使邀请或要求显得较为缓和。句首的 Doch, er kommt 通常是表示反驳或转折的句子副词，不应与中场的情态小品词 doch 混同。</p><p>例如：Du hast das doch gewusst. 表示说话者认为听话者本来就知道这一点；Komm doch mit! 则把直接命令缓和为带有劝说色彩的邀请。</p></article>",
+    "source_language": "德语（附中文说明）"
+  },
+  "target_expression": "doch",
+  "pragmatic_functions": [
+    "提醒共同预设",
+    "标示与预期或先前说法的冲突",
+    "缓和祈使语气",
+    "推动听话者采取行动"
+  ],
+  "position_constraints": [
+    {
+      "position": "主句中场、通常位于变位动词之后",
+      "restriction": "可出现在 Du kommst doch morgen 或 Du hast das doch gewusst 一类陈述句中。",
+      "explanation": "中场位置使 doch 作为情态小品词修饰整个命题，而不是充当句首的连接成分；它把命题与说话者和听话者共享的预设联系起来。"
+    },
+    {
+      "position": "祈使句中的动词之后",
+      "restriction": "可用于 Komm doch mit! 一类邀请或劝说句，但不宜理解为字面意义上的地点或方向副词。",
+      "explanation": "此位置上的 doch 保留推动行动的功能，同时降低直接命令的生硬程度，使语气更具劝说性。"
+    },
+    {
+      "position": "句首前场",
+      "restriction": "Doch, er kommt 这类句首用法通常是反驳或转折副词，不是同一种中场情态小品词用法。",
+      "explanation": "句首位置改变了成分的句法和话语功能；它直接回应前文命题，而不是在一个命题内部标记共享预设或语气。"
+    }
+  ]
+}
