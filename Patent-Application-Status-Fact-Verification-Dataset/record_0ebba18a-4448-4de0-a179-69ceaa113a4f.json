@@ -1,0 +1,12 @@
+{
+  "verification_label": "支持",
+  "conflicting_evidence": false,
+  "normalized_application_status": "公开",
+  "claim_text": "申请号为CN202410123456.7的专利申请已经公开，目前公开状态明确。",
+  "source_url": "",
+  "source_type": "公开书目信息",
+  "evidence_text": "公开书目信息：申请号 CN202410123456.7；发明名称：一种低功耗环境监测装置；申请日：2024年3月18日；公开日：2025年1月15日；申请公布号：CN119876543A。当前记录显示该申请已完成公开，未提供授权公告信息。",
+  "confidence_score": 0.98,
+  "evidence_summary": "公开书目信息列出了明确的申请公布号和公开日，表明该申请已经公开；记录未显示其已授权。",
+  "decision_rationale": "证据中的公开日和申请公布号直接确认了申请已公开，与断言一致，因此断言得到支持。"
+}

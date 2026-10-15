@@ -1,0 +1,12 @@
+{
+  "claim_text": "申请号为CN202307891011.2的专利申请已经获得授权，并且专利权仍然有效。",
+  "source_url": "",
+  "source_type": "专利局网页记录",
+  "evidence_text": "专利局网页记录：申请号 CN202307891011.2；发明名称：可调式数据处理方法；申请日：2023年7月6日；公开日：2024年1月11日；申请公布号：CN118765432A。当前页面仅列出申请和公开信息，未显示授权公告号、授权日、专利权终止日或有效性状态。",
+  "confidence_score": 0.94,
+  "evidence_summary": "网页记录能够确认该申请已公开，但没有授权公告、授权日期或专利权有效性信息。",
+  "decision_rationale": "现有证据只能证明申请已公开，无法据此确认其是否已经授权，也无法确认授权后的专利权是否仍然有效，因此对完整断言无法确定。",
+  "verification_label": "无法确定",
+  "conflicting_evidence": false,
+  "normalized_application_status": "未明确"
+}

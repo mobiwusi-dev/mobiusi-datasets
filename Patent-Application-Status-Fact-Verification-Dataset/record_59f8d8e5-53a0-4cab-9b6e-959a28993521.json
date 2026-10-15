@@ -1,0 +1,12 @@
+{
+  "claim_text": "申请号为CN202210654321.9的专利申请目前仍处于审查中。",
+  "source_url": "",
+  "source_type": "法律状态页面",
+  "normalized_application_status": "放弃",
+  "evidence_text": "法律状态页面：申请号 CN202210654321.9；2024年8月30日状态变更为“视为撤回”；法律状态：放弃。页面备注：申请人在规定期限内未提交审查意见答复，案件已终止继续审查。",
+  "confidence_score": 0.99,
+  "evidence_summary": "法律状态页面记录该申请因未在期限内答复而于2024年8月30日被视为撤回，状态为放弃。",
+  "decision_rationale": "证据明确记录申请已视为撤回并放弃，不再处于审查中，因此直接反驳了“目前仍处于审查中”的断言。",
+  "verification_label": "反驳",
+  "conflicting_evidence": false
+}
