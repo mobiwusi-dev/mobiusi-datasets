@@ -1,0 +1,48 @@
+{
+  "claim_text": "美国申请US18/456789于2023年3月10日提交，并主张美国临时申请US63/111222于2022年3月10日的优先权；该优先权国家为美国。",
+  "claim_facts": {
+    "claim_type": "优先权主张",
+    "subject_application_number": "US18/456789",
+    "target_application_number": "US63/111222",
+    "claimed_priority_date": "2022-03-10",
+    "claimed_country_or_region": "美国",
+    "claimed_relationship_type": "不适用"
+  },
+  "evidence_bundle": {
+    "webpage_bibliographic_info": {
+      "page_title": "专利登记页：US20240123456A1",
+      "publication_number": "US2024/0123456 A1",
+      "application_number": "US18/456789",
+      "page_url": "",
+      "page_text": "申请号：US18/456789；公开号：US2024/0123456 A1。优先权申请号 US63/111222，优先权日 2022-03-10，国家 美国。"
+    },
+    "priority_data": [
+      {
+        "priority_application_number": "US63/111222",
+        "priority_date": "2022-03-10",
+        "priority_country_or_region": "美国",
+        "priority_kind": "国家临时申请",
+        "source_text": "优先权申请号 US63/111222；优先权日 2022-03-10；国家 美国。"
+      }
+    ],
+    "application_relationship_records": []
+  },
+  "confidence_score": 0.99,
+  "evidence_support": true,
+  "supporting_evidence": [
+    {
+      "source_section": "网页书目信息",
+      "evidence_quote": "申请号：US18/456789；公开号：US2024/0123456 A1。优先权申请号 US63/111222，优先权日 2022-03-10，国家 美国。",
+      "supports_fact": "主体申请为US18/456789，且网页列出US63/111222及其2022-03-10的优先权日和美国来源",
+      "support_level": "supports"
+    },
+    {
+      "source_section": "优先权数据",
+      "evidence_quote": "优先权申请号 US63/111222；优先权日 2022-03-10；国家 美国。",
+      "supports_fact": "US18/456789主张US63/111222在美国申请产生的2022-03-10优先权",
+      "support_level": "supports"
+    }
+  ],
+  "verification_status": "supported",
+  "verification_explanation": "断言中的主体申请号、目标优先权申请号、优先权日期和国家均与网页书目信息及优先权数据完全一致，证据直接支持该优先权主张。"
+}

@@ -1,0 +1,55 @@
+{
+  "claim_text": "申请US20/888888主张日本申请JP2020-123456于2020年2月20日的优先权。",
+  "claim_facts": {
+    "claim_type": "优先权主张",
+    "subject_application_number": "US20/888888",
+    "target_application_number": "JP2020-123456",
+    "claimed_priority_date": "2020-02-20",
+    "claimed_country_or_region": "日本",
+    "claimed_relationship_type": "不适用"
+  },
+  "evidence_bundle": {
+    "webpage_bibliographic_info": {
+      "page_title": "专利登记页：US20230987654A1",
+      "publication_number": "US2023/0987654 A1",
+      "application_number": "US20/888888",
+      "page_url": "",
+      "page_text": "申请号：US20/888888；本页列示的优先权记录为 US16/777777，优先权日 2021-09-03，国家 美国；未列示日本申请 JP2020-123456。申请关联记录显示该申请为 US16/777777 的分案申请。"
+    },
+    "priority_data": [
+      {
+        "priority_application_number": "US16/777777",
+        "priority_date": "2021-09-03",
+        "priority_country_or_region": "美国",
+        "priority_kind": "国家申请",
+        "source_text": "优先权申请号 US16/777777；优先权日 2021-09-03；国家 美国。"
+      }
+    ],
+    "application_relationship_records": [
+      {
+        "related_application_number": "US16/777777",
+        "relationship_type": "分案申请",
+        "relationship_date": "2022-10-10",
+        "source_text": "US20/888888为US16/777777的分案申请，关系日期为2022-10-10。"
+      }
+    ]
+  },
+  "confidence_score": 0.99,
+  "evidence_support": false,
+  "supporting_evidence": [
+    {
+      "source_section": "网页书目信息",
+      "evidence_quote": "本页列示的优先权记录为 US16/777777，优先权日 2021-09-03，国家 美国；未列示日本申请 JP2020-123456。",
+      "supports_fact": "网页直接列出不同的美国优先权申请、日期和国家，并明确未列示断言中的日本申请",
+      "support_level": "contradicts"
+    },
+    {
+      "source_section": "优先权数据",
+      "evidence_quote": "优先权申请号 US16/777777；优先权日 2021-09-03；国家 美国。",
+      "supports_fact": "实际列示的优先权记录不是JP2020-123456，日期和国家也不符合断言",
+      "support_level": "contradicts"
+    }
+  ],
+  "verification_status": "not_supported",
+  "verification_explanation": "证据明确显示US20/888888对应的优先权记录是美国申请US16/777777，日期为2021-09-03，且网页未列示日本申请JP2020-123456。因此，断言中的目标申请号、优先权日期和国家均未得到支持，并被现有记录反驳。"
+}

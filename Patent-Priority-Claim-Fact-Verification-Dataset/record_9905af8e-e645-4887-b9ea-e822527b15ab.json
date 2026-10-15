@@ -1,0 +1,55 @@
+{
+  "claim_text": "美国申请US19/765432是US16/345678的分案申请，并主张中国申请CN20200123456.7于2020年4月15日的优先权。",
+  "claim_facts": {
+    "claim_type": "分案关系与优先权主张",
+    "subject_application_number": "US19/765432",
+    "target_application_number": "US16/345678",
+    "claimed_priority_date": "2020-04-15",
+    "claimed_country_or_region": "中国",
+    "claimed_relationship_type": "分案申请"
+  },
+  "evidence_bundle": {
+    "webpage_bibliographic_info": {
+      "page_title": "专利登记页：US20240198765A1",
+      "publication_number": "US2024/0198765 A1",
+      "application_number": "US19/765432",
+      "page_url": "",
+      "page_text": "申请号：US19/765432；申请日：2023-11-18。申请关联：该申请为 US16/345678 的继续申请（continuation application）。优先权数据：CN20200123456.7，2020-04-15，中国。"
+    },
+    "priority_data": [
+      {
+        "priority_application_number": "CN20200123456.7",
+        "priority_date": "2020-04-15",
+        "priority_country_or_region": "中国",
+        "priority_kind": "国家申请",
+        "source_text": "优先权申请号 CN20200123456.7；优先权日 2020-04-15；国家 中国。"
+      }
+    ],
+    "application_relationship_records": [
+      {
+        "related_application_number": "US16/345678",
+        "relationship_type": "继续申请",
+        "relationship_date": "2023-11-18",
+        "source_text": "US19/765432为US16/345678的继续申请，关系日期为2023-11-18。"
+      }
+    ]
+  },
+  "confidence_score": 0.98,
+  "evidence_support": false,
+  "supporting_evidence": [
+    {
+      "source_section": "优先权数据",
+      "evidence_quote": "优先权申请号 CN20200123456.7；优先权日 2020-04-15；国家 中国。",
+      "supports_fact": "断言中的优先权申请号、优先权日期和中国来源得到支持",
+      "support_level": "supports"
+    },
+    {
+      "source_section": "申请关联记录",
+      "evidence_quote": "US19/765432为US16/345678的继续申请，关系日期为2023-11-18。",
+      "supports_fact": "主体申请与US16/345678存在关联，且关系日期为2023-11-18，但关系类型是继续申请而非分案申请",
+      "support_level": "contradicts"
+    }
+  ],
+  "verification_status": "partially_supported",
+  "verification_explanation": "证据支持CN20200123456.7、2020-04-15及中国这一组优先权事实，也确认US19/765432与US16/345678存在关联。但申请关联记录明确将关系定义为继续申请，而断言称其为分案申请，因此断言仅获得部分支持。"
+}
