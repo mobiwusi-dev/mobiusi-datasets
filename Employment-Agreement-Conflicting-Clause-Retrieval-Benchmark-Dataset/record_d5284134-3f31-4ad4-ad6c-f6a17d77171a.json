@@ -1,0 +1,116 @@
+{
+  "case_source": {
+    "document_bundle": [
+      {
+        "document_name": "劳动合同主协议",
+        "document_version": "2023年6月1日生效版",
+        "document_role": "历史版本",
+        "document_text": "劳动合同主协议\n第九条 通勤交通补贴\n1. 员工因工作地点距离住所超过公司规定标准的，可享受每月交通补贴600元。\n2. 交通补贴自员工实际出勤之日起按月发放，已包含在工资单的津贴项目中。\n第十八条 合同期限\n本合同有效期自2023年6月1日至2026年5月31日。",
+        "document_format": "pdf"
+      },
+      {
+        "document_name": "劳动合同补充协议（二）",
+        "document_version": "2024年6月20日签署版",
+        "document_role": "补充协议",
+        "document_text": "劳动合同补充协议（二）\n第二条 通勤交通补贴调整\n自本补充协议签署之日起，原劳动合同第九条所约定的每月600元通勤交通补贴予以取消。员工改为适用公司统一的远程办公交通政策。\n第五条 生效与替代\n本补充协议经双方签字或盖章后生效，与原劳动合同具有同等效力；与原劳动合同不一致的，以本补充协议为准。",
+        "document_format": "docx"
+      },
+      {
+        "document_name": "远程办公交通政策过渡安排",
+        "document_version": "2024年6月20日发布版",
+        "document_role": "附件",
+        "document_text": "远程办公交通政策过渡安排\n第四条 过渡期限\n为避免政策切换影响，已签署劳动合同补充协议的员工，在2024年7月1日前仍按原劳动合同约定享受通勤交通补贴。自2024年7月1日起，统一适用远程办公交通政策。\n第六条 文件关系\n本安排作为远程办公交通政策的附件执行；如本安排与个别补充协议的生效日期约定不一致，由人力资源部门另行确认。",
+        "document_format": "pdf"
+      }
+    ],
+    "retrieval_question": "员工在2024年6月25日至6月30日期间仍在原办公地点出勤，通勤交通补贴是否已经因6月20日签署补充协议而取消？应同时检索哪些版本和过渡条款？",
+    "case_context": "员工于2024年6月20日签署补充协议，6月25日至6月30日继续到原办公地点出勤。补充协议规定签署即取消旧补贴，但同日发布的过渡安排规定补充协议员工在7月1日前仍按原合同执行。"
+  },
+  "retrieval_target": {
+    "gold_evidence_count": 3,
+    "required_evidence_pattern": "必须同时覆盖2023年主协议第九条的原补贴内容、2024年6月20日补充协议的取消及替代规则，以及同日过渡安排关于2024年7月1日前继续适用原规则的规定。必须保留版本日期和过渡截止日期。",
+    "must_cover_conflict_sides": true,
+    "query_variants": [
+      "2024年6月25日至30日通勤补贴是否取消",
+      "补充协议签署即生效与7月1日过渡期哪个优先",
+      "历史劳动合同交通补贴和远程办公政策如何衔接"
+    ]
+  },
+  "evaluation_labels": {
+    "retrieval_unit_labels": [
+      {
+        "document_name": "劳动合同主协议",
+        "document_version": "2023年6月1日生效版",
+        "section_label": "第九条 通勤交通补贴",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "版本依据",
+        "annotation_rationale": "该条款是补充协议和过渡安排共同引用的原始规则，没有它就无法判断过渡安排所称的原合同待遇具体是什么。"
+      },
+      {
+        "document_name": "劳动合同补充协议（二）",
+        "document_version": "2024年6月20日签署版",
+        "section_label": "第二条、第五条 通勤交通补贴调整及生效与替代",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突一方",
+        "annotation_rationale": "该补充协议明确规定签署即取消600元补贴并主张自身优先，构成过渡期间冲突的一方。"
+      },
+      {
+        "document_name": "远程办公交通政策过渡安排",
+        "document_version": "2024年6月20日发布版",
+        "section_label": "第四条、第六条 过渡期限及文件关系",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突另一方",
+        "annotation_rationale": "该附件规定7月1日前继续享受原补贴，并对与补充协议日期不一致的情况要求另行确认，是冲突的另一方及时间适用依据。"
+      }
+    ],
+    "coverage_score": 0.99,
+    "missing_context_risk": "高",
+    "annotation_quality_note": "本案例必须保留三个文件的版本和生效日期，不能只返回最新文件。历史版本不是无关背景，而是过渡安排明确引用的被覆盖条款；6月20日至6月30日是判定冲突的关键时间窗口。"
+  },
+  "evidence_fragments": [
+    {
+      "evidence_order": 1,
+      "document_name": "劳动合同主协议",
+      "document_version": "2023年6月1日生效版",
+      "section_label": "第九条 通勤交通补贴",
+      "text_excerpt": "1. 员工因工作地点距离住所超过公司规定标准的，可享受每月交通补贴600元。2. 交通补贴自员工实际出勤之日起按月发放，已包含在工资单的津贴项目中。",
+      "evidence_kind": "被覆盖条款",
+      "source_locator": "第2页，第九条第1至2款",
+      "evidence_explanation": "该历史版本提供了过渡期间可能继续适用的原始权利基础，也是补充协议所称被取消的具体条款。"
+    },
+    {
+      "evidence_order": 2,
+      "document_name": "劳动合同补充协议（二）",
+      "document_version": "2024年6月20日签署版",
+      "section_label": "第二条、第五条 通勤交通补贴调整及生效与替代",
+      "text_excerpt": "自本补充协议签署之日起，原劳动合同第九条所约定的每月600元通勤交通补贴予以取消。员工改为适用公司统一的远程办公交通政策。与原劳动合同不一致的，以本补充协议为准。",
+      "evidence_kind": "冲突条款",
+      "source_locator": "第1页，第2条及第5条",
+      "evidence_explanation": "该片段主张补充协议签署即取消旧补贴，并设定补充协议优先，是过渡期间冲突的第一现行规则。"
+    },
+    {
+      "evidence_order": 3,
+      "document_name": "远程办公交通政策过渡安排",
+      "document_version": "2024年6月20日发布版",
+      "section_label": "第四条、第六条 过渡期限及文件关系",
+      "text_excerpt": "已签署劳动合同补充协议的员工，在2024年7月1日前仍按原劳动合同约定享受通勤交通补贴。自2024年7月1日起，统一适用远程办公交通政策。如本安排与个别补充协议的生效日期约定不一致，由人力资源部门另行确认。",
+      "evidence_kind": "优先级条款",
+      "source_locator": "第2页，第四条及第六条",
+      "evidence_explanation": "该片段将补贴保留至7月1日，但又把不一致的生效日期交由人力资源部门确认，直接造成与补充协议签署即生效条款之间的时间和优先级冲突。"
+    }
+  ],
+  "conflict_assessment": {
+    "conflict_present": true,
+    "conflict_types": [
+      "表述冲突",
+      "优先级不明",
+      "时间版本冲突"
+    ],
+    "conflict_scope": "多重关系",
+    "priority_status": "优先顺序不明",
+    "conflict_summary": "2023年历史版本规定符合条件的员工每月享有600元通勤交通补贴；2024年6月20日补充协议规定自签署之日起取消该补贴，并声明与原合同不一致时以补充协议为准；同日发布的过渡安排却规定已签署补充协议的员工在2024年7月1日前仍按原合同享受补贴。三份文件对2024年6月20日至6月30日这一过渡期间的适用规则存在直接冲突，且过渡安排要求由人力资源部门另行确认，未给出明确优先顺序。"
+  }
+}

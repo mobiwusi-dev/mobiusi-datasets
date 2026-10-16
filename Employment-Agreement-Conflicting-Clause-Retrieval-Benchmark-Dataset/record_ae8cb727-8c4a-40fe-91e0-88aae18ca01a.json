@@ -1,0 +1,109 @@
+{
+  "case_source": {
+    "document_bundle": [
+      {
+        "document_name": "劳动合同主协议",
+        "document_version": "2024年1月1日生效版",
+        "document_role": "主协议",
+        "document_text": "劳动合同主协议\n第六条 加班管理\n1. 因工作需要安排员工延长工作时间、休息日或法定节假日工作的，须经部门负责人事先书面批准。\n2. 经批准的加班，按照国家法律规定支付加班工资；如安排调休，按照实际调休天数处理。\n3. 加班工资不包含在月度固定工资中。\n第十二条 合同文件效力\n本协议与附件均为本合同组成部分，具有同等法律效力。附件对特定事项作出具体约定的，从其约定；本协议未明确说明主协议与附件发生冲突时的优先适用顺序。\n第十三条 其他\n未尽事宜由双方另行协商。",
+        "document_format": "docx"
+      },
+      {
+        "document_name": "附件二：薪酬与加班管理办法",
+        "document_version": "2024年1月1日生效版",
+        "document_role": "附件",
+        "document_text": "附件二：薪酬与加班管理办法\n第三条 加班补贴\n1. 对适用本附件的员工，公司每月随工资发放加班补贴人民币800元。\n2. 前款加班补贴视为员工当月全部加班的包干补偿，员工在已领取补贴的情况下，不再另行主张延长工作时间、休息日或法定节假日加班工资。\n3. 本附件适用于销售支持、客户服务及项目交付岗位。\n第八条 适用关系\n本办法作为劳动合同附件，与主协议同时签署。对于主协议未明确的薪酬事项，以本办法为准。",
+        "document_format": "pdf"
+      }
+    ],
+    "retrieval_question": "销售支持岗位员工在休息日加班后，月度800元加班补贴是否已经替代法定加班工资？检索结果需要同时返回哪些条款才能判断两种约定的适用关系？",
+    "case_context": "员工属于销售支持岗位，合同主协议和附件均已签署，但两份文件没有明确说明附件中的包干补贴是否可以排除主协议关于法定加班工资的约定。"
+  },
+  "retrieval_target": {
+    "gold_evidence_count": 3,
+    "required_evidence_pattern": "必须同时覆盖主协议第六条的法定加班工资规则、附件二第三条的800元包干补贴规则，以及主协议第十二条关于主协议与附件效力关系的规定。只返回其中一方将无法判断是否存在覆盖及优先适用问题。",
+    "must_cover_conflict_sides": true,
+    "query_variants": [
+      "800元加班补贴能否替代休息日加班工资",
+      "主协议加班工资与附件包干补贴冲突如何适用",
+      "销售支持岗位加班补贴是否包括法定加班工资"
+    ]
+  },
+  "evaluation_labels": {
+    "retrieval_unit_labels": [
+      {
+        "document_name": "劳动合同主协议",
+        "document_version": "2024年1月1日生效版",
+        "section_label": "第六条 加班管理",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突一方",
+        "annotation_rationale": "该条款明确要求依法支付加班工资，是与附件包干补偿约定直接相反的核心证据。"
+      },
+      {
+        "document_name": "附件二：薪酬与加班管理办法",
+        "document_version": "2024年1月1日生效版",
+        "section_label": "第三条 加班补贴",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突另一方",
+        "annotation_rationale": "该条款将固定补贴定义为全部加班的包干补偿，并排除另行主张，是冲突的另一核心侧。"
+      },
+      {
+        "document_name": "劳动合同主协议",
+        "document_version": "2024年1月1日生效版",
+        "section_label": "第十二条 合同文件效力",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "优先级依据",
+        "annotation_rationale": "该条款说明附件对特定事项可能优先，但同时暴露主协议与附件冲突时缺乏明确排序，决定了冲突的解释范围。"
+      }
+    ],
+    "coverage_score": 0.98,
+    "missing_context_risk": "高",
+    "annotation_quality_note": "三段证据分别覆盖冲突双方和优先级背景。评测时应区分附件第三条中的岗位适用范围，避免将该包干规则错误泛化到所有员工。"
+  },
+  "evidence_fragments": [
+    {
+      "evidence_order": 1,
+      "document_name": "劳动合同主协议",
+      "document_version": "2024年1月1日生效版",
+      "section_label": "第六条 加班管理",
+      "text_excerpt": "2. 经批准的加班，按照国家法律规定支付加班工资；如安排调休，按照实际调休天数处理。3. 加班工资不包含在月度固定工资中。",
+      "evidence_kind": "冲突条款",
+      "source_locator": "第3页，第六条第2至3款",
+      "evidence_explanation": "该片段确立了主协议一侧的加班工资规则，是判断800元补贴是否能够替代法定加班工资的第一冲突侧。"
+    },
+    {
+      "evidence_order": 2,
+      "document_name": "附件二：薪酬与加班管理办法",
+      "document_version": "2024年1月1日生效版",
+      "section_label": "第三条 加班补贴",
+      "text_excerpt": "1. 对适用本附件的员工，公司每月随工资发放加班补贴人民币800元。2. 前款加班补贴视为员工当月全部加班的包干补偿，员工在已领取补贴的情况下，不再另行主张延长工作时间、休息日或法定节假日加班工资。",
+      "evidence_kind": "冲突条款",
+      "source_locator": "第2页，第三条第1至2款",
+      "evidence_explanation": "该片段规定了附件一侧的包干补偿和排除另行主张效果，只有与主协议第六条共同检索，才能识别表述冲突。"
+    },
+    {
+      "evidence_order": 3,
+      "document_name": "劳动合同主协议",
+      "document_version": "2024年1月1日生效版",
+      "section_label": "第十二条 合同文件效力",
+      "text_excerpt": "本协议与附件均为本合同组成部分，具有同等法律效力。附件对特定事项作出具体约定的，从其约定；本协议未明确说明主协议与附件发生冲突时的优先适用顺序。",
+      "evidence_kind": "优先级条款",
+      "source_locator": "第5页，第十二条",
+      "evidence_explanation": "该片段解释了为什么附件可能具有特定事项优先效力，同时明确没有解决主协议与附件发生冲突时的完整优先顺序，是判断优先级不明的必要上下文。"
+    }
+  ],
+  "conflict_assessment": {
+    "conflict_present": true,
+    "conflict_types": [
+      "表述冲突",
+      "范围重叠",
+      "优先级不明"
+    ],
+    "conflict_scope": "主协议与附件之间",
+    "priority_status": "优先顺序不明",
+    "conflict_summary": "主协议第六条规定，经批准的延长工作时间、休息日及法定节假日加班应依法支付加班工资，且加班工资不包含在固定工资中；附件二第三条则将每月800元补贴表述为全部加班的包干补偿并排除另行主张。两条款覆盖同一员工的加班报酬事项，虽然附件规定对特定薪酬事项优先，但未清楚说明其能否覆盖主协议中的法定加班工资约定。"
+  }
+}

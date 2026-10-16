@@ -1,0 +1,102 @@
+{
+  "case_source": {
+    "document_bundle": [
+      {
+        "document_name": "劳动合同正文",
+        "document_version": "2024年3月15日签署版",
+        "document_role": "主协议",
+        "document_text": "劳动合同正文\n第一条 工作内容与合同期限\n乙方担任运营专员，合同期限自2024年4月1日至2027年3月31日。\n第二条 休息休假定义\n本合同所称年休假，是指乙方依照法律及公司制度享有的带薪年度休假，不包括病假、事假及公司统一安排的停工休假。\n第八条 年休假待遇\n1. 乙方每年度可休年休假10天。\n2. 因工作需要或公司安排，乙方当年度未能休完年休假的，公司应按照未休天数支付相应的未休年休假工资。\n第十二条 休假申请与失效\n1. 乙方应至少提前3个工作日通过系统提交年休假申请。\n2. 乙方未提交申请，或者申请未获批准而未休年休假的，视为乙方自愿放弃当年度未休年休假，公司不支付未休年休假工资。\n第十六条 条款解释\n本合同各条款具有同等效力；如同一事项存在不同约定，应结合条款目的和实际适用条件解释。",
+        "document_format": "docx"
+      }
+    ],
+    "retrieval_question": "员工当年度还有3天年休假未休，但未通过系统提交申请，是否仍可主张未休年休假工资？检索时需要覆盖哪些同一合同中的相关条款？",
+    "case_context": "员工因项目连续交付没有休完年休假，也没有提交系统申请；争议焦点是第八条的普遍支付规则与第十二条的申请条件和放弃后果是否相互冲突。"
+  },
+  "retrieval_target": {
+    "gold_evidence_count": 3,
+    "required_evidence_pattern": "必须同时返回第二条的年休假定义、第八条第2款关于因工作或公司安排未休时的支付规则，以及第十二条第2款关于未申请或未获批准时不支付的规则。",
+    "must_cover_conflict_sides": true,
+    "query_variants": [
+      "未申请年休假还能否获得未休工资",
+      "年休假未休工资与申请条件是否冲突",
+      "劳动合同第八条和第十二条年休假规定如何适用"
+    ]
+  },
+  "evaluation_labels": {
+    "retrieval_unit_labels": [
+      {
+        "document_name": "劳动合同正文",
+        "document_version": "2024年3月15日签署版",
+        "section_label": "第二条 休息休假定义",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "范围背景",
+        "annotation_rationale": "该定义划定年休假的范围，确认检索对象是带薪年度年休假，并排除其他休假类型；虽然不构成冲突一方，但对完整理解必不可少。"
+      },
+      {
+        "document_name": "劳动合同正文",
+        "document_version": "2024年3月15日签署版",
+        "section_label": "第八条 年休假待遇",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突一方",
+        "annotation_rationale": "该条款基于因工作需要或公司安排未休的事实设定支付义务，是判断员工主张是否成立的正向规则。"
+      },
+      {
+        "document_name": "劳动合同正文",
+        "document_version": "2024年3月15日签署版",
+        "section_label": "第十二条 休假申请与失效",
+        "retrieval_relevance": "必需",
+        "evidence_necessity": "核心",
+        "conflict_role": "冲突另一方",
+        "annotation_rationale": "该条款以未申请或未批准为条件否定支付义务，直接改变第八条的适用范围，是不可遗漏的反向规则。"
+      }
+    ],
+    "coverage_score": 0.97,
+    "missing_context_risk": "高",
+    "annotation_quality_note": "该案例的三个证据片段均来自同一文件，评测时不能仅按文件名去重；必须按条款号区分定义、支付规则和失效规则。第十六条为一般解释条款，但不属于本案例的核心证据。"
+  },
+  "evidence_fragments": [
+    {
+      "evidence_order": 1,
+      "document_name": "劳动合同正文",
+      "document_version": "2024年3月15日签署版",
+      "section_label": "第二条 休息休假定义",
+      "text_excerpt": "本合同所称年休假，是指乙方依照法律及公司制度享有的带薪年度休假，不包括病假、事假及公司统一安排的停工休假。",
+      "evidence_kind": "定义条款",
+      "source_locator": "第1页，第二条",
+      "evidence_explanation": "该片段限定争议对象是带薪年度年休假，而非病假、事假或停工休假，防止检索系统把其他休假制度的条款混入冲突上下文。"
+    },
+    {
+      "evidence_order": 2,
+      "document_name": "劳动合同正文",
+      "document_version": "2024年3月15日签署版",
+      "section_label": "第八条 年休假待遇",
+      "text_excerpt": "2. 因工作需要或公司安排，乙方当年度未能休完年休假的，公司应按照未休天数支付相应的未休年休假工资。",
+      "evidence_kind": "冲突条款",
+      "source_locator": "第2页，第八条第2款",
+      "evidence_explanation": "该片段确立了因工作或公司安排导致未休时的支付规则，是与第十二条申请条件发生冲突的一方。"
+    },
+    {
+      "evidence_order": 3,
+      "document_name": "劳动合同正文",
+      "document_version": "2024年3月15日签署版",
+      "section_label": "第十二条 休假申请与失效",
+      "text_excerpt": "2. 乙方未提交申请，或者申请未获批准而未休年休假的，视为乙方自愿放弃当年度未休年休假，公司不支付未休年休假工资。",
+      "evidence_kind": "冲突条款",
+      "source_locator": "第3页，第十二条第2款",
+      "evidence_explanation": "该片段增加了提交申请和批准条件，并规定未申请时不支付；必须与第八条一并返回，才能判断其是否构成对支付规则的限制。"
+    }
+  ],
+  "conflict_assessment": {
+    "conflict_present": true,
+    "conflict_types": [
+      "表述冲突",
+      "范围重叠",
+      "适用条件冲突"
+    ],
+    "conflict_scope": "同一文件内部",
+    "priority_status": "存在相互覆盖",
+    "conflict_summary": "第八条规定因工作需要或公司安排未休完年休假时，公司应按未休天数支付工资；第十二条则规定未提交申请或申请未获批准而未休的，视为自愿放弃且不支付。两条款均涉及未休年休假工资，但一个强调未休事实及未休原因，另一个增加申请条件，未明确第十二条是否限制第八条的适用。第二条的定义条款还限定了年休假范围，是正确检索和解释冲突的背景依据。"
+  }
+}
