@@ -1,0 +1,74 @@
+{
+  "document_category": "邮件",
+  "priority": "高",
+  "conditions": [
+    {
+      "condition_type": "前置条件",
+      "condition_text": "产品介绍书上传前必须由产品企划组确认价格和产品规格",
+      "affected_action": "最终PDF上传",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "时间限制",
+      "condition_text": "最终PDF必须在9月18日（周三）17:00前上传",
+      "affected_action": "最终PDF上传",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "其他",
+      "condition_text": "如果无法及时完成修改，需在当天11:00前向发件人说明",
+      "affected_action": "进度异常报告",
+      "is_mandatory": true
+    }
+  ],
+  "deadline_info": {
+    "has_deadline": true,
+    "deadline_text": "9月18日（周三）下午5点前；如修改困难，今天上午11点前告知",
+    "normalized_deadline": "文档所指周三17:00前完成上传；同日11:00前报告无法按要求修改的情况，年份未说明",
+    "is_recurring": false
+  },
+  "task_subjects": [
+    {
+      "task_name": "新产品介绍书价格与规格审核",
+      "responsible_party": "产品企划组朴志勋课长",
+      "action": "确认介绍书中的价格和产品规格",
+      "deadline_reference": "上传前",
+      "status": "待开始"
+    },
+    {
+      "task_name": "最终PDF上传",
+      "responsible_party": "设计组金敏智",
+      "action": "将新产品介绍书最终PDF上传到公司内部驱动器的指定文件夹",
+      "deadline_reference": "9月18日（周三）下午5点前",
+      "status": "待开始"
+    },
+    {
+      "task_name": "上传链接回复",
+      "responsible_party": "设计组金敏智",
+      "action": "完成上传后通过邮件回复文件链接；如无法及时修改则提前告知",
+      "deadline_reference": "上传完成后；如需修改则今天上午11点前告知",
+      "status": "待开始"
+    }
+  ],
+  "request_intent": "请求执行",
+  "source_document": {
+    "document_text": "제목: 3분기 신제품 소개서 최종본 업로드 요청\n안녕하세요, 디자인팀 김민지님. 영업팀 배포 일정 때문에 9월 18일(수) 오후 5시까지 신제품 소개서 최종 PDF를 사내 드라이브의 3분기 제품 폴더에 업로드해 주세요. 업로드 전에 제품기획팀 박지훈 과장님께서 가격과 사양을 확인해야 합니다. 업로드를 완료한 후 이 메일에 파일 링크로 회신해 주시고, 수정이 어려울 경우 오늘 오전 11시까지 알려 주세요.",
+    "document_type": "邮件",
+    "document_language": "韩语"
+  },
+  "document_subject": "在产品发布前完成新产品介绍书最终版审核、上传并回复链接",
+  "collaboration_relations": [
+    {
+      "from_role": "营业组",
+      "to_role": "设计组金敏智",
+      "relation_type": "任务执行",
+      "coordination_action": "在规定时间前上传介绍书最终PDF，并通过邮件反馈链接"
+    },
+    {
+      "from_role": "设计组金敏智",
+      "to_role": "产品企划组朴志勋课长",
+      "relation_type": "反馈确认",
+      "coordination_action": "请求确认介绍书中的价格和产品规格"
+    }
+  ]
+}

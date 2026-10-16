@@ -1,0 +1,87 @@
+{
+  "priority": "中",
+  "conditions": [
+    {
+      "condition_type": "时间限制",
+      "condition_text": "普通年假申请原则上必须在休假使用日前3个工作日提交",
+      "affected_action": "年假申请提交",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "审批要求",
+      "condition_text": "休假申请必须获得团队负责人批准，批准前不能视为休假已确定",
+      "affected_action": "休假生效",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "适用范围",
+      "condition_text": "突发疾病或家庭紧急情况导致无法提前申请时，可适用紧急申请流程",
+      "affected_action": "紧急情况请假申请",
+      "is_mandatory": false
+    },
+    {
+      "condition_type": "时间限制",
+      "condition_text": "紧急申请者须先联系团队负责人，并在预计出勤日10:00前补交申请书",
+      "affected_action": "紧急情况申请补交",
+      "is_mandatory": true
+    }
+  ],
+  "deadline_info": {
+    "has_deadline": true,
+    "deadline_text": "休假使用日前3个工作日；紧急情况须在预计出勤日当天上午10点前提交；人事组每月月底确认",
+    "normalized_deadline": "普通申请：休假日前至少3个工作日；紧急申请：预计出勤日10:00前；审批记录：每月月底",
+    "is_recurring": true
+  },
+  "task_subjects": [
+    {
+      "task_name": "年假申请提交",
+      "responsible_party": "申请休假的员工",
+      "action": "通过群件提交休假申请书",
+      "deadline_reference": "原则上在休假使用日3个工作日前",
+      "status": "待开始"
+    },
+    {
+      "task_name": "休假审批",
+      "responsible_party": "团队负责人",
+      "action": "审核并批准员工的休假申请",
+      "deadline_reference": "员工提交申请后，休假确定前",
+      "status": "需确认"
+    },
+    {
+      "task_name": "紧急情况申请补交",
+      "responsible_party": "因突发疾病或家庭紧急情况无法提前申请的员工",
+      "action": "先联系团队负责人，并提交休假申请书",
+      "deadline_reference": "预计出勤日当天上午10点前",
+      "status": "待开始"
+    },
+    {
+      "task_name": "月末审批记录确认",
+      "responsible_party": "人事组",
+      "action": "每月月底核对已批准的休假记录",
+      "deadline_reference": "每月月底",
+      "status": "待开始"
+    }
+  ],
+  "request_intent": "提供说明",
+  "source_document": {
+    "document_text": "[연차휴가 신청 규정 안내]\n연차휴가를 사용하려는 직원은 원칙적으로 사용일 3영업일 전까지 그룹웨어에서 휴가 신청서를 제출하고 팀장의 승인을 받아야 합니다. 승인 전에는 휴가가 확정된 것으로 보지 않습니다. 갑작스러운 질병이나 가족의 긴급 상황으로 사전 신청이 어려운 경우에는 먼저 팀장에게 연락한 뒤 출근 예정일 오전 10시까지 신청서를 제출해 주세요. 인사팀은 매월 말 승인 내역을 확인합니다.",
+    "document_type": "请假规则",
+    "document_language": "韩语"
+  },
+  "document_subject": "年假申请、团队负责人审批及紧急请假补交规则",
+  "document_category": "请假规则",
+  "collaboration_relations": [
+    {
+      "from_role": "申请休假的员工",
+      "to_role": "团队负责人",
+      "relation_type": "审批授权",
+      "coordination_action": "提交休假申请并获得团队负责人批准；紧急情况下先进行联系"
+    },
+    {
+      "from_role": "人事组",
+      "to_role": "各团队及员工",
+      "relation_type": "信息通知",
+      "coordination_action": "说明休假申请规则并在每月月底核对批准记录"
+    }
+  ]
+}

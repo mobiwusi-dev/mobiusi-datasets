@@ -1,0 +1,80 @@
+{
+  "priority": "中",
+  "conditions": [
+    {
+      "condition_type": "适用范围",
+      "condition_text": "通知对象为服务改进TF的各分组负责人",
+      "affected_action": "参会确认和材料准备",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "前置条件",
+      "condition_text": "参会者需要准备上周指标和下周执行计划",
+      "affected_action": "会议参加",
+      "is_mandatory": true
+    },
+    {
+      "condition_type": "其他",
+      "condition_text": "无法出席时必须指定代参人员并传递相关资料",
+      "affected_action": "缺席时的会议安排",
+      "is_mandatory": true
+    }
+  ],
+  "deadline_info": {
+    "has_deadline": true,
+    "deadline_text": "10月3日（周四）中午12点前回复参会情况；10月4日（周五）下午2点会议开始",
+    "normalized_deadline": "参会确认截止为周四12:00；会议时间为周五14:00—15:00，年份未说明",
+    "is_recurring": false
+  },
+  "task_subjects": [
+    {
+      "task_name": "参会可能性确认",
+      "responsible_party": "各分组负责人",
+      "action": "在日历邀请中回复是否能够参加会议",
+      "deadline_reference": "10月3日（周四）中午12点前",
+      "status": "需确认"
+    },
+    {
+      "task_name": "周指标和下周执行计划准备",
+      "responsible_party": "各分组负责人",
+      "action": "准备上周指标及下周执行计划并带到会议中",
+      "deadline_reference": "10月4日（周五）下午2点会议开始前",
+      "status": "待开始"
+    },
+    {
+      "task_name": "指定代参人员并传递资料",
+      "responsible_party": "无法出席的各分组负责人",
+      "action": "指定代参人员并向其传达相关会议资料",
+      "deadline_reference": "无法出席时，在会议前完成",
+      "status": "待开始"
+    }
+  ],
+  "request_intent": "请求确认",
+  "source_document": {
+    "document_text": "[서비스개선 TF 회의 안내]\n서비스개선 TF 주간 회의를 10월 4일(금) 오후 2시부터 3시까지 5층 중회의실에서 진행합니다. 각 파트 리더는 전주 지표와 다음 주 실행 계획을 준비해 참석해 주세요. 참석 가능 여부는 10월 3일(목) 정오까지 캘린더 초대에 회신해 주시기 바랍니다. 불참 시에는 대리 참석자를 지정하고 관련 자료를 전달해 주세요.",
+    "document_type": "会议通知",
+    "document_language": "韩语"
+  },
+  "document_subject": "服务改进TF周会的参会确认和会议材料准备",
+  "document_category": "会议通知",
+  "collaboration_relations": [
+    {
+      "from_role": "服务改进TF会议组织方",
+      "to_role": "各分组负责人",
+      "relation_type": "信息通知",
+      "coordination_action": "通知会议时间、地点、议题准备要求及参会确认期限"
+    },
+    {
+      "from_role": "各分组负责人",
+      "to_role": "服务改进TF会议组织方",
+      "relation_type": "反馈确认",
+      "coordination_action": "在日历邀请中回复参会可能性"
+    },
+    {
+      "from_role": "无法出席的分组负责人",
+      "to_role": "代参人员",
+      "relation_type": "任务交接",
+      "coordination_action": "指定代参人员并传递会议资料"
+    }
+  ]
+}
