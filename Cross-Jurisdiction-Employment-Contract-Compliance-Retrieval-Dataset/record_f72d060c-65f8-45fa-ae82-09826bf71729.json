@@ -1,0 +1,103 @@
+{
+  "is_compliant": false,
+  "evidence_links": [
+    {
+      "clause_reference": "C1",
+      "citation_reference": "L1",
+      "relation": "补充",
+      "evidence_text": "C1的non-exempt分类决定员工通常受L1的加班规则保护。"
+    },
+    {
+      "clause_reference": "C2",
+      "citation_reference": "L1",
+      "relation": "违反",
+      "evidence_text": "C2将未经预先批准的实际加班限定为普通工资，不能排除L1要求的法定加班工资。"
+    },
+    {
+      "clause_reference": "C3",
+      "citation_reference": "L2",
+      "relation": "违反",
+      "evidence_text": "C3设置所有用餐时间的概括性放弃，而L2只在特定工作时长和法定条件下允许放弃。"
+    },
+    {
+      "clause_reference": "C3",
+      "citation_reference": "L3",
+      "relation": "违反",
+      "evidence_text": "C3允许整班无连续用餐休息并放弃所有休息时间，与L3所述不得要求员工在法定休息期间工作的要求冲突。"
+    }
+  ],
+  "review_summary": "该合同明确将员工列为加利福尼亚州非豁免雇员。C2的事先批准要求可以作为内部管理规则，但不能使实际发生的法定加班仅按普通工资支付，因此存在高风险不合规。C3对用餐和休息时间作概括性放弃，并允许整班不安排连续用餐时间，超出了加利福尼亚法允许的条件性放弃范围。整体不合规，应删除排除法定加班费的表述，并按照适用工作时长安排用餐和休息时间。",
+  "legal_citations": [
+    {
+      "citation_reference": "L1",
+      "source_title": "California Labor Code",
+      "provision": "Section 510",
+      "quoted_rule": "Hours worked beyond the statutory daily or weekly thresholds by a non-exempt employee generally require payment at the applicable overtime rate, including time-and-one-half in the ordinary overtime ranges described by the statute.",
+      "applicability": "适用于C1确认的加利福尼亚州非豁免员工，并直接约束C2关于未经批准加班仅按普通工资支付的安排。"
+    },
+    {
+      "citation_reference": "L2",
+      "source_title": "California Labor Code",
+      "provision": "Section 512",
+      "quoted_rule": "A non-exempt employee who works more than five hours in a workday is generally entitled to a meal period of at least thirty minutes, subject to the statutory conditions for a valid waiver and other exceptions.",
+      "applicability": "适用于C1所述非豁免员工；C3的概括性放弃不符合该条规定的条件性放弃框架。"
+    },
+    {
+      "citation_reference": "L3",
+      "source_title": "California Labor Code section 226.7 and applicable IWC Wage Order",
+      "provision": "Section 226.7; applicable Wage Order provisions on rest periods",
+      "quoted_rule": "An employer may not require an employee to work during a required meal or rest period and must provide applicable rest periods to non-exempt employees.",
+      "applicability": "适用于加利福尼亚州非豁免员工的法定休息和恢复时间，补充说明C3不能以业务繁忙为由全面排除休息。"
+    }
+  ],
+  "retrieval_query": "California non-exempt employee overtime prior approval policy regular rate only Labor Code section 510 meal period blanket waiver section 512 rest period section 226.7 IWC Wage Order",
+  "contract_clauses": [
+    {
+      "clause_reference": "C1",
+      "clause_topic": "雇佣分类与工资",
+      "clause_text": "The employee is hired in California as a full-time, non-exempt Customer Support Specialist at USD 24.50 per hour.",
+      "normalized_obligation": "雇主将员工分类为加利福尼亚州全日制非豁免小时工，并按每小时24.50美元支付普通工资。"
+    },
+    {
+      "clause_reference": "C2",
+      "clause_topic": "加班工资",
+      "clause_text": "Overtime work must be approved in writing in advance. The employee agrees that hours worked without prior approval will be paid at the regular rate only and will not qualify for an overtime premium.",
+      "normalized_obligation": "雇主要求加班事先书面批准，并试图将未经批准但实际工作的时间排除在法定加班加成之外。"
+    },
+    {
+      "clause_reference": "C3",
+      "clause_topic": "用餐与休息时间",
+      "clause_text": "The employee waives all meal periods and rest periods whenever business volume is high. The employee may be required to work an entire shift without an uninterrupted meal break.",
+      "normalized_obligation": "雇主试图在业务繁忙时取得对所有用餐和休息时间的概括性放弃，并允许要求员工整班工作而不休连续用餐时间。"
+    }
+  ],
+  "raw_contract_text": "[Clause 1] The employee is hired in California as a full-time, non-exempt Customer Support Specialist at USD 24.50 per hour. [Clause 2] The regular schedule is 40 hours per week. Overtime work must be approved in writing in advance. The employee agrees that hours worked without prior approval will be paid at the regular rate only and will not qualify for an overtime premium. [Clause 3] The employee waives all meal periods and rest periods whenever business volume is high. The employee may be required to work an entire shift without an uninterrupted meal break. [Clause 4] The employer will maintain payroll records and pay wages according to applicable law.",
+  "raw_legal_material": "California Labor Code section 510 generally requires one and one-half times the regular rate for hours worked over eight in a workday or over forty in a workweek, subject to statutory rules and exemptions; an employer policy requiring advance approval does not eliminate the duty to pay legally required overtime for work the employer knew or should have known was performed. California Labor Code section 512 generally requires a non-exempt employee who works more than five hours in a workday to receive a meal period of at least thirty minutes, subject to statutory waiver conditions; a blanket waiver is not valid for a longer workday merely because workload is high. California Labor Code section 226.7 and applicable Industrial Welfare Commission Wage Orders prohibit requiring work during required meal or rest periods and require applicable rest periods for non-exempt employees.",
+  "compliance_findings": [
+    {
+      "finding_reference": "F1",
+      "issue_type": "低于法定标准",
+      "severity": "高",
+      "compliance_status": "不符合",
+      "contract_evidence": "C1将员工明确分类为non-exempt；C2规定未经事先书面批准的加班仅按普通工资支付。",
+      "legal_requirement": "非豁免员工依法工作的加班小时通常应按适用的加班倍率支付；事先批准政策不能使雇主免除对已知或应知实际工作时间支付法定加班工资的义务。",
+      "analysis_rationale": "C2可以作为内部审批和纪律管理规则，但不能剥夺非豁免员工对实际加班时间的法定工资权利。若员工实际超过适用的每日或每周阈值工作，合同中的普通工资支付约定与加班法定标准冲突。"
+    },
+    {
+      "finding_reference": "F2",
+      "issue_type": "无效约定",
+      "severity": "高",
+      "compliance_status": "不符合",
+      "contract_evidence": "C3允许在业务繁忙时放弃所有用餐和休息时间，并允许整班工作而无连续用餐休息。",
+      "legal_requirement": "非豁免员工在超过法定工作时长阈值时通常应获得法定用餐时间；休息时间和用餐时间不得通过不受条件限制的概括性放弃条款被一并排除。",
+      "analysis_rationale": "C1确认员工为非豁免员工，C3却设置不受工作时长和法定放弃条件限制的全面放弃。业务繁忙不是当然免除用餐和休息安排的理由，因此该条款至少在适用法定休息的工作日范围内不符合要求。"
+    }
+  ],
+  "raw_review_question": "For a non-exempt California employee, do the advance-approval rule for overtime and the blanket waiver of meal and rest periods comply with California requirements?",
+  "jurisdiction_context": {
+    "jurisdiction": "美国加利福尼亚州",
+    "governing_law": "California Labor Code、适用的Industrial Welfare Commission Wage Order及相关联邦劳动标准",
+    "employment_category": "全日制非豁免雇员，无固定期限雇佣",
+    "language": "英语"
+  }
+}

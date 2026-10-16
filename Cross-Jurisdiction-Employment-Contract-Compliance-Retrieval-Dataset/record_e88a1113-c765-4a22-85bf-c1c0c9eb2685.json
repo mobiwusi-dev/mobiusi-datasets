@@ -1,0 +1,87 @@
+{
+  "compliance_findings": [
+    {
+      "finding_reference": "F1",
+      "issue_type": "低于法定标准",
+      "severity": "高",
+      "compliance_status": "不符合",
+      "contract_evidence": "C1规定员工每周工作五天；C3规定每年年休假总量为20个工作日且包括所有bank and public holidays。",
+      "legal_requirement": "标准五日工作制员工通常每年享有5.6周法定年休假，即28个工作日；银行假日可以计入该总量，但不能使总量低于法定最低标准。",
+      "analysis_rationale": "C3只提供包括银行假日在内的20个工作日，少于五日工作制对应的28个工作日法定最低总量。将银行假日计入总量本身可以合法，但不能弥补总天数不足。"
+    }
+  ],
+  "raw_review_question": "For a full-time employee working five days per week in England, is an annual leave entitlement of 20 working days inclusive of bank and public holidays sufficient under the Working Time Regulations 1998?",
+  "is_compliant": false,
+  "evidence_links": [
+    {
+      "clause_reference": "C1",
+      "citation_reference": "L1",
+      "relation": "补充",
+      "evidence_text": "C1确认员工每周工作五天，为将周数法定标准换算为通常28个工作日提供事实基础。"
+    },
+    {
+      "clause_reference": "C1",
+      "citation_reference": "L2",
+      "relation": "补充",
+      "evidence_text": "C1的五日工作模式与L2的额外1.6周 entitlement共同构成通常5.6周的年度最低标准。"
+    },
+    {
+      "clause_reference": "C3",
+      "citation_reference": "L1",
+      "relation": "违反",
+      "evidence_text": "C3提供的20个工作日包括银行假日，但低于L1规定的四周基础年休假与适用总量要求。"
+    },
+    {
+      "clause_reference": "C3",
+      "citation_reference": "L2",
+      "relation": "违反",
+      "evidence_text": "C3没有提供L2所要求的额外1.6周年休假；银行假日计入20日总额不能消除该不足。"
+    }
+  ],
+  "review_summary": "该合同适用于英国伦敦一名每周工作五天的全日制员工。C3将包括银行假日在内的年休假总量限制为20个工作日，而标准五日工作制通常对应每年28个工作日的法定最低年休假。银行假日可以计入法定总量，但不能将低于最低标准的20日约定变为合规。整体不合规，应将年休假总量提高至不低于适用法定标准，并明确银行假日是否计入该总量。",
+  "legal_citations": [
+    {
+      "citation_reference": "L1",
+      "source_title": "Working Time Regulations 1998",
+      "provision": "Regulation 13",
+      "quoted_rule": "A worker is entitled to four weeks’ basic annual leave in each leave year, subject to the Regulations.",
+      "applicability": "适用于英国境内包括伦敦在内的劳动关系，是C3年休假最低标准的一部分。"
+    },
+    {
+      "citation_reference": "L2",
+      "source_title": "Working Time Regulations 1998",
+      "provision": "Regulation 13A",
+      "quoted_rule": "A worker is entitled to an additional 1.6 weeks’ annual leave in each leave year, subject to the statutory rules and limits.",
+      "applicability": "与L1合计形成通常所称的5.6周法定年休假；因C1为五日工作制，通常对应每年28个工作日。"
+    }
+  ],
+  "retrieval_query": "UK England five-day full-time employee annual leave 20 working days inclusive of bank holidays statutory 5.6 weeks 28 days Working Time Regulations 1998 regulations 13 and 13A",
+  "contract_clauses": [
+    {
+      "clause_reference": "C1",
+      "clause_topic": "雇佣关系与工作模式",
+      "clause_text": "The Employee is engaged as a full-time Marketing Manager in London under an indefinite employment contract. The normal working pattern is five days per week, eight hours per day.",
+      "normalized_obligation": "雇主与员工建立伦敦地区全日制无固定期限雇佣关系，员工通常每周工作五天。"
+    },
+    {
+      "clause_reference": "C2",
+      "clause_topic": "工资",
+      "clause_text": "The Employee will receive a salary of GBP 42,000 per year, paid monthly.",
+      "normalized_obligation": "雇主按月向员工支付年薪42000英镑。"
+    },
+    {
+      "clause_reference": "C3",
+      "clause_topic": "年休假",
+      "clause_text": "The Employee is entitled to 20 working days of annual leave per holiday year, inclusive of all bank and public holidays. No additional holiday will be provided for bank holidays.",
+      "normalized_obligation": "雇主将员工每年包括银行假日在内的带薪年休假总量限定为20个工作日。"
+    }
+  ],
+  "raw_contract_text": "[Clause 1] The Employee is engaged as a full-time Marketing Manager in London under an indefinite employment contract. The normal working pattern is five days per week, eight hours per day. [Clause 2] The Employee will receive a salary of GBP 42,000 per year, paid monthly. [Clause 3] The Employee is entitled to 20 working days of annual leave per holiday year, inclusive of all bank and public holidays. No additional holiday will be provided for bank holidays. [Clause 4] The Employee must give one month’s notice to terminate the employment. The employer’s notice rights are governed by applicable law.",
+  "raw_legal_material": "Under the Working Time Regulations 1998, regulation 13 provides a worker with four weeks’ basic annual leave in each leave year, and regulation 13A provides an additional 1.6 weeks’ leave, subject to the statutory rules and the applicable cap for a standard five-day worker. The statutory entitlement is commonly expressed as 5.6 weeks per year, or 28 days for a worker who works five days each week. Bank and public holidays may be included within the statutory entitlement, but counting them does not reduce the total statutory entitlement below the applicable minimum.",
+  "jurisdiction_context": {
+    "jurisdiction": "英国英格兰，工作地点为伦敦",
+    "governing_law": "Working Time Regulations 1998及英国适用的雇佣法",
+    "employment_category": "全日制无固定期限雇员",
+    "language": "英语"
+  }
+}
