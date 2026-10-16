@@ -1,0 +1,194 @@
+{
+  "process_steps": [
+    {
+      "step_number": 1,
+      "action": "确认自己没有需要先咨询医生或药师的情况，并检查其他感冒药是否含有对乙酰氨基酚。",
+      "timing_requirement": "每次服药前确认，尤其是开始服药时。",
+      "precaution": "肝病患者、每天饮酒者或正在服用含对乙酰氨基酚药物者，不应自行开始服用。"
+    },
+    {
+      "step_number": 2,
+      "action": "服用1片500毫克的药片。",
+      "timing_requirement": "发热或疼痛时，每次1片，饭后30分钟服用。",
+      "precaution": "不要因为症状明显而自行增加单次剂量。"
+    },
+    {
+      "step_number": 3,
+      "action": "按规定间隔继续服药并记录每天的服用次数。",
+      "timing_requirement": "每天最多3次，每次至少间隔6小时。",
+      "precaution": "一天不得超过3片，也不要与其他含相同成分的感冒药重复服用。"
+    },
+    {
+      "step_number": 4,
+      "action": "完成3天疗程并观察症状；漏服时根据距离下一次服药的时间处理。",
+      "timing_requirement": "连续服用3天；若3天后仍发热或疼痛，应就医。",
+      "precaution": "若下一次服药时间已接近，跳过漏服剂量，绝对不要一次服两次的量。"
+    }
+  ],
+  "document_purpose": "说明对乙酰氨基酚片的单次剂量、服用频率、疗程、漏服处理和储存方法，并提醒肝病、饮酒、重复用药及过敏反应等风险。",
+  "key_korean_terms": [
+    {
+      "term": "복용하다",
+      "pronunciation": "bok-yong-ha-da，博永哈达",
+      "chinese_meaning": "服用药物",
+      "usage_context": "복용하십시오表示请服用；복용을 잊었을 때表示忘记服药时。"
+    },
+    {
+      "term": "식후",
+      "pronunciation": "sik-hu，西库",
+      "chinese_meaning": "饭后",
+      "usage_context": "식후 30분表示饭后30分钟，是服药时间表达。"
+    },
+    {
+      "term": "복용 간격",
+      "pronunciation": "bok-yong gan-gyeok，博永干格",
+      "chinese_meaning": "服药间隔",
+      "usage_context": "복용 간격은 최소 6시간表示服药间隔至少为6小时。"
+    },
+    {
+      "term": "넘기지 마십시오",
+      "pronunciation": "neom-gi-ji ma-sip-si-o，农吉吉马西普西欧",
+      "chinese_meaning": "请不要超过",
+      "usage_context": "하루에 3정을 넘기지 마십시오表示每天请不要超过3片。"
+    },
+    {
+      "term": "중단하다",
+      "pronunciation": "jung-dan-ha-da，仲丹哈达",
+      "chinese_meaning": "停止、中止",
+      "usage_context": "복용을 중단하고表示停止服药后再采取后续措施。"
+    }
+  ],
+  "precaution_items": [
+    {
+      "category": "操作要求",
+      "instruction": "每次服用1片，每天最多3片，并记录当天已经服用的数量。",
+      "severity": "重要"
+    },
+    {
+      "category": "安全风险",
+      "instruction": "不要与其他含对乙酰氨基酚的感冒药重复使用。",
+      "severity": "高风险"
+    },
+    {
+      "category": "告知义务",
+      "instruction": "有肝病、每天饮酒或正在服用其他感冒药时，服药前咨询医生或药师。",
+      "severity": "高风险"
+    },
+    {
+      "category": "安全风险",
+      "instruction": "出现皮疹、面部肿胀或呼吸困难时立即停药并联系医疗机构。",
+      "severity": "高风险"
+    }
+  ],
+  "risk_alert_level": "高",
+  "contraindications": [
+    {
+      "condition": "患有肝脏疾病或每天饮酒",
+      "prohibited_action": "未经医生或药师确认，不要自行服用该药。",
+      "reason": "原文将这些情况列为服药前需要专业确认的风险因素。",
+      "exception_or_alternative": "联系医生或药师，说明肝病和饮酒情况后，按其建议选择是否使用及如何用药。"
+    },
+    {
+      "condition": "正在服用含有对乙酰氨基酚的其他感冒药",
+      "prohibited_action": "禁止与本药重复服用或自行叠加剂量。",
+      "reason": "重复摄入相同成分会增加用药过量风险。",
+      "exception_or_alternative": "先核对其他药物成分，并向药师确认；在确认前不要叠加使用。"
+    }
+  ],
+  "document_category": "用药指引",
+  "time_requirements": [
+    {
+      "requirement_type": "服药间隔",
+      "value": "每天3次，每次至少间隔6小时",
+      "condition": "服用500毫克对乙酰氨基酚片时。",
+      "consequence": "间隔不足或次数过多可能增加用药风险，应停止自行加量并咨询医生或药师。"
+    },
+    {
+      "requirement_type": "其他",
+      "value": "饭后30分钟",
+      "condition": "每次服药时。",
+      "consequence": "应尽量按说明服用；如果进食时间或服药时间不确定，应向药师确认。"
+    },
+    {
+      "requirement_type": "其他",
+      "value": "持续3天",
+      "condition": "用于缓解发热或疼痛的本次用药。",
+      "consequence": "3天后仍有发热或疼痛时，不应继续自行延长疗程，应接受医疗评估。"
+    }
+  ],
+  "learner_explanation": {
+    "simplified_chinese_explanation": "这是一份对乙酰氨基酚片的用药说明：每次1片，饭后30分钟服用，每天最多3次且间隔至少6小时，连续使用不超过3天。漏服且接近下一次时应跳过，不能加倍。肝病、每天饮酒或同时使用其他含相同成分药物的人，必须先咨询医生或药师。出现皮疹、面部肿胀或呼吸困难时应立即停药并求助。",
+    "korean_learning_notes": "복용하십시오是说明书中较正式的请服用表达，십시오是敬语命令句尾。식후 30분表示饭后30分钟，최소 6시간을 지키다表示遵守至少6小时的间隔。넘기지 마십시오表示请不要超过，잊었을 때表示忘记服用时。중단하고表示停止后再进行下一动作。",
+    "ambiguity_notes": "原文没有说明患者的年龄、体重、具体肝功能情况或其他处方药，因此不能据此为特定患者调整剂量。饭后30分钟的实际时间、是否适合儿童或孕妇等，应向医生或药师确认。",
+    "emergency_advice": "服药后出现呼吸困难、面部或喉咙肿胀、广泛皮疹、意识异常等情况，应立即停药并联系急救或医疗机构。若误服超过规定剂量，也应尽快联系医疗机构，不要等待症状出现。"
+  },
+  "symptom_descriptions": [
+    {
+      "symptom": "发热",
+      "body_location": "全身",
+      "intensity": "原文未规定具体体温，仅说明可用于缓解发热",
+      "onset_or_duration": "服药3天后仍持续时需要就医",
+      "reporting_expression": "可以说：열이 계속 나요，意思是我一直在发烧，并补充体温和开始时间。"
+    },
+    {
+      "symptom": "疼痛",
+      "body_location": "原文未限定具体部位",
+      "intensity": "原文未规定强度",
+      "onset_or_duration": "服药3天后仍持续时需要就医",
+      "reporting_expression": "可以说：통증이 계속돼요，意思是疼痛还在持续，并说明疼痛部位和程度。"
+    },
+    {
+      "symptom": "皮疹、面部肿胀或呼吸困难",
+      "body_location": "皮肤、面部或呼吸道",
+      "intensity": "属于需要立即处理的异常反应",
+      "onset_or_duration": "服药后出现时立即处理",
+      "reporting_expression": "可以向医务人员说：약을 먹은 후 발진과 얼굴 부종이 생겼어요，意思是服药后出现了皮疹和面部肿胀。"
+    }
+  ],
+  "understanding_points": [
+    {
+      "question": "每次应服用多少对乙酰氨基酚片？",
+      "answer": "每次服用1片500毫克。",
+      "evidence": "아세트아미노펜정 500mg은 ... 1회 1정씩。"
+    },
+    {
+      "question": "两次服药之间至少要间隔多久？",
+      "answer": "至少间隔6小时，并且每天最多服用3次。",
+      "evidence": "복용 간격은 최소 6시간을 지키고, 하루에 3정을 넘기지 마십시오。"
+    },
+    {
+      "question": "漏服后下一次服药时间已经接近，应该怎么办？",
+      "answer": "跳过漏服的剂量，不要一次服用两次的量。",
+      "evidence": "다음 복용 시간이 가까우면 건너뛰고, 절대로 두 번 복용하지 마십시오。"
+    },
+    {
+      "question": "哪些情况需要在服药前先咨询医生或药师？",
+      "answer": "患有肝病、每天饮酒，或正在服用含对乙酰氨基酚的其他感冒药时，需要先咨询。",
+      "evidence": "간질환이 있거나 매일 술을 마시는 경우 ... 복용 전에 의사나 약사에게 확인하십시오。"
+    },
+    {
+      "question": "服药后出现哪些症状需要立即求助？",
+      "answer": "出现皮疹、面部肿胀或呼吸困难时，应停药并立即联系医疗机构。",
+      "evidence": "발진, 얼굴 부종 또는 호흡 곤란이 생기면 복용을 중단하고 즉시 의료기관에 연락하십시오。"
+    }
+  ],
+  "examination_preparation": {
+    "exam_name": "",
+    "fasting_required": false,
+    "fasting_duration": "",
+    "water_allowed": false,
+    "medication_adjustment": "",
+    "required_items": "",
+    "arrival_instruction": ""
+  },
+  "medication_instructions": {
+    "medication_name": "아세트아미노펜정 500mg（对乙酰氨基酚片500毫克）",
+    "dosage": "每次1片，即500毫克。",
+    "frequency": "每天3次，饭后30分钟服用，每次至少间隔6小时；每天最多3片。",
+    "route": "口服",
+    "duration": "共3天；3天后发热或疼痛仍持续时就医，不要自行延长疗程。",
+    "missed_dose_action": "如果接近下一次服药时间，跳过漏服剂量；不要补服双倍剂量。",
+    "storage_instruction": "室温保存，避免阳光直射。"
+  },
+  "raw_korean_medical_text": "[복약 안내] 아세트아미노펜정 500mg은 발열이나 통증이 있을 때 1회 1정씩, 하루 3회 식후 30분에 복용하십시오. 복용 간격은 최소 6시간을 지키고, 하루에 3정을 넘기지 마십시오. 총 3일 동안 복용하며, 3일 후에도 열이나 통증이 계속되면 진료를 받으십시오. 복용을 잊었을 때 다음 복용 시간이 가까우면 건너뛰고, 절대로 두 번 복용하지 마십시오. 간질환이 있거나 매일 술을 마시는 경우, 또는 아세트아미노펜이 들어 있는 다른 감기약을 복용 중인 경우에는 복용 전에 의사나 약사에게 확인하십시오. 발진, 얼굴 부종 또는 호흡 곤란이 생기면 복용을 중단하고 즉시 의료기관에 연락하십시오. 실온에서 직사광선을 피해 보관하십시오."
+}

@@ -1,0 +1,170 @@
+{
+  "risk_alert_level": "高",
+  "process_steps": [
+    {
+      "step_number": 1,
+      "action": "确认呼吸内科预约时间和科室。",
+      "timing_requirement": "预约时间为下周二14:30。",
+      "precaution": "不要把预约时间误认为报到时间；还需要提前到院办理接诊手续。"
+    },
+    {
+      "step_number": 2,
+      "action": "携带身份证、医保卡以及当前服用药物的名称，到一楼窗口办理登记。",
+      "timing_requirement": "应在预约时间前20分钟完成接诊登记。",
+      "precaution": "不要遗漏证件；如果正在服药，应准备准确的药名，而不是只描述药片颜色。"
+    },
+    {
+      "step_number": 3,
+      "action": "向接待人员说明咳嗽、发热或咽喉痛等症状，并根据病情接受分诊。",
+      "timing_requirement": "在办理登记时主动说明；严重症状出现时立即联系119。",
+      "precaution": "严重胸痛或呼吸困难时不要继续等待普通门诊预约。"
+    }
+  ],
+  "document_purpose": "提醒患者按预约时间提前到院办理挂号，并携带证件和用药信息；如有呼吸道症状应主动告知工作人员，出现严重胸痛或呼吸困难时应立即求助。",
+  "key_korean_terms": [
+    {
+      "term": "예약",
+      "pronunciation": "ye-yak，约雅克",
+      "chinese_meaning": "预约",
+      "usage_context": "예약되어 있습니다表示已经安排了预约；예약 시간指预约时间。"
+    },
+    {
+      "term": "접수",
+      "pronunciation": "jeop-su，接普苏",
+      "chinese_meaning": "登记、挂号、受理",
+      "usage_context": "접수하다表示办理登记；접수할 때表示办理登记时。"
+    },
+    {
+      "term": "지참하다",
+      "pronunciation": "ji-cham-ha-da，几参哈达",
+      "chinese_meaning": "携带",
+      "usage_context": "신분증과 건강보험증을 지참하고表示请携带身份证和医保卡。"
+    },
+    {
+      "term": "복용 중이다",
+      "pronunciation": "bok-yong jung-i-da，博永仲伊达",
+      "chinese_meaning": "正在服用",
+      "usage_context": "현재 복용 중인 약表示目前正在服用的药物，중인表示动作正在进行或状态持续。"
+    },
+    {
+      "term": "숨이 차다",
+      "pronunciation": "sum-i cha-da，苏米恰达",
+      "chinese_meaning": "呼吸困难、气短",
+      "usage_context": "숨이 차면表示如果感到呼吸困难；这是需要特别重视的症状表达。"
+    }
+  ],
+  "precaution_items": [
+    {
+      "category": "携带物品",
+      "instruction": "携带身份证、健康保险证，并准备当前服用药物的名称。",
+      "severity": "重要"
+    },
+    {
+      "category": "告知义务",
+      "instruction": "有咳嗽、发热或咽喉痛时，在接待登记时主动告知工作人员。",
+      "severity": "重要"
+    },
+    {
+      "category": "卫生要求",
+      "instruction": "在医院接待区域按照工作人员要求做好呼吸道卫生和分流配合。",
+      "severity": "一般"
+    },
+    {
+      "category": "安全风险",
+      "instruction": "严重胸痛或呼吸困难时不要等待预约，应立即拨打119。",
+      "severity": "高风险"
+    }
+  ],
+  "contraindications": [
+    {
+      "condition": "出现严重胸痛或呼吸困难",
+      "prohibited_action": "禁止继续等待普通门诊预约或自行在候诊区等待。",
+      "reason": "这些症状可能需要紧急评估，延误求助可能增加风险。",
+      "exception_or_alternative": "立即拨打119，并按照急救人员指示处理；症状较轻但仍担心时也应先联系医院确认。"
+    }
+  ],
+  "document_category": "预约通知",
+  "time_requirements": [
+    {
+      "requirement_type": "预约时间",
+      "value": "下周二14:30",
+      "condition": "已预约呼吸内科门诊的患者。",
+      "consequence": "迟到可能需要重新排队或由医院安排其他接诊时间，应提前联系医院确认。"
+    },
+    {
+      "requirement_type": "到院时间",
+      "value": "预约前20分钟",
+      "condition": "需要在一楼窗口办理登记的患者。",
+      "consequence": "未能及时登记可能影响当日接诊，应尽快向窗口工作人员说明情况。"
+    },
+    {
+      "requirement_type": "其他",
+      "value": "严重胸痛或呼吸困难时立即拨打119",
+      "condition": "出现可能危及生命的呼吸或胸部症状时。",
+      "consequence": "不应等待预约；应立即联系急救服务。"
+    }
+  ],
+  "learner_explanation": {
+    "simplified_chinese_explanation": "这是一则呼吸内科预约通知。患者应在下周二14:30就诊，并至少提前20分钟到一楼办理登记，携带身份证、医保卡和正在服用的药物名称。有咳嗽、发热或咽喉痛时要主动告诉工作人员；严重胸痛或呼吸困难时不要等候预约，应直接联系119。",
+    "korean_learning_notes": "예약되어 있습니다表示已经预约，되어 있다表示某种状态已经成立。예약 시간 20분 전까지表示截至预约时间前20分钟，까지有截止点含义。지참해 주세요是礼貌地要求携带，-면表示如果或当……时，알려 주세요表示请告知。원무과指医院负责挂号、费用等事务的窗口。",
+    "ambiguity_notes": "原文没有说明迟到后的具体改约政策，也没有规定发热的体温界限、咳嗽持续时间或必须携带纸质处方。上述情况应向医院前台确认。",
+    "emergency_advice": "如果出现严重胸痛、明显呼吸困难、意识异常或症状迅速恶化，不要等待预约，应立即拨打119或按照当地急救流程求助。"
+  },
+  "symptom_descriptions": [
+    {
+      "symptom": "咳嗽",
+      "body_location": "呼吸道或胸部",
+      "intensity": "原文未说明具体强度",
+      "onset_or_duration": "原文未说明出现时间或持续时长",
+      "reporting_expression": "可以向医务人员说：기침이 있어요，意思是我有咳嗽。"
+    },
+    {
+      "symptom": "发热",
+      "body_location": "全身",
+      "intensity": "原文仅提示有发热，未说明体温或程度",
+      "onset_or_duration": "原文未说明出现时间或持续时长",
+      "reporting_expression": "可以说：열이 나요，意思是我在发烧；如能测量体温，应同时告知数值。"
+    }
+  ],
+  "understanding_points": [
+    {
+      "question": "患者应什么时候到医院办理接诊登记？",
+      "answer": "预约时间是下周二14:30，应在预约前20分钟到一楼窗口办理登记。",
+      "evidence": "예약 시간 20분 전까지 1층 원무과에서 접수해 주세요。"
+    },
+    {
+      "question": "办理登记时需要携带或准备什么？",
+      "answer": "需要携带身份证和健康保险证，并准备当前正在服用的药物名称。",
+      "evidence": "신분증과 건강보험증을 지참하고, 현재 복용 중인 약이 있으면 약 이름을 적어 오십시오。"
+    },
+    {
+      "question": "有咳嗽或发热时应该怎么做？",
+      "answer": "在接待登记时主动向工作人员说明。",
+      "evidence": "기침, 발열, 인후통이 있으면 접수할 때 직원에게 알려 주세요。"
+    },
+    {
+      "question": "严重胸痛或呼吸困难时还能等待预约吗？",
+      "answer": "不能，应立即拨打119，不要继续等待普通门诊预约。",
+      "evidence": "숨이 차거나 가슴 통증이 심하면 예약을 기다리지 말고 119에 연락하십시오。"
+    }
+  ],
+  "examination_preparation": {
+    "exam_name": "",
+    "fasting_required": false,
+    "fasting_duration": "",
+    "water_allowed": false,
+    "medication_adjustment": "",
+    "required_items": "",
+    "arrival_instruction": ""
+  },
+  "medication_instructions": {
+    "medication_name": "",
+    "dosage": "",
+    "frequency": "",
+    "route": "",
+    "duration": "",
+    "missed_dose_action": "",
+    "storage_instruction": ""
+  },
+  "raw_korean_medical_text": "[예약 안내] 다음 주 화요일 오후 2시 30분에 호흡기내과 진료가 예약되어 있습니다. 예약 시간 20분 전까지 1층 원무과에서 접수해 주세요. 신분증과 건강보험증을 지참하고, 현재 복용 중인 약이 있으면 약 이름을 적어 오십시오. 기침, 발열, 인후통이 있으면 접수할 때 직원에게 알려 주세요. 숨이 차거나 가슴 통증이 심하면 예약을 기다리지 말고 119에 연락하십시오."
+}
