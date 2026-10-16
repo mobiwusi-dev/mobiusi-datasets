@@ -1,0 +1,65 @@
+{
+  "claim_text": "公司发现员工严重违反安全规定时，可以不履行任何书面通知或调查程序而立即解除合同。",
+  "contract_text": "第一条 合同期限：本合同为固定期限劳动合同，自2024年6月1日起至2026年5月31日止。第二条 试用期：试用期为两个月，自员工实际到岗之日起计算。第三条 自动续约：合同期满前30日，如双方均未向对方发出书面终止通知，本合同自动延长六个月，自动续约最多两次。第四条 辞职通知：员工主动辞职，应至少提前60日以书面形式通知公司人力资源部。第五条 即时解除：员工严重违反安全操作规定并造成重大风险，或者伪造报销凭证、侵占公司财物的，公司可在无需等待通知期的情况下即时解除合同。但公司仍应完成内部调查，保存相关证据，并向员工送达书面解除通知。第六条 离职后义务：员工离职后18个月内不得为本公司的直接竞争企业提供同类服务；员工应在离职后三日内返还电脑、门禁卡、文件及其他公司财物，并删除个人设备中保存的公司资料；保密义务持续至相关信息公开或不再具有商业价值。",
+  "contract_facts": {
+    "fixed_term": {
+      "fixed_term_present": true,
+      "start_date": "2024-06-01",
+      "end_date": "2026-05-31",
+      "term_text": "固定期限劳动合同，期限自2024年6月1日至2026年5月31日。"
+    },
+    "probation_period": {
+      "probation_present": true,
+      "duration_value": 2,
+      "duration_unit": "月",
+      "condition_text": "自员工实际到岗之日起计算。"
+    },
+    "renewal_terms": {
+      "renewal_allowed": true,
+      "automatic_renewal": true,
+      "renewal_limit": 2,
+      "renewal_condition": "合同期满前30日，如双方均未发出书面终止通知，合同自动延长六个月，自动续约最多两次。"
+    },
+    "notice_requirements": {
+      "notice_required": true,
+      "notice_duration_value": 60,
+      "notice_duration_unit": "日",
+      "trigger_event": "员工主动辞职",
+      "notice_recipient": "公司人力资源部"
+    },
+    "immediate_termination": {
+      "immediate_termination_allowed": true,
+      "trigger_conditions": [
+        "严重违反安全操作规定并造成重大风险",
+        "伪造报销凭证",
+        "侵占公司财物"
+      ],
+      "procedural_requirements": "即时解除无需等待通常的通知期，但公司仍须完成内部调查、保存相关证据，并向员工送达书面解除通知。"
+    },
+    "post_employment_obligations": {
+      "confidentiality_required": true,
+      "non_compete_required": true,
+      "property_return_required": true,
+      "obligation_duration": "竞业限制为离职后18个月；保密义务持续至相关信息公开或不再具有商业价值。",
+      "other_obligations": "离职后三日内返还电脑、门禁卡、文件及其他公司财物，并删除个人设备中的公司资料。"
+    }
+  },
+  "claim_assessment": {
+    "claim_type": "即时解除",
+    "verdict": "部分支持",
+    "confidence": 0.97,
+    "reason": "合同允许公司在该类严重违约情形下不等待通知期而即时解除，但并未免除书面通知、内部调查和证据保存要求。因此，立即解除这一部分得到支持，完全不履行程序要求的部分不受支持。",
+    "evidence_refs": [
+      {
+        "quote": "员工严重违反安全操作规定并造成重大风险……公司可在无需等待通知期的情况下即时解除合同。",
+        "location": "第五条 即时解除",
+        "supports_claim": true
+      },
+      {
+        "quote": "但公司仍应完成内部调查，保存相关证据，并向员工送达书面解除通知。",
+        "location": "第五条 即时解除",
+        "supports_claim": false
+      }
+    ]
+  }
+}

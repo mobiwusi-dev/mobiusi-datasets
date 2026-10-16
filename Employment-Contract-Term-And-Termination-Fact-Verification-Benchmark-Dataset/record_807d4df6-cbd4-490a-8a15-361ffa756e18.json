@@ -1,0 +1,65 @@
+{
+  "claim_text": "该合同的固定期限是2025年3月1日至2027年2月28日，期满会自动续约一次。",
+  "contract_text": "第一条 合同期限：本合同为固定期限劳动合同，自2025年3月1日起至2027年2月28日止。期满后如双方拟继续合作，最多可续约一次，但应另行签署书面续约协议。第二条 试用期：自实际入职日起试用三个月，试用期包含在合同期限内。第三条 辞职通知：员工主动辞职，应至少提前30个日历日以书面形式通知公司人力资源部。第四条 即时解除：员工有严重违反公司规章制度、盗窃公司财物或故意泄露商业秘密等情形的，公司可在无需等待通知期的情况下解除合同，但应向员工送达书面解除通知，并留存调查及证据记录。第五条 离职后义务：员工离职时应返还公司设备、文件及资料；对未公开的技术和经营信息承担保密义务，直至该信息依法公开或不再具有保密性。本合同未约定离职后的竞业限制。",
+  "contract_facts": {
+    "fixed_term": {
+      "fixed_term_present": true,
+      "start_date": "2025-03-01",
+      "end_date": "2027-02-28",
+      "term_text": "固定期限劳动合同，期限自2025年3月1日至2027年2月28日；期满后最多可续约一次，但须另行签署书面协议。"
+    },
+    "probation_period": {
+      "probation_present": true,
+      "duration_value": 3,
+      "duration_unit": "月",
+      "condition_text": "自实际入职日起计算，试用期包含在合同期限内。"
+    },
+    "renewal_terms": {
+      "renewal_allowed": true,
+      "automatic_renewal": false,
+      "renewal_limit": 1,
+      "renewal_condition": "期满后如双方拟继续合作，最多可续约一次，但必须另行签署书面续约协议，不会自动续约。"
+    },
+    "notice_requirements": {
+      "notice_required": true,
+      "notice_duration_value": 30,
+      "notice_duration_unit": "日历日",
+      "trigger_event": "员工主动辞职",
+      "notice_recipient": "公司人力资源部"
+    },
+    "immediate_termination": {
+      "immediate_termination_allowed": true,
+      "trigger_conditions": [
+        "严重违反公司规章制度",
+        "盗窃公司财物",
+        "故意泄露商业秘密"
+      ],
+      "procedural_requirements": "公司可以不等待通知期，但应向员工送达书面解除通知，并留存调查及证据记录。"
+    },
+    "post_employment_obligations": {
+      "confidentiality_required": true,
+      "non_compete_required": false,
+      "property_return_required": true,
+      "obligation_duration": "保密义务持续至相关信息依法公开或不再具有保密性。",
+      "other_obligations": "离职时返还公司设备、文件及资料。"
+    }
+  },
+  "claim_assessment": {
+    "claim_type": "合同期限",
+    "verdict": "部分支持",
+    "confidence": 0.98,
+    "reason": "合同明确支持固定期限的起止日期以及最多续约一次，但明确要求另行签署书面协议，未约定期满自动续约。因此，主张中的期限部分得到支持，自动续约部分不成立。",
+    "evidence_refs": [
+      {
+        "quote": "本合同为固定期限劳动合同，自2025年3月1日起至2027年2月28日止。",
+        "location": "第一条 合同期限",
+        "supports_claim": true
+      },
+      {
+        "quote": "期满后如双方拟继续合作，最多可续约一次，但应另行签署书面续约协议。",
+        "location": "第一条 合同期限",
+        "supports_claim": false
+      }
+    ]
+  }
+}
