@@ -1,0 +1,194 @@
+{
+  "source_page": {
+    "source_url": "",
+    "page_title": "韩语助词教学示例：을/를与와/과的宾语和并列用法",
+    "page_html": "<h1>을/를与와/과：宾语、并列和共同参与者</h1><p>을/를是宾格助词，标记及物动词直接作用的对象。名词有收音用을，无收音用를。</p><p>와/과可以连接并列名词；在친구와 같이等结构中也表示共同参与者，类似中文“和”或“跟”。</p><p>例句：책과 공책을 샀어요。（买了书和笔记本。）친구와 영화를 봤어요。（和朋友一起看了电影。）</p><p>在책과 공책을 샀어요中，과连接两个名词，을标记整个并列名词短语作为购买对象。와/과不是所有出现于动词前的名词都表示直接宾语。</p>",
+    "page_text": "을/를与와/과：宾语、并列和共同参与者 을/를是宾格助词，标记及物动词直接作用的对象。名词有收音用을，无收音用를。 와/과可以连接并列名词；在친구와 같이等结构中也表示共同参与者，类似中文“和”或“跟”。 例句：책과 공책을 샀어요。（买了书和笔记本。）친구와 영화를 봤어요。（和朋友一起看了电影。） 在책과 공책을 샀어요中，과连接两个名词，을标记整个并列名词短语作为购买对象。와/과不是所有出现于动词前的名词都表示直接宾语。",
+    "source_language": "韩语（附中文说明）"
+  },
+  "evidence_items": [
+    {
+      "evidence_key": "ev_1",
+      "evidence_quote": "을/를是宾格助词，标记及物动词直接作用的对象。名词有收音用을，无收音用를。",
+      "evidence_context": "该定义直接说明了을/를的宾语功能，并给出根据收音选择形式的搭配条件。",
+      "evidence_type": "定义说明",
+      "source_location": {
+        "heading": "을/를与와/과：宾语、并列和共同参与者",
+        "section_path": [
+          "韩语助词教学示例",
+          "을/를与와/과：宾语、并列和共同参与者"
+        ],
+        "locator": "page_text:第2句；HTML中的第一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1"
+      ],
+      "evidence_strength": 0.97
+    },
+    {
+      "evidence_key": "ev_2",
+      "evidence_quote": "와/과可以连接并列名词；在친구와 같이等结构中也表示共同参与者，类似中文“和”或“跟”。",
+      "evidence_context": "该段区分了와/과的两类常见语义：连接名词的并列功能，以及表示共同参与者的伴随功能。",
+      "evidence_type": "用法说明",
+      "source_location": {
+        "heading": "并列与共同参与者",
+        "section_path": [
+          "韩语助词教学示例",
+          "을/를与와/과：宾语、并列和共同参与者"
+        ],
+        "locator": "page_text:第3句；HTML中的第二个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_2"
+      ],
+      "evidence_strength": 0.96
+    },
+    {
+      "evidence_key": "ev_3",
+      "evidence_quote": "책과 공책을 샀어요。（买了书和笔记本。）친구와 영화를 봤어요。（和朋友一起看了电影。）",
+      "evidence_context": "第一句中과连接책和공책，을标记整个并列短语；第二句中와表示共同参与者，而영화를是观看的直接对象。",
+      "evidence_type": "对比例句",
+      "source_location": {
+        "heading": "典型例句",
+        "section_path": [
+          "韩语助词教学示例",
+          "을/를与와/과：宾语、并列和共同参与者"
+        ],
+        "locator": "page_text:例句段；HTML中的第三个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1",
+        "exp_2"
+      ],
+      "evidence_strength": 0.98
+    },
+    {
+      "evidence_key": "ev_4",
+      "evidence_quote": "在책과 공책을 샀어요中，과连接两个名词，을标记整个并列名词短语作为购买对象。와/과不是所有出现于动词前的名词都表示直接宾语。",
+      "evidence_context": "该说明明确区分了并列助词与宾格助词的句法职责，并提醒不能根据名词是否位于动词前来单独判断宾语关系。",
+      "evidence_type": "例外说明",
+      "source_location": {
+        "heading": "并列短语中的助词层级",
+        "section_path": [
+          "韩语助词教学示例",
+          "을/를与와/과：宾语、并列和共同参与者"
+        ],
+        "locator": "page_text:末段；HTML中的最后一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1",
+        "exp_2"
+      ],
+      "evidence_strength": 0.98
+    }
+  ],
+  "evidence_links": [
+    {
+      "link_key": "link_1",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_1",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据直接定义을/를为宾格助词，并给出了及物动词对象和收音搭配条件。"
+    },
+    {
+      "link_key": "link_2",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_2",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据明确说明와/과的并列和共同参与者功能。"
+    },
+    {
+      "link_key": "link_3",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_3",
+      "relation_type": "补充",
+      "support_assessment": "强",
+      "rationale": "책과 공책을 샀어요展示了을标记并列名词短语整体为宾语，补充了宾格在并列结构中的位置。"
+    },
+    {
+      "link_key": "link_4",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_3",
+      "relation_type": "补充",
+      "support_assessment": "强",
+      "rationale": "两条例句对比了과的名词连接功能和와的共同参与者功能。"
+    },
+    {
+      "link_key": "link_5",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_4",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据明确指出을标记并列短语整体的对象关系。"
+    },
+    {
+      "link_key": "link_6",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_4",
+      "relation_type": "限定",
+      "support_assessment": "强",
+      "rationale": "证据限制了把所有와/과短语都分析为直接宾语的解释。"
+    }
+  ],
+  "particle_forms": [
+    "을/를",
+    "와/과"
+  ],
+  "learner_question": "을/를和와/과都可能出现在动词前的名词后面，怎样判断它们分别是直接宾语、并列关系还是共同参与者？",
+  "particle_functions": [
+    "宾格标记",
+    "直接宾语",
+    "名词并列",
+    "共同参与者"
+  ],
+  "quality_assessment": {
+    "has_contrastive_basis": true,
+    "has_usage_conditions": true,
+    "has_exception_note": true,
+    "coverage_note": "页面通过定义、宾语与并列的对比例句以及并列短语中的助词层级，区分了을/를的直接宾语功能和와/과的并列、伴随功能，并说明了语境限制。"
+  },
+  "retrieval_keywords": [
+    "을/를 와/과 区别",
+    "韩语宾格助词",
+    "韩语并列助词",
+    "直接宾语",
+    "名词并列",
+    "共同参与者",
+    "친구와 같이",
+    "책과 공책을 사다"
+  ],
+  "candidate_explanations": [
+    {
+      "explanation_key": "exp_1",
+      "claim": "을/를标记及物动词直接作用的对象，即直接宾语；有收音时使用을，无收音时使用를。",
+      "usage_conditions": [
+        "名词是及物动词所指向的对象时使用。",
+        "有收音的名词后接을，无收音的名词后接를。",
+        "在并列名词短语整体充当宾语时，宾格助词可以出现在并列短语末端。"
+      ],
+      "exception_cases": [
+        "口语中宾格助词有时会省略，但省略不改变名词与谓词之间的宾语关系。"
+      ],
+      "confidence_score": 0.95
+    },
+    {
+      "explanation_key": "exp_2",
+      "claim": "와/과可以连接两个或多个并列名词，也可以在친구와 같이等结构中表示共同参与者，具体含义取决于后续谓词和语境。",
+      "usage_conditions": [
+        "连接同类或并列的名词时使用，表示“和”。",
+        "与같이、함께等共同参与表达搭配时，可表示“和某人一起”。",
+        "有收音的名词后使用과，无收音的名词后使用와。"
+      ],
+      "exception_cases": [
+        "와/과本身不是直接宾语标记；它前面的名词是否为参与者或并列成员，需要结合语境判断。"
+      ],
+      "confidence_score": 0.94
+    }
+  ]
+}

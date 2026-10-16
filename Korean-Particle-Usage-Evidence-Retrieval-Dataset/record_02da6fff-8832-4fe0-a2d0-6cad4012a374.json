@@ -1,0 +1,148 @@
+{
+  "source_page": {
+    "source_url": "",
+    "page_title": "韩语助词教学示例：이/가与은/는的区别",
+    "page_html": "<h1>이/가与은/는：主格和主题</h1><p>이/가表示句子中的主语，常用于介绍新信息或回答“谁/什么”。名词有收音用이，无收音用가。</p><p>은/는标记主题，也可引出已知话题或形成对比。名词有收音用은，无收音用는。</p><p>例句：고양이가 창문 옆에 있어요。（猫在窗边。）오늘은 날씨가 좋아요。（今天天气很好。）</p><p>注意：은/는也可以出现在主语位置，因此不能简单说它永远不是主语标记。</p>",
+    "page_text": "이/가与은/는：主格和主题 이/가表示句子中的主语，常用于介绍新信息或回答“谁/什么”。名词有收音用이，无收音用가。 은/는标记主题，也可引出已知话题或形成对比。名词有收音用은，无收音用는。 例句：고양이가 창문 옆에 있어요。（猫在窗边。）오늘은 날씨가 좋아요。（今天天气很好。） 注意：은/는也可以出现在主语位置，因此不能简单说它永远不是主语标记。",
+    "source_language": "韩语（附中文说明）"
+  },
+  "evidence_items": [
+    {
+      "evidence_key": "ev_1",
+      "evidence_quote": "이/가表示句子中的主语，常用于介绍新信息或回答“谁/什么”。",
+      "evidence_context": "该段将이/가的句法功能与信息结构功能并列说明，并在后文给出고양이가 창문 옆에 있어요作为主语例句。",
+      "evidence_type": "用法说明",
+      "source_location": {
+        "heading": "이/가与은/는：主格和主题",
+        "section_path": [
+          "韩语助词教学示例",
+          "이/가与은/는：主格和主题"
+        ],
+        "locator": "page_text:第2句；HTML中的第一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1"
+      ],
+      "evidence_strength": 0.96
+    },
+    {
+      "evidence_key": "ev_2",
+      "evidence_quote": "은/는标记主题，也可引出已知话题或形成对比。",
+      "evidence_context": "该说明把은/는与主题、已知信息和对比语境联系起来，并列出收音条件。",
+      "evidence_type": "对比例句",
+      "source_location": {
+        "heading": "主题助词은/는",
+        "section_path": [
+          "韩语助词教学示例",
+          "이/가与은/는：主格和主题"
+        ],
+        "locator": "page_text:第3句；HTML中的第二个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_2"
+      ],
+      "evidence_strength": 0.94
+    },
+    {
+      "evidence_key": "ev_3",
+      "evidence_quote": "은/는也可以出现在主语位置，因此不能简单说它永远不是主语标记。",
+      "evidence_context": "这是对把은/는机械理解为非主语助词的限制说明，提示需要区分主题功能和句法主语功能。",
+      "evidence_type": "例外说明",
+      "source_location": {
+        "heading": "使用限制",
+        "section_path": [
+          "韩语助词教学示例",
+          "이/가与은/는：主格和主题"
+        ],
+        "locator": "page_text:末句；HTML中的最后一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_2"
+      ],
+      "evidence_strength": 0.98
+    }
+  ],
+  "evidence_links": [
+    {
+      "link_key": "link_1",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_1",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据直接说明이/가的主语标记功能，并明确关联新信息和疑问回答语境。"
+    },
+    {
+      "link_key": "link_2",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_2",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据明确将은/는定义为主题标记，并指出其已知话题和对比功能。"
+    },
+    {
+      "link_key": "link_3",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_3",
+      "relation_type": "限定",
+      "support_assessment": "强",
+      "rationale": "该证据限制了把主题助词与主语身份完全对立的简化解释。"
+    }
+  ],
+  "particle_forms": [
+    "이/가",
+    "은/는"
+  ],
+  "learner_question": "이/가和은/는都能出现在名词后面，怎样区分主格、主题以及新信息和对比语境中的用法？",
+  "particle_functions": [
+    "主格标记",
+    "主题标记",
+    "新信息标记",
+    "对比标记"
+  ],
+  "quality_assessment": {
+    "has_contrastive_basis": true,
+    "has_usage_conditions": true,
+    "has_exception_note": true,
+    "coverage_note": "页面同时说明了이/가和은/는的核心功能、收音搭配及信息结构差异，并补充了은/는可以出现在主语位置的限制，能够支持对比检索。"
+  },
+  "retrieval_keywords": [
+    "이/가 은/는 区别",
+    "韩语主格助词",
+    "韩语主题助词",
+    "新信息与已知信息",
+    "对比主题",
+    "고양이가",
+    "오늘은"
+  ],
+  "candidate_explanations": [
+    {
+      "explanation_key": "exp_1",
+      "claim": "이/가主要标记句子的语法主语，尤其适合引入新信息或回答“谁/什么”的问题。",
+      "usage_conditions": [
+        "名词在句中承担动作或状态的主语时使用。",
+        "需要突出新出现的主语或回答主语身份时更自然。",
+        "有收音的名词后使用이，无收音的名词后使用가。"
+      ],
+      "exception_cases": [
+        "이/가并不总是表达新信息，在特定对比或焦点语境中也可能标记已知名词。"
+      ],
+      "confidence_score": 0.95
+    },
+    {
+      "explanation_key": "exp_2",
+      "claim": "은/는主要标记谈话主题，可引出已知话题或形成对比；它也可以出现在句法主语位置，因此不能简单等同于非主语成分。",
+      "usage_conditions": [
+        "需要把名词作为当前谈话主题时使用。",
+        "比较两个对象或突出主题与其他对象的差异时常使用。",
+        "有收音的名词后使用은，无收音的名词后使用는。"
+      ],
+      "exception_cases": [
+        "은/는具有主题和对比功能，不能仅凭形式判断该名词不是句子的语法主语。"
+      ],
+      "confidence_score": 0.94
+    }
+  ]
+}

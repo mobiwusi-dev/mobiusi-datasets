@@ -1,0 +1,196 @@
+{
+  "particle_functions": [
+    "静态地点",
+    "目的地",
+    "时间点",
+    "动作发生地点",
+    "出发点"
+  ],
+  "source_page": {
+    "source_url": "",
+    "page_title": "韩语助词教学示例：에与에서的地点和方向用法",
+    "page_html": "<h1>에与에서：地点、目的地和动作场所</h1><p>에用于表示静态存在的地点、到达的目的地或时间点。</p><p>에서主要表示动作发生的地点，也可以表示离开的出发点。</p><p>例句：학교에 학생이 있어요。（学校里有学生。）학교에서 공부해요。（在学校学习。）집에서 학교에 가요。（从家去学校。）</p><p>在表示动作发生地时不能仅因中文都译成“在”就任意换用에；在있다和없다等存在句中通常使用에。</p>",
+    "page_text": "에与에서：地点、目的地和动作场所 에用于表示静态存在的地点、到达的目的地或时间点。 에서主要表示动作发生的地点，也可以表示离开的出发点。 例句：학교에 학생이 있어요。（学校里有学生。）학교에서 공부해요。（在学校学习。）집에서 학교에 가요。（从家去学校。） 在表示动作发生地时不能仅因中文都译成“在”就任意换用에；在있다和없다等存在句中通常使用에。",
+    "source_language": "韩语（附中文说明）"
+  },
+  "evidence_items": [
+    {
+      "evidence_key": "ev_1",
+      "evidence_quote": "에用于表示静态存在的地点、到达的目的地或时间点。",
+      "evidence_context": "该定义同时覆盖了存在地点、移动目的地和时间点三个常见功能，是区分에与에서的基础。",
+      "evidence_type": "定义说明",
+      "source_location": {
+        "heading": "에与에서：地点、目的地和动作场所",
+        "section_path": [
+          "韩语助词教学示例",
+          "에与에서：地点、目的地和动作场所"
+        ],
+        "locator": "page_text:第2句；HTML中的第一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1"
+      ],
+      "evidence_strength": 0.97
+    },
+    {
+      "evidence_key": "ev_2",
+      "evidence_quote": "에서主要表示动作发生的地点，也可以表示离开的出发点。",
+      "evidence_context": "该句将에서的动作场所功能与出发点功能并列，说明它不只是中文“在”的对应形式。",
+      "evidence_type": "用法说明",
+      "source_location": {
+        "heading": "动作场所和出发点",
+        "section_path": [
+          "韩语助词教学示例",
+          "에与에서：地点、目的地和动作场所"
+        ],
+        "locator": "page_text:第3句；HTML中的第二个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_2"
+      ],
+      "evidence_strength": 0.96
+    },
+    {
+      "evidence_key": "ev_3",
+      "evidence_quote": "학교에 학생이 있어요。（学校里有学生。）학교에서 공부해요。（在学校学习。）집에서 학교에 가요。（从家去学校。）",
+      "evidence_context": "三条例句分别展示静态存在地点、动作发生地点和移动出发点与目的地：학교에、학교에서、집에서与학교에的功能不同。",
+      "evidence_type": "对比例句",
+      "source_location": {
+        "heading": "典型例句",
+        "section_path": [
+          "韩语助词教学示例",
+          "에与에서：地点、目的地和动作场所"
+        ],
+        "locator": "page_text:例句段；HTML中的第三个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1",
+        "exp_2"
+      ],
+      "evidence_strength": 0.98
+    },
+    {
+      "evidence_key": "ev_4",
+      "evidence_quote": "在表示动作发生地时不能仅因中文都译成“在”就任意换用에；在있다和없다等存在句中通常使用에。",
+      "evidence_context": "该段明确提醒学习者不要依据中文译文机械替换助词，并以存在句和动作句的谓词类型作为判断线索。",
+      "evidence_type": "例外说明",
+      "source_location": {
+        "heading": "使用限制",
+        "section_path": [
+          "韩语助词教学示例",
+          "에与에서：地点、目的地和动作场所"
+        ],
+        "locator": "page_text:末句；HTML中的最后一个p元素",
+        "source_url": ""
+      },
+      "supports_claim_keys": [
+        "exp_1",
+        "exp_2"
+      ],
+      "evidence_strength": 0.97
+    }
+  ],
+  "evidence_links": [
+    {
+      "link_key": "link_1",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_1",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据直接列出에的静态地点、目的地和时间点功能，与候选解释完全对应。"
+    },
+    {
+      "link_key": "link_2",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_2",
+      "relation_type": "支持",
+      "support_assessment": "强",
+      "rationale": "证据明确说明에서用于动作场所和出发点。"
+    },
+    {
+      "link_key": "link_3",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_3",
+      "relation_type": "补充",
+      "support_assessment": "强",
+      "rationale": "학교에和집에서 학교에 가요中的에例句具体展示了存在地点和目的地功能。"
+    },
+    {
+      "link_key": "link_4",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_3",
+      "relation_type": "补充",
+      "support_assessment": "强",
+      "rationale": "학교에서 공부해요和집에서的例句分别补充动作场所与出发点用法。"
+    },
+    {
+      "link_key": "link_5",
+      "explanation_key": "exp_1",
+      "evidence_key": "ev_4",
+      "relation_type": "限定",
+      "support_assessment": "强",
+      "rationale": "该证据限定了에不能在动作发生地点中任意替代에서。"
+    },
+    {
+      "link_key": "link_6",
+      "explanation_key": "exp_2",
+      "evidence_key": "ev_4",
+      "relation_type": "限定",
+      "support_assessment": "中",
+      "rationale": "该证据说明에서不能替代存在句中的에，补充了谓词类型限制。"
+    }
+  ],
+  "particle_forms": [
+    "에",
+    "에서"
+  ],
+  "learner_question": "表示中文“在”或移动地点时，什么时候使用에，什么时候使用에서？存在地点、动作发生地和出发点有什么区别？",
+  "quality_assessment": {
+    "has_contrastive_basis": true,
+    "has_usage_conditions": true,
+    "has_exception_note": true,
+    "coverage_note": "页面通过定义、三组对比例句和谓词类型限制，覆盖了静态地点、动作场所、目的地与出发点，能够支撑对에和에서的精确检索。"
+  },
+  "retrieval_keywords": [
+    "에 에서 区别",
+    "韩语地点助词",
+    "动作发生地点",
+    "静态存在地点",
+    "移动目的地",
+    "出发点助词",
+    "학교에",
+    "학교에서",
+    "집에서 학교에 가다"
+  ],
+  "candidate_explanations": [
+    {
+      "explanation_key": "exp_1",
+      "claim": "에可以标记静态存在的地点、移动到达的目的地以及时间点，重点是位置状态、到达目标或时间定位。",
+      "usage_conditions": [
+        "与있다、없다等存在或位置状态表达搭配时标记所在地点。",
+        "与가다、오다等移动动词搭配时标记目的地。",
+        "表示具体时间点时也可以使用에。"
+      ],
+      "exception_cases": [
+        "如果地点是具体动作发生的场所，通常改用에서，而不是因为中文翻译为“在”就使用에。"
+      ],
+      "confidence_score": 0.95
+    },
+    {
+      "explanation_key": "exp_2",
+      "claim": "에서主要标记动作或事件发生的地点，也可标记移动或离开的出发点。",
+      "usage_conditions": [
+        "地点是学习、吃饭、工作等动作实际发生的场所时使用。",
+        "与오다、출발하다等动词搭配表示从某处出发时使用。",
+        "出发点和动作场所的解释需要结合谓词语义判断。"
+      ],
+      "exception_cases": [
+        "表示单纯存在或静态位置时通常使用에；에서不能在所有存在句中替代에。"
+      ],
+      "confidence_score": 0.94
+    }
+  ]
+}
