@@ -1,0 +1,176 @@
+{
+  "event_structure": [
+    {
+      "event_index": 1,
+      "event_trigger": "시범사업을 시작했다",
+      "event_type": "政策措施",
+      "participants": [
+        "해온시",
+        "해온시 주민"
+      ],
+      "time_expression": "지난 6월",
+      "location": "해온시 도심",
+      "event_description": "해온시가 도심 폭염에 대응하기 위해 그늘도시 시범사업을 시작했다."
+    },
+    {
+      "event_index": 2,
+      "event_trigger": "설치하고 ... 심는",
+      "event_type": "行动",
+      "participants": [
+        "해온시",
+        "학교와 공공청사 주변 이용자"
+      ],
+      "time_expression": "이번 사업 기간",
+      "location": "버스정류장, 보행로, 학교와 공공청사 주변",
+      "event_description": "사업 구역에 그늘막을 설치하고 나무를 심는 조치가 시행된다."
+    },
+    {
+      "event_index": 3,
+      "event_trigger": "줄었다고 밝혔다",
+      "event_type": "声明",
+      "participants": [
+        "해온시 기후정책과",
+        "해온시 주민"
+      ],
+      "time_expression": "지난해 여름과 올해 여름",
+      "location": "해온시 시범사업 구역",
+      "event_description": "해온시 기후정책과가 열대야 일수가 18일에서 11일로 감소했다고 발표했다."
+    },
+    {
+      "event_index": 4,
+      "event_trigger": "지적했다",
+      "event_type": "声明",
+      "participants": [
+        "가상 도시기후연구원",
+        "해온시 정책 담당자"
+      ],
+      "time_expression": "이번 사업 평가 과정",
+      "location": "해온시의 포장면이 많은 구역",
+      "event_description": "가상 연구원이 단기 시설 확대만으로는 폭염 대응에 한계가 있다고 지적했다."
+    },
+    {
+      "event_index": 5,
+      "event_trigger": "병행하기로 했다",
+      "event_type": "政策措施",
+      "participants": [
+        "해온시",
+        "해온시 주민"
+      ],
+      "time_expression": "향후",
+      "location": "해온시 도심",
+      "event_description": "해온시가 그늘막 확대와 도로 포장 개선, 녹지 연결 사업을 함께 추진하기로 결정했다."
+    }
+  ],
+  "source_document": {
+    "document_text": "해온시는 지난 6월 도심 폭염에 대응하기 위한 그늘도시 시범사업을 시작했다. 이번 사업은 버스정류장과 보행로에 그늘막을 설치하고 학교와 공공청사 주변에 나무를 심는 것이 핵심이다. 시 기후정책과는 지난해 여름 해온시의 열대야 일수가 18일이었지만, 올해 시범사업 구역에서는 11일로 줄었다고 밝혔다. 그러나 가상 도시기후연구원은 포장면이 많은 구역에서는 밤에도 열이 남기 때문에 단기 시설만 늘려서는 한계가 있다고 지적했다. 이에 해온시는 그늘막 확대와 함께 도로 포장 개선 및 녹지 연결 사업을 병행하기로 했다.",
+    "document_title": "해온시 폭염 대응, 그늘막과 도시 구조 개선 병행",
+    "document_genre": "新闻",
+    "publication_date": "2028-06-15",
+    "publisher_or_outlet": "합성 뉴스 샘플 편집부",
+    "author": "편집부"
+  },
+  "stance_analysis": {
+    "overall_stance": "해온시의 폭염 대응을 긍정적으로 평가하되, 그늘막 설치에만 의존하지 말고 포장 개선과 녹지 연결을 병행해야 한다는 입장이다.",
+    "stance_polarity": "混合",
+    "stance_targets": [
+      "해온시의 그늘도시 시범사업",
+      "도시 구조 개선을 포함한 폭염 대응 정책"
+    ],
+    "stance_strength": 0.72,
+    "stance_evidence": [
+      "단기 시설만 늘려서는 한계가 있다고 지적했다.",
+      "그늘막 확대와 함께 도로 포장 개선 및 녹지 연결 사업을 병행하기로 했다."
+    ]
+  },
+  "causal_relations": [
+    {
+      "relation_index": 1,
+      "cause": "포장면이 많은 구역에 밤에도 열이 남는 현상",
+      "effect": "단기 시설만 확대하는 폭염 대응의 효과가 제한됨",
+      "causal_marker": "때문에",
+      "causal_type": "直接因果",
+      "confidence": 0.94
+    },
+    {
+      "relation_index": 2,
+      "cause": "시범사업 구역에서 열대야 일수가 감소함",
+      "effect": "해온시가 단기 시설 확대를 계속 추진하고 구조 개선도 병행하기로 함",
+      "causal_marker": "이에",
+      "causal_type": "推测因果",
+      "confidence": 0.78
+    }
+  ],
+  "document_summary": {
+    "summary_text": "해온시는 폭염에 대응하기 위해 그늘막 설치와 나무 심기 사업을 시작했으며, 시범사업 구역의 열대야 일수가 감소했다고 발표했다. 그러나 가상 도시기후연구원은 포장면에 축적된 열 때문에 단기 시설만으로는 부족하다고 지적했고, 해온시는 도시 구조 개선을 병행하기로 했다.",
+    "key_points": [
+      "해온시가 그늘도시 시범사업을 시작했다.",
+      "시범사업 구역의 열대야 일수가 18일에서 11일로 감소했다.",
+      "전문가는 그늘막 확대와 함께 포장 개선 및 녹지 연결이 필요하다고 지적했다."
+    ],
+    "discourse_focus": "단기 시설과 도시 구조 개선을 결합한 폭염 대응",
+    "conclusion": "폭염 대응의 실효성을 높이려면 그늘막 확대와 장기적인 도시 환경 개선을 함께 추진해야 한다."
+  },
+  "argument_structure": [
+    {
+      "argument_index": 1,
+      "claim": "폭염 대응은 그늘막 같은 단기 시설과 도시 구조 개선을 함께 추진해야 한다.",
+      "evidence": [
+        {
+          "evidence_text": "시범사업 구역의 열대야 일수가 지난해 18일에서 올해 11일로 줄었다는 해온시 기후정책과의 발표",
+          "evidence_type": "数据",
+          "support_relation": "단기 시설이 일정한 효과를 낼 수 있음을 보여 주지만, 장기 대책의 필요성까지 부정하지는 않는다."
+        },
+        {
+          "evidence_text": "가상 도시기후연구원은 포장면이 많은 구역에서는 밤에도 열이 남아 단기 시설만으로는 한계가 있다고 지적했다.",
+          "evidence_type": "专家意见",
+          "support_relation": "도시 열환경의 구조적 원인을 근거로 종합적인 대응이 필요하다는 주장을 뒷받침한다."
+        }
+      ],
+      "reasoning_relation": "归纳",
+      "counterargument": "사업 예산과 행정 역량이 제한되어 단기 시설부터 단계적으로 확대해야 한다는 현실적인 반론이 있을 수 있다."
+    }
+  ],
+  "attribution_sources": [
+    {
+      "source_index": 1,
+      "source_name": "해온시 기후정책과",
+      "source_type": "政府机构",
+      "quoted_content": "지난해 여름 해온시의 열대야 일수가 18일이었지만, 올해 시범사업 구역에서는 11일로 줄었다고 밝혔다.",
+      "attribution_expression": "밝혔다",
+      "source_stance": "시범사업의 효과를 긍정적으로 평가한다.",
+      "source_position": "세 번째 문장"
+    },
+    {
+      "source_index": 2,
+      "source_name": "가상 도시기후연구원",
+      "source_type": "研究机构",
+      "quoted_content": "포장면이 많은 구역에서는 밤에도 열이 남기 때문에 단기 시설만 늘려서는 한계가 있다고 지적했다.",
+      "attribution_expression": "지적했다",
+      "source_stance": "단기 대책과 구조적 대책의 병행을 요구한다.",
+      "source_position": "네 번째 문장"
+    }
+  ],
+  "discourse_relations": [
+    {
+      "relation_index": 1,
+      "relation_type": "解释",
+      "source_span": "해온시는 지난 6월 도심 폭염에 대응하기 위한 그늘도시 시범사업을 시작했다.",
+      "target_span": "이번 사업은 버스정류장과 보행로에 그늘막을 설치하고 학교와 공공청사 주변에 나무를 심는 것이 핵심이다.",
+      "discourse_marker": "이번 사업은"
+    },
+    {
+      "relation_index": 2,
+      "relation_type": "转折",
+      "source_span": "시 기후정책과는 지난해 여름 해온시의 열대야 일수가 18일이었지만, 올해 시범사업 구역에서는 11일로 줄었다고 밝혔다.",
+      "target_span": "그러나 가상 도시기후연구원은 포장면이 많은 구역에서는 밤에도 열이 남기 때문에 단기 시설만 늘려서는 한계가 있다고 지적했다.",
+      "discourse_marker": "그러나"
+    },
+    {
+      "relation_index": 3,
+      "relation_type": "因果",
+      "source_span": "가상 도시기후연구원은 ... 단기 시설만 늘려서는 한계가 있다고 지적했다.",
+      "target_span": "해온시는 그늘막 확대와 함께 도로 포장 개선 및 녹지 연결 사업을 병행하기로 했다.",
+      "discourse_marker": "이에"
+    }
+  ]
+}

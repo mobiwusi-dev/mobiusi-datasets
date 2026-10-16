@@ -1,0 +1,177 @@
+{
+  "discourse_relations": [
+    {
+      "relation_index": 1,
+      "relation_type": "时间顺序",
+      "source_span": "최근 여러 광역자치단체는 원격근무자를 유치하기 위해 공유오피스와 단기 체류 프로그램을 잇달아 내놓고 있다.",
+      "target_span": "가상 지역균형발전포럼의 표본 조사에서는 프로그램 참가자들이 업무 공간보다 주거비와 돌봄 서비스의 부족을 더 큰 부담으로 꼽았다.",
+      "discourse_marker": "하지만"
+    },
+    {
+      "relation_index": 2,
+      "relation_type": "条件",
+      "source_span": "교통과 의료, 교육 같은 생활 기반이 갖춰지지 않으면",
+      "target_span": "참가자들은 몇 주 뒤 수도권으로 돌아갈 가능성이 높다.",
+      "discourse_marker": "-지 않으면"
+    },
+    {
+      "relation_index": 3,
+      "relation_type": "总结",
+      "source_span": "참가자들은 몇 주 뒤 수도권으로 돌아갈 가능성이 높다.",
+      "target_span": "지방의 원격근무 정책은 사무 공간을 제공하는 데 그치지 말고 장기 거주를 지원하는 생활 인프라 정책으로 확대돼야 한다.",
+      "discourse_marker": "따라서"
+    }
+  ],
+  "event_structure": [
+    {
+      "event_index": 1,
+      "event_trigger": "늘어도",
+      "event_type": "变化",
+      "participants": [
+        "원격근무자",
+        "지방 도시"
+      ],
+      "time_expression": "최근",
+      "location": "地方城市",
+      "event_description": "即使远程工作增加，地方城市也不一定会自动恢复活力。"
+    },
+    {
+      "event_index": 2,
+      "event_trigger": "내놓고 있다",
+      "event_type": "政策措施",
+      "participants": [
+        "여러 광역자치단체",
+        "원격근무자"
+      ],
+      "time_expression": "최근",
+      "location": "地方城市",
+      "event_description": "多个广域地方政府推出共享办公室和短期居留项目以吸引远程工作者。"
+    },
+    {
+      "event_index": 3,
+      "event_trigger": "꼽았다",
+      "event_type": "声明",
+      "participants": [
+        "프로그램 참가자",
+        "가상 지역균형발전포럼"
+      ],
+      "time_expression": "표본 조사期间",
+      "location": "参与项目的地方城市",
+      "event_description": "调查显示参与者认为住房成本和照护服务不足比办公空间更令人负担。"
+    },
+    {
+      "event_index": 4,
+      "event_trigger": "돌아갈 가능성이 높다",
+      "event_type": "变化",
+      "participants": [
+        "원격근무 프로그램 참가자",
+        "수도권"
+      ],
+      "time_expression": "몇 주 뒤",
+      "location": "地方城市与首都圈",
+      "event_description": "如果生活基础设施不足，参与者可能在数周后返回首都圈。"
+    },
+    {
+      "event_index": 5,
+      "event_trigger": "확대돼야 한다",
+      "event_type": "政策措施",
+      "participants": [
+        "地方政府",
+        "원격근무자와 지역 주민"
+      ],
+      "time_expression": "향후",
+      "location": "地方城市",
+      "event_description": "专栏主张地方远程工作政策应从办公空间供给扩展到支持长期居住的生活基础设施政策。"
+    }
+  ],
+  "attribution_sources": [
+    {
+      "source_index": 1,
+      "source_name": "가상 지역균형발전포럼 표본 조사",
+      "source_type": "研究机构",
+      "quoted_content": "프로그램 참가자들이 업무 공간보다 주거비와 돌봄 서비스의 부족을 더 큰 부담으로 꼽았다.",
+      "attribution_expression": "표본 조사에서는 ... 꼽았다",
+      "source_stance": "指出生活成本和照护条件是远程工作者持续居留的主要障碍。",
+      "source_position": "第三句"
+    }
+  ],
+  "source_document": {
+    "document_text": "원격근무가 늘어도 지방 도시가 저절로 살아나는 것은 아니다. 최근 여러 광역자치단체는 원격근무자를 유치하기 위해 공유오피스와 단기 체류 프로그램을 잇달아 내놓고 있다. 하지만 가상 지역균형발전포럼의 표본 조사에서는 프로그램 참가자들이 업무 공간보다 주거비와 돌봄 서비스의 부족을 더 큰 부담으로 꼽았다. 교통과 의료, 교육 같은 생활 기반이 갖춰지지 않으면 참가자들은 몇 주 뒤 수도권으로 돌아갈 가능성이 높다. 따라서 지방의 원격근무 정책은 사무 공간을 제공하는 데 그치지 말고 장기 거주를 지원하는 생활 인프라 정책으로 확대돼야 한다.",
+    "document_title": "원격근무자를 부르려면 사무실보다 생활 기반을 마련해야 한다",
+    "document_genre": "专栏",
+    "publication_date": "2028-11-20",
+    "publisher_or_outlet": "합성 지역정책 저널",
+    "author": "김하늘"
+  },
+  "stance_analysis": {
+    "overall_stance": "文章支持地方吸引远程工作者的政策方向，但批评只建设共享办公室和短期项目，主张把重点转向住房、照护、交通、医疗和教育等长期生活条件。",
+    "stance_polarity": "支持",
+    "stance_targets": [
+      "地方远程工作者引进政策",
+      "共享办公室和短期居留项目",
+      "地方生活基础设施建设"
+    ],
+    "stance_strength": 0.88,
+    "stance_evidence": [
+      "지방의 원격근무 정책은 사무 공간을 제공하는 데 그치지 말고 장기 거주를 지원하는 생활 인프라 정책으로 확대돼야 한다.",
+      "업무 공간보다 주거비와 돌봄 서비스의 부족을 더 큰 부담으로 꼽았다."
+    ]
+  },
+  "causal_relations": [
+    {
+      "relation_index": 1,
+      "cause": "住房成本和照护服务不足给远程工作者带来较大负担",
+      "effect": "仅提供办公空间的地方远程工作项目难以吸引长期居住者",
+      "causal_marker": "보다",
+      "causal_type": "相关关系",
+      "confidence": 0.8
+    },
+    {
+      "relation_index": 2,
+      "cause": "交通、医疗和教育等生活基础设施没有完善",
+      "effect": "项目参与者几周后返回首都圈的可能性增加",
+      "causal_marker": "-지 않으면",
+      "causal_type": "条件因果",
+      "confidence": 0.95
+    },
+    {
+      "relation_index": 3,
+      "cause": "参与者可能因生活基础设施不足而返回首都圈",
+      "effect": "地方远程工作政策需要扩大为支持长期居住的生活基础设施政策",
+      "causal_marker": "따라서",
+      "causal_type": "间接因果",
+      "confidence": 0.89
+    }
+  ],
+  "document_summary": {
+    "summary_text": "专栏指出，远程工作增加并不意味着地方城市会自动复兴。虽然地方政府纷纷推出共享办公室和短期居留项目，但样本调查显示，参与者更在意住房成本和照护服务，交通、医疗、教育等生活基础不足还可能促使他们返回首都圈。因此，地方远程工作政策应从单纯提供办公空间转向支持长期居住的综合生活基础设施建设。",
+    "key_points": [
+      "多个地方政府正在通过共享办公室和短期项目吸引远程工作者。",
+      "参与者认为住房和照护不足比办公空间不足更严重。",
+      "生活基础设施不足会降低短期项目转化为长期居留的可能性。",
+      "地方政策需要覆盖交通、医疗、教育和照护等长期生活条件。"
+    ],
+    "discourse_focus": "地方远程工作政策能否从短期办公项目转化为长期定居政策",
+    "conclusion": "吸引远程工作者的关键不只是提供办公场所，而是建设能够支撑长期生活的综合基础设施。"
+  },
+  "argument_structure": [
+    {
+      "argument_index": 1,
+      "claim": "地方城市吸引远程工作者不能只提供共享办公室，还必须建设支持长期居住的生活基础设施。",
+      "evidence": [
+        {
+          "evidence_text": "가상 지역균형발전포럼的样本调查显示，参与者将住房成本和照护服务不足视为比办公空间更大的负担。",
+          "evidence_type": "数据",
+          "support_relation": "表明远程工作者的主要障碍不仅是工作场所，还包括住房和照护等日常生活条件。"
+        },
+        {
+          "evidence_text": "交通、医疗和教育等生活基础不足时，参与者几周后返回首都圈的可能性较高。",
+          "evidence_type": "推断",
+          "support_relation": "说明生活基础设施缺失会削弱短期项目转化为长期定居的效果。"
+        }
+      ],
+      "reasoning_relation": "因果",
+      "counterargument": "共享办公室和短期项目投资规模较小、见效较快，地方政府可能认为应先从这些措施开始。"
+    }
+  ]
+}

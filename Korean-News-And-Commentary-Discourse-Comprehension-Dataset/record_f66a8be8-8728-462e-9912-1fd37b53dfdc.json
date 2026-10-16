@@ -1,0 +1,168 @@
+{
+  "discourse_relations": [
+    {
+      "relation_index": 1,
+      "relation_type": "因果",
+      "source_span": "생성형 인공지능이 만든 허위 정보가 온라인에서 빠르게 확산되면서",
+      "target_span": "미디어 교육과 투명한 표시 제도의 필요성이 커지고 있다.",
+      "discourse_marker": "-면서"
+    },
+    {
+      "relation_index": 2,
+      "relation_type": "转折",
+      "source_span": "일부에서는 규제가 강화되면 새로운 기술의 실험과 표현의 자유가 위축될 수 있다고 우려한다.",
+      "target_span": "가상 합성미디어정책연구소의 조사 보고서는 일반 이용자가 짧은 영상만 보고 인공지능 생성 여부를 판별하기 어렵다고 분석했다.",
+      "discourse_marker": "그러나"
+    },
+    {
+      "relation_index": 3,
+      "relation_type": "总结",
+      "source_span": "플랫폼은 합성 콘텐츠에 출처와 생성 여부를 표시하도록 하고, 학교와 지역 도서관은 정보 검증 교육을 강화해야 한다.",
+      "target_span": "전면적인 금지보다 이용자가 판단할 수 있는 정보를 제공하는 방식이 현실적인 해법이다.",
+      "discourse_marker": "따라서"
+    }
+  ],
+  "event_structure": [
+    {
+      "event_index": 1,
+      "event_trigger": "확산되면서",
+      "event_type": "变化",
+      "participants": [
+        "생성형 인공지능 허위 정보",
+        "온라인 이용자"
+      ],
+      "time_expression": "최근",
+      "location": "온라인 공간",
+      "event_description": "生成式人工智能制造的虚假信息在网络上快速传播。"
+    },
+    {
+      "event_index": 2,
+      "event_trigger": "우려한다",
+      "event_type": "声明",
+      "participants": [
+        "일부 비판자들",
+        "플랫폼과 정책 담당자"
+      ],
+      "time_expression": "현재 논쟁 과정",
+      "location": "온라인 미디어 정책讨论场域",
+      "event_description": "部分人士担心强化监管会抑制技术试验和表达自由。"
+    },
+    {
+      "event_index": 3,
+      "event_trigger": "분석했다",
+      "event_type": "声明",
+      "participants": [
+        "가상 합성미디어정책연구소",
+        "일반 이용자"
+      ],
+      "time_expression": "조사 보고서 작성 시점",
+      "location": "온라인媒体环境",
+      "event_description": "研究机构分析普通用户难以仅凭短视频判断内容是否由人工智能生成。"
+    },
+    {
+      "event_index": 4,
+      "event_trigger": "표시하도록 하다",
+      "event_type": "政策措施",
+      "participants": [
+        "플랫폼",
+        "온라인 이용자"
+      ],
+      "time_expression": "향후",
+      "location": "各平台",
+      "event_description": "社论建议平台标注合成内容的来源和生成状态。"
+    },
+    {
+      "event_index": 5,
+      "event_trigger": "교육을 강화해야 한다",
+      "event_type": "政策措施",
+      "participants": [
+        "학교와 지역 도서관",
+        "学习者和普通用户"
+      ],
+      "time_expression": "향후",
+      "location": "学校和地方图书馆",
+      "event_description": "社论主张强化信息核验教育。"
+    }
+  ],
+  "source_document": {
+    "document_text": "생성형 인공지능이 만든 허위 정보가 온라인에서 빠르게 확산되면서 미디어 교육과 투명한 표시 제도의 필요성이 커지고 있다. 일부에서는 규제가 강화되면 새로운 기술의 실험과 표현의 자유가 위축될 수 있다고 우려한다. 그러나 가상 합성미디어정책연구소의 조사 보고서는 일반 이용자가 짧은 영상만 보고 인공지능 생성 여부를 판별하기 어렵다고 분석했다. 따라서 플랫폼은 합성 콘텐츠에 출처와 생성 여부를 표시하도록 하고, 학교와 지역 도서관은 정보 검증 교육을 강화해야 한다. 전면적인 금지보다 이용자가 판단할 수 있는 정보를 제공하는 방식이 현실적인 해법이다.",
+    "document_title": "생성형 인공지능 허위 정보에 필요한 것은 금지보다 투명성이다",
+    "document_genre": "社论",
+    "publication_date": "2028-09-03",
+    "publisher_or_outlet": "합성 시사편집실",
+    "author": "논설위원실"
+  },
+  "stance_analysis": {
+    "overall_stance": "文章反对无差别地全面禁止生成式人工智能内容，支持通过透明标识、来源披露和媒体素养教育来降低虚假信息风险，同时承认监管可能带来的自由和创新方面的担忧。",
+    "stance_polarity": "支持",
+    "stance_targets": [
+      "合成媒体透明标识制度",
+      "学校和地方图书馆的信息验证教育",
+      "生成式人工智能虚假信息的全面禁止政策"
+    ],
+    "stance_strength": 0.86,
+    "stance_evidence": [
+      "전면적인 금지보다 이용자가 판단할 수 있는 정보를 제공하는 방식이 현실적인 해법이다.",
+      "플랫폼은 합성 콘텐츠에 출처와 생성 여부를 표시하도록 해야 한다."
+    ]
+  },
+  "causal_relations": [
+    {
+      "relation_index": 1,
+      "cause": "생성형 인공지능 허위 정보가 온라인에서 빠르게 확산됨",
+      "effect": "미디어 교육과 투명한 표시 제도의 필요성이 커짐",
+      "causal_marker": "-면서",
+      "causal_type": "直接因果",
+      "confidence": 0.93
+    },
+    {
+      "relation_index": 2,
+      "cause": "일반 이용자가 짧은 영상만으로 인공지능 생성 여부를 판별하기 어려움",
+      "effect": "플랫폼标识和信息验证教育的必要性增加",
+      "causal_marker": "따라서",
+      "causal_type": "直接因果",
+      "confidence": 0.91
+    }
+  ],
+  "document_summary": {
+    "summary_text": "文章讨论生成式人工智能虚假信息扩散带来的判断困难，承认加强监管可能影响创新和表达自由，但依据一份合成媒体政策研究报告，主张平台标注内容来源与生成状态，并通过学校和地方图书馆加强信息验证教育。文章最终认为透明度和用户判断能力建设比全面禁止更可行。",
+    "key_points": [
+      "生成式人工智能虚假信息在网络上的传播提高了媒体教育和透明标识的必要性。",
+      "普通用户仅凭短视频难以判断内容是否由人工智能生成。",
+      "文章支持平台标识、来源披露和信息验证教育，而不是全面禁止。"
+    ],
+    "discourse_focus": "如何在抑制人工智能虚假信息与保护创新、表达自由之间取得平衡",
+    "conclusion": "应优先通过透明标识和媒体素养教育提升用户判断能力，而非采取全面禁止措施。"
+  },
+  "argument_structure": [
+    {
+      "argument_index": 1,
+      "claim": "对于生成式人工智能虚假信息，与其全面禁止，不如通过内容标识和信息核验教育提高用户判断能力。",
+      "evidence": [
+        {
+          "evidence_text": "가상 합성미디어정책연구소的调查报告指出，普通用户仅凭短视频难以判断是否由人工智能生成。",
+          "evidence_type": "报告",
+          "support_relation": "说明用户在缺少透明信息时难以进行有效判断，因此需要平台标识。"
+        },
+        {
+          "evidence_text": "文章建议平台标注合成内容的出处和生成 여부，并由学校与地方图书馆加强信息验证教育。",
+          "evidence_type": "推断",
+          "support_relation": "提出与问题相对应的制度和教育措施，具体化核心主张。"
+        }
+      ],
+      "reasoning_relation": "因果",
+      "counterargument": "监管强化可能抑制新技术试验并影响表达自由，因此不能忽视监管成本。"
+    }
+  ],
+  "attribution_sources": [
+    {
+      "source_index": 1,
+      "source_name": "가상 합성미디어정책연구소 조사 보고서",
+      "source_type": "报告",
+      "quoted_content": "일반 이용자가 짧은 영상만 보고 인공지능 생성 여부를 판별하기 어렵다고 분석했다.",
+      "attribution_expression": "조사 보고서는 ... 분석했다",
+      "source_stance": "认为普通用户需要更多来源和生成状态信息才能判断内容。",
+      "source_position": "第三句"
+    }
+  ]
+}
