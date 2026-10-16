@@ -1,0 +1,216 @@
+{
+  "fee_items": [
+    {
+      "fee_name": "住房押金",
+      "amount": 5000000,
+      "currency": "韩元",
+      "payment_frequency": "签约时一次性支付；退房检查后14日内返还",
+      "payer": "租客",
+      "amount_expression": "보증금 5,000,000원",
+      "included_items": [],
+      "condition": "退房后完成设施检查且扣除应由租客承担的费用后返还。"
+    },
+    {
+      "fee_name": "月租",
+      "amount": 650000,
+      "currency": "韩元",
+      "payment_frequency": "每月5日前",
+      "payer": "租客",
+      "amount_expression": "월세 650,000원이며 매월 5일까지 납부",
+      "included_items": [],
+      "condition": "入住前需支付首月月租。"
+    },
+    {
+      "fee_name": "管理费",
+      "amount": 80000,
+      "currency": "韩元",
+      "payment_frequency": "每月5日前",
+      "payer": "租客",
+      "amount_expression": "관리비 월 80,000원",
+      "included_items": [
+        "互联网",
+        "用水费",
+        "公共电费",
+        "公共区域清洁费"
+      ],
+      "condition": "不包含房间内单独产生的电费和燃气费。"
+    },
+    {
+      "fee_name": "房间电费",
+      "currency": "韩元",
+      "payment_frequency": "每月按实际用量结算",
+      "payer": "租客",
+      "amount_expression": "세대 전기 요금은 사용량에 따라 별도 부과",
+      "included_items": [],
+      "condition": "按房间实际使用量另行收取。"
+    },
+    {
+      "fee_name": "房间燃气费",
+      "currency": "韩元",
+      "payment_frequency": "每月按实际用量结算",
+      "payer": "租客",
+      "amount_expression": "가스 요금은 사용량에 따라 별도 부과",
+      "included_items": [],
+      "condition": "按房间实际使用量另行收取。"
+    }
+  ],
+  "key_terms": [
+    {
+      "korean_term": "보증금",
+      "chinese_explanation": "住房押金。",
+      "context": "签约时支付500万韩元，退房检查后按约返还。"
+    },
+    {
+      "korean_term": "관리비",
+      "chinese_explanation": "管理费。",
+      "context": "每月8万韩元，包含网络、用水、公共电费和公共区域清洁费。"
+    },
+    {
+      "korean_term": "재학증명서",
+      "chinese_explanation": "在学证明。",
+      "context": "外国留学生申请签约时需要提交的材料。"
+    },
+    {
+      "korean_term": "시설 하자",
+      "chinese_explanation": "设施瑕疵或房屋设施缺陷。",
+      "context": "入住后发现该问题，须在24小时内拍照并报告。"
+    }
+  ],
+  "action_steps": [
+    {
+      "step_order": 1,
+      "action": "提交身份证复印件和在学证明以申请签约。",
+      "responsible_party": "租客",
+      "deadline": "签约前",
+      "required_documents": [
+        "身份证复印件",
+        "在学证明"
+      ],
+      "is_required": true
+    },
+    {
+      "step_order": 2,
+      "action": "支付全额押金，并在入住前支付首月月租。",
+      "responsible_party": "租客",
+      "deadline": "押金在签约当天支付；首月月租在入住前支付",
+      "required_documents": [],
+      "is_required": true
+    },
+    {
+      "step_order": 3,
+      "action": "入住后检查房间，发现设施瑕疵时拍照并通知房东。",
+      "responsible_party": "租客",
+      "deadline": "入住后24小时内",
+      "required_documents": [
+        "设施瑕疵照片"
+      ],
+      "is_required": true
+    }
+  ],
+  "document_type": "房屋招租信息",
+  "document_title": "新村一室户招租及入住条件",
+  "source_document": "[신촌 그린하우스 원룸 임대 안내]\n신촌역 도보 7분 거리의 원룸을 임대합니다. 보증금은 5,000,000원, 월세는 650,000원이며 매월 5일까지 납부해야 합니다. 관리비는 월 80,000원이고 인터넷, 수도, 공용 전기 및 공용 공간 청소비가 포함됩니다. 세대 전기와 가스 요금은 사용량에 따라 별도로 부과됩니다.\n최소 계약 기간은 6개월이며 외국인 유학생도 계약할 수 있습니다. 한 세대에 한 명만 거주할 수 있고 반려동물은 허용되지 않습니다. 실내에서는 금연이며 밤 10시부터 오전 8시까지는 큰 소음을 내면 안 됩니다.\n계약을 원하는 사람은 계약 전에 신분증 사본과 재학증명서를 제출해야 합니다. 계약 당일 보증금 전액을 납부하고, 입주 전까지 첫 달 월세를 납부해야 합니다. 입주 후 발견한 시설 하자는 24시간 이내에 사진과 함께 집주인에게 알려야 합니다. 일반적인 노후로 발생한 고장은 집주인이 수리하고, 임차인의 부주의로 발생한 파손은 임차인이 수리비를 부담합니다. 퇴실 후 시설 점검이 끝나면 보증금은 14일 이내에 반환합니다.",
+  "document_summary": "该房屋位于新村站附近，押金为500万韩元，月租65万韩元，管理费每月8万韩元并包含网络、用水、公共电费和公共区域清洁费。租期至少6个月，允许外国留学生入住，但限一人居住，禁止养宠物和室内吸烟，夜间需控制噪音。签约前需提交身份证复印件和在学证明，入住后24小时内须报告设施瑕疵。自然老化维修由房东承担，租客过失造成的损坏由租客承担。",
+  "prohibited_items": [
+    {
+      "prohibition": "在室内吸烟",
+      "scope": "出租房间内部",
+      "consequence": "文档未明确罚款金额或合同后果。",
+      "exception": "未说明",
+      "evidence_quote": "실내에서는 금연입니다（室内禁烟）"
+    },
+    {
+      "prohibition": "饲养宠物",
+      "scope": "出租房间及居住者",
+      "consequence": "文档未明确具体处罚。",
+      "exception": "未说明",
+      "evidence_quote": "반려동물은 허용되지 않습니다（不允许宠物）"
+    },
+    {
+      "prohibition": "在夜间制造大声噪音",
+      "scope": "房间及可能影响邻居的区域，22:00至次日08:00",
+      "consequence": "文档未明确具体罚款或合同后果。",
+      "exception": "未说明",
+      "evidence_quote": "밤 10시부터 오전 8시까지는 큰 소음을 내면 안 됩니다（晚上10点到早上8点不得大声喧哗）"
+    }
+  ],
+  "living_conditions": [
+    {
+      "condition_category": "租期",
+      "requirement": "最低合同期限为6个月。",
+      "scope": "整个出租房间及租赁合同",
+      "condition_status": "明确允许",
+      "evidence_quote": "최소 계약 기간은 6개월이며（最低合同期限为6个月）"
+    },
+    {
+      "condition_category": "入住资格",
+      "requirement": "外国留学生可以签约入住，但需提交在学证明。",
+      "scope": "外国留学生申请人",
+      "condition_status": "有条件允许",
+      "evidence_quote": "외국인 유학생도 계약할 수 있습니다（外国留学生也可以签约）"
+    },
+    {
+      "condition_category": "居住人数",
+      "requirement": "每个房间仅限一人居住。",
+      "scope": "出租房间",
+      "condition_status": "明确允许",
+      "evidence_quote": "한 세대에 한 명만 거주할 수 있습니다（每户只能一人居住）"
+    },
+    {
+      "condition_category": "宠物",
+      "requirement": "不允许饲养宠物。",
+      "scope": "出租房间及居住者",
+      "condition_status": "明确禁止",
+      "evidence_quote": "반려동물은 허용되지 않습니다（不允许宠物）"
+    },
+    {
+      "condition_category": "吸烟",
+      "requirement": "禁止在室内吸烟。",
+      "scope": "出租房间内部",
+      "condition_status": "明确禁止",
+      "evidence_quote": "실내에서는 금연입니다（室内禁烟）"
+    },
+    {
+      "condition_category": "噪音",
+      "requirement": "晚上10点至早上8点不得制造大声噪音。",
+      "scope": "房间及可能影响邻居的区域，22:00至次日08:00",
+      "condition_status": "明确禁止",
+      "evidence_quote": "밤 10시부터 오전 8시까지는 큰 소음을 내면 안 됩니다（晚上10点到早上8点不得大声喧哗）"
+    }
+  ],
+  "interpretation_notes": "管理费只明确包含网络、用水、公共电费和公共区域清洁费，房间电费与燃气费仍需按实际用量另付。文档没有说明宠物禁令、吸烟禁令和噪音规定的罚款金额，签约前应向房东确认违反后的处理方式。",
+  "responsibility_assignments": [
+    {
+      "responsible_party": "房东",
+      "responsibility": "维修因一般老化产生的设施故障。",
+      "trigger_condition": "故障属于设施自然老化而非租客过失。",
+      "cost_bearer": "房东",
+      "deadline": "文档未明确具体维修期限",
+      "evidence_quote": "일반적인 노후로 발생한 고장은 집주인이 수리합니다（一般老化造成的故障由房东维修）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "承担因自身疏忽造成的设施或房屋损坏的维修费用。",
+      "trigger_condition": "损坏由租客的疏忽或过失造成。",
+      "cost_bearer": "租客",
+      "deadline": "文档未明确具体付款期限",
+      "evidence_quote": "임차인의 부주의로 발생한 파손은 임차인이 수리비를 부담합니다（租客疏忽造成的损坏由租客承担维修费）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "在入住后发现设施瑕疵时，向房东提交照片并进行报告。",
+      "trigger_condition": "入住后发现设施问题。",
+      "cost_bearer": "未说明",
+      "deadline": "发现后24小时内",
+      "evidence_quote": "입주 후 발견한 시설 하자는 24시간 이내에 사진과 함께 집주인에게 알려야 합니다（入住后发现的设施瑕疵须在24小时内附照片通知房东）"
+    },
+    {
+      "responsible_party": "房东",
+      "responsibility": "在退房设施检查完成后返还押金。",
+      "trigger_condition": "租客退房且设施检查完成。",
+      "cost_bearer": "房东",
+      "deadline": "检查完成后14日内",
+      "evidence_quote": "퇴실 후 시설 점검이 끝나면 보증금은 14일 이내에 반환합니다（退房检查结束后14日内返还押金）"
+    }
+  ]
+}

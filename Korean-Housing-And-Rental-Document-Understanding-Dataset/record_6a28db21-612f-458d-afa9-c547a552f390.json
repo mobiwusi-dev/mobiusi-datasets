@@ -1,0 +1,140 @@
+{
+  "fee_items": [
+    {
+      "fee_name": "因住户疏忽造成的锅炉维修费",
+      "currency": "韩元",
+      "payment_frequency": "发生维修时一次性支付",
+      "payer": "租客",
+      "amount_expression": "입주자의 부주의로 고장이 발생한 경우 수리비는 입주자가 부담",
+      "included_items": [],
+      "condition": "仅在检查结果确认故障由住户疏忽造成时产生。"
+    }
+  ],
+  "key_terms": [
+    {
+      "korean_term": "정기점검",
+      "chinese_explanation": "定期检查。",
+      "context": "指对整栋楼锅炉进行的计划性检查。"
+    },
+    {
+      "korean_term": "단수",
+      "chinese_explanation": "停水。",
+      "context": "公告中指检查期间热水和自来水暂时停止供应。"
+    },
+    {
+      "korean_term": "공용 배관",
+      "chinese_explanation": "公共管道。",
+      "context": "如果故障源于公共管道，处理责任归房东或管理室。"
+    },
+    {
+      "korean_term": "부재",
+      "chinese_explanation": "不在场、缺席。",
+      "context": "住户无法在检查时间留在房间内时，需要提前联系管理室。"
+    }
+  ],
+  "action_steps": [
+    {
+      "step_order": 1,
+      "action": "确认6月18日9时至12时能够在家配合锅炉检查；如无法在家，联系管理室调整访问时间。",
+      "responsible_party": "租客",
+      "deadline": "无法在家时须于6月17日前联系管理室",
+      "required_documents": [],
+      "is_required": true
+    },
+    {
+      "step_order": 2,
+      "action": "清理锅炉周围摆放的物品，为工作人员检查阀门和漏水情况留出空间。",
+      "responsible_party": "租客",
+      "deadline": "检查开始前",
+      "required_documents": [],
+      "is_required": true
+    },
+    {
+      "step_order": 3,
+      "action": "在停水时段停止使用自来水、淋浴器和洗衣机。",
+      "responsible_party": "租客",
+      "deadline": "6月18日09:00至12:00",
+      "required_documents": [],
+      "is_required": true
+    },
+    {
+      "step_order": 4,
+      "action": "检查结束后，如热水或供暖仍有问题，向管理室报告。",
+      "responsible_party": "租客",
+      "deadline": "检查当日18:00前",
+      "required_documents": [],
+      "is_required": true
+    }
+  ],
+  "document_type": "维修公告",
+  "document_title": "锅炉定期检查及临时停水通知",
+  "source_document": "[보일러 정기점검 및 단수 안내]\n건물 전체 보일러 정기점검을 6월 18일 오전 9시부터 낮 12시까지 실시합니다. 점검 시간에는 온수와 수돗물 사용이 일시적으로 중단되므로 세탁기와 샤워기를 사용하지 마십시오.\n관리실 직원이 각 세대에 들어가 보일러 밸브와 누수 여부를 확인합니다. 입주자는 점검 시간에 집에 있을 수 있도록 하고, 부재할 경우 6월 17일까지 관리실에 연락하여 방문 시간을 조정해야 합니다. 보일러 주변에 놓인 물건은 미리 치워야 합니다.\n점검 자체에는 비용이 없지만, 점검 결과 입주자의 부주의로 고장이 발생한 것으로 확인되면 수리비는 입주자가 부담합니다. 건물 설비의 노후나 공용 배관 문제로 확인된 고장은 집주인 또는 관리실이 처리합니다. 점검 후에도 온수나 난방에 문제가 있으면 당일 오후 6시까지 관리실에 신고하십시오.",
+  "document_summary": "大楼将于6月18日9时至12时进行锅炉定期检查，期间热水和自来水暂时停止使用。管理室工作人员需要进入各户检查锅炉阀门和漏水情况。住户应在家配合检查，无法在家时须提前联系管理室调整时间，并清空锅炉周围物品。检查本身免费，但因住户疏忽导致的故障维修费由住户承担，老化或公共管道问题由房东或管理室处理。检查后仍有热水或供暖问题时，须在当天18时前报告。",
+  "prohibited_items": [
+    {
+      "prohibition": "在停水期间使用洗衣机和淋浴器",
+      "scope": "整栋楼，6月18日09:00至12:00",
+      "consequence": "公告未说明罚款或其他具体后果。",
+      "exception": "停水时段结束后可恢复使用，其他例外未说明。",
+      "evidence_quote": "점검 시간에는 온수와 수돗물 사용이 일시적으로 중단되므로 세탁기와 샤워기를 사용하지 마십시오（检查期间热水和自来水暂时中断，请勿使用洗衣机和淋浴器）"
+    }
+  ],
+  "living_conditions": [
+    {
+      "condition_category": "设施检查",
+      "requirement": "住户应在检查时段留在房间内，以便管理室进入检查；无法在家时须提前协调访问时间。",
+      "scope": "各出租房间，6月18日09:00至12:00",
+      "condition_status": "有条件允许",
+      "evidence_quote": "입주자는 점검 시간에 집에 있을 수 있도록 하고, 부재할 경우 6월 17일까지 관리실에 연락하여 방문 시간을 조정해야 합니다（住户应在检查时段在家，缺席时须在6月17日前联系管理室调整访问时间）"
+    },
+    {
+      "condition_category": "用水",
+      "requirement": "停水期间不得使用自来水、淋浴器和洗衣机。",
+      "scope": "整栋楼，6月18日09:00至12:00",
+      "condition_status": "明确禁止",
+      "evidence_quote": "온수와 수돗물 사용이 일시적으로 중단되므로 세탁기와 샤워기를 사용하지 마십시오（热水和自来水暂时停止，请勿使用洗衣机和淋浴器）"
+    },
+    {
+      "condition_category": "设施周边整理",
+      "requirement": "应提前清空锅炉周围摆放的物品。",
+      "scope": "各房间锅炉周围",
+      "condition_status": "明确允许",
+      "evidence_quote": "보일러 주변에 놓인 물건은 미리 치워야 합니다（应提前清理锅炉周围放置的物品）"
+    }
+  ],
+  "interpretation_notes": "检查本身不收费，但维修费用取决于故障原因：住户疏忽造成的故障由住户承担，设备老化或公共管道问题由房东或管理室处理。公告没有说明住户未能按时配合检查时是否会产生再次访问费用，建议提前向管理室确认。",
+  "responsibility_assignments": [
+    {
+      "responsible_party": "租客",
+      "responsibility": "在家配合检查，或提前联系管理室调整入户时间。",
+      "trigger_condition": "检查日住户无法在原定时段留在房间内。",
+      "cost_bearer": "未说明",
+      "deadline": "无法在家时须于6月17日前联系管理室",
+      "evidence_quote": "부재할 경우 6월 17일까지 관리실에 연락하여 방문 시간을 조정해야 합니다（缺席时须在6月17日前联系管理室调整访问时间）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "承担因自身疏忽造成的锅炉故障维修费。",
+      "trigger_condition": "检查结果确认故障由住户疏忽造成。",
+      "cost_bearer": "租客",
+      "deadline": "文档未明确具体付款期限",
+      "evidence_quote": "입주자의 부주의로 고장이 발생한 것으로 확인되면 수리비는 입주자가 부담합니다（如确认因住户疏忽发生故障，维修费由住户承担）"
+    },
+    {
+      "responsible_party": "房东或管理室",
+      "responsibility": "处理由建筑设备老化或公共管道问题造成的故障。",
+      "trigger_condition": "故障原因是建筑设备老化或公共管道问题。",
+      "cost_bearer": "房东或管理室",
+      "deadline": "文档未明确具体维修期限",
+      "evidence_quote": "건물 설비의 노후나 공용 배관 문제로 확인된 고장은 집주인 또는 관리실이 처리합니다（建筑设备老化或公共管道问题造成的故障由房东或管理室处理）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "在检查后发现热水或供暖仍有问题时向管理室报告。",
+      "trigger_condition": "检查完成后热水或供暖问题仍然存在。",
+      "cost_bearer": "未说明",
+      "deadline": "检查当日18:00前",
+      "evidence_quote": "점검 후에도 온수나 난방에 문제가 있으면 당일 오후 6시까지 관리실에 신고하십시오（检查后仍有热水或供暖问题时，请在当天18点前向管理室报告）"
+    }
+  ]
+}

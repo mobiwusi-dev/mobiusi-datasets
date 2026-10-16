@@ -1,0 +1,221 @@
+{
+  "living_conditions": [
+    {
+      "condition_category": "合同期限",
+      "requirement": "合同期限为自签约日起12个月。",
+      "scope": "整个租赁合同",
+      "condition_status": "明确允许",
+      "evidence_quote": "계약 기간은 계약일로부터 12개월입니다（合同期限为自合同日起12个月）"
+    },
+    {
+      "condition_category": "转租",
+      "requirement": "未经房东书面同意不得转租房间。",
+      "scope": "出租房间及租客的处分行为",
+      "condition_status": "有条件允许",
+      "evidence_quote": "집주인의 서면 동의 없이 방을 전대할 수 없습니다（未经房东书面同意不得转租）"
+    },
+    {
+      "condition_category": "访客居住",
+      "requirement": "访客最多可停留7天，超过7天须事先取得房东同意。",
+      "scope": "出租房间内的访客",
+      "condition_status": "有条件允许",
+      "evidence_quote": "방문객은 7일 이내로 머물 수 있으며, 7일을 초과하려면 집주인의 사전 동의를 받아야 합니다（访客可停留7日以内，超过7日须事先获房东同意）"
+    },
+    {
+      "condition_category": "墙面及结构使用",
+      "requirement": "墙面打孔或进行结构变更前必须取得房东书面许可。",
+      "scope": "房间墙面及房屋结构",
+      "condition_status": "有条件允许",
+      "evidence_quote": "벽에 못을 박거나 구조를 변경하려면 사전에 서면 허가를 받아야 합니다（墙面打孔或变更结构须事先取得书面许可）"
+    }
+  ],
+  "fee_items": [
+    {
+      "fee_name": "租赁押金",
+      "amount": 10000000,
+      "currency": "韩元",
+      "payment_frequency": "合同约定的一次性押金；退房时视未付款项和恢复费用情况结算",
+      "payer": "租客",
+      "amount_expression": "보증금은 10,000,000원",
+      "included_items": [],
+      "condition": "退房时如有未付款项或恢复原状费用，可从押金中扣除。"
+    },
+    {
+      "fee_name": "月租",
+      "amount": 700000,
+      "currency": "韩元",
+      "payment_frequency": "每月5日前",
+      "payer": "租客",
+      "amount_expression": "월세는 매월 5일까지 700,000원 납부",
+      "included_items": [],
+      "condition": "超过每月5日支付时产生逾期费。"
+    },
+    {
+      "fee_name": "管理费",
+      "amount": 100000,
+      "currency": "韩元",
+      "payment_frequency": "每月",
+      "payer": "租客",
+      "amount_expression": "관리비는 매월 100,000원",
+      "included_items": [
+        "公共电费",
+        "用水费",
+        "电梯使用及维护相关公共费用",
+        "公共区域清洁费"
+      ],
+      "condition": "不包含房间内单独计量的电费和燃气费。"
+    },
+    {
+      "fee_name": "房间电费",
+      "currency": "韩元",
+      "payment_frequency": "按抄表量结算",
+      "payer": "租客",
+      "amount_expression": "세대 전기는 검침량에 따라 별도 납부",
+      "included_items": [],
+      "condition": "按照房间电表读数另行支付。"
+    },
+    {
+      "fee_name": "房间燃气费",
+      "currency": "韩元",
+      "payment_frequency": "按抄表量结算",
+      "payer": "租客",
+      "amount_expression": "가스는 검침량에 따라 별도 납부",
+      "included_items": [],
+      "condition": "按照实际抄表量另行支付。"
+    },
+    {
+      "fee_name": "月租逾期费",
+      "amount": 10000,
+      "currency": "韩元",
+      "payment_frequency": "每逾期一天",
+      "payer": "租客",
+      "amount_expression": "월세를 5일 이후에 납부하면 하루 10,000원 추가",
+      "included_items": [],
+      "condition": "仅在月租于每月5日之后支付时产生。"
+    }
+  ],
+  "interpretation_notes": "管理费包含公共区域相关项目，但不包含房间单独计量的电费和燃气费。逾期费的计算起点是每月5日之后，文档未进一步说明跨月逾期时的计算方式。条款要求提前两个月书面通知不续租，但未详细说明未通知时的续租法律效果，签约或退租前应向房东确认。",
+  "key_terms": [
+    {
+      "korean_term": "전대",
+      "chinese_explanation": "转租、转借租赁房屋。",
+      "context": "未经房东书面同意，租客不得将房间转租给他人。"
+    },
+    {
+      "korean_term": "원상복구",
+      "chinese_explanation": "恢复原状。",
+      "context": "租客故意或过失造成损坏时，须在退房前恢复房屋原状并承担费用。"
+    },
+    {
+      "korean_term": "연체료",
+      "chinese_explanation": "逾期费。",
+      "context": "月租超过每月5日支付时，每逾期一天增加1万韩元。"
+    },
+    {
+      "korean_term": "검침량",
+      "chinese_explanation": "抄表量或计量表读数。",
+      "context": "房间电费和燃气费按照实际抄表量另行支付。"
+    }
+  ],
+  "action_steps": [
+    {
+      "step_order": 1,
+      "action": "按照合同约定在每月5日前支付月租和管理费，并按抄表量支付房间电费与燃气费。",
+      "responsible_party": "租客",
+      "deadline": "月租和管理费每月5日前；水电燃气按结算周期",
+      "required_documents": [],
+      "is_required": true
+    },
+    {
+      "step_order": 2,
+      "action": "如需转租、让访客停留超过7天、墙面打孔或改变结构，提前取得房东书面同意。",
+      "responsible_party": "租客",
+      "deadline": "实施相关行为前",
+      "required_documents": [
+        "房东书面同意"
+      ],
+      "is_required": true
+    },
+    {
+      "step_order": 3,
+      "action": "决定不续租时向房东提交书面通知。",
+      "responsible_party": "租客",
+      "deadline": "合同到期日两个月前",
+      "required_documents": [
+        "不续租书面通知"
+      ],
+      "is_required": true
+    },
+    {
+      "step_order": 4,
+      "action": "退房时归还钥匙并提交电表、燃气表等计量表照片。",
+      "responsible_party": "租客",
+      "deadline": "退房时",
+      "required_documents": [
+        "计量表照片"
+      ],
+      "is_required": true
+    }
+  ],
+  "document_type": "租赁条款",
+  "document_title": "一室户租赁主要约定",
+  "source_document": "[원룸 임대차 주요 약정]\n계약 기간은 계약일로부터 12개월이며, 보증금은 10,000,000원입니다. 월세는 매월 5일까지 700,000원을 납부하고, 관리비는 매월 100,000원입니다. 관리비에는 공용 전기, 수도, 엘리베이터 및 공용 공간 청소비가 포함되며, 세대 전기와 가스는 검침량에 따라 별도로 납부합니다. 월세를 5일 이후에 납부하면 연체료로 하루 10,000원이 추가됩니다.\n임차인은 집주인의 서면 동의 없이 방을 전대하거나 계약상 거주자 이외의 사람을 장기간 거주하게 할 수 없습니다. 방문객은 7일 이내로 머물 수 있으며, 7일을 초과하려면 집주인의 사전 동의를 받아야 합니다. 벽에 못을 박거나 구조를 변경하려면 사전에 서면 허가를 받아야 합니다.\n통상적인 마모는 집주인이 부담하지만, 임차인의 고의 또는 과실로 생긴 파손은 임차인이 원상복구하고 비용을 부담합니다. 계약을 갱신하지 않으려면 계약 만료일 2개월 전까지 집주인에게 서면으로 알려야 합니다. 퇴실 시 열쇠를 반환하고 계량기 사진을 제출해야 하며, 미납금이나 복구비가 있으면 보증금에서 공제될 수 있습니다.",
+  "document_summary": "该租赁合同期限为12个月，押金1000万韩元，月租70万韩元，管理费每月10万韩元。管理费包含公共电费、用水、电梯和公共区域清洁费，房间电费与燃气费按实际用量另付。月租逾期后每天加收1万韩元逾期费。未经房东书面同意不得转租或让非合同居住者长期居住，访客停留超过7天需事先获准。墙面打孔和结构变更须取得书面许可，租客过失造成的损坏由租客负责恢复原状并承担费用。若不续租，须在合同到期前两个月书面通知房东，退房时还需归还钥匙并提交电表和燃气表照片。",
+  "prohibited_items": [
+    {
+      "prohibition": "未经房东书面同意转租房间",
+      "scope": "出租房间及租赁权",
+      "consequence": "违反租赁约定，文档未明确具体罚款或解除合同后果。",
+      "exception": "取得房东事先书面同意时可以转租。",
+      "evidence_quote": "집주인의 서면 동의 없이 방을 전대할 수 없습니다（未经房东书面同意不得转租）"
+    },
+    {
+      "prohibition": "让合同约定居住者以外的人员长期居住",
+      "scope": "出租房间",
+      "consequence": "文档未明确具体罚款或合同后果。",
+      "exception": "访客停留不超过7天，或超过7天前取得房东同意。",
+      "evidence_quote": "계약상 거주자 이외의 사람을 장기간 거주하게 할 수 없습니다（不得让合同居住者以外的人长期居住）"
+    },
+    {
+      "prohibition": "未经书面许可在墙上打孔或改变房屋结构",
+      "scope": "房间墙面及房屋结构",
+      "consequence": "可能需要租客恢复原状并承担相关费用。",
+      "exception": "事先取得房东书面许可。",
+      "evidence_quote": "벽에 못을 박거나 구조를 변경하려면 사전에 서면 허가를 받아야 합니다（墙面打孔或结构变更须事先取得书面许可）"
+    }
+  ],
+  "responsibility_assignments": [
+    {
+      "responsible_party": "租客",
+      "responsibility": "按时支付月租、管理费及单独计量的电费和燃气费。",
+      "trigger_condition": "合同存续期间按约定的支付周期产生费用。",
+      "cost_bearer": "租客",
+      "deadline": "月租每月5日前；电费和燃气费按抄表结算",
+      "evidence_quote": "월세는 매월 5일까지 700,000원을 납부하고... 세대 전기와 가스는 검침량에 따라 별도로 납부합니다（每月5日前支付月租，电费和燃气费按抄表量另付）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "因故意或过失造成房屋损坏时恢复原状并承担相关费用。",
+      "trigger_condition": "损坏由租客故意或过失造成。",
+      "cost_bearer": "租客",
+      "deadline": "退房前完成恢复，具体期限未说明",
+      "evidence_quote": "임차인의 고의 또는 과실로 생긴 파손은 임차인이 원상복구하고 비용을 부담합니다（租客故意或过失造成的损坏由租客恢复原状并承担费用）"
+    },
+    {
+      "responsible_party": "房东",
+      "responsibility": "承担房屋正常使用产生的通常磨损。",
+      "trigger_condition": "损耗属于正常使用和通常磨损，而非租客过失。",
+      "cost_bearer": "房东",
+      "deadline": "文档未明确具体处理期限",
+      "evidence_quote": "통상적인 마모는 집주인이 부담합니다（通常磨损由房东承担）"
+    },
+    {
+      "responsible_party": "租客",
+      "responsibility": "退房时归还钥匙并提交计量表照片。",
+      "trigger_condition": "租客办理退房。",
+      "cost_bearer": "租客；未付款项或恢复费用可从押金中扣除",
+      "deadline": "退房时",
+      "evidence_quote": "퇴실 시 열쇠를 반환하고 계량기 사진을 제출해야 합니다（退房时须归还钥匙并提交电表照片）"
+    }
+  ]
+}
