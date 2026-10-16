@@ -1,0 +1,51 @@
+{
+  "source_webpage": {
+    "page_url": "",
+    "page_title": "韩国称呼语用教学：称呼大学教授",
+    "page_content": "처음 만난 대학 교수에게는 이름을 직접 부르기보다 직함이나 호칭을 사용한다.\n한국어에서 교수님은 교수에게 사용하는 존칭이다.",
+    "page_language": "韩语"
+  },
+  "learner_query": "第一次和韩国大学教授见面时，我应该叫他“老师”还是直接叫名字？",
+  "evidence_claim": "在韩国大学的正式交往中，初次见面时不宜直接使用教授的名字；使用职务称呼或教授님等尊称更符合礼貌规范。",
+  "evidence_spans": [
+    {
+      "quote": "처음 만난 대학 교수에게는 이름을 직접 부르기보다 직함이나 호칭을 사용한다.",
+      "start_offset": 0,
+      "end_offset": 42,
+      "evidence_role": "规则说明"
+    },
+    {
+      "quote": "한국어에서 교수님은 교수에게 사용하는 존칭이다.",
+      "start_offset": 43,
+      "end_offset": 69,
+      "evidence_role": "例句示范"
+    }
+  ],
+  "retrieval_tags": [
+    "韩国称呼",
+    "교수님",
+    "职务称呼",
+    "敬语",
+    "师生关系",
+    "初次见面"
+  ],
+  "confidence_score": 0.96,
+  "pragmatic_context": {
+    "social_setting": "大学课堂或与教授初次见面的正式场合",
+    "participant_relation": "学生与大学教授",
+    "power_distance": "教授在职务和学术身份上高于学生，权力距离较明显",
+    "formality_level": "正式敬语"
+  },
+  "scenario_category": "称呼选择",
+  "evidence_reference": {
+    "source_url": "",
+    "source_title": "韩国称呼语用教学：称呼大学教授",
+    "retrieval_note": "该网页直接包含初次称呼教授时的职务称呼和尊称规则，可用于回答学习者关于教授称呼的疑问。偏移按正文字符计，结束位置为排他端点。"
+  },
+  "target_expressions": [
+    "교수님",
+    "선생님",
+    "직함"
+  ],
+  "source_supports_advice": true
+}

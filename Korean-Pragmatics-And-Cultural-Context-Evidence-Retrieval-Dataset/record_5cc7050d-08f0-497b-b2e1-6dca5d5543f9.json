@@ -1,0 +1,51 @@
+{
+  "learner_query": "在韩国职场中向上司提出请求，或者不得不拒绝上司的请求时，怎样说才比较礼貌？",
+  "evidence_claim": "向上司提出请求时，应使用带有敬语和缓和语气的疑问式表达，而拒绝请求时可先道歉并补充困难或理由，以降低直接拒绝的冲击。",
+  "evidence_spans": [
+    {
+      "quote": "직장에서 상사에게 부탁할 때는 명령형보다 '혹시 ... 해 주실 수 있을까요?'처럼 완곡한 표현을 사용한다.",
+      "start_offset": 0,
+      "end_offset": 61,
+      "evidence_role": "规则说明"
+    },
+    {
+      "quote": "요청을 거절할 때는 '죄송하지만 어렵습니다'처럼 사과나 이유를 덧붙이면 단호함을 완화할 수 있다.",
+      "start_offset": 62,
+      "end_offset": 116,
+      "evidence_role": "注意事项"
+    }
+  ],
+  "retrieval_tags": [
+    "韩国职场交流",
+    "请求表达",
+    "拒绝表达",
+    "上司",
+    "缓和语气",
+    "敬语"
+  ],
+  "source_webpage": {
+    "page_url": "",
+    "page_title": "韩国职场请求与拒绝表达：缓和语气与敬语",
+    "page_content": "직장에서 상사에게 부탁할 때는 명령형보다 '혹시 ... 해 주실 수 있을까요?'처럼 완곡한 표현을 사용한다.\n요청을 거절할 때는 '죄송하지만 어렵습니다'처럼 사과나 이유를 덧붙이면 단호함을 완화할 수 있다.",
+    "page_language": "韩语"
+  },
+  "confidence_score": 0.97,
+  "pragmatic_context": {
+    "social_setting": "韩国公司内部的邮件、会议或面对面职场沟通",
+    "participant_relation": "下属与直属上司",
+    "power_distance": "上司拥有更高的职位权力，下属与上司之间存在明显权力距离",
+    "formality_level": "正式敬语和委婉表达"
+  },
+  "scenario_category": "请求与拒绝",
+  "evidence_reference": {
+    "source_url": "",
+    "source_title": "韩国职场请求与拒绝表达：缓和语气与敬语",
+    "retrieval_note": "该网页覆盖对上司提出请求和礼貌拒绝两个相关行为，可用于检索职场权力关系下的表达方式。偏移按正文字符计，结束位置为排他端点。"
+  },
+  "target_expressions": [
+    "혹시 ... 해 주실 수 있을까요?",
+    "죄송하지만 어렵습니다",
+    "-실 수 있을까요"
+  ],
+  "source_supports_advice": true
+}
