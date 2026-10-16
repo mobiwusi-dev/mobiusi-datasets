@@ -1,0 +1,80 @@
+{
+  "raw_record": {
+    "question_stem": "Which choice best states what the study implies about vacant lots?",
+    "passage": "Urban planners once treated vacant lots as problems to be cleared. In several cities, however, community groups have turned these spaces into gardens. A study of twelve such gardens found that residents visited them more often when plots included benches and shaded paths. The findings suggest that design, rather than the mere presence of plants, determines whether a vacant lot becomes a shared neighborhood space.",
+    "answer_choices": [
+      {
+        "choice_label": "A",
+        "choice_text": "Vacant lots should always be cleared before residents can use them."
+      },
+      {
+        "choice_label": "B",
+        "choice_text": "Residents visit gardens only when the gardens contain a large number of plants."
+      },
+      {
+        "choice_label": "C",
+        "choice_text": "Garden design features can influence whether residents use vacant lots."
+      },
+      {
+        "choice_label": "D",
+        "choice_text": "Community gardens are less useful than other forms of public space."
+      }
+    ],
+    "correct_answer": "C",
+    "candidate_evidence": [
+      {
+        "candidate_index": 0,
+        "fragment_text": "Urban planners once treated vacant lots as problems to be cleared.",
+        "start_char": 0,
+        "end_char": 66
+      },
+      {
+        "candidate_index": 1,
+        "fragment_text": "In several cities, however, community groups have turned these spaces into gardens.",
+        "start_char": 67,
+        "end_char": 150
+      },
+      {
+        "candidate_index": 2,
+        "fragment_text": "A study of twelve such gardens found that residents visited them more often when plots included benches and shaded paths.",
+        "start_char": 151,
+        "end_char": 272
+      }
+    ],
+    "evidence_spans": [
+      {
+        "candidate_index": 2,
+        "start_char": 151,
+        "end_char": 272,
+        "span_text": "A study of twelve such gardens found that residents visited them more often when plots included benches and shaded paths."
+      }
+    ]
+  },
+  "retrieval_query": "vacant lot study benches shaded paths resident visits garden design implication",
+  "grounding_summary": {
+    "answer_choice": "C",
+    "evidence_text": "A study of twelve such gardens found that residents visited them more often when plots included benches and shaded paths.",
+    "support_status": "充分支撑"
+  },
+  "evidence_selection": [
+    {
+      "candidate_index": 0,
+      "relevance_score": 0.22,
+      "selected": false,
+      "match_reason": "该片段说明传统观点，但没有提供居民使用空地的实证依据。"
+    },
+    {
+      "candidate_index": 1,
+      "relevance_score": 0.48,
+      "selected": false,
+      "match_reason": "该片段说明空地被改造成花园，但没有说明哪些设计因素影响居民到访。"
+    },
+    {
+      "candidate_index": 2,
+      "relevance_score": 0.96,
+      "selected": true,
+      "match_reason": "该片段直接报告了居民在有长椅和遮荫小径的花园中更常到访，支持设计会影响使用情况的结论。"
+    }
+  ],
+  "gold_evidence_text": "A study of twelve such gardens found that residents visited them more often when plots included benches and shaded paths."
+}

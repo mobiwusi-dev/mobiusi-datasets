@@ -1,0 +1,98 @@
+{
+  "raw_record": {
+    "question_stem": "What is the main purpose of the passage?",
+    "passage": "Biologist Lena Ortiz expected the silver-throated finch to avoid noisy habitats. Yet her five-year survey found that the birds nested near rail lines as often as they nested in quiet valleys. Ortiz proposes that dense stands of reeds near the tracks provide shelter that offsets the disturbance. She cautions, however, that the survey measured nesting locations, not the birds' long-term reproductive success.",
+    "answer_choices": [
+      {
+        "choice_label": "A",
+        "choice_text": "To describe a method for measuring the reproductive success of finches in different habitats"
+      },
+      {
+        "choice_label": "B",
+        "choice_text": "To present an unexpected survey finding and a cautious explanation for it"
+      },
+      {
+        "choice_label": "C",
+        "choice_text": "To argue that railway construction improves the health of local bird populations"
+      },
+      {
+        "choice_label": "D",
+        "choice_text": "To show that quiet valleys are unsuitable places for finch nesting"
+      }
+    ],
+    "correct_answer": "B",
+    "candidate_evidence": [
+      {
+        "candidate_index": 0,
+        "fragment_text": "Biologist Lena Ortiz expected the silver-throated finch to avoid noisy habitats.",
+        "start_char": 0,
+        "end_char": 80
+      },
+      {
+        "candidate_index": 1,
+        "fragment_text": "Yet her five-year survey found that the birds nested near rail lines as often as they nested in quiet valleys.",
+        "start_char": 81,
+        "end_char": 191
+      },
+      {
+        "candidate_index": 2,
+        "fragment_text": "Ortiz proposes that dense stands of reeds near the tracks provide shelter that offsets the disturbance.",
+        "start_char": 192,
+        "end_char": 295
+      },
+      {
+        "candidate_index": 3,
+        "fragment_text": "She cautions, however, that the survey measured nesting locations, not the birds' long-term reproductive success.",
+        "start_char": 296,
+        "end_char": 408
+      }
+    ],
+    "evidence_spans": [
+      {
+        "candidate_index": 1,
+        "start_char": 81,
+        "end_char": 191,
+        "span_text": "Yet her five-year survey found that the birds nested near rail lines as often as they nested in quiet valleys."
+      },
+      {
+        "candidate_index": 2,
+        "start_char": 192,
+        "end_char": 295,
+        "span_text": "Ortiz proposes that dense stands of reeds near the tracks provide shelter that offsets the disturbance."
+      }
+    ]
+  },
+  "retrieval_query": "silver-throated finch noisy habitats rail lines nesting survey unexpected finding reed shelter explanation",
+  "grounding_summary": {
+    "answer_choice": "B",
+    "evidence_text": "Yet her five-year survey found that the birds nested near rail lines as often as they nested in quiet valleys. Ortiz proposes that dense stands of reeds near the tracks provide shelter that offsets the disturbance.",
+    "support_status": "充分支撑"
+  },
+  "evidence_selection": [
+    {
+      "candidate_index": 0,
+      "relevance_score": 0.42,
+      "selected": false,
+      "match_reason": "该片段仅交代研究者的初始预期，不能单独说明文章呈现的调查结果。"
+    },
+    {
+      "candidate_index": 1,
+      "relevance_score": 0.97,
+      "selected": true,
+      "match_reason": "该片段直接给出调查发现，说明鸟类在铁路附近和安静山谷中的筑巢频率相当，构成文章的核心发现。"
+    },
+    {
+      "candidate_index": 2,
+      "relevance_score": 0.89,
+      "selected": true,
+      "match_reason": "该片段提供了研究者对意外发现的试探性解释，即芦苇提供的庇护可能抵消噪声干扰。"
+    },
+    {
+      "candidate_index": 3,
+      "relevance_score": 0.61,
+      "selected": false,
+      "match_reason": "该片段限制了调查结论的范围，虽有背景作用，但不是概括文章主要目的所需的核心证据。"
+    }
+  ],
+  "gold_evidence_text": "Yet her five-year survey found that the birds nested near rail lines as often as they nested in quiet valleys. Ortiz proposes that dense stands of reeds near the tracks provide shelter that offsets the disturbance."
+}

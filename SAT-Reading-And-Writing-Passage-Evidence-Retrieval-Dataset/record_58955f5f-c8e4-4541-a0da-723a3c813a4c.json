@@ -1,0 +1,92 @@
+{
+  "raw_record": {
+    "question_stem": "What is the primary function of the third sentence in the passage?",
+    "passage": "At first, the town's riverfront renovation seemed to favor tourists over residents. New walkways and cafes drew visitors, but few local vendors could afford the required permits. In response, the planning committee reserved several low-cost stalls for neighborhood businesses. The policy did not eliminate every conflict, yet it allowed residents to benefit directly from the increased foot traffic.",
+    "answer_choices": [
+      {
+        "choice_label": "A",
+        "choice_text": "It introduces a criticism of the new riverfront walkways."
+      },
+      {
+        "choice_label": "B",
+        "choice_text": "It provides historical background about the town's local businesses."
+      },
+      {
+        "choice_label": "C",
+        "choice_text": "It presents a measure intended to address a problem described earlier."
+      },
+      {
+        "choice_label": "D",
+        "choice_text": "It demonstrates that the riverfront renovation completely failed."
+      }
+    ],
+    "correct_answer": "C",
+    "candidate_evidence": [
+      {
+        "candidate_index": 0,
+        "fragment_text": "At first, the town's riverfront renovation seemed to favor tourists over residents.",
+        "start_char": 0,
+        "end_char": 83
+      },
+      {
+        "candidate_index": 1,
+        "fragment_text": "New walkways and cafes drew visitors, but few local vendors could afford the required permits.",
+        "start_char": 84,
+        "end_char": 178
+      },
+      {
+        "candidate_index": 2,
+        "fragment_text": "In response, the planning committee reserved several low-cost stalls for neighborhood businesses.",
+        "start_char": 179,
+        "end_char": 276
+      },
+      {
+        "candidate_index": 3,
+        "fragment_text": "The policy did not eliminate every conflict, yet it allowed residents to benefit directly from the increased foot traffic.",
+        "start_char": 277,
+        "end_char": 398
+      }
+    ],
+    "evidence_spans": [
+      {
+        "candidate_index": 2,
+        "start_char": 179,
+        "end_char": 276,
+        "span_text": "In response, the planning committee reserved several low-cost stalls for neighborhood businesses."
+      }
+    ]
+  },
+  "retrieval_query": "riverfront renovation local vendors unaffordable permits planning committee low-cost stalls policy response",
+  "grounding_summary": {
+    "answer_choice": "C",
+    "evidence_text": "In response, the planning committee reserved several low-cost stalls for neighborhood businesses.",
+    "support_status": "充分支撑"
+  },
+  "evidence_selection": [
+    {
+      "candidate_index": 0,
+      "relevance_score": 0.56,
+      "selected": false,
+      "match_reason": "该片段提出翻修项目可能偏向游客的问题，但没有说明采取了何种解决措施。"
+    },
+    {
+      "candidate_index": 1,
+      "relevance_score": 0.84,
+      "selected": false,
+      "match_reason": "该片段具体说明了当地摊贩面临的许可费用问题，是后文政策措施所针对的背景。"
+    },
+    {
+      "candidate_index": 2,
+      "relevance_score": 0.98,
+      "selected": true,
+      "match_reason": "该片段以In response承接前文问题，直接说明委员会为社区企业预留低成本摊位这一应对措施。"
+    },
+    {
+      "candidate_index": 3,
+      "relevance_score": 0.68,
+      "selected": false,
+      "match_reason": "该片段说明政策效果，但主要用于评价措施结果，而不是解释第三句的段落功能。"
+    }
+  ],
+  "gold_evidence_text": "In response, the planning committee reserved several low-cost stalls for neighborhood businesses."
+}
