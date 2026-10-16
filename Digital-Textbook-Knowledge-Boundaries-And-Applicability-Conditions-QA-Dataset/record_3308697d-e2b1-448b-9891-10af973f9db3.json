@@ -1,0 +1,32 @@
+{
+  "knowledge_conclusion": "在实数范围内，对数乘法法则 ln(xy)=ln x+ln y 的直接使用要求 x>0 且 y>0，而不仅仅是乘积 xy>0。每一个对数项都必须有正的真数。",
+  "answer": "在实数范围内，使用 ln(xy)=ln x+ln y 的直接条件是 x>0 且 y>0。原因是公式右侧包含 ln x 和 ln y，这两个对数必须分别有定义；仅有 xy>0 并不充分。例如 x<0、y<0 时 xy>0，ln(xy) 可以在实数范围内有定义，但 ln x 和 ln y 没有实数定义，因此不能把 ln(xy) 拆成 ln x+ln y。若转入复数范围，还需要另外说明复对数的分支，不能直接沿用这个实数规则。",
+  "question": "实数范围内使用 ln(xy)=ln x+ln y 需要满足什么条件？为什么不能仅根据 xy>0 就应用该公式？",
+  "source_text": "教材片段：在实数范围内，当 x>0 且 y>0 时，满足 ln(xy)=ln x+ln y。该运算法则建立在自然对数的真数为正的定义域条件上。不能因为代数式 xy 为正，就把含有负数真数的对数表达式直接代入该法则；实数范围内 ln(−x) 没有定义。",
+  "question_type": "规则例外",
+  "evidence_quote": "在实数范围内，当 x>0 且 y>0 时，满足 ln(xy)=ln x+ln y。不能因为代数式 xy 为正，就把含有负数真数的对数表达式直接代入该法则。",
+  "boundary_and_exceptions": [
+    {
+      "boundary_type": "不适用情形",
+      "boundary_detail": "当 x<0、y<0 且 xy>0 时，ln(xy) 可能在实数范围内有定义，但 ln x 和 ln y 均无实数定义。",
+      "handling_guidance": "不能将 ln(xy) 拆写为 ln x+ln y；应保留原表达式，或在明确转换到复数对数并说明分支条件后另行讨论。"
+    },
+    {
+      "boundary_type": "规则例外",
+      "boundary_detail": "若 x≤0 或 y≤0，至少有一个单独的对数项在实数范围内无定义，因此不能直接应用该乘法法则。",
+      "handling_guidance": "先逐项检查每个对数真数是否为正，不要只检查乘积 xy 的符号。"
+    }
+  ],
+  "applicability_conditions": [
+    {
+      "condition_type": "变量限制",
+      "condition_detail": "x 和 y 分别都必须为正数，即 x>0、y>0。",
+      "condition_role": "保证 ln x、ln y 和 ln(xy) 都在实数范围内有定义，是直接拆分对数乘积的必要条件。"
+    },
+    {
+      "condition_type": "定义约定",
+      "condition_detail": "讨论范围限定为实数自然对数，而不是引入复对数及其分支约定。",
+      "condition_role": "确定对数的定义域和运算法则边界，避免把实数结论无条件推广到复数情形。"
+    }
+  ]
+}
