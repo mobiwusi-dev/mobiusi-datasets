@@ -1,0 +1,16 @@
+{
+  "claim_text": "员工可按每月销售合同总金额的5%获得佣金，不论客户是否已经付款。",
+  "claim_category": "commission",
+  "evidence_quote": "乙方就实际到账的净销售收入按3%的比例计取佣金。佣金按季度核算，并在季度结束后30日内支付。对于尚未由客户支付或已退款的订单，不计入佣金计算基数。",
+  "normalized_fact": {
+    "stated_value": "合同约定按实际到账净销售收入的3%计取佣金，按季度核算并支付",
+    "rate_value": 3,
+    "rate_unit": "percent",
+    "payment_cycle": "按季度核算，季度结束后30日内支付",
+    "payment_condition": "客户款项实际到账，且订单未发生退款",
+    "eligibility_requirement": "以实际到账的净销售收入为佣金计算基数"
+  },
+  "verification_status": "contradicted",
+  "contract_clause_text": "第七条 销售佣金：乙方就实际到账的净销售收入按3%的比例计取佣金。佣金按季度核算，并在季度结束后30日内支付。对于尚未由客户支付或已退款的订单，不计入佣金计算基数。",
+  "verification_explanation": "主张中的5%比例、按月支付和以销售合同总金额为基数，均与合同约定的3%、按季度支付及实际到账净销售收入基数不一致；合同还明确排除了未收款和退款订单，因此该主张被合同明确反驳。"
+}
