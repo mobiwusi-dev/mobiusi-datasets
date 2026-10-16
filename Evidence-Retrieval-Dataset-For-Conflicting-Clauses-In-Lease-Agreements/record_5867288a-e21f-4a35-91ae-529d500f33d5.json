@@ -1,0 +1,131 @@
+{
+  "case_input": {
+    "query_text": "如乙方希望行使首次续租权，最迟应在租赁期届满前多少日发出书面通知？主合同中的90日要求是否仍然适用？",
+    "contract_context": "甲方与乙方签订了商业用房租赁合同，主合同规定一般续租通知期限为90日。合同履行期间，双方另行签署了首次续租补充条款，将首次续租的通知期限调整为120日，并约定该条款与主合同不一致时优先适用。物业人员发送的提醒邮件仍沿用了主合同的90日表述。",
+    "jurisdiction": "中华人民共和国法域；期限判断以有效书面约定及其适用范围为依据。",
+    "candidate_evidence": [
+      {
+        "candidate_id": "N1",
+        "document_text": "《商业用房租赁合同》第12.1条：如乙方拟在租赁期届满后继续承租，应至少在租赁期届满前90日向甲方提交书面续租通知。逾期通知的，甲方有权根据经营安排决定是否接受续租。",
+        "document_type": "主租赁合同",
+        "clause_reference": "第12.1条",
+        "version_label": "主合同签署版V1",
+        "effective_date": "2023-01-01",
+        "source_authority": "甲方与乙方正式签署的主合同"
+      },
+      {
+        "candidate_id": "N2",
+        "document_text": "《商业合作条件表》第4项：与租金调整相关的书面申请，应在相关调整日前至少60日提出。本项所称申请不包括租赁期届满后的续租通知。",
+        "document_type": "合同附件",
+        "clause_reference": "商业合作条件表第4项",
+        "version_label": "附件版A1",
+        "effective_date": "2023-01-01",
+        "source_authority": "甲方与乙方共同确认的合同附件"
+      },
+      {
+        "candidate_id": "N3",
+        "document_text": "《首次续租补充条款》第1条：就乙方首次续租事宜，乙方应在首个租赁期届满前至少120日向甲方发出书面续租通知。双方确认，本条与《商业用房租赁合同》第12.1条不一致时，以本补充条款为准；本条仅适用于首次续租，不改变后续续租的其他约定。",
+        "document_type": "续租补充协议",
+        "clause_reference": "第1条及签署页",
+        "version_label": "首次续租补充条款V2",
+        "effective_date": "2024-06-15",
+        "source_authority": "甲方与乙方于2024年6月15日正式签署"
+      },
+      {
+        "candidate_id": "N4",
+        "document_text": "物业提醒邮件：根据合同第12.1条，若乙方有续租意向，请在租期届满前90日发送书面通知。该邮件为日常提醒，未提及2024年签署的首次续租补充条款。",
+        "document_type": "物业提醒邮件",
+        "clause_reference": "2026年8月1日邮件正文",
+        "version_label": "提醒邮件E1",
+        "effective_date": "2026-08-01",
+        "source_authority": "物业管理人员发送的非签约文件"
+      }
+    ]
+  },
+  "retrieval_labels": {
+    "ranked_candidates": [
+      {
+        "rank": 1,
+        "candidate_id": "N3",
+        "relevance_score": 0.99,
+        "control_effectiveness_score": 0.99,
+        "context_completeness_score": 0.99,
+        "selection_label": "金标准证据"
+      },
+      {
+        "rank": 2,
+        "candidate_id": "N1",
+        "relevance_score": 0.95,
+        "control_effectiveness_score": 0.46,
+        "context_completeness_score": 0.88,
+        "selection_label": "困难负例"
+      },
+      {
+        "rank": 3,
+        "candidate_id": "N4",
+        "relevance_score": 0.86,
+        "control_effectiveness_score": 0.22,
+        "context_completeness_score": 0.51,
+        "selection_label": "困难负例"
+      },
+      {
+        "rank": 4,
+        "candidate_id": "N2",
+        "relevance_score": 0.55,
+        "control_effectiveness_score": 0.12,
+        "context_completeness_score": 0.92,
+        "selection_label": "范围不匹配负例"
+      }
+    ],
+    "gold_evidence_ids": [
+      "N3"
+    ],
+    "hard_negative_candidate_ids": [
+      "N1",
+      "N2",
+      "N4"
+    ]
+  },
+  "conflict_analysis": {
+    "conflict_types": [
+      "后签版本优先",
+      "特定续租条款优先",
+      "适用范围区分",
+      "表面期限矛盾"
+    ],
+    "conflict_summary": "N1规定一般续租通知期限为90日，N3针对首次续租将期限明确调整为120日并规定与N1不一致时以N3为准。N2规定的60日期限仅适用于租金调整申请，且明文排除续租通知。N4重复了N1的旧期限，但属于未反映补充条款的物业提醒。",
+    "conflicting_candidate_ids": [
+      "N1",
+      "N3",
+      "N4"
+    ],
+    "applicable_resolution_rules": [
+      {
+        "rule_type": "特定条款优先",
+        "priority_basis": "N3专门针对首次续租设定通知期限，N1仅规定一般续租规则。",
+        "rule_description": "同一事项发生一般规则与针对特定续租阶段的特别规则不一致时，应优先适用明确针对该阶段的特别规则。",
+        "applicable_scope": "仅适用于乙方的首次续租通知。"
+      },
+      {
+        "rule_type": "后签版本优先及明示覆盖",
+        "priority_basis": "N3签署时间晚于N1，且明确规定与第12.1条不一致时以N3为准。",
+        "rule_description": "N3在首次续租范围内明确覆盖N1的90日期限，因此乙方必须遵守120日通知期限。",
+        "applicable_scope": "适用于首个租赁期届满前的首次续租书面通知，不当然延伸至后续续租。"
+      },
+      {
+        "rule_type": "范围限定规则",
+        "priority_basis": "N2自身排除了续租通知，N3又明确只适用于首次续租。",
+        "rule_description": "检索时应区分租金调整申请、首次续租和后续续租，不能将不同事项的期限混用。",
+        "applicable_scope": "N2适用于租金调整申请；N3适用于首次续租。"
+      }
+    ]
+  },
+  "controlling_evidence": {
+    "selected_candidate_id": "N3",
+    "controlling_quote": "就乙方首次续租事宜，乙方应在首个租赁期届满前至少120日向甲方发出书面续租通知。双方确认，本条与《商业用房租赁合同》第12.1条不一致时，以本补充条款为准；本条仅适用于首次续租，不改变后续续租的其他约定。",
+    "evidence_context": "引文同时说明了通知期限、适用对象、与主合同的冲突处理方式以及对后续续租的范围限制。N1的90日期限是一般规则，N4只是沿用旧文本的物业提醒；N2的60日期限明确不适用于续租通知。",
+    "control_reason": "N3是双方后签的正式补充条款，针对首次续租作出专门约定，并明示优先于主合同第12.1条。因此首次续租应采用120日，而不能依据N1或N4的90日表述。",
+    "exception_or_override": "N3只覆盖首次续租；如果争议涉及第二次或后续续租，不能直接将120日期限扩展适用，应重新检索主合同及其他有效修订文本。",
+    "context_completeness_score": 0.99
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "case_input": {
+    "query_text": "2025年7月1日至2026年6月30日期间，承租人应按每月54,000元还是50,000元支付租金？应优先采用哪一份合同依据？",
+    "contract_context": "甲方将一处办公场所出租给乙方。主合同约定租金按周年递增，但双方在主合同签署后又签订了书面补充协议，专门调整2025年下半年度至2026年上半年度的租金。物业管理方随后依据主合同旧条款发送了较高金额的缴款通知。",
+    "jurisdiction": "中华人民共和国法域；适用合同约定的书面文件优先规则。",
+    "candidate_evidence": [
+      {
+        "candidate_id": "C1",
+        "document_text": "《办公场所租赁合同》第5.2条：首个租赁年度的月租金为人民币50,000元。自每个后续租赁年度起，月租金在上一年度基础上递增8%，除非双方另有书面约定。",
+        "document_type": "主租赁合同",
+        "clause_reference": "第5.2条",
+        "version_label": "主合同签署版V1",
+        "effective_date": "2024-01-01",
+        "source_authority": "甲方与乙方正式签署的主合同"
+      },
+      {
+        "candidate_id": "C2",
+        "document_text": "《租赁合同补充协议》第2条：双方确认，自2025年7月1日至2026年6月30日，涉案办公场所的月租金为人民币50,000元。本条取代《租赁合同》第5.2条关于上述期间年度递增租金的约定；除本条明确修改外，主合同继续有效。",
+        "document_type": "租赁补充协议",
+        "clause_reference": "第2条及末尾签署页",
+        "version_label": "补充协议V2",
+        "effective_date": "2025-07-01",
+        "source_authority": "甲方与乙方于2025年6月15日签署并盖章"
+      },
+      {
+        "candidate_id": "C3",
+        "document_text": "物业缴款通知：根据租赁合同第5.2条，2025年7月起月租金按50,000元上调8%计算，即人民币54,000元。请乙方于每月5日前完成支付。该通知未提及双方已签署的补充协议。",
+        "document_type": "物业管理通知",
+        "clause_reference": "2025年6月20日缴款通知第1段",
+        "version_label": "通知版N1",
+        "effective_date": "2025-06-20",
+        "source_authority": "物业管理方单方发出，未载明甲方授权修改合同"
+      },
+      {
+        "candidate_id": "C4",
+        "document_text": "《租赁合同》第14.3条：本合同签署后，双方就租金、租期或其他事项达成的书面补充协议，经双方签署后即构成本合同组成部分；补充协议与本合同不一致的，就不一致事项以补充协议为准。",
+        "document_type": "主租赁合同",
+        "clause_reference": "第14.3条",
+        "version_label": "主合同签署版V1",
+        "effective_date": "2024-01-01",
+        "source_authority": "甲方与乙方正式签署的主合同"
+      }
+    ]
+  },
+  "retrieval_labels": {
+    "ranked_candidates": [
+      {
+        "rank": 1,
+        "candidate_id": "C2",
+        "relevance_score": 0.99,
+        "control_effectiveness_score": 0.99,
+        "context_completeness_score": 0.98,
+        "selection_label": "金标准证据"
+      },
+      {
+        "rank": 2,
+        "candidate_id": "C4",
+        "relevance_score": 0.88,
+        "control_effectiveness_score": 0.91,
+        "context_completeness_score": 0.96,
+        "selection_label": "可用解释规则证据"
+      },
+      {
+        "rank": 3,
+        "candidate_id": "C1",
+        "relevance_score": 0.93,
+        "control_effectiveness_score": 0.42,
+        "context_completeness_score": 0.86,
+        "selection_label": "困难负例"
+      },
+      {
+        "rank": 4,
+        "candidate_id": "C3",
+        "relevance_score": 0.84,
+        "control_effectiveness_score": 0.18,
+        "context_completeness_score": 0.49,
+        "selection_label": "困难负例"
+      }
+    ],
+    "gold_evidence_ids": [
+      "C2",
+      "C4"
+    ],
+    "hard_negative_candidate_ids": [
+      "C1",
+      "C3"
+    ]
+  },
+  "conflict_analysis": {
+    "conflict_types": [
+      "版本差异",
+      "明示修订覆盖",
+      "特别书面约定优先",
+      "表面金额矛盾"
+    ],
+    "conflict_summary": "C1规定一般性的年度递增机制，C2针对特定期间明确将月租金固定为50,000元并明示取代C1相关内容。C3依据旧条款计算出54,000元，但没有处理C2的后续书面修订，因此属于表面相关但不具控制效力的证据。C4提供了判断补充协议优先顺序的合同解释规则。",
+    "conflicting_candidate_ids": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "applicable_resolution_rules": [
+      {
+        "rule_type": "明示修订覆盖",
+        "priority_basis": "C2明确写明取代主合同第5.2条中关于相关期间的递增约定。",
+        "rule_description": "当后签的书面补充协议明确修改或取代主合同特定条款时，应在该修改范围内适用补充协议，而非继续适用被取代的旧文本。",
+        "applicable_scope": "仅适用于2025年7月1日至2026年6月30日的月租金金额。"
+      },
+      {
+        "rule_type": "补充协议优先",
+        "priority_basis": "C4约定双方签署的补充协议属于主合同组成部分，且不一致时以补充协议为准。",
+        "rule_description": "C2由双方正式签署，且其主题直接涉及租金，因此在租金金额这一不一致事项上优先于C1及依据C1制作的单方通知。",
+        "applicable_scope": "适用于C2明确修改的租金条款，不影响主合同其他未被修改的内容。"
+      }
+    ]
+  },
+  "controlling_evidence": {
+    "selected_candidate_id": "C2",
+    "controlling_quote": "双方确认，自2025年7月1日至2026年6月30日，涉案办公场所的月租金为人民币50,000元。本条取代《租赁合同》第5.2条关于上述期间年度递增租金的约定；除本条明确修改外，主合同继续有效。",
+    "evidence_context": "该引文同时包含适用期间、固定租金金额、被取代的具体条款以及未修改部分继续有效的限定。C1的年度递增规则仍可适用于其他未被C2覆盖的期间，但不能用于推翻C2明确规定的期间。",
+    "control_reason": "C2是双方后签并正式签署的补充协议，针对租金金额作出具体、明确且有期间限制的修订；同时C4规定补充协议与主合同不一致时以补充协议为准。因此C2比主合同一般条款及物业单方通知具有更高控制效力。",
+    "exception_or_override": "C2只覆盖2025年7月1日至2026年6月30日。该期间结束后，如无新的书面约定，主合同第5.2条的年度递增机制可能恢复适用；C3不能构成对C2的单方覆盖。",
+    "context_completeness_score": 0.98
+  }
+}

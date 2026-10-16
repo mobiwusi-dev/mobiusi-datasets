@@ -1,0 +1,132 @@
+{
+  "controlling_evidence": {
+    "selected_candidate_id": "R3",
+    "controlling_quote": "除非甲方能够证明故障系乙方故意或过失直接造成，隐蔽设施的维修、更换及由此产生的合理恢复费用由甲方承担。本条在隐蔽设施责任范围内优先于主合同第8.1条及其他一般维修约定。",
+    "evidence_context": "R3定义了隐蔽设施的范围，包括墙体内未暴露的供水、排水及电气管线；同时保留了乙方故意或过失直接造成故障的例外。题设说明管道位于墙体内且没有证明乙方过错，符合R3的责任分配条件。",
+    "control_reason": "R3是后签的正式补充协议，直接处理隐蔽设施责任，并明示其优先于主合同的一般维修条款。其文本还规定了由甲方证明乙方过错的例外条件，因此比R1的概括性规定和R4的单方维修建议更具控制效力。",
+    "exception_or_override": "如果后续能够证明爆裂系乙方擅自改装、操作不当或其他直接过错造成，R3的例外条款可能使乙方承担相应费用。现有输入未提供此类证明。",
+    "context_completeness_score": 0.97
+  },
+  "case_input": {
+    "query_text": "租赁物内一条未暴露的墙体供水管道发生爆裂，且现有材料不能证明乙方存在过错，维修费用应由甲方还是乙方承担？",
+    "contract_context": "甲方将一处带装修的商铺出租给乙方经营。主合同有一条概括性约定，要求乙方承担租赁物日常维修费用；合同附件则区分了结构性设施、隐蔽管线和承租人过错造成的损坏。双方后续签署的补充协议进一步确认了隐蔽管线的责任分配。",
+    "jurisdiction": "中华人民共和国法域；具体责任以有效合同文本和已证明事实为准。",
+    "candidate_evidence": [
+      {
+        "candidate_id": "R1",
+        "document_text": "《商铺租赁合同》第8.1条：租赁期间，乙方负责租赁物的日常维护、保养及一般性维修，并承担由此产生的合理费用。因乙方或其工作人员故意或过失造成的损坏，不论属于何种设施，乙方均应负责修复或赔偿。",
+        "document_type": "主租赁合同",
+        "clause_reference": "第8.1条",
+        "version_label": "主合同签署版V1",
+        "effective_date": "2023-03-01",
+        "source_authority": "甲方与乙方正式签署的主合同"
+      },
+      {
+        "candidate_id": "R2",
+        "document_text": "《房屋设施与维修责任附件》第二部分：主体结构、承重构件、公共主管线及墙体内未暴露的给排水管线，由甲方负责维修或更换。乙方仅对其故意或过失造成的损坏承担费用；正常老化或不可归责于乙方的故障不适用乙方维修责任。",
+        "document_type": "租赁合同附件",
+        "clause_reference": "附件二第二部分第3项",
+        "version_label": "设施责任附件V1",
+        "effective_date": "2023-03-01",
+        "source_authority": "作为主合同附件由甲方与乙方共同确认"
+      },
+      {
+        "candidate_id": "R3",
+        "document_text": "《维修责任补充协议》第1条：双方确认，墙体内未暴露的供水、排水及电气管线属于隐蔽设施。除非甲方能够证明故障系乙方故意或过失直接造成，隐蔽设施的维修、更换及由此产生的合理恢复费用由甲方承担。本条在隐蔽设施责任范围内优先于主合同第8.1条及其他一般维修约定。",
+        "document_type": "租赁补充协议",
+        "clause_reference": "第1条及签署页",
+        "version_label": "维修责任补充协议V2",
+        "effective_date": "2024-02-15",
+        "source_authority": "甲方与乙方于2024年2月15日签署"
+      },
+      {
+        "candidate_id": "R4",
+        "document_text": "物业维修通知：商铺供水管道爆裂，初步建议由乙方先行承担全部维修费用，理由是主合同第8.1条规定乙方负责日常维修。通知没有说明管道是否位于墙体内部，也没有认定乙方存在故意或过失。",
+        "document_type": "物业维修通知",
+        "clause_reference": "2025年4月3日维修工单备注",
+        "version_label": "维修通知N1",
+        "effective_date": "2025-04-03",
+        "source_authority": "物业管理方现场通知，未载明甲方对责任争议的最终确认"
+      }
+    ]
+  },
+  "retrieval_labels": {
+    "ranked_candidates": [
+      {
+        "rank": 1,
+        "candidate_id": "R3",
+        "relevance_score": 0.99,
+        "control_effectiveness_score": 0.99,
+        "context_completeness_score": 0.97,
+        "selection_label": "金标准证据"
+      },
+      {
+        "rank": 2,
+        "candidate_id": "R2",
+        "relevance_score": 0.94,
+        "control_effectiveness_score": 0.87,
+        "context_completeness_score": 0.91,
+        "selection_label": "可用支持证据"
+      },
+      {
+        "rank": 3,
+        "candidate_id": "R1",
+        "relevance_score": 0.89,
+        "control_effectiveness_score": 0.39,
+        "context_completeness_score": 0.78,
+        "selection_label": "困难负例"
+      },
+      {
+        "rank": 4,
+        "candidate_id": "R4",
+        "relevance_score": 0.82,
+        "control_effectiveness_score": 0.16,
+        "context_completeness_score": 0.45,
+        "selection_label": "困难负例"
+      }
+    ],
+    "gold_evidence_ids": [
+      "R3",
+      "R2"
+    ],
+    "hard_negative_candidate_ids": [
+      "R1",
+      "R4"
+    ]
+  },
+  "conflict_analysis": {
+    "conflict_types": [
+      "一般条款与特别条款冲突",
+      "后签补充协议覆盖",
+      "过错例外条款",
+      "表面责任矛盾"
+    ],
+    "conflict_summary": "R1以一般性措辞要求乙方承担日常维修，R2对墙体内隐蔽管线作出特别分配，R3又以更晚签署的补充协议明确规定隐蔽设施由甲方承担，但保留乙方故意或过失造成损坏的例外。R4仅依据一般条款提出先行付款建议，既未确认设施属性，也未证明乙方过错。",
+    "conflicting_candidate_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "applicable_resolution_rules": [
+      {
+        "rule_type": "特别条款优先",
+        "priority_basis": "R2将隐蔽管线从一般日常维修中单独列出，并对其责任作出具体安排。",
+        "rule_description": "针对特定设施的明确责任条款优先于仅规定一般日常维修义务的概括性条款。",
+        "applicable_scope": "适用于墙体内未暴露的给排水及其他隐蔽管线。"
+      },
+      {
+        "rule_type": "后签明示修订覆盖",
+        "priority_basis": "R3在R1、R2之后签署，并明确声明其在隐蔽设施责任范围内优先于第8.1条。",
+        "rule_description": "R3对隐蔽设施作出更具体且更晚的责任安排，应在其明示范围内控制责任判断。",
+        "applicable_scope": "适用于隐蔽设施的维修、更换和合理恢复费用。"
+      },
+      {
+        "rule_type": "过错例外",
+        "priority_basis": "R3规定只有能够证明乙方故意或过失直接造成故障时，责任才转由乙方承担。",
+        "rule_description": "在没有证明乙方过错的情况下，不能仅凭乙方占有和使用租赁物推定其承担隐蔽设施维修费用。",
+        "applicable_scope": "适用于故障原因及相关维修费用的归责。"
+      }
+    ]
+  }
+}
