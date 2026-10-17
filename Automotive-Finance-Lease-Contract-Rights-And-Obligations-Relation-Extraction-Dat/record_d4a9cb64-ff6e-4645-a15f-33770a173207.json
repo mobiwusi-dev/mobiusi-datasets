@@ -1,0 +1,70 @@
+{
+  "webpage_content": "<main><h1>Lease-end choices</h1><p>The leasing company retains legal title to the vehicle throughout the lease. The customer must make each monthly payment by its due date.</p><p>At the scheduled end date, the customer may purchase the vehicle for the purchase amount stated in the lease-end notice, or return it to an authorized location. If the customer returns the vehicle, the customer is responsible for mileage above the contracted allowance and for damage beyond ordinary wear.</p><p>To request early termination, contact us for a payoff quote; the lease remains active and monthly payments remain due until the vehicle is returned and the account is settled.</p></main>",
+  "parties": [
+    {
+      "role": "lessor",
+      "name": "the leasing company"
+    },
+    {
+      "role": "lessee",
+      "name": "the customer"
+    },
+    {
+      "role": "vehicle",
+      "name": "the vehicle"
+    }
+  ],
+  "source_url": null,
+  "contract_relations": [
+    {
+      "topic": "ownership",
+      "subject_role": "lessor",
+      "subject_name": "the leasing company",
+      "relation_type": "retains legal title to",
+      "object_role": "vehicle",
+      "object_value": "the vehicle",
+      "conditions": "Throughout the lease.",
+      "source_quote": "The leasing company retains legal title to the vehicle throughout the lease."
+    },
+    {
+      "topic": "vehicle_payment",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "must pay",
+      "object_role": "payment",
+      "object_value": "each monthly payment",
+      "conditions": "By its due date.",
+      "source_quote": "The customer must make each monthly payment by its due date."
+    },
+    {
+      "topic": "purchase_option",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "may purchase",
+      "object_role": "vehicle",
+      "object_value": "the vehicle",
+      "conditions": "At the scheduled end date, for the purchase amount stated in the lease-end notice.",
+      "source_quote": "At the scheduled end date, the customer may purchase the vehicle for the purchase amount stated in the lease-end notice, or return it to an authorized location."
+    },
+    {
+      "topic": "vehicle_payment",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "is responsible for charges for",
+      "object_role": "charges",
+      "object_value": "mileage above the contracted allowance and damage beyond ordinary wear",
+      "conditions": "If the customer returns the vehicle.",
+      "source_quote": "If the customer returns the vehicle, the customer is responsible for mileage above the contracted allowance and for damage beyond ordinary wear."
+    },
+    {
+      "topic": "termination",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "must continue making",
+      "object_role": "payment",
+      "object_value": "monthly payments",
+      "conditions": "An early-termination request does not end the lease; payments remain due until the vehicle is returned and the account is settled.",
+      "source_quote": "To request early termination, contact us for a payoff quote; the lease remains active and monthly payments remain due until the vehicle is returned and the account is settled."
+    }
+  ]
+}

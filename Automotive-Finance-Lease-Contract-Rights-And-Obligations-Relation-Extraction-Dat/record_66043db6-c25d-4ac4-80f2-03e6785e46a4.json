@@ -1,0 +1,60 @@
+{
+  "parties": [
+    {
+      "role": "lessee",
+      "name": "the customer"
+    },
+    {
+      "role": "lessor",
+      "name": "the leasing company"
+    },
+    {
+      "role": "vehicle",
+      "name": "the vehicle"
+    }
+  ],
+  "source_url": null,
+  "webpage_content": "<main><h1>Maintenance during your lease</h1><p>During the lease, the customer must keep the vehicle in good operating condition and complete scheduled maintenance in accordance with the owner's manual.</p><p>Routine service and consumables are the customer's responsibility and are not included in the monthly lease payment.</p><p>Before authorizing a repair expected to exceed $750, the customer must obtain written approval from the leasing company, except when immediate action is needed to address a safety emergency.</p><p>Any replacement parts installed must meet the vehicle manufacturer's specifications.</p></main>",
+  "contract_relations": [
+    {
+      "topic": "maintenance",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "must maintain",
+      "object_role": "vehicle",
+      "object_value": "the vehicle in good operating condition and complete scheduled maintenance",
+      "conditions": "During the lease, in accordance with the owner's manual.",
+      "source_quote": "During the lease, the customer must keep the vehicle in good operating condition and complete scheduled maintenance in accordance with the owner's manual."
+    },
+    {
+      "topic": "maintenance",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "is responsible for the cost of",
+      "object_role": "maintenance_cost",
+      "object_value": "routine service and consumables",
+      "conditions": "These costs are not included in the monthly lease payment.",
+      "source_quote": "Routine service and consumables are the customer's responsibility and are not included in the monthly lease payment."
+    },
+    {
+      "topic": "maintenance",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "must obtain written approval for",
+      "object_role": "repair",
+      "object_value": "a repair expected to exceed $750",
+      "conditions": "Approval must come from the leasing company before authorization, except when immediate action is needed to address a safety emergency.",
+      "source_quote": "Before authorizing a repair expected to exceed $750, the customer must obtain written approval from the leasing company, except when immediate action is needed to address a safety emergency."
+    },
+    {
+      "topic": "maintenance",
+      "subject_role": "lessee",
+      "subject_name": "the customer",
+      "relation_type": "must ensure compliance with",
+      "object_role": "parts requirement",
+      "object_value": "the vehicle manufacturer's specifications for replacement parts",
+      "conditions": "Applies to any replacement parts installed.",
+      "source_quote": "Any replacement parts installed must meet the vehicle manufacturer's specifications."
+    }
+  ]
+}

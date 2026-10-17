@@ -1,0 +1,60 @@
+{
+  "parties": [
+    {
+      "role": "lessee",
+      "name": "the lessee"
+    },
+    {
+      "role": "lessor",
+      "name": "the lessor"
+    },
+    {
+      "role": "vehicle",
+      "name": "the vehicle"
+    }
+  ],
+  "source_url": null,
+  "webpage_content": "<main><h1>Purchase option and returning the vehicle</h1><p>At maturity, the lessee may exercise the purchase option by giving written notice no later than 15 calendar days before the scheduled end date and paying the stated purchase price plus applicable taxes.</p><p>Until the purchase is completed and all amounts due are paid, title remains with the lessor.</p><p>If the lessee does not exercise the option, the vehicle must be returned by the scheduled end date to a return center designated by the lessor.</p><p>Either party may request an early termination quote, but this request does not itself end the lease. Early termination becomes effective only after the vehicle is surrendered and the final amount due is paid.</p></main>",
+  "contract_relations": [
+    {
+      "topic": "purchase_option",
+      "subject_role": "lessee",
+      "subject_name": "the lessee",
+      "relation_type": "may exercise the purchase option",
+      "object_role": "vehicle",
+      "object_value": "the vehicle",
+      "conditions": "At maturity, by giving written notice no later than 15 calendar days before the scheduled end date and paying the stated purchase price plus applicable taxes.",
+      "source_quote": "At maturity, the lessee may exercise the purchase option by giving written notice no later than 15 calendar days before the scheduled end date and paying the stated purchase price plus applicable taxes."
+    },
+    {
+      "topic": "ownership",
+      "subject_role": "lessor",
+      "subject_name": "the lessor",
+      "relation_type": "retains title to",
+      "object_role": "vehicle",
+      "object_value": "the vehicle",
+      "conditions": "Until the purchase is completed and all amounts due are paid.",
+      "source_quote": "Until the purchase is completed and all amounts due are paid, title remains with the lessor."
+    },
+    {
+      "topic": "termination",
+      "subject_role": "lessee",
+      "subject_name": "the lessee",
+      "relation_type": "must return",
+      "object_role": "vehicle",
+      "object_value": "the vehicle to a return center designated by the lessor",
+      "conditions": "By the scheduled end date if the lessee does not exercise the purchase option.",
+      "source_quote": "If the lessee does not exercise the option, the vehicle must be returned by the scheduled end date to a return center designated by the lessor."
+    },
+    {
+      "topic": "termination",
+      "subject_role": "either party",
+      "subject_name": "either party",
+      "relation_type": "may request",
+      "object_role": "contract action",
+      "object_value": "an early termination quote",
+      "conditions": "The request does not itself end the lease; early termination becomes effective only after the vehicle is surrendered and the final amount due is paid.",
+      "source_quote": "Either party may request an early termination quote, but this request does not itself end the lease. Early termination becomes effective only after the vehicle is surrendered and the final amount due is paid."
+    }
+  ]
+}
