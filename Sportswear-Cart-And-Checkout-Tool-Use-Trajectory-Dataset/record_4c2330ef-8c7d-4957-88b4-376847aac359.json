@@ -1,0 +1,121 @@
+{
+  "tool_calls": [
+    {
+      "call_index": 0,
+      "tool_name": "search_catalog",
+      "arguments": {
+        "style_name": "Stride Run Jacket",
+        "color": "Navy",
+        "size": "M"
+      },
+      "result": {
+        "status": "success",
+        "matches": [
+          {
+            "sku": "SRJ-NVY-M",
+            "style_name": "Stride Run Jacket",
+            "color": "Navy",
+            "size": "M",
+            "unit_price": 128.0,
+            "availability": "in_stock"
+          }
+        ]
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 1,
+      "tool_name": "add_to_cart",
+      "arguments": {
+        "sku": "SRJ-NVY-M",
+        "style_name": "Stride Run Jacket",
+        "color": "Navy",
+        "size": "M",
+        "quantity": 1
+      },
+      "result": {
+        "status": "success",
+        "line_item": {
+          "sku": "SRJ-NVY-M",
+          "style_name": "Stride Run Jacket",
+          "color": "Navy",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 128.0
+        },
+        "cart_item_count": 1
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 2,
+      "tool_name": "get_cart",
+      "arguments": {},
+      "result": {
+        "status": "success",
+        "items": [
+          {
+            "sku": "SRJ-NVY-M",
+            "style_name": "Stride Run Jacket",
+            "color": "Navy",
+            "size": "M",
+            "quantity": 1,
+            "unit_price": 128.0
+          }
+        ],
+        "subtotal": 128.0,
+        "currency": "USD"
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 3,
+      "tool_name": "begin_checkout",
+      "arguments": {},
+      "result": {
+        "status": "success",
+        "checkout_stage": "shipping_details",
+        "cart_subtotal": 128.0,
+        "currency": "USD",
+        "ready_for_checkout": true,
+        "pending_actions": [
+          "Enter a shipping address",
+          "Select a shipping method",
+          "Provide payment details"
+        ]
+      },
+      "outcome": "success"
+    }
+  ],
+  "task_intent": "Add one Stride Run Jacket in Navy, size M, review the cart, and proceed to the shipping-details stage without placing an order.",
+  "cart_contents": [
+    {
+      "sku": "SRJ-NVY-M",
+      "style_name": "Stride Run Jacket",
+      "color": "Navy",
+      "size": "M",
+      "quantity": 1,
+      "unit_price": 128.0
+    }
+  ],
+  "raw_trajectory": "{\"user_request\":\"Add one Stride Run Jacket in Navy, size M, to my cart and take me to checkout.\",\"tool_trace\":[{\"tool_name\":\"search_catalog\",\"arguments\":{\"style_name\":\"Stride Run Jacket\",\"color\":\"Navy\",\"size\":\"M\"},\"result\":{\"status\":\"success\",\"matches\":[{\"sku\":\"SRJ-NVY-M\",\"style_name\":\"Stride Run Jacket\",\"color\":\"Navy\",\"size\":\"M\",\"unit_price\":128.0,\"availability\":\"in_stock\"}]}},{\"tool_name\":\"add_to_cart\",\"arguments\":{\"sku\":\"SRJ-NVY-M\",\"style_name\":\"Stride Run Jacket\",\"color\":\"Navy\",\"size\":\"M\",\"quantity\":1},\"result\":{\"status\":\"success\",\"line_item\":{\"sku\":\"SRJ-NVY-M\",\"style_name\":\"Stride Run Jacket\",\"color\":\"Navy\",\"size\":\"M\",\"quantity\":1,\"unit_price\":128.0},\"cart_item_count\":1}},{\"tool_name\":\"get_cart\",\"arguments\":{},\"result\":{\"status\":\"success\",\"items\":[{\"sku\":\"SRJ-NVY-M\",\"style_name\":\"Stride Run Jacket\",\"color\":\"Navy\",\"size\":\"M\",\"quantity\":1,\"unit_price\":128.0}],\"subtotal\":128.0,\"currency\":\"USD\"}},{\"tool_name\":\"begin_checkout\",\"arguments\":{},\"result\":{\"status\":\"success\",\"checkout_stage\":\"shipping_details\",\"cart_subtotal\":128.0,\"currency\":\"USD\",\"ready_for_checkout\":true,\"pending_actions\":[\"Enter a shipping address\",\"Select a shipping method\",\"Provide payment details\"]}}]}",
+  "checkout_status": {
+    "checkout_stage": "shipping_details",
+    "cart_subtotal": 128.0,
+    "currency": "USD",
+    "ready_for_checkout": true,
+    "pending_actions": [
+      "Enter a shipping address",
+      "Select a shipping method",
+      "Provide payment details"
+    ]
+  },
+  "sequence_validation": {
+    "sequence_valid": true,
+    "validation_notes": [
+      "The requested variant was checked before it was added to the cart.",
+      "The cart was reviewed before checkout was opened.",
+      "The reported subtotal matches the single cart line; no purchase was completed."
+    ]
+  }
+}

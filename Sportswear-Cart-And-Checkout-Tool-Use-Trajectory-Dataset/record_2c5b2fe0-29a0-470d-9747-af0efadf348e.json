@@ -1,0 +1,186 @@
+{
+  "tool_calls": [
+    {
+      "call_index": 0,
+      "tool_name": "check_variant_availability",
+      "arguments": {
+        "style_name": "Pace Compression Tights",
+        "color": "Black",
+        "size": "M"
+      },
+      "result": {
+        "status": "success",
+        "available": true,
+        "sku": "PCT-BLK-M",
+        "unit_price": 84.0
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 1,
+      "tool_name": "add_to_cart",
+      "arguments": {
+        "sku": "PCT-BLK-M",
+        "style_name": "Pace Compression Tights",
+        "color": "Black",
+        "size": "M",
+        "quantity": 1
+      },
+      "result": {
+        "status": "success",
+        "line_item": {
+          "sku": "PCT-BLK-M",
+          "style_name": "Pace Compression Tights",
+          "color": "Black",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 84.0
+        }
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 2,
+      "tool_name": "check_variant_availability",
+      "arguments": {
+        "style_name": "Ridge Training Tee",
+        "color": "Rust",
+        "size": "L"
+      },
+      "result": {
+        "status": "success",
+        "available": false,
+        "available_sizes": [
+          "M",
+          "XL"
+        ]
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 3,
+      "tool_name": "check_variant_availability",
+      "arguments": {
+        "style_name": "Ridge Training Tee",
+        "color": "Rust",
+        "size": "M"
+      },
+      "result": {
+        "status": "success",
+        "available": true,
+        "sku": "RTT-RST-M",
+        "unit_price": 42.0
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 4,
+      "tool_name": "add_to_cart",
+      "arguments": {
+        "sku": "RTT-RST-M",
+        "style_name": "Ridge Training Tee",
+        "color": "Rust",
+        "size": "M",
+        "quantity": 1
+      },
+      "result": {
+        "status": "success",
+        "line_item": {
+          "sku": "RTT-RST-M",
+          "style_name": "Ridge Training Tee",
+          "color": "Rust",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 42.0
+        }
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 5,
+      "tool_name": "get_cart",
+      "arguments": {},
+      "result": {
+        "status": "success",
+        "items": [
+          {
+            "sku": "PCT-BLK-M",
+            "style_name": "Pace Compression Tights",
+            "color": "Black",
+            "size": "M",
+            "quantity": 1,
+            "unit_price": 84.0
+          },
+          {
+            "sku": "RTT-RST-M",
+            "style_name": "Ridge Training Tee",
+            "color": "Rust",
+            "size": "M",
+            "quantity": 1,
+            "unit_price": 42.0
+          }
+        ],
+        "subtotal": 126.0,
+        "currency": "USD"
+      },
+      "outcome": "success"
+    },
+    {
+      "call_index": 6,
+      "tool_name": "begin_checkout",
+      "arguments": {},
+      "result": {
+        "status": "success",
+        "checkout_stage": "shipping_details",
+        "cart_subtotal": 126.0,
+        "currency": "USD",
+        "ready_for_checkout": true,
+        "pending_actions": [
+          "Enter a shipping address",
+          "Select a shipping method",
+          "Provide payment details"
+        ]
+      },
+      "outcome": "success"
+    }
+  ],
+  "task_intent": "Add the requested tights and tee, use size M for the tee because size L is unavailable and the shopper authorized that fallback, review the cart, and open checkout.",
+  "cart_contents": [
+    {
+      "sku": "PCT-BLK-M",
+      "style_name": "Pace Compression Tights",
+      "color": "Black",
+      "size": "M",
+      "quantity": 1,
+      "unit_price": 84.0
+    },
+    {
+      "sku": "RTT-RST-M",
+      "style_name": "Ridge Training Tee",
+      "color": "Rust",
+      "size": "M",
+      "quantity": 1,
+      "unit_price": 42.0
+    }
+  ],
+  "raw_trajectory": "{\"user_request\":\"Add one pair of Pace Compression Tights in Black, size M, and one Ridge Training Tee in Rust, size L. If the tee is unavailable in L, use size M instead, then open checkout.\",\"tool_trace\":[{\"tool_name\":\"check_variant_availability\",\"arguments\":{\"style_name\":\"Pace Compression Tights\",\"color\":\"Black\",\"size\":\"M\"},\"result\":{\"status\":\"success\",\"available\":true,\"sku\":\"PCT-BLK-M\",\"unit_price\":84.0}},{\"tool_name\":\"add_to_cart\",\"arguments\":{\"sku\":\"PCT-BLK-M\",\"style_name\":\"Pace Compression Tights\",\"color\":\"Black\",\"size\":\"M\",\"quantity\":1},\"result\":{\"status\":\"success\",\"line_item\":{\"sku\":\"PCT-BLK-M\",\"style_name\":\"Pace Compression Tights\",\"color\":\"Black\",\"size\":\"M\",\"quantity\":1,\"unit_price\":84.0}}},{\"tool_name\":\"check_variant_availability\",\"arguments\":{\"style_name\":\"Ridge Training Tee\",\"color\":\"Rust\",\"size\":\"L\"},\"result\":{\"status\":\"success\",\"available\":false,\"available_sizes\":[\"M\",\"XL\"]}},{\"tool_name\":\"check_variant_availability\",\"arguments\":{\"style_name\":\"Ridge Training Tee\",\"color\":\"Rust\",\"size\":\"M\"},\"result\":{\"status\":\"success\",\"available\":true,\"sku\":\"RTT-RST-M\",\"unit_price\":42.0}},{\"tool_name\":\"add_to_cart\",\"arguments\":{\"sku\":\"RTT-RST-M\",\"style_name\":\"Ridge Training Tee\",\"color\":\"Rust\",\"size\":\"M\",\"quantity\":1},\"result\":{\"status\":\"success\",\"line_item\":{\"sku\":\"RTT-RST-M\",\"style_name\":\"Ridge Training Tee\",\"color\":\"Rust\",\"size\":\"M\",\"quantity\":1,\"unit_price\":42.0}}},{\"tool_name\":\"get_cart\",\"arguments\":{},\"result\":{\"status\":\"success\",\"items\":[{\"sku\":\"PCT-BLK-M\",\"style_name\":\"Pace Compression Tights\",\"color\":\"Black\",\"size\":\"M\",\"quantity\":1,\"unit_price\":84.0},{\"sku\":\"RTT-RST-M\",\"style_name\":\"Ridge Training Tee\",\"color\":\"Rust\",\"size\":\"M\",\"quantity\":1,\"unit_price\":42.0}],\"subtotal\":126.0,\"currency\":\"USD\"}},{\"tool_name\":\"begin_checkout\",\"arguments\":{},\"result\":{\"status\":\"success\",\"checkout_stage\":\"shipping_details\",\"cart_subtotal\":126.0,\"currency\":\"USD\",\"ready_for_checkout\":true,\"pending_actions\":[\"Enter a shipping address\",\"Select a shipping method\",\"Provide payment details\"]}}]}",
+  "checkout_status": {
+    "checkout_stage": "shipping_details",
+    "cart_subtotal": 126.0,
+    "currency": "USD",
+    "ready_for_checkout": true,
+    "pending_actions": [
+      "Enter a shipping address",
+      "Select a shipping method",
+      "Provide payment details"
+    ]
+  },
+  "sequence_validation": {
+    "sequence_valid": true,
+    "validation_notes": [
+      "The requested tee size was checked and reported unavailable.",
+      "The shopper's specified size-M fallback was verified before adding it.",
+      "Both cart lines and their prices sum to the reported subtotal of USD 126.00; no purchase was completed."
+    ]
+  }
+}
