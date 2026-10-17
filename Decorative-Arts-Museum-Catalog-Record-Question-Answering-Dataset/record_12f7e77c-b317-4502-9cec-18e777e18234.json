@@ -1,0 +1,13 @@
+{
+  "answer": "The supplied catalog record does not state what fiber was used.",
+  "question": "What fiber was used to make the panel?",
+  "answerability": "not_in_record",
+  "catalog_record": {
+    "object_title": "Embroidered Valance Panel",
+    "object_type": "Textile furnishing",
+    "date_or_period": "c. 1890",
+    "creator": "Unidentified maker",
+    "collection_information": "Textiles collection; accession no. 2003.27"
+  },
+  "supporting_evidence": "The record provides the title, object type, date or period, creator, and collection information, but does not record a fiber or material for the panel."
+}
