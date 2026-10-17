@@ -1,0 +1,79 @@
+{
+  "reports": [
+    {
+      "source_name": "Lark Street Record",
+      "publication_time": "06:58",
+      "update_sequence": 1,
+      "excerpt": "An initial bulletin from the town response office said 18 homes were evacuated after a retaining wall shifted beside Lark Street at about 6:40 a.m. A nearby resident told the Record that overnight rain may have weakened the slope. The bulletin said no injuries had been reported."
+    },
+    {
+      "source_name": "Town Emergency Office",
+      "publication_time": "07:24",
+      "update_sequence": 2,
+      "excerpt": "A retaining wall shifted beside Lark Street at about 6:40 a.m., and residents in nearby buildings were moved as a precaution. No injuries had been reported. The cause of the movement was under investigation."
+    },
+    {
+      "source_name": "Lark Street Record",
+      "publication_time": "10:22",
+      "update_sequence": 3,
+      "excerpt": "Correction: The phrase '18 homes were evacuated' in our earlier update was inaccurate. Eighteen residents from seven apartments were temporarily relocated; 11 had returned by 10:15 a.m. The town said inspection had not established why the wall shifted. No injuries had been reported."
+    }
+  ],
+  "question": "What is currently established about the scale of the Lark Street evacuation and its cause, given the early '18 homes' wording and the later update?",
+  "confirmed_facts": [
+    "A retaining wall shifted beside Lark Street at about 6:40 a.m.",
+    "Eighteen residents from seven apartments were temporarily relocated.",
+    "Eleven of those residents had returned by 10:15 a.m.",
+    "The supplied reports said no injuries had been reported."
+  ],
+  "reasoning_summary": "The town office confirms the wall movement and precautionary relocation. The Record's later correction replaces its earlier count of homes with a count of residents and apartments. The suggested rain connection came from a resident, while the latest update says the cause remains undetermined, so it cannot be presented as established.",
+  "evidence_citations": [
+    {
+      "source_name": "Town Emergency Office",
+      "report_sequence": 2,
+      "quoted_text": "A retaining wall shifted beside Lark Street at about 6:40 a.m.",
+      "evidentiary_role": "supports"
+    },
+    {
+      "source_name": "Lark Street Record",
+      "report_sequence": 3,
+      "quoted_text": "Eighteen residents from seven apartments were temporarily relocated; 11 had returned by 10:15 a.m.",
+      "evidentiary_role": "corrects"
+    },
+    {
+      "source_name": "Lark Street Record",
+      "report_sequence": 3,
+      "quoted_text": "Inspection had not established why the wall shifted.",
+      "evidentiary_role": "qualifies"
+    }
+  ],
+  "corrections_and_updates": [
+    {
+      "earlier_statement": "18 homes were evacuated.",
+      "later_statement": "Eighteen residents from seven apartments were temporarily relocated; 11 had returned by 10:15 a.m.",
+      "reconciliation": "The later update explicitly corrects the earlier description: the count was of residents, not homes, and it adds the return status.",
+      "report_sequence": 3
+    },
+    {
+      "earlier_statement": "A nearby resident said overnight rain may have weakened the slope.",
+      "later_statement": "Inspection had not established why the wall shifted.",
+      "reconciliation": "The later update leaves the possible rain connection unconfirmed rather than establishing it as the cause.",
+      "report_sequence": 3
+    }
+  ],
+  "current_supported_answer": "Eighteen residents from seven apartments were temporarily relocated, and 11 had returned by 10:15 a.m. The reports establish that a retaining wall shifted beside Lark Street, but they do not establish that overnight rain caused it. No injuries had been reported in the supplied updates.",
+  "unconfirmed_or_disputed_claims": [
+    {
+      "claim": "Eighteen homes were evacuated.",
+      "status": "corrected",
+      "current_assessment": "The later correction says the figure referred to 18 residents from seven apartments, not 18 homes.",
+      "evidence_summary": "The first update used the wording '18 homes were evacuated'; the later update explicitly corrected it and specified the number of residents and apartments."
+    },
+    {
+      "claim": "Overnight rain caused the retaining wall to shift.",
+      "status": "unconfirmed",
+      "current_assessment": "A resident suggested rain may have weakened the slope, but the town said the cause had not been established.",
+      "evidence_summary": "The first report attributes the possibility to a nearby resident. The latest update says inspection had not determined why the wall shifted."
+    }
+  ]
+}
