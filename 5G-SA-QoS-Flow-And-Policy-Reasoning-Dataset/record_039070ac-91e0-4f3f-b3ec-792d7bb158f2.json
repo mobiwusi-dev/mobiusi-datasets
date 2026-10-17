@@ -1,0 +1,7 @@
+{
+  "question_text": "Can this flow be admitted as configured, and what is the policy consistency assessment?",
+  "answer_text": "No. The flow should not be admitted with these rate parameters. The GBR profile must be corrected so that its MFBR is at least its GFBR before admission.",
+  "scenario_text": "A UE has a PDU session for interactive video. QoS flow QFI 9 is configured as GBR with 5QI 2, a GFBR of 6 Mbit/s, and an MFBR of 4 Mbit/s. The video application requires a minimum rate of 5 Mbit/s. The policy admits the flow only when the requested minimum rate is no greater than the GFBR and the configured MFBR is at least the GFBR. The packet filter matches the video traffic and maps it to QFI 9; no alternative flow or rate profile is specified.",
+  "reasoning_text": "The application's 5 Mbit/s requirement is below the stated 6 Mbit/s GFBR, so that check passes. However, the configured 4 Mbit/s MFBR is below the 6 Mbit/s GFBR, violating the policy's explicit rate-profile constraint. The matching packet filter and QFI assignment do not resolve that contradiction; the flow parameters must be corrected before the policy can admit it.",
+  "policy_consistency": "conflict"
+}

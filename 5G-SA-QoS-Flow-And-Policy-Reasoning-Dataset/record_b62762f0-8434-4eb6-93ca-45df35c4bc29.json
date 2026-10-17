@@ -1,0 +1,7 @@
+{
+  "reasoning_text": "The required 96 kbit/s is below the flow's 128 kbit/s GFBR, and the configured 100 ms packet delay budget meets the application's 100 ms target. The matching policy rule assigns the traffic to QFI 5, the session context is specified, and admission control confirms resource availability. No competing rule is stated, so the conditions support the requested handling.",
+  "policy_consistency": "consistent",
+  "answer_text": "Yes. The traffic can be admitted on QFI 5 under the stated conditions.",
+  "question_text": "Should the voice traffic be admitted on QFI 5, and are the stated policy conditions consistent with its requirements?",
+  "scenario_text": "A UE has an IPv4 PDU session on the voice-service DNN. QoS flow QFI 5 is configured as GBR with 5QI 1, a GFBR of 128 kbit/s, an MFBR of 256 kbit/s, and a 100 ms packet delay budget. A policy rule matches the voice packet filter and maps the packets to QFI 5. The call requires 96 kbit/s and has a one-way packet-delay target of 100 ms. The policy admits the flow only when the required rate does not exceed the GFBR and the configured packet delay budget does not exceed the target. Admission control confirms that the required resources are reserved, and no other rule matches these packets."
+}

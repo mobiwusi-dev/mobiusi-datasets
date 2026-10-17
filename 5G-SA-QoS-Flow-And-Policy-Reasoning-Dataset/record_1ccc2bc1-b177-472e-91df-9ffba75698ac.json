@@ -1,0 +1,7 @@
+{
+  "answer_text": "The rate condition is met, but admission cannot be determined until support for 5QI 7 on the serving slice is confirmed.",
+  "question_text": "Can the new flow be admitted based on the available information?",
+  "scenario_text": "A UE has a PDU session with a session AMBR of 15 Mbit/s. Two existing non-GBR flows have a planned aggregate demand of 9 Mbit/s. A new application requests 4 Mbit/s and is mapped by its packet filter to non-GBR QoS flow QFI 12 with 5QI 7. The policy allows the new flow only if the serving slice supports 5QI 7 and the total planned non-GBR demand remains within the session AMBR. The slice's supported 5QI list is not included in the available session information.",
+  "reasoning_text": "The combined planned non-GBR demand would be 13 Mbit/s (9 Mbit/s plus 4 Mbit/s), which is within the 15 Mbit/s session AMBR. However, the policy also requires the serving slice to support 5QI 7, and the scenario does not provide that information. The rate check alone is therefore insufficient to establish whether admission is allowed.",
+  "policy_consistency": "insufficient_information"
+}
