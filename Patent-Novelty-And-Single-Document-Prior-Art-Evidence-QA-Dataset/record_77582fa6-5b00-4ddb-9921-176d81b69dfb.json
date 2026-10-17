@@ -1,0 +1,20 @@
+{
+  "claim_text": "A pressure-relief cap for a storage vessel comprising a spring-loaded diaphragm configured to open when pressure inside the vessel reaches 18 kPa above ambient and to reseat when that pressure falls below 14 kPa above ambient.",
+  "answer_text": "Unclear. Paragraph [001] states the claimed headspace thresholds, but paragraph [002] says the reported tests measured pressure at the regulator inlet without measuring the pressure difference to the headspace. The supplied text does not resolve whether the thresholds were established for pressure inside the vessel.",
+  "question_text": "Does the prior-art document clearly disclose the claimed opening and reseating thresholds as pressures inside the vessel?",
+  "cited_evidence": [
+    {
+      "quote_text": "The cap uses a spring-loaded diaphragm. It opens when vessel headspace pressure reaches 18 kPa above ambient and reseats once that pressure falls below 14 kPa above ambient.",
+      "document_locator": "Paragraph [001]",
+      "claim_feature": "The spring-loaded diaphragm and the claimed opening and reseating thresholds measured at vessel headspace pressure."
+    },
+    {
+      "quote_text": "For the threshold tests reported here, pressure was read at the regulator inlet; pressure loss between the inlet and vessel headspace was not measured.",
+      "document_locator": "Paragraph [002]",
+      "claim_feature": "The measurement location for the reported threshold tests, which may differ from the vessel headspace pressure required by the claim."
+    }
+  ],
+  "prior_art_text": "Paragraph [001]: The cap uses a spring-loaded diaphragm. It opens when vessel headspace pressure reaches 18 kPa above ambient and reseats once that pressure falls below 14 kPa above ambient. Paragraph [002]: For the threshold tests reported here, pressure was read at the regulator inlet; pressure loss between the inlet and vessel headspace was not measured.",
+  "anticipation_conclusion": "unclear",
+  "correspondence_analysis": "Paragraph [001] states the same pressure thresholds and identifies them as vessel headspace pressures, directly matching the claimed feature. Paragraph [002], however, says the reported threshold tests measured pressure at the regulator inlet and did not measure pressure loss to the headspace. The document therefore does not make clear whether the stated thresholds are established values for pressure inside the vessel or inlet readings whose relationship to that pressure is unknown."
+}

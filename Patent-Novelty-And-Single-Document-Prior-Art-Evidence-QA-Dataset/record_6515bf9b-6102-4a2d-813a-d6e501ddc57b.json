@@ -1,0 +1,20 @@
+{
+  "claim_text": "A beverage warming apparatus comprising a base, a removable beverage cup, a resistive heating sleeve surrounding the cup, a temperature sensor in direct contact with the beverage, and a controller that cycles the sleeve to maintain the beverage between 60 °C and 65 °C based on the measured beverage temperature.",
+  "answer_text": "No. Although the document discloses the base, removable cup, surrounding heater, and temperature-based control, it specifies sensing and maintaining cup-wall temperature rather than beverage temperature, and does not disclose a sensor in direct contact with the beverage.",
+  "question_text": "Does this single prior-art document disclose every limitation of the claimed beverage warming apparatus?",
+  "cited_evidence": [
+    {
+      "quote_text": "The warming apparatus includes a base that receives a removable beverage cup and a resistive heating sleeve surrounding the cup.",
+      "document_locator": "Paragraph [001]",
+      "claim_feature": "The base, removable cup, and resistive heating sleeve surrounding the cup."
+    },
+    {
+      "quote_text": "A thermistor is clamped against the exterior wall of the cup. The controller cycles the heating sleeve to maintain the cup-wall temperature between 60 °C and 65 °C, as measured by the thermistor.",
+      "document_locator": "Paragraph [002]",
+      "claim_feature": "The temperature-sensing and control arrangement; the document specifies a sensor on the cup exterior and control based on cup-wall temperature."
+    }
+  ],
+  "prior_art_text": "Paragraph [001]: The warming apparatus includes a base that receives a removable beverage cup and a resistive heating sleeve surrounding the cup. Paragraph [002]: A thermistor is clamped against the exterior wall of the cup. The controller cycles the heating sleeve to maintain the cup-wall temperature between 60 °C and 65 °C, as measured by the thermistor.",
+  "anticipation_conclusion": "not_anticipated",
+  "correspondence_analysis": "Paragraph [001] discloses the claimed warming structure. Paragraph [002] describes a thermistor on the cup's exterior and regulation of cup-wall temperature. The claim instead requires a sensor in direct contact with the beverage and control based on the measured beverage temperature. The supplied text does not disclose either of those limitations, so the structural overlap does not establish disclosure of the complete claimed combination."
+}

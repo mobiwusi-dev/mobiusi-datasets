@@ -1,0 +1,20 @@
+{
+  "claim_text": "A liquid filtration unit comprising a housing defining an inlet and an outlet; a pleated membrane cartridge positioned between the inlet and the outlet; a coarse mesh screen upstream of the cartridge; a pressure sensor configured to measure pressure on each side of the cartridge; and a controller configured to open a bypass valve when the pressure difference across the cartridge exceeds a stored threshold.",
+  "answer_text": "Yes. Paragraphs [001] and [002] disclose the claimed filtration arrangement and the pressure-difference-controlled bypass valve, including the stated threshold condition.",
+  "question_text": "Does this single prior-art document disclose every limitation of the claimed liquid filtration unit?",
+  "cited_evidence": [
+    {
+      "quote_text": "The filtration unit has a housing with an inlet and an outlet. A pleated membrane cartridge is positioned between them, and a coarse mesh screen is installed upstream of the cartridge.",
+      "document_locator": "Paragraph [001]",
+      "claim_feature": "The housing inlet and outlet, intervening pleated membrane cartridge, and upstream coarse mesh screen."
+    },
+    {
+      "quote_text": "A pressure sensor measures pressure at both the inlet and outlet sides of the cartridge. The controller compares the pressure difference with a stored threshold and opens a bypass valve when the difference exceeds that threshold.",
+      "document_locator": "Paragraph [002]",
+      "claim_feature": "The sensor measures pressure on both sides of the cartridge, and the controller opens the bypass valve when the pressure difference exceeds a stored threshold."
+    }
+  ],
+  "prior_art_text": "Paragraph [001]: The filtration unit has a housing with an inlet and an outlet. A pleated membrane cartridge is positioned between them, and a coarse mesh screen is installed upstream of the cartridge. Paragraph [002]: A pressure sensor measures pressure at both the inlet and outlet sides of the cartridge. The controller compares the pressure difference with a stored threshold and opens a bypass valve when the difference exceeds that threshold.",
+  "anticipation_conclusion": "anticipated",
+  "correspondence_analysis": "Paragraph [001] discloses the claimed housing, flow path, pleated cartridge, and upstream mesh screen. Paragraph [002] discloses pressure measurement on both sides of the cartridge and the specified threshold-triggered bypass operation. The cited passages account for each limitation in the claim, with no material difference identified in the supplied text."
+}
