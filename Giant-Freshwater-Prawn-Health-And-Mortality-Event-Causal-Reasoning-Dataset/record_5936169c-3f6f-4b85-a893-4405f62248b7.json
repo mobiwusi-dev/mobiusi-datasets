@@ -1,0 +1,22 @@
+{
+  "causal_chain": [
+    "Known: several overcast days coincided with reduced water exchange and uneaten feed.",
+    "Known: prawns were seen near the surface and mortality was noticed near dawn.",
+    "Hypothesis: reduced oxygen availability, possibly combined with organic loading, could have caused physiological stress and contributed to mortality.",
+    "Unresolved: the scenario provides no measurements or diagnostic results to establish whether oxygen stress, another water-quality problem, or disease was the primary cause."
+  ],
+  "case_question": "At a freshwater prawn pond, several animals were found dead near dawn after three overcast days. Some prawns were observed near the surface, and feed remained uneaten from the previous evening. Water exchange had been reduced during the same period because intake was limited. No water-quality readings or diagnostic tests are available. What are the plausible causes, how might they relate to the observations, and what evidence is needed before assigning a cause?",
+  "candidate_causes": [
+    "Low dissolved oxygen near dawn may have developed during the prolonged overcast period, potentially worsened by reduced water exchange and uneaten feed.",
+    "Deteriorating water quality, including elevated ammonia or nitrite, is possible but has not been measured.",
+    "A disease process cannot be excluded, but the reported signs alone do not identify an infectious cause."
+  ],
+  "missing_evidence": [
+    "Dissolved oxygen measurements, especially before dawn and at multiple pond depths.",
+    "Recent and current temperature, pH, total ammonia nitrogen, and nitrite measurements.",
+    "Mortality counts and timing, along with observations of affected and unaffected prawns.",
+    "Feed intake, pond maintenance, and water-exchange records for the days before the event.",
+    "If mortality continues, appropriate laboratory examination of affected animals."
+  ],
+  "cautious_assessment": "The timing and surface behavior make low predawn oxygen a plausible leading concern, particularly given the overcast weather, reduced exchange, and uneaten feed. However, none of those observations confirms oxygen depletion, and other water-quality problems or disease remain possible. Measurements and, if needed, diagnostic examination are required before attributing the deaths to a specific cause."
+}

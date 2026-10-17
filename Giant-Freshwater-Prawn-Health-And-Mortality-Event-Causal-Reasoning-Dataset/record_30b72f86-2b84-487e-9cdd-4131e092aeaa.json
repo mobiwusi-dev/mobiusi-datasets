@@ -1,0 +1,24 @@
+{
+  "causal_chain": [
+    "Known: juveniles were stocked in the affected pond, and daily deaths increased gradually beginning ten days later.",
+    "Known: feeding declined in the affected pond, while no similar increase was reported in the other ponds.",
+    "Hypothesis: a problem associated with the incoming group or its acclimation could have contributed to stress or illness.",
+    "Alternative hypothesis: conditions specific to the affected pond, or differences in management, could have produced the same pattern.",
+    "Unresolved: there is no source-health information, pond comparison data, or diagnostic evidence linking the new batch to the deaths."
+  ],
+  "case_question": "In one freshwater prawn pond, daily deaths increased gradually over five days, and surviving prawns were feeding less than usual. The affected pond had received a batch of juveniles ten days before the first deaths; no similar increase was reported in the farm's other ponds. The source batch's health history, stocking acclimation details, and current pond measurements are unavailable. What are the plausible explanations, and what evidence should be collected before linking the event to the new batch?",
+  "candidate_causes": [
+    "A health problem associated with the newly stocked juveniles is possible, but the timing does not prove that they introduced a disease.",
+    "Stress related to transport, acclimation, or a change in stocking conditions may have affected the new group.",
+    "A pond-specific water-quality or environmental problem could explain why the increase was reported in only one pond.",
+    "Other differences in feeding, stocking density, or management between ponds may have contributed."
+  ],
+  "missing_evidence": [
+    "Health and mortality records for the incoming juveniles before stocking and during transport.",
+    "Stocking, acclimation, and density records for the affected pond and comparable ponds.",
+    "Water-quality measurements and recent environmental or management records from the affected and unaffected ponds.",
+    "A time series of daily mortality and feed intake by pond, including the period before stocking.",
+    "Examination and appropriate diagnostic testing of affected prawns, together with assessment of the incoming group if available."
+  ],
+  "cautious_assessment": "The timing makes the new batch and its acclimation relevant lines of inquiry, but it does not establish that the batch caused the mortality. The pond-specific pattern also leaves water quality and management differences as plausible explanations. A comparison of source-health, stocking, pond-condition, and diagnostic information is needed before drawing a causal conclusion."
+}

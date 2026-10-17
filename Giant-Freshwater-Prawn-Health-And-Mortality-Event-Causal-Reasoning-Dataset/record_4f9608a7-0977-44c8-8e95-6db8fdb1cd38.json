@@ -1,0 +1,23 @@
+{
+  "causal_chain": [
+    "Known: the affected group was graded and transferred, then showed reduced feeding and sluggish movement within two days.",
+    "Known: a small number died, while prawns in a nearby unhandled pond appeared normal.",
+    "Hypothesis: handling, injury, or a mismatch between source and receiving water may have stressed the transferred prawns and contributed to the signs.",
+    "Unresolved: the contrast with the nearby pond is suggestive but does not identify the cause; health status, water conditions, and management may also differ."
+  ],
+  "case_question": "A group of freshwater prawns showed reduced feeding and sluggish movement within two days after grading and transfer to another pond. A small number died over the following day. Prawns in a nearby pond that were not handled during this period appeared normal. The transfer-water conditions, handling duration, and water-quality readings were not recorded. What causes should be considered, and what evidence would help distinguish them?",
+  "candidate_causes": [
+    "Handling or grading stress may have contributed to the reduced activity and subsequent mortality.",
+    "Differences between the source and receiving water, including temperature or other water-quality conditions, may have added transfer stress.",
+    "Physical injury during handling or transfer is possible but has not been reported or examined.",
+    "A health problem associated with the transferred group or shared equipment cannot be excluded, although the timing alone does not establish an infectious cause."
+  ],
+  "missing_evidence": [
+    "Handling and transfer records, including duration, stocking density, and any visible injuries.",
+    "Temperature and water-quality measurements in both source and receiving ponds before and after transfer.",
+    "Health observations and mortality counts for the transferred group and comparison pond over the same period.",
+    "Information on whether equipment was shared and how it was cleaned between ponds.",
+    "Examination of affected prawns and diagnostic testing if signs or mortality persist."
+  ],
+  "cautious_assessment": "The close timing after grading and transfer, together with the apparently unaffected unhandled pond, makes transfer-related stress a reasonable possibility. It is not enough to establish that handling caused the deaths: water differences, injury, and an unrelated health problem remain unresolved. Comparing records and conditions across both groups would help test these possibilities."
+}
