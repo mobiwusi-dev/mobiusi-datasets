@@ -1,0 +1,11 @@
+{
+  "answer": "No. The passage describes how water sleeves can extend an arm movement, but it does not specify a required hand.",
+  "question": "Does the passage specify which hand must perform a water-sleeve movement?",
+  "source_text": "In a Kunqu scene, a performer may use water sleeves to extend the expressive line of an arm movement, making a gesture appear more expansive. The passage does not prescribe which hand must perform such a movement.",
+  "reasoning_note": "The passage gives a general expressive function for water sleeves but provides no left- or right-hand rule. The answer therefore treats the requested detail as unspecified rather than inferring a convention.",
+  "support_status": "资料未说明",
+  "source_citation": "No bibliographic information was provided; this answer is grounded in the supplied source text.",
+  "evidence_excerpt": "",
+  "knowledge_category": "表演规则",
+  "source_bibliography": ""
+}

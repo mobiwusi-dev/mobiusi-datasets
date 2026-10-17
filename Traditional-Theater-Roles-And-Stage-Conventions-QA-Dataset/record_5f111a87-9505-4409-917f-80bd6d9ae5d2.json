@@ -1,0 +1,11 @@
+{
+  "answer": "The passage identifies jing as the principal role type associated with painted-face roles.",
+  "question": "Which principal role type is associated with painted-face roles?",
+  "source_text": "Peking opera organizes its principal roles into four broad types: sheng, dan, jing, and chou. Sheng refers to male roles, dan to female roles, jing to painted-face roles, and chou to comic roles. Each type includes further role distinctions.",
+  "reasoning_note": "The question asks for the role type linked to painted-face roles, and the passage states that jing has that association directly.",
+  "support_status": "资料明确支持",
+  "source_citation": "No bibliographic information was provided; this answer is grounded in the supplied source text.",
+  "evidence_excerpt": "jing to painted-face roles",
+  "knowledge_category": "角色行当",
+  "source_bibliography": ""
+}
