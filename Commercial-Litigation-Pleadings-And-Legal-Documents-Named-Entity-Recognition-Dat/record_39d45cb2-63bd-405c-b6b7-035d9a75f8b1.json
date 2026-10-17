@@ -1,0 +1,42 @@
+{
+  "entities": [
+    {
+      "entity_text": "Alder Quay Materials Ltd.",
+      "entity_type": "诉讼当事人",
+      "start_offset": 20,
+      "end_offset": 45
+    },
+    {
+      "entity_text": "Northline Retail Systems Ltd.",
+      "entity_type": "诉讼当事人",
+      "start_offset": 70,
+      "end_offset": 100
+    },
+    {
+      "entity_text": "LumenDock control panels",
+      "entity_type": "商业产品",
+      "start_offset": 149,
+      "end_offset": 173
+    },
+    {
+      "entity_text": "Supply Agreement dated 14 March 2024",
+      "entity_type": "合同",
+      "start_offset": 184,
+      "end_offset": 220
+    },
+    {
+      "entity_text": "Mira Sen",
+      "entity_type": "代理律师",
+      "start_offset": 242,
+      "end_offset": 250
+    },
+    {
+      "entity_text": "Harbor District Commercial Court",
+      "entity_type": "法院",
+      "start_offset": 308,
+      "end_offset": 340
+    }
+  ],
+  "document_text": "Statement of Claim: Alder Quay Materials Ltd. (Claimant) alleges that Northline Retail Systems Ltd. (Respondent) failed to pay for 240 units of the LumenDock control panels under the Supply Agreement dated 14 March 2024. Claimant's counsel, Mira Sen, requests payment and interest. The matter is filed with Harbor District Commercial Court.",
+  "document_type": "起诉状"
+}

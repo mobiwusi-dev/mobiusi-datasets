@@ -1,0 +1,42 @@
+{
+  "entities": [
+    {
+      "entity_text": "Bracken Forge Components LLC",
+      "entity_type": "诉讼当事人",
+      "start_offset": 8,
+      "end_offset": 36
+    },
+    {
+      "entity_text": "Cedar Vale Engineering Ltd.",
+      "entity_type": "诉讼当事人",
+      "start_offset": 64,
+      "end_offset": 91
+    },
+    {
+      "entity_text": "Component Purchase Contract",
+      "entity_type": "合同",
+      "start_offset": 117,
+      "end_offset": 144
+    },
+    {
+      "entity_text": "VelaPress valve assemblies",
+      "entity_type": "商业产品",
+      "start_offset": 153,
+      "end_offset": 179
+    },
+    {
+      "entity_text": "Jonah Reed",
+      "entity_type": "代理律师",
+      "start_offset": 205,
+      "end_offset": 215
+    },
+    {
+      "entity_text": "Eastmere County Commercial Court",
+      "entity_type": "法院",
+      "start_offset": 225,
+      "end_offset": 257
+    }
+  ],
+  "document_text": "Answer: Bracken Forge Components LLC denies the claim brought by Cedar Vale Engineering Ltd. The parties dispute the Component Purchase Contract and the VelaPress valve assemblies. Counsel Jonah Reed files this response with Eastmere County Commercial Court.",
+  "document_type": "答辩状"
+}

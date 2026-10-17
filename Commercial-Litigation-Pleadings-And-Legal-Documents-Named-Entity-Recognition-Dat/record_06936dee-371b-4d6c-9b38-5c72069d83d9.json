@@ -1,0 +1,42 @@
+{
+  "entities": [
+    {
+      "entity_text": "Larkspur Data Works Ltd.",
+      "entity_type": "诉讼当事人",
+      "start_offset": 25,
+      "end_offset": 49
+    },
+    {
+      "entity_text": "OrionLedger billing platform",
+      "entity_type": "商业产品",
+      "start_offset": 100,
+      "end_offset": 128
+    },
+    {
+      "entity_text": "Cloud Services Agreement",
+      "entity_type": "合同",
+      "start_offset": 139,
+      "end_offset": 163
+    },
+    {
+      "entity_text": "Elise Park",
+      "entity_type": "代理律师",
+      "start_offset": 179,
+      "end_offset": 189
+    },
+    {
+      "entity_text": "Westbridge Commercial Court",
+      "entity_type": "法院",
+      "start_offset": 207,
+      "end_offset": 234
+    },
+    {
+      "entity_text": "Norridge Supply Group Ltd.",
+      "entity_type": "诉讼当事人",
+      "start_offset": 251,
+      "end_offset": 277
+    }
+  ],
+  "document_text": "Motion for Preservation: Larkspur Data Works Ltd. asks the court to preserve records concerning the OrionLedger billing platform under the Cloud Services Agreement. Attorney Elise Park submits the motion to Westbridge Commercial Court; opposing party Norridge Supply Group Ltd. contests the request.",
+  "document_type": "其他法律文书"
+}
