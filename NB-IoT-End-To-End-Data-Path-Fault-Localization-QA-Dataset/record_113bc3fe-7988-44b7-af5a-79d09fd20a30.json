@@ -1,0 +1,42 @@
+{
+  "confidence": 0.94,
+  "final_answer": "The core network is the most likely fault location. The application-facing gateway accepts the command, but the packet gateway cannot resolve the downlink bearer binding and never forwards the command to the serving cell.",
+  "fault_hypothesis": "The core network lacks an active downlink bearer binding for the subscriber session, so the accepted command remains queued instead of being forwarded to the access network.",
+  "elimination_steps": [
+    {
+      "step_number": 1,
+      "network_segment": "device",
+      "observed_evidence": "The observations provide no device-side delivery attempt or response during the command interval.",
+      "diagnostic_assessment": "There is insufficient evidence to determine whether the device itself could receive the command; the observed failure occurs before a delivery request reaches the access node.",
+      "disposition": "inconclusive"
+    },
+    {
+      "step_number": 2,
+      "network_segment": "service_connection_path",
+      "observed_evidence": "The application-facing gateway accepts the command for the intended subscriber and records no ingress transport error.",
+      "diagnostic_assessment": "The command reaches the core-network ingress, which contradicts a fault on the observed application-to-core connection for this transaction.",
+      "disposition": "contradicts_fault"
+    },
+    {
+      "step_number": 3,
+      "network_segment": "core_network",
+      "observed_evidence": "The packet gateway accepts the command but cannot resolve an active downlink bearer binding; it queues retries and does not forward the command to the serving node.",
+      "diagnostic_assessment": "The missing bearer binding prevents the command from being routed onward through the core network.",
+      "disposition": "supports_fault"
+    },
+    {
+      "step_number": 4,
+      "network_segment": "access_network",
+      "observed_evidence": "The serving cell reports normal paging operation but receives no downlink delivery request for this command.",
+      "diagnostic_assessment": "Because the core does not forward the command to the serving node, the access network is not shown to have failed in handling this delivery attempt.",
+      "disposition": "rules_out"
+    }
+  ],
+  "traffic_direction": "downlink",
+  "anomaly_description": "A command submitted by the application is not delivered to the registered NB-IoT device.",
+  "diagnostic_question": "Where is the most likely fault preventing the accepted downlink command from reaching the device?",
+  "core_network_observation": "The packet gateway accepts the downlink command but cannot resolve an active downlink bearer binding for the subscriber session. The command remains queued for retry and is not forwarded to the serving access node.",
+  "access_network_observation": "The serving cell reports normal paging operation and available radio resources. During the command interval, it receives no mobile-terminated delivery request for this device from the core network.",
+  "most_likely_fault_location": "core_network",
+  "service_connection_observation": "The application-facing gateway accepts the command and associates it with the intended subscriber. No ingress transport error is recorded before the command enters the core network."
+}

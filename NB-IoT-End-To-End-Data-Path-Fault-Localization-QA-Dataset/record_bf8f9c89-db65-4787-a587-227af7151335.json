@@ -1,0 +1,42 @@
+{
+  "confidence": 0.96,
+  "final_answer": "The service connection path is the most likely fault location. The access node acknowledges the uplink transfer and the core records successful forwarding, while the destination resets connection attempts and accepts no payload.",
+  "fault_hypothesis": "The destination-side service connection is refusing TCP sessions, preventing forwarded uplink readings from being accepted by the application.",
+  "elimination_steps": [
+    {
+      "step_number": 1,
+      "network_segment": "device",
+      "observed_evidence": "The device is registered and its uplink data transfer is acknowledged by the access node.",
+      "diagnostic_assessment": "The available observations show that the device generated and transmitted the affected uplink data; they do not indicate a device-side transmission failure.",
+      "disposition": "rules_out"
+    },
+    {
+      "step_number": 2,
+      "network_segment": "access_network",
+      "observed_evidence": "The serving access node records and acknowledges the uplink transfer without abnormal retransmissions.",
+      "diagnostic_assessment": "The radio access segment carried the reported data successfully, so it is unlikely to account for the missing application readings.",
+      "disposition": "rules_out"
+    },
+    {
+      "step_number": 3,
+      "network_segment": "core_network",
+      "observed_evidence": "The packet gateway records receipt and successful forwarding toward the configured destination, with no core drop or routing failure.",
+      "diagnostic_assessment": "The supplied core observation indicates that the packet passed through the core network toward the service connection.",
+      "disposition": "rules_out"
+    },
+    {
+      "step_number": 4,
+      "network_segment": "service_connection_path",
+      "observed_evidence": "Connection attempts receive a reset from the destination, and the application records no accepted session or payload.",
+      "diagnostic_assessment": "The failure is observed at the connection to the destination service, after successful access and core-network forwarding.",
+      "disposition": "supports_fault"
+    }
+  ],
+  "traffic_direction": "uplink",
+  "anomaly_description": "The device reports successful uplink transmissions, but its readings do not appear in the application.",
+  "diagnostic_question": "Which segment of the NB-IoT data path is most likely preventing the readings from reaching the application?",
+  "core_network_observation": "The packet gateway records receipt of the uplink packet and successful forwarding toward the configured service destination. No core-network drop or routing failure is recorded.",
+  "access_network_observation": "The device is registered on the serving cell. The access node records the uplink data transfer and acknowledges it, with no abnormal radio retransmissions during the reported interval.",
+  "most_likely_fault_location": "service_connection_path",
+  "service_connection_observation": "Outbound TCP connection attempts from the core-facing service connection receive a reset from the destination. The application records no accepted session or payload for these attempts."
+}
