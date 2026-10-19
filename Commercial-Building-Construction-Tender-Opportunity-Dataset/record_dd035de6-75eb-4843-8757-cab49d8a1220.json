@@ -1,0 +1,70 @@
+{
+  "packages": [
+    {
+      "package_number": "Lot 1",
+      "package_name": "Internal refurbishment",
+      "scope": "Strip-out, partitions, ceilings, floor finishes, entrance alterations, and shared-area fit-out.",
+      "estimated_value": 2850000,
+      "currency": "GBP"
+    },
+    {
+      "package_number": "Lot 2",
+      "package_name": "Building envelope upgrades",
+      "scope": "Roof insulation, external wall insulation, replacement windows, and associated weatherproofing.",
+      "estimated_value": 1720000,
+      "currency": "GBP"
+    },
+    {
+      "package_number": "Lot 3",
+      "package_name": "Building services",
+      "scope": "Heating and ventilation, electrical distribution, LED lighting, controls, and plumbing upgrades.",
+      "estimated_value": 2360000,
+      "currency": "GBP"
+    }
+  ],
+  "key_dates": {
+    "publication_date": "2026-04-02",
+    "site_visit_date": "2026-04-09 at 10:30",
+    "question_deadline": "2026-04-14 at 12:00",
+    "bid_deadline": "2026-04-28 at 12:00",
+    "timezone": "British Summer Time (BST)"
+  },
+  "buyer_name": "Calder Fen Commercial Estates Ltd.",
+  "overall_scope": "Retrofit a four-storey commercial office building for multi-tenant use. The works include internal reconfiguration, thermal upgrades to the roof and external walls, replacement of building services, and improvements to the entrance and shared areas.",
+  "project_title": "Foundry House — Commercial Office Retrofit",
+  "procurement_type": "Construction tender",
+  "project_location": {
+    "country": "United Kingdom",
+    "region": "Greater Manchester",
+    "city": "Salford",
+    "address": "26 Foundry Lane, Salford, Greater Manchester M5 4AB"
+  },
+  "source_page_html": "<main><h1>Foundry House — Commercial Office Retrofit</h1><p>Procurement type: Construction tender. Buyer: Calder Fen Commercial Estates Ltd. Project location: 26 Foundry Lane, Salford, Greater Manchester, United Kingdom.</p><h2>Overall scope</h2><p>Retrofit a four-storey commercial office building for multi-tenant use. The works include internal reconfiguration, thermal upgrades to the roof and external walls, replacement of building services, and improvements to the entrance and shared areas.</p><h2>Packages</h2><ul><li>Lot 1 — Internal refurbishment: strip-out, partitions, ceilings, floor finishes, entrance alterations, and shared-area fit-out. Estimated value: GBP 2,850,000.</li><li>Lot 2 — Building envelope upgrades: roof insulation, external wall insulation, replacement windows, and associated weatherproofing. Estimated value: GBP 1,720,000.</li><li>Lot 3 — Building services: heating and ventilation, electrical distribution, LED lighting, controls, and plumbing upgrades. Estimated value: GBP 2,360,000.</li></ul><h2>Eligibility</h2><ul><li>Demonstrate delivery of two comparable occupied commercial refurbishment projects within the past six years.</li><li>Provide evidence of relevant health and safety management arrangements and site supervision.</li><li>Submit a project-specific method statement addressing phased work and protection of building users.</li><li>Provide current employers' liability and public liability insurance details.</li></ul><h2>Key dates</h2><p>Published: 2026-04-02. Site visit: 2026-04-09 at 10:30. Questions due: 2026-04-14 at 12:00. Tenders due: 2026-04-28 at 12:00. All times are British Summer Time (BST).</p><h2>Submission</h2><p>Submit through the Calder Fen procurement portal and deliver two bound paper copies to the tender office. No portal web address is stated in this notice.</p><p>Paper delivery address: Tender Office, 26 Foundry Lane, Salford, Greater Manchester M5 4AB, United Kingdom.</p><p>Electronic files must be searchable PDF documents, with the completed pricing workbook provided as an editable spreadsheet.</p><ul><li>Completed tender response and pricing workbook</li><li>Project references and proposed delivery team</li><li>Project-specific phased-work method statement</li><li>Health and safety management information</li><li>Employers' liability and public liability insurance details</li><li>Outline programme and proposed start-up period</li></ul><h2>Contact</h2><p>Oliver Grant, Estates Procurement Lead, Calder Fen Commercial Estates Ltd.</p></main>",
+  "contact_information": {
+    "contact_name": "Oliver Grant",
+    "organization": "Calder Fen Commercial Estates Ltd., Estates Procurement",
+    "email": "",
+    "phone": ""
+  },
+  "submission_requirements": {
+    "submission_method": "Electronic submission through the Calder Fen procurement portal and delivery of two bound paper copies",
+    "portal_url": "",
+    "delivery_address": "Tender Office, 26 Foundry Lane, Salford, Greater Manchester M5 4AB, United Kingdom",
+    "required_documents": [
+      "Completed tender response and pricing workbook",
+      "Project references and proposed delivery team",
+      "Project-specific phased-work method statement",
+      "Health and safety management information",
+      "Employers' liability and public liability insurance details",
+      "Outline programme and proposed start-up period"
+    ],
+    "file_format": "Searchable PDF documents; completed pricing workbook provided as an editable spreadsheet",
+    "copy_count": 2
+  },
+  "eligibility_requirements": [
+    "Demonstrate delivery of two comparable occupied commercial refurbishment projects within the past six years.",
+    "Provide evidence of relevant health and safety management arrangements and site supervision.",
+    "Submit a project-specific method statement addressing phased work and protection of building users.",
+    "Provide current employers' liability and public liability insurance details."
+  ]
+}

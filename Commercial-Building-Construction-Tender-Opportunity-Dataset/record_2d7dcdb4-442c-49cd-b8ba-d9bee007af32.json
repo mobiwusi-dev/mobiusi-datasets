@@ -1,0 +1,70 @@
+{
+  "packages": [
+    {
+      "package_number": "A",
+      "package_name": "Interior fit-out",
+      "scope": "Selective demolition, partitions, ceilings, floor finishes, and tenant-area millwork.",
+      "estimated_value": 3250000,
+      "currency": "USD"
+    },
+    {
+      "package_number": "B",
+      "package_name": "Site utilities and paving",
+      "scope": "Utility relocations, storm drainage adjustments, accessible routes, and localized paving.",
+      "estimated_value": 1180000,
+      "currency": "USD"
+    },
+    {
+      "package_number": "C",
+      "package_name": "Fire protection",
+      "scope": "Sprinkler modifications, extensions, testing, and commissioning for the renovated wing.",
+      "estimated_value": 640000,
+      "currency": "USD"
+    }
+  ],
+  "key_dates": {
+    "publication_date": "2026-01-06",
+    "site_visit_date": "2026-01-15 at 09:00",
+    "question_deadline": "2026-01-20 at 16:00",
+    "bid_deadline": "2026-02-02 at 15:00",
+    "timezone": "Central Standard Time (CST)"
+  },
+  "buyer_name": "Cedar Row Retail Holdings LLC",
+  "overall_scope": "Renovate the occupied east wing of a neighborhood retail center and add a 12,000-square-foot tenant area. Work includes interior demolition and fit-out, site utility adjustments, and upgrades to the fire protection system. The center will remain open during construction.",
+  "project_title": "Juniper Market Center — East Wing Renovation and Expansion",
+  "procurement_type": "Subcontractor invitation",
+  "project_location": {
+    "country": "United States",
+    "region": "Texas",
+    "city": "Austin",
+    "address": "7800 Mesa Loop, Austin, TX 78759"
+  },
+  "source_page_html": "<main><h1>Juniper Market Center — East Wing Renovation and Expansion</h1><p>Procurement type: Subcontractor invitation. Buyer: Cedar Row Retail Holdings LLC. Project location: 7800 Mesa Loop, Austin, Texas, United States.</p><h2>Overall scope</h2><p>Renovate the occupied east wing of a neighborhood retail center and add a 12,000-square-foot tenant area. Work includes interior demolition and fit-out, site utility adjustments, and upgrades to the fire protection system. The center will remain open during construction.</p><h2>Packages</h2><ul><li>Package A — Interior fit-out: selective demolition, partitions, ceilings, floor finishes, and tenant-area millwork. Estimated value: USD 3,250,000.</li><li>Package B — Site utilities and paving: utility relocations, storm drainage adjustments, accessible routes, and localized paving. Estimated value: USD 1,180,000.</li><li>Package C — Fire protection: sprinkler modifications, extensions, testing, and commissioning for the renovated wing. Estimated value: USD 640,000.</li></ul><h2>Eligibility</h2><ul><li>Provide references for two occupied commercial renovation projects completed within the past five years.</li><li>Provide evidence of applicable trade licenses and qualifications for the work being bid.</li><li>Submit a site logistics and occupied-building protection plan.</li><li>Provide current workers' compensation and commercial liability insurance certificates.</li></ul><h2>Key dates</h2><p>Published: 2026-01-06. Mandatory site walk: 2026-01-15 at 09:00. Questions due: 2026-01-20 at 16:00. Bids due: 2026-02-02 at 15:00. All times are Central Standard Time (CST).</p><h2>Submission</h2><p>Deliver a sealed bid with one USB drive to the address below. No online submission address is provided. Submit two printed copies and one USB drive containing the searchable PDF bid and separate package pricing sheets.</p><p>Delivery address: Cedar Row Project Office, 7800 Mesa Loop, Suite 210, Austin, TX 78759, United States.</p><ul><li>Signed subcontractor bid form with package-by-package pricing</li><li>Project references and proposed project team</li><li>Applicable trade license documentation</li><li>Insurance certificates</li><li>Site logistics and occupied-building protection plan</li><li>Preliminary work schedule and phasing plan</li></ul><h2>Contact</h2><p>Elena Ruiz, Procurement Coordinator, Cedar Row Retail Holdings LLC.</p></main>",
+  "contact_information": {
+    "contact_name": "Elena Ruiz",
+    "organization": "Cedar Row Retail Holdings LLC, Procurement",
+    "email": "",
+    "phone": ""
+  },
+  "submission_requirements": {
+    "submission_method": "Sealed hard-copy bid with one USB drive, delivered to the project office",
+    "portal_url": "",
+    "delivery_address": "Cedar Row Project Office, 7800 Mesa Loop, Suite 210, Austin, TX 78759, United States",
+    "required_documents": [
+      "Signed subcontractor bid form with package-by-package pricing",
+      "Project references and proposed project team",
+      "Applicable trade license documentation",
+      "Insurance certificates",
+      "Site logistics and occupied-building protection plan",
+      "Preliminary work schedule and phasing plan"
+    ],
+    "file_format": "Two printed copies and one USB drive containing the searchable PDF bid and separate package pricing sheets",
+    "copy_count": 2
+  },
+  "eligibility_requirements": [
+    "Provide references for two occupied commercial renovation projects completed within the past five years.",
+    "Provide evidence of applicable trade licenses and qualifications for the work being bid.",
+    "Submit a site logistics and occupied-building protection plan.",
+    "Provide current workers' compensation and commercial liability insurance certificates."
+  ]
+}

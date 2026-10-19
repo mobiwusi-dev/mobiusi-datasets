@@ -1,0 +1,68 @@
+{
+  "overall_scope": "Construct a six-storey commercial office building, including foundations, structural frame, building envelope, base-building mechanical and electrical systems, and associated site connections.",
+  "project_title": "Harborline Exchange — Core and Shell Construction",
+  "procurement_type": "Construction tender",
+  "packages": [
+    {
+      "package_number": "01",
+      "package_name": "Structural frame and core",
+      "scope": "Foundations, concrete frame, stairs, and elevator cores.",
+      "estimated_value": 18400000,
+      "currency": "CAD"
+    },
+    {
+      "package_number": "02",
+      "package_name": "Mechanical and electrical systems",
+      "scope": "Base-building HVAC, electrical distribution, lighting, and plumbing.",
+      "estimated_value": 9650000,
+      "currency": "CAD"
+    },
+    {
+      "package_number": "03",
+      "package_name": "Façade and glazing",
+      "scope": "Curtain wall, exterior glazing, and weatherproofing.",
+      "estimated_value": 4200000,
+      "currency": "CAD"
+    }
+  ],
+  "key_dates": {
+    "publication_date": "2026-01-12",
+    "site_visit_date": "2026-02-03 at 10:00",
+    "question_deadline": "2026-02-10 at 17:00",
+    "bid_deadline": "2026-02-24 at 14:00",
+    "timezone": "Pacific Standard Time (PST)"
+  },
+  "buyer_name": "North Quay Commercial Properties Ltd.",
+  "project_location": {
+    "country": "Canada",
+    "region": "British Columbia",
+    "city": "Vancouver",
+    "address": "410 Alder Quay, Vancouver, BC V6B 2W1"
+  },
+  "source_page_html": "<main><h1>Harborline Exchange — Core and Shell Construction</h1><p>Procurement type: Construction tender. Buyer: North Quay Commercial Properties Ltd. Project location: 410 Alder Quay, Vancouver, British Columbia, Canada.</p><h2>Overall scope</h2><p>Construct a six-storey commercial office building, including foundations, structural frame, building envelope, base-building mechanical and electrical systems, and associated site connections.</p><h2>Packages</h2><ul><li>Package 01 — Structural frame and core: foundations, concrete frame, stairs, and elevator cores. Estimated value: CAD 18,400,000.</li><li>Package 02 — Mechanical and electrical systems: base-building HVAC, electrical distribution, lighting, and plumbing. Estimated value: CAD 9,650,000.</li><li>Package 03 — Façade and glazing: curtain wall, exterior glazing, and weatherproofing. Estimated value: CAD 4,200,000.</li></ul><h2>Eligibility</h2><ul><li>Demonstrate completion of at least two comparable commercial buildings within the past eight years.</li><li>Maintain commercial general liability insurance with a minimum limit of CAD 5,000,000 per occurrence.</li><li>Submit a project-specific health and safety plan and identify the proposed site superintendent.</li></ul><h2>Key dates</h2><p>Published: 2026-01-12. Optional site visit: 2026-02-03 at 10:00. Questions due: 2026-02-10 at 17:00. Bids due: 2026-02-24 at 14:00. All times are Pacific Standard Time (PST).</p><h2>Submission</h2><p>Submit electronically through the North Quay Bid Room. No public portal address is listed. No paper copies are required. Upload one searchable PDF bid package with separate pricing schedules.</p><ul><li>Signed tender form and package pricing schedule</li><li>Company profile and comparable-project references</li><li>Insurance certificate</li><li>Project-specific health and safety plan</li><li>Preliminary construction schedule</li></ul><h2>Contact</h2><p>Mara Ellison, Procurement Manager, North Quay Commercial Properties Ltd.</p></main>",
+  "contact_information": {
+    "contact_name": "Mara Ellison",
+    "organization": "North Quay Commercial Properties Ltd., Procurement",
+    "email": "",
+    "phone": ""
+  },
+  "submission_requirements": {
+    "submission_method": "Electronic submission through the North Quay Bid Room",
+    "portal_url": "",
+    "delivery_address": "",
+    "required_documents": [
+      "Signed tender form and package pricing schedule",
+      "Company profile and comparable-project references",
+      "Insurance certificate",
+      "Project-specific health and safety plan",
+      "Preliminary construction schedule"
+    ],
+    "file_format": "One searchable PDF bid package with separate pricing schedules",
+    "copy_count": 0
+  },
+  "eligibility_requirements": [
+    "Demonstrate completion of at least two comparable commercial buildings within the past eight years.",
+    "Maintain commercial general liability insurance with a minimum limit of CAD 5,000,000 per occurrence.",
+    "Submit a project-specific health and safety plan and identify the proposed site superintendent."
+  ]
+}
