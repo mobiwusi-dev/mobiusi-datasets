@@ -1,0 +1,42 @@
+{
+  "amendments": [
+    {
+      "provision": "Final maturity date for each Extending Lender's identified Term Loans",
+      "prior_term": "The existing final maturity date was October 4, 2028.",
+      "amended_term": "The final maturity date for each Extended Loan is October 4, 2030. Term Loans held by a lender that does not execute an extension counterpart retain their existing maturity date.",
+      "applicability": "Applies only to the Term Loans identified in a counterpart executed by an Extending Lender; non-extending lenders' loans are not extended.",
+      "effective_condition": "For each Extending Lender, the Administrative Agent must receive executed counterparts from the Borrower, each Guarantor, the Administrative Agent, and that Extending Lender, together with the required officer's certificate, payment of accrued interest and fees then due, and reimbursement of the specified expenses."
+    },
+    {
+      "provision": "Applicable Margin for Extended Loans",
+      "prior_term": "The Applicable Margin was the margin otherwise provided by the Credit Agreement; the amendment does not state its prior numerical amount.",
+      "amended_term": "The Applicable Margin for each Extended Loan increases by 0.75 percentage points for each otherwise applicable benchmark option. Margins for non-extended Term Loans are unchanged.",
+      "applicability": "Applies from the effective date only to Extended Loans held by Extending Lenders.",
+      "effective_condition": "The pricing change for an Extending Lender's Extended Loans becomes effective when the extension conditions for that lender are satisfied."
+    },
+    {
+      "provision": "Amortization of Extended Loans",
+      "prior_term": "The existing amortization terms apply to Term Loans before the extension; their detailed schedule is not stated in this Amendment.",
+      "amended_term": "Starting on the first scheduled quarterly payment date after effectiveness, quarterly installments equal in the aggregate to 1.00% per annum of the original principal amount of the Extended Loans are due, with remaining principal due at the extended maturity. Non-extended loans retain their existing amortization provisions.",
+      "applicability": "Applies to Extended Loans only; payments on non-extended Term Loans continue under their existing terms.",
+      "effective_condition": "The revised amortization applies to the relevant Extended Loans when the extension becomes effective for the applicable Extending Lender."
+    }
+  ],
+  "lender_impact": "Extending Lenders receive a later maturity and higher pricing, while non-extending Lenders retain their existing maturity and economics. The amendment preserves the existing guarantees, collateral, and sharing basis and does not add commitments. The document does not describe any change to voting rights or the consent threshold for other actions.",
+  "amendment_types": [
+    "Term loan maturity extension",
+    "Pricing amendment",
+    "Amortization amendment"
+  ],
+  "borrower_impact": "The Borrower gains additional time to repay only the loans of lenders that elect to extend, but incurs higher margins and quarterly amortization on those Extended Loans. It must make the required no-default and representation certifications, pay accrued amounts, and reimburse specified expenses. It must also manage differing maturity and payment terms between extended and non-extended loans.",
+  "financing_impact": "Extending lenders receive a two-year maturity extension, with a 0.75-percentage-point increase in Applicable Margin and specified quarterly amortization. Non-extending loans remain due on their existing October 4, 2028 maturity and retain their existing pricing and amortization. The extended and non-extended loans continue to share guarantees and collateral on the same basis, and the amendment creates no additional commitments.",
+  "executive_summary": "The amendment permits individual Term Lenders to extend their loans from an October 4, 2028 maturity to October 4, 2030. Extended Loans carry a 0.75-percentage-point higher Applicable Margin and quarterly amortization equal to 1.00% per annum of their original principal amount. Non-extending lenders retain their existing maturity, pricing, and amortization; no additional commitments are created.",
+  "interpretive_notes": "The underlying Credit Agreement is not provided, so the pre-amendment Applicable Margin, detailed pre-amendment amortization schedule, and other benchmark mechanics cannot be confirmed. The extension is lender-specific under the text; no minimum participation threshold is stated.",
+  "source_document_text": "AMENDMENT NO. 1 AND EXTENSION OF TERM LOANS dated April 22, 2026 (this Amendment), among Briarfield Packaging Group, LLC, as Borrower, the Guarantors party hereto, the Lenders electing to extend their Term Loans as identified on their executed counterparts (the Extending Lenders), and Meridian Loan Administration, as Administrative Agent. This Amendment relates to the Credit Agreement dated October 4, 2022. 1. Extension election. Each Extending Lender agrees that the outstanding principal amount of its Term Loans identified in its counterpart (the Extended Loans) shall have a final maturity date of October 4, 2030, in place of October 4, 2028. A Lender that does not execute an extension counterpart is not an Extending Lender, and its Term Loans retain their existing maturity date and terms, except for the administrative conforming changes expressly set out herein. 2. Pricing and amortization for Extended Loans. From the effective date, the Applicable Margin for each Extended Loan is increased by 0.75 percentage points for each benchmark option otherwise applicable to that Loan. The Applicable Margin on Term Loans held by non-extending Lenders is unchanged. Beginning on the first scheduled quarterly payment date after the effective date, the Borrower shall repay Extended Loans in quarterly installments equal in the aggregate to 1.00% per annum of the original principal amount of those Extended Loans, with the remaining principal due on October 4, 2030. Payments on non-extended Term Loans continue under their existing amortization and maturity provisions. 3. Other terms. Extended Loans remain Term Loans under the Credit Agreement, retain the same guarantees and collateral, and share payments and collateral proceeds on the same basis as the other Term Loans. No additional commitments are created. Except for the extension, pricing, and amortization changes stated above, the Credit Agreement remains unchanged. 4. Effectiveness. The extension for each Extending Lender becomes effective upon delivery to the Administrative Agent of this Amendment executed by the Borrower, each Guarantor, the Administrative Agent, and that Extending Lender, together with a certificate of a Responsible Officer confirming that no Default or Event of Default exists or would result from the extension and that the representations and warranties in the Loan Documents are true in all material respects as of the effective date, subject to their stated qualifiers. The Borrower shall pay accrued interest and fees then due on the Extended Loans and reimburse the Administrative Agent's invoiced, reasonable out-of-pocket expenses. 5. Ratification. The Borrower and Guarantors ratify their obligations under the Loan Documents. This Amendment is a Loan Document and is governed by the governing-law provisions of the Credit Agreement.",
+  "effectiveness_conditions": [
+    "The Administrative Agent must receive the Amendment executed by the Borrower, each Guarantor, the Administrative Agent, and the applicable Extending Lender.",
+    "A Responsible Officer must certify that no Default or Event of Default exists or would result from the extension and that the Loan Document representations and warranties are true in all material respects, subject to their stated qualifiers.",
+    "Accrued interest and fees then due on the Extended Loans must be paid.",
+    "The Administrative Agent's invoiced, reasonable out-of-pocket expenses must be reimbursed."
+  ]
+}
