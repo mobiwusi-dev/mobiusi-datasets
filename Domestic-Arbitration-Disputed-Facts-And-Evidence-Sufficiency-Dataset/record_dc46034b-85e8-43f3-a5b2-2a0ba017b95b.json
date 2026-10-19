@@ -1,0 +1,25 @@
+{
+  "key_gaps": [
+    "The complete notice and a readable copy of the delivery record are missing.",
+    "No envelope, courier receipt, or tracking record establishing delivery to Respondent on 3 October 2024 is included."
+  ],
+  "fact_type": "通知与送达",
+  "claim_text": "Respondent received the written notice of suspension on 3 October 2024.",
+  "claimant_party": "Claimant",
+  "evidence_items": [
+    {
+      "material_reference": "Exhibit C-6",
+      "material_type": "Damaged scan of a notice and purported delivery record",
+      "material_summary": "The reproduced fragment contains only the legible text fragments '...suspension...' and '...Oct...'; the sender, recipient, date, and delivery outcome are unreadable.",
+      "relation_to_claim": "The fragment may relate to a suspension notice but cannot establish that Respondent received it on 3 October 2024.",
+      "material_limitation": "The scan is incomplete and damaged, and the complete notice and delivery records are absent from the materials provided."
+    }
+  ],
+  "support_reason": "The only cited exhibit is an incomplete, unreadable fragment that does not disclose the recipient, delivery date, or delivery outcome. Respondent denies receipt, and the complete notice and delivery records are unavailable, so the submitted material does not permit assessment of whether or when the notice was received.",
+  "support_status": "材料无法判断",
+  "conflict_details": "The parties take opposing positions: Claimant alleges receipt on 3 October 2024, while Respondent denies receipt. The available fragment is too incomplete to resolve that dispute.",
+  "respondent_position": "Respondent denies receiving the notice.",
+  "unassessable_reason": "The key notice and delivery records are missing or unreadable, leaving the recipient, delivery date, and delivery outcome unverifiable from the provided materials.",
+  "source_document_text": "Claimant's arbitration request alleges: 'Respondent received the written notice of suspension on 3 October 2024.' Respondent's answer denies receipt. Claimant refers to Exhibit C-6 as a copy of the notice and its delivery record. The only reproduced portion of C-6 is a damaged scan containing the legible fragments '...suspension...' and '...Oct...'; the sender, recipient, date, and delivery outcome cannot be read. The complete notice, envelope, courier receipt, and tracking record are not included in the materials provided for review.",
+  "assessment_confidence": 0.96
+}

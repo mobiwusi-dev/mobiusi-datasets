@@ -1,0 +1,22 @@
+{
+  "claimant_party": "Claimant",
+  "key_gaps": [],
+  "fact_type": "付款与结算",
+  "claim_text": "Respondent paid the outstanding contract balance of CNY 480,000 to Claimant on 16 August 2024.",
+  "evidence_items": [
+    {
+      "material_reference": "Exhibit C-2",
+      "material_type": "Bank statement excerpt",
+      "material_summary": "The excerpt records a CNY 480,000 transfer from Respondent's account to Claimant's designated account on 16 August 2024, with the payment note 'contract balance.'",
+      "relation_to_claim": "Directly supports the asserted payment, including the amount, date, sender, and recipient.",
+      "material_limitation": "The excerpt is limited to the recorded transfer; the parties do not dispute its authenticity, and Respondent admits making the payment."
+    }
+  ],
+  "support_reason": "The bank statement excerpt matches the claimed amount, date, sender, recipient, and payment purpose. Respondent also admits making the transfer and does not dispute the excerpt's authenticity. The materials therefore support the specific payment fact.",
+  "support_status": "充分支持",
+  "conflict_details": "None.",
+  "respondent_position": "Respondent admits that it made the transfer and does not dispute the authenticity of the bank statement excerpt.",
+  "unassessable_reason": "Not applicable.",
+  "source_document_text": "Claimant's arbitration request states: 'Respondent paid the outstanding contract balance of CNY 480,000 on 16 August 2024.' Exhibit C-2, a bank statement excerpt, records a transfer of CNY 480,000 from Respondent's account to Claimant's designated account on that date, with the payment note 'contract balance.' Respondent's answer admits that the transfer was made and does not dispute the statement excerpt's authenticity.",
+  "assessment_confidence": 0.98
+}

@@ -1,0 +1,38 @@
+{
+  "key_gaps": [
+    "A completed, itemized receipt or unloading count confirming the quantity actually handed over and received is absent from the submitted record."
+  ],
+  "fact_type": "合同履行",
+  "claim_text": "All 120 units were delivered to and accepted by Respondent's warehouse on 12 May 2024.",
+  "claimant_party": "Claimant",
+  "evidence_items": [
+    {
+      "material_reference": "Exhibit C-4",
+      "material_type": "Dispatch docket",
+      "material_summary": "Claimant's dispatch docket lists 120 units dispatched to Respondent's warehouse on 12 May 2024.",
+      "relation_to_claim": "Supports dispatch of 120 units, but does not by itself establish that all units were handed over to or accepted by Respondent.",
+      "material_limitation": "Records dispatch rather than completed receipt or acceptance."
+    },
+    {
+      "material_reference": "Carrier gate-entry record dated 12 May 2024",
+      "material_type": "Carrier site-entry record",
+      "material_summary": "Records 120 cartons entering Respondent's site on 12 May but has no recipient signature or itemized handover count.",
+      "relation_to_claim": "Supports the cartons' arrival at the site, but does not establish receipt and acceptance of all 120 units by Respondent.",
+      "material_limitation": "No recipient acknowledgment or itemized count is recorded."
+    },
+    {
+      "material_reference": "Exhibit R-2 and attached delivery slip",
+      "material_type": "Warehouse receiving report and signed delivery slip",
+      "material_summary": "The receiving report records 80 units received and 40 not received. The signed delivery slip bears the note '80 received; balance not checked.'",
+      "relation_to_claim": "Contradicts the assertion that all 120 units were accepted, while leaving unresolved whether the remaining 40 were physically delivered but not checked.",
+      "material_limitation": "The slip does not include a completed count or a separate acknowledgment for the remaining 40 units."
+    }
+  ],
+  "support_reason": "The dispatch docket and site-entry record indicate that 120 units were sent and entered the site, while Respondent's receiving report records only 80 received and the signed slip notes that the balance was not checked. The records do not establish whether the remaining 40 units were handed over and accepted, and they contain materially inconsistent accounts of receipt.",
+  "support_status": "证据冲突",
+  "conflict_details": "The dispatch docket and gate-entry record refer to 120 units or cartons, but the warehouse receiving report records only 80 received and 40 not received. The signed slip's note that the balance was not checked does not resolve whether the remaining 40 were delivered or accepted. This discrepancy prevents a definitive finding that all 120 units were accepted.",
+  "respondent_position": "Respondent denies accepting all 120 units; its warehouse receiving report records 80 received and 40 not received.",
+  "unassessable_reason": "Not applicable.",
+  "source_document_text": "Claimant's arbitration request states: 'All 120 units were delivered to and accepted by Respondent's warehouse on 12 May 2024.' Exhibit C-4, Claimant's dispatch docket, lists 120 units dispatched to that warehouse on 12 May. The carrier's gate-entry record for the same date records 120 cartons entering the site but contains no recipient signature or itemized handover count. Respondent denies accepting all 120 units. Its Exhibit R-2, a warehouse receiving report, records 80 units received that day and 40 units marked 'not received.' A copy of the delivery slip bears a warehouse employee's signature and the handwritten note '80 received; balance not checked.' The submitted record contains no completed, itemized receipt or unloading count for all 120 units.",
+  "assessment_confidence": 0.94
+}
