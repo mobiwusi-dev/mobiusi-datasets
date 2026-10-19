@@ -1,0 +1,16 @@
+{
+  "horizontal_displacement_m": 103.923048,
+  "azimuth_deg": 30,
+  "final_answer": "Bottom coordinates: easting 5051.961524 m, northing 12090.000000 m, elevation 790.000000 m. Horizontal displacement: 103.923048 m. Trajectory deviation from vertical: 60°.",
+  "drill_depth_m": 120,
+  "question_text": "A drill hole collar is located at easting 5000.000 m, northing 12000.000 m, and elevation 850.000 m. The hole has an azimuth of 30° clockwise from north, a downward inclination of 30° from horizontal, and a drilled depth of 120.000 m. Calculate the bottom coordinates, horizontal displacement, and angular deviation from vertical, showing the calculation steps with units.",
+  "inclination_deg": 30,
+  "bottom_easting_m": 5051.961524,
+  "collar_easting_m": 5000,
+  "bottom_northing_m": 12090,
+  "calculation_steps": "1. Horizontal displacement = depth × cos(inclination) = 120.000 m × cos(30°) = 103.923048 m. 2. Easting offset = horizontal displacement × sin(azimuth) = 103.923048 m × sin(30°) = 51.961524 m. 3. Northing offset = horizontal displacement × cos(azimuth) = 103.923048 m × cos(30°) = 90.000000 m. 4. Elevation change = −depth × sin(inclination) = −120.000 m × sin(30°) = −60.000000 m. 5. Bottom easting = 5000.000 m + 51.961524 m = 5051.961524 m; bottom northing = 12000.000 m + 90.000000 m = 12090.000000 m; bottom elevation = 850.000 m − 60.000000 m = 790.000000 m. 6. Trajectory deviation from vertical = 90° − 30° = 60°.",
+  "collar_northing_m": 12000,
+  "bottom_elevation_m": 790,
+  "collar_elevation_m": 850,
+  "trajectory_deviation_deg": 60
+}
