@@ -1,0 +1,10 @@
+{
+  "reasoning": "Although the clause generally provides for replacement of defective units, it expressly excludes units stored outside the permitted temperature range. The contract text states that the affected cartons were stored above that range and explicitly says Seller has no replacement obligation for them, contradicting the claim.",
+  "contract_text": "Section 12.3: Seller shall replace defective units at no charge after receiving notice and an opportunity to inspect them. This remedy does not apply to units stored outside the permitted range of 10°C to 25°C before inspection. The receiving log incorporated into this section records that the 18 affected cartons were stored at 31°C for six hours before inspection. For those units, Seller has no replacement obligation.",
+  "condition_type": "exception",
+  "condition_status": "exception_applies",
+  "evidence_excerpt": "The receiving log incorporated into this section records that the 18 affected cartons were stored at 31°C for six hours before inspection. For those units, Seller has no replacement obligation.",
+  "obligation_claim": "Seller is required to replace the 18 affected cartons at no charge.",
+  "condition_summary": "The replacement remedy excludes units stored outside 10°C to 25°C before inspection. The text records that the affected cartons were stored at 31°C before inspection.",
+  "applicability_status": "contradicted"
+}

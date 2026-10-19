@@ -1,0 +1,10 @@
+{
+  "reasoning": "The clause makes the purchase obligation conditional on completion of all three prerequisites. The contract text confirms each prerequisite was completed before the stated first covered month, so it supports the claimed obligation beginning in March.",
+  "contract_text": "Section 4.2: Buyer shall purchase at least 120 units in each calendar month beginning after Supplier has completed onboarding, Buyer has approved the production sample, and Supplier has been added to the approved-vendor register. The parties acknowledge that onboarding was completed on 3 February, the production sample was approved on 8 February, and Supplier was added to the register on 10 February. The first covered month is March.",
+  "condition_type": "prerequisite",
+  "condition_status": "satisfied",
+  "evidence_excerpt": "The parties acknowledge that onboarding was completed on 3 February, the production sample was approved on 8 February, and Supplier was added to the register on 10 February. The first covered month is March.",
+  "obligation_claim": "Buyer is required to purchase at least 120 units in each calendar month beginning in March.",
+  "condition_summary": "The monthly purchase obligation begins only after three prerequisites are met: onboarding, production-sample approval, and entry in the approved-vendor register. The text states that all three were completed before March.",
+  "applicability_status": "supported"
+}

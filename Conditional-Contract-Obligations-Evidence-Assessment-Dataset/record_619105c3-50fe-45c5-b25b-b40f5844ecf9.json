@@ -1,0 +1,10 @@
+{
+  "reasoning": "The clause establishes a forecast threshold, but the available text does not show whether the third-quarter demand plan exceeds it. The purchase commitment therefore cannot be confirmed from this text alone.",
+  "contract_text": "Section 7.1: Buyer shall purchase at least 600 units during any calendar quarter only if the approved demand plan for that quarter forecasts more than 1,000 units. The demand plan is maintained separately and is not reproduced in this section.",
+  "condition_type": "threshold",
+  "condition_status": "unresolved",
+  "evidence_excerpt": "Buyer shall purchase at least 600 units during any calendar quarter only if the approved demand plan for that quarter forecasts more than 1,000 units. The demand plan is maintained separately and is not reproduced in this section.",
+  "obligation_claim": "Buyer is required to purchase at least 600 units in the third calendar quarter.",
+  "condition_summary": "The purchase commitment applies only when the approved demand plan for the relevant quarter forecasts more than 1,000 units. The text does not state the third-quarter forecast.",
+  "applicability_status": "not_confirmed"
+}
