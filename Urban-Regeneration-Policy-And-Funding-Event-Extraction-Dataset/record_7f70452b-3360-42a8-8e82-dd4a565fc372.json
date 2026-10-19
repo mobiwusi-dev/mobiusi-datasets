@@ -1,0 +1,107 @@
+{
+  "events": [
+    {
+      "event_index": 0,
+      "event_type": "policy_release",
+      "event_summary": "The Lydon Borough Regeneration Office issued the Old Quay Renewal Framework, setting preservation and public-access requirements for redevelopment in the area.",
+      "event_date": "2025-03-12",
+      "time_reference_type": "announcement_date",
+      "policy_or_funding_details": "Projects must retain occupied workshops where feasible and provide a public-access plan for each redeveloped waterfront parcel.",
+      "actors": [
+        {
+          "actor_name": "Lydon Borough Regeneration Office",
+          "actor_role": "issuing authority"
+        }
+      ],
+      "evidence_text": "The Lydon Borough Regeneration Office issued the Old Quay Renewal Framework on 12 March. It requires projects in the Old Quay area to retain occupied workshops where feasible and to provide a public-access plan for any redeveloped waterfront parcel."
+    },
+    {
+      "event_index": 1,
+      "event_type": "funding_arrangement",
+      "event_summary": "Lydon Borough Council is scheduled to make a capital fund available for eligible Old Quay regeneration work.",
+      "event_date": "2025-04-01",
+      "time_reference_type": "effective_date",
+      "policy_or_funding_details": "The fund totals £8.4 million and covers eligible building repairs, street improvements, and conversion of vacant industrial premises; individual awards may not exceed £1.2 million.",
+      "actors": [
+        {
+          "actor_name": "Lydon Borough Council",
+          "actor_role": "funder"
+        }
+      ],
+      "evidence_text": "On 1 April 2025, Lydon Borough Council will make an £8.4 million capital fund available for eligible building repairs, street improvements, and the conversion of vacant industrial premises; individual awards may not exceed £1.2 million."
+    },
+    {
+      "event_index": 2,
+      "event_type": "project_application",
+      "event_summary": "The application window for the Old Quay capital fund opens.",
+      "event_date": "2025-05-05",
+      "time_reference_type": "effective_date",
+      "policy_or_funding_details": "Applications are submitted to the Lydon Borough Regeneration Office; the submission deadline is 20 June 2025.",
+      "actors": [
+        {
+          "actor_name": "Lydon Borough Regeneration Office",
+          "actor_role": "application administrator"
+        }
+      ],
+      "evidence_text": "Applications to the Regeneration Office open on 5 May and must be submitted by 20 June 2025."
+    },
+    {
+      "event_index": 3,
+      "event_type": "project_application",
+      "event_summary": "The deadline for applications to the Old Quay capital fund falls.",
+      "event_date": "2025-06-20",
+      "time_reference_type": "application_deadline",
+      "policy_or_funding_details": "Applications must be submitted to the Lydon Borough Regeneration Office by this date.",
+      "actors": [
+        {
+          "actor_name": "Lydon Borough Regeneration Office",
+          "actor_role": "application administrator"
+        }
+      ],
+      "evidence_text": "Applications to the Regeneration Office open on 5 May and must be submitted by 20 June 2025."
+    },
+    {
+      "event_index": 4,
+      "event_type": "implementation_milestone",
+      "event_summary": "The Lydon Municipal Works Unit is scheduled to begin enabling works in the Old Quay area.",
+      "event_date": "2025-09-01",
+      "time_reference_type": "implementation_period",
+      "policy_or_funding_details": "The article states that enabling works are scheduled to begin on this date.",
+      "actors": [
+        {
+          "actor_name": "Lydon Municipal Works Unit",
+          "actor_role": "implementer"
+        }
+      ],
+      "evidence_text": "The council expects to announce awards by 15 August, and the Lydon Municipal Works Unit is scheduled to begin enabling works on 1 September 2025."
+    }
+  ],
+  "event_relationships": [
+    {
+      "preceding_event_index": 0,
+      "following_event_index": 1,
+      "relationship_type": "precedes",
+      "evidence_text": "The Lydon Borough Regeneration Office issued the Old Quay Renewal Framework on 12 March. ... On 1 April 2025, Lydon Borough Council will make an £8.4 million capital fund available"
+    },
+    {
+      "preceding_event_index": 1,
+      "following_event_index": 2,
+      "relationship_type": "precedes",
+      "evidence_text": "On 1 April 2025, Lydon Borough Council will make an £8.4 million capital fund available. Applications to the Regeneration Office open on 5 May"
+    },
+    {
+      "preceding_event_index": 2,
+      "following_event_index": 3,
+      "relationship_type": "deadline_for",
+      "evidence_text": "Applications to the Regeneration Office open on 5 May and must be submitted by 20 June 2025."
+    },
+    {
+      "preceding_event_index": 3,
+      "following_event_index": 4,
+      "relationship_type": "precedes",
+      "evidence_text": "Applications ... must be submitted by 20 June 2025. ... the Lydon Municipal Works Unit is scheduled to begin enabling works on 1 September 2025."
+    }
+  ],
+  "source_article_text": "Lydon Borough, 13 March 2025 — The Lydon Borough Regeneration Office issued the Old Quay Renewal Framework on 12 March. It requires projects in the Old Quay area to retain occupied workshops where feasible and to provide a public-access plan for any redeveloped waterfront parcel. On 1 April 2025, Lydon Borough Council will make an £8.4 million capital fund available for eligible building repairs, street improvements, and the conversion of vacant industrial premises; individual awards may not exceed £1.2 million. Applications to the Regeneration Office open on 5 May and must be submitted by 20 June 2025. The council expects to announce awards by 15 August, and the Lydon Municipal Works Unit is scheduled to begin enabling works on 1 September 2025.",
+  "article_publication_date": "2025-03-13"
+}
