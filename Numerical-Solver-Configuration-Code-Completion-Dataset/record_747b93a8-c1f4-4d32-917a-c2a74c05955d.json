@@ -1,0 +1,13 @@
+{
+  "nonlinear_solver": "Newton with constant damping",
+  "absolute_tolerance": 1e-08,
+  "relative_tolerance": 1e-06,
+  "preconditioner": "Not used with a direct solver",
+  "completion_code": "solver_config.update({\n    'solver_type': 'generalized-alpha implicit integrator',\n    'time_step': 1e-3,\n    'end_time': 0.8,\n    'max_iterations': 30,\n    'absolute_tolerance': 1e-8,\n    'relative_tolerance': 1e-6,\n    'linear_solver': 'sparse direct LU',\n    'nonlinear_solver': 'Newton with constant damping',\n    'preconditioner': 'Not used with a direct solver',\n})\n",
+  "end_time": 0.8,
+  "time_step": 0.001,
+  "solver_type": "generalized-alpha implicit integrator",
+  "input_context": "# A transient structural model is ready for time integration. The\n# displacement solve uses a sparse direct factorization.\nsolver_config = {}\n",
+  "linear_solver": "sparse direct LU",
+  "max_iterations": 30
+}

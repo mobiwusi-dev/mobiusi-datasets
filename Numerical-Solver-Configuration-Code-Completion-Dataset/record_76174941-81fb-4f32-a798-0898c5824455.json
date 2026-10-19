@@ -1,0 +1,13 @@
+{
+  "end_time": 0.5,
+  "time_step": 0.0005,
+  "solver_type": "Crank-Nicolson (theta=0.5)",
+  "input_context": "# The nonlinear diffusion model uses a positive-definite linearized\n# operator at each Picard iteration. Configure its transient solve below.\nsolver_config = {}\n",
+  "linear_solver": "conjugate gradient",
+  "max_iterations": 60,
+  "preconditioner": "Jacobi",
+  "completion_code": "solver_config.update({\n    'solver_type': 'Crank-Nicolson (theta=0.5)',\n    'time_step': 5e-4,\n    'end_time': 0.5,\n    'max_iterations': 60,\n    'absolute_tolerance': 1e-10,\n    'relative_tolerance': 1e-8,\n    'linear_solver': 'conjugate gradient',\n    'nonlinear_solver': 'Picard fixed-point iteration',\n    'preconditioner': 'Jacobi',\n})\n",
+  "nonlinear_solver": "Picard fixed-point iteration",
+  "absolute_tolerance": 1e-10,
+  "relative_tolerance": 1e-08
+}

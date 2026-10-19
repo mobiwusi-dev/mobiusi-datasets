@@ -1,0 +1,13 @@
+{
+  "end_time": 2.5,
+  "time_step": 0.0025,
+  "solver_type": "implicit BDF",
+  "input_context": "# The transient heat model has been assembled and the solver options are\n# collected here before the time integration is started.\nsolver_config = {}\n",
+  "linear_solver": "GMRES (restart=40)",
+  "max_iterations": 40,
+  "preconditioner": "ILU(0)",
+  "completion_code": "solver_config.update({\n    'solver_type': 'implicit BDF',\n    'time_step': 2.5e-3,\n    'end_time': 2.5,\n    'max_iterations': 40,\n    'absolute_tolerance': 1e-9,\n    'relative_tolerance': 1e-7,\n    'linear_solver': 'GMRES (restart=40)',\n    'nonlinear_solver': 'Newton with backtracking line search',\n    'preconditioner': 'ILU(0)',\n})\n",
+  "nonlinear_solver": "Newton with backtracking line search",
+  "absolute_tolerance": 1e-09,
+  "relative_tolerance": 1e-07
+}
