@@ -1,0 +1,13 @@
+{
+  "answer": "Yes. The guardrail impact meets the policy's collision definition, coverage was active, and no listed exclusion applies.",
+  "question": "Does the damage from the guardrail impact fall within collision coverage?",
+  "reasoning": "Collision coverage was selected for the listed sedan, and the policy was in force on the accident date. The sedan's impact with a fixed guardrail meets the policy's definition of a collision. The stated facts do not trigger any of the listed exclusions. The loss therefore falls within collision coverage, subject to any other policy terms not described here.",
+  "policy_terms": "Collision coverage applies to a listed vehicle when the coverage is shown as selected and the policy is in force at the time of loss. A collision is the upset of the vehicle or its impact with another vehicle or object. Collision coverage does not apply to loss caused solely by mechanical breakdown, wear and tear, intentional damage by an insured, or participation in a timed speed contest.",
+  "accident_facts": "On July 14, 2025, the sedan slid on a wet roadway and struck a fixed guardrail. The impact damaged the front bumper and left fender. The vehicle was not being used in a speed contest, and the damage was not attributed to mechanical breakdown, wear and tear, or intentional conduct.",
+  "evidence_basis": "The policy covers a listed vehicle when collision coverage is selected and the policy is in force; it defines collision to include impact with an object. The vehicle information confirms selected coverage and an in-force policy on July 14, 2025. The accident facts describe impact with a guardrail and state that none of the listed exclusion circumstances caused the damage.",
+  "exclusion_status": "does_not_apply",
+  "coverage_determination": "covered",
+  "coverage_activation_status": "active",
+  "collision_definition_status": "meets_definition",
+  "vehicle_coverage_information": "The declarations list a 2022 Alder Vale sedan and show collision coverage as selected. The policy period is March 1, 2025, through March 1, 2026. The policy record states that the policy was in force on July 14, 2025."
+}

@@ -1,0 +1,13 @@
+{
+  "answer": "No. The impact meets the collision definition and no stated exclusion applies, but the policy had ended before the accident.",
+  "question": "Does the parking-post damage fall within collision coverage?",
+  "reasoning": "The impact with the concrete post meets the policy's collision definition, and the stated facts do not trigger an exclusion listed in the terms. However, collision coverage was in force only through the stated policy period and had ended at 12:01 a.m. on June 1, 2025, with no renewal. The accident occurred on June 3, after coverage ended, so the loss is not covered under this policy's collision coverage.",
+  "policy_terms": "Collision coverage applies to a listed vehicle only during the policy period shown in the vehicle coverage information. A collision is the upset of the vehicle or its impact with another vehicle or object. The terms provided list no exclusion applicable to an ordinary impact with an object.",
+  "accident_facts": "At 10:20 a.m. on June 3, 2025, the sedan struck a concrete parking post while maneuvering in a private lot. The impact damaged the right-side doors. The facts do not indicate a speed contest, intentional damage, or mechanical failure.",
+  "evidence_basis": "The policy terms limit collision coverage to the policy period shown in the vehicle information. That information states that coverage ended at 12:01 a.m. on June 1, 2025, with no renewal in force. The accident occurred on June 3, 2025. The terms define collision to include impact with an object, and the accident facts describe impact with a concrete post.",
+  "exclusion_status": "does_not_apply",
+  "coverage_determination": "not_covered",
+  "coverage_activation_status": "inactive",
+  "collision_definition_status": "meets_definition",
+  "vehicle_coverage_information": "The declarations list a 2020 Larkspur sedan with collision coverage selected for the policy period from June 1, 2024, through June 1, 2025. The policy record states that coverage ended at 12:01 a.m. on June 1, 2025, and that no renewal was in force afterward."
+}

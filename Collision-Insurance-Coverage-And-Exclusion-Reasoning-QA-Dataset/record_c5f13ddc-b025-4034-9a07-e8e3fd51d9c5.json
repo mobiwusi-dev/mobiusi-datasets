@@ -1,0 +1,13 @@
+{
+  "answer": "No. Although the impact meets the collision definition and coverage was active, the timed-speed-contest exclusion applies.",
+  "question": "Is the damage from the tire-barrier impact covered under collision coverage?",
+  "reasoning": "Collision coverage was selected and the policy was in force on the date of loss. The coupe's impact with the tire barrier meets the collision definition. However, the policy expressly excludes loss occurring while the vehicle participates in a timed speed contest, and the accident facts place the impact during a timed run. That exclusion applies, so this loss is not covered under collision coverage.",
+  "policy_terms": "Collision coverage applies to a listed vehicle when the coverage is shown as selected and the policy is in force at the time of loss. A collision includes impact with an object. Loss occurring while the vehicle is participating in a timed speed contest is excluded, even if the vehicle collides with an object during that activity.",
+  "accident_facts": "On August 9, 2025, the coupe was taking part in an organized timed speed contest on a closed course. During a timed run, it left the marked course and struck a tire barrier, damaging the front suspension and bodywork.",
+  "evidence_basis": "The vehicle information confirms selected collision coverage and an in-force policy on August 9, 2025. The policy defines collision to include impact with an object but excludes loss occurring during participation in a timed speed contest. The accident facts state that the coupe struck a tire barrier during a timed run in an organized contest.",
+  "exclusion_status": "applies",
+  "coverage_determination": "not_covered",
+  "coverage_activation_status": "active",
+  "collision_definition_status": "meets_definition",
+  "vehicle_coverage_information": "The declarations list a 2021 Bracken Row coupe with collision coverage selected. The policy period is January 1, 2025, through January 1, 2026, and the policy was in force on August 9, 2025."
+}
