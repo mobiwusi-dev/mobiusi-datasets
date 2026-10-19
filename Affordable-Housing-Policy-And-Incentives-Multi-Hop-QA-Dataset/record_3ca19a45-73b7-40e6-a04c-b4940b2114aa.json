@@ -1,0 +1,16 @@
+{
+  "question": "A 16-lot subdivision in a mapped Village Service Area proposes 3 lots for owner-occupants earning no more than 80% of AMI. Utility capacity has not yet been certified. Does the proposal meet the required affordable-lot obligation, and can it receive the fee waiver as submitted?",
+  "answer": "The 3 proposed lots meet the base obligation, which requires 3 affordable lots at or below 80% of AMI with 15-year deed restrictions. The subdivision cannot receive the fee waiver as submitted: it would need 4 lots at or below 60% of AMI and a utility-capacity certificate.",
+  "policy_text": "Section 1 — Applicability: A subdivision creating 10 or more lots within a mapped Village Service Area is subject to this policy. Section 2 — Affordable-lot obligation: At least 15% of the lots, rounded up to the next whole lot, must be made available for owner-occupancy by households earning no more than 80% of area median income (AMI). Each affordable lot must carry a recorded deed restriction lasting at least 15 years. Section 3 — Fee waiver: A covered subdivision may receive a waiver of the subdivision review fee only if at least 20% of its lots, rounded up to the next whole lot, are restricted for owner-occupancy by households earning no more than 60% of AMI and the applicant submits a utility-capacity certificate. The waiver is unavailable if either condition is unmet.",
+  "project_path": "Record 15-year deed restrictions on the 3 lots at or below 80% AMI to satisfy the base obligation. To pursue the fee waiver, designate at least 4 lots for households at or below 60% AMI and submit a utility-capacity certificate.",
+  "reasoning_steps": [
+    "The subdivision creates 16 lots in the mapped service area, so it meets the policy's applicability conditions.",
+    "Fifteen percent of 16 is 2.4; rounding up means the base obligation is 3 lots for households at or below 80% of AMI.",
+    "The proposal includes 3 lots at that income limit, so it meets the numerical and income conditions for the base obligation, provided the lots carry the required 15-year deed restrictions.",
+    "Twenty percent of 16 is 3.2; rounding up means the fee-waiver threshold is 4 lots at or below 60% of AMI.",
+    "The proposal identifies only 3 lots at the less restrictive 80% AMI limit and has no utility-capacity certificate, so it meets neither stated waiver condition as submitted.",
+    ""
+  ],
+  "supporting_clauses": "Sections 1 and 2 cover subdivisions of at least 10 lots in the mapped service area and require 15% of lots, rounded up, at or below 80% AMI with 15-year deed restrictions. Section 3 requires at least 20% of lots, rounded up, at or below 60% AMI plus a utility-capacity certificate for the fee waiver.",
+  "eligibility_conclusion": "The subdivision is subject to the policy and meets the base affordable-lot obligation if it records 15-year deed restrictions on the 3 lots. It is not eligible for the fee waiver as submitted because the enhanced income set-aside and utility-capacity certificate are both lacking."
+}

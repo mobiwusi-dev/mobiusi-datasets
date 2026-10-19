@@ -1,0 +1,16 @@
+{
+  "answer": "Yes. The base obligation is 8 units affordable to households at or below 60% of AMI, and the 12 proposed units at or below 50% of AMI count toward it. The development may pursue the 15% floor-area increase and request a parking reduction of up to 25%, subject to review.",
+  "question": "An 80-unit rental development is proposed in the Inclusionary Housing Overlay, 0.2 mile from an operational rapid-transit stop. The developer proposes to restrict 12 units to households earning no more than 50% of AMI. Does the proposal meet the base affordability obligation, and which incentives can it pursue?",
+  "policy_text": "Section 1 — Applicability: New rental developments containing 20 or more dwelling units in the Inclusionary Housing Overlay are subject to this section. Section 2 — Base obligation: The developer must restrict at least 10% of the units, rounded up to the next whole unit, to households earning no more than 60% of area median income (AMI). The restrictions must be recorded for 30 years before the first certificate of occupancy is issued. Section 3 — Floor-area incentive: A development that restricts at least 15% of its units to households earning no more than 50% of AMI may increase its maximum residential floor area by 15%. Units meeting this enhanced income limit count toward the base obligation. Section 4 — Parking incentive: A development qualifying for the floor-area incentive and located within one-quarter mile of an operational rapid-transit stop may request a reduction of up to 25% in required parking, subject to review.",
+  "project_path": "Record 30-year restrictions for the 12 affordable units before the first certificate of occupancy. Submit the project for the 15% floor-area increase and, because the transit-distance condition is met, request a parking reduction of up to 25% through review.",
+  "reasoning_steps": [
+    "The 80-unit development is in the overlay and exceeds the 20-unit threshold, so the policy applies.",
+    "Ten percent of 80 is 8, making 8 units at or below 60% of AMI the base obligation.",
+    "The 12 proposed units meet the stricter 50% AMI limit and therefore count toward the base obligation as well as exceeding the 15% threshold for the floor-area incentive.",
+    "The site is 0.2 mile from an operational rapid-transit stop, within the one-quarter-mile limit, so it may request the parking reduction; approval remains subject to review.",
+    "The 30-year affordability restrictions must be recorded before the first certificate of occupancy.",
+    ""
+  ],
+  "supporting_clauses": "Sections 1 and 2 establish applicability and require 10% of units, rounded up, at or below 60% AMI with 30-year restrictions. Section 3 allows a 15% floor-area increase at a 15% set-aside at or below 50% AMI and counts those units toward the base obligation. Section 4 permits a request for up to 25% less required parking when the enhanced set-aside and transit-distance conditions are met.",
+  "eligibility_conclusion": "The development is subject to the policy and its proposal exceeds the base affordability requirement. It qualifies for the floor-area incentive and meets the location condition to request the parking incentive, subject to review."
+}
