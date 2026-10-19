@@ -1,0 +1,11 @@
+{
+  "answer": "The administrator must receive the claim within 90 calendar days of the date of service. If documents are missing, it will request them and resume review once they are received.",
+  "claim_topic": "Submission deadline and incomplete documentation",
+  "claim_question": "How long do I have to submit an outpatient medical expense claim, and what happens if my paperwork is incomplete?",
+  "source_material": "Outpatient Medical Expense Policy — Claims Administration. Submit Form C-4 with an itemized provider statement showing the patient, dates of service, diagnosis, service codes, and charges; proof of payment; and a referral when the plan requires one. The administrator must receive the claim within 90 calendar days of the date of service. If documentation is incomplete, the administrator will request the missing items, and review resumes when they are received. Payment is calculated from eligible charges after the deductible and any payments from other insurance, subject to the benefit schedule. Payment is issued to the covered member.",
+  "evidence_excerpt": "The policy requires receipt within 90 calendar days of the service date. For incomplete documentation, the administrator requests missing items and resumes review when they arrive.",
+  "required_materials": "Form C-4, an itemized provider statement showing the patient, dates of service, diagnosis, service codes, and charges, proof of payment, and a referral if required by the plan.",
+  "submission_deadline": "Within 90 calendar days of the date of service.",
+  "reimbursement_process": "The administrator reviews the claim after receiving the required documentation. Payment is based on eligible charges after the deductible and any payments from other insurance, subject to the benefit schedule, and is issued to the covered member.",
+  "source_document_title": "Outpatient Medical Expense Policy — Claims Administration"
+}
