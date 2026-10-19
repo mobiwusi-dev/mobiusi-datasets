@@ -1,0 +1,42 @@
+{
+  "task_type": "生成单元测试",
+  "task_prompt": "Write pytest unit tests for the safety-related paths in this state machine. Verify that a recognized fault forces SAFE and is latched, that recovery is rejected unless both ground authorization and fault clearance are present, and that a fully authorized recovery returns the machine to NOMINAL and clears the latch.",
+  "unit_test_code": "from flight_modes import FlightModeMachine, Mode\n\ndef test_recognized_fault_enters_safe_and_latches_fault():\n    machine = FlightModeMachine(Mode.SCIENCE)\n\n    accepted = machine.trip_safe('watchdog')\n\n    assert accepted is True\n    assert machine.mode is Mode.SAFE\n    assert machine.latched_fault == 'watchdog'\n\ndef test_safe_recovery_is_rejected_until_fault_is_cleared():\n    machine = FlightModeMachine(Mode.SAFE)\n    machine.latched_fault = 'undervoltage'\n\n    accepted = machine.exit_safe(ground_authorized=True, fault_cleared=False)\n\n    assert accepted is False\n    assert machine.mode is Mode.SAFE\n    assert machine.latched_fault == 'undervoltage'\n\ndef test_safe_recovery_requires_both_guards_and_clears_latch():\n    machine = FlightModeMachine(Mode.SAFE)\n    machine.latched_fault = 'attitude_loss'\n\n    accepted = machine.exit_safe(ground_authorized=True, fault_cleared=True)\n\n    assert accepted is True\n    assert machine.mode is Mode.NOMINAL\n    assert machine.latched_fault is None\n",
+  "repair_rationale": "",
+  "transition_cases": [
+    {
+      "source_state": "SCIENCE",
+      "trigger": "Trip safe mode with the watchdog fault",
+      "guard_condition": "The fault is in RECOVERABLE_FAULTS",
+      "expected_state": "SAFE",
+      "transition_type": "Safety-mode entry",
+      "is_transition_allowed": true,
+      "safety_relevance": true
+    },
+    {
+      "source_state": "SAFE",
+      "trigger": "Request exit from safe mode",
+      "guard_condition": "ground_authorized is true but fault_cleared is false",
+      "expected_state": "SAFE",
+      "transition_type": "Rejected safety-mode recovery",
+      "is_transition_allowed": false,
+      "safety_relevance": true
+    },
+    {
+      "source_state": "SAFE",
+      "trigger": "Request exit from safe mode",
+      "guard_condition": "ground_authorized and fault_cleared are both true",
+      "expected_state": "NOMINAL",
+      "transition_type": "Safety-mode recovery",
+      "is_transition_allowed": true,
+      "safety_relevance": true
+    }
+  ],
+  "expected_behavior": "A recognized fault immediately places the machine in SAFE and records the fault. The machine remains in SAFE unless both ground authorization and fault clearance are confirmed; successful recovery enters NOMINAL and clears the latched fault.",
+  "expected_assertions": [
+    "A recognized fault moves the machine to SAFE and records the fault name.",
+    "Recovery with an uncleared fault returns false and preserves SAFE mode and the fault latch.",
+    "Recovery with both guards satisfied enters NOMINAL and clears the fault latch."
+  ],
+  "implementation_source": "from enum import Enum\n\nclass Mode(Enum):\n    SAFE = 'safe'\n    NOMINAL = 'nominal'\n    SCIENCE = 'science'\n\nclass FlightModeMachine:\n    RECOVERABLE_FAULTS = {'watchdog', 'undervoltage', 'attitude_loss'}\n\n    def __init__(self, mode=Mode.NOMINAL):\n        self.mode = mode\n        self.latched_fault = None\n\n    def trip_safe(self, fault):\n        if fault not in self.RECOVERABLE_FAULTS:\n            return False\n        self.mode = Mode.SAFE\n        self.latched_fault = fault\n        return True\n\n    def exit_safe(self, *, ground_authorized, fault_cleared):\n        if self.mode is not Mode.SAFE or not ground_authorized or not fault_cleared:\n            return False\n        self.mode = Mode.NOMINAL\n        self.latched_fault = None\n        return True\n"
+}

@@ -1,0 +1,42 @@
+{
+  "task_type": "修复测试断言",
+  "task_prompt": "Repair the incorrect assertion in the downlink test. The current test requests DOWNLINK from NOMINAL without a locked contact, then incorrectly expects the machine to enter DOWNLINK. The implementation requires a locked contact and at least MINIMUM_FREE_BYTES of storage. Provide corrected pytest code that checks rejection preserves NOMINAL, and retain coverage for a permitted downlink and its completion.",
+  "unit_test_code": "from flight_modes import FlightModeMachine, Mode\n\ndef test_downlink_starts_when_contact_and_storage_guards_pass():\n    machine = FlightModeMachine(Mode.NOMINAL)\n\n    accepted = machine.begin_downlink(contact_locked=True, free_bytes=8192)\n\n    assert accepted is True\n    assert machine.mode is Mode.DOWNLINK\n\ndef test_downlink_without_contact_is_rejected_and_preserves_nominal():\n    machine = FlightModeMachine(Mode.NOMINAL)\n\n    accepted = machine.begin_downlink(contact_locked=False, free_bytes=8192)\n\n    assert accepted is False\n    assert machine.mode is Mode.NOMINAL\n\ndef test_ending_downlink_returns_to_nominal():\n    machine = FlightModeMachine(Mode.DOWNLINK)\n\n    accepted = machine.end_downlink()\n\n    assert accepted is True\n    assert machine.mode is Mode.NOMINAL\n",
+  "repair_rationale": "The original assertion expected DOWNLINK even though contact_locked was false, contradicting the implementation guard. The corrected test asserts that the request is rejected and the machine remains in NOMINAL; separate assertions retain coverage of successful entry and completion.",
+  "transition_cases": [
+    {
+      "source_state": "NOMINAL",
+      "trigger": "Begin downlink with a locked contact and sufficient free storage",
+      "guard_condition": "contact_locked is true and free_bytes is at least 4096",
+      "expected_state": "DOWNLINK",
+      "transition_type": "Normal payload downlink transition",
+      "is_transition_allowed": true,
+      "safety_relevance": false
+    },
+    {
+      "source_state": "NOMINAL",
+      "trigger": "Begin downlink without a locked contact",
+      "guard_condition": "contact_locked is false",
+      "expected_state": "NOMINAL",
+      "transition_type": "Rejected guarded transition",
+      "is_transition_allowed": false,
+      "safety_relevance": false
+    },
+    {
+      "source_state": "DOWNLINK",
+      "trigger": "End the downlink session",
+      "guard_condition": "The current mode is DOWNLINK",
+      "expected_state": "NOMINAL",
+      "transition_type": "Normal session completion",
+      "is_transition_allowed": true,
+      "safety_relevance": false
+    }
+  ],
+  "expected_behavior": "A downlink may begin only from NOMINAL when contact is locked and free storage meets the minimum. A rejected request leaves the mode unchanged. Ending an active downlink returns the machine to NOMINAL.",
+  "expected_assertions": [
+    "A downlink request with a locked contact and sufficient storage returns true and enters DOWNLINK.",
+    "A request without a locked contact returns false and preserves NOMINAL mode.",
+    "Ending an active downlink returns true and restores NOMINAL mode."
+  ],
+  "implementation_source": "from enum import Enum\n\nclass Mode(Enum):\n    NOMINAL = 'nominal'\n    DOWNLINK = 'downlink'\n    SAFE = 'safe'\n\nclass FlightModeMachine:\n    MINIMUM_FREE_BYTES = 4096\n\n    def __init__(self, mode=Mode.NOMINAL):\n        self.mode = mode\n\n    def begin_downlink(self, *, contact_locked, free_bytes):\n        if (self.mode is not Mode.NOMINAL or not contact_locked\n                or free_bytes < self.MINIMUM_FREE_BYTES):\n            return False\n        self.mode = Mode.DOWNLINK\n        return True\n\n    def end_downlink(self):\n        if self.mode is not Mode.DOWNLINK:\n            return False\n        self.mode = Mode.NOMINAL\n        return True\n"
+}

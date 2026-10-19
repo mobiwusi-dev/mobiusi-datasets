@@ -1,0 +1,42 @@
+{
+  "task_type": "生成单元测试",
+  "task_prompt": "Write pytest unit tests for the supplied flight-mode state machine. Cover a permitted transition from IDLE to NOMINAL, rejection when the battery guard fails, and rejection when an attitude guard fails during a transition to SCIENCE. Assert both the return value and resulting mode.",
+  "unit_test_code": "from flight_modes import FlightModeMachine, Mode\n\ndef test_idle_enters_nominal_when_guards_pass():\n    machine = FlightModeMachine(Mode.IDLE)\n\n    accepted = machine.transition(Mode.NOMINAL, battery_ok=True, attitude_valid=True)\n\n    assert accepted is True\n    assert machine.mode is Mode.NOMINAL\n\ndef test_idle_rejects_nominal_when_battery_guard_fails():\n    machine = FlightModeMachine(Mode.IDLE)\n\n    accepted = machine.transition(Mode.NOMINAL, battery_ok=False, attitude_valid=True)\n\n    assert accepted is False\n    assert machine.mode is Mode.IDLE\n\ndef test_nominal_rejects_science_when_attitude_is_invalid():\n    machine = FlightModeMachine(Mode.NOMINAL)\n\n    accepted = machine.transition(Mode.SCIENCE, attitude_valid=False)\n\n    assert accepted is False\n    assert machine.mode is Mode.NOMINAL\n",
+  "repair_rationale": "",
+  "transition_cases": [
+    {
+      "source_state": "IDLE",
+      "trigger": "Request transition to NOMINAL",
+      "guard_condition": "battery_ok and attitude_valid are both true",
+      "expected_state": "NOMINAL",
+      "transition_type": "Normal transition",
+      "is_transition_allowed": true,
+      "safety_relevance": false
+    },
+    {
+      "source_state": "IDLE",
+      "trigger": "Request transition to NOMINAL",
+      "guard_condition": "battery_ok is false",
+      "expected_state": "IDLE",
+      "transition_type": "Rejected guarded transition",
+      "is_transition_allowed": false,
+      "safety_relevance": false
+    },
+    {
+      "source_state": "NOMINAL",
+      "trigger": "Request transition to SCIENCE",
+      "guard_condition": "attitude_valid is false",
+      "expected_state": "NOMINAL",
+      "transition_type": "Rejected guarded transition",
+      "is_transition_allowed": false,
+      "safety_relevance": false
+    }
+  ],
+  "expected_behavior": "The machine enters NOMINAL from IDLE only when both required guards pass. It rejects requests with a failed guard and preserves the current mode.",
+  "expected_assertions": [
+    "A guarded IDLE-to-NOMINAL request returns true when battery and attitude checks pass.",
+    "A rejected transition returns false and leaves the machine in its source mode.",
+    "A NOMINAL-to-SCIENCE request is rejected when attitude_valid is false."
+  ],
+  "implementation_source": "from enum import Enum\n\nclass Mode(Enum):\n    SAFE = 'safe'\n    IDLE = 'idle'\n    NOMINAL = 'nominal'\n    SCIENCE = 'science'\n\nclass FlightModeMachine:\n    def __init__(self, mode=Mode.IDLE):\n        self.mode = mode\n\n    def transition(self, target, *, battery_ok=False, attitude_valid=False, ground_release=False):\n        if self.mode is Mode.SAFE:\n            if target is Mode.IDLE and ground_release:\n                self.mode = Mode.IDLE\n                return True\n            return False\n        if self.mode is Mode.IDLE and target is Mode.NOMINAL and battery_ok and attitude_valid:\n            self.mode = Mode.NOMINAL\n            return True\n        if self.mode is Mode.NOMINAL and target is Mode.SCIENCE and attitude_valid:\n            self.mode = Mode.SCIENCE\n            return True\n        return False\n"
+}
