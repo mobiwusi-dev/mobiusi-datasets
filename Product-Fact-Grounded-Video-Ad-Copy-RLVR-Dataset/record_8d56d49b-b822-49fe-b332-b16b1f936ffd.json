@@ -1,0 +1,118 @@
+{
+  "permitted_facts": [
+    {
+      "fact_statement": "The lamp provides three brightness levels.",
+      "fact_category": "Function",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The lamp charges through a USB-C port.",
+      "fact_category": "Charging",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The lamp runs for up to 8 hours per charge at the lowest brightness level.",
+      "fact_category": "Runtime",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "Brightness is controlled by touch.",
+      "fact_category": "Controls",
+      "mandatory_for_ad": false
+    },
+    {
+      "fact_statement": "The lamp has an adjustable neck for directing light.",
+      "fact_category": "Design",
+      "mandatory_for_ad": false
+    }
+  ],
+  "copy_format": "旁白",
+  "total_reward": 1,
+  "atomic_claims": [
+    {
+      "claim_text": "LumaFold offers three brightness levels.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The lamp provides three brightness levels."
+      ]
+    },
+    {
+      "claim_text": "Brightness is controlled by touch.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "Brightness is controlled by touch."
+      ]
+    },
+    {
+      "claim_text": "The neck adjusts to direct the light.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The lamp has an adjustable neck for directing light."
+      ]
+    },
+    {
+      "claim_text": "The lamp charges through USB-C.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The lamp charges through a USB-C port."
+      ]
+    },
+    {
+      "claim_text": "The lamp runs for up to 8 hours per charge on the lowest brightness setting.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The lamp runs for up to 8 hours per charge at the lowest brightness level."
+      ]
+    }
+  ],
+  "generated_copy": "Need focused light at your desk? LumaFold offers three brightness levels, controlled by touch. Adjust the neck to direct the light, charge through USB-C, and get up to 8 hours per charge on the lowest setting.",
+  "reward_breakdown": {
+    "factuality_score": 1,
+    "required_info_score": 1,
+    "instruction_compliance_score": 1
+  },
+  "product_materials": {
+    "product_name": "LumaFold Desk Lamp",
+    "product_category": "Rechargeable desk lamp",
+    "product_description": "A rechargeable task light with touch controls and an adjustable neck for directing light across a desk.",
+    "product_attributes": [
+      {
+        "attribute_name": "Charging port",
+        "attribute_value": "USB-C"
+      },
+      {
+        "attribute_name": "Brightness settings",
+        "attribute_value": "Three levels"
+      },
+      {
+        "attribute_name": "Runtime",
+        "attribute_value": "Up to 8 hours per charge at the lowest brightness level"
+      },
+      {
+        "attribute_name": "Light direction",
+        "attribute_value": "Adjustable neck"
+      }
+    ]
+  },
+  "verification_passed": true,
+  "required_fact_checks": [
+    {
+      "required_fact_statement": "The lamp provides three brightness levels.",
+      "preserved": true,
+      "evidence_quote": "LumaFold offers three brightness levels"
+    },
+    {
+      "required_fact_statement": "The lamp charges through a USB-C port.",
+      "preserved": true,
+      "evidence_quote": "charge through USB-C"
+    },
+    {
+      "required_fact_statement": "The lamp runs for up to 8 hours per charge at the lowest brightness level.",
+      "preserved": true,
+      "evidence_quote": "get up to 8 hours per charge on the lowest setting"
+    }
+  ],
+  "generation_instruction": "Write a warm, concise video voiceover for a desk-lighting product. Include all mandatory facts and do not add performance claims beyond the permitted facts.",
+  "unsupported_claim_count": 0,
+  "required_fact_retention_rate": 1
+}

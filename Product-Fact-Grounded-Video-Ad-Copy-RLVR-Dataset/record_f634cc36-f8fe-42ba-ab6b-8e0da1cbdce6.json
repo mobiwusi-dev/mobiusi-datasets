@@ -1,0 +1,101 @@
+{
+  "generated_copy": "900 mL capacity\nTwo separate compartments\nMicrowave-safe base—remove the lid first\nTop-rack dishwasher-safe",
+  "unsupported_claim_count": 0,
+  "required_fact_retention_rate": 1,
+  "copy_format": "屏幕文案",
+  "total_reward": 1,
+  "atomic_claims": [
+    {
+      "claim_text": "The container has a capacity of 900 mL.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The container has a capacity of 900 mL."
+      ]
+    },
+    {
+      "claim_text": "The container has two compartments.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The container has two compartments."
+      ]
+    },
+    {
+      "claim_text": "The base is microwave-safe when the lid is removed.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The base is microwave-safe when the lid is removed."
+      ]
+    },
+    {
+      "claim_text": "The container is suitable for the top rack of a dishwasher.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The container is suitable for the top rack of a dishwasher."
+      ]
+    }
+  ],
+  "permitted_facts": [
+    {
+      "fact_statement": "The container has a capacity of 900 mL.",
+      "fact_category": "Capacity",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The container has two compartments.",
+      "fact_category": "Design",
+      "mandatory_for_ad": false
+    },
+    {
+      "fact_statement": "The base is microwave-safe when the lid is removed.",
+      "fact_category": "Use",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The container is suitable for the top rack of a dishwasher.",
+      "fact_category": "Care",
+      "mandatory_for_ad": false
+    }
+  ],
+  "reward_breakdown": {
+    "factuality_score": 1,
+    "required_info_score": 1,
+    "instruction_compliance_score": 1
+  },
+  "product_materials": {
+    "product_name": "HarborStack Meal Container",
+    "product_category": "Food storage container",
+    "product_description": "A 900 mL food container divided into two compartments, with a base that can be used in a microwave when the lid is removed.",
+    "product_attributes": [
+      {
+        "attribute_name": "Capacity",
+        "attribute_value": "900 mL"
+      },
+      {
+        "attribute_name": "Compartments",
+        "attribute_value": "Two"
+      },
+      {
+        "attribute_name": "Microwave use",
+        "attribute_value": "Base is microwave-safe with the lid removed"
+      },
+      {
+        "attribute_name": "Dishwasher use",
+        "attribute_value": "Top rack"
+      }
+    ]
+  },
+  "verification_passed": true,
+  "required_fact_checks": [
+    {
+      "required_fact_statement": "The container has a capacity of 900 mL.",
+      "preserved": true,
+      "evidence_quote": "900 mL capacity"
+    },
+    {
+      "required_fact_statement": "The base is microwave-safe when the lid is removed.",
+      "preserved": true,
+      "evidence_quote": "Microwave-safe base—remove the lid first"
+    }
+  ],
+  "generation_instruction": "Create four concise on-screen lines for a product video. Preserve the capacity and the microwave-use condition. Avoid performance claims beyond the listed facts."
+}

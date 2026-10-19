@@ -1,0 +1,111 @@
+{
+  "total_reward": 0.8,
+  "copy_format": "旁白",
+  "atomic_claims": [
+    {
+      "claim_text": "BreezePin is designed for desk use.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The fan is designed for desk use."
+      ]
+    },
+    {
+      "claim_text": "The fan clips onto edges up to 35 mm thick.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The fan clips onto edges up to 35 mm thick."
+      ]
+    },
+    {
+      "claim_text": "The fan has three fan speed settings.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The fan has three fan speed settings."
+      ]
+    },
+    {
+      "claim_text": "The fan runs for up to 6 hours per full charge at low speed.",
+      "support_status": "supported",
+      "matched_fact_statements": [
+        "The fan runs for up to 6 hours per full charge at low speed."
+      ]
+    },
+    {
+      "claim_text": "The fan is quieter than any fan in its class.",
+      "support_status": "unsupported",
+      "matched_fact_statements": []
+    }
+  ],
+  "generated_copy": "Meet BreezePin, a desk fan for your workspace. It clips onto edges up to 35 mm thick, offers three fan speed settings, and runs for up to 6 hours per full charge at low speed. It’s quieter than any fan in its class.",
+  "permitted_facts": [
+    {
+      "fact_statement": "The fan is designed for desk use.",
+      "fact_category": "Use",
+      "mandatory_for_ad": false
+    },
+    {
+      "fact_statement": "The fan clips onto edges up to 35 mm thick.",
+      "fact_category": "Design",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The fan has three fan speed settings.",
+      "fact_category": "Function",
+      "mandatory_for_ad": false
+    },
+    {
+      "fact_statement": "The fan runs for up to 6 hours per full charge at low speed.",
+      "fact_category": "Runtime",
+      "mandatory_for_ad": true
+    },
+    {
+      "fact_statement": "The fan recharges through a USB-C port.",
+      "fact_category": "Charging",
+      "mandatory_for_ad": false
+    }
+  ],
+  "reward_breakdown": {
+    "factuality_score": 0.8,
+    "required_info_score": 1,
+    "instruction_compliance_score": 0.6
+  },
+  "product_materials": {
+    "product_name": "BreezePin Clip Fan",
+    "product_category": "Rechargeable clip-on personal fan",
+    "product_description": "A rechargeable fan designed for desk use, with a clip for attaching it to edges of limited thickness.",
+    "product_attributes": [
+      {
+        "attribute_name": "Maximum edge thickness",
+        "attribute_value": "35 mm"
+      },
+      {
+        "attribute_name": "Fan speeds",
+        "attribute_value": "Three settings"
+      },
+      {
+        "attribute_name": "Runtime",
+        "attribute_value": "Up to 6 hours per full charge at low speed"
+      },
+      {
+        "attribute_name": "Charging port",
+        "attribute_value": "USB-C"
+      }
+    ]
+  },
+  "verification_passed": false,
+  "required_fact_checks": [
+    {
+      "required_fact_statement": "The fan clips onto edges up to 35 mm thick.",
+      "preserved": true,
+      "evidence_quote": "It clips onto edges up to 35 mm thick"
+    },
+    {
+      "required_fact_statement": "The fan runs for up to 6 hours per full charge at low speed.",
+      "preserved": true,
+      "evidence_quote": "runs for up to 6 hours per full charge at low speed"
+    }
+  ],
+  "generation_instruction": "Write an upbeat, approximately 15-second voiceover for desk users. Include the exact clip thickness limit and runtime. Do not make comparisons or claims about noise.",
+  "unsupported_claim_count": 1,
+  "required_fact_retention_rate": 1
+}
