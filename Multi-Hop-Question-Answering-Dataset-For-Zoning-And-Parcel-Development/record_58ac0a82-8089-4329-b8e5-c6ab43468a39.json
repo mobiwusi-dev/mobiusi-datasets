@@ -1,0 +1,10 @@
+{
+  "answer": "No. The uses, dwelling-unit count, and lot coverage comply, but the proposed 22-meter height exceeds the Airport Overlay limit of 20 meters.",
+  "question": "Does the mixed-use proposal comply with the C-2 and Airport Overlay rules?",
+  "reasoning": "C-2 permits both multifamily housing and neighborhood retail. The 10,000-square-meter parcel equals one hectare, so the 72 apartments are below the 80-unit density cap. The 5,200-square-meter footprint represents 52% lot coverage, below the 55% limit. However, the parcel is in the Airport Overlay, where the maximum height is 20 meters. The proposed building is 22 meters tall, so it violates that applicable overlay restriction.",
+  "zoning_rules": "The C-2 district permits multifamily housing and neighborhood retail, with a maximum of 80 dwelling units per hectare and maximum lot coverage of 55%. In the Airport Overlay, no structure may exceed 20 meters in height. The overlay height limit applies in addition to the base-district rules and may not be exceeded through an administrative adjustment.",
+  "compliance_status": "不符合",
+  "parcel_description": "The parcel is 10,000 square meters in area, zoned C-2, and lies within the Airport Overlay.",
+  "development_proposal": "The proposal is a mixed-use building containing 72 apartments and neighborhood retail. Its footprint is 5,200 square meters and its maximum height is 22 meters.",
+  "applicable_constraints": "The proposal may include the stated uses and unit count and must stay at or below 55% lot coverage. The Airport Overlay imposes a 20-meter maximum height, which the current proposal exceeds; an administrative adjustment is not available under the supplied rules."
+}

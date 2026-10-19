@@ -1,0 +1,10 @@
+{
+  "answer": "Yes. Multifamily housing is permitted, and the proposal meets the applicable overlay density, coverage, and frontage limits.",
+  "question": "Does the apartment proposal comply with the applicable use, density, lot-coverage, and active-frontage rules?",
+  "reasoning": "The parcel is zoned R-M, where multifamily housing is permitted. It is 300 meters from a station, so it qualifies for the Transit Overlay limits, which replace the standard density and coverage limits. Its area is 0.4 hectares, giving an overlay density cap of 20 units; the proposal has 18. Its footprint covers 42.5% of the parcel (1,700 ÷ 4,000), below the 45% overlay cap. The proposed 70% active frontage also exceeds the 60% requirement.",
+  "zoning_rules": "The R-M district permits multifamily housing. Its standard limits are 30 dwelling units per hectare and 35% lot coverage. Within the Transit Overlay, parcels no more than 400 meters from a station may use the overlay limits instead: a maximum of 50 dwelling units per hectare and 45% lot coverage. A project in the overlay must also provide an active ground-floor frontage along at least 60% of the street-facing lot line.",
+  "compliance_status": "符合",
+  "parcel_description": "The parcel is 4,000 square meters in area, zoned R-M, and located 300 meters from a transit station. It fronts one public street.",
+  "development_proposal": "The proposal is an 18-unit apartment building with a 1,700-square-meter footprint. Active ground-floor uses would occupy 70% of the street-facing frontage.",
+  "applicable_constraints": "The proposal must remain within 20 dwelling units and 45% lot coverage, and maintain active ground-floor frontage along at least 60% of the street-facing lot line. The stated proposal meets each limit."
+}
