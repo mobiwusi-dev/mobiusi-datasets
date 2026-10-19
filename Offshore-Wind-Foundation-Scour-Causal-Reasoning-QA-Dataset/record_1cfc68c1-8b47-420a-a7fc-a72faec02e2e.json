@@ -1,0 +1,17 @@
+{
+  "answer": "The jacket legs and braces disturb the current; flow acceleration around individual legs and turbulent wakes can increase local bed shear and sediment transport. Where the bed sediment is mobile, this can produce localized scour around the pile-supported legs. Bed lowering can reduce the soil cover and lateral restraint around affected piles, potentially increasing their deflection under lateral loading and changing how loads are shared among the legs. The association between stronger currents, scour, and higher deflection is consistent with this chain, but is not proof that scour caused the deflection: stronger currents can also increase direct hydrodynamic loading, and other soil or structural conditions may matter.",
+  "question": "At a fixed offshore wind jacket foundation, surveys identify localized bed lowering around several pile-supported legs where tidal currents pass through the frame. Deflection is also higher during periods of stronger currents. How could the local flow explain the bed change and affect the piles, and does the co-occurrence prove causation?",
+  "causal_chain": [
+    "Tidal currents pass through and interact with the jacket legs and braces.",
+    "Flow acceleration and turbulent wakes can increase local bed shear and sediment transport.",
+    "Mobile sediment is eroded, producing localized scour around pile-supported legs.",
+    "Bed lowering reduces soil cover and lateral restraint around affected piles.",
+    "Reduced restraint may contribute to greater pile deflection and changed load sharing under lateral loading."
+  ],
+  "foundation_type": "jacket",
+  "causal_mechanism": "The legs and braces alter the current; local acceleration and turbulent wakes can increase bed shear and sediment transport, producing erosion where the seabed sediment is mobile.",
+  "scour_description": "Localized scour develops around pile-supported jacket legs where currents pass through the frame and disturb the seabed.",
+  "soil_support_effect": "Bed lowering reduces soil cover and lateral restraint around affected piles.",
+  "structural_stability_effect": "Reduced restraint may increase pile deflection under lateral loading and alter load sharing among the legs, but the described association alone does not establish a stability loss.",
+  "correlation_causation_distinction": "The coincidence of stronger currents, scour, and higher deflection is an association. Scour-driven loss of lateral restraint is a plausible causal mechanism, but stronger currents can independently increase hydrodynamic loading, and other soil or structural conditions may contribute. The observations described do not establish scour as the sole cause."
+}

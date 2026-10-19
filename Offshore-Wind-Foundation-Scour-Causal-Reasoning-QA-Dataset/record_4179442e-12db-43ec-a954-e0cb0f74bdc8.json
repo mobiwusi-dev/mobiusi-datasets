@@ -1,0 +1,17 @@
+{
+  "answer": "The pile disrupts the approaching flow, creating a downflow and horseshoe vortex near its base, while flow acceleration and turbulence around the pile can increase bed shear stress. If that stress mobilizes the sand, sediment is transported away and the scour hole deepens. Removing soil near the pile reduces embedment and the amount of surrounding soil available to provide lateral stiffness and resistance, which can make greater rotation under comparable loads plausible. The timing of deeper scour and increased rotation is consistent with this mechanism, but does not by itself establish that scour was the only cause; changes in loading, soil layering, or cyclic soil response could also affect rotation.",
+  "question": "At a fixed offshore wind monopile in mobile sand, inspections after energetic wave-current conditions show a deeper scour hole around the pile and greater lateral rotation under comparable operating loads. What mechanism could connect these observations, and what limits the causal conclusion?",
+  "causal_chain": [
+    "Energetic wave-current conditions interact with the monopile and disturb the local flow.",
+    "Downflow, vortical motion, and local turbulence can increase bed shear stress.",
+    "Mobilized sand is transported away, deepening the scour hole.",
+    "Erosion reduces embedment and lateral soil support.",
+    "Reduced soil stiffness and resistance can contribute to greater pile rotation under comparable loads."
+  ],
+  "foundation_type": "monopile",
+  "causal_mechanism": "Flow disruption at the pile creates a downflow and horseshoe vortex, with local acceleration and turbulence that can raise bed shear stress and transport mobilized sand away from the pile.",
+  "scour_description": "A scour hole deepens in mobile sand around the monopile following energetic wave-current conditions.",
+  "soil_support_effect": "Erosion near the pile reduces embedment and the surrounding soil available to provide lateral stiffness and resistance.",
+  "structural_stability_effect": "Reduced lateral soil support can make greater pile rotation under comparable operating loads more likely; the observation alone does not establish a loss of overall structural stability.",
+  "correlation_causation_distinction": "The co-occurrence of deeper scour and greater rotation is an association. The flow-to-erosion-to-reduced-support mechanism provides a plausible causal explanation, but other changes, including loading, soil layering, or cyclic soil response, may also contribute; the observations do not isolate scour as the sole cause."
+}
