@@ -1,0 +1,16 @@
+{
+  "answer": "The member will owe $440: $300 toward the remaining deductible and $140 in coinsurance. The plan will pay $560, and $3,360 will remain before the member reaches the out-of-pocket maximum.",
+  "reasoning": "1. The deductible is $1,500, and the member has already paid $1,200, so $300 of the service's $1,000 allowed amount is applied to the deductible. 2. The remaining $700 is subject to 20% coinsurance, which is $140 for the member; the plan pays the other $560. 3. The member's cost for this service is $300 + $140 = $440. 4. The member had accumulated $1,200 toward the $5,000 out-of-pocket maximum, so the remaining amount is $5,000 - ($1,200 + $440) = $3,360.",
+  "care_scenario": "The member has paid $1,200 toward the deductible and out-of-pocket maximum this plan year. An in-network covered service has an allowed amount of $1,000. No other cost-sharing applies to this service.",
+  "cost_question": "How much will the member owe for this service, how much will the plan pay, and how much of the out-of-pocket maximum will remain?",
+  "plan_document": "For in-network services, the individual deductible is $1,500 per plan year. After the deductible is met, the member pays 20% coinsurance and the plan pays 80% of the allowed amount. Deductible payments and coinsurance count toward the $5,000 individual out-of-pocket maximum. Once the maximum is reached, the plan pays 100% of covered in-network allowed amounts for the rest of the plan year.",
+  "cost_breakdown": {
+    "cost_sharing_method": "Apply the remaining deductible first, then 20% member coinsurance on the balance.",
+    "deductible_applied": 300,
+    "copayment_applied": 0,
+    "coinsurance_applied": 140,
+    "plan_payment": 560,
+    "member_responsibility": 440,
+    "remaining_out_of_pocket_maximum": 3360
+  }
+}
