@@ -1,0 +1,23 @@
+{
+  "answer": "The manna account presents food as provision from God, while Deuteronomy explains that the wilderness experience taught Israel that life depends not on bread alone but on God’s word. When tempted to make bread, Jesus answers with that same principle, applying it to his own situation.",
+  "evidence": [
+    {
+      "passage_reference": "Exodus 16:4",
+      "quotation": "Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day.",
+      "evidence_role": "Establishes the wilderness provision of manna that is interpreted in Deuteronomy."
+    },
+    {
+      "passage_reference": "Deuteronomy 8:3",
+      "quotation": "And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live.",
+      "evidence_role": "Connects the manna episode to the teaching that life depends on God’s word, not food alone."
+    },
+    {
+      "passage_reference": "Matthew 4:3–4",
+      "quotation": "And when the tempter came to him, he said, If thou be the Son of God, command that these stones be made bread. But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.",
+      "evidence_role": "Shows the temptation and Jesus’ response, which echoes the principle stated in Deuteronomy."
+    }
+  ],
+  "reasoning": "Exodus describes manna as provision in the wilderness. Deuteronomy looks back on that event and states the lesson it taught: sustenance is not limited to bread, because life also depends on God’s word. Matthew places Jesus in a temptation involving bread and records his answer using that same teaching. Together, the passages link the wilderness provision to Jesus’ response through a shared principle of dependence on God.",
+  "relation_type": "Thematic interpretation and quotation across narrative contexts",
+  "source_material": "Text: The Bible (KJV), Exodus 16:4; Deuteronomy 8:3; Matthew 4:3–4. Question: How does the account of manna relate to Jesus’ response to the temptation to make bread, and what principle connects the passages? Passages: Exodus 16:4 — Then said the LORD unto Moses, Behold, I will rain bread from heaven for you; and the people shall go out and gather a certain rate every day. Deuteronomy 8:3 — And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live. Matthew 4:3 — And when the tempter came to him, he said, If thou be the Son of God, command that these stones be made bread. Matthew 4:4 — But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God."
+}

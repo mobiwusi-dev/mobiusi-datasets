@@ -1,0 +1,23 @@
+{
+  "answer": "The parable answers by focusing on the Samaritan’s conduct toward the wounded man: he becomes a neighbor by showing compassion and providing practical care. The closing exchange identifies the neighbor as the one who showed mercy, and Jesus tells the questioner to act likewise.",
+  "evidence": [
+    {
+      "passage_reference": "Luke 10:29",
+      "quotation": "And who is my neighbour?",
+      "evidence_role": "Introduces the question that the parable and its conclusion address."
+    },
+    {
+      "passage_reference": "Luke 10:33–35",
+      "quotation": "But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, And went to him, and bound up his wounds, pouring in oil and wine, and set him on his own beast, and brought him to an inn, and took care of him.",
+      "evidence_role": "Provides the central example of neighborly conduct through compassion and concrete care."
+    },
+    {
+      "passage_reference": "Luke 10:36–37",
+      "quotation": "Which now of these three, thinkest thou, was neighbour unto him that fell among the thieves? And he said, He that shewed mercy on him. Then said Jesus unto him, Go, and do thou likewise.",
+      "evidence_role": "Interprets the parable’s example and applies it as an instruction to show mercy."
+    }
+  ],
+  "reasoning": "The opening question asks who qualifies as a neighbor. The Samaritan’s actions supply the example: he responds to the injured man with compassion and sustained practical help. The concluding question then identifies the neighbor as the person who showed mercy, and the command to do likewise turns the example into the answer’s practical standard.",
+  "relation_type": "Question and answer with an illustrative example",
+  "source_material": "Text: The Bible (KJV), Luke 10:29, 33–37. Question: How does the parable answer the question of who counts as a neighbor, and what action does it present as the relevant standard? Passages: Luke 10:29 — But he, willing to justify himself, said unto Jesus, And who is my neighbour? Luke 10:33–35 — But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, And went to him, and bound up his wounds, pouring in oil and wine, and set him on his own beast, and brought him to an inn, and took care of him. And on the morrow when he departed, he took out two pence, and gave them to the host, and said unto him, Take care of him; and whatsoever thou spendest more, when I come again, I will repay thee. Luke 10:36–37 — Which now of these three, thinkest thou, was neighbour unto him that fell among the thieves? And he said, He that shewed mercy on him. Then said Jesus unto him, Go, and do thou likewise."
+}

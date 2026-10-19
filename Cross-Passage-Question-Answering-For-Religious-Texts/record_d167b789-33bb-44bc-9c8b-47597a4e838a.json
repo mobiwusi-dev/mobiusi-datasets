@@ -1,0 +1,23 @@
+{
+  "relation_type": "Causal sequence and subsequent implementation",
+  "answer": "Joseph interprets the dreams as foretelling seven years of abundance followed by seven years of famine. Because the abundance will be followed by severe scarcity, he recommends appointing oversight, collecting a fifth of the produce during the plentiful years, and storing food in the cities. The later passage reports that food was gathered during those years and stored in the cities, carrying out the proposed policy.",
+  "evidence": [
+    {
+      "passage_reference": "Genesis 41:25, 29–30",
+      "quotation": "The dream of Pharaoh is one: God hath shewed Pharaoh what he is about to do. Behold, there come seven years of great plenty throughout all the land of Egypt: And there shall arise after them seven years of famine; and all the plenty shall be forgotten in the land of Egypt; and the famine shall consume the land.",
+      "evidence_role": "Provides Joseph’s interpretation and the sequence of abundance followed by famine, which motivates the response."
+    },
+    {
+      "passage_reference": "Genesis 41:33–36",
+      "quotation": "Let Pharaoh look out a man discreet and wise, and set him over the land of Egypt. Let Pharaoh do this, and let him appoint officers over the land, and take up the fifth part of the land of Egypt in the seven plenteous years. And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities.",
+      "evidence_role": "States the proposed administrative and storage measures for preparing for the famine."
+    },
+    {
+      "passage_reference": "Genesis 41:47–49",
+      "quotation": "And in the seven plenteous years the earth brought forth by handfuls. And he gathered up all the food of the seven years, which were in the land of Egypt, and laid up the food in the cities.",
+      "evidence_role": "Reports the collection and storage of food, linking the proposal to its implementation."
+    }
+  ],
+  "reasoning": "Joseph’s interpretation identifies both the timing and the contrast between plentiful years and famine. His proposal responds directly to that forecast by turning part of the surplus into a reserve. The later account describes gathering and storing the harvest in the cities, showing the relationship between the predicted crisis, the proposed preparation, and its execution.",
+  "source_material": "Text: The Bible (KJV), Genesis 41:25, 29–36, 47–49. Question: How does Joseph’s interpretation of Pharaoh’s dreams lead to the policy he proposes, and how is that policy carried out? Passages: Genesis 41:25 — And Joseph said unto Pharaoh, The dream of Pharaoh is one: God hath shewed Pharaoh what he is about to do. Genesis 41:29–30 — Behold, there come seven years of great plenty throughout all the land of Egypt: And there shall arise after them seven years of famine; and all the plenty shall be forgotten in the land of Egypt; and the famine shall consume the land. Genesis 41:33–36 — Now therefore let Pharaoh look out a man discreet and wise, and set him over the land of Egypt. Let Pharaoh do this, and let him appoint officers over the land, and take up the fifth part of the land of Egypt in the seven plenteous years. And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities. And that food shall be for store to the land against the seven years of famine. Genesis 41:47–49 — And in the seven plenteous years the earth brought forth by handfuls. And he gathered up all the food of the seven years, which were in the land of Egypt, and laid up the food in the cities."
+}
