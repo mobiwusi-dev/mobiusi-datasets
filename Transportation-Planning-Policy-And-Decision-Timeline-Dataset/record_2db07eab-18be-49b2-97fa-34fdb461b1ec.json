@@ -1,0 +1,81 @@
+{
+  "policy_category": "Public transit",
+  "events": [
+    {
+      "event_date": "2022-01-11",
+      "date_precision": "day",
+      "event_type": "proposal",
+      "event_description": "Ternwick Regional Transit Board submitted a proposal for a rail connection between West Quay and Ternwick Central Station.",
+      "involved_entities": [
+        "Ternwick Regional Transit Board"
+      ],
+      "transport_modes": [
+        "rail"
+      ],
+      "decision_status": "proposed",
+      "evidence_quote": "Ternwick Regional Transit Board submitted a proposal for the West Quay Rail Extension on 11 January 2022."
+    },
+    {
+      "event_date": "2022-05-04",
+      "date_precision": "day",
+      "event_type": "public_consultation",
+      "event_description": "The Transit Board invited public comment on the proposed extension from 4 May through 17 June 2022.",
+      "involved_entities": [
+        "Ternwick Regional Transit Board"
+      ],
+      "transport_modes": [
+        "rail"
+      ],
+      "decision_status": "under_consultation",
+      "evidence_quote": "The board invited public comment from 4 May through 17 June 2022."
+    },
+    {
+      "event_date": "2022-08-19",
+      "date_precision": "day",
+      "event_type": "revision",
+      "event_description": "Following consultation, the board revised the alignment by moving the proposed West Quay station one block inland.",
+      "involved_entities": [
+        "Ternwick Regional Transit Board"
+      ],
+      "transport_modes": [
+        "rail"
+      ],
+      "decision_status": "revised",
+      "evidence_quote": "After the consultation, it revised the alignment on 19 August 2022, moving the proposed West Quay station one block inland."
+    },
+    {
+      "event_date": "2022-10-06",
+      "date_precision": "day",
+      "event_type": "approval",
+      "event_description": "Ternwick Council approved the revised rail extension.",
+      "involved_entities": [
+        "Ternwick Council"
+      ],
+      "transport_modes": [
+        "rail"
+      ],
+      "decision_status": "approved",
+      "evidence_quote": "Ternwick Council approved the revised extension on 6 October 2022."
+    },
+    {
+      "event_date": "2024-03-21",
+      "date_precision": "day",
+      "event_type": "suspension",
+      "event_description": "The Transit Board suspended the project pending an updated cost review and funding assessment; no construction date had been set.",
+      "involved_entities": [
+        "Ternwick Regional Transit Board"
+      ],
+      "transport_modes": [
+        "rail"
+      ],
+      "decision_status": "suspended",
+      "evidence_quote": "On 21 March 2024, the board suspended the project pending an updated cost review and funding assessment."
+    }
+  ],
+  "policy_name": "West Quay Rail Extension",
+  "source_text": "Title: Ternwick suspends West Quay rail extension pending review\nPublished: 2024-03-22\n\nTernwick Regional Transit Board submitted a proposal for the West Quay Rail Extension on 11 January 2022. The proposed line would connect the West Quay district with Ternwick Central Station.\n\nThe board invited public comment from 4 May through 17 June 2022. After the consultation, it revised the alignment on 19 August 2022, moving the proposed West Quay station one block inland. Ternwick Council approved the revised extension on 6 October 2022.\n\nOn 21 March 2024, the board suspended the project pending an updated cost review and funding assessment. No construction date has been set.",
+  "source_title": "Ternwick suspends West Quay rail extension pending review",
+  "decision_summary": "Ternwick Council approved the revised rail extension in October 2022, but the Transit Board suspended the project in March 2024 pending a cost review and funding assessment.",
+  "geographic_scope": "The proposed rail connection between Ternwick's West Quay district and Ternwick Central Station",
+  "source_publication_date": "2024-03-22"
+}

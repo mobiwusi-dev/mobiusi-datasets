@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "event_date": "2023-05-18",
+      "date_precision": "day",
+      "event_type": "proposal",
+      "event_description": "Merehaven's Street Design Office proposed protected cycle lanes and wider sidewalks along the Harbor Loop corridor.",
+      "involved_entities": [
+        "Merehaven's Street Design Office"
+      ],
+      "transport_modes": [
+        "cycling",
+        "walking",
+        "road transport"
+      ],
+      "decision_status": "proposed",
+      "evidence_quote": "Merehaven's Street Design Office proposed the Harbor Loop Safe Streets Plan on 18 May 2023."
+    },
+    {
+      "event_date": "2023-10-02",
+      "date_precision": "day",
+      "event_type": "public_consultation",
+      "event_description": "The Street Design Office held a public consultation on the plan from 2 October through 12 November 2023.",
+      "involved_entities": [
+        "Merehaven's Street Design Office"
+      ],
+      "transport_modes": [
+        "cycling",
+        "walking",
+        "road transport"
+      ],
+      "decision_status": "under_consultation",
+      "evidence_quote": "The office held a public consultation from 2 October through 12 November 2023."
+    },
+    {
+      "event_date": "2024-02",
+      "date_precision": "month",
+      "event_type": "revision",
+      "event_description": "The office revised the design in response to feedback, retaining loading access on two commercial blocks.",
+      "involved_entities": [
+        "Merehaven's Street Design Office"
+      ],
+      "transport_modes": [
+        "cycling",
+        "walking",
+        "road transport"
+      ],
+      "decision_status": "revised",
+      "evidence_quote": "In response to feedback, it revised the design in February 2024 to retain loading access on two commercial blocks."
+    },
+    {
+      "event_date": "2024-03-08",
+      "date_precision": "day",
+      "event_type": "approval",
+      "event_description": "Merehaven Council approved the revised Harbor Loop plan.",
+      "involved_entities": [
+        "Merehaven Council"
+      ],
+      "transport_modes": [
+        "cycling",
+        "walking",
+        "road transport"
+      ],
+      "decision_status": "approved",
+      "evidence_quote": "Merehaven Council approved the revised plan on 8 March 2024."
+    },
+    {
+      "event_date": "2024-09-09",
+      "date_precision": "day",
+      "event_type": "implementation",
+      "event_description": "Construction began along the Harbor Loop corridor, with work proceeding in sections.",
+      "involved_entities": [],
+      "transport_modes": [
+        "cycling",
+        "walking",
+        "road transport"
+      ],
+      "decision_status": "implemented",
+      "evidence_quote": "Construction began on 9 September 2024, with work proceeding along the corridor in sections."
+    }
+  ],
+  "policy_name": "Harbor Loop Safe Streets Plan",
+  "source_text": "Title: Merehaven begins work on Harbor Loop safe-streets plan\nPublished: 2024-09-23\n\nMerehaven's Street Design Office proposed the Harbor Loop Safe Streets Plan on 18 May 2023. The proposal would add protected cycle lanes and wider sidewalks along the Harbor Loop, a road corridor connecting the ferry district with the town center.\n\nThe office held a public consultation from 2 October through 12 November 2023. In response to feedback, it revised the design in February 2024 to retain loading access on two commercial blocks. Merehaven Council approved the revised plan on 8 March 2024.\n\nConstruction began on 9 September 2024, with work proceeding along the corridor in sections.",
+  "source_title": "Merehaven begins work on Harbor Loop safe-streets plan",
+  "policy_category": "Active travel",
+  "decision_summary": "Merehaven Council approved a revised Harbor Loop design in March 2024, and construction began in September 2024.",
+  "geographic_scope": "The Harbor Loop road corridor connecting Merehaven's ferry district with the town center",
+  "source_publication_date": "2024-09-23"
+}

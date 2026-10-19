@@ -1,0 +1,67 @@
+{
+  "source_publication_date": "2025-06-18",
+  "events": [
+    {
+      "event_date": "2024-09-12",
+      "date_precision": "day",
+      "event_type": "proposal",
+      "event_description": "Alderwick's Mobility Office proposed the Frequent Bus Network Plan, covering three routes between the central districts and the Eastbank employment area.",
+      "involved_entities": [
+        "Alderwick's Mobility Office"
+      ],
+      "transport_modes": [
+        "bus"
+      ],
+      "decision_status": "proposed",
+      "evidence_quote": "Alderwick's Mobility Office proposed the Alderwick Frequent Bus Network Plan on 12 September 2024."
+    },
+    {
+      "event_date": "2025-02-03",
+      "date_precision": "day",
+      "event_type": "public_consultation",
+      "event_description": "The Mobility Office opened a public consultation on the plan, which continued through 14 March 2025.",
+      "involved_entities": [
+        "Alderwick's Mobility Office"
+      ],
+      "transport_modes": [
+        "bus"
+      ],
+      "decision_status": "under_consultation",
+      "evidence_quote": "The office opened a public consultation on 3 February 2025, which ran through 14 March."
+    },
+    {
+      "event_date": "2025-06-10",
+      "date_precision": "day",
+      "event_type": "revision",
+      "event_description": "After reviewing consultation responses, the office published a revised network map.",
+      "involved_entities": [
+        "Alderwick's Mobility Office"
+      ],
+      "transport_modes": [
+        "bus"
+      ],
+      "decision_status": "revised",
+      "evidence_quote": "After reviewing the responses, it published a revised network map on 10 June 2025."
+    },
+    {
+      "event_date": "2025-06-17",
+      "date_precision": "day",
+      "event_type": "approval",
+      "event_description": "Alderwick Council approved the revised plan; the planned service changes had not yet begun at the time of publication.",
+      "involved_entities": [
+        "Alderwick Council"
+      ],
+      "transport_modes": [
+        "bus"
+      ],
+      "decision_status": "approved",
+      "evidence_quote": "Alderwick Council approved the revised plan on 17 June 2025."
+    }
+  ],
+  "policy_name": "Alderwick Frequent Bus Network Plan",
+  "source_text": "Title: Alderwick approves revised bus plan after public review\nPublished: 2025-06-18\n\nAlderwick's Mobility Office proposed the Alderwick Frequent Bus Network Plan on 12 September 2024. The plan would add all-day service on three routes linking the city's central districts with the Eastbank employment area.\n\nThe office opened a public consultation on 3 February 2025, which ran through 14 March. After reviewing the responses, it published a revised network map on 10 June 2025.\n\nAlderwick Council approved the revised plan on 17 June 2025. The service changes are scheduled for next year and have not yet started.",
+  "source_title": "Alderwick approves revised bus plan after public review",
+  "policy_category": "Public transit",
+  "decision_summary": "Alderwick Council approved the revised bus network plan on 17 June 2025; the planned service changes have not yet started.",
+  "geographic_scope": "Alderwick's central districts and the Eastbank employment area"
+}
