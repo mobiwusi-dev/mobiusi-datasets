@@ -1,0 +1,346 @@
+{
+  "recovery_summary": {
+    "loss_event_count": 1,
+    "recovery_event_count": 1,
+    "mean_recovery_duration_ms": 200,
+    "recovery_success_rate": 1
+  },
+  "transition_events": [
+    {
+      "timestamp_ms": 200,
+      "from_state": "stable",
+      "to_state": "degraded",
+      "transition_type": "degradation"
+    },
+    {
+      "timestamp_ms": 300,
+      "from_state": "degraded",
+      "to_state": "lost",
+      "transition_type": "tracking_loss"
+    },
+    {
+      "timestamp_ms": 400,
+      "from_state": "lost",
+      "to_state": "recovering",
+      "transition_type": "recovery_start"
+    },
+    {
+      "timestamp_ms": 500,
+      "from_state": "recovering",
+      "to_state": "stable",
+      "transition_type": "recovery_complete"
+    }
+  ],
+  "sequence_observations": {
+    "frames": [
+      {
+        "timestamp_ms": 0,
+        "body_pose": {
+          "position_m": {
+            "x": 0,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 0,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0,
+            "y": -2.2,
+            "z": 1.5
+          },
+          "orientation_deg": {
+            "yaw": 0,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.22,
+              "y": 1.48,
+              "z": 2.1
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0,
+              "y": 0.82,
+              "z": 2.1
+            },
+            "visible": true
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 100,
+        "body_pose": {
+          "position_m": {
+            "x": 0.03,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 5,
+            "pitch": 0,
+            "roll": 1
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.08,
+            "y": -2.15,
+            "z": 1.52
+          },
+          "orientation_deg": {
+            "yaw": 2,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.24,
+              "y": 1.48,
+              "z": 2.1
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0.02,
+              "y": 0.82,
+              "z": 2.1
+            },
+            "visible": true
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 200,
+        "body_pose": {
+          "position_m": {
+            "x": 0.08,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 18,
+            "pitch": 1,
+            "roll": 2
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.18,
+            "y": -2.02,
+            "z": 1.54
+          },
+          "orientation_deg": {
+            "yaw": 10,
+            "pitch": 1,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.3,
+              "y": 1.47,
+              "z": 2.1
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0.07,
+              "y": 0.8,
+              "z": 2.12
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 300,
+        "body_pose": {
+          "position_m": {
+            "x": 0.12,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 35,
+            "pitch": 2,
+            "roll": 3
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.35,
+            "y": -1.75,
+            "z": 1.57
+          },
+          "orientation_deg": {
+            "yaw": 25,
+            "pitch": 2,
+            "roll": 1
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.3,
+              "y": 1.47,
+              "z": 2.1
+            },
+            "visible": false
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0.07,
+              "y": 0.8,
+              "z": 2.12
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 400,
+        "body_pose": {
+          "position_m": {
+            "x": 0.1,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 32,
+            "pitch": 1,
+            "roll": 2
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.28,
+            "y": -1.9,
+            "z": 1.55
+          },
+          "orientation_deg": {
+            "yaw": 18,
+            "pitch": 1,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.34,
+              "y": 1.46,
+              "z": 2.1
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0.1,
+              "y": 0.79,
+              "z": 2.12
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 500,
+        "body_pose": {
+          "position_m": {
+            "x": 0.06,
+            "y": 0,
+            "z": 2.4
+          },
+          "orientation_deg": {
+            "yaw": 20,
+            "pitch": 0,
+            "roll": 1
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.12,
+            "y": -2.08,
+            "z": 1.52
+          },
+          "orientation_deg": {
+            "yaw": 8,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_shoulder",
+            "position_m": {
+              "x": 0.29,
+              "y": 1.47,
+              "z": 2.1
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "center_hem",
+            "position_m": {
+              "x": 0.05,
+              "y": 0.81,
+              "z": 2.1
+            },
+            "visible": true
+          }
+        ]
+      }
+    ]
+  },
+  "reference_tracking_states": [
+    {
+      "timestamp_ms": 0,
+      "tracking_state": "stable"
+    },
+    {
+      "timestamp_ms": 100,
+      "tracking_state": "stable"
+    },
+    {
+      "timestamp_ms": 200,
+      "tracking_state": "degraded"
+    },
+    {
+      "timestamp_ms": 300,
+      "tracking_state": "lost"
+    },
+    {
+      "timestamp_ms": 400,
+      "tracking_state": "recovering"
+    },
+    {
+      "timestamp_ms": 500,
+      "tracking_state": "stable"
+    }
+  ]
+}

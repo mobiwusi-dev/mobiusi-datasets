@@ -1,0 +1,409 @@
+{
+  "sequence_observations": {
+    "frames": [
+      {
+        "timestamp_ms": 0,
+        "body_pose": {
+          "position_m": {
+            "x": 0,
+            "y": 0,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 10,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.15,
+            "y": -2.3,
+            "z": 1.55
+          },
+          "orientation_deg": {
+            "yaw": 4,
+            "pitch": 0,
+            "roll": 0
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.18,
+              "y": 1.5,
+              "z": 2.18
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.38,
+              "y": 1.18,
+              "z": 2.15
+            },
+            "visible": true
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 120,
+        "body_pose": {
+          "position_m": {
+            "x": 0.02,
+            "y": 0.03,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 22,
+            "pitch": 1,
+            "roll": 2
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.24,
+            "y": -2.12,
+            "z": 1.58
+          },
+          "orientation_deg": {
+            "yaw": 12,
+            "pitch": 1,
+            "roll": 1
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.23,
+              "y": 1.49,
+              "z": 2.18
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.34,
+              "y": 1.16,
+              "z": 2.17
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 240,
+        "body_pose": {
+          "position_m": {
+            "x": 0.06,
+            "y": 0.05,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 58,
+            "pitch": 3,
+            "roll": 5
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.55,
+            "y": -1.72,
+            "z": 1.68
+          },
+          "orientation_deg": {
+            "yaw": 42,
+            "pitch": 3,
+            "roll": 2
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.23,
+              "y": 1.49,
+              "z": 2.18
+            },
+            "visible": false
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.34,
+              "y": 1.16,
+              "z": 2.17
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 360,
+        "body_pose": {
+          "position_m": {
+            "x": 0.05,
+            "y": 0.05,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 52,
+            "pitch": 2,
+            "roll": 4
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.46,
+            "y": -1.84,
+            "z": 1.64
+          },
+          "orientation_deg": {
+            "yaw": 34,
+            "pitch": 2,
+            "roll": 2
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.27,
+              "y": 1.48,
+              "z": 2.18
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.3,
+              "y": 1.14,
+              "z": 2.17
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 480,
+        "body_pose": {
+          "position_m": {
+            "x": 0.03,
+            "y": 0.02,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 30,
+            "pitch": 1,
+            "roll": 2
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.28,
+            "y": -2.08,
+            "z": 1.58
+          },
+          "orientation_deg": {
+            "yaw": 18,
+            "pitch": 1,
+            "roll": 1
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.24,
+              "y": 1.49,
+              "z": 2.18
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.35,
+              "y": 1.16,
+              "z": 2.16
+            },
+            "visible": true
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 600,
+        "body_pose": {
+          "position_m": {
+            "x": 0.08,
+            "y": 0.01,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 44,
+            "pitch": 2,
+            "roll": 3
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.4,
+            "y": -1.92,
+            "z": 1.62
+          },
+          "orientation_deg": {
+            "yaw": 29,
+            "pitch": 2,
+            "roll": 1
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.28,
+              "y": 1.48,
+              "z": 2.19
+            },
+            "visible": true
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.31,
+              "y": 1.13,
+              "z": 2.18
+            },
+            "visible": false
+          }
+        ]
+      },
+      {
+        "timestamp_ms": 720,
+        "body_pose": {
+          "position_m": {
+            "x": 0.11,
+            "y": 0.02,
+            "z": 2.5
+          },
+          "orientation_deg": {
+            "yaw": 68,
+            "pitch": 3,
+            "roll": 5
+          }
+        },
+        "camera_view": {
+          "position_m": {
+            "x": 0.7,
+            "y": -1.55,
+            "z": 1.72
+          },
+          "orientation_deg": {
+            "yaw": 54,
+            "pitch": 4,
+            "roll": 2
+          }
+        },
+        "garment_anchors": [
+          {
+            "anchor_name": "left_collar",
+            "position_m": {
+              "x": 0.28,
+              "y": 1.48,
+              "z": 2.19
+            },
+            "visible": false
+          },
+          {
+            "anchor_name": "right_cuff",
+            "position_m": {
+              "x": -0.31,
+              "y": 1.13,
+              "z": 2.18
+            },
+            "visible": false
+          }
+        ]
+      }
+    ]
+  },
+  "recovery_summary": {
+    "loss_event_count": 2,
+    "recovery_event_count": 1,
+    "mean_recovery_duration_ms": 240,
+    "recovery_success_rate": 0.5
+  },
+  "transition_events": [
+    {
+      "timestamp_ms": 120,
+      "from_state": "stable",
+      "to_state": "degraded",
+      "transition_type": "degradation"
+    },
+    {
+      "timestamp_ms": 240,
+      "from_state": "degraded",
+      "to_state": "lost",
+      "transition_type": "tracking_loss"
+    },
+    {
+      "timestamp_ms": 360,
+      "from_state": "lost",
+      "to_state": "recovering",
+      "transition_type": "recovery_start"
+    },
+    {
+      "timestamp_ms": 480,
+      "from_state": "recovering",
+      "to_state": "stable",
+      "transition_type": "recovery_complete"
+    },
+    {
+      "timestamp_ms": 600,
+      "from_state": "stable",
+      "to_state": "degraded",
+      "transition_type": "degradation"
+    },
+    {
+      "timestamp_ms": 720,
+      "from_state": "degraded",
+      "to_state": "lost",
+      "transition_type": "tracking_loss"
+    }
+  ],
+  "reference_tracking_states": [
+    {
+      "timestamp_ms": 0,
+      "tracking_state": "stable"
+    },
+    {
+      "timestamp_ms": 120,
+      "tracking_state": "degraded"
+    },
+    {
+      "timestamp_ms": 240,
+      "tracking_state": "lost"
+    },
+    {
+      "timestamp_ms": 360,
+      "tracking_state": "recovering"
+    },
+    {
+      "timestamp_ms": 480,
+      "tracking_state": "stable"
+    },
+    {
+      "timestamp_ms": 600,
+      "tracking_state": "degraded"
+    },
+    {
+      "timestamp_ms": 720,
+      "tracking_state": "lost"
+    }
+  ]
+}
