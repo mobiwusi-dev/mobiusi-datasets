@@ -1,0 +1,88 @@
+{
+  "claim_text": "The supplier is obligated to deliver 240 control modules under Purchase Order PO-418 at a unit price of $42, with delivery due by September 30.",
+  "evidence_findings": [
+    {
+      "requirement_description": "The agreement must establish how an order is accepted and which document controls the order-specific quantity and delivery terms.",
+      "finding_status": "supported",
+      "supporting_document_name": "Framework Supply Agreement FA-26",
+      "supporting_clause_reference": "Sections 3.2 and 5.1",
+      "evidence_excerpt": "A purchase order becomes binding upon written supplier confirmation, and the confirmed order supplies the quantity and delivery date."
+    },
+    {
+      "requirement_description": "The purchase order must state the specific quantity, price, and delivery date asserted in the claim.",
+      "finding_status": "supported",
+      "supporting_document_name": "Purchase Order PO-418",
+      "supporting_clause_reference": "Line 1 and delivery terms",
+      "evidence_excerpt": "The order lists 240 units at $42 per unit, with delivery due September 30."
+    },
+    {
+      "requirement_description": "Supplier confirmation is necessary under the agreement to establish that the purchase order became binding.",
+      "finding_status": "supported",
+      "supporting_document_name": "Sales Order Confirmation SO-418",
+      "supporting_clause_reference": "Confirmation paragraph and line 1",
+      "evidence_excerpt": "The supplier accepts PO-418 without changes and repeats the same quantity, unit price, and delivery date."
+    }
+  ],
+  "required_evidence": [
+    {
+      "required_document_role": "main_agreement",
+      "required_clause_or_term": "Order becomes binding upon written supplier confirmation; confirmed orders govern quantity and delivery date.",
+      "requirement_description": "The agreement must establish how an order is accepted and which document controls the order-specific quantity and delivery terms."
+    },
+    {
+      "required_document_role": "purchase_order",
+      "required_clause_or_term": "PO-418 states 240 units, $42 per unit, and September 30 delivery.",
+      "requirement_description": "The purchase order must state the specific quantity, price, and delivery date asserted in the claim."
+    },
+    {
+      "required_document_role": "sales_order",
+      "required_clause_or_term": "Written, unchanged acceptance of PO-418 by the supplier.",
+      "requirement_description": "Supplier confirmation is necessary under the agreement to establish that the purchase order became binding."
+    }
+  ],
+  "contract_documents": [
+    {
+      "document_name": "Framework Supply Agreement FA-26",
+      "document_role": "main_agreement",
+      "document_type": "Executed agreement text",
+      "document_text": "The parties use purchase orders to specify quantities, prices, and delivery dates. An order becomes binding when the supplier confirms it in writing. The supplier must deliver the quantities and by the dates stated in a confirmed order.",
+      "provisions": [
+        {
+          "clause_reference": "Section 3.2",
+          "clause_text": "A purchase order becomes binding when the supplier confirms acceptance in writing. The confirmed purchase order specifies the applicable quantity, unit price, and delivery date."
+        },
+        {
+          "clause_reference": "Section 5.1",
+          "clause_text": "The supplier shall deliver the quantity stated in each confirmed purchase order by the delivery date stated in that order."
+        }
+      ]
+    },
+    {
+      "document_name": "Purchase Order PO-418",
+      "document_role": "purchase_order",
+      "document_type": "Purchase order text",
+      "document_text": "Buyer orders 240 control modules, item CM-8, at $42 per unit. Requested delivery date: September 30. The order is subject to the Framework Supply Agreement FA-26.",
+      "provisions": [
+        {
+          "clause_reference": "Line 1 and delivery terms",
+          "clause_text": "Item CM-8: quantity 240; unit price $42; delivery due September 30. This order is subject to Framework Supply Agreement FA-26."
+        }
+      ]
+    },
+    {
+      "document_name": "Sales Order Confirmation SO-418",
+      "document_role": "sales_order",
+      "document_type": "Order confirmation text",
+      "document_text": "The supplier confirms acceptance of Purchase Order PO-418 without changes. The confirmed line, price, and delivery date match the purchase order.",
+      "provisions": [
+        {
+          "clause_reference": "Confirmation paragraph and line 1",
+          "clause_text": "We accept Purchase Order PO-418 without changes: 240 units of item CM-8 at $42 per unit, delivery due September 30."
+        }
+      ]
+    }
+  ],
+  "assessment_rationale": "The agreement makes written supplier confirmation the condition for a binding order and assigns order-specific terms to the confirmed purchase order. The purchase order states all three claimed terms, and the sales order confirmation accepts it without changes. Read together, the documents support the delivery obligation, quantity, price, and deadline.",
+  "evidence_sufficiency": "sufficient",
+  "missing_critical_evidence": []
+}

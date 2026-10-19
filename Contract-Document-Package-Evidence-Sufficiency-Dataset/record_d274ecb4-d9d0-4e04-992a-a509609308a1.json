@@ -1,0 +1,103 @@
+{
+  "claim_text": "The buyer may cancel Purchase Order PO-772 without charge by giving the supplier 10 days’ written notice.",
+  "evidence_findings": [
+    {
+      "requirement_description": "The agreement is needed to determine whether a buyer-added cancellation term is binding without the supplier’s express acceptance.",
+      "finding_status": "supported",
+      "supporting_document_name": "Equipment Purchase Agreement EPA-31",
+      "supporting_clause_reference": "Sections 2.3 and 9.2",
+      "evidence_excerpt": "A varying purchase-order term applies only if expressly accepted in the supplier’s written confirmation; a separate cancellation right otherwise requires a bilateral signed amendment."
+    },
+    {
+      "requirement_description": "The purchase order identifies the particular cancellation right asserted by the buyer.",
+      "finding_status": "supported",
+      "supporting_document_name": "Purchase Order PO-772",
+      "supporting_clause_reference": "Cancellation term",
+      "evidence_excerpt": "The purchase order states that the buyer may cancel without charge on 10 days’ written notice."
+    },
+    {
+      "requirement_description": "The confirmation determines whether the buyer-added term was accepted as required by the agreement.",
+      "finding_status": "contradicted",
+      "supporting_document_name": "Sales Order Confirmation SO-772",
+      "supporting_clause_reference": "Acceptance and exceptions",
+      "evidence_excerpt": "The supplier expressly rejects the buyer-added cancellation term and states that cancellation for convenience requires its written consent."
+    },
+    {
+      "requirement_description": "A fully executed amendment could establish the claimed right despite its rejection in the order confirmation.",
+      "finding_status": "missing",
+      "evidence_excerpt": "No bilateral signed amendment granting a cancellation right is included in the supplied package."
+    }
+  ],
+  "required_evidence": [
+    {
+      "required_document_role": "main_agreement",
+      "required_clause_or_term": "The contractual rule governing acceptance of order-specific terms and cancellation rights.",
+      "requirement_description": "The agreement is needed to determine whether a buyer-added cancellation term is binding without the supplier’s express acceptance."
+    },
+    {
+      "required_document_role": "purchase_order",
+      "required_clause_or_term": "The stated 10-day notice period and no-charge cancellation term for PO-772.",
+      "requirement_description": "The purchase order identifies the particular cancellation right asserted by the buyer."
+    },
+    {
+      "required_document_role": "sales_order",
+      "required_clause_or_term": "The supplier’s written acceptance or rejection of the cancellation term.",
+      "requirement_description": "The confirmation determines whether the buyer-added term was accepted as required by the agreement."
+    },
+    {
+      "required_document_role": "amendment",
+      "required_clause_or_term": "A bilateral signed amendment granting a cancellation right if it was not accepted in the order confirmation.",
+      "requirement_description": "A fully executed amendment could establish the claimed right despite its rejection in the order confirmation."
+    }
+  ],
+  "contract_documents": [
+    {
+      "document_name": "Equipment Purchase Agreement EPA-31",
+      "document_role": "main_agreement",
+      "document_type": "Executed agreement text",
+      "document_text": "A purchase order becomes binding upon the supplier’s written confirmation. Any purchase-order term that varies from this agreement applies only if the supplier expressly accepts that term in its written confirmation. A buyer cancellation right not stated in an accepted order requires a written amendment signed by both parties.",
+      "provisions": [
+        {
+          "clause_reference": "Section 2.3",
+          "clause_text": "A purchase order becomes binding upon the supplier’s written confirmation. A purchase-order term varying from this agreement applies only if expressly accepted in the supplier’s written confirmation."
+        },
+        {
+          "clause_reference": "Section 9.2",
+          "clause_text": "The buyer may not cancel an accepted order for convenience unless the right is expressly accepted in the order confirmation or set out in a written amendment signed by both parties."
+        }
+      ]
+    },
+    {
+      "document_name": "Purchase Order PO-772",
+      "document_role": "purchase_order",
+      "document_type": "Purchase order text",
+      "document_text": "The buyer orders 18 packaging stations. Buyer-added term: Buyer may cancel this order without charge by giving the supplier 10 days’ written notice. This order is governed by Equipment Purchase Agreement EPA-31.",
+      "provisions": [
+        {
+          "clause_reference": "Cancellation term",
+          "clause_text": "Buyer may cancel this order without charge by giving the supplier 10 days’ written notice."
+        }
+      ]
+    },
+    {
+      "document_name": "Sales Order Confirmation SO-772",
+      "document_role": "sales_order",
+      "document_type": "Order confirmation text",
+      "document_text": "The supplier confirms the order for 18 packaging stations. The supplier does not accept the buyer-added cancellation term. Cancellation for convenience requires the supplier’s written consent; no cancellation without charge is agreed.",
+      "provisions": [
+        {
+          "clause_reference": "Acceptance and exceptions",
+          "clause_text": "We confirm the order for 18 packaging stations but do not accept the buyer-added cancellation term. Cancellation for convenience requires our written consent; cancellation without charge is not agreed."
+        }
+      ]
+    }
+  ],
+  "assessment_rationale": "The purchase order contains the claimed cancellation language, but the agreement makes differing order terms effective only when expressly accepted by the supplier. The supplier’s confirmation expressly rejects that term and instead requires written consent for cancellation for convenience. No bilateral amendment supplies the missing authorization, so the package does not support the claimed unilateral, no-charge right.",
+  "evidence_sufficiency": "insufficient",
+  "missing_critical_evidence": [
+    {
+      "missing_document_or_clause": "A written amendment signed by both parties granting the buyer a no-charge cancellation right on 10 days’ notice.",
+      "why_it_is_critical": "The supplier’s confirmation rejects the purchase-order cancellation term, and the agreement requires a bilateral signed amendment for a cancellation right not accepted in the confirmation. No such amendment is present."
+    }
+  ]
+}

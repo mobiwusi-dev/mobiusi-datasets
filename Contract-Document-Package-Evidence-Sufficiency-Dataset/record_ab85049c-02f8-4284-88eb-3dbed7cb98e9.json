@@ -1,0 +1,93 @@
+{
+  "claim_text": "The parties authorized an 8% increase to the unit price for item BX-4 under Purchase Order PO-932, effective July 1.",
+  "evidence_findings": [
+    {
+      "requirement_description": "The existing order price is needed to identify the baseline against which the claimed increase is measured.",
+      "finding_status": "supported",
+      "supporting_document_name": "Purchase Order PO-932",
+      "supporting_clause_reference": "Line 2",
+      "evidence_excerpt": "PO-932 lists the existing unit price for item BX-4 as $125.00."
+    },
+    {
+      "requirement_description": "The amendment must state the precise revised commercial term and when the change is intended to apply.",
+      "finding_status": "supported",
+      "supporting_document_name": "Proposed Price Amendment PA-932",
+      "supporting_clause_reference": "Paragraph 1",
+      "evidence_excerpt": "The proposed amendment states a revised price of $135.00, an 8% increase, effective July 1."
+    },
+    {
+      "requirement_description": "The agreement and amendment make bilateral execution a condition for the price change to take effect.",
+      "finding_status": "partially_supported",
+      "supporting_document_name": "Proposed Price Amendment PA-932",
+      "supporting_clause_reference": "Execution block",
+      "evidence_excerpt": "The supplier signature is present, but the customer signature field is blank; the amendment says both parties must sign for it to take effect."
+    }
+  ],
+  "required_evidence": [
+    {
+      "required_document_role": "purchase_order",
+      "required_clause_or_term": "The existing unit price for item BX-4 under PO-932.",
+      "requirement_description": "The existing order price is needed to identify the baseline against which the claimed increase is measured."
+    },
+    {
+      "required_document_role": "amendment",
+      "required_clause_or_term": "A written amendment identifying the revised price, percentage change, and effective date.",
+      "requirement_description": "The amendment must state the precise revised commercial term and when the change is intended to apply."
+    },
+    {
+      "required_document_role": "amendment",
+      "required_clause_or_term": "Signatures of authorized representatives of both parties.",
+      "requirement_description": "The agreement and amendment make bilateral execution a condition for the price change to take effect."
+    }
+  ],
+  "contract_documents": [
+    {
+      "document_name": "Component Supply Agreement CSA-14",
+      "document_role": "main_agreement",
+      "document_type": "Executed agreement text",
+      "document_text": "Prices in an accepted purchase order remain in effect unless changed by a written amendment signed by authorized representatives of both parties. A proposed change does not take effect before both signatures are applied.",
+      "provisions": [
+        {
+          "clause_reference": "Section 6.4",
+          "clause_text": "A change to an accepted purchase order price is effective only through a written amendment signed by authorized representatives of both parties. The effective date shall be the date stated in the fully signed amendment, or a later date stated there."
+        }
+      ]
+    },
+    {
+      "document_name": "Purchase Order PO-932",
+      "document_role": "purchase_order",
+      "document_type": "Purchase order text",
+      "document_text": "Item BX-4, quantity 500, unit price $125.00. The order is governed by Component Supply Agreement CSA-14.",
+      "provisions": [
+        {
+          "clause_reference": "Line 2",
+          "clause_text": "Item BX-4: quantity 500; unit price $125.00. This order is governed by Component Supply Agreement CSA-14."
+        }
+      ]
+    },
+    {
+      "document_name": "Proposed Price Amendment PA-932",
+      "document_role": "amendment",
+      "document_type": "Amendment text with signature fields",
+      "document_text": "The proposed amendment changes the unit price for item BX-4 under PO-932 to $135.00, an 8% increase, effective July 1. The supplier signature is present. The customer signature field is blank. The text states that the amendment takes effect only when signed by both parties.",
+      "provisions": [
+        {
+          "clause_reference": "Paragraph 1",
+          "clause_text": "For item BX-4 under PO-932, the unit price will change from $125.00 to $135.00, an 8% increase, effective July 1."
+        },
+        {
+          "clause_reference": "Execution block",
+          "clause_text": "This amendment becomes effective only upon signature by authorized representatives of both parties. Supplier signature present; customer signature blank."
+        }
+      ]
+    }
+  ],
+  "assessment_rationale": "The package establishes the current $125.00 price and contains an amendment specifying the claimed 8% increase and July 1 effective date. However, the amendment is signed only by the supplier, while both the agreement and amendment require signatures from both parties. The commercial proposal is documented, but the package does not establish that the change was authorized and took effect.",
+  "evidence_sufficiency": "partially_sufficient",
+  "missing_critical_evidence": [
+    {
+      "missing_document_or_clause": "The customer’s authorized representative’s signature on Proposed Price Amendment PA-932, or another fully executed amendment approving the change.",
+      "why_it_is_critical": "The agreement and the amendment itself require signatures from both parties. Without the customer’s signature, the stated price and effective date appear as proposed terms rather than an authorized, effective change."
+    }
+  ]
+}
