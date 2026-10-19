@@ -1,0 +1,20 @@
+{
+  "question": "How is the molten bronze directed into the mold cavity?",
+  "tools": [
+    "pattern",
+    "crucible",
+    "tongs",
+    "ladle"
+  ],
+  "answer": "The mold halves are aligned so the channel opens into the cavity, and the bronze is poured from a ladle into that channel.",
+  "source_text": "In sand casting a small bronze fitting, a pattern is pressed into prepared sand to form the cavity, and a channel is left for the pour. After the pattern is withdrawn, the mold halves are aligned so the channel opens into the cavity. The bronze is melted in a crucible, lifted with tongs, and poured from a ladle into the channel until metal appears at the vent. The mold is left undisturbed until the casting has cooled, then opened to remove the fitting.",
+  "process_steps": [
+    "Press a pattern into prepared sand to form the cavity, leaving a channel for the pour.",
+    "Withdraw the pattern and align the mold halves so the channel opens into the cavity.",
+    "Melt the bronze in a crucible.",
+    "Lift the crucible with tongs and pour the bronze from a ladle into the channel until metal appears at the vent.",
+    "Leave the mold undisturbed until the casting has cooled, then open it to remove the fitting."
+  ],
+  "evidence_quote": "After the pattern is withdrawn, the mold halves are aligned so the channel opens into the cavity. The bronze is melted in a crucible, lifted with tongs, and poured from a ladle into the channel until metal appears at the vent.",
+  "technique_type": "Casting"
+}

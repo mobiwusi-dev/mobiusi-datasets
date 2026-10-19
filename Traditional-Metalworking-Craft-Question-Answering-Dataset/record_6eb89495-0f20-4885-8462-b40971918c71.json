@@ -1,0 +1,19 @@
+{
+  "tools": [
+    "pitch bowl",
+    "blunt tracing punch",
+    "chasing hammer"
+  ],
+  "answer": "The sheet is bedded in the pitch bowl so it is supported while the artisan works the outline into the metal.",
+  "question": "Why is the copper sheet bedded in the pitch bowl before the design is chased?",
+  "source_text": "For chasing a shallow ornament on a copper sheet, the artisan transfers the design onto the surface and beds the sheet face up in a warmed pitch bowl so it is supported. A blunt tracing punch and chasing hammer are used with light, repeated taps to sink the outline into the metal without cutting through it. The artisan shifts the sheet as needed, following the traced lines in short sections, then lifts it from the pitch and cleans away the remaining support.",
+  "process_steps": [
+    "Transfer the design onto the copper sheet.",
+    "Bed the sheet face up in a warmed pitch bowl for support.",
+    "Use a blunt tracing punch and chasing hammer with light, repeated taps to sink the outline without cutting through the sheet.",
+    "Shift the sheet as needed and follow the traced lines in short sections.",
+    "Lift the sheet from the pitch and clean away the remaining support."
+  ],
+  "evidence_quote": "the artisan transfers the design onto the surface and beds the sheet face up in a warmed pitch bowl so it is supported.",
+  "technique_type": "Chasing"
+}

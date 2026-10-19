@@ -1,0 +1,20 @@
+{
+  "tools": [
+    "charcoal forge",
+    "tongs",
+    "anvil",
+    "cross-peen hammer"
+  ],
+  "answer": "The smith uses evenly spaced blows from a cross-peen hammer to draw the bar longer and turns it between passes to keep the section even.",
+  "question": "How does the smith draw the bar longer while keeping its section even?",
+  "source_text": "In hand forging a narrow iron strap, the smith heats the bar in a charcoal forge until it is workable, then grips it with tongs and places it on the anvil. Evenly spaced blows from a cross-peen hammer draw the hot bar longer; the smith turns it between passes to keep the section even. The strap is reheated when it stiffens, and its width and thickness are checked against the required shape before the final planishing blows.",
+  "process_steps": [
+    "Heat the bar in a charcoal forge until it is workable.",
+    "Grip the bar with tongs and place it on the anvil.",
+    "Use evenly spaced cross-peen hammer blows to draw the bar longer, turning it between passes.",
+    "Reheat the strap when it stiffens.",
+    "Check its width and thickness against the required shape before the final planishing blows."
+  ],
+  "evidence_quote": "Evenly spaced blows from a cross-peen hammer draw the hot bar longer; the smith turns it between passes to keep the section even.",
+  "technique_type": "Forging"
+}
