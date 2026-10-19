@@ -1,0 +1,7 @@
+{
+  "question": "How much does the member pay for this claim, and how much does the insurer pay?",
+  "reasoning": "1. The remaining deductible is $1,000 - $700 = $300, which the member pays. The remaining allowed amount is $2,000 - $300 = $1,700. 2. The member's 20% coinsurance on $1,700 is $340, and the insurer's 80% share is $1,360. 3. The member's total responsibility is $300 + $340 = $640. The out-of-pocket maximum has $6,000 - $4,600 = $1,400 remaining, so it does not reduce the calculated $640 cost share. The insurer's $1,360 payment is also within the remaining annual benefit limit. Therefore, the insurer pays $1,360.",
+  "claim_case": "An in-network outpatient procedure has an allowed charge of $2,000. The member's annual deductible is $1,000, of which $700 has been met before this claim. After the deductible, the plan pays 80% and the member pays 20% of the remaining allowed amount. There is no separate copayment for this procedure. The member has accumulated $4,600 toward a $6,000 in-network annual out-of-pocket maximum; this accumulator includes the deductible. The plan's annual benefit payment limit has $12,000 remaining. All charges are covered and count toward the stated accumulators.",
+  "insurer_payment_amount": 1360,
+  "patient_responsibility_amount": 640
+}

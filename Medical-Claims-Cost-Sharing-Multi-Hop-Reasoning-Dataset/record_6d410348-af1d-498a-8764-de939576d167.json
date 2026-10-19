@@ -1,0 +1,7 @@
+{
+  "question": "What are the member's responsibility and the insurer's payment for this admission after applying the out-of-pocket maximum?",
+  "reasoning": "1. The remaining deductible is $2,000 - $1,500 = $500, leaving $5,000 - $500 = $4,500 of allowed charges. 2. The $250 admission copayment leaves $4,250 subject to coinsurance. The member's 20% coinsurance on that amount is $850, so the calculated cost share before the out-of-pocket maximum is $500 + $250 + $850 = $1,600. 3. Only $6,000 - $5,700 = $300 remains before the member reaches the out-of-pocket maximum. The member therefore pays $300 for this claim, and the plan covers the rest: $5,000 - $300 = $4,700. The remaining annual benefit limit does not constrain this payment.",
+  "claim_case": "An in-network hospital admission has a covered allowed charge of $5,000. The member's annual deductible is $2,000, and $1,500 has been met before this claim. After the remaining deductible, the member owes a $250 admission copayment; 20% coinsurance then applies to the allowed balance remaining after that copayment. The member has accumulated $5,700 toward a $6,000 in-network annual out-of-pocket maximum, including prior deductible and copayment amounts. All deductible, copayment, and coinsurance amounts for this admission count toward that maximum. Once the maximum is reached, the plan pays the rest of the covered charge. The annual benefit payment limit has $20,000 remaining.",
+  "insurer_payment_amount": 4700,
+  "patient_responsibility_amount": 300
+}
