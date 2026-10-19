@@ -1,0 +1,12 @@
+{
+  "counterfactual_outcome": "With the drain sealed and no overtopping, the specified event has no ocean pathway into the basin; ocean-driven inundation is absent under the stated assumptions.",
+  "question": "With the drain sealed, what happens to ocean-driven inundation in the basin compared with the baseline event?",
+  "reasoning": "The baseline risk information identifies the open drain as the route by which coastal water reaches the basin and gives a 0.20 m maximum depth. The counterfactual closes that route with a watertight gate, keeps the event water level unchanged, and rules out overtopping. Because rainfall and other inflow paths are excluded, the stated assumptions leave no route for ocean water to inundate the basin.",
+  "baseline_outcome": "With the drain open, the event drives coastal water into the basin, producing up to 0.20 m of water at the 0.80 m floor.",
+  "coastal_location": "Kestrel Cove South Drainage Basin",
+  "risk_change_summary": "Ocean-driven basin flooding is eliminated for this event under the gate-closure assumption, rather than merely reduced by a change in sea level.",
+  "terrain_description": "The basin floor is 0.80 m above the local datum. An open, low-level drain connects it to the coast; the basin edge is higher than the event water level, so ocean water can enter through the drain but not by overtopping the edge.",
+  "baseline_risk_information": "At the baseline relative sea level, the specified coastal event reaches a peak water elevation of 1.00 m in the local datum. With the drain open, ocean water enters the basin and produces a maximum depth of 0.20 m at the floor. The assessment excludes rainfall and other inflow paths.",
+  "counterfactual_assumption": "Relative sea level and the coastal event are unchanged, but a watertight gate seals the drain throughout the event. The gate prevents ocean backflow, and overtopping does not occur.",
+  "baseline_relative_sea_level_m": 0.65
+}

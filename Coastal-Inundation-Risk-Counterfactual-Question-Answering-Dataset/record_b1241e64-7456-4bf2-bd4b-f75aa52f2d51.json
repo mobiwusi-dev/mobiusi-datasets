@@ -1,0 +1,12 @@
+{
+  "counterfactual_assumption": "Relative sea level is 0.4 m higher, while the storm contribution, terrain, and hydraulic connections remain unchanged.",
+  "baseline_relative_sea_level_m": 0.8,
+  "question": "How do the maximum inundation depth and the connected area reached by the reference storm change under this assumption?",
+  "reasoning": "The reference storm adds 0.4 m to relative sea level, so raising relative sea level from 0.8 m to 1.2 m raises peak water elevation from 1.2 m to 1.6 m. With terrain and connectivity held fixed, floor depth is peak elevation minus the 0.9 m floor elevation: 0.3 m at baseline and 0.7 m under the counterfactual. The higher water surface also reaches connected terrain between 1.2 m and 1.6 m.",
+  "baseline_outcome": "At a peak water elevation of 1.2 m, the basin floor is inundated to a maximum depth of 0.3 m, and connected ground at or below 1.2 m is reached.",
+  "coastal_location": "Morrow Inlet East Marsh",
+  "risk_change_summary": "Inundation deepens by 0.4 m at the basin floor, and the connected inundated area expands to higher ground.",
+  "terrain_description": "A low, hydraulically connected marsh basin has a floor elevation of 0.9 m in the local datum. Connected ground rises from 0.9 m to 1.6 m, with no intervening barriers.",
+  "counterfactual_outcome": "The peak water elevation rises to 1.6 m. Maximum depth at the 0.9 m basin floor becomes 0.7 m, and connected ground up to 1.6 m is reached.",
+  "baseline_risk_information": "For the reference storm, peak water level is 0.4 m above mean relative sea level. At the baseline level, this gives a peak elevation of 1.2 m in the local datum; connected ground at or below that elevation is inundated, with a maximum depth of 0.3 m at the basin floor."
+}

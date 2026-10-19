@@ -1,0 +1,12 @@
+{
+  "question": "Under the lower relative sea level, how do maximum flood depth and the upper elevation reached by inundation compare with baseline?",
+  "reasoning": "The event adds 0.30 m to relative sea level. Lowering the baseline from 1.0 m to 0.75 m therefore lowers peak water elevation from 1.30 m to 1.05 m. Subtracting the unchanged 0.75 m basin-floor elevation gives depths of 0.55 m and 0.30 m, respectively. Since the basin remains connected and its low point is below 1.05 m, inundation persists but reaches less of the higher ground.",
+  "baseline_outcome": "The event reaches an elevation of 1.30 m, inundating connected ground up to that elevation; maximum depth at the 0.75 m low point is 0.55 m.",
+  "coastal_location": "Larkhaven Tidal Creek Basin",
+  "risk_change_summary": "Maximum depth decreases by 0.25 m, and the upper elevation reached by inundation falls by 0.25 m. The basin low point remains inundated.",
+  "terrain_description": "The nearly level basin has a lowest ground elevation of 0.75 m in the local datum and connected parcels rising to 1.30 m. There is no berm between the creek and the basin.",
+  "counterfactual_outcome": "The event reaches an elevation of 1.05 m, inundating connected ground up to that elevation; maximum depth at the low point is 0.30 m.",
+  "baseline_risk_information": "During the specified high-water event, peak water level is 0.30 m above mean relative sea level. At the baseline level, the peak elevation is 1.30 m; connected ground at or below that elevation is inundated, with a maximum depth of 0.55 m at the basin low point.",
+  "counterfactual_assumption": "Relative sea level is 0.25 m lower. The event contribution, ground elevations, and creek-to-basin connection remain unchanged.",
+  "baseline_relative_sea_level_m": 1.0
+}
