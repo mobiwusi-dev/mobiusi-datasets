@@ -1,0 +1,14 @@
+{
+  "source_webpage": {
+    "html_content": "<html><body><p>The Eastbank footbridge reopened at 08:20 on Tuesday after engineers completed a structural inspection, the municipal works desk said.</p></body></html>"
+  },
+  "verdict_rationale": "The webpage directly reports the reopening time and says engineers completed a structural inspection beforehand, supporting both parts of the claim.",
+  "verdict": "支持",
+  "claim_text": "The Eastbank footbridge reopened at 08:20 on Tuesday after a structural inspection.",
+  "evidence_spans": [
+    {
+      "snippet_text": "The Eastbank footbridge reopened at 08:20 on Tuesday after engineers completed a structural inspection, the municipal works desk said.",
+      "stance": "支持"
+    }
+  ]
+}

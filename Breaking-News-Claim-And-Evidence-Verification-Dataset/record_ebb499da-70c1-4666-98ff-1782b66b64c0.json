@@ -1,0 +1,14 @@
+{
+  "verdict": "证据不足",
+  "claim_text": "A gas-main rupture caused the blast near Alder Quay.",
+  "evidence_spans": [
+    {
+      "snippet_text": "The county response office said crews were assessing the site; it had not confirmed the cause or reported any damage.",
+      "stance": "中性"
+    }
+  ],
+  "source_webpage": {
+    "html_content": "<html><body><p>Residents near Alder Quay reported a loud blast shortly after 06:00. The county response office said crews were assessing the site; it had not confirmed the cause or reported any damage.</p></body></html>"
+  },
+  "verdict_rationale": "The webpage confirms reports of a blast but says the response office had not confirmed its cause. It provides no evidence identifying a gas-main rupture."
+}

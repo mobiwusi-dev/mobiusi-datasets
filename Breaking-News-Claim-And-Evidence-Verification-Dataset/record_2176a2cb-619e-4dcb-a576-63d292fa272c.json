@@ -1,0 +1,14 @@
+{
+  "claim_text": "All six stops on the North Loop tram route had reopened by 14:10.",
+  "verdict": "反驳",
+  "evidence_spans": [
+    {
+      "snippet_text": "Transit staff said two of the route's six stops remained closed while crews cleared debris.",
+      "stance": "反驳"
+    }
+  ],
+  "source_webpage": {
+    "html_content": "<html><body><p>Service resumed on the North Loop tram route at 14:10. Transit staff said two of the route's six stops remained closed while crews cleared debris.</p></body></html>"
+  },
+  "verdict_rationale": "The webpage states that two of the six stops remained closed, directly contradicting the claim that all six had reopened by 14:10."
+}
