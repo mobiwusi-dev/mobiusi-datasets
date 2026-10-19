@@ -1,0 +1,9 @@
+{
+  "answer": "The documented components are the water supply connection, riser, branch piping, sprinkler heads, and water-flow switch. The main control valve is recorded as locked open, and the sprinkler zone is shown as normal at the fire alarm control panel.",
+  "evidence": "The source lists the water supply connection, riser, branch piping, sprinkler heads, and water-flow switch; it states that the main control valve is locked open and the sprinkler zone is normal at the fire alarm control panel.",
+  "question": "What are the documented components of the sprinkler system, and what status is recorded for its main control valve and alarm zone?",
+  "answerability": "可依据资料回答",
+  "source_material": "The wet-pipe sprinkler system serves the east and west office wings. Its components include a water supply connection, a riser, branch piping, sprinkler heads, and a water-flow switch. The main control valve is recorded as locked open, and the fire alarm control panel shows the sprinkler zone as normal.",
+  "system_category": "Sprinkler system",
+  "operation_cautions": "The source does not provide any specific operation cautions."
+}

@@ -1,0 +1,9 @@
+{
+  "answer": "The fans are started from the fire control room by selecting the relevant zone, and its associated exhaust damper opens automatically. The local isolator is designated for maintenance and must remain in the ON position during normal operation; the source cautions against switching it off during an alarm.",
+  "evidence": "The source states that fans are started from the fire control room using the selector for the relevant zone, that the associated exhaust damper opens automatically, and that the local isolator must remain ON during normal operation and not be switched off during an alarm.",
+  "question": "How are the basement smoke-exhaust fans started, what happens to the associated damper, and what does the source caution about the local isolator?",
+  "answerability": "可依据资料回答",
+  "source_material": "The basement smoke-exhaust system is divided into north and south zones. Fans are started from the fire control room using the selector for the relevant zone, and the associated exhaust damper opens automatically. The local isolator is designated for maintenance and is to remain in the ON position during normal operation; do not switch it off during an alarm.",
+  "system_category": "Smoke-exhaust system",
+  "operation_cautions": "The local isolator is for maintenance, must remain in the ON position during normal operation, and must not be switched off during an alarm."
+}

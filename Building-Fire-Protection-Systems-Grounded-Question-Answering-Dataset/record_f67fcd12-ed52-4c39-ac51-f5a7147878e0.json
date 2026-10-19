@@ -1,0 +1,9 @@
+{
+  "answer": "The available description does not state the fire-pump room location or the location of a pump shutoff valve, so neither can be determined from this source.",
+  "evidence": "The source describes the hydrant cabinets, hose, nozzle, and standpipe network, but does not identify the fire-pump room or specify a pump shutoff-valve location.",
+  "question": "Where is the fire-pump room, and where is the pump shutoff valve located?",
+  "answerability": "资料不足",
+  "source_material": "The indoor hydrant system serves the occupied floors through wall-mounted hydrant cabinets connected to the building's standpipe network. Each cabinet contains a hose and a nozzle. This description does not identify the fire-pump room location or specify the location of any pump shutoff valve.",
+  "system_category": "Indoor hydrant system",
+  "operation_cautions": "The source does not provide any relevant operation cautions."
+}
