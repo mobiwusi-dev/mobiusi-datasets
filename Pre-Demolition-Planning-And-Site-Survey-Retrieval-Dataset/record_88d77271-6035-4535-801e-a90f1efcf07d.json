@@ -1,0 +1,136 @@
+{
+  "planning_steps": [
+    {
+      "step_number": 1,
+      "step_description": "Review available plans and alteration records, noting information that requires field verification.",
+      "purpose": "Use existing information to inform the demolition sequence and identify survey gaps.",
+      "evidence_passage_indices": [
+        0
+      ]
+    },
+    {
+      "step_number": 2,
+      "step_description": "Survey accessible interior and exterior areas for structural damage, attached structures, access constraints, and sequencing concerns.",
+      "evidence_passage_indices": [
+        1
+      ]
+    },
+    {
+      "step_number": 3,
+      "step_description": "Arrange specialist assessment of suspected hazardous materials before intrusive work and keep them undisturbed in the meantime.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "step_number": 4,
+      "step_description": "Compare service drawings with site conditions, arrange service isolation, and verify isolation before demolition starts.",
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "step_number": 5,
+      "step_description": "Set the work boundary and controlled entry point, then brief the crew on the sequence, restricted areas, and stop-work arrangements.",
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ],
+  "retrieval_items": [
+    {
+      "question_text": "What should be done before intrusive work if coatings or insulation may contain hazardous substances?",
+      "question_type": "risk_control",
+      "expected_answer": "Do not disturb the suspect materials, restrict access, and arrange assessment by a competent specialist before intrusive work.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "question_text": "How does the page say to confirm that building services are ready for demolition?",
+      "question_type": "safety_preparation",
+      "expected_answer": "Compare service drawings with site conditions, arrange isolation with the relevant service providers, and verify isolation before demolition begins.",
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "question_text": "What site-access controls are specified for the demolition work area?",
+      "question_type": "safety_preparation",
+      "expected_answer": "Mark the work boundary, establish a controlled entry point, and brief the crew on restricted areas and stop-work arrangements.",
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ],
+  "source_document": {
+    "page_title": "Pre-Demolition Preparation: Survey and Isolation",
+    "page_text": "Pre-Demolition Preparation: Survey and Isolation. Planning sequence: Collect available plans and prior alteration records before setting the demolition sequence; record gaps that need field verification. Building survey: Walk each accessible level and the exterior to note structural damage, attached structures, access constraints, and conditions that could affect the planned sequence. Suspect materials: If coatings, insulation, or other materials are suspected to contain hazardous substances, do not disturb them; restrict access and arrange assessment by a competent specialist before intrusive work. Services: Compare service drawings with the site, identify electrical, gas, water, and data connections, and arrange isolation with the relevant service providers; verify isolation before demolition begins. Site controls: Mark the work boundary, establish a controlled entry point, and brief the crew on the sequence, restricted areas, and stop-work arrangements."
+  },
+  "document_summary": "The page describes a pre-demolition records review, building survey, assessment of suspect materials, service isolation, and basic site controls.",
+  "evidence_passages": [
+    {
+      "passage_text": "Collect available plans and prior alteration records before setting the demolition sequence; record gaps that need field verification.",
+      "evidence_category": "planning_step",
+      "source_section": "Planning sequence"
+    },
+    {
+      "passage_text": "Walk each accessible level and the exterior to note structural damage, attached structures, access constraints, and conditions that could affect the planned sequence.",
+      "evidence_category": "site_survey",
+      "source_section": "Building survey"
+    },
+    {
+      "passage_text": "If coatings, insulation, or other materials are suspected to contain hazardous substances, do not disturb them; restrict access and arrange assessment by a competent specialist before intrusive work.",
+      "evidence_category": "hazard_assessment",
+      "source_section": "Suspect materials"
+    },
+    {
+      "passage_text": "Compare service drawings with the site, identify electrical, gas, water, and data connections, and arrange isolation with the relevant service providers; verify isolation before demolition begins.",
+      "evidence_category": "risk_control",
+      "source_section": "Services"
+    },
+    {
+      "passage_text": "Mark the work boundary, establish a controlled entry point, and brief the crew on the sequence, restricted areas, and stop-work arrangements.",
+      "evidence_category": "safety_preparation",
+      "source_section": "Site controls"
+    }
+  ],
+  "risk_control_items": [
+    {
+      "hazard": "Materials suspected of containing hazardous substances",
+      "risk_question": "Could intrusive work disturb suspect coatings, insulation, or other materials before they have been assessed?",
+      "control_measures": [
+        "Do not disturb suspected materials.",
+        "Restrict access to the affected area.",
+        "Arrange assessment by a competent specialist before intrusive work."
+      ],
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "hazard": "Unisolated or unidentified building services",
+      "risk_question": "Have electrical, gas, water, and data connections been identified and isolated before demolition begins?",
+      "control_measures": [
+        "Compare service drawings with site conditions.",
+        "Arrange isolation with the relevant service providers.",
+        "Verify isolation before demolition begins."
+      ],
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "hazard": "Uncontrolled entry into the demolition work area",
+      "risk_question": "Can workers or other people enter the work area without passing through a controlled point?",
+      "control_measures": [
+        "Mark the work boundary.",
+        "Establish a controlled entry point.",
+        "Brief the crew on restricted areas and stop-work arrangements."
+      ],
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "planning_steps": [
+    {
+      "step_number": 1,
+      "step_description": "Review available structural information and have a competent designer identify the load path and permitted removal sequence before removing members.",
+      "purpose": "Plan removal around the structure's load path and an identified sequence.",
+      "evidence_passage_indices": [
+        0
+      ]
+    },
+    {
+      "step_number": 2,
+      "step_description": "Inspect for connections, services, unstable cladding, and retained components, then mark retained items and work-zone boundaries.",
+      "evidence_passage_indices": [
+        1
+      ]
+    },
+    {
+      "step_number": 3,
+      "step_description": "Install specified temporary restraint before removal when the sequence could reduce stability, and retain it until the designer's release condition is met.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "step_number": 4,
+      "step_description": "Confirm the sequence, lifting arrangements, exclusion zones, and emergency communication method at the pre-start briefing.",
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ],
+  "retrieval_items": [
+    {
+      "question_text": "What must be established before a structural member is removed?",
+      "question_type": "planning",
+      "expected_answer": "Available structural information should be reviewed, and a competent designer should identify the load path and permitted removal sequence.",
+      "evidence_passage_indices": [
+        0
+      ]
+    },
+    {
+      "question_text": "When should temporary restraint be installed and when can it be removed?",
+      "question_type": "risk_control",
+      "expected_answer": "Install the specified temporary restraint before removal where the sequence could reduce stability, and keep it in place until the designer's release condition is met.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "question_text": "How does the page address falling materials during overhead work?",
+      "question_type": "risk_control",
+      "expected_answer": "Remove loose items where practicable, establish an exclusion zone below overhead work, and lower components by a controlled method rather than dropping them.",
+      "evidence_passage_indices": [
+        3
+      ]
+    }
+  ],
+  "source_document": {
+    "page_title": "Planning Selective Demolition in a Steel-Framed Warehouse",
+    "page_text": "Planning Selective Demolition in a Steel-Framed Warehouse. Structural review: Before removing any member, review available structural information and have a competent designer identify the load path and the permitted removal sequence. Survey and mark: Inspect the work area for connections, services, unstable cladding, and retained components; mark items to remain and the boundaries of each work zone. Temporary stability: Where the sequence could reduce stability, install the specified temporary restraint before removal and keep it in place until the designer's release condition is met. Falling materials: Remove loose items from the work area where practicable, establish an exclusion zone below overhead work, and use a controlled method to lower components rather than dropping them. Readiness: Confirm the sequence, lifting arrangements, exclusion zones, and emergency communication method at the pre-start briefing."
+  },
+  "document_summary": "The page sets out preparation for selective warehouse demolition, emphasizing structural review, identification of retained items and services, temporary restraint, falling-material controls, and a pre-start briefing.",
+  "evidence_passages": [
+    {
+      "passage_text": "Before removing any member, review available structural information and have a competent designer identify the load path and the permitted removal sequence.",
+      "evidence_category": "planning_step",
+      "source_section": "Structural review"
+    },
+    {
+      "passage_text": "Inspect the work area for connections, services, unstable cladding, and retained components; mark items to remain and the boundaries of each work zone.",
+      "evidence_category": "site_survey",
+      "source_section": "Survey and mark"
+    },
+    {
+      "passage_text": "Where the sequence could reduce stability, install the specified temporary restraint before removal and keep it in place until the designer's release condition is met.",
+      "evidence_category": "risk_control",
+      "source_section": "Temporary stability"
+    },
+    {
+      "passage_text": "Remove loose items from the work area where practicable, establish an exclusion zone below overhead work, and use a controlled method to lower components rather than dropping them.",
+      "evidence_category": "risk_control",
+      "source_section": "Falling materials"
+    },
+    {
+      "passage_text": "Confirm the sequence, lifting arrangements, exclusion zones, and emergency communication method at the pre-start briefing.",
+      "evidence_category": "safety_preparation",
+      "source_section": "Readiness"
+    }
+  ],
+  "risk_control_items": [
+    {
+      "hazard": "Loss of structural stability during selective removal",
+      "risk_question": "Could the proposed removal sequence reduce structural stability, and what must be in place before removal?",
+      "control_measures": [
+        "Have a competent designer identify the load path and permitted removal sequence.",
+        "Install the specified temporary restraint before removal where the sequence could reduce stability.",
+        "Keep the restraint in place until the designer's release condition is met."
+      ],
+      "evidence_passage_indices": [
+        0,
+        2
+      ]
+    },
+    {
+      "hazard": "Falling components or loose material during overhead work",
+      "risk_question": "Could loose items or components fall into an area where people may be exposed?",
+      "control_measures": [
+        "Remove loose items from the work area where practicable.",
+        "Establish an exclusion zone below overhead work.",
+        "Use a controlled method to lower components rather than dropping them."
+      ],
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "hazard": "Removal or damage of components intended to remain",
+      "risk_question": "Have retained components and work-zone boundaries been identified before selective demolition?",
+      "control_measures": [
+        "Inspect the work area for retained components.",
+        "Mark items to remain and the boundaries of each work zone."
+      ],
+      "evidence_passage_indices": [
+        1
+      ]
+    }
+  ]
+}

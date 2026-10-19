@@ -1,0 +1,134 @@
+{
+  "planning_steps": [
+    {
+      "step_number": 1,
+      "step_description": "Identify occupied rooms, neighboring entrances, shared routes, and sensitive operations before selecting work hours or delivery routes.",
+      "purpose": "Account for nearby occupants and access needs when planning the work.",
+      "evidence_passage_indices": [
+        0
+      ]
+    },
+    {
+      "step_number": 2,
+      "step_description": "Record visible defects on adjoining walls and paths and agree how those observations will be reviewed during the work.",
+      "evidence_passage_indices": [
+        1
+      ]
+    },
+    {
+      "step_number": 3,
+      "step_description": "Plan debris handling and dust suppression, including collection of loose material within the work area.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "step_number": 4,
+      "step_description": "Separate the demolition zone from public routes and arrange a trained marshal for vehicle crossings of pedestrian routes.",
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "step_number": 5,
+      "step_description": "Brief workers and affected site users on the sequence, access restrictions, and contact arrangements for changing conditions.",
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ],
+  "retrieval_items": [
+    {
+      "question_text": "What measures are specified to limit dust and keep loose debris within the work area?",
+      "question_type": "risk_control",
+      "expected_answer": "Plan debris handling to minimize dust, use suitable wet suppression where compatible with the work, and collect loose material before it can leave the work area.",
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "question_text": "What control is required when vehicles cross a pedestrian route?",
+      "question_type": "safety_preparation",
+      "expected_answer": "A trained marshal should be assigned when vehicles cross a pedestrian route; the demolition zone should also be separated from public routes with rigid barriers and clear signs.",
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "question_text": "What information should be shared with affected site users before work proceeds?",
+      "question_type": "planning",
+      "expected_answer": "Tell them the planned sequence, access restrictions, and who to contact if conditions change.",
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ],
+  "source_document": {
+    "page_title": "Demolition Preparation Near Occupied Premises",
+    "page_text": "Demolition Preparation Near Occupied Premises. Neighbor and occupancy review: Identify occupied rooms, neighboring entrances, shared access routes, and sensitive operations before choosing work hours or delivery routes. Condition survey: Record visible pre-existing defects on adjoining walls and paths, and agree how observations will be reviewed during the work. Dust and debris: Plan debris handling to minimize dust; use suitable wet suppression where compatible with the work and collect loose material before it can leave the work area. Public interface: Separate the demolition zone from public routes with rigid barriers and clear signs; assign a trained marshal when vehicles cross a pedestrian route. Briefing: Tell workers and affected site users the planned sequence, access restrictions, and who to contact if conditions change."
+  },
+  "document_summary": "The page focuses on planning demolition near occupied and public areas, including an adjoining-property survey, dust and debris controls, route separation, and communication.",
+  "evidence_passages": [
+    {
+      "passage_text": "Identify occupied rooms, neighboring entrances, shared access routes, and sensitive operations before choosing work hours or delivery routes.",
+      "evidence_category": "planning_step",
+      "source_section": "Neighbor and occupancy review"
+    },
+    {
+      "passage_text": "Record visible pre-existing defects on adjoining walls and paths, and agree how observations will be reviewed during the work.",
+      "evidence_category": "site_survey",
+      "source_section": "Condition survey"
+    },
+    {
+      "passage_text": "Plan debris handling to minimize dust; use suitable wet suppression where compatible with the work and collect loose material before it can leave the work area.",
+      "evidence_category": "risk_control",
+      "source_section": "Dust and debris"
+    },
+    {
+      "passage_text": "Separate the demolition zone from public routes with rigid barriers and clear signs; assign a trained marshal when vehicles cross a pedestrian route.",
+      "evidence_category": "safety_preparation",
+      "source_section": "Public interface"
+    },
+    {
+      "passage_text": "Tell workers and affected site users the planned sequence, access restrictions, and who to contact if conditions change.",
+      "evidence_category": "safety_preparation",
+      "source_section": "Briefing"
+    }
+  ],
+  "risk_control_items": [
+    {
+      "hazard": "Dust and loose debris leaving the demolition work area",
+      "risk_question": "Could demolition dust or loose material escape the work area and affect nearby people or routes?",
+      "control_measures": [
+        "Plan debris handling to minimize dust.",
+        "Use suitable wet suppression where compatible with the work.",
+        "Collect loose material before it can leave the work area."
+      ],
+      "evidence_passage_indices": [
+        2
+      ]
+    },
+    {
+      "hazard": "Conflict between vehicles and pedestrians near the demolition zone",
+      "risk_question": "Do delivery or work vehicles need to cross a pedestrian route?",
+      "control_measures": [
+        "Separate the demolition zone from public routes with rigid barriers and clear signs.",
+        "Assign a trained marshal when vehicles cross a pedestrian route."
+      ],
+      "evidence_passage_indices": [
+        3
+      ]
+    },
+    {
+      "hazard": "Changes in site conditions affecting workers or nearby site users",
+      "risk_question": "Do workers and affected site users know the access restrictions and whom to contact if conditions change?",
+      "control_measures": [
+        "Brief workers and affected site users on the planned sequence and access restrictions.",
+        "Provide information on who to contact if conditions change."
+      ],
+      "evidence_passage_indices": [
+        4
+      ]
+    }
+  ]
+}
