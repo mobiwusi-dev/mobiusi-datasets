@@ -1,0 +1,22 @@
+{
+  "topic": "Response responsibilities and public protective actions",
+  "answer": "The Emergency Operations Coordinator declares Level 2 and coordinates department actions. The Community Services Team opens cooling centers from 10 a.m. to 8 p.m.; the Transit Dispatch Unit arranges rides for registered older adults and residents with mobility limitations; and the Health Outreach Team contacts people on its high-risk list with heat-safety guidance and to identify requests for assistance.",
+  "question": "Once Heat Response Level 2 is activated, which teams coordinate public protection, and what actions are assigned to them?",
+  "source_text": "Heat Response Level 2 is activated when the forecast heat index reaches at least 40°C for one day. The Emergency Operations Coordinator declares Level 2 and coordinates department actions. The Community Services Team opens cooling centers from 10 a.m. to 8 p.m. The Transit Dispatch Unit arranges rides to those centers for registered older adults and residents with mobility limitations. The Health Outreach Team contacts residents on its high-risk list to provide heat-safety guidance and identify requests for assistance.",
+  "answer_evidence": "The Emergency Operations Coordinator declares Level 2 and coordinates department actions. The Community Services Team opens cooling centers from 10 a.m. to 8 p.m. The Transit Dispatch Unit arranges rides to those centers for registered older adults and residents with mobility limitations. The Health Outreach Team contacts residents on its high-risk list to provide heat-safety guidance and identify requests for assistance.",
+  "response_measures": [
+    "The Emergency Operations Coordinator declares Level 2 and coordinates department actions.",
+    "The Community Services Team opens cooling centers from 10 a.m. to 8 p.m.",
+    "The Transit Dispatch Unit arranges rides to cooling centers for registered older adults and residents with mobility limitations.",
+    "The Health Outreach Team contacts residents on its high-risk list with heat-safety guidance and identifies requests for assistance."
+  ],
+  "activation_criteria": [
+    "Forecast heat index of at least 40°C for one day."
+  ],
+  "responsible_parties": [
+    "Emergency Operations Coordinator",
+    "Community Services Team",
+    "Transit Dispatch Unit",
+    "Health Outreach Team"
+  ]
+}

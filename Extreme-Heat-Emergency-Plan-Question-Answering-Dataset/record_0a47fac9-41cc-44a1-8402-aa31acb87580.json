@@ -1,0 +1,23 @@
+{
+  "response_measures": [
+    "The Emergency Coordination Lead confirms activation and convenes the response team.",
+    "The Public Health Unit issues heat-safety notices.",
+    "The Public Health Unit checks on residents enrolled in its high-risk outreach program.",
+    "The Facilities Team extends hours at designated cooling rooms.",
+    "The Facilities Team verifies that drinking water and backup power are available at designated cooling rooms."
+  ],
+  "topic": "Activation criteria",
+  "answer": "The response is activated if the forecast high is at least 38°C for two consecutive days, or if the overnight low is forecast to be at least 25°C for two consecutive nights.",
+  "question": "What forecast conditions trigger activation of the heat response?",
+  "source_text": "The heat response is activated when the forecast high temperature is at least 38°C on two consecutive days, or when the overnight low is forecast to remain at or above 25°C for two consecutive nights. The Emergency Coordination Lead confirms activation and convenes the response team. The Public Health Unit issues heat-safety notices and checks on residents enrolled in its high-risk outreach program. The Facilities Team extends hours at designated cooling rooms and verifies that drinking water and backup power are available.",
+  "answer_evidence": "The heat response is activated when the forecast high temperature is at least 38°C on two consecutive days, or when the overnight low is forecast to remain at or above 25°C for two consecutive nights.",
+  "activation_criteria": [
+    "Forecast high temperature of at least 38°C on two consecutive days.",
+    "Forecast overnight low of at least 25°C on two consecutive nights."
+  ],
+  "responsible_parties": [
+    "Emergency Coordination Lead",
+    "Public Health Unit",
+    "Facilities Team"
+  ]
+}
