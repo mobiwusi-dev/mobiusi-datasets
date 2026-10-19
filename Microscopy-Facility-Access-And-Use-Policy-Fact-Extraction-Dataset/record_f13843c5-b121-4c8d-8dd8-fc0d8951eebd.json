@@ -1,0 +1,108 @@
+{
+  "fee_rules": [
+    {
+      "user_group": "Westhaven Research Cooperative members",
+      "service_or_equipment": "Widefield fluorescence microscope, independent use",
+      "rate": "$55 per hour",
+      "billing_unit": "30-minute increments",
+      "rate_conditions": "Available after the user passes the Suite's independent-use check.",
+      "waiver_or_discount": "No waiver or discount is stated for this rate.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "Westhaven Research Cooperative members",
+      "service_or_equipment": "Widefield fluorescence microscope, staff-operated use",
+      "rate": "$90 per hour",
+      "billing_unit": "30-minute increments",
+      "rate_conditions": "Applies to staff-operated widefield sessions.",
+      "waiver_or_discount": "A 20% reduction is available to cooperative members whose project account is supported by the Cooperative's shared-instrument grant.",
+      "exceptions": "The stated reduction applies to staff-operated imaging."
+    },
+    {
+      "user_group": "Approved outside investigators",
+      "service_or_equipment": "Widefield fluorescence microscope, independent use",
+      "rate": "$125 per hour",
+      "billing_unit": "30-minute increments",
+      "rate_conditions": "Applies to approved outside investigators using the instrument independently.",
+      "waiver_or_discount": "No discount or fee waiver is stated for outside investigators.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "Approved outside investigators",
+      "service_or_equipment": "Widefield fluorescence microscope, staff-operated use",
+      "rate": "$175 per hour",
+      "billing_unit": "30-minute increments",
+      "rate_conditions": "Applies to staff-operated widefield sessions.",
+      "waiver_or_discount": "No discount or fee waiver is stated for outside investigators.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "All user groups",
+      "service_or_equipment": "Image analysis performed by Suite staff",
+      "rate": "$60 per hour",
+      "billing_unit": "30-minute increments",
+      "rate_conditions": "Applies to image analysis by Suite staff.",
+      "waiver_or_discount": "No other discounts or fee waivers are stated; the 20% reduction is limited to eligible cooperative members' staff-operated imaging.",
+      "exceptions": "None stated."
+    }
+  ],
+  "source_url": null,
+  "access_limits": [
+    {
+      "restriction": "Facility entry is limited to the published weekday hours; weekend access is unavailable.",
+      "affected_users": "All users.",
+      "applicable_condition": "The Suite is open from 9:00 a.m. to 5:00 p.m. on weekdays.",
+      "exceptions": "Weekend access is not available."
+    },
+    {
+      "restriction": "A non-registered collaborator may enter only with a registered user and may not operate an instrument.",
+      "affected_users": "Non-registered collaborators.",
+      "applicable_condition": "Whenever a non-registered collaborator enters the Suite.",
+      "exceptions": "None stated."
+    },
+    {
+      "restriction": "Users must sign the instrument log at the start and end of each session and remove their samples and materials when the session ends.",
+      "affected_users": "All users.",
+      "applicable_condition": "At the beginning and end of every instrument session.",
+      "exceptions": "None stated."
+    }
+  ],
+  "facility_name": "Westhaven Microscopy Suite",
+  "effective_date": "September 15, 2024",
+  "eligibility_rules": [
+    {
+      "user_group": "Westhaven Research Cooperative members",
+      "requirement": "Must have a current project account and complete Suite user registration before using the facility.",
+      "credential_or_evidence": "Current project account and completed user registration.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "Outside investigators",
+      "requirement": "Must submit a project intake form and obtain written approval from the facility director; the group must have a billing contact and project account on file before entering or operating equipment.",
+      "credential_or_evidence": "Submitted project intake form, written director approval, billing contact, and project account on file.",
+      "exceptions": "None stated."
+    }
+  ],
+  "reservation_rules": [
+    {
+      "user_group": "Registered users with approved access",
+      "booking_method": "Email the facility coordinator with the instrument, requested date, estimated duration, and sample type.",
+      "advance_notice": "At least five business days.",
+      "booking_window": "Routine sessions may be requested up to 45 days ahead.",
+      "cancellation_rule": "A reservation cancelled less than 24 hours before its start is charged for the first scheduled hour.",
+      "scheduling_limit": "Each user may hold one active reservation at a time; routine sessions are limited to two hours.",
+      "exceptions": "The facility director may authorize longer sessions for approved time-course studies."
+    }
+  ],
+  "equipment_use_rules": [
+    {
+      "equipment_name": "Widefield fluorescence microscope",
+      "permitted_users": "Registered users who have completed training and passed the independent-use check may operate independently; other approved sessions are operated by Suite staff.",
+      "training_requirement": "Independent operation requires completion of the Suite's two-part training and a passing independent-use check.",
+      "supervision_requirement": "Sessions for users who have not passed the independent-use check must be operated by Suite staff. Live-cell sessions also require staff operation.",
+      "operational_restriction": "Fixed samples must be sealed on slides or in approved dishes. Live-cell imaging requires prior confirmation that the environmental chamber is available. Samples containing radioactive material are prohibited.",
+      "exceptions": "No exception to the radioactive-material prohibition is stated."
+    }
+  ],
+  "source_page_content": "<main><h1>Westhaven Microscopy Suite</h1><p>The Suite provides imaging services to members of Westhaven Research Cooperative and to outside investigators whose projects are accepted by the facility. Cooperative members must have a current project account and complete the Suite's user registration before using the facility. Outside investigators must submit a project intake form and obtain written approval from the facility director. An outside group may not enter the Suite or operate equipment until its billing contact and project account are on file.</p><h2>Scheduling</h2><p>Users schedule sessions by emailing the facility coordinator with the instrument, requested date, estimated duration, and sample type. Requests require at least five business days' notice. Routine sessions may be requested up to 45 days ahead. A reservation cancelled less than 24 hours before its start is charged for the first scheduled hour. Each user may hold one active reservation at a time, and routine sessions are limited to two hours. The facility director may authorize longer sessions for approved time-course studies.</p><h2>Charges</h2><p>Cooperative members pay $55 per hour for use of the widefield fluorescence microscope after passing the Suite's independent-use check. A staff-operated widefield session costs $90 per hour. Approved outside investigators pay $125 per hour for independent widefield use and $175 per hour for staff-operated use. Image analysis by Suite staff is billed at $60 per hour for all user groups. Charges are calculated in 30-minute increments. A 20% reduction on staff-operated imaging is available to cooperative members whose project account is supported by the Cooperative's shared-instrument grant. No other discounts or fee waivers are stated.</p><h2>Instrument conditions</h2><p>The widefield fluorescence microscope may be operated independently only by registered users who have completed the Suite's two-part training and passed the independent-use check. All other sessions must be operated by Suite staff. Fixed samples must be sealed on slides or in approved dishes. Live-cell samples require staff operation and prior confirmation of environmental-chamber availability. Users may not bring samples containing radioactive material into the Suite.</p><h2>Entry and conduct</h2><p>Access is available from 9:00 a.m. to 5:00 p.m. on weekdays. Weekend access is not available. Users must sign the instrument log at the start and end of each session and remove their samples and materials when the session ends. A non-registered collaborator may enter only when accompanied by a registered user and may not operate an instrument.</p><p>These policies take effect September 15, 2024.</p></main>"
+}

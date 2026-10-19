@@ -1,0 +1,93 @@
+{
+  "fee_rules": [
+    {
+      "user_group": "Internal institute users",
+      "service_or_equipment": "Confocal microscope, independently operated session",
+      "rate": "$42 per hour",
+      "billing_unit": "Whole-hour increments",
+      "rate_conditions": "Applies to independently operated sessions.",
+      "waiver_or_discount": "No waiver or discount is listed on the page.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "Internal institute users",
+      "service_or_equipment": "Confocal microscope, staff-assisted session",
+      "rate": "$68 per hour",
+      "billing_unit": "Whole-hour increments",
+      "rate_conditions": "Ap applies whenever a Centre staff member operates the instrument.",
+      "waiver_or_discount": "No waiver or discount is listed on the page.",
+      "exceptions": "None stated."
+    },
+    {
+      "user_group": "Approved external academic and nonprofit users",
+      "service_or_equipment": "Confocal microscope, independently operated session",
+      "rate": "$95 per hour",
+      "billing_unit": "Whole-hour increments",
+      "rate_conditions": "Applies to independently operated sessions.",
+      "waiver_or_discount": "No waiver or discount is listed on the page.",
+      "exceptions": "Commercial rates are quoted after project review."
+    },
+    {
+      "user_group": "Approved external academic and nonprofit users",
+      "service_or_equipment": "Confocal microscope, staff-assisted session",
+      "rate": "$140 per hour",
+      "billing_unit": "Whole-hour increments",
+      "rate_conditions": "Applies whenever a Centre staff member operates the instrument.",
+      "waiver_or_discount": "No waiver or discount is listed on the page.",
+      "exceptions": "Commercial rates are quoted after project review."
+    }
+  ],
+  "source_url": null,
+  "access_limits": [
+    {
+      "restriction": "Suite access is limited to authorized users during stated operating hours; after-hours entry requires approved card access.",
+      "affected_users": "All users of the imaging suite.",
+      "applicable_condition": "The suite is open 8:00 a.m. to 6:00 p.m. Monday through Friday; access outside those hours requires Centre manager approval for after-hours card access.",
+      "exceptions": "The Centre manager may approve after-hours card access."
+    },
+    {
+      "restriction": "Visitors must remain with their institute sponsor or a Centre staff member inside the suite.",
+      "affected_users": "Visitors.",
+      "applicable_condition": "Whenever a visitor is inside the imaging suite.",
+      "exceptions": "None stated."
+    }
+  ],
+  "facility_name": "Larkspur Research Imaging Centre",
+  "effective_date": "March 1, 2025",
+  "eligibility_rules": [
+    {
+      "user_group": "Internal institute laboratory members",
+      "requirement": "Must be listed on an active institute laboratory account; the principal investigator must submit the laboratory access form before a member requests instrument time.",
+      "credential_or_evidence": "Active laboratory account, submitted access form, and inclusion on the laboratory roster.",
+      "exceptions": "A visiting scholar may be added to the roster if sponsored by an institute principal investigator and covered by a signed visitor access agreement."
+    },
+    {
+      "user_group": "External academic and nonprofit groups",
+      "requirement": "Must apply through an institute sponsor and receive Centre approval before access begins.",
+      "credential_or_evidence": "Approved application and signed service agreement.",
+      "exceptions": "Commercial users follow a separate project-review process before scheduling."
+    }
+  ],
+  "reservation_rules": [
+    {
+      "user_group": "Approved users",
+      "booking_method": "Request instrument time through the Centre's online booking calendar.",
+      "advance_notice": "Submit requests at least two business days before the requested session.",
+      "booking_window": "Reservations may be made up to 30 calendar days in advance.",
+      "cancellation_rule": "Cancel or amend at least 12 hours before the session; later cancellations are billed for the reserved time.",
+      "scheduling_limit": "Standard sessions are limited to four consecutive hours, and each individual may reserve no more than eight hours per week.",
+      "exceptions": "The Centre manager may approve longer sessions for time-sensitive projects."
+    }
+  ],
+  "equipment_use_rules": [
+    {
+      "equipment_name": "Confocal microscope",
+      "permitted_users": "Users with current Centre authorization may operate independently; other approved users may book a staff-assisted session.",
+      "training_requirement": "Independent operation requires instrument-specific Centre training and a completed competency check.",
+      "supervision_requirement": "Users who have not completed the competency check must use a staff-assisted session; live-cell imaging must be staff-assisted.",
+      "operational_restriction": "Samples presenting an uncontained biological or chemical hazard are not accepted.",
+      "exceptions": "No exceptions to the sample restriction are stated."
+    }
+  ],
+  "source_page_content": "<main><h1>Larkspur Research Imaging Centre</h1><p>The Centre serves laboratories affiliated with Larkspur Institute and approved external research groups. Internal users must be listed on an active institute laboratory account. The principal investigator must submit the laboratory access form before any member may request instrument time. Visiting scholars may be added to a laboratory roster when sponsored by an institute principal investigator and when the visitor access agreement is signed.</p><p>External academic and nonprofit groups may apply through an institute sponsor. Access begins only after the Centre approves the application and receives a signed service agreement. Commercial users must contact the Centre manager for a project review before scheduling.</p><h2>Reservations</h2><p>Approved users request instrument time through the Centre's online booking calendar. Requests must be submitted at least two business days before the requested session. Reservations may be made up to 30 calendar days in advance. Users must cancel or amend a session at least 12 hours before its start; later cancellations are billed for the reserved time. A standard session may not exceed four consecutive hours, and an individual may reserve no more than eight hours per week. The Centre manager may approve longer sessions for time-sensitive projects.</p><h2>Rates</h2><p>For the confocal microscope, internal institute users are charged $42 per hour for independently operated sessions and $68 per hour for staff-assisted sessions. Approved external academic and nonprofit users are charged $95 per hour for independently operated sessions and $140 per hour for staff-assisted sessions. Staff-assisted rates apply whenever a Centre staff member operates the instrument. Rates are billed in whole-hour increments. No waiver or discount is listed on this page. Commercial rates are quoted after project review.</p><h2>Equipment use</h2><p>Only users with current Centre authorization may operate the confocal microscope independently. Independent operation requires completion of the Centre's instrument-specific training and a competency check. Users who have not completed the competency check must book a staff-assisted session. Live-cell imaging must be staff-assisted. Samples presenting an uncontained biological or chemical hazard are not accepted.</p><h2>Facility access</h2><p>The imaging suite is open to authorized users from 8:00 a.m. to 6:00 p.m. Monday through Friday. Access outside these hours is limited to users with after-hours card access approved by the Centre manager. Visitors must remain with their institute sponsor or Centre staff member while inside the suite.</p><p>Policy effective March 1, 2025.</p></main>"
+}
