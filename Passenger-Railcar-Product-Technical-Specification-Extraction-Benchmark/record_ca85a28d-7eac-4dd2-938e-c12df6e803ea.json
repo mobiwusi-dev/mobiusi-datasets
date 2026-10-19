@@ -1,0 +1,12 @@
+{
+  "width": "2.90 m",
+  "height": "3.85 m",
+  "length": "39.8 m",
+  "model_name": "Orlune H40",
+  "power_type": "hydrogen fuel-cell propulsion with battery energy storage",
+  "source_text": "The Orlune H40 regional railcar is offered in the H40-2 two-car configuration. The complete trainset is 39.8 m long, 2.90 m wide and 3.85 m high. It accommodates up to 124 passengers, including 96 seated and 28 standing. Maximum speed is 120 km/h. The H40-2 is intended for 1,067 mm gauge routes and uses hydrogen fuel-cell propulsion with battery energy storage.",
+  "track_gauge": "1,067 mm",
+  "maximum_speed": "120 km/h",
+  "model_version": "H40-2 two-car configuration",
+  "passenger_capacity": "up to 124 passengers, including 96 seated and 28 standing"
+}

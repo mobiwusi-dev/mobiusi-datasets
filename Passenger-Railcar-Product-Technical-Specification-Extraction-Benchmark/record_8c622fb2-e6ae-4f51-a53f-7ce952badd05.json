@@ -1,0 +1,12 @@
+{
+  "source_text": "Designed for urban and suburban lines, the Meralis L12 is a single-car, low-floor passenger rail vehicle. Its Compact layout is 18.6 m in length, 2.65 m in width and 3.45 m in height. Capacity is 32 seated passengers and up to 66 standing passengers. The vehicle has a maximum speed of 70 km/h and is built for 1,000 mm track gauge. A battery-electric drive supports operation beneath the overhead supply and short sections without it.",
+  "track_gauge": "1,000 mm",
+  "maximum_speed": "70 km/h",
+  "model_version": "Compact layout",
+  "passenger_capacity": "32 seated passengers and up to 66 standing passengers",
+  "width": "2.65 m",
+  "height": "3.45 m",
+  "length": "18.6 m",
+  "model_name": "Meralis L12",
+  "power_type": "battery-electric drive"
+}

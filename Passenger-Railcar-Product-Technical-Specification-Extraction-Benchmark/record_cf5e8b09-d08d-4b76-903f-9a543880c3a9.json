@@ -1,0 +1,12 @@
+{
+  "width": "3.05 m",
+  "height": "4.10 m",
+  "length": "24.5 m",
+  "model_name": "Ternway R-18",
+  "power_type": "diesel-electric traction",
+  "source_text": "The Ternway R-18 is a self-propelled intercity rail coach configured for regional services. The Regional Comfort version measures 24.5 m long, 3.05 m wide and 4.10 m high. It provides 72 seats and standing room for up to 18 additional passengers. Maximum operating speed is 160 km/h on 1,435 mm gauge track. The vehicle uses diesel-electric traction.",
+  "track_gauge": "1,435 mm",
+  "maximum_speed": "160 km/h",
+  "model_version": "Regional Comfort",
+  "passenger_capacity": "72 seats and standing room for up to 18 additional passengers"
+}
