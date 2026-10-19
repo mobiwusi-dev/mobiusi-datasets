@@ -1,0 +1,8 @@
+{
+  "question": "Can a vehicle travel from LN-LOOP-E to LN-LOOP-W using the connections in the map?",
+  "map_facts": "{\"nodes\":[{\"id\":\"LN-LOOP-E\",\"type\":\"lane\",\"label\":\"East visitor loop lane\"},{\"id\":\"JCT-E1\",\"type\":\"intersection\",\"label\":\"East junction\"},{\"id\":\"LN-SEC-02\",\"type\":\"lane\",\"label\":\"Security corridor lane\"},{\"id\":\"JCT-W1\",\"type\":\"intersection\",\"label\":\"West junction\"},{\"id\":\"LN-LOOP-W\",\"type\":\"lane\",\"label\":\"West visitor loop lane\"}],\"directed_connections\":[[\"LN-LOOP-W\",\"JCT-W1\"],[\"JCT-W1\",\"LN-SEC-02\"],[\"LN-SEC-02\",\"JCT-E1\"],[\"JCT-E1\",\"LN-LOOP-E\"]]}",
+  "reasoning": "All listed connections are directed from LN-LOOP-W through JCT-W1, LN-SEC-02, and JCT-E1 to LN-LOOP-E. There is no outgoing connection from LN-LOOP-E that would allow travel back toward LN-LOOP-W, and no reverse connections are specified.",
+  "path_nodes": [],
+  "answer_text": "No. The listed connections lead toward LN-LOOP-E, but do not provide a directed path from LN-LOOP-E back to LN-LOOP-W.",
+  "is_reachable": false
+}

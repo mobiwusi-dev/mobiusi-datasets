@@ -1,0 +1,14 @@
+{
+  "question": "Is LN-GATE-01 reachable from LN-DOCK-04? If so, provide a valid path from the gate lane to the loading lane.",
+  "map_facts": "{\"nodes\":[{\"id\":\"LN-GATE-01\",\"type\":\"lane\",\"label\":\"North Gate inbound lane\"},{\"id\":\"JCT-N1\",\"type\":\"intersection\",\"label\":\"North junction\"},{\"id\":\"RD-SPINE-02\",\"type\":\"road\",\"label\":\"Central spine road\"},{\"id\":\"JCT-C2\",\"type\":\"intersection\",\"label\":\"Central junction\"},{\"id\":\"LN-DOCK-04\",\"type\":\"lane\",\"label\":\"Warehouse 4 loading lane\"}],\"directed_connections\":[[\"LN-GATE-01\",\"JCT-N1\"],[\"JCT-N1\",\"RD-SPINE-02\"],[\"RD-SPINE-02\",\"JCT-C2\"],[\"JCT-C2\",\"LN-DOCK-04\"]]}",
+  "reasoning": "The directed connections form a continuous sequence from LN-GATE-01 to JCT-N1, then to RD-SPINE-02, JCT-C2, and LN-DOCK-04. Each consecutive pair in the listed path is an explicit connection in the map facts.",
+  "path_nodes": [
+    "LN-GATE-01",
+    "JCT-N1",
+    "RD-SPINE-02",
+    "JCT-C2",
+    "LN-DOCK-04"
+  ],
+  "answer_text": "Yes. LN-GATE-01 can reach LN-DOCK-04 via JCT-N1, RD-SPINE-02, and JCT-C2.",
+  "is_reachable": true
+}

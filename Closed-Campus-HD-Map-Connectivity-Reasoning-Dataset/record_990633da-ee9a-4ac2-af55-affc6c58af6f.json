@@ -1,0 +1,14 @@
+{
+  "question": "Is LN-COLDSTORE-02 reachable from LN-SOUTH-ENTRY? Provide one valid route through the east service road.",
+  "map_facts": "{\"nodes\":[{\"id\":\"LN-SOUTH-ENTRY\",\"type\":\"lane\",\"label\":\"South service entry lane\"},{\"id\":\"JCT-S1\",\"type\":\"intersection\",\"label\":\"South junction\"},{\"id\":\"RD-WEST-04\",\"type\":\"road\",\"label\":\"West service road\"},{\"id\":\"RD-EAST-05\",\"type\":\"road\",\"label\":\"East service road\"},{\"id\":\"JCT-C3\",\"type\":\"intersection\",\"label\":\"Cold-storage junction\"},{\"id\":\"LN-COLDSTORE-02\",\"type\":\"lane\",\"label\":\"Cold-storage receiving lane\"}],\"directed_connections\":[[\"LN-SOUTH-ENTRY\",\"JCT-S1\"],[\"JCT-S1\",\"RD-WEST-04\"],[\"JCT-S1\",\"RD-EAST-05\"],[\"RD-WEST-04\",\"JCT-C3\"],[\"RD-EAST-05\",\"JCT-C3\"],[\"JCT-C3\",\"LN-COLDSTORE-02\"]]}",
+  "reasoning": "The map provides directed connections from LN-SOUTH-ENTRY to JCT-S1, from JCT-S1 to RD-EAST-05, from RD-EAST-05 to JCT-C3, and from JCT-C3 to LN-COLDSTORE-02. These links form a valid continuous route through the requested east service road.",
+  "path_nodes": [
+    "LN-SOUTH-ENTRY",
+    "JCT-S1",
+    "RD-EAST-05",
+    "JCT-C3",
+    "LN-COLDSTORE-02"
+  ],
+  "answer_text": "Yes. One valid route is LN-SOUTH-ENTRY → JCT-S1 → RD-EAST-05 → JCT-C3 → LN-COLDSTORE-02.",
+  "is_reachable": true
+}
