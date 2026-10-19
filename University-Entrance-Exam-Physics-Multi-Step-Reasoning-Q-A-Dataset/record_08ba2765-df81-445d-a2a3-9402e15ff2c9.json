@@ -1,0 +1,20 @@
+{
+  "final_answer": "The cart leaves the patch at √3 m/s, approximately 1.73 m/s.",
+  "question_text": "A 2.0 kg cart is at rest on a frictionless track with a spring (spring constant 200 N/m) compressed by 0.30 m behind it. The cart is released and then crosses a 1.5 m-long horizontal rough patch with coefficient of kinetic friction 0.20. What is its speed as it leaves the patch? Use g = 10 m/s².",
+  "reasoning_steps": [
+    "The spring initially stores elastic potential energy E_s = ½kx² = ½(200)(0.30)² = 9.0 J.",
+    "The friction force on the patch is f_k = μmg = (0.20)(2.0)(10) = 4.0 N, so friction does W_f = -f_kL = -(4.0)(1.5) = -6.0 J of work.",
+    "By the work-energy theorem, the cart leaves the patch with kinetic energy K = 9.0 - 6.0 = 3.0 J.",
+    "Using K = ½mv² gives v = √(2K/m) = √3 m/s."
+  ],
+  "extracted_quantities": [
+    "Cart mass: 2.0 kg",
+    "Initial speed: 0 m/s",
+    "Spring constant: 200 N/m",
+    "Spring compression: 0.30 m",
+    "Rough-patch length: 1.5 m",
+    "Coefficient of kinetic friction: 0.20",
+    "Gravitational acceleration: 10 m/s²",
+    "Track before the patch is frictionless"
+  ]
+}

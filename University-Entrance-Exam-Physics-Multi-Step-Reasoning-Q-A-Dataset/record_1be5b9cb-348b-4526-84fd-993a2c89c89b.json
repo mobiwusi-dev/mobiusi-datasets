@@ -1,0 +1,17 @@
+{
+  "final_answer": "The 3.0 Ω resistor carries 8/7 A (about 1.14 A), and the battery's terminal voltage is 72/7 V (about 10.29 V).",
+  "question_text": "An ideal 12 V battery with internal resistance 1.0 Ω is connected to a 4.0 Ω resistor in series with a parallel combination of 6.0 Ω and 3.0 Ω resistors. Assume the connecting wires have negligible resistance. Find the current through the 3.0 Ω resistor and the battery's terminal voltage.",
+  "reasoning_steps": [
+    "The parallel equivalent resistance is R_p = (6.0 × 3.0)/(6.0 + 3.0) = 2.0 Ω.",
+    "The external resistance is 4.0 + 2.0 = 6.0 Ω. Including internal resistance, the total resistance is 7.0 Ω, so the battery current is I = 12/7 A.",
+    "The voltage across the parallel branch is I R_p = (12/7)(2.0) = 24/7 V. Thus the current through the 3.0 Ω resistor is (24/7)/3.0 = 8/7 A.",
+    "The terminal voltage is the voltage across the external circuit: V_term = I(6.0 Ω) = 72/7 V."
+  ],
+  "extracted_quantities": [
+    "Battery emf: 12 V",
+    "Internal resistance: 1.0 Ω",
+    "Series resistor: 4.0 Ω",
+    "Parallel resistors: 6.0 Ω and 3.0 Ω",
+    "Connecting-wire resistance: negligible"
+  ]
+}

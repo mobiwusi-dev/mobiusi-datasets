@@ -1,0 +1,19 @@
+{
+  "final_answer": "The block-projectile system rises 0.80 m above its position immediately after impact.",
+  "question_text": "A 0.020 kg projectile traveling horizontally at 300 m/s embeds in a stationary 1.48 kg block suspended so it can swing freely. The collision is brief, and the external horizontal impulse during impact is negligible. After the collision, the block-projectile system swings upward without appreciable air resistance. What maximum vertical height does it reach above its position immediately after impact? Use g = 10 m/s².",
+  "reasoning_steps": [
+    "Conservation of horizontal momentum during the collision gives (0.020)(300) = (0.020 + 1.48)v, so the combined speed immediately after impact is v = 4.0 m/s.",
+    "After impact, mechanical energy is conserved as the system rises: ½(1.50)(4.0)² = (1.50)(10)h.",
+    "Solving for the vertical rise gives h = (4.0)²/(2 × 10) = 0.80 m."
+  ],
+  "extracted_quantities": [
+    "Projectile mass: 0.020 kg",
+    "Projectile initial speed: 300 m/s",
+    "Block mass: 1.48 kg",
+    "Block initial speed: 0 m/s",
+    "Projectile embeds in the block",
+    "External horizontal impulse during impact: negligible",
+    "Air resistance during the swing: negligible",
+    "Gravitational acceleration: 10 m/s²"
+  ]
+}
