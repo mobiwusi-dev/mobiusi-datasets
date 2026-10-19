@@ -1,0 +1,51 @@
+{
+  "events": [
+    {
+      "event_type": {
+        "value": "Water-sharing agreement",
+        "evidence": {
+          "quote": "signed a water-sharing agreement",
+          "start_offset": 79,
+          "end_offset": 111
+        }
+      },
+      "participants": [
+        {
+          "name": "Avenor",
+          "role": "Delegating party",
+          "evidence": {
+            "quote": "Delegations from the coastal republic of Avenor",
+            "start_offset": 0,
+            "end_offset": 47
+          }
+        },
+        {
+          "name": "Belvar",
+          "role": "Delegating party",
+          "evidence": {
+            "quote": "the inland state of Belvar",
+            "start_offset": 52,
+            "end_offset": 78
+          }
+        }
+      ],
+      "event_time": {
+        "value": "14 May 2025",
+        "evidence": {
+          "quote": "on 14 May 2025",
+          "start_offset": 122,
+          "end_offset": 136
+        }
+      },
+      "location": {
+        "value": "Merrow",
+        "evidence": {
+          "quote": "in Merrow",
+          "start_offset": 112,
+          "end_offset": 121
+        }
+      }
+    }
+  ],
+  "article_text": "Delegations from the coastal republic of Avenor and the inland state of Belvar signed a water-sharing agreement in Merrow on 14 May 2025, after two days of talks, officials from both governments said."
+}

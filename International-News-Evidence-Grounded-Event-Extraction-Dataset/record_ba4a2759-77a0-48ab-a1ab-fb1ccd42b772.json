@@ -1,0 +1,51 @@
+{
+  "events": [
+    {
+      "event_type": {
+        "value": "Opening of a maritime relief corridor",
+        "evidence": {
+          "quote": "opened a maritime relief corridor",
+          "start_offset": 86,
+          "end_offset": 119
+        }
+      },
+      "participants": [
+        {
+          "name": "Veyra",
+          "role": "Representing party",
+          "evidence": {
+            "quote": "Representatives of the island nation of Veyra",
+            "start_offset": 0,
+            "end_offset": 44
+          }
+        },
+        {
+          "name": "Caldrin",
+          "role": "Representing party",
+          "evidence": {
+            "quote": "Representatives of the island nation of Veyra and the neighboring republic of Caldrin",
+            "start_offset": 0,
+            "end_offset": 85
+          }
+        }
+      ],
+      "event_time": {
+        "value": "18 November 2024",
+        "evidence": {
+          "quote": "on 18 November 2024",
+          "start_offset": 136,
+          "end_offset": 155
+        }
+      },
+      "location": {
+        "value": "Port Selen",
+        "evidence": {
+          "quote": "from Port Selen",
+          "start_offset": 120,
+          "end_offset": 135
+        }
+      }
+    }
+  ],
+  "article_text": "Representatives of the island nation of Veyra and the neighboring republic of Caldrin opened a maritime relief corridor from Port Selen on 18 November 2024, allowing aid vessels to reach northern communities."
+}

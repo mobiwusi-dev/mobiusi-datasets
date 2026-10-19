@@ -1,0 +1,51 @@
+{
+  "events": [
+    {
+      "event_type": {
+        "value": "Ceasefire agreement",
+        "evidence": {
+          "quote": "agreed to a 72-hour ceasefire",
+          "start_offset": 64,
+          "end_offset": 93
+        }
+      },
+      "participants": [
+        {
+          "name": "Ordan",
+          "role": "Participating government",
+          "evidence": {
+            "quote": "governments of Ordan and Selka",
+            "start_offset": 33,
+            "end_offset": 63
+          }
+        },
+        {
+          "name": "Selka",
+          "role": "Participating government",
+          "evidence": {
+            "quote": "governments of Ordan and Selka",
+            "start_offset": 33,
+            "end_offset": 63
+          }
+        }
+      ],
+      "event_time": {
+        "value": "Dawn on 3 September 2025",
+        "evidence": {
+          "quote": "At dawn on 3 September 2025",
+          "start_offset": 0,
+          "end_offset": 27
+        }
+      },
+      "location": {
+        "value": "Teren, a border district",
+        "evidence": {
+          "quote": "in Teren, a border district",
+          "start_offset": 94,
+          "end_offset": 121
+        }
+      }
+    }
+  ],
+  "article_text": "At dawn on 3 September 2025, the governments of Ordan and Selka agreed to a 72-hour ceasefire in Teren, a border district monitored by a joint regional mission."
+}
