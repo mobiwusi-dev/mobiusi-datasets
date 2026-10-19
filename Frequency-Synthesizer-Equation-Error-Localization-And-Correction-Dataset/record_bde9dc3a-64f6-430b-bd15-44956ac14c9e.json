@@ -1,0 +1,11 @@
+{
+  "erroneous_step_index": 2,
+  "incorrect_expression": "f_out = f_PFD / N = 8 MHz / 125 = 64 kHz",
+  "correction_explanation": "From f_out / N = f_PFD, multiply both sides by N to isolate f_out. Dividing f_PFD by N applies the divider in the wrong direction and contradicts the locked feedback relationship.",
+  "error_type": "Incorrect inversion when isolating the output frequency",
+  "final_result": "f_out = N(f_ref / R) = 125 × (24 MHz / 3) = 1 GHz, where f_ref is the reference frequency, R is the reference divider, N is the feedback divider, and f_PFD = f_ref / R.",
+  "error_location": "Step 2, where N is incorrectly placed in the denominator while solving f_out / N = f_PFD for f_out.",
+  "source_derivation": "An integer-N PLL uses a reference frequency of 24 MHz, reference divider R = 3, and feedback divider N = 125. Derivation steps, indexed from zero: [0] The phase-detector frequency is f_PFD = f_ref / R = 24 MHz / 3 = 8 MHz. [1] At lock, the divided feedback frequency equals the phase-detector frequency: f_out / N = f_PFD. [2] Therefore, f_out = f_PFD / N = 8 MHz / 125 = 64 kHz.",
+  "corrected_derivation": "An integer-N PLL uses f_ref = 24 MHz, R = 3, and N = 125. [0] f_PFD = f_ref / R = 24 MHz / 3 = 8 MHz. [1] At lock, f_out / N = f_PFD. [2] Multiplying both sides by N gives f_out = N f_PFD = 125 × 8 MHz = 1,000 MHz = 1 GHz.",
+  "corrected_expression": "f_out = N f_PFD = 125 × 8 MHz = 1 GHz"
+}

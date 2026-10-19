@@ -1,0 +1,11 @@
+{
+  "error_type": "Denominator inverted during simplification",
+  "final_result": "The adjacent-channel frequency step is Δf = f_PFD/M = f_ref/(RM) = 40 MHz/(2 × 1000) = 20 kHz, where f_ref is the reference frequency, R is the reference divider, and M is the fractional modulus.",
+  "error_location": "Step 4, where the factor 1/M is incorrectly replaced by M.",
+  "source_derivation": "A fractional-N synthesizer has f_ref = 40 MHz, reference divider R = 2, integer division value N_int = 42, and fractional modulus M = 1000. Let k be the fractional numerator. Derivation steps, indexed from zero: [0] f_PFD = f_ref / R = 40 MHz / 2 = 20 MHz. [1] The output frequency at numerator k is f_out(k) = f_PFD(N_int + k/M). [2] The frequency step for increasing k by one is Δf = f_out(k+1) - f_out(k). [3] Substitution gives Δf = f_PFD[(N_int + (k+1)/M) - (N_int + k/M)] = f_PFD(1/M). [4] Therefore, Δf = f_PFD × M = 20 MHz × 1000 = 20 GHz.",
+  "corrected_derivation": "For f_ref = 40 MHz, R = 2, N_int = 42, and M = 1000: [0] f_PFD = f_ref / R = 20 MHz. [1] f_out(k) = f_PFD(N_int + k/M). [2] Δf = f_out(k+1) - f_out(k). [3] Substituting the output-frequency expression gives Δf = f_PFD[(N_int + (k+1)/M) - (N_int + k/M)] = f_PFD[(k+1-k)/M] = f_PFD/M. [4] Thus, Δf = 20 MHz / 1000 = 20 kHz.",
+  "corrected_expression": "Δf = f_PFD / M = 20 MHz / 1000 = 20 kHz",
+  "erroneous_step_index": 4,
+  "incorrect_expression": "Δf = f_PFD × M = 20 MHz × 1000 = 20 GHz",
+  "correction_explanation": "The integer terms cancel and (k+1-k)/M simplifies to 1/M, not M. The modulus therefore divides the phase-detector frequency, yielding a 20 kHz step rather than 20 GHz."
+}
