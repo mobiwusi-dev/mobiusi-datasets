@@ -1,0 +1,49 @@
+{
+  "answer": "Use qui when the pronoun is the subject of its relative clause and que when it is the direct object. The choice depends on the pronoun’s function in that clause, not on the antecedent. Que becomes qu’ before a vowel sound.",
+  "analysis": {
+    "grammar_point": "The relative pronouns qui and que",
+    "rule": "Qui serves as the subject of its relative clause; que serves as its direct object. Que becomes qu’ before a vowel sound.",
+    "applicability_conditions": [
+      "Choose the pronoun according to its grammatical function inside the relative clause.",
+      "Use qui when the pronoun is the subject of that clause.",
+      "Use que when the pronoun is the direct object.",
+      "Elide que to qu’ before a vowel sound."
+    ],
+    "examples": [
+      {
+        "french_text": "Le livre qui est sur la table appartient à Nina.",
+        "english_translation": "The book that is on the table belongs to Nina.",
+        "explanation": "Qui is the subject of est in the relative clause qui est sur la table."
+      },
+      {
+        "french_text": "La chanson qu’il écoute est ancienne.",
+        "english_translation": "The song that he listens to is old.",
+        "explanation": "Que is the direct object of écoute and becomes qu’ before the vowel sound in il."
+      }
+    ],
+    "exceptions": []
+  },
+  "evidence": [
+    {
+      "source_quote": "use qui when the relative pronoun is the subject of its clause; use que when it is the direct object",
+      "source_location": "Unit 7, §3",
+      "support_relation": "Supports the distinction between qui and que by their function in the relative clause."
+    },
+    {
+      "source_quote": "Que becomes qu’ before a vowel sound",
+      "source_location": "Unit 7, §3",
+      "support_relation": "Supports the elision rule for que."
+    },
+    {
+      "source_quote": "The antecedent does not determine the choice; the pronoun’s function in the relative clause does.",
+      "source_location": "Unit 7, §3",
+      "support_relation": "Supports the answer that the choice depends on the pronoun’s role within its clause."
+    }
+  ],
+  "question": "How do I choose between qui and que in a relative clause, and when does que change form?",
+  "source_document": {
+    "document_title": "French Grammar Course Notes: Relative Pronouns qui and que",
+    "excerpt": "In a relative clause, use qui when the relative pronoun is the subject of its clause; use que when it is the direct object. Que becomes qu’ before a vowel sound, as in « La chanson qu’il écoute est ancienne. » The antecedent does not determine the choice; the pronoun’s function in the relative clause does. « Le livre qui est sur la table appartient à Nina. » means “The book that is on the table belongs to Nina.” « La chanson qu’il écoute est ancienne. » means “The song that he listens to is old.”",
+    "locator": "Unit 7, §3"
+  }
+}

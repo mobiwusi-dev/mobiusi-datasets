@@ -1,0 +1,50 @@
+{
+  "question": "When does the past participle agree with the subject in the passé composé, and what happens when sortir has a direct object?",
+  "answer": "For the non-reflexive intransitive verbs described in the passage, the passé composé uses être, and the past participle agrees in gender and number with the subject. When sortir is used transitively with a direct object, it takes avoir instead, as in Elle a sorti les clés.",
+  "analysis": {
+    "grammar_point": "Auxiliary choice and subject agreement in the passé composé",
+    "rule": "A limited group of non-reflexive intransitive verbs, including arriver and partir, take être in the passé composé; with être, the past participle agrees in gender and number with the subject. Some verbs in this group take avoir when used transitively with a direct object.",
+    "applicability_conditions": [
+      "The agreement rule applies to the described non-reflexive intransitive verbs when they take être.",
+      "The past participle agrees with the subject in both gender and number.",
+      "Some verbs in the group take avoir when used transitively with a direct object."
+    ],
+    "examples": [
+      {
+        "french_text": "Elle est arrivée.",
+        "english_translation": "She arrived.",
+        "explanation": "The auxiliary is être, and arrivée agrees with the feminine singular subject elle."
+      },
+      {
+        "french_text": "Ils sont partis.",
+        "english_translation": "They left.",
+        "explanation": "The auxiliary is être, and partis agrees with the masculine plural subject ils."
+      },
+      {
+        "french_text": "Elle a sorti les clés.",
+        "english_translation": "She took out the keys.",
+        "explanation": "Sortir is used transitively with the direct object les clés, so the passage uses avoir."
+      }
+    ],
+    "exceptions": [
+      "Some verbs in the group take avoir when they are used transitively with a direct object; the passage illustrates this with sortir."
+    ]
+  },
+  "evidence": [
+    {
+      "source_quote": "With être, the past participle agrees in gender and number with the subject",
+      "source_location": "Unit 9, §2",
+      "support_relation": "Supports the subject-agreement rule for past participles used with être."
+    },
+    {
+      "source_quote": "Some verbs in this group take avoir when used transitively with a direct object: « Elle a sorti les clés. »",
+      "source_location": "Unit 9, §2",
+      "support_relation": "Supports the caveat about transitive use and the auxiliary in the sortir example."
+    }
+  ],
+  "source_document": {
+    "document_title": "French Grammar Course Notes: The passé composé with avoir and être",
+    "excerpt": "In the passé composé, most non-reflexive transitive verbs take avoir. A limited group of non-reflexive intransitive verbs, including arriver and partir, take être. With être, the past participle agrees in gender and number with the subject: « Elle est arrivée. » means “She arrived,” and « Ils sont partis. » means “They left.” Some verbs in this group take avoir when used transitively with a direct object: « Elle a sorti les clés. » means “She took out the keys.”",
+    "locator": "Unit 9, §2"
+  }
+}

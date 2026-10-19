@@ -1,0 +1,56 @@
+{
+  "answer": "In a simple present-tense clause, ne comes before the conjugated verb and pas after it. Before a vowel or mute h, ne becomes n’. With an infinitive, ne pas normally comes before the infinitive.",
+  "analysis": {
+    "grammar_point": "The placement of ne and pas in negation",
+    "rule": "In a simple present-tense clause, ne precedes the conjugated verb and pas follows it. Before a vowel or mute h, ne is elided to n’. With an infinitive, ne pas normally precedes the infinitive.",
+    "applicability_conditions": [
+      "The ne-verb-pas pattern applies to simple present-tense clauses with a conjugated verb.",
+      "The form n’ is used before a vowel or mute h.",
+      "The infinitive construction places ne pas before the infinitive."
+    ],
+    "examples": [
+      {
+        "french_text": "Je ne parle pas.",
+        "english_translation": "I do not speak.",
+        "explanation": "Ne precedes the conjugated verb parle, and pas follows it."
+      },
+      {
+        "french_text": "Elle n’habite pas ici.",
+        "english_translation": "She does not live here.",
+        "explanation": "Ne becomes n’ before the vowel at the beginning of habite; pas follows the conjugated verb."
+      },
+      {
+        "french_text": "ne pas fumer",
+        "english_translation": "not to smoke",
+        "explanation": "With the infinitive fumer, ne pas appears before the infinitive."
+      }
+    ],
+    "exceptions": [
+      "In informal speech, ne is often omitted; the passage says formal written French retains it.",
+      "With an infinitive, ne pas normally precedes the infinitive instead of surrounding a conjugated verb."
+    ]
+  },
+  "evidence": [
+    {
+      "source_quote": "In a simple present-tense clause, ne precedes the conjugated verb and pas follows it",
+      "source_location": "Unit 4, §1",
+      "support_relation": "Supports the placement rule for simple present-tense clauses."
+    },
+    {
+      "source_quote": "Before a vowel or mute h, ne becomes n’",
+      "source_location": "Unit 4, §1",
+      "support_relation": "Supports the stated elision before a vowel or mute h."
+    },
+    {
+      "source_quote": "With an infinitive, the two words ne pas normally precede the infinitive",
+      "source_location": "Unit 4, §1",
+      "support_relation": "Supports the placement of ne pas with infinitives."
+    }
+  ],
+  "question": "Where do ne and pas go in a simple present-tense clause, and what changes when the verb is an infinitive?",
+  "source_document": {
+    "document_title": "French Grammar Course Notes: Negation",
+    "excerpt": "In a simple present-tense clause, ne precedes the conjugated verb and pas follows it: « Je ne parle pas. » In informal speech, ne is often omitted, but formal written French retains it. Before a vowel or mute h, ne becomes n’: « Elle n’habite pas ici. » With an infinitive, the two words ne pas normally precede the infinitive: « ne pas fumer ». ",
+    "locator": "Unit 4, §1"
+  }
+}
