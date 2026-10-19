@@ -1,0 +1,31 @@
+{
+  "answer": "Collision coverage applies to the direct damage from striking the barrier, subject to the $750 collision deductible. The policy's animal-contact provision does not apply because the auto did not contact the deer.",
+  "question": "Does collision coverage apply to the barrier damage, or is this an animal-contact loss under comprehensive coverage?",
+  "reasoning": "The covered auto directly and accidentally struck a concrete barrier, which is an impact with another object under the supplied collision definition. That impact caused the reported body damage. The stated facts do not meet the comprehensive provision's requirement of contact between the auto and an animal.",
+  "loss_scenario": "While swerving to avoid a deer, the insured auto struck a concrete barrier and sustained direct body damage. The vehicle did not make contact with the deer.",
+  "policy_context": "Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto. Collision coverage pays for direct physical loss to the covered auto caused by collision, subject to the declarations. Comprehensive coverage applies to direct loss caused by contact between the covered auto and an animal. The collision deductible is $750.",
+  "source_document": "{\"coverage_question\":\"Does collision coverage apply when the driver swerves to avoid a deer and strikes a concrete barrier, even though the vehicle never contacts the deer?\",\"loss_facts\":\"The insured auto swerved to avoid a deer crossing the road and struck a concrete barrier. The vehicle sustained direct body damage. There was no contact with the deer. The repair estimate is $4,800.\",\"policy_wording\":{\"collision_definition\":\"Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto.\",\"collision_grant\":\"We will pay for direct physical loss to the covered auto caused by collision, subject to the deductible shown in the declarations.\",\"comprehensive_grant\":\"Comprehensive coverage applies to direct loss caused by contact between the covered auto and an animal.\",\"deductible\":\"The collision deductible is $750.\"}}",
+  "supporting_clauses": [
+    {
+      "clause_text": "Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto.",
+      "clause_role": "Definition establishing that the barrier impact is a collision."
+    },
+    {
+      "clause_text": "We will pay for direct physical loss to the covered auto caused by collision, subject to the deductible shown in the declarations.",
+      "clause_role": "Collision coverage grant and deductible condition."
+    },
+    {
+      "clause_text": "Comprehensive coverage applies to direct loss caused by contact between the covered auto and an animal.",
+      "clause_role": "Adjacent coverage provision distinguishing animal contact from this barrier impact."
+    },
+    {
+      "clause_text": "The collision deductible is $750.",
+      "clause_role": "Limitation on the collision payment."
+    }
+  ],
+  "boundary_distinction": "The loss is classified by the actual damaging event: impact with the barrier falls within the stated collision definition. Comprehensive coverage for animal contact is distinct and is not triggered merely because a deer prompted the driver to swerve; the policy wording requires contact with the animal.",
+  "coverage_determination": "covered",
+  "exclusions_and_limitations": [
+    "The $750 collision deductible applies. No other relevant exclusion is stated in the supplied policy wording."
+  ]
+}

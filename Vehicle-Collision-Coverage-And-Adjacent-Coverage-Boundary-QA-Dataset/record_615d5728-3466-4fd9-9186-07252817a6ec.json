@@ -1,0 +1,34 @@
+{
+  "policy_context": "Collision means direct accidental impact of the covered auto with another vehicle or object, or overturn of the covered auto. Collision coverage pays for direct physical loss to the covered auto caused by collision, subject to the collision deductible. Liability coverage pays sums an insured is legally obligated to pay for bodily injury or property damage to others arising from an auto accident, subject to the liability limit, and does not pay for damage to the covered auto. The collision deductible is $1,000.",
+  "answer": "Collision coverage applies to direct damage to the insured auto from the impact, subject to the $1,000 deductible. It does not pay for damage to the other vehicle. The liability provision may address that third-party damage if the insured is legally obligated to pay, subject to the applicable liability limit.",
+  "question": "Does collision coverage pay for the insured auto's damage despite the insured driver's role in the impact, and does collision coverage pay for the other vehicle's damage?",
+  "reasoning": "The insured auto directly and accidentally struck another vehicle, meeting the supplied collision definition. The collision grant covers resulting direct physical loss to the covered auto. The liability clause separately addresses property damage to others for which an insured is legally obligated to pay and expressly excludes damage to the covered auto. The record does not state loss amounts or the liability limit, so no payment amount can be determined.",
+  "loss_scenario": "The insured auto struck the rear of another vehicle while following too closely. Both vehicles sustained direct physical damage. The supplied facts do not specify loss amounts or the applicable liability limit.",
+  "source_document": "{\"coverage_question\":\"When the insured auto rear-ends another vehicle, does collision coverage pay for damage to the insured auto, and does it also pay for damage to the other vehicle?\",\"loss_facts\":\"The insured auto struck the rear of another vehicle while following too closely. Both vehicles sustained direct physical damage. The claim file records no facts about the amount of either loss or any applicable policy limit.\",\"policy_wording\":{\"collision_definition\":\"Collision means direct accidental impact of the covered auto with another vehicle or object, or overturn of the covered auto.\",\"collision_grant\":\"We will pay for direct physical loss to the covered auto caused by collision, subject to the collision deductible.\",\"liability_grant\":\"We will pay sums an insured is legally obligated to pay as damages because of bodily injury or property damage to others arising from an auto accident, subject to the liability limit. This coverage does not pay for damage to the covered auto.\",\"deductible_and_limit\":\"The collision deductible is $1,000. Liability payments are subject to the liability limit shown in the declarations.\"}}",
+  "supporting_clauses": [
+    {
+      "clause_text": "Collision means direct accidental impact of the covered auto with another vehicle or object, or overturn of the covered auto.",
+      "clause_role": "Definition establishing that the rear-end impact is a collision."
+    },
+    {
+      "clause_text": "We will pay for direct physical loss to the covered auto caused by collision, subject to the collision deductible.",
+      "clause_role": "Coverage grant for direct damage to the insured auto."
+    },
+    {
+      "clause_text": "We will pay sums an insured is legally obligated to pay as damages because of bodily injury or property damage to others arising from an auto accident, subject to the liability limit. This coverage does not pay for damage to the covered auto.",
+      "clause_role": "Liability grant and boundary distinguishing third-party damage from damage to the insured auto."
+    },
+    {
+      "clause_text": "The collision deductible is $1,000. Liability payments are subject to the liability limit shown in the declarations.",
+      "clause_role": "Deductible and limit conditions on the respective coverages."
+    }
+  ],
+  "boundary_distinction": "Collision coverage in this excerpt applies to physical damage to the insured's covered auto, regardless of whether the insured driver caused the impact. Liability coverage concerns damages an insured is legally obligated to pay to other people; it does not repair the insured auto. The supplied facts alone do not establish the final liability payment or its amount.",
+  "coverage_determination": "covered",
+  "exclusions_and_limitations": [
+    "The $1,000 collision deductible applies to damage to the covered auto.",
+    "Liability coverage is limited to sums the insured is legally obligated to pay and is subject to the liability limit.",
+    "The liability provision expressly does not pay for damage to the covered auto.",
+    "The supplied record does not state the applicable liability limit or loss amounts."
+  ]
+}

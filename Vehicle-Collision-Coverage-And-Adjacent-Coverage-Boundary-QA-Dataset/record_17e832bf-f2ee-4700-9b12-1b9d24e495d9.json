@@ -1,0 +1,32 @@
+{
+  "answer": "The supplied wording does not cover this hail damage under collision coverage because no impact with another object or overturn occurred. The comprehensive provision specifically addresses direct loss caused by hail, subject to its $500 deductible.",
+  "question": "Is the hail damage covered under collision coverage, and which adjacent coverage provision addresses this cause of loss?",
+  "reasoning": "The described cause is hail striking a parked vehicle, not a collision as defined in the policy excerpt. The collision grant is limited to direct physical loss caused by collision. The separate comprehensive grant expressly includes hail, so that provision—not collision—is the relevant coverage for the stated cause.",
+  "loss_scenario": "The insured auto was parked and unattended during a hailstorm. Hail dented the roof and hood; the auto did not strike another object or overturn.",
+  "policy_context": "Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto. Collision coverage pays for direct physical loss caused by collision, subject to the collision deductible. Comprehensive coverage applies to direct loss caused by hail, subject to the comprehensive deductible. The collision deductible is $750 and the comprehensive deductible is $500.",
+  "source_document": "{\"coverage_question\":\"Does collision coverage pay for the roof damage caused by hail while the vehicle was parked?\",\"loss_facts\":\"The insured auto was parked and unattended during a hailstorm. Hailstones dented the roof and hood. The vehicle did not move or strike another object, and no other vehicle was involved.\",\"policy_wording\":{\"collision_definition\":\"Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto.\",\"collision_grant\":\"We will pay for direct physical loss to the covered auto caused by collision, subject to the collision deductible.\",\"comprehensive_grant\":\"Comprehensive coverage applies to direct loss caused by hail, subject to the comprehensive deductible.\",\"deductibles\":\"The collision deductible is $750. The comprehensive deductible is $500.\"}}",
+  "supporting_clauses": [
+    {
+      "clause_text": "Collision means direct accidental impact of the covered auto with another object, or overturn of the covered auto.",
+      "clause_role": "Definition showing that the reported hail event is not a collision under the supplied wording."
+    },
+    {
+      "clause_text": "We will pay for direct physical loss to the covered auto caused by collision, subject to the collision deductible.",
+      "clause_role": "Collision coverage grant, which does not reach a loss without a collision."
+    },
+    {
+      "clause_text": "Comprehensive coverage applies to direct loss caused by hail, subject to the comprehensive deductible.",
+      "clause_role": "Adjacent coverage grant identifying the provision relevant to hail damage."
+    },
+    {
+      "clause_text": "The collision deductible is $750. The comprehensive deductible is $500.",
+      "clause_role": "Deductible limitations for the respective coverages."
+    }
+  ],
+  "boundary_distinction": "Collision coverage addresses damage caused by impact with another object or overturn under this wording. Comprehensive coverage addresses the non-collision hail loss described here. The two coverages have separate deductibles, and the supplied excerpt assigns a $500 deductible to comprehensive coverage.",
+  "coverage_determination": "not_covered",
+  "exclusions_and_limitations": [
+    "Collision coverage is limited to direct physical loss caused by collision as defined in the supplied wording.",
+    "The comprehensive deductible is $500 if comprehensive coverage is available for the loss."
+  ]
+}
