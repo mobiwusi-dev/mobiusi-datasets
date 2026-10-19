@@ -1,0 +1,150 @@
+{
+  "trajectory_summary": "The agent treated the brief probe spike as a moderate risk rather than assuming a confirmed outage. It canceled the queued retry, preserved the active prior policy, and observed stable probes and application availability before confirming the baseline. The revised plan calls for investigation, a single-branch canary, and manual gates before expansion.",
+  "incident_input": {
+    "incident_context": {
+      "environment": "Regional office network, overnight maintenance window",
+      "event_time": "2025-04-19T01:08:00Z",
+      "service_impact": "A small number of branch-to-shared-services health checks timed out during a segmentation rollout; staff-facing applications remained available."
+    },
+    "attempted_change": {
+      "change_summary": "Introduce a new branch access zone and move shared-service health checks to the revised routing policy.",
+      "target_segments": [
+        "branch-users",
+        "shared-services",
+        "branch-monitoring"
+      ],
+      "operations": [
+        {
+          "operation": "Add allow rule",
+          "source_segment": "branch-monitoring",
+          "destination_segment": "shared-services",
+          "rule_description": "Permit branch health-check agents to reach the shared-services probe endpoint."
+        },
+        {
+          "operation": "Move policy attachment",
+          "source_segment": "branch-users",
+          "destination_segment": "shared-services",
+          "rule_description": "Attach the revised segmentation policy to the branch access zone."
+        }
+      ]
+    },
+    "observed_anomalies": [
+      {
+        "signal": "Branch health-check timeout rate",
+        "observed_value": "6% over 2 minutes, then 1% in the next sample",
+        "threshold": "Investigate if failures exceed 5% for 2 consecutive samples",
+        "severity": "Warning"
+      },
+      {
+        "signal": "Policy attachment status",
+        "observed_value": "Control plane reports the prior attachment active; rollout retry is queued",
+        "threshold": "New attachment must be acknowledged before a retry is issued",
+        "severity": "Warning"
+      }
+    ],
+    "post_failure_snapshot": {
+      "reachable_segments": [
+        "branch-users",
+        "shared-services",
+        "branch-monitoring"
+      ],
+      "impacted_flows": [
+        "Intermittent branch-monitoring to shared-services health-check probes"
+      ],
+      "observed_policy_state": "The prior segmentation policy remains active. The new attachment is not acknowledged, and one automatic retry is queued; no user-application outage is reported."
+    }
+  },
+  "risk_assessment": {
+    "severity": "中",
+    "risk_rationale": "The timeout rate briefly exceeded the stated threshold but fell below it in the following sample, and the snapshot shows the prior policy remains active. The queued retry could apply an unconfirmed attachment, so the retry should be held while the baseline state and probe stability are checked.",
+    "affected_segments": [
+      "branch-monitoring",
+      "shared-services",
+      "branch-users"
+    ],
+    "containment_required": true
+  },
+  "recovery_actions": [
+    {
+      "execution_order": 1,
+      "action": "Cancel the queued automatic retry and freeze further changes to the affected policy attachment.",
+      "target": "Branch access-zone policy deployment",
+      "expected_effect": "Prevent an unverified attachment from being applied while preserving the active prior policy."
+    },
+    {
+      "execution_order": 2,
+      "action": "Observe health-check probes and policy attachment status for a 15-minute window without submitting another change.",
+      "target": "branch-monitoring to shared-services and the branch access-zone attachment",
+      "expected_effect": "Establish whether probe failures recur and confirm that the prior attachment remains active."
+    },
+    {
+      "execution_order": 3,
+      "action": "Compare the final policy state and application health with the recorded post-failure snapshot.",
+      "target": "branch-users, branch-monitoring, and shared-services",
+      "expected_effect": "Confirm the current baseline is stable before any replacement change is scheduled."
+    }
+  ],
+  "replacement_plan": {
+    "plan_summary": "Retry the segmentation change only after investigating the transient probe spike, using a canary attachment and a manual progression gate instead of an automatic retry.",
+    "plan_steps": [
+      {
+        "step_number": 1,
+        "operation": "Review the branch health-check path and confirm that the probe endpoint and required policy match the intended change.",
+        "target_segment": "branch-monitoring and shared-services",
+        "preconditions": "The prior policy remains active, no automatic retry is queued, and the probe timeout spike has been reviewed by the change owner.",
+        "validation_gate": "Baseline probes remain within the stated threshold and the proposed policy does not alter staff-facing application paths."
+      },
+      {
+        "step_number": 2,
+        "operation": "Attach the revised policy to one branch canary while leaving other branch attachments unchanged.",
+        "target_segment": "branch-users",
+        "preconditions": "Step 1 passes, the maintenance window is approved, and a manual rollback to the prior attachment is available.",
+        "validation_gate": "The canary acknowledges the attachment and health-check failures remain below 5% for 2 consecutive samples."
+      },
+      {
+        "step_number": 3,
+        "operation": "Expand the attachment to additional branches in small batches only after reviewing each canary result.",
+        "target_segment": "branch-users and branch-monitoring",
+        "preconditions": "Canary validation passes and the prior attachment remains available for recovery.",
+        "validation_gate": "Each batch acknowledges the same policy revision, health checks meet the threshold, and no application impact is detected before continuing."
+      }
+    ],
+    "safety_constraints": [
+      "Do not enable automatic retries for an unacknowledged policy attachment.",
+      "Keep the prior policy active outside the explicitly approved canary and rollout batch.",
+      "Stop and restore the prior attachment if health-check failures exceed 5% for 2 consecutive samples or application availability degrades."
+    ]
+  },
+  "recovery_decision": {
+    "strategy": "暂缓并观察",
+    "rationale": "The new attachment is not confirmed active, and the existing policy remains available. Avoid a broad rollback or another deployment attempt until the queued retry is stopped and stable observations establish whether the timeout was transient.",
+    "selected_change_actions": [
+      "Hold the queued retry for the new policy attachment.",
+      "Keep the prior policy attachment active while monitoring branch health checks."
+    ]
+  },
+  "verification_result": {
+    "checks": [
+      {
+        "check_name": "Policy attachment state",
+        "result": "通过",
+        "evidence": "The prior attachment remains active throughout the 15-minute observation window; the queued retry is absent."
+      },
+      {
+        "check_name": "Branch health-check stability",
+        "result": "通过",
+        "evidence": "No further timeout samples were recorded during the observation window; the initial 6% sample was followed by a 1% sample."
+      },
+      {
+        "check_name": "Staff-facing application availability",
+        "result": "通过",
+        "evidence": "Application availability remained intact during the observation window, consistent with the incident record."
+      }
+    ],
+    "state_confirmed": true,
+    "residual_risks": [
+      "The cause of the brief health-check timeout spike has not been established.",
+      "The new policy attachment remains undeployed and requires a separately scheduled, gated change."
+    ]
+  }
+}

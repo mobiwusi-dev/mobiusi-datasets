@@ -1,0 +1,147 @@
+{
+  "incident_input": {
+    "incident_context": {
+      "environment": "Primary data-center network, scheduled change window",
+      "event_time": "2025-02-14T02:17:00Z",
+      "service_impact": "Application workers in the payments segment lost database connectivity; customer-facing ingress remained available."
+    },
+    "attempted_change": {
+      "change_summary": "Narrow database access to the payments application tier while updating distributed ACLs.",
+      "target_segments": [
+        "payments-app",
+        "payments-db"
+      ],
+      "operations": [
+        {
+          "operation": "Add allow rule",
+          "source_segment": "payments-app",
+          "destination_segment": "payments-db",
+          "rule_description": "Permit application workers to reach the database service on TCP port 5432."
+        },
+        {
+          "operation": "Remove legacy broad rule",
+          "source_segment": "payments-app",
+          "destination_segment": "payments-db",
+          "rule_description": "Remove the prior broad database access rule after the scoped rule is installed."
+        }
+      ]
+    },
+    "observed_anomalies": [
+      {
+        "signal": "Database health-check failure rate",
+        "observed_value": "38% failed probes over 3 minutes",
+        "threshold": "Alert when failures exceed 5% for 2 consecutive minutes",
+        "severity": "Critical"
+      },
+      {
+        "signal": "ACL deployment convergence",
+        "observed_value": "Ingress updated on all nodes; egress update timed out on 4 of 12 nodes",
+        "threshold": "All nodes must acknowledge the same policy revision within 90 seconds",
+        "severity": "Major"
+      }
+    ],
+    "post_failure_snapshot": {
+      "reachable_segments": [
+        "payments-app",
+        "shared-services",
+        "monitoring"
+      ],
+      "impacted_flows": [
+        "payments-app to payments-db on TCP 5432"
+      ],
+      "observed_policy_state": "Policy revision 1842 is present on ingress nodes; egress nodes retain revision 1841. The prior broad rule has not been removed."
+    }
+  },
+  "risk_assessment": {
+    "severity": "高",
+    "risk_rationale": "Database probes exceed the stated failure threshold, and policy revisions are inconsistent across nodes. The affected application-to-database path is impaired, while the old rule remains in place; further rollout could deepen the inconsistency.",
+    "affected_segments": [
+      "payments-app",
+      "payments-db"
+    ],
+    "containment_required": true
+  },
+  "recovery_actions": [
+    {
+      "execution_order": 1,
+      "action": "Stop the remaining rollout and disable automatic retries for this change set.",
+      "target": "Policy deployment for payments-app and payments-db",
+      "expected_effect": "No additional nodes receive a partial revision while recovery proceeds."
+    },
+    {
+      "execution_order": 2,
+      "action": "Restore the recorded pre-change policy revision across the affected nodes.",
+      "target": "Ingress and egress ACLs for payments-app and payments-db",
+      "expected_effect": "All nodes return to a consistent policy state and the previously available database path is restored."
+    },
+    {
+      "execution_order": 3,
+      "action": "Run database-path probes after policy convergence.",
+      "target": "payments-app to payments-db on TCP 5432",
+      "expected_effect": "Confirm that application connectivity has recovered before proposing another change."
+    }
+  ],
+  "replacement_plan": {
+    "plan_summary": "Replace the fleet-wide combined update with a staged rollout that first validates the scoped rule on a canary node, then expands only after policy convergence and application probes pass.",
+    "plan_steps": [
+      {
+        "step_number": 1,
+        "operation": "Validate the proposed scoped TCP 5432 rule against the current payments database policy and confirm the legacy rule remains unchanged during this stage.",
+        "target_segment": "payments-app",
+        "preconditions": "The pre-change policy revision is consistent on all nodes, database health probes are stable, and the change has an approved maintenance window.",
+        "validation_gate": "Policy review confirms the source, destination, and port scope; baseline application probes pass before any deployment."
+      },
+      {
+        "step_number": 2,
+        "operation": "Apply the scoped rule to one canary node without removing the legacy rule.",
+        "target_segment": "payments-db",
+        "preconditions": "Step 1 passes and the canary node reports the expected pre-change revision.",
+        "validation_gate": "The canary acknowledges the new revision and payments-app database probes pass for 5 minutes; otherwise stop and restore the canary."
+      },
+      {
+        "step_number": 3,
+        "operation": "Roll out the scoped rule in small batches, then remove the legacy rule only after all nodes converge.",
+        "target_segment": "payments-app and payments-db",
+        "preconditions": "Canary validation passes and each rollout batch has an explicit stop-and-restore procedure.",
+        "validation_gate": "Every batch reports a consistent revision and passing database probes before the next batch or legacy-rule removal."
+      }
+    ],
+    "safety_constraints": [
+      "Keep the legacy rule until the scoped replacement is confirmed across all nodes.",
+      "Do not continue a rollout while policy revisions differ between nodes.",
+      "Stop and restore the last known consistent revision if database probe failures exceed 5% for 2 consecutive minutes."
+    ]
+  },
+  "recovery_decision": {
+    "strategy": "完整回滚",
+    "rationale": "The change did not converge and has already disrupted a critical application path. Restoring the last known consistent policy revision is safer than attempting another in-place update across a mixed state.",
+    "selected_change_actions": [
+      "Remove the newly added scoped TCP 5432 allow rule from the payments-app to payments-db policy.",
+      "Restore the pre-change policy revision on all nodes and retain the legacy rule until a replacement is validated."
+    ]
+  },
+  "trajectory_summary": "A partially converged ACL update caused database probe failures, so the agent halted retries and fully restored the last consistent policy revision. Post-recovery checks confirmed connectivity and policy consistency. The replacement plan introduces a canary and gated batches, delaying removal of the legacy rule until the scoped rule is validated.",
+  "verification_result": {
+    "checks": [
+      {
+        "check_name": "Policy revision consistency",
+        "result": "通过",
+        "evidence": "All 12 nodes report the same pre-change revision; no node reports the interrupted revision."
+      },
+      {
+        "check_name": "Payments database health probes",
+        "result": "通过",
+        "evidence": "Failure rate remained below 1% across 5 minutes of post-rollback probes, below the 5% alert threshold."
+      },
+      {
+        "check_name": "Customer-facing ingress health",
+        "result": "通过",
+        "evidence": "Ingress health checks remained available throughout recovery."
+      }
+    ],
+    "state_confirmed": true,
+    "residual_risks": [
+      "The legacy broad database rule remains active pending a separately reviewed replacement change."
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "incident_input": {
+    "incident_context": {
+      "environment": "Engineering access network, weekday maintenance window",
+      "event_time": "2025-03-06T21:42:00Z",
+      "service_impact": "A management-path policy update completed, but the security monitor detected access from a general application segment to a restricted administration segment."
+    },
+    "attempted_change": {
+      "change_summary": "Separate engineering telemetry access from administrative access while preserving the approved monitoring path.",
+      "target_segments": [
+        "engineering-apps",
+        "engineering-admin",
+        "telemetry"
+      ],
+      "operations": [
+        {
+          "operation": "Add allow rule",
+          "source_segment": "engineering-apps",
+          "destination_segment": "telemetry",
+          "rule_description": "Permit telemetry collectors to receive metrics on the approved collector port."
+        },
+        {
+          "operation": "Add allow rule",
+          "source_segment": "engineering-apps",
+          "destination_segment": "engineering-admin",
+          "rule_description": "Temporary rule entered with an unrestricted destination-port scope during policy consolidation."
+        }
+      ]
+    },
+    "observed_anomalies": [
+      {
+        "signal": "Restricted-segment access alert",
+        "observed_value": "3 connection attempts from engineering-apps to engineering-admin were permitted",
+        "threshold": "Any permitted connection from engineering-apps to engineering-admin triggers an alert",
+        "severity": "Critical"
+      },
+      {
+        "signal": "Telemetry collector delivery",
+        "observed_value": "Collector delivery success remained at 99.2%",
+        "threshold": "Minimum acceptable delivery success is 98%",
+        "severity": "Informational"
+      }
+    ],
+    "post_failure_snapshot": {
+      "reachable_segments": [
+        "engineering-apps",
+        "engineering-admin",
+        "telemetry",
+        "shared-services"
+      ],
+      "impacted_flows": [
+        "Unintended engineering-apps to engineering-admin connections",
+        "Engineering-apps to telemetry collector traffic"
+      ],
+      "observed_policy_state": "The telemetry rule is active and collector delivery is healthy. The unrestricted engineering-apps to engineering-admin rule is also active; no other policy changes are reported."
+    }
+  },
+  "risk_assessment": {
+    "severity": "严重",
+    "risk_rationale": "The alert confirms permitted traffic crossed into a restricted administration segment, directly violating the stated access boundary. The telemetry path remains healthy and is a separate operation, so removing only the unrestricted rule limits exposure without disrupting the approved monitoring flow.",
+    "affected_segments": [
+      "engineering-apps",
+      "engineering-admin"
+    ],
+    "containment_required": true
+  },
+  "recovery_actions": [
+    {
+      "execution_order": 1,
+      "action": "Suspend further policy edits for the affected segments and revoke the unrestricted allow rule.",
+      "target": "engineering-apps to engineering-admin ACL",
+      "expected_effect": "New connections from the general application segment to the restricted administration segment are denied."
+    },
+    {
+      "execution_order": 2,
+      "action": "Inspect active policy entries and confirm the telemetry collector rule remains in place.",
+      "target": "engineering-apps to engineering-admin and engineering-apps to telemetry",
+      "expected_effect": "The unintended administrative path is absent while the approved telemetry path is preserved."
+    },
+    {
+      "execution_order": 3,
+      "action": "Recheck restricted-segment access alerts and collector delivery after the rule update converges.",
+      "target": "Engineering administration boundary and telemetry collector flow",
+      "expected_effect": "Confirm that the unauthorized path is blocked without reducing telemetry delivery below its stated threshold."
+    }
+  ],
+  "replacement_plan": {
+    "plan_summary": "Retain the working telemetry path and replace the broad administrative rule with a narrowly scoped, explicitly approved management flow, validated independently before deployment.",
+    "plan_steps": [
+      {
+        "step_number": 1,
+        "operation": "Document the exact administration service, source hosts, destination hosts, and required ports before drafting any replacement rule.",
+        "target_segment": "engineering-admin",
+        "preconditions": "The unrestricted rule has been removed, the administration boundary check passes, and the service owner has approved the required flow details.",
+        "validation_gate": "A policy review confirms that every source, destination, and port is explicitly limited; reject wildcard destination-port scope."
+      },
+      {
+        "step_number": 2,
+        "operation": "Stage the narrowly scoped management rule on a single canary policy node while keeping the telemetry rule unchanged.",
+        "target_segment": "engineering-apps and engineering-admin",
+        "preconditions": "Step 1 is approved and the canary node reports the confirmed current policy state.",
+        "validation_gate": "Only the approved management flow is permitted; all other tested engineering-apps to engineering-admin flows remain denied."
+      },
+      {
+        "step_number": 3,
+        "operation": "Expand the validated rule in controlled batches and review access alerts after each batch.",
+        "target_segment": "engineering-admin",
+        "preconditions": "Canary checks pass and the change owner is available to stop or reverse the rollout.",
+        "validation_gate": "Policy revisions converge in each batch, no unauthorized access alert occurs, and telemetry delivery remains at or above 98%."
+      }
+    ],
+    "safety_constraints": [
+      "Do not restore or broaden the unrestricted rule.",
+      "Preserve the telemetry rule unless a separate approved change requires its modification.",
+      "Stop the rollout immediately if any unapproved flow reaches engineering-admin or policy state diverges between nodes."
+    ]
+  },
+  "recovery_decision": {
+    "strategy": "局部撤销",
+    "rationale": "The two submitted rules have distinct purposes and the telemetry rule is functioning within its stated threshold. Revoke only the unrestricted administrative rule, then verify that the boundary is enforced and telemetry remains available.",
+    "selected_change_actions": [
+      "Remove the unrestricted allow rule from engineering-apps to engineering-admin while retaining the engineering-apps to telemetry rule."
+    ]
+  },
+  "trajectory_summary": "The agent identified a confirmed boundary violation while distinguishing it from a healthy telemetry rule. It locally revoked the unrestricted administrative rule, verified that restricted access was denied and telemetry remained healthy, and proposed a narrowly scoped, canary-first replacement with explicit approval and stop gates.",
+  "verification_result": {
+    "checks": [
+      {
+        "check_name": "Engineering administration boundary",
+        "result": "通过",
+        "evidence": "The unrestricted rule is absent from the active policy; repeat connection attempts from engineering-apps to engineering-admin are denied."
+      },
+      {
+        "check_name": "Telemetry collector delivery",
+        "result": "通过",
+        "evidence": "Collector delivery is 99.1%, above the stated 98% minimum, with the telemetry rule unchanged."
+      },
+      {
+        "check_name": "Policy scope review",
+        "result": "通过",
+        "evidence": "The active policy contains no other reported engineering-apps to engineering-admin allow rule."
+      }
+    ],
+    "state_confirmed": true,
+    "residual_risks": [
+      "The policy consolidation change still requires review to determine how the unrestricted port scope entered the submitted rule.",
+      "Continue monitoring restricted-segment access alerts during the next maintenance window."
+    ]
+  }
+}
