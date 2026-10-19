@@ -1,0 +1,34 @@
+{
+  "support_status": "partially_supported",
+  "answer": "The valve assembly, its inlet and outlet, solenoid actuator, soil-moisture sensor, controller, and threshold-based closing operation are supported by paragraphs [0002]–[0003] and original claim 1. However, the provided materials do not disclose a wireless link, a remote device, or transmission of a leak alert. Paragraph [0004] describes a status lamp on the controller, which does not disclose the added remote wireless notification. Accordingly, the amendment is only partially supported by the materials provided.",
+  "question": "Does the original application support all features added or recited in amended claim 1, including transmission of a wireless leak alert to a remote device? Cite the relevant passages.",
+  "amended_claims": "1. A field irrigation valve assembly comprising a valve body with an inlet and an outlet, a solenoid actuator, a soil-moisture sensor, and a controller connected to the actuator and sensor, wherein the controller closes the valve when a sensor reading exceeds a preset moisture threshold and transmits a leak alert over a wireless link to a remote device when the valve is closed.",
+  "original_claims": "1. A field irrigation valve assembly comprising a valve body with an inlet and an outlet, a solenoid actuator, a soil-moisture sensor, and a controller connected to the actuator and sensor, wherein the controller closes the valve when a sensor reading exceeds a preset moisture threshold.",
+  "evidence_references": [
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0002]",
+      "quoted_text": "The assembly has a valve body with an inlet and outlet, a solenoid actuator, a soil-moisture sensor positioned in the zone, and a controller connected to the actuator and sensor.",
+      "support_explanation": "This passage supports the amended claim's valve body, ports, actuator, sensor, and controller, but does not disclose wireless communication or a remote device."
+    },
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0003]",
+      "quoted_text": "The controller compares the sensor reading with a preset moisture threshold and energizes the solenoid to close the valve when the reading exceeds that threshold.",
+      "support_explanation": "This passage supports the threshold-based valve-closing operation. It does not disclose a leak alert or transmission of information to a remote device."
+    },
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0004]",
+      "quoted_text": "A status lamp on the controller illuminates while the valve is closed.",
+      "support_explanation": "The passage discloses a local visual indication when the valve is closed, not the amended claim's wireless transmission of a leak alert to a remote device."
+    },
+    {
+      "source_type": "original_claim",
+      "reference_identifier": "Claim 1",
+      "quoted_text": "A field irrigation valve assembly comprising a valve body with an inlet and an outlet, a solenoid actuator, a soil-moisture sensor, and a controller connected to the actuator and sensor, wherein the controller closes the valve when a sensor reading exceeds a preset moisture threshold.",
+      "support_explanation": "The original claim supports the valve components and threshold-triggered closing limitation, but contains no wireless alert or remote-device limitation."
+    }
+  ],
+  "original_application_text": "[0001] A field irrigation valve assembly controls water flow to a cultivation zone.\n[0002] The assembly has a valve body with an inlet and outlet, a solenoid actuator, a soil-moisture sensor positioned in the zone, and a controller connected to the actuator and sensor.\n[0003] The controller compares the sensor reading with a preset moisture threshold and energizes the solenoid to close the valve when the reading exceeds that threshold.\n[0004] A status lamp on the controller illuminates while the valve is closed."
+}

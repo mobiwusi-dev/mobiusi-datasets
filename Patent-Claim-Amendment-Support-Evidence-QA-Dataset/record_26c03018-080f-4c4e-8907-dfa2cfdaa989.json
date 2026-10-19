@@ -1,0 +1,34 @@
+{
+  "answer": "Yes. The amended claim's housing, inlet and outlet, activated-carbon block, upstream stainless-steel mesh, and circumferential gasket are all disclosed in the original application. Paragraphs [0001]–[0003] describe these features, and original claims 1 and 2 recite the cartridge components and their arrangement. The amendment therefore has support in the materials provided.",
+  "question": "Is amended claim 1 supported by the application as originally filed? Identify the passages or claims that support its recited features.",
+  "amended_claims": "1. A liquid treatment cartridge comprising a molded housing having an inlet at its upper end and an outlet at its lower end; a replaceable activated-carbon block positioned between the inlet and the outlet; a stainless-steel mesh located upstream of the block; and a circumferential elastomeric gasket seated against an inner shoulder of the housing to prevent liquid from bypassing the block.",
+  "support_status": "supported",
+  "original_claims": "1. A liquid treatment cartridge comprising a housing having an inlet and an outlet, and a replaceable activated-carbon block positioned between the inlet and the outlet.\n2. The cartridge of claim 1, further comprising a stainless-steel mesh upstream of the activated-carbon block and a circumferential elastomeric gasket seated against an inner shoulder of the housing to prevent liquid from bypassing the block.",
+  "evidence_references": [
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0001]",
+      "quoted_text": "A replaceable cartridge for a gravity-fed liquid treatment unit includes a molded housing with an inlet at its upper end and an outlet at its lower end.",
+      "support_explanation": "This passage supports the amended claim's molded housing and the locations of its inlet and outlet."
+    },
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0002]",
+      "quoted_text": "Within the housing, a replaceable activated-carbon block is positioned between the inlet and outlet. A stainless-steel mesh is located upstream of the block to retain particulate matter before the liquid reaches the carbon.",
+      "support_explanation": "This passage expressly discloses the replaceable carbon block between the ports and the upstream stainless-steel mesh recited in the amendment."
+    },
+    {
+      "source_type": "description_paragraph",
+      "reference_identifier": "[0003]",
+      "quoted_text": "A circumferential elastomeric gasket seats against an inner shoulder of the housing and prevents liquid from bypassing the carbon block.",
+      "support_explanation": "This passage supports the amended gasket's circumferential form, seating location, and bypass-prevention function."
+    },
+    {
+      "source_type": "original_claim",
+      "reference_identifier": "Claims 1–2",
+      "quoted_text": "Claim 1 recites a housing having an inlet and an outlet and a replaceable activated-carbon block positioned between them. Claim 2 recites a stainless-steel mesh upstream of the block and a circumferential elastomeric gasket seated against an inner shoulder to prevent bypass.",
+      "support_explanation": "The originally filed claims independently confirm the principal components and arrangement recited in amended claim 1."
+    }
+  ],
+  "original_application_text": "[0001] A replaceable cartridge for a gravity-fed liquid treatment unit includes a molded housing with an inlet at its upper end and an outlet at its lower end.\n[0002] Within the housing, a replaceable activated-carbon block is positioned between the inlet and outlet. A stainless-steel mesh is located upstream of the block to retain particulate matter before the liquid reaches the carbon.\n[0003] A circumferential elastomeric gasket seats against an inner shoulder of the housing and prevents liquid from bypassing the carbon block."
+}
