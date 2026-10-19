@@ -1,0 +1,9 @@
+{
+  "cargo_name": "Frozen shrimp",
+  "query_text": "What is the maximum permitted stack height for cartons of frozen shrimp?",
+  "answer_text": "The passage requires the floor air channels to remain unobstructed and the load to allow air circulation, but it gives no maximum stack height. The maximum cannot be determined from this evidence.",
+  "handbook_passage": "Stow frozen shrimp cartons so that the reefer floor air channels remain unobstructed. Arrange the load to permit air circulation around the stow.",
+  "source_reference": "Frozen Cargo Loading Manual, Section 3.5, p. 22",
+  "requirement_category": "Loading",
+  "evidence_supports_query": false
+}

@@ -1,0 +1,9 @@
+{
+  "source_reference": "Cold-Chain Cargo Transport Handbook, Section 6.1, p. 84",
+  "requirement_category": "Ventilation",
+  "evidence_supports_query": true,
+  "cargo_name": "Lemons",
+  "query_text": "What fresh-air exchange rate is specified for refrigerated lemons, and should ventilation be intermittent?",
+  "answer_text": "Maintain fresh-air exchange at 15 m³/h and keep ventilation continuous. The passage does not specify intermittent ventilation.",
+  "handbook_passage": "For refrigerated lemons, maintain fresh-air exchange at 15 m³/h. Keep ventilation continuous during carriage; intermittent ventilation is not specified for this cargo."
+}

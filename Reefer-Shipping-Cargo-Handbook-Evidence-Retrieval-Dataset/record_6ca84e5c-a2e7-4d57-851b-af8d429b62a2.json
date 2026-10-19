@@ -1,0 +1,9 @@
+{
+  "cargo_name": "Mature green apples",
+  "query_text": "What reefer air temperature should be used for mature green apples on a long voyage?",
+  "answer_text": "Set the reefer air temperature to 0°C. The passage also states not to use a setpoint below -1°C.",
+  "handbook_passage": "For long-voyage carriage of mature green apples, set the reefer air temperature to 0°C. Do not use a setpoint below -1°C.",
+  "source_reference": "Refrigerated Cargo Handling Manual, Section 4.2, p. 37",
+  "requirement_category": "Temperature setting",
+  "evidence_supports_query": true
+}
