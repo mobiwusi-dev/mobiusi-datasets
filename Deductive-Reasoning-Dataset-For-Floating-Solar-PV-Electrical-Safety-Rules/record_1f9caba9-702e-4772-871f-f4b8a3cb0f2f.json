@@ -1,0 +1,8 @@
+{
+  "verdict": "不成立",
+  "question": "May the technician disconnect the DC connector under the stated conditions?",
+  "safety_rules": "Before disconnecting any DC connector for maintenance, both the AC and DC isolators must be open and tagged, and absence of voltage must be verified. The connector may be disconnected only after all three conditions are met.",
+  "reasoning_chain": "The rule permits connector disconnection only when both isolators are open and tagged and absence of voltage has been verified. Although the AC isolator is open and tagged, the DC isolator remains closed and voltage absence has not been verified. The required conditions are therefore not all met, so the proposed action is not permitted by the given rule.",
+  "electrical_facts": "A floating PV string is connected to an inverter. The inverter's AC isolator is open and tagged, but the string-side DC isolator remains closed. A technician proposes disconnecting a DC connector for maintenance. The absence of voltage has not been verified.",
+  "supporting_premises": "Facts: The AC isolator is open and tagged; the DC isolator remains closed; absence of voltage has not been verified. Rule: DC connector disconnection is permitted only after both isolators are open and tagged and absence of voltage is verified."
+}

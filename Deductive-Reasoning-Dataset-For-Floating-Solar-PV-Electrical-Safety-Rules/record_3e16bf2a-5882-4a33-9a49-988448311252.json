@@ -1,0 +1,8 @@
+{
+  "verdict": "成立",
+  "question": "Is the stated cable route compliant with the given routing rule?",
+  "safety_rules": "Inter-array DC cables must be routed along the designated cable tray and secured at each tray support. A cable route is compliant with this rule if it satisfies both conditions and does not cross a pedestrian walkway unless it uses a protected overhead bridge.",
+  "reasoning_chain": "The cable follows the designated tray and is secured at each support. It also does not cross a pedestrian walkway, so the overhead-bridge exception is not relevant. All stated routing conditions are satisfied; therefore, the route is compliant with the given rule.",
+  "electrical_facts": "A DC cable between two floating PV subarrays is routed along the designated cable tray on the float structure. It is secured at each tray support and does not cross a pedestrian walkway.",
+  "supporting_premises": "Facts: The cable follows the designated tray, is secured at each tray support, and does not cross a pedestrian walkway. Rule: Inter-array DC cables must use the designated tray and be secured at each support; a walkway crossing is allowed only when a protected overhead bridge is used."
+}

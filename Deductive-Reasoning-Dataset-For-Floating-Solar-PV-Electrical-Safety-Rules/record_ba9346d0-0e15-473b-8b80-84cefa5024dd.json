@@ -1,0 +1,8 @@
+{
+  "question": "Can the route be determined to comply with the splash-protection rule?",
+  "verdict": "无法判断",
+  "safety_rules": "Any cable route exposed to splash must use an enclosure identified as suitable for splash exposure. If the enclosure's suitability is not stated, compliance cannot be determined from the available information.",
+  "reasoning_chain": "The route is exposed to splash, so the rule requires an enclosure identified as suitable for that exposure. The facts identify the cable's DC rating but provide no information about the enclosure's splash-exposure suitability. Because the required property is unspecified, the available information supports neither compliance nor noncompliance.",
+  "electrical_facts": "A DC cable is routed along the outer edge of a floating PV platform, where the route is exposed to splash. The installation record identifies the cable as DC-rated but does not identify the enclosure or its splash-exposure rating.",
+  "supporting_premises": "Facts: The cable route is exposed to splash; the record identifies the cable as DC-rated but does not state the enclosure's splash-exposure rating. Rule: A splash-exposed route must use an enclosure identified as suitable for splash exposure, and compliance cannot be determined when that suitability is unstated."
+}
