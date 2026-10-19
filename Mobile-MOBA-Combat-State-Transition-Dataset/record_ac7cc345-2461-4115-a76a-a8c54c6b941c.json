@@ -1,0 +1,21 @@
+{
+  "event_type": "普通攻击",
+  "skill_name": "普通攻击",
+  "damage_type": "physical",
+  "target_name": "Neris",
+  "attacker_name": "Korr",
+  "damage_amount": 210,
+  "rule_condition": "The 70-point shield absorbs damage first. No damage modifiers apply, and the attack has no control effect.",
+  "post_target_alive": true,
+  "pre_target_health": 560,
+  "pre_target_shield": 70,
+  "battle_description": "Before the attack, Neris has 560 of 900 health and a 70-point shield. Korr's basic attack deals 210 physical damage. The shield absorbs damage before health, and this attack applies no control effect; no damage modifiers are active.",
+  "post_target_health": 420,
+  "post_target_shield": 0,
+  "transition_summary": "Korr's attack deals 210 damage. Neris's shield absorbs 70 and is depleted; the remaining 140 reduces health from 560 to 420. Neris remains alive with no control effect.",
+  "health_damage_taken": 140,
+  "post_control_effect": "None",
+  "pre_target_max_health": 900,
+  "applied_control_effect": "None",
+  "shield_absorbed_damage": 70
+}

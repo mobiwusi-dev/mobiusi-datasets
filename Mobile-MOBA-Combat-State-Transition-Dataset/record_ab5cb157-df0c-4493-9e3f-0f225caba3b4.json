@@ -1,0 +1,21 @@
+{
+  "event_type": "技能",
+  "skill_name": "Rift Pulse",
+  "damage_type": "true",
+  "target_name": "Sera",
+  "attacker_name": "Dax",
+  "damage_amount": 220,
+  "rule_condition": "True damage ignores mitigation. With no shield, damage is applied to health up to the available 145 health; health is floored at zero and excess damage is not applied. No control effect is applied.",
+  "post_target_alive": false,
+  "pre_target_health": 145,
+  "pre_target_shield": 0,
+  "battle_description": "Sera has 145 of 1,100 health and no shield before the event. Dax strikes with Rift Pulse, a skill that deals 220 true damage. True damage ignores mitigation. Health cannot fall below zero, excess damage is not applied, and the skill applies no control effect.",
+  "post_target_health": 0,
+  "post_target_shield": 0,
+  "transition_summary": "Rift Pulse deals 220 true damage. With no shield, 145 damage reduces Sera's health to zero; the remaining 75 damage is not applied. Sera is defeated, with no control effect.",
+  "health_damage_taken": 145,
+  "post_control_effect": "None",
+  "pre_target_max_health": 1100,
+  "applied_control_effect": "None",
+  "shield_absorbed_damage": 0
+}

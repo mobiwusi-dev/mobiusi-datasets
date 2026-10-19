@@ -1,0 +1,21 @@
+{
+  "event_type": "技能",
+  "skill_name": "Arc Lance",
+  "damage_type": "magic",
+  "target_name": "Vale",
+  "attacker_name": "Ilyra",
+  "damage_amount": 300,
+  "rule_condition": "The 120-point shield absorbs damage first. No resistance or other damage modifier applies; any remaining damage reduces health.",
+  "post_target_alive": true,
+  "pre_target_health": 820,
+  "pre_target_shield": 120,
+  "battle_description": "At the start of the event, Vale has 820 of 1,200 health and a 120-point shield, with no active control effect. Ilyra hits Vale with Arc Lance, a skill that deals 300 magic damage and roots the target for 1.2 seconds. Shields absorb incoming damage before health; there is no resistance or other damage modifier.",
+  "post_target_health": 640,
+  "post_target_shield": 0,
+  "transition_summary": "Arc Lance deals 300 damage: the shield absorbs 120 and is depleted, while health falls from 820 to 640. Vale remains alive and is rooted for 1.2 seconds.",
+  "health_damage_taken": 180,
+  "post_control_effect": "Rooted for 1.2 seconds",
+  "pre_target_max_health": 1200,
+  "applied_control_effect": "Rooted for 1.2 seconds",
+  "shield_absorbed_damage": 120
+}
