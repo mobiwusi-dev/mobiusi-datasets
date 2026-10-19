@@ -1,0 +1,7 @@
+{
+  "derivation": "Apply the model at both operating points and divide: V_2/V_1 = (I_2/I_1)^(1/α); the reference quantities cancel. Raise both sides to the power α: I_2/I_1 = (V_2/V_1)^α. With V_2/V_1 = 1.25 and α = 8, the ratio is 1.25^8.",
+  "final_answer": "I_2/I_1 = 1.25^8 ≈ 5.96046. The current must reach about 5.96 times its initial value.",
+  "verification": "Substituting this ratio into the voltage relation gives (I_2/I_1)^(1/8) = (1.25^8)^(1/8) = 1.25, as required. This result assumes both operating points lie within the range where the stated empirical model applies.",
+  "input_problem": "For a varistor obeying V = V_ref (I/I_ref)^(1/α), let α = 8. Between two positive operating points, the voltage rises from V_1 to V_2 = 1.25 V_1. Determine the required current ratio I_2/I_1 under the same model.",
+  "symbolic_expression": "I_2/I_1 = (V_2/V_1)^α"
+}

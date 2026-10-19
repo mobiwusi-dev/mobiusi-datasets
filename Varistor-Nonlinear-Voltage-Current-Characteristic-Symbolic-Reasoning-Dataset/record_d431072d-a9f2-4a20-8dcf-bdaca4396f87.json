@@ -1,0 +1,7 @@
+{
+  "derivation": "Divide the model by V_ref: V/V_ref = (I/I_ref)^(1/α). Raise both sides to the power α to obtain (V/V_ref)^α = I/I_ref, then multiply by I_ref. Thus I = 2.00 mA × (125/100)^10 = 2.00 mA × 1.25^10.",
+  "final_answer": "I ≈ 18.6265 mA.",
+  "verification": "The current ratio is I/I_ref = 9.31323. Raising it to the power 1/α = 0.1 gives approximately 1.25, so the model returns V ≈ 125 V.",
+  "input_problem": "A varistor follows V = V_ref (I/I_ref)^(1/α) with V_ref = 100 V, I_ref = 2.00 mA, and α = 10. Find the current I when the voltage is V = 125 V. Assume the model applies for positive voltage and current.",
+  "symbolic_expression": "I = I_ref (V/V_ref)^α"
+}

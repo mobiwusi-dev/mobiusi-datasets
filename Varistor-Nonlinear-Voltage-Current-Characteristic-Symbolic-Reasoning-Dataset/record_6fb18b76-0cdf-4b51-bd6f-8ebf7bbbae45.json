@@ -1,0 +1,7 @@
+{
+  "derivation": "Starting from V/V_ref = (I/I_ref)^(1/α), take natural logarithms: ln(V/V_ref) = (1/α) ln(I/I_ref). Rearranging gives α = ln(I/I_ref) / ln(V/V_ref). Substituting the given ratios yields α = ln(5.00/1.00) / ln(150/120) = ln(5) / ln(1.25).",
+  "final_answer": "α ≈ 7.21257 (dimensionless).",
+  "verification": "Substituting this value gives 120(5)^(1/7.21257) ≈ 150 V, consistent with the stated operating point. The logarithmic expression requires positive ratios and V/V_ref ≠ 1 for a finite identifiable exponent.",
+  "input_problem": "Use the empirical varistor model V = V_ref (I/I_ref)^(1/α), with V_ref = 120 V and I_ref = 1.00 mA. At an operating point, V = 150 V and I = 5.00 mA. Solve for the nonlinear exponent α. Assume V and I are positive and the model applies at both points.",
+  "symbolic_expression": "α = ln(I/I_ref) / ln(V/V_ref)"
+}
