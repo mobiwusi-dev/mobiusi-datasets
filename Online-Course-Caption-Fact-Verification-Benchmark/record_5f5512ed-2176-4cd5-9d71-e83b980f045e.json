@@ -1,0 +1,7 @@
+{
+  "verdict": "true",
+  "rationale": "The excerpt states that binary search works on sorted collections and has O(log n) time complexity, directly supporting the claim.",
+  "transcript_claim": "A binary search on a sorted array can locate a target value in O(log n) time.",
+  "evidence_relation": "supports",
+  "web_evidence_text": "Binary search applies to sorted collections. Each comparison eliminates approximately half of the remaining search interval, giving the algorithm a time complexity of O(log n)."
+}

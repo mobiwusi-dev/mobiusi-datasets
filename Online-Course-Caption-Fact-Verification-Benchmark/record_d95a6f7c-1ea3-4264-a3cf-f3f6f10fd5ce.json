@@ -1,0 +1,7 @@
+{
+  "verdict": "false",
+  "rationale": "The excerpt assigns the two layers in the opposite order from the claim.",
+  "transcript_claim": "In the OSI model, the transport layer is Layer 3 and the network layer is Layer 4.",
+  "evidence_relation": "refutes",
+  "web_evidence_text": "The OSI model has seven layers. The network layer is Layer 3, while the transport layer is Layer 4."
+}

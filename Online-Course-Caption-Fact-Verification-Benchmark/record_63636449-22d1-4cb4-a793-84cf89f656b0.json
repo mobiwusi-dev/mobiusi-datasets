@@ -1,0 +1,7 @@
+{
+  "verdict": "not_enough_info",
+  "rationale": "The excerpt describes Python's characteristics and programming styles but gives no information about the date of its first public release.",
+  "transcript_claim": "The first public release of Python occurred in 1991.",
+  "evidence_relation": "insufficient",
+  "web_evidence_text": "Python is a high-level, interpreted programming language. Its design emphasizes readability, and it supports procedural, object-oriented, and functional programming styles."
+}
