@@ -1,0 +1,57 @@
+{
+  "source_url": null,
+  "claim_question": "The insured reports that, during an ordinary trip, the covered vehicle struck a concrete barrier after the driver swerved to avoid an object in the roadway. The collision was reported promptly, and repairs have not begun. Does the policy provide collision coverage, and what conditions or deductible apply?",
+  "policy_webpage": "<html><body><h1>Collision Coverage</h1><h2>Coverage — Section 4.1</h2><p>We will pay for direct and accidental loss to a covered vehicle caused by its collision with another vehicle or object, subject to the terms of this policy.</p><h2>Deductible — Section 4.2</h2><p>A $750 deductible applies to each covered collision loss. The deductible is subtracted from the amount otherwise payable.</p><h2>Exclusion — Section 4.3</h2><p>No coverage applies to loss that occurs while the covered vehicle is being used in a timed speed contest or organized racing event.</p><h2>Notice and Inspection — Section 7.1</h2><p>The insured must notify us of a collision as soon as reasonably possible and provide the vehicle for inspection before repairs begin, unless immediate repairs are necessary to prevent further damage.</p></body></html>",
+  "claim_assessment": "The reported impact with a concrete barrier falls within the stated collision coverage, subject to the policy terms. The timed-event exclusion does not match the ordinary-trip facts provided. A $750 deductible applies, and the vehicle must be made available for inspection before repairs begin unless immediate repairs are necessary to prevent further damage.",
+  "deductible_summary": "A $750 deductible applies to each covered collision loss and is subtracted from the amount otherwise payable.",
+  "exclusions_summary": "The stated exclusion applies to loss occurring while the vehicle is used in a timed speed contest or organized racing event. The question describes an ordinary trip, not either excluded use.",
+  "retrieved_evidence": [
+    {
+      "evidence_text": "We will pay for direct and accidental loss to a covered vehicle caused by its collision with another vehicle or object, subject to the terms of this policy.",
+      "evidence_role": "Establishes collision coverage for impact with an object.",
+      "section_reference": "Collision Coverage — Section 4.1",
+      "supports_assessment": true
+    },
+    {
+      "evidence_text": "A $750 deductible applies to each covered collision loss. The deductible is subtracted from the amount otherwise payable.",
+      "evidence_role": "Qualifies the amount payable by specifying the deductible.",
+      "section_reference": "Deductible — Section 4.2",
+      "supports_assessment": false
+    },
+    {
+      "evidence_text": "No coverage applies to loss that occurs while the covered vehicle is being used in a timed speed contest or organized racing event.",
+      "evidence_role": "States an exclusion that does not match the ordinary-trip facts in the question.",
+      "section_reference": "Exclusion — Section 4.3",
+      "supports_assessment": false
+    },
+    {
+      "evidence_text": "The insured must notify us of a collision as soon as reasonably possible and provide the vehicle for inspection before repairs begin, unless immediate repairs are necessary to prevent further damage.",
+      "evidence_role": "Establishes notice and inspection conditions relevant to the reported claim.",
+      "section_reference": "Notice and Inspection — Section 7.1",
+      "supports_assessment": true
+    }
+  ],
+  "policy_clause_records": [
+    {
+      "clause_type": "coverage",
+      "clause_text": "We will pay for direct and accidental loss to a covered vehicle caused by its collision with another vehicle or object, subject to the terms of this policy.",
+      "section_reference": "Collision Coverage — Section 4.1"
+    },
+    {
+      "clause_type": "deductible",
+      "clause_text": "A $750 deductible applies to each covered collision loss. The deductible is subtracted from the amount otherwise payable.",
+      "section_reference": "Deductible — Section 4.2"
+    },
+    {
+      "clause_type": "exclusion",
+      "clause_text": "No coverage applies to loss that occurs while the covered vehicle is being used in a timed speed contest or organized racing event.",
+      "section_reference": "Exclusion — Section 4.3"
+    },
+    {
+      "clause_type": "claim condition",
+      "clause_text": "The insured must notify us of a collision as soon as reasonably possible and provide the vehicle for inspection before repairs begin, unless immediate repairs are necessary to prevent further damage.",
+      "section_reference": "Notice and Inspection — Section 7.1"
+    }
+  ],
+  "claim_conditions_summary": "The policy requires notice as soon as reasonably possible and inspection before repairs begin, unless immediate repairs are needed to prevent further damage. The question states that the collision was reported promptly and repairs have not begun."
+}

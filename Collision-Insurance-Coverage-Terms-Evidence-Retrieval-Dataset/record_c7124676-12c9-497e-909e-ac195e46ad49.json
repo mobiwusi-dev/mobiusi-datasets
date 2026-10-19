@@ -1,0 +1,57 @@
+{
+  "source_url": null,
+  "claim_question": "The insured states that the covered vehicle struck a safety barrier while participating in a timed speed competition. The loss was reported 10 days later, and the insurer has been offered access to inspect the vehicle. Is the collision loss covered?",
+  "policy_webpage": "<html><body><h1>Vehicle Physical Damage Terms</h1><h2>Collision Coverage — Part B, Clause 2</h2><p>Subject to the limits and exclusions in this contract, collision coverage applies to accidental damage to the insured vehicle resulting from impact with another vehicle or an object.</p><h2>Deductible — Part B, Clause 3</h2><p>The insured is responsible for the first $1,000 of each collision loss. This deductible applies separately to each occurrence.</p><h2>Racing Exclusion — Part B, Clause 5</h2><p>We do not cover loss to a vehicle while it is participating in, practicing for, or being prepared for a timed speed competition or organized race.</p><h2>Claim Duties — Part D, Clause 1</h2><p>After a loss, the insured must give notice within 15 days, provide reasonable access to inspect the damaged vehicle, and submit available repair estimates when requested.</p></body></html>",
+  "claim_assessment": "The policy describes collision coverage for impact with an object, but expressly excludes loss while the vehicle is participating in a timed speed competition. Because the question states that the impact occurred during such a competition, the stated exclusion applies and the loss is not covered under these terms. The reported notice and offered inspection access are consistent with the stated duties but do not override the exclusion.",
+  "deductible_summary": "The deductible is $1,000 for each collision occurrence and is the insured's responsibility. The stated racing exclusion applies to the facts described, so the deductible does not establish coverage for this loss.",
+  "exclusions_summary": "The policy excludes loss while the vehicle is participating in, practicing for, or being prepared for a timed speed competition or organized race. The question states that the vehicle was participating in a timed speed competition at the time of impact.",
+  "retrieved_evidence": [
+    {
+      "evidence_text": "Subject to the limits and exclusions in this contract, collision coverage applies to accidental damage to the insured vehicle resulting from impact with another vehicle or an object.",
+      "evidence_role": "Establishes the general collision coverage while expressly making it subject to exclusions.",
+      "section_reference": "Collision Coverage — Part B, Clause 2",
+      "supports_assessment": false
+    },
+    {
+      "evidence_text": "We do not cover loss to a vehicle while it is participating in, practicing for, or being prepared for a timed speed competition or organized race.",
+      "evidence_role": "Directly establishes the exclusion applicable to the stated competition-related loss.",
+      "section_reference": "Racing Exclusion — Part B, Clause 5",
+      "supports_assessment": true
+    },
+    {
+      "evidence_text": "After a loss, the insured must give notice within 15 days, provide reasonable access to inspect the damaged vehicle, and submit available repair estimates when requested.",
+      "evidence_role": "Shows that the stated notice timing and offered inspection access meet two of the listed claim duties; repair estimates remain subject to request.",
+      "section_reference": "Claim Duties — Part D, Clause 1",
+      "supports_assessment": true
+    },
+    {
+      "evidence_text": "The insured is responsible for the first $1,000 of each collision loss. This deductible applies separately to each occurrence.",
+      "evidence_role": "States the deductible applicable to a covered collision loss, without changing the racing exclusion.",
+      "section_reference": "Deductible — Part B, Clause 3",
+      "supports_assessment": false
+    }
+  ],
+  "policy_clause_records": [
+    {
+      "clause_type": "coverage",
+      "clause_text": "Subject to the limits and exclusions in this contract, collision coverage applies to accidental damage to the insured vehicle resulting from impact with another vehicle or an object.",
+      "section_reference": "Collision Coverage — Part B, Clause 2"
+    },
+    {
+      "clause_type": "deductible",
+      "clause_text": "The insured is responsible for the first $1,000 of each collision loss. This deductible applies separately to each occurrence.",
+      "section_reference": "Deductible — Part B, Clause 3"
+    },
+    {
+      "clause_type": "exclusion",
+      "clause_text": "We do not cover loss to a vehicle while it is participating in, practicing for, or being prepared for a timed speed competition or organized race.",
+      "section_reference": "Racing Exclusion — Part B, Clause 5"
+    },
+    {
+      "clause_type": "claim condition",
+      "clause_text": "After a loss, the insured must give notice within 15 days, provide reasonable access to inspect the damaged vehicle, and submit available repair estimates when requested.",
+      "section_reference": "Claim Duties — Part D, Clause 1"
+    }
+  ],
+  "claim_conditions_summary": "The policy requires notice within 15 days and reasonable access for inspection; it also requires available repair estimates when requested. The question states that notice was given after 10 days and inspection access was offered."
+}
