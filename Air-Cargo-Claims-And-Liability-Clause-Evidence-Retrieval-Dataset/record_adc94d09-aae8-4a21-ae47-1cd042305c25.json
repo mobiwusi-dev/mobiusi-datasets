@@ -1,0 +1,12 @@
+{
+  "source_url": null,
+  "evidence_text": "A shipment not delivered within 30 days after its scheduled arrival date may be treated as lost for claim processing. The claimant must submit a written claim within 120 days after the carrier accepted the shipment for carriage. Responsibility for physical loss applies while the shipment is in the carrier's custody. No responsibility applies to loss resulting from customs detention or the consignee's refusal or failure to accept delivery.",
+  "answer_summary": "A shipment may be treated as lost for claim processing after remaining undelivered for 30 days beyond its scheduled arrival date. The written claim deadline is 120 days from carrier acceptance. The stated loss responsibility is limited to the period in carrier custody and excludes the specified customs and consignee-related causes.",
+  "claim_deadline": "A written claim must be submitted within 120 days after the carrier accepted the shipment for carriage. A shipment may be treated as lost for claim processing if it remains undelivered 30 days after its scheduled arrival date.",
+  "issue_category": "Shipment loss and claim deadline",
+  "liability_rule": "Responsibility for physical loss applies while the shipment is in the carrier's custody, but excludes loss resulting from customs detention or the consignee's refusal or failure to accept delivery.",
+  "retrieval_query": "When may a missing shipment be treated as lost, what is the deadline for a written claim, and which stated exceptions limit responsibility?",
+  "clause_reference": "Sections 9.1–9.2 — When a Shipment Is Presumed Lost; Custody and Exceptions",
+  "source_page_content": "<!DOCTYPE html><html><head><title>Air Cargo Conditions of Carriage</title></head><body><h1>Claims for Missing Shipments</h1><h2>Section 9.1 — When a Shipment Is Presumed Lost</h2><p>A shipment not delivered within 30 days after its scheduled arrival date may be treated as lost for claim processing. The claimant must submit a written claim within 120 days after the carrier accepted the shipment for carriage.</p><h2>Section 9.2 — Custody and Exceptions</h2><p>Responsibility for physical loss applies while the shipment is in the carrier's custody. No responsibility applies to loss resulting from customs detention or the consignee's refusal or failure to accept delivery.</p></body></html>",
+  "declaration_requirement": "A written claim is required. The cited clauses do not specify supporting documents or a cargo-value declaration requirement."
+}
