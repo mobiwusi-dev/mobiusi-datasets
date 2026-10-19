@@ -1,0 +1,35 @@
+{
+  "event_text": "Under the enemy tower, the allied wave finishes off the last enemy melee and ranged minions. The tower then fires on the wave, eliminating one allied melee minion and the allied siege minion; two allied ranged minions and one melee minion remain.",
+  "next_state": {
+    "lane_phase": "tower_range",
+    "allied_units": {
+      "melee_count": 1,
+      "ranged_count": 2,
+      "siege_count": 0
+    },
+    "enemy_units": {
+      "melee_count": 0,
+      "ranged_count": 0,
+      "siege_count": 0
+    },
+    "push_status": "advancing",
+    "tower_status": "under_tower_attack"
+  },
+  "initial_state": {
+    "lane_phase": "tower_range",
+    "allied_units": {
+      "melee_count": 2,
+      "ranged_count": 2,
+      "siege_count": 1
+    },
+    "enemy_units": {
+      "melee_count": 1,
+      "ranged_count": 1,
+      "siege_count": 0
+    },
+    "push_status": "advancing",
+    "tower_status": "under_tower_attack"
+  },
+  "event_category": "combined",
+  "transition_summary": "The allied wave clears both remaining enemy minions, then loses one melee minion and its siege minion to tower fire. The surviving allied units remain in tower range and continue advancing under attack."
+}

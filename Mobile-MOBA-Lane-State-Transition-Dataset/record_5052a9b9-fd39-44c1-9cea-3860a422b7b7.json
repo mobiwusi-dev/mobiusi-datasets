@@ -1,0 +1,35 @@
+{
+  "event_text": "With no enemy minions remaining on the route, the allied wave moves from the downstream lane into the enemy tower's range. The tower has not begun firing, and no units are lost during the advance.",
+  "next_state": {
+    "lane_phase": "tower_range",
+    "allied_units": {
+      "melee_count": 3,
+      "ranged_count": 2,
+      "siege_count": 1
+    },
+    "enemy_units": {
+      "melee_count": 0,
+      "ranged_count": 0,
+      "siege_count": 0
+    },
+    "push_status": "advancing",
+    "tower_status": "approaching"
+  },
+  "initial_state": {
+    "lane_phase": "downstream",
+    "allied_units": {
+      "melee_count": 3,
+      "ranged_count": 2,
+      "siege_count": 1
+    },
+    "enemy_units": {
+      "melee_count": 0,
+      "ranged_count": 0,
+      "siege_count": 0
+    },
+    "push_status": "advancing",
+    "tower_status": "approaching"
+  },
+  "event_category": "lane_advance",
+  "transition_summary": "The intact allied wave advances from the downstream lane into tower range. Unit counts and the advancing status remain unchanged, and the tower is still only being approached."
+}

@@ -1,0 +1,35 @@
+{
+  "event_text": "In mid lane, the two waves trade blows. The allied wave loses one melee minion; the enemy wave loses two melee minions and one ranged minion. The remaining units disengage briefly, and the allied wave begins pressing forward.",
+  "next_state": {
+    "lane_phase": "mid_lane",
+    "allied_units": {
+      "melee_count": 2,
+      "ranged_count": 3,
+      "siege_count": 1
+    },
+    "enemy_units": {
+      "melee_count": 1,
+      "ranged_count": 1,
+      "siege_count": 1
+    },
+    "push_status": "advancing",
+    "tower_status": "not_engaged"
+  },
+  "initial_state": {
+    "lane_phase": "mid_lane",
+    "allied_units": {
+      "melee_count": 3,
+      "ranged_count": 3,
+      "siege_count": 1
+    },
+    "enemy_units": {
+      "melee_count": 3,
+      "ranged_count": 2,
+      "siege_count": 1
+    },
+    "push_status": "contested",
+    "tower_status": "not_engaged"
+  },
+  "event_category": "minion_combat",
+  "transition_summary": "The exchange reduces allied melee strength by one and enemy melee and ranged strength by two and one, respectively. With more allied units remaining, the wave shifts from contested to advancing while staying in mid lane."
+}
