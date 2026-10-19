@@ -1,0 +1,43 @@
+{
+  "qa_items": [
+    {
+      "question": "For Grayhaven Estuary under Scenario H5, what rise is projected by 2100, and what uncertainty range and vertical reference apply?",
+      "answer": "The projected relative sea-level change is 0.78 m above the 1995–2014 mean by 2100. The source gives a 5th–95th percentile range of 0.55–1.05 m. The vertical reference is Grayhaven Tidal Datum 2010 (GTD-2010); local vertical land motion is excluded.",
+      "scenario": {
+        "scenario_name": "Scenario H5",
+        "scenario_description": "A scenario in which high emissions persist through 2100.",
+        "start_year": 2020,
+        "end_year": 2100
+      },
+      "target_location": "Grayhaven Estuary",
+      "projection": {
+        "change_value": 0.78,
+        "unit": "m",
+        "baseline_period": "1995–2014 mean",
+        "vertical_datum": "Grayhaven Tidal Datum 2010 (GTD-2010)"
+      },
+      "uncertainty": {
+        "lower_bound": 0.55,
+        "upper_bound": 1.05,
+        "confidence_level": "5th–95th percentile range",
+        "uncertainty_description": "The reported 5th–95th percentile range is 0.55–1.05 m; the projection excludes local vertical land motion."
+      },
+      "evidence": [
+        {
+          "quote": "Scenario H5 assumes high emissions persist through 2100. For Grayhaven Estuary, relative sea level is projected to be 0.78 m above the 1995–2014 mean by 2100. The central estimate is 0.78 m, with a 5th–95th percentile range of 0.55–1.05 m. Values are referenced to Grayhaven Tidal Datum 2010 (GTD-2010) and exclude local vertical land motion.",
+          "page_number": 14,
+          "section_label": "Section 4.2",
+          "source_locator": "Page 14, Section 4.2"
+        }
+      ],
+      "answerable": true
+    }
+  ],
+  "source_document": {
+    "source_title": "Grayhaven Estuary Sea-Level Outlook, 2023",
+    "publisher": "Grayhaven Shoreline Science Unit",
+    "publication_year": 2023,
+    "document_type": "Technical report",
+    "document_text": "Page 14, Section 4.2. Projection period: 2020–2100. Scenario H5 assumes high emissions persist through 2100. For Grayhaven Estuary, relative sea level is projected to be 0.78 m above the 1995–2014 mean by 2100. The central estimate is 0.78 m, with a 5th–95th percentile range of 0.55–1.05 m. Values are referenced to Grayhaven Tidal Datum 2010 (GTD-2010) and exclude local vertical land motion."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "qa_items": [
+    {
+      "question": "Under Pathway P2, what relative sea-level change is projected for the North Inlet planning shoreline by 2100, and what range and reference does the source report?",
+      "answer": "The projection is 0.42 m above the 2000–2019 mean by 2100. The stated 17th–83rd percentile range is 0.28–0.61 m. The vertical reference is local mean sea level (LMSL), and the projection includes local vertical land motion.",
+      "scenario": {
+        "scenario_name": "Pathway P2",
+        "scenario_description": "A pathway characterized by declining emissions after mid-century.",
+        "start_year": 2020,
+        "end_year": 2100
+      },
+      "target_location": "North Inlet planning shoreline",
+      "projection": {
+        "change_value": 0.42,
+        "unit": "m",
+        "baseline_period": "2000–2019 mean",
+        "vertical_datum": "Local mean sea level (LMSL)"
+      },
+      "uncertainty": {
+        "lower_bound": 0.28,
+        "upper_bound": 0.61,
+        "confidence_level": "17th–83rd percentile range",
+        "uncertainty_description": "The source reports a 17th–83rd percentile range of 0.28–0.61 m; local vertical land motion is included."
+      },
+      "evidence": [
+        {
+          "quote": "Pathway P2 represents declining emissions after mid-century. For the North Inlet planning shoreline, relative sea level is projected to be 0.42 m above the 2000–2019 mean by 2100. The central estimate is 0.42 m, with a 17th–83rd percentile range of 0.28–0.61 m. Values use local mean sea level (LMSL) as the vertical reference and include local vertical land motion.",
+          "page_number": 8,
+          "section_label": "Table 2",
+          "source_locator": "Page 8, Table 2"
+        }
+      ],
+      "answerable": true
+    }
+  ],
+  "source_document": {
+    "source_title": "North Inlet Relative Sea-Level Planning Projections, 2024",
+    "publisher": "North Inlet Coastal Planning Office",
+    "publication_year": 2024,
+    "document_type": "Technical note",
+    "document_text": "Page 8, Table 2. Projection period: 2020–2100. Pathway P2 represents declining emissions after mid-century. For the North Inlet planning shoreline, relative sea level is projected to be 0.42 m above the 2000–2019 mean by 2100. The central estimate is 0.42 m, with a 17th–83rd percentile range of 0.28–0.61 m. Values use local mean sea level (LMSL) as the vertical reference and include local vertical land motion."
+  }
+}
