@@ -1,0 +1,14 @@
+{
+  "policy_terms": "Surgical benefits (Section 6.1): Medically necessary surgery performed by a participating provider is eligible for coverage, subject to applicable exclusions and required authorization. Cosmetic procedures are not eligible unless they meet the reconstructive exception stated in the exclusions.",
+  "coverage_status": "not_covered",
+  "exclusion_terms": "Cosmetic surgery performed primarily to improve appearance is excluded. The exclusion does not apply to reconstructive surgery needed to restore function after an accidental injury when functional impairment is documented in the medical record and the plan approves the procedure in advance.",
+  "service_details": "The claim is for a proposed rhinoplasty with a billed charge of $7,800. The surgeon's treatment plan describes the procedure as reshaping the nasal bridge.",
+  "unresolved_facts": [],
+  "visit_information": "At a consultation on October 6, 2025, the participating surgeon documented that the requested procedure was intended to change the appearance of the nasal bridge. The medical record states that the member has no nasal obstruction or breathing impairment. No accidental injury or functional impairment was documented.",
+  "coverage_reasoning": "The proposed procedure is described as appearance-related, and the consultation record states that there is no nasal obstruction or breathing impairment. The record also documents no accidental injury or functional impairment. Therefore, the procedure falls within the cosmetic-surgery exclusion and does not meet the stated reconstructive exception. The available facts support a not-covered determination under these provisions.",
+  "supporting_provisions": [
+    "Section 6.1: Medically necessary surgery by a participating provider is eligible subject to applicable exclusions and required authorization.",
+    "Exclusion terms: Cosmetic surgery performed primarily to improve appearance is excluded.",
+    "Exclusion terms: The reconstructive exception requires functional impairment documented in the medical record after an accidental injury and advance plan approval."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "policy_terms": "Outpatient rehabilitation benefit (Section 4.2): Medically necessary physical therapy prescribed by a licensed clinician and received from a participating provider is eligible for coverage following an acute injury. The plan pays 80% of the lesser of the billed charge or $140 per visit after the annual deductible is met. The benefit is limited to 12 visits per benefit year.",
+  "coverage_status": "partially_covered",
+  "exclusion_terms": "Physical therapy visits beyond the 12-visit annual limit are not covered unless the plan approves an extension in writing before the additional visit. Charges above the per-visit reimbursable amount are not eligible for payment.",
+  "service_details": "The claim is for one outpatient physical therapy session for ankle rehabilitation. The provider billed $180 for the session.",
+  "unresolved_facts": [],
+  "visit_information": "The session took place on September 18, 2025, at a participating clinic. The treating clinician prescribed therapy after an acute ankle injury. The member's annual deductible had already been met. This was the member's 12th physical therapy visit in the benefit year; 11 earlier visits were completed.",
+  "coverage_reasoning": "The session meets the stated eligibility conditions: it was prescribed for rehabilitation following an acute injury, delivered by a participating provider, and the deductible was met. It was also within the 12-visit annual limit. However, the plan calculates the benefit using the lesser of the $180 billed charge and the $140 per-visit maximum, then pays 80% of that amount. Accordingly, $112 is payable under the stated benefit; the remainder of the billed charge is not paid by the plan, so the claim is partially covered.",
+  "supporting_provisions": [
+    "Section 4.2: Medically necessary physical therapy prescribed by a licensed clinician and received from a participating provider is eligible following an acute injury.",
+    "Section 4.2: After the annual deductible is met, the plan pays 80% of the lesser of the billed charge or $140 per visit.",
+    "Section 4.2: The benefit is limited to 12 visits per benefit year.",
+    "Exclusion terms: Charges above the per-visit reimbursable amount are not eligible for payment."
+  ]
+}
