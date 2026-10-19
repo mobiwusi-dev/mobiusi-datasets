@@ -1,0 +1,23 @@
+{
+  "answer": "The stems are worked in split stitch and the broader leaves in satin stitch. The central border’s narrow silver-gilt metallic thread is couched with fine silk stitches. The entry does not specify the thread’s core.",
+  "evidence": [
+    {
+      "quote": "The floral stems are worked in split stitch, while the broader leaves are formed with satin stitch.",
+      "source_locator": "Catalogue entry — Embroidered panel, Materials and stitches",
+      "support_explanation": "This passage assigns split stitch to the stems and satin stitch to the broader leaves."
+    },
+    {
+      "quote": "A narrow metallic thread is couched along the central border with fine silk stitches.",
+      "source_locator": "Catalogue entry — Embroidered panel, Materials and stitches",
+      "support_explanation": "This states how the border thread is attached and identifies the fine silk stitches used to couch it."
+    },
+    {
+      "quote": "The metallic thread is identified as silver-gilt. The entry gives no information about its core.",
+      "source_locator": "Catalogue entry — Embroidered panel, Catalogue note",
+      "support_explanation": "This identifies the thread as silver-gilt while explicitly leaving its core unspecified."
+    }
+  ],
+  "question": "How does the entry distinguish the stitches used in the floral design and border, and what does it say about the metallic thread’s construction?",
+  "source_text": "Catalogue entry — Embroidered panel\nMaterials and stitches: The ground is plain-weave linen. The floral stems are worked in split stitch, while the broader leaves are formed with satin stitch. A narrow metallic thread is couched along the central border with fine silk stitches.\nCatalogue note: The metallic thread is identified as silver-gilt. The entry gives no information about its core.",
+  "unsupported_details_note": "The source identifies the metallic thread as silver-gilt but does not describe its core."
+}

@@ -1,0 +1,23 @@
+{
+  "answer": "The body is made from cedar panels, with brass corner plates and a black lacquer coating. The lid’s design uses gold powder applied over the lacquer. The entry does not identify the lacquer recipe or the workshop.",
+  "evidence": [
+    {
+      "quote": "The rectangular body is formed from cedar panels joined at the corners. Its exterior is coated with black lacquer; small brass plates are fixed at the corners.",
+      "source_locator": "Catalogue entry — Writing box, Materials and surface",
+      "support_explanation": "This passage identifies the body material, lacquer coating, and brass corner plates."
+    },
+    {
+      "quote": "The lid bears a design of reeds and waterfowl in gold powder applied over the lacquer.",
+      "source_locator": "Catalogue entry — Writing box, Materials and surface",
+      "support_explanation": "This passage states that gold powder was applied over the lacquer to make the lid design."
+    },
+    {
+      "quote": "The entry does not identify the lacquer recipe or the workshop.",
+      "source_locator": "Catalogue entry — Writing box, Catalogue note",
+      "support_explanation": "This explicitly identifies the recipe and workshop as details not established by the entry."
+    }
+  ],
+  "question": "Which materials and surface-decoration method does the entry identify, and what relevant details does it leave unspecified?",
+  "source_text": "Catalogue entry — Writing box\nMaterials and surface: The rectangular body is formed from cedar panels joined at the corners. Its exterior is coated with black lacquer; small brass plates are fixed at the corners. The lid bears a design of reeds and waterfowl in gold powder applied over the lacquer.\nCatalogue note: The metal is recorded as brass, and the surface decoration is described as sprinkled gold. The entry does not identify the lacquer recipe or the workshop.",
+  "unsupported_details_note": "The lacquer recipe and workshop are not identified in the source text."
+}

@@ -1,0 +1,18 @@
+{
+  "answer": "The porcelain vessel has a cobalt-blue design painted beneath a transparent glaze, with iron-red enamel added over the glaze around the rim. Its foot is unglazed, and kiln grit adheres to the base.",
+  "evidence": [
+    {
+      "quote": "The vessel is made of porcelain. A cobalt-blue design was painted beneath a transparent glaze, and iron-red enamel was added over the glaze around the rim.",
+      "source_locator": "Catalogue entry — Painted vessel, Materials and decoration",
+      "support_explanation": "This passage identifies the vessel material and describes the placement of the cobalt-blue design and iron-red enamel in relation to the glaze."
+    },
+    {
+      "quote": "The foot is unglazed, with kiln grit adhering to its base.",
+      "source_locator": "Catalogue entry — Painted vessel, Condition and recording note",
+      "support_explanation": "This directly states that the foot is unglazed and that kiln grit adheres to its base."
+    }
+  ],
+  "question": "What sequence of surface decoration does the entry describe, and what does it record about the foot?",
+  "source_text": "Catalogue entry — Painted vessel\nMaterials and decoration: The vessel is made of porcelain. A cobalt-blue design was painted beneath a transparent glaze, and iron-red enamel was added over the glaze around the rim.\nCondition and recording note: The foot is unglazed, with kiln grit adhering to its base. The entry does not assign a production location or date.",
+  "unsupported_details_note": "The entry does not establish a production location or date."
+}
