@@ -1,0 +1,20 @@
+{
+  "answerability": true,
+  "answer": "Stop work in the affected area, prevent access to the opening, and promptly notify the site supervisor. Work may resume only after an effective cover or guard has been installed and checked.",
+  "question": "According to the text, what should a worker do immediately upon finding an unguarded floor opening, and what condition must be met before work resumes?",
+  "citations": [
+    {
+      "source_title": "Construction Site Safety: Hazard Recognition and Controls",
+      "edition": "Second edition, 2024",
+      "locator": "Section 4.3, Floor Openings",
+      "quoted_text": "When an unguarded floor opening is identified, stop work in the affected area and prevent access to the opening. Notify the site supervisor promptly. Work may resume only after an effective cover or guard has been installed and checked."
+    }
+  ],
+  "reasoning": "The cited passage specifies the immediate response to an unguarded opening and states the condition required before work resumes.",
+  "source_material": {
+    "source_title": "Construction Site Safety: Hazard Recognition and Controls",
+    "source_type": "textbook",
+    "edition": "Second edition, 2024",
+    "content": "Section 4.3, Floor Openings: When an unguarded floor opening is identified, stop work in the affected area and prevent access to the opening. Notify the site supervisor promptly. Work may resume only after an effective cover or guard has been installed and checked."
+  }
+}
