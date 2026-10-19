@@ -1,0 +1,12 @@
+{
+  "claim_text": "Harbor City won the final 2-0.",
+  "evidence_spans": [
+    {
+      "span_start": 0,
+      "span_end": 77,
+      "evidence_quote": "Harbor City lost the final 0-2 to Redvale after conceding in the 76th minute."
+    }
+  ],
+  "evidence_page_text": "Harbor City lost the final 0-2 to Redvale after conceding in the 76th minute.",
+  "verification_label": "refuted"
+}

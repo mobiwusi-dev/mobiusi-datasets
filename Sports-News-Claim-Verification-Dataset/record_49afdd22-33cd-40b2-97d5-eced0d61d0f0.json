@@ -1,0 +1,12 @@
+{
+  "claim_text": "Mira Sol scored twice in the Northport Falcons' 3-1 win.",
+  "evidence_spans": [
+    {
+      "span_start": 0,
+      "span_end": 101,
+      "evidence_quote": "The Northport Falcons won 3-1. Mira Sol scored twice, including the opening goal in the 18th minute."
+    }
+  ],
+  "evidence_page_text": "The Northport Falcons won 3-1. Mira Sol scored twice, including the opening goal in the 18th minute.",
+  "verification_label": "supported"
+}

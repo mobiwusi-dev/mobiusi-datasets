@@ -1,0 +1,12 @@
+{
+  "claim_text": "Lena Voss recorded the fastest lap in the Ridgeway Grand Prix.",
+  "evidence_spans": [
+    {
+      "span_start": 0,
+      "span_end": 123,
+      "evidence_quote": "Lena Voss finished third in the Ridgeway Grand Prix. The race report lists the finishing order but gives no lap-time data."
+    }
+  ],
+  "evidence_page_text": "Lena Voss finished third in the Ridgeway Grand Prix. The race report lists the finishing order but gives no lap-time data.",
+  "verification_label": "not_enough_information"
+}
