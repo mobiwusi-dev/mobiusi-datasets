@@ -1,0 +1,34 @@
+---
+license: cc-by-nc-sa-4.0
+task_categories:
+- text-classification
+language:
+- en
+pretty_name: Enterprise Application Workflow Instruction Intent Classification Dataset
+---
+
+# Enterprise Application Workflow Instruction Intent Classification Dataset
+
+This dataset contains chat-based requests for workflows in industry-specific enterprise applications, with each request labeled by intent. Examples cover actions such as initiating, submitting, approving, updating, and canceling business processes. The data supports fine-tuning and evaluating models for workflow instruction understanding and intent classification, as well as building natural-language interfaces for enterprise applications.
+
+## Technical Specifications
+
+| Field | Type | Description |
+| :---  | :---  | :--- |
+| command_text | string | The original chat message containing the user's enterprise workflow request. |
+| intent_category | string | The label identifying the workflow action requested by the user. |
+
+## Compliance Statement
+
+<table>
+  <tr><td>Authorization Type</td><td>CC-BY-NC-SA 4.0 (Attribution–NonCommercial–ShareAlike)</td></tr>
+  <tr><td>Commercial Use</td><td>Requires exclusive subscription or authorization contract (monthly or per-invocation charging)</td></tr>
+  <tr><td>Privacy and Anonymization</td><td>No PII, no real company names, simulated scenarios follow industry standards</td></tr>
+  <tr><td>Compliance System</td><td>Compliant with China's Data Security Law / EU GDPR / supports enterprise data access logs</td></tr>
+</table>
+
+
+## Source & Contact
+
+contact@mobiusi.com
+
