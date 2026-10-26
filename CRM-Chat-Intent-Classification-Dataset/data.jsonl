@@ -1,0 +1,3 @@
+{"user_message": "Log yesterday's discovery call with Harbor Point as a completed sales activity, and note that their finance lead requested a revised proposal.", "primary_intent": "activity_logging"}
+{"user_message": "Add Priya Nair as a contact and associate her with the Northwind account.", "primary_intent": "contact_management"}
+{"user_message": "Show me the total value of open opportunities by sales stage for the current quarter.", "primary_intent": "reporting_query"}
